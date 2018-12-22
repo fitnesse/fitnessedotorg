@@ -4,7 +4,6 @@
  * '''[[Backlog][https://github.com/unclebob/fitnesse]]:''' ''!-FitNesse-! project on github.  Issues and features are tracked there. ''
  * '''[[Email Group][http://groups.yahoo.com/group/fitnesse]]:''' ''Join our email discussion group.''
  * '''[[!-Contributing to FitNesse-!][>ContributingToFitNesse]]:''' ''How to submit a patch, or become a FitNesse Contributor.''
- * '''[[Continuous Integration system for !-FitNesse-!][https://cleancoder.ci.cloudbees.com/job/fitnesse/]]:''' ''See the current state of the FitNesse build, including passing tests, code metrics, etc.!-<br>-!This is the Hudson site!''
 
 !2 Learn More
 '''Go beyond the basics.'''

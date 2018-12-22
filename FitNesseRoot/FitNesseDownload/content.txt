@@ -7,9 +7,6 @@
 
 You can also find [[!-FitNesse-! in the Maven Central Repository][http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.fitnesse%22%20AND%20a%3A%22fitnesse%22]]
 
-!2 Edge
-The latest Stable build can be found on our [[Continuous Integration server][https://cleancoder.ci.cloudbees.com/job/fitnesse/lastStableBuild/]] The QA process for Edge is the same as for a release.  Test pass?  Ship it!
-
 !2 Source
 The source Code can be found on !-GitHub-!: http://github.com/unclebob/fitnesse
 
