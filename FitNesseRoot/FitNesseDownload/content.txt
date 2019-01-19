@@ -38,11 +38,12 @@ Then point your browser to !style_code(http://localhost:8080)
 
 !***> Still no?  Open me up.
 !3 What to Do If You Have the Wrong Java Runtime Environment
+ * Release 20190119 and later require Java 8
  * Release 20160515 and later require Java 7
  * Release 20090818 and later require Java 6
  * Release 20060719 and later require Java 5
- 
-FitNesse requires version 1.7 or later of the Java Runtime Environment (JRE). If you see the messages:
+
+FitNesse requires version 1.8 or later of the Java Runtime Environment (JRE). If you see the messages:
 
 
 {{{
@@ -52,7 +53,7 @@ java/lang/CharSequence
         at fitnesse.FitNesse.parseCommandLine(Unknown Source)
         at fitnesse.FitNesse.main(Unknown Source)
 }}}
-Then you need to download and install version 1.6 or later of the JRE. Follow these steps:
+Then you need to download and install version 8 or 9 of the JRE. Follow these steps:
 
  * Press a key to close the command window
  * Go to [[Java.com][http://java.com]] and download and install Java by following the instructions.
@@ -94,10 +95,6 @@ If you build !-FitNesse-! from source, the ant script may fail for ''out of heap
 
 ----
 !2 Old Releases
-!release 20190110 .FrontPage.FitNesseDevelopment.FitNesseRelease20190110
-!release 20181224 .FrontPage.FitNesseDevelopment.FitNesseRelease20181224
-!release 20181223 .FrontPage.FitNesseDevelopment.FitNesseRelease20181223
-!release 20181221 .FrontPage.FitNesseDevelopment.FitNesseRelease20181221
 !release 20180127 .FrontPage.FitNesseDevelopment.FitNesseRelease20180127
 !release 20161106 .FrontPage.FitNesseDevelopment.FitNesseRelease20161106
 !release 20160618 .FrontPage.FitNesseDevelopment.FitNesseRelease20160618
