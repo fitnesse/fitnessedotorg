@@ -11,7 +11,7 @@
 	</configurations>
  
 	<dependencies>
-		<dependency org="org.fitnesse" name="fitnesse-standalone" rev="20190406" conf="default" />
+		<dependency org="org.fitnesse" name="fitnesse-standalone" rev="20190409" conf="default" />
 		<dependency org="junit" name="junit" rev="4.10" conf="default" />
 	</dependencies>
 </ivy-module>
