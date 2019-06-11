@@ -39,7 +39,7 @@
 
 	<target name="compile" depends="resolve">
 		<mkdir dir="classes" />
-		<javac srcdir="src" destdir="classes" classpathref="classpath" debug="true" source="1.6" target="1.6" includeantruntime="false" />
+		<javac srcdir="src" destdir="classes" classpathref="classpath" debug="true" source="1.8" target="1.8" includeantruntime="false" />
 	</target>
 
 	<target name="unit_test" depends="compile" description="run the unit tests">
@@ -95,6 +95,6 @@
 
 	<target name="ivy-download" unless="ivy.download.not.required">
 		<mkdir dir="antlib" />
-		<get src="${maven.central.url}/org/apache/ivy/ivy/2.3.0/ivy-2.3.0.jar" dest="antlib/ivy.jar" usetimestamp="true" verbose="true" />
+		<get src="${maven.central.url}/org/apache/ivy/ivy/2.4.0/ivy-2.4.0.jar" dest="antlib/ivy.jar" usetimestamp="true" verbose="true" />
 	</target>
 </project>

@@ -3,17 +3,10 @@ package com.objectmentor.fitnesse.releases;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-
-import util.FileUtil;
+import java.nio.file.Files;
+import java.util.*;
 
 public class Release {
-  public static final String ENDL = System.getProperty("line.separator");
   private static final File releaseHome = new File("releases");
 
   private final File releaseDir;
@@ -25,7 +18,7 @@ public class Release {
     this.name = name;
     releaseDir = new File(releaseHome, name);
     infoFile = new File(releaseDir, ".releaseInfo");
-    releaseFiles = new HashMap<String, ReleaseFile>(4);
+    releaseFiles = new HashMap<>(4);
     if (exists())
       load();
   }
@@ -44,9 +37,7 @@ public class Release {
   }
 
   private void loadLocalFiles() {
-    File[] files = releaseDir.listFiles();
-    for (int i = 0; i < files.length; i++) {
-      File file = files[i];
+    for (File file : releaseDir.listFiles()) {
       String filename = file.getName();
       if (!releaseFiles.containsKey(filename) && !filename.startsWith(".") &&
         !file.isDirectory()) {
@@ -57,11 +48,9 @@ public class Release {
 
   private void loadRecordedFiles() throws IOException {
     if (infoFile.exists()) {
-      String info = FileUtil.getFileContent(infoFile);
-      String[] rows = info.split("\n");
-      for (int i = 0; i < rows.length; i++) {
+      for (String row : Files.readAllLines(infoFile.toPath())) {
         ReleaseFile releaseFile = ReleaseFile.parse(
-          releaseDir.getAbsolutePath(), rows[i]
+          releaseDir.getAbsolutePath(), row
         );
         if (releaseFile.exists())
           releaseFiles.put(releaseFile.getFilename(), releaseFile);
@@ -74,31 +63,17 @@ public class Release {
   }
 
   public void saveInfo()  {
-    FileWriter writer = null;
-	try {
-		writer = new FileWriter(infoFile);
+	try (FileWriter writer = new FileWriter(infoFile)){
 		for (Iterator iterator = getFiles().iterator(); iterator.hasNext();)
 		  writer.write(iterator.next().toString() + "\n");
 		writer.flush();
-		writer.close();
-		writer = null;
 	} catch (IOException e) {
-		// TODO Auto-generated catch block
 		e.printStackTrace();
-	}
-	finally{
-		// Handle the case where something failed that you *didn't* catch
-        if (writer != null) {
-            try {
-                writer.close();
-            } catch (Exception e2) {
-            }
-        }
 	}
   }
 
   public List<ReleaseFile> getFiles() {
-    LinkedList<ReleaseFile> files = new LinkedList<ReleaseFile>(releaseFiles.values());
+    LinkedList<ReleaseFile> files = new LinkedList<>(releaseFiles.values());
     Collections.sort(files);
     return files;
   }
@@ -114,8 +89,8 @@ public class Release {
 		else if (!infoFile.exists())
 		  return false;
 
-        String fileContent = FileUtil.getFileContent(infoFile);
-        if (fileContent.equals("") || (fileContent).equals(ENDL))
+        List<String> fileContent = Files.readAllLines(infoFile.toPath());
+        if (fileContent.size() == 1 && fileContent.get(0).equals(""))
 		  return true;
 	} catch (IOException e) {
 		return false;
