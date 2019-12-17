@@ -5,7 +5,8 @@
  * ''Fitnesse.jar'' is for use in Maven or Ivy.
  * Users who just want to run !-FitNesse-! by itself should download ''fitnesse-standalone.jar'' which comes with all dependencies (support libraries) included.
 
-You can also find [[!-FitNesse-! in the Maven Central Repository][http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.fitnesse%22%20AND%20a%3A%22fitnesse%22]]
+You can also find [[!-FitNesse-! in the Maven Central Repository][http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.fitnesse%22%20AND%20a%3A%22fitnesse%22]].
+!note !-FitNesse-! includes ''slf4j-jdk14'', an slf4j implementation, to write its logging. Users who want to use a different logging implementation should exclude ''slf4j-jdk14'' so there will be no conflicts.
 
 !2 Source
 The source Code can be found on !-GitHub-!: http://github.com/unclebob/fitnesse
