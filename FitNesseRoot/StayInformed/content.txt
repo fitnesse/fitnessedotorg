@@ -3,6 +3,7 @@
 
  * '''[[Backlog][https://github.com/unclebob/fitnesse]]:''' ''!-FitNesse-! project on github.  Issues and features are tracked there. ''
  * '''[[Email Group][http://groups.yahoo.com/group/fitnesse]]:''' ''Join our email discussion group.''
+ * '''[[Slack Community][https://join.slack.com/t/fitnessecommunity/shared_invite/enQtOTIzMjEwNTEzNTM2LWQ5OTE2ZjI5YmIzZWM2YzQwMDA2YmE5N2ZhMzNiNWM2ZjYzMDNmMTkzOTNmOTQ2N2E4Mzc2NGE4Y2ViMzE2MTE]]:''' ''Join our Slack community.''
  * '''[[!-Contributing to FitNesse-!][>ContributingToFitNesse]]:''' ''How to submit a patch, or become a FitNesse Contributor.''
 
 !2 Learn More
