@@ -1,4 +1,4 @@
-This is a work in progress.  More details will be coming.  Let us know on the [[Email Group][http://groups.yahoo.com/group/fitnesse]] if we have any details wrong.
+This is a work in progress.  More details will be coming.  Let us know on the [[Slack Community][https://join.slack.com/t/fitnessecommunity/shared_invite/enQtOTIzMjEwNTEzNTM2LWQ5OTE2ZjI5YmIzZWM2YzQwMDA2YmE5N2ZhMzNiNWM2ZjYzMDNmMTkzOTNmOTQ2N2E4Mzc2NGE4Y2ViMzE2MTE]] if we have any details wrong.
 
 Ward Cunningham starts Fit in Smalltalk
 Ward Cunningham brings Fit classic to Java
