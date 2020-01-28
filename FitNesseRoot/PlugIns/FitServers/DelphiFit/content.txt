@@ -6,6 +6,9 @@ Updated to FIT20070619 and extended by Michal Wojcik: mgwojcik@gmail.com
 !3 Downloads:
 Project moved to http://code.google.com/p/fit4delphi/
 
+!3 News group:
+http://tech.groups.yahoo.com/group/fitnesse/
+
 !3 Comments:
 This is almost complete implementation of FIT for Delphi. It supports Fixture, ColumnFixture, RowFixture and ActionFixture. Only decorators are not implemented.  
 
