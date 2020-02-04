@@ -1,2 +1,2 @@
 !c !-FitNesse-! ${FITNESSE_VERSION}
-!c [[Front Page][.FrontPage]] - [[User Guide][.FitNesse.UserGuide]] - [[Features][FitNesseFeatures]] - [[Download][FitNesseDownload]] - [[Plugins][PlugIns]] - [[Fixtures][PlugIns#slimfixtures]] - [[Slack Community][https://join.slack.com/t/fitnessecommunity/shared_invite/enQtOTIzMjEwNTEzNTM2LWQ5OTE2ZjI5YmIzZWM2YzQwMDA2YmE5N2ZhMzNiNWM2ZjYzMDNmMTkzOTNmOTQ2N2E4Mzc2NGE4Y2ViMzE2MTE]]
+!c [[Front Page][.FrontPage]] - [[User Guide][.FitNesse.UserGuide]] - [[Features][FitNesseFeatures]] - [[Download][FitNesseDownload]] - [[Plugins][PlugIns]] - [[Fixtures][PlugIns#slimfixtures]] - [[Slack Community][https://fitnesse-community-inviter.herokuapp.com/]]
