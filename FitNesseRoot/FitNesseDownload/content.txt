@@ -1,5 +1,5 @@
 !2 Official release
-!release 20200308 .FrontPage.FitNesseDevelopment.FitNesseRelease20200308
+!release 20200404 .FrontPage.FitNesseDevelopment.FitNesseRelease20200404
 '''Note''': As of release 20121220, FitNesse comes in 2 flavours:
 
  * ''Fitnesse.jar'' is for use in Maven or Ivy.
@@ -96,6 +96,7 @@ If you build !-FitNesse-! from source, the ant script may fail for ''out of heap
 
 ----
 !2 Old Releases
+!release 20200308 .FrontPage.FitNesseDevelopment.FitNesseRelease20200308
 !release 20200307 .FrontPage.FitNesseDevelopment.FitNesseRelease20200307
 !release 20200304 .FrontPage.FitNesseDevelopment.FitNesseRelease20200304
 !release 20200205 .FrontPage.FitNesseDevelopment.FitNesseRelease20200205
