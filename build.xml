@@ -72,7 +72,7 @@
 	<!--
 		Dependency management boilerplate
 	  -->
-	<property name="maven.central.url" value="http://repo2.maven.org/maven2" />
+	<property name="maven.central.url" value="https://repo1.maven.org/maven2" />
 
 	<available file="antlib/ivy.jar" type="file" property="have.ivy.jar"/>
 
@@ -95,6 +95,6 @@
 
 	<target name="ivy-download" unless="ivy.download.not.required">
 		<mkdir dir="antlib" />
-		<get src="${maven.central.url}/org/apache/ivy/ivy/2.4.0/ivy-2.4.0.jar" dest="antlib/ivy.jar" usetimestamp="true" verbose="true" />
+		<get src="${maven.central.url}/org/apache/ivy/ivy/2.5.0/ivy-2.5.0.jar" dest="antlib/ivy.jar" usetimestamp="true" verbose="true" />
 	</target>
 </project>
