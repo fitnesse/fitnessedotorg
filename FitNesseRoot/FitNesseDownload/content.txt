@@ -44,7 +44,7 @@ Then point your browser to !style_code(http://localhost:8080)
  * Release 20090818 and later require Java 6
  * Release 20060719 and later require Java 5
 
-FitNesse requires version 1.8 or later of the Java Runtime Environment (JRE). If you see the messages:
+FitNesse requires version 1.8 (Java 8) or Java 11 of the Java Runtime Environment (JRE). If you see the messages:
 
 
 {{{
