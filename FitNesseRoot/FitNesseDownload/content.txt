@@ -1,5 +1,8 @@
 !2 Official release
 !release 20201213 .FrontPage.FitNesseDevelopment.FitNesseRelease20201213
+
+!-FitNesse-! requires the Java Runtime Environment (JRE) version 8 or 11.
+
 '''Note''': As of release 20121220, FitNesse comes in 2 flavours:
 
  * ''Fitnesse.jar'' is for use in Maven or Ivy.
@@ -15,13 +18,14 @@ The source Code can be found on !-GitHub-!: http://github.com/unclebob/fitnesse
 !2 What's next
 It really takes very little time and effort to get FitNesse running on your machine.
 
+ 0 Ensure you have a supported Java version installed (either version 8 or 11, '''version 15 is not supported''').
  1 Click on the most recent !style_code(fitnesse-standalone.jar) file.
    * If this is a brand new installation, just put it in some convenient empty directory.
    * If this is an update, then copy it on top of the old fitnesse(-standalone).jar in your current installation.
  2 Type !style_code(java -jar fitnesse-standalone.jar)
    * It will ask you to be patient as it installs or updates.
    * Your shell should respond with something like this: {{{
-    FitNesse (v20130228) Started...
+    FitNesse (v20201213) Started...
      	port:              8001
      	root page:         fitnesse.wiki.FileSystemPage at ./FitNesseRoot
      	logger:            none
@@ -44,7 +48,7 @@ Then point your browser to !style_code(http://localhost:8080)
  * Release 20090818 and later require Java 6
  * Release 20060719 and later require Java 5
 
-FitNesse requires version 1.8 (Java 8) or Java 11 of the Java Runtime Environment (JRE). If you see the messages:
+!-FitNesse-! requires version 1.8 (Java 8) or Java 11 of the Java Runtime Environment (JRE). If you see the messages:
 
 
 {{{
@@ -54,12 +58,12 @@ java/lang/CharSequence
         at fitnesse.FitNesse.parseCommandLine(Unknown Source)
         at fitnesse.FitNesse.main(Unknown Source)
 }}}
-Then you need to download and install version 8 or 9 of the JRE. Follow these steps:
+Then you need to download and install version 8 or 11 of the JRE. Follow these steps:
 
  * Press a key to close the command window
- * Go to [[Java.com][http://java.com]] and download and install Java by following the instructions.
+ * Download a Java runtime (there are multiple providers, for instance [[Amazon][https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html]], [[AdoptOpenJDK][https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=hotspot]] or [[Azul][https://www.azul.com/downloads/zulu-community/?version=java-8-lts&os=windows&package=jdk]]) and download and install Java by following the instructions.
  * (if required) Change the PATH environment variable so that it points to the new JRE.
-   * Go to the /bin folder that contains java.exe, and copy the pathname (for example, ''C:\Program Files\Java\j2re<version>'')
+   * Go to the /bin folder that contains java.exe, and copy the pathname (for example, ''C:\Program Files\Amazon Corretto\jdk<version>'')
    * Go to Settings>Control Panel>System>Advanced>Environment Variables>PATH>Edit
    * Paste in that same complete pathname
    * Save the PATH environment variable, and close the System control panel
