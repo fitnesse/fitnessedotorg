@@ -4,4 +4,4 @@ If you want to contribute you should create your own github account, and clone t
 
 If you have a patch that you would like to submit, or if you would like to become a regular submitter to !-FitNesse-!, then contact [[Uncle Bob Martin][mailto:unclebob@cleancoder.com]].   
 
-It's also a good idea to post your patches to the fitnesse [[Slack Community.][https://fitnesse-community-inviter.herokuapp.com/]]
+It's also a good idea to post your patches to the fitnesse [[Gitter Community.][https://gitter.im/fitnesse-org/fitnesse]]
