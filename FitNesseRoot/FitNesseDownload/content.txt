@@ -1,5 +1,5 @@
 !2 Official release
-!release 20211006 .FrontPage.FitNesseDevelopment.FitNesseRelease20211006
+!release 20211030 .FrontPage.FitNesseDevelopment.FitNesseRelease20211030
 
 !-FitNesse-! requires the Java Runtime Environment (JRE) version 8 or 11.
 
@@ -100,6 +100,7 @@ If you build !-FitNesse-! from source, the ant script may fail for ''out of heap
 
 ----
 !2 Old Releases
+!release 20211006 .FrontPage.FitNesseDevelopment.FitNesseRelease20211006
 !release 20210606 .FrontPage.FitNesseDevelopment.FitNesseRelease20210606
 !release 20210605 .FrontPage.FitNesseDevelopment.FitNesseRelease20210605
 !release 20210516 .FrontPage.FitNesseDevelopment.FitNesseRelease20210516
