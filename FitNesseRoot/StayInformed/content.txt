@@ -2,7 +2,7 @@
 '''Share with the community.'''
 
  * '''[[Backlog][https://github.com/unclebob/fitnesse]]:''' ''!-FitNesse-! project on github.  Issues and features are tracked there. ''
- * '''[[Slack Community][https://fitnesse-community-inviter.herokuapp.com/]]:''' ''Join our Slack community.''
+ * '''[[Gitter Community][https://gitter.im/fitnesse-org/fitnesse]]:''' ''Join our Gitter community.''
  * '''[[!-Contributing to FitNesse-!][>ContributingToFitNesse]]:''' ''How to submit a patch, or become a FitNesse Contributor.''
 
 !2 Learn More
