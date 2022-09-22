@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteSlimTests.SlimSymbols.NamingConvention</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests.html">SuiteSlimTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/SlimSymbols.html">SlimSymbols</a></li>
+
+  </ol>
+</nav>
+<article>
+<table>
+	<tr class="slimRowTitle">
+		<td>import</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>fitnesse.slim.test</td>
+	</tr>
+</table>
+<br/><h3 id="0">Slim symbols names must start with a letter, followed by letters, digits and underscores</h3>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">test slim</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>string</td>
+		<td>getStringArg?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>foo</td>
+		<td>$x3_=</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>$x3_</td>
+		<td>foo</td>
+	</tr>
+</table>
+<br/><h3 id="1">Referencing undefined Slim symbols names raise no error but return the symbol name</h3>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">test slim</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>string</td>
+		<td>getStringArg?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>$UNDEFINED</td>
+		<td>$UNDEFINED</td>
+	</tr>
+</table>
+<br/><h3 id="2">Slim symbols names are case sensitive</h3>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">test slim</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>string</td>
+		<td>getStringArg?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>lower</td>
+		<td>$x=</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>upper</td>
+		<td>$X=</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>$x</td>
+		<td>lower</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>$X</td>
+		<td>upper</td>
+	</tr>
+</table>
+<br/><h3 id="3">Slim symbols names also support UTF8 names</h3>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">test slim</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>string</td>
+		<td>getStringArg?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>ØÅÆØÅÆ_ØÅÆØÅÆ</td>
+		<td>$Æ_ØÅ=</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>$Æ_ØÅ</td>
+		<td>ØÅÆØÅÆ_ØÅÆØÅÆ</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<a href="../../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../../FrontPage.html">Front Page</a> | <a href="../../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

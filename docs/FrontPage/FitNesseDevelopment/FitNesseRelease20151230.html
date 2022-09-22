@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FrontPage.FitNesseDevelopment.FitNesseRelease20151230</title>
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../FrontPage.html">FrontPage</a></li>
+<li><a href="../../FrontPage/FitNesseDevelopment.html">FitNesseDevelopment</a></li>
+
+  </ol>
+</nav>
+<article>
+<h3>release 
+	<a href="">20151230</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20151230">fitnesse-standalone.jar</a></strong></td><td>4918563 bytes</td><td>0</td></tr></tbody></table><br/><br/><h3 id="0"><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> Release Notes 2015/12/30</h3>
+<p class="note">Uncle Bob Consulting LLC.</p>
+<br/><p class="note"><span class="red">Requires Java 1.6</span></p>
+<br/><h4 id="1">Major Changes since <a href="../../FrontPage/FitNesseDevelopment/FitNesseRelease20150814.html">20150814</a>:</h4>
+<br/><ul>
+	<li>Documentation updates </li>
+	<li>Slim runs completely in process in when run in debug mode </li>
+	<li>Detailed diff for failed Slim tests </li>
+	<li>Git version control support is now a <a href="http://fitnesse.org/PlugIns">plugin</a> </li>
+	<li>Customized UnauthorizedResponder </li>
+	<li>Slim query table fields are now matched left to right </li>
+	<li>Improved search screen </li>
+	<li><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> now uses java.util.concurrent thread pools instead of spawning unmanaged threads </li>
+	<li>Execution log information is displayed when executing suites and tests with format=xml</li>
+	<li>Many, many code consistency fixes thanks to @hansjoachim</li>
+	<li>Under the hood: JQuery has been upgraded to 1.11.3 (was 1.7.2)</li>
+	<li>Issues fixed:<ul>
+	<li>Class path issues (on windows and paths with spaces)</li>
+	<li>Fix issues with non-wiki words and symbolic links</li>
+	<li>Plain text editor fixes</li>
+	<li>Fix issues with parsing UTF-8 characters</li>
+	<li>JUnit formatter displays run time with 3 decimal precision</li>
+</ul>
+</li>
+</ul>
+<br/><h4 id="2">Github ids of Contributors to this release:</h4>
+<br/><ul>
+	<li>Andrew Holland</li>
+	<li>Arjan Molenaar</li>
+	<li>Dmitriy Kartashov</li>
+	<li>Fried Hoeben</li>
+	<li>Hans Joachim Desserud</li>
+	<li>Hans-Christian Fjeldberg</li>
+	<li>Juergen Dufner</li>
+	<li>Mike Stockdale</li>
+	<li>Ploutarchos Spyridonos</li>
+	<li>Sam Cooper</li>
+	<li>Udi Schneider</li>
+	<li>six42</li>
+</ul>
+<br/><span class="meta">Thanks to all of you!</span><br/><h3 id="3">Git History</h3>
+<br/><table>
+	<tr>
+		<td>2015-12-29</td>
+		<td>Arjan Molenaar</td>
+		<td>Deal with empty cells when comparing query table results. Fixes #849.</td>
+	</tr>
+	<tr>
+		<td>2015-12-28</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove unused wiki page.</td>
+	</tr>
+	<tr>
+		<td>2015-12-28</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #853 from hansjoachim/ignore</td>
+	</tr>
+	<tr>
+		<td>2015-12-28</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #852 from hansjoachim/imports</td>
+	</tr>
+	<tr>
+		<td>2015-12-28</td>
+		<td>Arjan Molenaar</td>
+		<td>Escape backslash properly. Fixes #823.</td>
+	</tr>
+	<tr>
+		<td>2015-12-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Add comment on editing plain text tables. Fixes #689.</td>
+	</tr>
+	<tr>
+		<td>2015-12-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Update read me doc. Should fix #827.</td>
+	</tr>
+	<tr>
+		<td>2015-12-26</td>
+		<td>Arjan Molenaar</td>
+		<td>User Guide updates.</td>
+	</tr>
+	<tr>
+		<td>2015-12-26</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Removed unused imports. Also: An unused logger Two unused classes in a test suite</td>
+	</tr>
+	<tr>
+		<td>2015-12-26</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Ignore thirdparty JS libraries in SonarQube</td>
+	</tr>
+	<tr>
+		<td>2015-12-24</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix grammar in user guide.</td>
+	</tr>
+	<tr>
+		<td>2015-12-24</td>
+		<td>Arjan Molenaar</td>
+		<td>Update release notes.</td>
+	</tr>
+	<tr>
+		<td>2015-12-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Update gitignore: ignore unit intermediate files.</td>
+	</tr>
+	<tr>
+		<td>2015-12-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Also update JavaFormatter...</td>
+	</tr>
+	<tr>
+		<td>2015-12-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Clean up front page.</td>
+	</tr>
+	<tr>
+		<td>2015-12-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Upgrade JQuery to 1.11.3</td>
+	</tr>
+	<tr>
+		<td>2015-12-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Update release notes</td>
+	</tr>
+	<tr>
+		<td>2015-12-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Also show execution log in test xml report. Fixes #816.</td>
+	</tr>
+	<tr>
+		<td>2015-12-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Add 3 digit precision to JUnit formatter. Fixes #794.</td>
+	</tr>
+	<tr>
+		<td>2015-12-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #848 from amolenaar/more-search</td>
+	</tr>
+	<tr>
+		<td>2015-12-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #844 from amolenaar/iso-date</td>
+	</tr>
+	<tr>
+		<td>2015-12-10</td>
+		<td>Arjan Molenaar</td>
+		<td>use commons-lang DateUtils. This ensures code also works on Java 6.</td>
+	</tr>
+	<tr>
+		<td>2015-12-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Add date property to test result xml</td>
+	</tr>
+	<tr>
+		<td>2015-12-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Date for history report are printed in ISO format, with time zone.</td>
+	</tr>
+	<tr>
+		<td>2015-12-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Factor out common bits in search traverser</td>
+	</tr>
+	<tr>
+		<td>2015-12-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix search for for properties.</td>
+	</tr>
+	<tr>
+		<td>2015-12-07</td>
+		<td>Arjan Molenaar</td>
+		<td>fix rename for search form test</td>
+	</tr>
+	<tr>
+		<td>2015-12-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Use search instead of searchForm</td>
+	</tr>
+	<tr>
+		<td>2015-12-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Clean up search responders.</td>
+	</tr>
+	<tr>
+		<td>2015-12-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Invoke search via ?search instead of ?searchForm.</td>
+	</tr>
+	<tr>
+		<td>2015-12-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix styling for search page.</td>
+	</tr>
+	<tr>
+		<td>2015-12-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Rename ExecuteSerachPropertiesResponder to SearchPropertiesResponder.</td>
+	</tr>
+	<tr>
+		<td>2015-12-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Add basic tabs for fitnesse_straight style.</td>
+	</tr>
+	<tr>
+		<td>2015-12-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Separate search and search results again.</td>
+	</tr>
+	<tr>
+		<td>2015-12-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge SearchFormResponder in SearchResponder.</td>
+	</tr>
+	<tr>
+		<td>2015-12-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Update release notes.</td>
+	</tr>
+	<tr>
+		<td>2015-12-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #833 from amolenaar/documentation</td>
+	</tr>
+	<tr>
+		<td>2015-12-04</td>
+		<td>Arjan Molenaar</td>
+		<td>2 min example update.</td>
+	</tr>
+	<tr>
+		<td>2015-12-04</td>
+		<td>Arjan Molenaar</td>
+		<td>Update User guide starting page.</td>
+	</tr>
+	<tr>
+		<td>2015-12-03</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge branch 'master' into documentation</td>
+	</tr>
+	<tr>
+		<td>2015-12-03</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #841 from six42/authenticator2</td>
+	</tr>
+	<tr>
+		<td>2015-12-03</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #840 from hansjoachim/issues</td>
+	</tr>
+	<tr>
+		<td>2015-12-03</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #838 from six42/master</td>
+	</tr>
+	<tr>
+		<td>2015-12-03</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #837 from amolenaar/in-process-slim</td>
+	</tr>
+	<tr>
+		<td>2015-12-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #843 from udisch/master</td>
+	</tr>
+	<tr>
+		<td>2015-12-01</td>
+		<td>Udi Schneider</td>
+		<td>fix closing parenthesis in sample fixture code</td>
+	</tr>
+	<tr>
+		<td>2015-11-30</td>
+		<td>six42</td>
+		<td>Customized UnauthorizedResponder</td>
+	</tr>
+	<tr>
+		<td>2015-11-29</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #757 from fhoeben/ScenarioCoverage</td>
+	</tr>
+	<tr>
+		<td>2015-11-28</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Unless it was accessed in some obscure way, this recently introduced field was unused</td>
+	</tr>
+	<tr>
+		<td>2015-11-28</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Unused imports</td>
+	</tr>
+	<tr>
+		<td>2015-11-24</td>
+		<td>six42</td>
+		<td>Keep searchForm in wikiNav</td>
+	</tr>
+	<tr>
+		<td>2015-11-24</td>
+		<td>six42</td>
+		<td>Smart Search Screen II</td>
+	</tr>
+	<tr>
+		<td>2015-11-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove obsolete test.</td>
+	</tr>
+	<tr>
+		<td>2015-11-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Move test server starters to the test section</td>
+	</tr>
+	<tr>
+		<td>2015-11-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #836 from hansjoachim/issues</td>
+	</tr>
+	<tr>
+		<td>2015-11-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #830 from amolenaar/boyscouting</td>
+	</tr>
+	<tr>
+		<td>2015-11-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix issues pointed out by @hansjoachim.</td>
+	</tr>
+	<tr>
+		<td>2015-11-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix typo in header.</td>
+	</tr>
+	<tr>
+		<td>2015-11-21</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Add brackets to make this section clearer, even though it is one of multiple unused methods in this class</td>
+	</tr>
+	<tr>
+		<td>2015-11-21</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Sorted modifiers</td>
+	</tr>
+	<tr>
+		<td>2015-11-21</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Unused import</td>
+	</tr>
+	<tr>
+		<td>2015-11-20</td>
+		<td>Arjan Molenaar</td>
+		<td>Add license text to project.</td>
+	</tr>
+	<tr>
+		<td>2015-11-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Re-enable socket logging for SlimServer. make prints conditional (based onlog level).</td>
+	</tr>
+	<tr>
+		<td>2015-11-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Use fileUtil helper methods to close open streams.</td>
+	</tr>
+	<tr>
+		<td>2015-11-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Keep in-process Slim really in process (no sockets).</td>
+	</tr>
+	<tr>
+		<td>2015-11-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Clean references to ForkJoinPool, it's not in Java6</td>
+	</tr>
+	<tr>
+		<td>2015-11-19</td>
+		<td>six42</td>
+		<td>Smart Search Screen</td>
+	</tr>
+	<tr>
+		<td>2015-11-16</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #824 from jdufner/feature/detailed_diff</td>
+	</tr>
+	<tr>
+		<td>2015-11-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove screenshots.</td>
+	</tr>
+	<tr>
+		<td>2015-11-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Move HtmlDiffUtils, so Slim does no longer depend on diff-utils.</td>
+	</tr>
+	<tr>
+		<td>2015-11-13</td>
+		<td>Juergen Dufner</td>
+		<td>unify handling of normal test results and symbols</td>
+	</tr>
+	<tr>
+		<td>2015-11-09</td>
+		<td>Juergen Dufner</td>
+		<td>Update screenshot</td>
+	</tr>
+	<tr>
+		<td>2015-11-09</td>
+		<td>Juergen Dufner</td>
+		<td>Improved diff in symbols and skip failing tests. Introduce non-failing test.</td>
+	</tr>
+	<tr>
+		<td>2015-11-05</td>
+		<td>Juergen Dufner</td>
+		<td>Rework test of closing tag</td>
+	</tr>
+	<tr>
+		<td>2015-11-01</td>
+		<td>Juergen Dufner</td>
+		<td>Extend acceptance tests</td>
+	</tr>
+	<tr>
+		<td>2015-11-01</td>
+		<td>Juergen Dufner</td>
+		<td>Detailed diff in case of a failed Test</td>
+	</tr>
+	<tr>
+		<td>2015-11-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #828 from ploutarchos/patch-1</td>
+	</tr>
+	<tr>
+		<td>2015-11-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #829 from hansjoachim/SonarQube-javaversion</td>
+	</tr>
+	<tr>
+		<td>2015-11-14</td>
+		<td>Ploutarchos Spyridonos</td>
+		<td>Update content.txt</td>
+	</tr>
+	<tr>
+		<td>2015-11-14</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Set Java version for SonarQube to disable checks only relevant for newer Java versions, e.g. diamond operators ("&lt;&gt;")</td>
+	</tr>
+	<tr>
+		<td>2015-11-13</td>
+		<td>Arjan Molenaar</td>
+		<td>cosmetic</td>
+	</tr>
+	<tr>
+		<td>2015-11-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Improve (Java)SlimFactory interface.</td>
+	</tr>
+	<tr>
+		<td>2015-11-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Use one thread pool for all requests</td>
+	</tr>
+	<tr>
+		<td>2015-11-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Move executor service out of SocketService</td>
+	</tr>
+	<tr>
+		<td>2015-11-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove deprecated fitnesse.FitNesse.main().</td>
+	</tr>
+	<tr>
+		<td>2015-11-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Make requestParsingTimeLimit final.</td>
+	</tr>
+	<tr>
+		<td>2015-11-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Use local variables over instance variables.</td>
+	</tr>
+	<tr>
+		<td>2015-11-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Make FitNesseExpediter.requestParseTimeLimit private</td>
+	</tr>
+	<tr>
+		<td>2015-11-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Simplify request parsing by using an ExecutorService.</td>
+	</tr>
+	<tr>
+		<td>2015-11-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Improve error message when connection is closed.</td>
+	</tr>
+	<tr>
+		<td>2015-11-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove SocketService.getPort.</td>
+	</tr>
+	<tr>
+		<td>2015-11-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Boy scouting SocketFactory and SocketService. Use as little boolean properties as possible.</td>
+	</tr>
+	<tr>
+		<td>2015-11-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Cosmetic fixes.</td>
+	</tr>
+	<tr>
+		<td>2015-11-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Let SocketService use an Executor pool instead of a list of thread references.</td>
+	</tr>
+	<tr>
+		<td>2015-11-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove ResponseSender.getSocket.</td>
+	</tr>
+	<tr>
+		<td>2015-11-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Attempt to improve introductory documentation.</td>
+	</tr>
+	<tr>
+		<td>2015-11-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Boy scouting MockResponseSender and MockSocket.</td>
+	</tr>
+	<tr>
+		<td>2015-11-10</td>
+		<td>six42</td>
+		<td>Merge remote-tracking branch 'refs/remotes/unclebob/master'</td>
+	</tr>
+	<tr>
+		<td>2015-11-09</td>
+		<td>Arjan Molenaar</td>
+		<td>Deal with non-wiki words in !include. Fixes #820.</td>
+	</tr>
+	<tr>
+		<td>2015-11-09</td>
+		<td>Arjan Molenaar</td>
+		<td>Links should not be restricted to HTTP only links. Fixes #786.</td>
+	</tr>
+	<tr>
+		<td>2015-11-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Only print port information if server is started.</td>
+	</tr>
+	<tr>
+		<td>2015-11-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix unit test.</td>
+	</tr>
+	<tr>
+		<td>2015-11-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Reduce output over stderr.</td>
+	</tr>
+	<tr>
+		<td>2015-11-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Do not explicitly quote the Java executable anymore. #821</td>
+	</tr>
+	<tr>
+		<td>2015-11-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Make quoting a windows-only feature. Fixes issues on unix introduced by PR #821.</td>
+	</tr>
+	<tr>
+		<td>2015-11-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #821 from six42/master</td>
+	</tr>
+	<tr>
+		<td>2015-11-01</td>
+		<td>Mike Stockdale</td>
+		<td>Merge pull request #825 from jediwhale/master</td>
+	</tr>
+	<tr>
+		<td>2015-11-01</td>
+		<td>Mike Stockdale</td>
+		<td>fix slim protocol description for symbol copy</td>
+	</tr>
+	<tr>
+		<td>2015-10-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Ensure correct offset information is set.</td>
+	</tr>
+	<tr>
+		<td>2015-10-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Make sure offset for literal elements is from open up to closing symbol.</td>
+	</tr>
+	<tr>
+		<td>2015-10-20</td>
+		<td>Fried Hoeben</td>
+		<td>Minimize changes in pull request</td>
+	</tr>
+	<tr>
+		<td>2015-10-20</td>
+		<td>Fried Hoeben</td>
+		<td>Merge commit '8d727b3a1f0007962a98465f9336a75e6190f9b6' into ScenarioCoverage</td>
+	</tr>
+	<tr>
+		<td>2015-10-20</td>
+		<td>Fried Hoeben</td>
+		<td>Report scenario usage as extra test instead of to execution log</td>
+	</tr>
+	<tr>
+		<td>2015-10-14</td>
+		<td>Arjan Molenaar</td>
+		<td>boyscouting wikiformatter</td>
+	</tr>
+	<tr>
+		<td>2015-10-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Add knowledge of Whitespace to escaped table, so they can be properly interpreted by idea-fitnesse.</td>
+	</tr>
+	<tr>
+		<td>2015-10-14</td>
+		<td>six42</td>
+		<td>Save fix</td>
+	</tr>
+	<tr>
+		<td>2015-10-14</td>
+		<td>six42</td>
+		<td>Minimum fix</td>
+	</tr>
+	<tr>
+		<td>2015-10-14</td>
+		<td>six42</td>
+		<td>Class Path with Space</td>
+	</tr>
+	<tr>
+		<td>2015-10-10</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix FileUtil.writeLinesToFile, as discussed in #818.</td>
+	</tr>
+	<tr>
+		<td>2015-10-10</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #818 from hansjoachim/issues</td>
+	</tr>
+	<tr>
+		<td>2015-10-10</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #817 from hansjoachim/loggers</td>
+	</tr>
+	<tr>
+		<td>2015-10-10</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Made protected logger private and moved it to a subclass where it was being used</td>
+	</tr>
+	<tr>
+		<td>2015-10-10</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Made protected logger private</td>
+	</tr>
+	<tr>
+		<td>2015-10-10</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Made loggers private static final. This is to ensure that 1) other classes cannot use them to write log messages, 2) there is a common logger for the class regardless of the number of objects and that 3) it is initialized in one place only.</td>
+	</tr>
+	<tr>
+		<td>2015-10-10</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Place array designator on the type, not variable</td>
+	</tr>
+	<tr>
+		<td>2015-10-10</td>
+		<td>Hans Joachim Desserud</td>
+		<td>For loops replacable with foreach. I'd argue it's more readable, and we can often save a line which would be used to assign the value from iterator.next()</td>
+	</tr>
+	<tr>
+		<td>2015-10-10</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Missing Override annotations found by Eclipse, but not IntelliJ. This should hopefully be the last batch.</td>
+	</tr>
+	<tr>
+		<td>2015-10-09</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Modifiers in consistent order</td>
+	</tr>
+	<tr>
+		<td>2015-10-09</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Unused imports</td>
+	</tr>
+	<tr>
+		<td>2015-10-09</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Use Map.entrySet() instead of keySet() when we anyways look up both key and value for an entry.</td>
+	</tr>
+	<tr>
+		<td>2015-10-08</td>
+		<td>Arjan Molenaar</td>
+		<td>No need to put updateList and updateDoNotCopyOverList in the FitNesseRoot.</td>
+	</tr>
+	<tr>
+		<td>2015-10-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove and ignore recent changes file.</td>
+	</tr>
+	<tr>
+		<td>2015-10-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix Slim QueryTable example.</td>
+	</tr>
+	<tr>
+		<td>2015-10-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Add an extra test with UTF-8 characters. (#809)</td>
+	</tr>
+	<tr>
+		<td>2015-10-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #813 from hansjoachim/issues</td>
+	</tr>
+	<tr>
+		<td>2015-10-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #812 from hansjoachim/override-in-testscope</td>
+	</tr>
+	<tr>
+		<td>2015-10-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #815 from a1dutch/userguide</td>
+	</tr>
+	<tr>
+		<td>2015-10-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove test setSymbolUTF8(), since it's causing trouble on Windows.</td>
+	</tr>
+	<tr>
+		<td>2015-10-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #779 from six42/SymbolsInTableTable</td>
+	</tr>
+	<tr>
+		<td>2015-10-07</td>
+		<td>Andrew Holland</td>
+		<td>setup and teardown docs</td>
+	</tr>
+	<tr>
+		<td>2015-10-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Enforce UTF-8 encoding in build.xml. This might fix #809.</td>
+	</tr>
+	<tr>
+		<td>2015-10-06</td>
+		<td>Arjan Molenaar</td>
+		<td>use static imports for assertEquals() and friends.</td>
+	</tr>
+	<tr>
+		<td>2015-10-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Use static import for assertEquals.</td>
+	</tr>
+	<tr>
+		<td>2015-10-04</td>
+		<td>Arjan Molenaar</td>
+		<td>Update Travis config.</td>
+	</tr>
+	<tr>
+		<td>2015-10-04</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Remove modifiers from unused interface</td>
+	</tr>
+	<tr>
+		<td>2015-10-04</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Hm, no. I must have misread the history. Still unused though. Revert "Unused interface which claims to have been added by me in a pull request??? Looks like a merge issue or something..."</td>
+	</tr>
+	<tr>
+		<td>2015-10-04</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Forgotten interface modifier</td>
+	</tr>
+	<tr>
+		<td>2015-10-04</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Removed (most) modifiers from interfaces.</td>
+	</tr>
+	<tr>
+		<td>2015-10-04</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Unused interface which claims to have been added by me in a pull request??? Looks like a merge issue or something...</td>
+	</tr>
+	<tr>
+		<td>2015-10-04</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Remove unused imports again</td>
+	</tr>
+	<tr>
+		<td>2015-10-04</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Sort modifiers in consistent order. In some cases reduced visibility and/or uppercased constants</td>
+	</tr>
+	<tr>
+		<td>2015-10-04</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Used similarly as StringUtils.join()</td>
+	</tr>
+	<tr>
+		<td>2015-10-04</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Replace more usage of StringBuffer with StringBuilder</td>
+	</tr>
+	<tr>
+		<td>2015-10-04</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Replace use of StringBuffer with equivalent StringUtils.join()</td>
+	</tr>
+	<tr>
+		<td>2015-10-04</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Add missing Override annotations. Now also in test-scope</td>
+	</tr>
+	<tr>
+		<td>2015-10-04</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Varargs methods should only override or be override by varargs. Would think it works the same though.</td>
+	</tr>
+	<tr>
+		<td>2015-10-04</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #811 from hansjoachim/stringbuilder</td>
+	</tr>
+	<tr>
+		<td>2015-10-04</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #808 from hansjoachim/issues</td>
+	</tr>
+	<tr>
+		<td>2015-10-04</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #807 from hansjoachim/missing-overrides</td>
+	</tr>
+	<tr>
+		<td>2015-10-04</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #810 from hansjoachim/exceptions</td>
+	</tr>
+	<tr>
+		<td>2015-10-03</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Assume this was leftover from when usage of tags was removed in a recent commit</td>
+	</tr>
+	<tr>
+		<td>2015-10-03</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Immutable Exceptions. Made all fields in exception and errors final so that they cannot be changed after a problem occured.</td>
+	</tr>
+	<tr>
+		<td>2015-10-03</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Then replace some of the StringBuilder with plain String. For instance outside loops this makes more sense and is more readable.</td>
+	</tr>
+	<tr>
+		<td>2015-10-03</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Replace use of StringBuffer with StringBuilder. The former use syncronization in order to be thread-safe, but unfortunately this has negative impact on performance.</td>
+	</tr>
+	<tr>
+		<td>2015-10-03</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Add missing Override annotations</td>
+	</tr>
+	<tr>
+		<td>2015-10-03</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix #789, broken link to Ron Jeffries' RTF document.</td>
+	</tr>
+	<tr>
+		<td>2015-10-02</td>
+		<td>Arjan Molenaar</td>
+		<td>Use constructor to build TestHistory.</td>
+	</tr>
+	<tr>
+		<td>2015-10-02</td>
+		<td>Arjan Molenaar</td>
+		<td>Decouple TestResultRecord and TestSummary</td>
+	</tr>
+	<tr>
+		<td>2015-10-02</td>
+		<td>Arjan Molenaar</td>
+		<td>Make fields final in TestResultRecord</td>
+	</tr>
+	<tr>
+		<td>2015-10-02</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove method TestSummary.tallyPageCounts. It's a duplicate of add().</td>
+	</tr>
+	<tr>
+		<td>2015-10-02</td>
+		<td>Hans Joachim Desserud</td>
+		<td>No longer used</td>
+	</tr>
+	<tr>
+		<td>2015-10-02</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Seems to have been replaced by findSystemUnderTest(String methodName, Class&lt;?&gt; k, Object[] args) recently</td>
+	</tr>
+	<tr>
+		<td>2015-10-02</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Looks like this hasn't been in use for quite some time</td>
+	</tr>
+	<tr>
+		<td>2015-10-02</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Some more unused imports</td>
+	</tr>
+	<tr>
+		<td>2015-10-02</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Added question</td>
+	</tr>
+	<tr>
+		<td>2015-10-02</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Optional: made Lexer private and removed some more unused parts</td>
+	</tr>
+	<tr>
+		<td>2015-10-02</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Remove unused fields</td>
+	</tr>
+	<tr>
+		<td>2015-10-02</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Add parameters to raw type</td>
+	</tr>
+	<tr>
+		<td>2015-10-02</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #802 from hansjoachim/unused-imports</td>
+	</tr>
+	<tr>
+		<td>2015-10-02</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #805 from a1dutch/userguide</td>
+	</tr>
+	<tr>
+		<td>2015-10-01</td>
+		<td>Andrew Holland</td>
+		<td>update markup variables page to include underscores</td>
+	</tr>
+	<tr>
+		<td>2015-10-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Add comment for UpdateFileList class.</td>
+	</tr>
+	<tr>
+		<td>2015-10-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Load update lists as resource (instead of copying it first).</td>
+	</tr>
+	<tr>
+		<td>2015-10-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Move update information message to FitNesseMain.</td>
+	</tr>
+	<tr>
+		<td>2015-10-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Simplified/merge wiki content update logic.</td>
+	</tr>
+	<tr>
+		<td>2015-09-30</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Unused imports</td>
+	</tr>
+	<tr>
+		<td>2015-09-30</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #792 from amolenaar/git-plugin</td>
+	</tr>
+	<tr>
+		<td>2015-09-30</td>
+		<td>Arjan Molenaar</td>
+		<td>Use util.Clock everywhere, instead of System.currentTimeMillis().</td>
+	</tr>
+	<tr>
+		<td>2015-09-29</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #797 from DmitriyKartashov/CodeMirror</td>
+	</tr>
+	<tr>
+		<td>2015-09-29</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #799 from amolenaar/wiki-test-page-cleanup</td>
+	</tr>
+	<tr>
+		<td>2015-09-29</td>
+		<td>Arjan Molenaar</td>
+		<td>Add method to TestPage to provide the raw wiki text.</td>
+	</tr>
+	<tr>
+		<td>2015-09-29</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #801 from SamCooper/master</td>
+	</tr>
+	<tr>
+		<td>2015-09-29</td>
+		<td>Sam Cooper</td>
+		<td>System under test annotation executor supports multiple annotated fields.</td>
+	</tr>
+	<tr>
+		<td>2015-09-28</td>
+		<td>six42</td>
+		<td>Added comment</td>
+	</tr>
+	<tr>
+		<td>2015-09-28</td>
+		<td>six42</td>
+		<td>fixed typos</td>
+	</tr>
+	<tr>
+		<td>2015-09-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove generic type from TestSystemListener. Now all it expects is a TestPage.</td>
+	</tr>
+	<tr>
+		<td>2015-09-27</td>
+		<td>Arjan Molenaar</td>
+		<td>boy scouting. This is more efficient, according to IntelliJ.</td>
+	</tr>
+	<tr>
+		<td>2015-09-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Make all TestSystemListeners use TestPage, not WikiTestPage.</td>
+	</tr>
+	<tr>
+		<td>2015-09-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Move isTestPage to WIkiPageUtils. also add helper for WikiTestPage.getSourcePage.</td>
+	</tr>
+	<tr>
+		<td>2015-09-27</td>
+		<td>six42</td>
+		<td>new suite SlimSymbols</td>
+	</tr>
+	<tr>
+		<td>2015-09-27</td>
+		<td>six42</td>
+		<td>Removed $$ documentation</td>
+	</tr>
+	<tr>
+		<td>2015-09-27</td>
+		<td>six42</td>
+		<td>Fixed UTF8 test Symbol name</td>
+	</tr>
+	<tr>
+		<td>2015-09-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Create separate wiki page base class with Wikitext support.</td>
+	</tr>
+	<tr>
+		<td>2015-09-27</td>
+		<td>six42</td>
+		<td>Merge remote-tracking branch 'upstream/master' into SymbolsInTableTable</td>
+	</tr>
+	<tr>
+		<td>2015-09-27</td>
+		<td>DmitriyKartashov</td>
+		<td>Merge branch 'master' of https://github.com/unclebob/fitnesse into CodeMirror</td>
+	</tr>
+	<tr>
+		<td>2015-09-27</td>
+		<td>DmitriyKartashov</td>
+		<td>keep cursor and scroll point during formatting</td>
+	</tr>
+	<tr>
+		<td>2015-09-25</td>
+		<td>Arjan Molenaar</td>
+		<td>Add sonar-project.properties. Let's see if SonarQube picks it up.</td>
+	</tr>
+	<tr>
+		<td>2015-09-25</td>
+		<td>Arjan Molenaar</td>
+		<td>Add tech-debt badge.</td>
+	</tr>
+	<tr>
+		<td>2015-09-24</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix errors in CSS.</td>
+	</tr>
+	<tr>
+		<td>2015-09-24</td>
+		<td>Arjan Molenaar</td>
+		<td>boy scouting</td>
+	</tr>
+	<tr>
+		<td>2015-09-24</td>
+		<td>Arjan Molenaar</td>
+		<td>Boyscouting wysiwyg editor</td>
+	</tr>
+	<tr>
+		<td>2015-09-24</td>
+		<td>Arjan Molenaar</td>
+		<td>Ensure anchor links stay visible.</td>
+	</tr>
+	<tr>
+		<td>2015-09-24</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #788 from hcf/query-table-match-from-left-to-right</td>
+	</tr>
+	<tr>
+		<td>2015-09-24</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #791 from hcf/utf-8-characters-in-symbols</td>
+	</tr>
+	<tr>
+		<td>2015-09-24</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #793 from DmitriyKartashov/CodeMirror</td>
+	</tr>
+	<tr>
+		<td>2015-09-17</td>
+		<td>DmitriyKartashov</td>
+		<td>Merge branch 'master' of https://github.com/unclebob/fitnesse into CodeMirror</td>
+	</tr>
+	<tr>
+		<td>2015-09-17</td>
+		<td>DmitriyKartashov</td>
+		<td>1) fixing some problems in text highlighting in plane text editor 2) fixing browser search problem</td>
+	</tr>
+	<tr>
+		<td>2015-09-17</td>
+		<td>Hans-Christian Fjeldberg</td>
+		<td>Utf 8 characters in symbols</td>
+	</tr>
+	<tr>
+		<td>2015-09-15</td>
+		<td>Fried Hoeben</td>
+		<td>Move actual slimCoverage testSystem to test environment and see how a plugin could register it. This way slimCoverage can become a plugin, we only keep the changes in FitNesse itself that are needed for it to work</td>
+	</tr>
+	<tr>
+		<td>2015-09-15</td>
+		<td>Fried Hoeben</td>
+		<td>Merge branch 'master' of https://github.com/unclebob/fitnesse into ScenarioCoverage</td>
+	</tr>
+	<tr>
+		<td>2015-09-07</td>
+		<td>Hans-Christian Fjeldberg</td>
+		<td>Fixes issue #787</td>
+	</tr>
+	<tr>
+		<td>2015-09-04</td>
+		<td>Arjan Molenaar</td>
+		<td>Add extra test for !define</td>
+	</tr>
+	<tr>
+		<td>2015-09-04</td>
+		<td>Arjan Molenaar</td>
+		<td>Do not replace Image symbol, but add link as child. This way the offset information is maintained. See https://github.com/gshakhn/idea-fitnesse/issues/14.</td>
+	</tr>
+	<tr>
+		<td>2015-08-31</td>
+		<td>Arjan Molenaar</td>
+		<td>Improve error message for VersionComparerResponder.</td>
+	</tr>
+	<tr>
+		<td>2015-08-28</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove race condition from HistoryComparer (static field).</td>
+	</tr>
+	<tr>
+		<td>2015-08-28</td>
+		<td>Arjan Molenaar</td>
+		<td>Boyscout ColoredSlimTable. Remove issues denoted by SonarCube.</td>
+	</tr>
+	<tr>
+		<td>2015-08-19</td>
+		<td>Arjan Molenaar</td>
+		<td>remove .gitignore file from FitNesseRoot.</td>
+	</tr>
+	<tr>
+		<td>2015-08-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove git configuration instructions from user guide.</td>
+	</tr>
+	<tr>
+		<td>2015-08-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Update docs.</td>
+	</tr>
+	<tr>
+		<td>2015-08-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove FitNesseRoot/.gitignore.</td>
+	</tr>
+	<tr>
+		<td>2015-06-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Slim down standalone config.</td>
+	</tr>
+	<tr>
+		<td>2015-06-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove git plugin. You can find it in the fitnesse-git-plugin.</td>
+	</tr>
+	<tr>
+		<td>2015-08-11</td>
+		<td>six42</td>
+		<td>Merge remote-tracking branch 'upstream/master' into SymbolsInTableTable</td>
+	</tr>
+	<tr>
+		<td>2015-08-07</td>
+		<td>six42</td>
+		<td>Moved the switch management into the fixture code</td>
+	</tr>
+	<tr>
+		<td>2015-08-02</td>
+		<td>six42</td>
+		<td>Fix bugs in Symbol text replacements</td>
+	</tr>
+	<tr>
+		<td>2015-07-01</td>
+		<td>Fried Hoeben</td>
+		<td>Ensure scenario's with different number of in- or output parameters are not seen as the same scenario in the coverage report</td>
+	</tr>
+	<tr>
+		<td>2015-06-24</td>
+		<td>Fried Hoeben</td>
+		<td>Merge branch 'master' into ScenarioCoverage</td>
+	</tr>
+	<tr>
+		<td>2015-06-24</td>
+		<td>Fried Hoeben</td>
+		<td>Rename class</td>
+	</tr>
+	<tr>
+		<td>2015-06-24</td>
+		<td>Fried Hoeben</td>
+		<td>Create separate test system for slim scenario coverage</td>
+	</tr>
+	<tr>
+		<td>2015-06-23</td>
+		<td>Fried Hoeben</td>
+		<td>Remove coverage check logic from SlimTestSystem</td>
+	</tr>
+	<tr>
+		<td>2015-06-23</td>
+		<td>Fried Hoeben</td>
+		<td>Remove no-arg constructor only used by unit test in favor of a more explicit calling and passing null</td>
+	</tr>
+	<tr>
+		<td>2015-06-22</td>
+		<td>Fried Hoeben</td>
+		<td>Make coverage check a separate test system, so we don't actually invoke the fixtures just to determine coverage</td>
+	</tr>
+	<tr>
+		<td>2015-06-21</td>
+		<td>Fried Hoeben</td>
+		<td>Also show lowest node in hierarchy where scenario could be defined (defining there would give it smallest possible scope)</td>
+	</tr>
+	<tr>
+		<td>2015-06-21</td>
+		<td>Fried Hoeben</td>
+		<td>Add ability to determine place to put scenarios so that they have the smallest possible scope</td>
+	</tr>
+	<tr>
+		<td>2015-06-21</td>
+		<td>Fried Hoeben</td>
+		<td>Also output override per page</td>
+	</tr>
+	<tr>
+		<td>2015-06-20</td>
+		<td>Fried Hoeben</td>
+		<td>Keep scenarios ordered they way they are encountered</td>
+	</tr>
+	<tr>
+		<td>2015-06-20</td>
+		<td>Fried Hoeben</td>
+		<td>Send scenario usage report to standard out after run</td>
+	</tr>
+	<tr>
+		<td>2015-06-19</td>
+		<td>Fried Hoeben</td>
+		<td>Support tracking of which scenarios are (not) used</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<hr/>
+<br/><a href="../../FrontPage.html">.FrontPage</a> | <a href="../../FrontPage/FitNesseDevelopment/FrontPage.html">FrontPage</a> | <a href="../../RecentChanges.html">.RecentChanges</a><br/>
+</footer>
+</body>
+</html>

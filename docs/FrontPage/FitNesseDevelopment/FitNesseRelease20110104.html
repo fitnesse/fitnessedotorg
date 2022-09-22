@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FrontPage.FitNesseDevelopment.FitNesseRelease20110104</title>
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../FrontPage.html">FrontPage</a></li>
+<li><a href="../../FrontPage/FitNesseDevelopment.html">FitNesseDevelopment</a></li>
+
+  </ol>
+</nav>
+<article>
+<h3>release 
+	<a href="">20110104</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse.jar?responder=releaseDownload&release=20110104">fitnesse.jar</a></strong></td><td>4174913 bytes</td><td>0</td></tr></tbody></table><br/><br/><h3 id="0"><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> Release Notes 1/04/2011</h3>
+<p class="note">Uncle Bob Consulting LLC.</p>
+<br/><p class="note"><span class="red">Requires Java 1.6</span></p>
+<br/><h4 id="1">Github ids of Contributors to this release:</h4>
+* Gregor Gramlich<br/>* Markus Gartner<br/>* Mike Stockdale<br/>* unclebob<br/><br/><span class="meta">Thanks to all of you!</span><br/><table>
+	<tr>
+		<td><h4 id="2">Since:</h4></td>
+		<td colspan="2"><a href="../../FrontPage/FitNesseDevelopment/FitNesseRelease20101101.html">20101101</a></td>
+	</tr>
+	<tr>
+		<td><h4 id="3">Expected Release Date:</h4></td>
+		<td>&lt;none&gt;</td>
+		<td><span class="pass">RELEASED</span></td>
+	</tr>
+	<tr>
+		<td><h4 id="4">Theme:</h4></td>
+		<td colspan="2">New Parser</td>
+	</tr>
+</table>
+<br/><h3 id="5">Major Changes</h3>
+<ul>
+	<li>New Parser.  This should be much faster than previous parser and should allow much more flexibility for future changes.</li>
+</ul>
+<br/><h3 id="6">Git History</h3>
+<br/><table>
+	<tr>
+		<td>2011-01-04 08:44:35 -0600</td>
+		<td>unclebob</td>
+		<td colspan="2">housekeeping</td>
+	</tr>
+	<tr>
+		<td>2011-01-04 08:37:39 -0600</td>
+		<td>unclebob</td>
+		<td colspan="2">fixed ATs that turned yellow when constructors were no longer counted as asserts.</td>
+	</tr>
+	<tr>
+		<td>2011-01-03 15:07:07 -0600</td>
+		<td>unclebob</td>
+		<td colspan="2">Changed name of ParserTest to ParserTestHelper so that ant could build</td>
+	</tr>
+	<tr>
+		<td>2011-01-03 14:05:11 -0600</td>
+		<td>unclebob</td>
+		<td colspan="2">Merge branch 'master' of https://github.com/jediwhale/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2011-01-02 19:59:36 +0100</td>
+		<td>Gregor Gramlich</td>
+		<td colspan="2">Removed !see, because it crashed JUnitHelperExampleTest</td>
+	</tr>
+	<tr>
+		<td>2011-01-02 13:13:43 +0100</td>
+		<td>Gregor Gramlich</td>
+		<td colspan="2">Refactored the way that am object instance is fetched from the VariableStore Minor changes in handling null values, which are more cons</td>
+	</tr>
+	<tr>
+		<td>2011-01-02 12:16:13 +0100</td>
+		<td>Gregor Gramlich</td>
+		<td colspan="2">Updated the Slim protocol to reflect the Slim V0.3 changes.</td>
+	</tr>
+	<tr>
+		<td>2011-01-01 15:13:03 +0100</td>
+		<td>Gregor Gramlich</td>
+		<td colspan="2">Added Slim test page for the usage of slim symbols that store instances as parameters.</td>
+	</tr>
+	<tr>
+		<td>2011-01-01 14:45:59 +0100</td>
+		<td>Gregor Gramlich</td>
+		<td colspan="2">Added test for instances from Slim symbols as parameters for constructors</td>
+	</tr>
+	<tr>
+		<td>2011-01-01 14:33:48 +0100</td>
+		<td>Gregor Gramlich</td>
+		<td colspan="2">Allow object instances stored in Slim symbols as parameters for method calls.</td>
+	</tr>
+	<tr>
+		<td>2010-12-19 16:20:53 -0700</td>
+		<td>Mike Stockdale</td>
+		<td colspan="2">Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2010-12-16 15:31:18 -0700</td>
+		<td>Mike Stockdale</td>
+		<td colspan="2">new parser alias anchor</td>
+	</tr>
+	<tr>
+		<td>2010-12-14 15:42:36 -0700</td>
+		<td>Mike Stockdale</td>
+		<td colspan="2">new parser whitespace &gt; 1</td>
+	</tr>
+	<tr>
+		<td>2010-12-09 21:40:16 +0100</td>
+		<td>Gregor Gramlich</td>
+		<td colspan="2">Made the SlimHelperLibrary plugged in automatically</td>
+	</tr>
+	<tr>
+		<td>2010-12-09 18:34:30 +0100</td>
+		<td>Gregor Gramlich</td>
+		<td colspan="2">Renamed SlimHelperLibrary methods</td>
+	</tr>
+	<tr>
+		<td>2010-12-08 20:45:21 -0600</td>
+		<td>unclebob</td>
+		<td colspan="2">bumped slim protocol version to 0.3</td>
+	</tr>
+	<tr>
+		<td>2010-12-08 21:58:00 +0100</td>
+		<td>Gregor Gramlich</td>
+		<td colspan="2">Merge branch 'master' into instanceChaining</td>
+	</tr>
+	<tr>
+		<td>2010-12-08 21:57:16 +0100</td>
+		<td>Gregor Gramlich</td>
+		<td colspan="2">removed unused import that caused compiler warning</td>
+	</tr>
+	<tr>
+		<td>2010-12-08 21:52:33 +0100</td>
+		<td>Gregor Gramlich</td>
+		<td colspan="2">Added SlimHelperLibrary with Acceptance Test</td>
+	</tr>
+	<tr>
+		<td>2010-12-07 20:09:31 -0700</td>
+		<td>Mike Stockdale</td>
+		<td colspan="2">Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2010-12-07 20:08:30 -0700</td>
+		<td>Mike Stockdale</td>
+		<td colspan="2">new parser RC1 issues</td>
+	</tr>
+	<tr>
+		<td>2010-12-06 22:51:27 +0100</td>
+		<td>Gregor Gramlich</td>
+		<td colspan="2">Implemented fixture chaining with instances</td>
+	</tr>
+	<tr>
+		<td>2010-12-06 21:42:37 +0100</td>
+		<td>Gregor Gramlich</td>
+		<td colspan="2">Refactored, so that MethodExecutionResult keeps results as objects.</td>
+	</tr>
+	<tr>
+		<td>2010-12-05 20:33:29 +0100</td>
+		<td>Gregor Gramlich</td>
+		<td colspan="2">Fixture Chaining with instances stored in Slim variable</td>
+	</tr>
+	<tr>
+		<td>2010-12-05 19:55:36 +0100</td>
+		<td>Gregor Gramlich</td>
+		<td colspan="2">Merge remote branch 'upstream/master'</td>
+	</tr>
+	<tr>
+		<td>2010-12-04 22:48:17 -0600</td>
+		<td>unclebob</td>
+		<td colspan="2">housekeeping</td>
+	</tr>
+	<tr>
+		<td>2010-12-04 13:02:05 +0100</td>
+		<td>Markus GÃ¤rtner</td>
+		<td colspan="2">fixed bug which included TearDown in SuiteSetUp and SetUps in SuiteTearDown</td>
+	</tr>
+	<tr>
+		<td>2010-11-27 19:47:43 -0600</td>
+		<td>unclebob</td>
+		<td colspan="2">housekeeping</td>
+	</tr>
+	<tr>
+		<td>2010-11-27 19:44:35 -0600</td>
+		<td>unclebob</td>
+		<td colspan="2">Merge branch 'master' of https://github.com/MarkusGaertner/fitnessebacklogfixes</td>
+	</tr>
+	<tr>
+		<td>2010-11-27 19:44:28 -0600</td>
+		<td>unclebob</td>
+		<td colspan="2">housekeeping</td>
+	</tr>
+	<tr>
+		<td>2010-11-27 21:06:13 +0100</td>
+		<td>Markus GÃ¤rtner</td>
+		<td colspan="2">Merge branch 'master' of github.com:MarkusGaertner/fitnessebacklogfixes</td>
+	</tr>
+	<tr>
+		<td>2010-11-27 18:31:57 +0100</td>
+		<td>Markus GÃ¤rtner</td>
+		<td colspan="2">fixed a bug which Johannes Link mentioned for a combination of SuiteSetUp and SetUp within a test suite.</td>
+	</tr>
+	<tr>
+		<td>2010-11-26 21:41:17 -0600</td>
+		<td>unclebob</td>
+		<td colspan="2">6795427: Line breaks pass through in unescaped literals but are converted to &lt;br/&gt; in escaped literals</td>
+	</tr>
+	<tr>
+		<td>2010-11-26 16:46:02 -0600</td>
+		<td>unclebob</td>
+		<td colspan="2">Tracker: 5261157.  Don't count fixture in test counts.</td>
+	</tr>
+	<tr>
+		<td>2010-11-22 11:52:54 -0700</td>
+		<td>Mike Stockdale</td>
+		<td colspan="2">Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2010-11-22 10:56:04 -0700</td>
+		<td>Mike Stockdale</td>
+		<td colspan="2">new parser refactor</td>
+	</tr>
+	<tr>
+		<td>2010-11-12 16:36:35 -0700</td>
+		<td>Mike Stockdale</td>
+		<td colspan="2">new parser relative wikiword reference in include</td>
+	</tr>
+	<tr>
+		<td>2010-11-09 16:05:50 -0700</td>
+		<td>Mike Stockdale</td>
+		<td colspan="2">new parser performance</td>
+	</tr>
+	<tr>
+		<td>2010-11-08 18:34:48 -0700</td>
+		<td>Mike Stockdale</td>
+		<td colspan="2">new parser nesting priority</td>
+	</tr>
+	<tr>
+		<td>2010-11-01 12:52:29 -0500</td>
+		<td>unclebob</td>
+		<td>housekeeping</td>
+		<td></td>
+	</tr>
+</table>
+<br/>
+</article>
+<footer>
+<hr/>
+<br/><a href="../../FrontPage.html">.FrontPage</a> | <a href="../../FrontPage/FitNesseDevelopment/FrontPage.html">FrontPage</a> | <a href="../../RecentChanges.html">.RecentChanges</a><br/>
+</footer>
+</body>
+</html>

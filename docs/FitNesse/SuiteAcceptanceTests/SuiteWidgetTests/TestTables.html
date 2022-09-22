@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteWidgetTests.TestTables</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests/SuiteWidgetTests.html">SuiteWidgetTests</a></li>
+
+  </ol>
+</nav>
+<article>
+<h3 id="0">This page tests the construction of tables.</h3>
+<ul>
+	<li>First create a page with comment text on it.</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="2">script</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>start</td>
+		<td>Page Builder</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>line</td>
+		<td>|1 Row 1 Cell|</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>page</td>
+		<td>TableTestPage</td>
+	</tr>
+</table>
+<ul>
+	<li>Then request that page</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>valid?</td>
+		<td>contents?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>TableTestPage</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+<ul>
+	<li>Examine the page to be sure it is empty.</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="4">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+		<td>wrapped html?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>&lt;table.*&lt;tr&gt;\s*&lt;td&gt;\s*1 Row 1 Cell\s*&lt;/td&gt;\s*&lt;/tr&gt;\s*&lt;/table&gt;</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+<br/><b>Test that spaces inside table cells don't get interpreted.</b><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">script</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>start</td>
+		<td>Page Builder</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>line</td>
+		<td>| 1 is not a list|</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>page</td>
+		<td>TableTestPageTwo</td>
+	</tr>
+</table>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>valid?</td>
+		<td>contents?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>TableTestPageTwo</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="4">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+		<td>wrapped html?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>1 is not a list</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>&lt;ol&gt;</td>
+		<td>false</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>contents</td>
+		<td>1 is not a list</td>
+		<td>true</td>
+	</tr>
+</table>
+<br/><b>Test that nothing gets interpreted inside literal tables.</b><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">script</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>start</td>
+		<td>Page Builder</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>line</td>
+		<td>!|'''bold'''|''italic''|</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>page</td>
+		<td>TableTestPageThree</td>
+	</tr>
+</table>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>valid?</td>
+		<td>contents?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>TableTestPageThree</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="4">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+		<td>wrapped html?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>'''bold'''</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>''italic''</td>
+		<td>true</td>
+	</tr>
+</table>
+<br/><br/><b>Test that wikiwords, http links and e-mail adresses don't get interpreted inside no-links tables.</b><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">script</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>start</td>
+		<td>Page Builder</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>line</td>
+		<td>^|WikiWord|https://localhost|test@mail.com|</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>page</td>
+		<td>TableTestPageFour</td>
+	</tr>
+</table>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>valid?</td>
+		<td>contents?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>TableTestPageFour</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="4">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+		<td>wrapped html?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>&lt;td&gt;WikiWord&lt;/td&gt;</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>WikiWord&lt;a title="create page" href="../../../WikiWord.html?edit&amp;nonExistent=true"&gt;[?]&lt;/a&gt;</td>
+		<td>false</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>contents</td>
+		<td>&lt;td&gt;https://localhost&lt;/td&gt;</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>&lt;a href="https://localhost"&gt;https://localhost&lt;/a&gt;</td>
+		<td>false</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>contents</td>
+		<td>&lt;td&gt;test@mail.com&lt;/td&gt;</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>&lt;a href="mailto:test@mail.com"&gt;test@mail.com&lt;/a&gt;</td>
+		<td>false</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<a href="../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../FrontPage.html">Front Page</a> | <a href="../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

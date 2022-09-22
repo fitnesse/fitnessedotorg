@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteWidgetTests.TestHash</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests/SuiteWidgetTests.html">SuiteWidgetTests</a></li>
+
+  </ol>
+</nav>
+<article>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="4">script</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td>given page</td>
+		<td>HashPage</td>
+		<td>with content</td>
+		<td>!{a:b}</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>it should match</td>
+		<td colspan="3">.table class="hash_table"</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>it should match</td>
+		<td colspan="3">tr class="hash_row"</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>it should match</td>
+		<td colspan="3">td class="hash_key"</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>it should match</td>
+		<td colspan="3">td class="hash_value"</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>Response Examiner</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>wrapped html?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td></td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">script</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td>given page</td>
+		<td>HashPageTwo</td>
+		<td>with content</td>
+		<td>!{a:b,c:d}</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>it should match</td>
+		<td colspan="3">.tr class="hash_row"&gt;.*td class="hash_key"&gt;.*a.*/td&gt;.*td class="hash_value"&gt;.*b.*/td&gt;.*/tr&gt;</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>it should match</td>
+		<td colspan="3">.tr class="hash_row"&gt;.*td class="hash_key"&gt;.*c.*/td&gt;.*td class="hash_value"&gt;.*d.*/td&gt;.*/tr&gt;</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<a href="../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../FrontPage.html">Front Page</a> | <a href="../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

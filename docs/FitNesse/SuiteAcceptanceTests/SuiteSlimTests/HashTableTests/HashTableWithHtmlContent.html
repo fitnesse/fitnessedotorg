@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteSlimTests.HashTableTests.HashTableWithHtmlContent</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests.html">SuiteSlimTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/HashTableTests.html">HashTableTests</a></li>
+
+  </ol>
+</nav>
+<article>
+Values in hash tables should be handled in the same fashion as normal values passed to Slim.<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="4">hash fixture</td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>send</td>
+		<td><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">script</td>
+		<td class="hash_value">&lt;em&gt;&lt;b&gt;bold&lt;/b&gt;&lt;/em&gt;</td>
+	</tr>
+</table></td>
+		<td colspan="3">as hash</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>hash</td>
+		<td>script</td>
+		<td>is</td>
+		<td>&lt;em&gt;&lt;b&gt;bold&lt;/b&gt;&lt;/em&gt;</td>
+	</tr>
+</table>
+<br/>For comparison, this is how it works with a normal value:<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="2">echo fixture</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>echo</td>
+		<td>&lt;em&gt;&lt;b&gt;bold&lt;/b&gt;&lt;/em&gt;</td>
+		<td>and log</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<a href="../../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../../FrontPage.html">Front Page</a> | <a href="../../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

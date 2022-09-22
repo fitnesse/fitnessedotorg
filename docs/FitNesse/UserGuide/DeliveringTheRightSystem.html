@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.DeliveringTheRightSystem</title>
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../FitNesse/UserGuide.html">UserGuide</a></li>
+
+  </ol>
+</nav>
+<article>
+As we discussed in <a href="../../FitNesse/UserGuide/AcceptanceTests.html">Acceptance Tests</a>, <span class="fitnesse">FitNesse</span> testing is about building the <i>right code</i>, as opposed to unit-level testing, which is about building the <i>code right</i>. By "right code" we mean "right system": the feature set with the most business value.<br/><br/><h3 id="0">Everybody Helps Deliver the Right System</h3>
+Unit-level testing can be done by individual programmers or pairs of programmers without any involvement on the part of non-programmers. <span class="fitnesse">FitNesse</span> must be shared among programmers and non-programmers. Try sharing the use of <span class="fitnesse">FitNesse</span> among all the disciplines on your software team: managers, programmers, testers, business analysts and experts, customer representatives, users, useability experts, technical writers, support staff, and others. Everybody can benefit from helping to define and run <span class="fitnesse">FitNesse</span> tests.<br/><br/><h3 id="1">Write The Tests First</h3>
+As close as possible to the beginning of a software project, before you have done much requirements analysis, try to get key project stakeholers together to begin defining <span class="fitnesse">FitNesse</span> <a href="../../FitNesse/UserGuide/AcceptanceTests.html">Acceptance Tests</a>. If you are using an agile development method such as Extreme Programming, it will be fairly straightforward to fit this into your schedule and routine. But if not, you'll likely have to win over some hearts and minds, and break through a bit of inertia.<br/><br/><h3 id="2">Put Prose and Test Tables Together</h3>
+We're not necessarily suggesting that you replace your entire requirements process, in its current form, with <span class="fitnesse">FitNesse</span> tests. But we are suggesting that you integrate <span class="fitnesse">FitNesse</span> tests and test pages into your requirements process. You may even find, as we have, that all of the prose, images, and everything else that typically goes into a requirements document can just as easily go on <span class="fitnesse">FitNesse</span> test pages, along with the tests. The prose describe what the tests mean,<br/><br/><h3 id="3">Example Scenario: Once There Was Some Pizza...</h3>
+Imagine that a large shipping company is replacing an aging inventory control system. It's a mammoth undertaking. Everybody is involved. But before they get underway, one of the key executives decides that <span class="fitnesse">FitNesse</span> might be a big help. She asks the Product Manager for the new system to investigate <span class="fitnesse">FitNesse</span>, and to try using it from the outset on the new system. They hire a contractor to provide some <span class="fitnesse">FitNesse</span> training, and put together a plan for using it on the project.<br/><br/>In the first two weeks of the project, before any requirements meetings or documents have happened, the Product Manager gets together with just a few major stakeholders: one of the lead architects, a senior developer, a testing veteran, and one of the inventory experts who will be an eventual user of the system.<br/><br/>The Product Manager brings these other 4 people together in a small meeting room containing some Actual Food in the form of pizza and drinks. The senior developer agrees to create test tables in <span class="fitnesse">FitNesse</span> on te fly on his laptop. Yes! Test tables on the fly! Can that possibly work? Absolutely.<br/><h3 id="4">A Few First Test Tables</h3>
+This team uses pizza, white boards, paper, Excel, <span class="fitnesse">FitNesse</span>, and animated discussion to create only two first <span class="fitnesse">FitNesse</span> tables. Each table has 6 or 8 rows, and 5 or 6 columns. Both tables concern a single requirement (at least that's what everybody currently believes), and fit on a single test page. The test page contains only the two tables and a first stab at some explanatory prose. The meeting breaks up, after scheduling another similar meeting the next day.<br/><h3 id="5">"Wait. You Meant <i>That</i>?"</h3>
+Test tables describe requirements differently than prose (as we discuss in <a href="../../FitNesse/UserGuide/AcceptanceTests.html">Acceptance Tests</a>). The exercise of defining test tables for a requirement is a bracing and enlightening one.<br/><br/>Even when a team thinks they have a set of requirements nailed down in prose, using traditional requirements analysis and documents, they will often find that they learn useful things by trying to express those requirements in terms of executable sets of inputs and expected outputs.<br/><br/>You may often find that during the course of writing those tables, heated debates arise about the true meaning of the requirement. These are a healthy thing! You want these debates to occur, and you want them to occur as early as possible in the project, and certainly before any code has been written.<br/><br/>Our intrepid team has several such heated debates between mouthfuls of pizza, and they manage to come to agreement on all of them, in a way that is then expressed in those first two tables. Lots of discussion and sketching and writing all get boiled down to a small handful of inputs and expected outputs that eventually must execute correctly.<br/><h3 id="6">So What? What Does that Give You?</h3>
+What can our team show for these first couple of hours of work? Well, they all agree that:<br/><ul>
+	<li>The two tables and their accompanying prose describe all the important inputs and outputs for this one requirement (as far as they can tell so far)</li>
+	<li>The programmers have a very good idea what it means to write the code to get those two test tables to pass.</li>
+	<li>Once those two test tables both run green, <b>that requirement will be done</b>, and they can move on to another requirement.</li>
+	<li>The Product Manager, tester, and inventory expert all agree that they may be able to refine the two test tables to describe a few <i>unhappy path</i> scenarios that they did not identify in the meeting.</li>
+</ul>
+<h3 id="7">Successive Refinement: Let's Talk About the Tests</h3>
+As the days and weeks go by, the team creates and publishes more test pages containing more test tables and prose. They organize these into a Test Suite. As the weeks pass, tables and test pages get split, combined, moved a round, and otherwise refined.<br/><br/>Within the first couple of weeks, the programmers get those first two test tables for that first requirement to turn from red to green. They send out a triumphant email. But instead of getting back a congratulatory email from the Product Manager, they get back an email saying "You know what? It turns out that that work is not <i>exactly</i> what we needed..." So the Development Manager and the Product Manager get together and <b>refine those first two tables</b> so that they <i>do</i> describe exactly what was needed.  Over the next couple of weeks, the programmers refine their work to get these new test tables to pass. And then they do in fact receive their congratulatory email.<br/><br/>The point of this is that when it comes to addressing any ambiguities or misunderstandings in requirements, <b>test tables are the perfect thing to talk about</b>. By refining the test tables, and organizing the requirements discussion around them, the team successively refines the system itself. (They may also successively refine their ability to deliver the system iteratively and incrementally, but that's another story!)<br/><h2 id="8">Learning More</h2>
+If you haven't already done so, check out the <a href="../../FitNesse/UserGuide/TwoMinuteExample.html">Two Minute Example</a>. You should also check out <a href="../../FitNesse/UserGuide/AcceptanceTests.html">Acceptance Tests</a>.<br/><br/><br/>
+</article>
+<footer>
+<center>User Guide Contents</center><center><a href="../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+</footer>
+</body>
+</html>

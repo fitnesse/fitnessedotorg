@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.WritingAcceptanceTests.FitFramework.ComparisonExpressionsInFixtures</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+<li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">WritingAcceptanceTests</a></li>
+<li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework.html">FitFramework</a></li>
+
+  </ol>
+</nav>
+<article>
+<h1 id="0">Comparison Expressions in Table Cells</h1>
+<p class="note">specific to certain FIT implementations.</p>
+<br/>Comparison expressions can also be used in numeric cells that represent expected outputs.  In these expression the underscore character represents the return value of the method.  You can use standard inequalities.<br/><ul>
+	<li>For example:<ul>
+	<li><b>_ &lt; 32</b> or</li>
+	<li><b>_ &gt;= 99</b>.</li>
+</ul>
+</li>
+	<li>You can also use a range such as:<ul>
+	<li><b>38 &lt;= _ &lt;55</b>.</li>
+</ul>
+</li>
+	<li>For simple expressions the underscore can be omitted, thus:<ul>
+	<li><b>&lt;99</b> is legal.</li>
+</ul>
+</li>
+</ul>
+<br/>There are two special functions that you can override when you write a ColumnFixture<br/><ul>
+	<li><i>reset()</i> will be called at the beginning of each row.</li>
+	<li><i>execute()</i> will be called just prior to processing the first <i>()</i> or <i>?</i> cell in each row, or after the last cell in the row has been processed, whichever comes first.</li>
+</ul>
+<br/>You can use these two functions to treat each row as a transaction.  <i>reset()</i> can clear all the variables and get ready for the next transaction.  <i>execute()</i> can do the transaction processing.<br/>
+</article>
+<footer>
+<center>User Guide Contents</center><center><a href="../../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+</footer>
+</body>
+</html>

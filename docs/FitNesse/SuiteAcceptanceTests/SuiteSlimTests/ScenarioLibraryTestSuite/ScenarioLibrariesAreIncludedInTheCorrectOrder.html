@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteSlimTests.ScenarioLibraryTestSuite.ScenarioLibrariesAreIncludedInTheCorrectOrder</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests.html">SuiteSlimTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/ScenarioLibraryTestSuite.html">ScenarioLibraryTestSuite</a></li>
+
+  </ol>
+</nav>
+<article>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="4">script</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>create page</td>
+		<td>GrandParentPage</td>
+		<td>with content</td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>create page</td>
+		<td>GrandParentPage.ParentPage</td>
+		<td>with content</td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>create page</td>
+		<td>ScenarioLibrary</td>
+		<td>with content</td>
+		<td>granduncy</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>create page</td>
+		<td>GrandParentPage.ScenarioLibrary</td>
+		<td>with content</td>
+		<td>uncle</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>create page</td>
+		<td>GrandParentPage.ParentPage.ScenarioLibrary</td>
+		<td>with content</td>
+		<td>brother</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>given slim test page</td>
+		<td colspan="3">GrandParentPage.ParentPage.TestPage</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>it should contain</td>
+		<td>brother</td>
+		<td>in line</td>
+		<td>BROTHER_LINE</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>it should contain</td>
+		<td>uncle</td>
+		<td>in line</td>
+		<td>UNCLE_LINE</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>it should contain</td>
+		<td>granduncy</td>
+		<td>in line</td>
+		<td>GRAND_UNCLE_LINE</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>the line</td>
+		<td>BROTHER_LINE</td>
+		<td>should come after</td>
+		<td>UNCLE_LINE</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>the line</td>
+		<td>UNCLE_LINE</td>
+		<td>should come after</td>
+		<td>GRAND_UNCLE_LINE</td>
+	</tr>
+</table>
+<br/>
+</article>
+<footer>
+<a href="../../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../../FrontPage.html">Front Page</a> | <a href="../../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PlugIns.WikiMailPlugin</title>
+<link rel="stylesheet" type="text/css" href="../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../FitNesseDownload.html">Download</a></li>
+      <li><a href="../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../PlugIns.html">PlugIns</a></li>
+
+  </ol>
+</nav>
+<article>
+<center><h2 id="0">Wiki Mail</h2>
+</center><center>Create new pages and append content to existing pages on your FitNesse site by sending email to it.</center><center>by Micah Martin<a title="create page" href="../MicahMartin.html?edit&amp;nonExistent=true">[?]</a></center><br/><h3 id="1">Download</h3>
+<a href="http://fitnesse.org/files/plugins/wikimail/wikimail.jar">wikimail.jar</a> - This is all you need to install wiki mail<br/><a href="http://fitnesse.org/files/plugins/wikimail/wikimail_src.zip">wikimail_src.zip</a> - The source code.<br/><br/><br/><h3 id="2">Installation</h3>
+<ul>
+	<li><b>PREREQUISITE:</b> - A reasonable mail server is required.  This mail server must be able to execute programs upon receipt of an email to a particular address.  </li>
+	<li>On your mail server build a shell script called <i>'wikimail.sh</i> similar to this: </li>
+</ul>
+<pre>#!/bin/sh
+
+CLASSPATH=wikimail.jar:fitnesse.jar
+OUTPUT=out.log
+ERROR=err.log
+java -cp $CLASSPATH com.objectmentor.wikimail.Postmaster &lt;fitnesse host&gt; &lt;port&gt; &gt;&gt; $OUTPUT 2&gt;&gt; $ERROR</pre><br/><ul>
+	<li>Configure your web server to execute this script when an email is received at a particular address.  If you use sendmail as your server you would add the following line to the <i>aliases</i> file. <pre>wikimail: |wikimail.sh</pre></li>
+	<li>Try it out.  Write an email to <a href="mailto:wikimail@yourmailserver.com">wikimail@yourmailserver.com</a> with a subject <b>WikiMailTestPage</b>.  If all goes well there will be a page named <b>WikiMailTestPage</b> in your FitNesse site.  If the page wasn't created, check the <i>out.log</i> and <i>err.log</i> files used in the shell script and also check the mailog for error messages.</li>
+</ul>
+<br/><h3 id="3">Options</h3>
+<pre>Usage: java com.objectmentor.wikimail.Postmaster [options] host port);
+       -a &lt;username&gt; &lt;password&gt;</pre><br/><ul>
+	<li>Authentication.  If your <span class="fitnesse">FitNesse</span> server requires authentication, you'll need to use the -a option.</li>
+</ul>
+<br/><h3 id="4">Details</h3>
+When sending wikimail, use a WikiWord<a title="create page" href="../FitNesse/WikiWord.html?edit&amp;nonExistent=true">[?]</a> as the subject of the email.  If the named page exists exists the content of the email will be append to the page.  If the page doens't exist then it will be created with the content of the email.<br/><br/>If the subject is not a valid WikiWord<a title="create page" href="../FitNesse/WikiWord.html?edit&amp;nonExistent=true">[?]</a>, then a page will be created at <b>WikiMail.BadSubject20041111123456</b> that contains the content of the email.  This page can then be moved or renamed at a later time.<br/><br/><div class="collapsible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">Included page: .PluginsComments.WikiMail<a title="create page" href="../PluginsComments/WikiMail.html?edit&amp;nonExistent=true">[?]</a></p>
+	<div><span class="error">Page include failed because the page .PluginsComments.WikiMail does not exist.</span></div>
+</div>
+
+</article>
+<footer>
+<center>FitNesse v20220921</center><center><a href="../FrontPage.html">Front Page</a> - <a href="../FitNesse/UserGuide.html">User Guide</a> - <a href="../FitNesseFeatures.html">Features</a> - <a href="../FitNesseDownload.html">Download</a> - <a href="../PlugIns.html">Plugins</a> - <a href="../PlugIns.html#slimfixtures">Fixtures</a> - <a href="https://gitter.im/fitnesse-org/fitnesse">Gitter Community</a></center>
+</footer>
+</body>
+</html>

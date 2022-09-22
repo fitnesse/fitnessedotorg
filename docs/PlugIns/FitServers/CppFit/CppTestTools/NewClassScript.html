@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PlugIns.FitServers.CppFit.CppTestTools.NewClassScript</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../PlugIns.html">PlugIns</a></li>
+<li><a href="../../../../PlugIns/FitServers.html">FitServers</a></li>
+<li><a href="../../../../PlugIns/FitServers/CppFit.html">CppFit</a></li>
+<li><a href="../../../../PlugIns/FitServers/CppFit/CppTestTools.html">CppTestTools</a></li>
+
+  </ol>
+</nav>
+<article>
+usage<br/><pre>
+NewClass ClassName
+</pre><br/>This script creates ClassName.h, ClassName.cpp, and ClassNameTest.cpp and modifies the makefile.  If you have a "DOTO =" in your makefile, the script will append a backslash newline ClassName.o ClassNameTest.o backslash newline, resulting in this <br/><pre>
+&lt;whatever was before DOTO&gt;DOTO =\
+ ClassName.o ClassNameTest.o\
+&lt;whatever was after DOTO&gt;
+</pre><br/>If you are using MS tools you get an error about no makefile found.  You have to add the created files into your build environment.<br/><br/>There are three template files that provide a basis for the newly created class.  The template files can be found in $(CPP_TEST_TOOLS)/CppSourseTemplates<br/><br/>The created files look like this:<br/><div class="collapsible closed"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">!3 ClassName.h</p>
+	<div><pre>
+#ifndef D_ClassName_H
+#define D_ClassName_H
+
+class ClassName
+{
+  public:
+    explicit ClassName();
+    virtual ~ClassName();
+
+  private:
+    ClassName(const ClassName&amp;);
+    ClassName&amp; operator=(const ClassName&amp;);
+};
+
+#endif  // D_ClassName_H
+</pre><br/><hr/>
+<br/>This class is a good starting point.  This starting point prevents the compiler from writing a bunch of code <i>for</i> you.  The constructor is declared <i>explicit</i> to prevent the complier from performing implicit conversions.  This actually has no effect for a default constructor.  It is tolerated by the compiler.  Later you may parameterize your constructor which may result in unwanted conversions.  Being that you are doing TDD you will want to test and document any intended conversion in your test cases.<br/><br/>The destructor is declared virtual.  This is a safety precaution in case this class is used as a base class one day.  The programmer can delete the virtual keyword if the presence of a vtable is terrifying.<br/><br/>A default constructor is declared to prevent the compiler from defining one automatically <br/><br/>The copy constructor and assignment operator are placed in the private area and not implemented in the cpp file.  This prevents the compiler from writing those functions for itself and some unsuspecting programmer from accidentally using them.  If you want a copy constructor and assignment operator, you can create then using TDD.<br/></div>
+</div>
+<div class="collapsible closed"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">!3 ClassName.cpp</p>
+	<div><pre>
+#include "ClassName.h"
+
+ClassName::ClassName()
+{
+}
+
+ClassName::~ClassName()
+{
+}
+</pre><br/><hr/>
+<br/>Empty constructor and destructor implementation are provided in the cpp file to encourage not inlining these definitions.  Those empty looking curley braces actuall will bring along some compiler provided baggage.  So to keep the foot print from bloating, we start with the implementations in teh cpp file.  You can always remove them if you want.<br/></div>
+</div>
+<div class="collapsible closed"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">!3 ClassNameTest.cpp</p>
+	<div><pre>
+#include "UnitTestHarness/TestHarness.h"
+#include "ClassName.h"
+
+// to make sure this file gets linked in to your test main
+int i = move_the_IMPORT_TEST_GROUP_so_main_references_it_and_delete_this_line;
+IMPORT_TEST_GROUP(ClassName); 
+EXPORT_TEST_GROUP(ClassName);
+
+namespace 
+{
+  ClassName* aClassName;
+
+  void SetUp()
+  {
+    aClassName = new ClassName();
+  }
+  void TearDown()
+  {
+    delete aClassName;
+  }
+}
+
+TEST(ClassName, Create)
+{
+  ClassName aClassName;
+  FAIL("Making sure ClassNameTest is hooked in");
+}
+</pre><br/><hr/>
+<br/>An skeletal test file is created.  All three files are expected to compile once the inserted compiler error is removed.  If your tests are in a library, you will need to more the IMPORT_TEST_GROUP line to some file that is included by the file containing your test main.  <br/><br/>They new test fails so that you can confirm that the test has been installed.  Remove the FAIL invocation once you build successfully and get this error message<br/><pre>
+Failure in TEST(Printer, PrintConstCharStar)
+    PrinterTest.cpp(184)
+    Making sure ClassNameTest is hooked in
+</pre><br/>The SetUp function is called before the body of each TEST is executed.  TearDown is called after the body of each TEST is executed.  SetUp and TearDown are in an unnamed namespace to keep them out of the global namespace.  They are only visible in this file.<br/><br/>The boiler plate test provides two techniques for instance creation: <br/><ul>
+	<li>from the heap with new and delete using SetUp and TearDown</li>
+	<li>and autoamtic instantiation in the TEST method</li>
+</ul>
+<br/>You will probably want to do one way or another.  <br/><br/></div>
+</div>
+
+</article>
+<footer>
+<center>FitNesse v20220921</center><center><a href="../../../../FrontPage.html">Front Page</a> - <a href="../../../../FitNesse/UserGuide.html">User Guide</a> - <a href="../../../../FitNesseFeatures.html">Features</a> - <a href="../../../../FitNesseDownload.html">Download</a> - <a href="../../../../PlugIns.html">Plugins</a> - <a href="../../../../PlugIns.html#slimfixtures">Fixtures</a> - <a href="https://gitter.im/fitnesse-org/fitnesse">Gitter Community</a></center>
+</footer>
+</body>
+</html>

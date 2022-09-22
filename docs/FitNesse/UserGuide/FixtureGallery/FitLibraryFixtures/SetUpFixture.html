@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.FixtureGallery.FitLibraryFixtures.SetUpFixture</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+<li><a href="../../../../FitNesse/UserGuide/FixtureGallery.html">FixtureGallery</a></li>
+<li><a href="../../../../FitNesse/UserGuide/FixtureGallery/FitLibraryFixtures.html">FitLibraryFixtures</a></li>
+
+  </ol>
+</nav>
+<article>
+<br/><i>Next page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/FitLibraryFixtures/CalculateFixture.html">CalculateFixture</a> Parent page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/FitLibraryFixtures.html">FitLibrary Fixtures</a></i><br/><h2 id="0">SetUpFixture</h2>
+<b> SetUpFixture </b> is an excellent replacement for <b> ColumnFixture </b> if you do not want to test anything, just to prepare the stage for other fixtures. For example, you can use <b> SetUpFixture </b> to insert rows into a database table or to create domain objects that will be used in later tests. <br/><br/><h3 id="1">Table Format</h3>
+ The first row of a <b> SetUpFixture </b> table is the fixture class name. The second row lists property names for your object. All rows after that contain the property values. There are no output cells in a <b> SetUpFixture </b> table, all cells are used for inputs. <br/><br/><pre>
+!|SetUpFixtureTest|
+|player|post code|balance|
+|John Smith|SW4 66Z|10.00|
+|Michael Jordan|NE1 8AT|12.00|
+</pre><br/><h3 id="2">Fixture class</h3>
+ The fixture class should extend <b> fitlibrary.SetUpFixture </b> and declare a single method. The method name should be equal to all the property names from the table joined together (you can use CamelCase capitalisation to separate words). The method should have an argument for each column in the table. The <b> SetUpFixture </b> table is executed by calling the method once for each data row in the table. <br/><br/><h3 id="3">Java Source Code</h3>
+<pre>
+package info.fitnesse.fixturegallery;
+
+import info.fitnesse.fixturegallery.domain.Player;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import fitlibrary.SetUpFixture;
+
+public class SetUpFixtureTest extends SetUpFixture{
+	public SetUpFixtureTest() {
+		 Player.players.clear();
+	}
+	public void playerPostCodeBalance(String name, String postCode, double balance){
+	 Player.addPlayer(name, postCode, balance) ;
+ }
+}
+</pre><br/><h3 id="4">.NET Source Code</h3>
+<pre>
+
+namespace info.fitnesse.fixturegallery
+{
+    public class SetUpFixtureTest : fitlibrary.SetUpFixture
+    {
+        public SetUpFixtureTest()
+        {
+            Player.players.Clear();
+        }
+        public void PlayerPostcodeBalance(string player, string postCode, decimal balance)
+        {
+            Player p = new Player();
+            p.Name = player;
+            p.PostCode = postCode;
+            p.Balance = balance;
+            Player.players.Add(p);
+        }
+       }
+}
+</pre><br/><h3 id="5">Python Source Code</h3>
+<pre>
+from fitLib.SetUpFixture import SetUpFixture
+from info.fitnesse.fixturegallery.domain.Player import Player
+
+class SetUpFixtureTest(SetUpFixture):
+    _typeDict = {}
+
+    def __init__(self):
+        Player.players = []
+
+    # JAVA: void playerPostCodeBalance(String name, String postCode, double balance){
+    _typeDict["playerPostCodeBalance.types"] = [ None, "String", "String", "Float" ]
+    def playerPostCodeBalance(self, name, postCode, balance):
+        Player.addPlayer(name, postCode, balance)
+</pre><br/><h3 id="6">Notes</h3>
+ The method name can be very long and typing it manually is a bit error prone. Instead of that, just write the table, run the test and it will fail for the first time.<UserGuide will print the name of the method it looked for, so you can copy and paste that into your source code. <br/><br/><h3 id="7">Usage</h3>
+ Use the <b> SetUpFixture </b> to quickly initialise a list of domain objects, to prepare a database table or to execute a method several times with different arguments. <br/><br/> Do not use the <b> SetUpFixture </b> if the result of the operation or error verification is important. Use the <b> ColumnFixture </b> (see <a href="../../../../FitNesse/UserGuide/FixtureGallery/BasicFitFixtures/ColumnFixture.html">ColumnFixture</a>) or the <b> CalculateFixture </b> instead. <br/><br/><br/><i>Next page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/FitLibraryFixtures/CalculateFixture.html">CalculateFixture</a> Parent page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/FitLibraryFixtures.html">FitLibrary Fixtures</a></i><br/>
+</article>
+<footer>
+<a href="../../../../FitNesse/UserGuide/FixtureGallery.html">Table of contents</a>| Fixture Gallery on <a href="http://sourceforge.net/projects/fixturegallery">SourceForge</a> | Fixture Gallery live wiki on  <a href="http://fitnesse.info/fixturegallery">UserGuide.Info</a> | <a href="http://gojko.net/fitnesse/fixturegallery">Comments and Feedback</a> | <a href="../../../../FrontPage.html">Front Page</a><br/>
+</footer>
+</body>
+</html>

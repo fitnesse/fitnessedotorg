@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PlugIns.JdbcFixtures.JdbcSamples.InsertSample</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../PlugIns.html">PlugIns</a></li>
+<li><a href="../../../PlugIns/JdbcFixtures.html">JdbcFixtures</a></li>
+<li><a href="../../../PlugIns/JdbcFixtures/JdbcSamples.html">JdbcSamples</a></li>
+
+  </ol>
+</nav>
+<article>
+<ul>
+	<li><b>Setup</b>: Create a table <i>NUMBERS</i>. </li>
+</ul>
+<table>
+	<tr>
+		<td>Script Fixture</td>
+		<td>CREATE TABLE NUMBERS ( VALUE INT )</td>
+	</tr>
+	<tr>
+		<td colspan="2">call?</td>
+	</tr>
+	<tr>
+		<td colspan="2">OK</td>
+	</tr>
+</table>
+<br/><hr/>
+<br/>The <a href="../../../PlugIns/JdbcFixtures/JdbcSamples/InsertSample.html">Insert</a> Fixture uses 2 or 3 parameters.<br/><ul>
+	<li>args[0] for the name of a table.</li>
+	<li>args[1] is the number of columns.</li>
+	<li>args[2] is <i>APPEND</i></li>
+</ul>
+The second line defines the names of the columns.<br/><br/><table>
+	<tr>
+		<td>Insert</td>
+		<td>NUMBERS</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td colspan="3">VALUE</td>
+	</tr>
+	<tr>
+		<td colspan="3">10</td>
+	</tr>
+	<tr>
+		<td colspan="3">20</td>
+	</tr>
+	<tr>
+		<td colspan="3">30</td>
+	</tr>
+</table>
+<br/><table>
+	<tr>
+		<td>Insert</td>
+		<td>NUMBERS</td>
+		<td>1</td>
+		<td>APPEND</td>
+	</tr>
+	<tr>
+		<td colspan="4">VALUE</td>
+	</tr>
+	<tr>
+		<td colspan="4">40</td>
+	</tr>
+	<tr>
+		<td colspan="4">50</td>
+	</tr>
+	<tr>
+		<td colspan="4">60</td>
+	</tr>
+</table>
+<br/>We can use Select to validate the table.<br/><table>
+	<tr>
+		<td>Select</td>
+		<td>NUMBERS</td>
+	</tr>
+	<tr>
+		<td colspan="2">VALUE</td>
+	</tr>
+	<tr>
+		<td colspan="2">10</td>
+	</tr>
+	<tr>
+		<td colspan="2">20</td>
+	</tr>
+	<tr>
+		<td colspan="2">30</td>
+	</tr>
+	<tr>
+		<td colspan="2">40</td>
+	</tr>
+	<tr>
+		<td colspan="2">50</td>
+	</tr>
+	<tr>
+		<td colspan="2">60</td>
+	</tr>
+</table>
+<br/>Or we can use a Script to validate the table.<br/><table>
+	<tr>
+		<td>Script Fixture</td>
+		<td colspan="3">begin Select count(*), sum(value) into :out 1, :out 2 from numbers; end;</td>
+	</tr>
+	<tr>
+		<td>call?</td>
+		<td>BIND1</td>
+		<td>BIND2</td>
+		<td>statement?</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>6</td>
+		<td>210</td>
+		<td></td>
+	</tr>
+</table>
+<br/><hr/>
+<br/><ul>
+	<li><b>Tear Down</b>: Drop table <i>NUMBERS</i></li>
+</ul>
+Clean up<br/><table>
+	<tr>
+		<td>Script Fixture</td>
+		<td>DROP TABLE NUMBERS</td>
+	</tr>
+	<tr>
+		<td colspan="2">call?</td>
+	</tr>
+	<tr>
+		<td colspan="2"></td>
+	</tr>
+</table>
+ 
+</article>
+<footer>
+<center>FitNesse v20220921</center><center><a href="../../../FrontPage.html">Front Page</a> - <a href="../../../FitNesse/UserGuide.html">User Guide</a> - <a href="../../../FitNesseFeatures.html">Features</a> - <a href="../../../FitNesseDownload.html">Download</a> - <a href="../../../PlugIns.html">Plugins</a> - <a href="../../../PlugIns.html#slimfixtures">Fixtures</a> - <a href="https://gitter.im/fitnesse-org/fitnesse">Gitter Community</a></center>
+</footer>
+</body>
+</html>

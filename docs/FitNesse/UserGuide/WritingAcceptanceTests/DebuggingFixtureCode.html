@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.WritingAcceptanceTests.DebuggingFixtureCode</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../FitNesse/UserGuide.html">UserGuide</a></li>
+<li><a href="../../../FitNesse/UserGuide/WritingAcceptanceTests.html">WritingAcceptanceTests</a></li>
+
+  </ol>
+</nav>
+<article>
+<h2 id="0">Debugging with a local wiki site</h2>
+<br/>To debug fixture execution when wiki pages are accessible over a local file system, see <a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/RunningFromJunit.html">Running From Junit</a>.<br/><br/>Debugging is also possible with the <i><span class="fitnesse">FitNesse</span></i> language plugin for IntelliJ IDEA.<br/> <br/><h2 id="1">Debugging with a remote wiki site</h2>
+<br/>Fixture code of a remote <span class="fitnesse">FitNesse</span> wiki site can be debugged using the remote debugger to connect to the slim executor or fit client.<br/><br/>To set up debugging for your fixture code:<br/><ol>
+	<li>If necessary (it should work out of the box for java and C# slim), set up the <b>REMOTE_DEBUG_COMMAND</b> and <b>REMOTE_DEBUG_RUNNER</b> in your wiki.  Together these commands should start the server in debug mode and wait for the debugger to connect before the code is run.  As these variales are only used when you start a test in debug mode it is a good idea to specify this define on root page of your wiki.</li>
+	<li>When you want to debug a test, start by adding <b>?responder=test&amp;remote_debug=true</b> to the url for the test.</li>
+	<li>After starting the test in <span class="fitnesse">FitNesse</span>, start a remote debugging process in your debugging tool which should connect to slim/fit server.  Remember to make sure you are using the right port.  (Port 8000 if you are using the default settings for java)</li>
+</ol>
+<br/>The Tools menu contains a Remote Debug action that can be used to start a test run in debug mode.<br/><br/>Alternatively, just drag the following link to the bookmark toolbar of your favourite browser: <a title="Debug FitNesse" id="debugfitnesse" href="javascript:(function(){var url = document.location.pathname + '?responder=test&remote_debug=true'; window.location = url;})();"><span>Debug FitNesse</span></a> (since the link contains javascript, this may not work for all browsers).<br/><br/><h2 id="2">Alternative way to debug when using Slim</h2>
+For.NET it was found to be easier to debug starting the slim runner with the debugger attached and then getting fitnesse to connect to this started instance.  <br/><br/>To do it this way:<br/>1. Make sure !define MANUALLY_START_TEST_RUNNER_ON_DEBUG=true is set on the page you want to debug running<br/>2. Start the runner, on the default slim port.   To find out what this is try <span class="meta">undefined variable: SLIM_PORT</span> on your page. <br/>3. Start fitnesse.   It should automatically connect to the runner you started. <br/><br/>One thing to note is that when fitnesse finishes the page it will automatically close down the runner.   So you will need to start the slim runner each time you go to debug. <br/><br/>
+</article>
+<footer>
+<center>User Guide Contents</center><center><a href="../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+</footer>
+</body>
+</html>

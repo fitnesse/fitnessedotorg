@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FrontPage.FitNesseDevelopment.FitNesseRelease20161106</title>
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../FrontPage.html">FrontPage</a></li>
+<li><a href="../../FrontPage/FitNesseDevelopment.html">FitNesseDevelopment</a></li>
+
+  </ol>
+</nav>
+<article>
+<h3>release 
+	<a href="">20161106</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20161106">fitnesse-standalone.jar</a></strong></td><td>4959084 bytes</td><td>0</td></tr></tbody></table><br/><br/><h3 id="0"><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> Release Notes 2016/11/06</h3>
+<p class="note">Uncle Bob Consulting LLC.</p>
+<br/><p class="note"><span class="red">Requires Java 1.7</span></p>
+<br/><h4 id="1">Major Changes since <a href="../../FrontPage/FitNesseDevelopment/FitNesseRelease20160618.html">20160618</a>:</h4>
+<br/><ul>
+	<li>Add ability to specify the locale used to format evaluated expressions (<a href="https://github.com/unclebob/fitnesse/pull/929">#929</a>)</li>
+	<li>New Slim table type: Baseline decision table<a title="create page" href="../../FrontPage/FitNesseDevelopment/SuiteAcceptanceTests/SuiteSlimTests/BaseLineDecisionTable.html?edit&amp;nonExistent=true">[?]</a> (<a href="https://github.com/unclebob/fitnesse/pull/965">965</a>)</li>
+	<li>Add base folder for plugin documentation (<a href="https://github.com/unclebob/fitnesse/pull/971">971</a>)</li>
+	<li>FitNesse and Slim can now communicate over stdin/stdout. This removes the hassle with network ports (<a href="https://github.com/unclebob/fitnesse/pull/977">977</a>, see UserGuide.WritingAcceptanceTests.SliM.SlimProtocol.PortManagement<a title="create page" href="../../FrontPage/FitNesseDevelopment/UserGuide/WritingAcceptanceTests/SliM/SlimProtocol/PortManagement.html?edit&amp;nonExistent=true">[?]</a>)</li>
+	<li>API changes:<ul>
+	<li><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> is more strictly propagating exceptions, instead of only logging them (<a href="https://github.com/unclebob/fitnesse/pull/923">#923</a>)</li>
+	<li>Updated <i>FixtureInteraction</i> interface (<a href="https://github.com/unclebob/fitnesse/pull/911">#911</a>)</li>
+	<li>To improve extensibility, scenario resolution has been moved to ``SlimtestContext'' (<a href="https://github.com/unclebob/fitnesse/pull/974">974</a>)</li>
+	<li><i>WikiPage</i> interface now has a <i>remove()</i> method. This will replace the <i>removeChild()</i> method in the near future (<a href="https://github.com/unclebob/fitnesse/pull/930">#930</a>)</li>
+</ul>
+</li>
+	<li>Issues fixed:<ul>
+	<li>Display of Map results from fixtures should allow nested HTML (<a href="https://github.com/unclebob/fitnesse/pull/921">#921</a>)</li>
+	<li>Fix assignment of output parameters of scenarios with graceful names in decision tables (<a href="https://github.com/unclebob/fitnesse/pull/928">#928</a>)</li>
+	<li>Fix Where Used page for pages under a Symbolic Link (<a href="https://github.com/unclebob/fitnesse/issues/925">#925</a>)</li>
+	<li>Fixed issues in <i>CachedInteraction</i> (<a href="https://github.com/unclebob/fitnesse/pull/973">973</a>)</li>
+</ul>
+</li>
+</ul>
+<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=15&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=15&amp;state=closed.</a><br/><br/><h4 id="2">Github ids of Contributors to this release:</h4>
+<br/><ul>
+	<li>Aaron Wallentine</li>
+	<li>Arjan Molenaar</li>
+	<li>Etienne Charignon</li>
+	<li>Felix Riemann</li>
+	<li>Fried Hoeben</li>
+	<li>Hans Joachim Desserud</li>
+	<li>Mykola Gurov</li>
+	<li>six42</li>
+	<li>the-noob</li>
+</ul>
+<br/><span class="meta">Thanks to all of you!</span><br/><h3 id="3">Git History</h3>
+<br/><table>
+	<tr>
+		<td>2016-11-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Update pom file creation to match Maven Central rules</td>
+	</tr>
+	<tr>
+		<td>2016-11-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix release process</td>
+	</tr>
+	<tr>
+		<td>2016-11-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Upgrade to Gradle 3.1</td>
+	</tr>
+	<tr>
+		<td>2016-11-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Update release notes</td>
+	</tr>
+	<tr>
+		<td>2016-10-30</td>
+		<td>Arjan Molenaar</td>
+		<td>Use one external suite page check</td>
+	</tr>
+	<tr>
+		<td>2016-10-20</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #965 from six42/baselinetable</td>
+	</tr>
+	<tr>
+		<td>2016-10-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Update release notes</td>
+	</tr>
+	<tr>
+		<td>2016-10-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #971 from six42/plugins</td>
+	</tr>
+	<tr>
+		<td>2016-10-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #977 from six42/slimslave</td>
+	</tr>
+	<tr>
+		<td>2016-10-17</td>
+		<td>six42</td>
+		<td>Merge branch 'amolenaar-socketless' into slimslave</td>
+	</tr>
+	<tr>
+		<td>2016-10-17</td>
+		<td>six42</td>
+		<td>Fixed multiline stdout and stderr handling</td>
+	</tr>
+	<tr>
+		<td>2016-10-17</td>
+		<td>six42</td>
+		<td>Extended test case to verify multiline stdout and stderr messages; add html result extractor</td>
+	</tr>
+	<tr>
+		<td>2016-10-17</td>
+		<td>six42</td>
+		<td>Extended test case to verify multiline stdout and stderr messages</td>
+	</tr>
+	<tr>
+		<td>2016-10-15</td>
+		<td>six42</td>
+		<td>Update content.txt</td>
+	</tr>
+	<tr>
+		<td>2016-10-15</td>
+		<td>six42</td>
+		<td>Update content.txt</td>
+	</tr>
+	<tr>
+		<td>2016-10-15</td>
+		<td>six42</td>
+		<td>Update content.txt</td>
+	</tr>
+	<tr>
+		<td>2016-10-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Rename constant SLIM_SLAVE_PORT to SLIM_USE_PIPE_PORT</td>
+	</tr>
+	<tr>
+		<td>2016-10-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Use the term Pipe, instead of Slave</td>
+	</tr>
+	<tr>
+		<td>2016-10-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Move pipe behaviour out of default command runner</td>
+	</tr>
+	<tr>
+		<td>2016-10-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix small issue in acceptance test</td>
+	</tr>
+	<tr>
+		<td>2016-10-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Replace SlimSlaveC.R.Client with PipeBasedSocketFactory</td>
+	</tr>
+	<tr>
+		<td>2016-10-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Simplify command runner test</td>
+	</tr>
+	<tr>
+		<td>2016-10-09</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #974 from fhoeben/allScenarioResolutionInTestContext</td>
+	</tr>
+	<tr>
+		<td>2016-10-09</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #976 from six42/wpt2</td>
+	</tr>
+	<tr>
+		<td>2016-10-09</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #973 from fhoeben/CachedInteractionFix</td>
+	</tr>
+	<tr>
+		<td>2016-10-04</td>
+		<td>six42</td>
+		<td>Simplified running a distributed slim service which is started manual</td>
+	</tr>
+	<tr>
+		<td>2016-09-28</td>
+		<td>six42</td>
+		<td>Increased slim version to 0.5</td>
+	</tr>
+	<tr>
+		<td>2016-09-28</td>
+		<td>six42</td>
+		<td>Updated user manual and cleanup of code</td>
+	</tr>
+	<tr>
+		<td>2016-09-27</td>
+		<td>six42</td>
+		<td>Port 1 is now the slim slave indicator and the default port</td>
+	</tr>
+	<tr>
+		<td>2016-09-19</td>
+		<td>six42</td>
+		<td>Added SlimSlave - A Port free SlimService this removes all hasles with port conflicts</td>
+	</tr>
+	<tr>
+		<td>2016-08-20</td>
+		<td>six42</td>
+		<td>Added Baseline Decision Table See FitNesse.SuiteAcceptanceTests.SuiteSlimTests.BaseLineDecisionTable for details</td>
+	</tr>
+	<tr>
+		<td>2016-09-13</td>
+		<td>six42</td>
+		<td>Added Fitnesse Version to request</td>
+	</tr>
+	<tr>
+		<td>2016-09-13</td>
+		<td>six42</td>
+		<td>Add base folder for plugin documentation Add information about plugins and contacts to page footer</td>
+	</tr>
+	<tr>
+		<td>2016-09-13</td>
+		<td>six42</td>
+		<td>Add base folder for plugin documentation Add information about plugins and contacts to page footer</td>
+	</tr>
+	<tr>
+		<td>2016-09-19</td>
+		<td>six42</td>
+		<td>Fix unit test under Windows</td>
+	</tr>
+	<tr>
+		<td>2016-09-18</td>
+		<td>Fried Hoeben</td>
+		<td>No need to extract arguments to determine whether they can be extracted</td>
+	</tr>
+	<tr>
+		<td>2016-09-18</td>
+		<td>Fried Hoeben</td>
+		<td>Extract method to do 'simple' determination of scenario name, by just looking at all odd cells in the row</td>
+	</tr>
+	<tr>
+		<td>2016-09-18</td>
+		<td>Fried Hoeben</td>
+		<td>customComparatorRegistry is only needed before the scenario is called, not to determine what the arguments are</td>
+	</tr>
+	<tr>
+		<td>2016-09-18</td>
+		<td>Fried Hoeben</td>
+		<td>Single code location add scenario table to list</td>
+	</tr>
+	<tr>
+		<td>2016-09-18</td>
+		<td>Fried Hoeben</td>
+		<td>Only maintain list of scenarios with inputs after the first time it is needed (i.e. the first time a single cell script table row is encountered)</td>
+	</tr>
+	<tr>
+		<td>2016-09-18</td>
+		<td>Fried Hoeben</td>
+		<td>Initial collections should have larger sizes than Java defaults (16 for hashmap and 8 for list) since the number of scenarios could be much larger and resizing collections is much more expensive than having/allocating larger ones for each test.</td>
+	</tr>
+	<tr>
+		<td>2016-09-18</td>
+		<td>Fried Hoeben</td>
+		<td>Only scenarios with inputs need to be in the list to find scenarios based on single cell parsing (the ones without arguments are found based on their name alone)</td>
+	</tr>
+	<tr>
+		<td>2016-09-17</td>
+		<td>Fried Hoeben</td>
+		<td>Simplify class definition</td>
+	</tr>
+	<tr>
+		<td>2016-09-17</td>
+		<td>Fried Hoeben</td>
+		<td>Sorting should be more efficient (according to the javadoc) when only a few of the elements must be re-ordered. In this case only the scenarios added since the last time we sorted.</td>
+	</tr>
+	<tr>
+		<td>2016-09-17</td>
+		<td>Fried Hoeben</td>
+		<td>Once we've figured out the order to look for scenarios we don't need to re-sort unless the list has changed.</td>
+	</tr>
+	<tr>
+		<td>2016-09-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #968 from dubaaron/patch-1</td>
+	</tr>
+	<tr>
+		<td>2016-09-17</td>
+		<td>Fried Hoeben</td>
+		<td>Rename method as suggested</td>
+	</tr>
+	<tr>
+		<td>2016-09-17</td>
+		<td>Fried Hoeben</td>
+		<td>Make method easier to read</td>
+	</tr>
+	<tr>
+		<td>2016-09-17</td>
+		<td>Fried Hoeben</td>
+		<td>Format line</td>
+	</tr>
+	<tr>
+		<td>2016-09-17</td>
+		<td>Fried Hoeben</td>
+		<td>Create pattern to match scenario arguments only once, instead of on each match</td>
+	</tr>
+	<tr>
+		<td>2016-09-17</td>
+		<td>Fried Hoeben</td>
+		<td>Ensure we do all initialization before we pass a reference to this to the test context</td>
+	</tr>
+	<tr>
+		<td>2016-09-17</td>
+		<td>Fried Hoeben</td>
+		<td>Move logic to find scenario by parsing a single cell's content to the test context (where basic scenario finding was already)</td>
+	</tr>
+	<tr>
+		<td>2016-09-15</td>
+		<td>Fried Hoeben</td>
+		<td>Ensure no cache hit for method of different class, just if their simple name and method name matches</td>
+	</tr>
+	<tr>
+		<td>2016-09-15</td>
+		<td>Fried Hoeben</td>
+		<td>Make test more robust</td>
+	</tr>
+	<tr>
+		<td>2016-09-15</td>
+		<td>Fried Hoeben</td>
+		<td>Remove non-test method only used in tests (in 2 places)</td>
+	</tr>
+	<tr>
+		<td>2016-09-15</td>
+		<td>Fried Hoeben</td>
+		<td>Single location to define how to create an interaction</td>
+	</tr>
+	<tr>
+		<td>2016-09-14</td>
+		<td>Fried Hoeben</td>
+		<td>Correct formatting</td>
+	</tr>
+	<tr>
+		<td>2016-09-14</td>
+		<td>Fried Hoeben</td>
+		<td>I do not see why calling the same method twice should render a different result the second time...</td>
+	</tr>
+	<tr>
+		<td>2016-09-14</td>
+		<td>Fried Hoeben</td>
+		<td>Allow subclasses of CachedInteraction (actually all subclasses of DefaultInteraction) to select the method to be invoked based on the actual parameters and not just the number of parameters (similar to what is done for constructors)</td>
+	</tr>
+	<tr>
+		<td>2016-09-14</td>
+		<td>Fried Hoeben</td>
+		<td>Allow subclasses of CachedInteraction (actually all subclasses of DefaultInteraction) to select the method to be invoked based on the actual instance and not only on the instance's class</td>
+	</tr>
+	<tr>
+		<td>2016-09-14</td>
+		<td>Fried Hoeben</td>
+		<td>Extract constructor key generation to separate method, and use simple string concatenation (which compiler will optimize) instead of string formatting</td>
+	</tr>
+	<tr>
+		<td>2016-09-14</td>
+		<td>Fried Hoeben</td>
+		<td>Same use of local variables when finding class as used for constructors and methods</td>
+	</tr>
+	<tr>
+		<td>2016-09-14</td>
+		<td>Fried Hoeben</td>
+		<td>Formatted again</td>
+	</tr>
+	<tr>
+		<td>2016-09-14</td>
+		<td>Fried Hoeben</td>
+		<td>Optimized MethodKey implementation</td>
+	</tr>
+	<tr>
+		<td>2016-09-14</td>
+		<td>Fried Hoeben</td>
+		<td>Remove unneeded import</td>
+	</tr>
+	<tr>
+		<td>2016-09-14</td>
+		<td>Fried Hoeben</td>
+		<td>Remove unneeded this.</td>
+	</tr>
+	<tr>
+		<td>2016-09-14</td>
+		<td>Fried Hoeben</td>
+		<td>Move private static NonExisting class to bottom of file</td>
+	</tr>
+	<tr>
+		<td>2016-09-14</td>
+		<td>Fried Hoeben</td>
+		<td>Ensure method cache miss is also cached</td>
+	</tr>
+	<tr>
+		<td>2016-09-14</td>
+		<td>Fried Hoeben</td>
+		<td>integer compare before String.equals() as I expect it to be faster</td>
+	</tr>
+	<tr>
+		<td>2016-09-14</td>
+		<td>Fried Hoeben</td>
+		<td>move private class to bottom of file</td>
+	</tr>
+	<tr>
+		<td>2016-09-14</td>
+		<td>Fried Hoeben</td>
+		<td>Ensure cache actually works</td>
+	</tr>
+	<tr>
+		<td>2016-09-14</td>
+		<td>Fried Hoeben</td>
+		<td>Add test for class that can not be found</td>
+	</tr>
+	<tr>
+		<td>2016-09-14</td>
+		<td>Fried Hoeben</td>
+		<td>Add some whitespace</td>
+	</tr>
+	<tr>
+		<td>2016-09-14</td>
+		<td>Fried Hoeben</td>
+		<td>Fix creation of CachedInteraction and add tests to ensure its behavior is hit (could use better assertions for cache hit/miss)</td>
+	</tr>
+	<tr>
+		<td>2016-09-14</td>
+		<td>Fried Hoeben</td>
+		<td>Add test to show CachedInteraction cannot be created</td>
+	</tr>
+	<tr>
+		<td>2016-09-02</td>
+		<td>Aaron Wallentine</td>
+		<td>Fix a few typos</td>
+	</tr>
+	<tr>
+		<td>2016-08-31</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix issue in javadoc and file upload</td>
+	</tr>
+	<tr>
+		<td>2016-08-25</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #952 from amolenaar/single-file-wiki</td>
+	</tr>
+	<tr>
+		<td>2016-08-25</td>
+		<td>Arjan Molenaar</td>
+		<td>Update external editors documentation</td>
+	</tr>
+	<tr>
+		<td>2016-08-25</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix issue with multiline text in wiki page</td>
+	</tr>
+	<tr>
+		<td>2016-08-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Add a little documentation on the file format</td>
+	</tr>
+	<tr>
+		<td>2016-08-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #959 from the-noob/typos</td>
+	</tr>
+	<tr>
+		<td>2016-08-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #960 from FelixRiemann/master</td>
+	</tr>
+	<tr>
+		<td>2016-08-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove outdated comment</td>
+	</tr>
+	<tr>
+		<td>2016-08-15</td>
+		<td>Felix Riemann</td>
+		<td>Fixed one typo in each of README.md and CONTRIBUTING.md</td>
+	</tr>
+	<tr>
+		<td>2016-08-12</td>
+		<td>the-noob</td>
+		<td>fixing missing space typo</td>
+	</tr>
+	<tr>
+		<td>2016-08-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Update reference to Test button</td>
+	</tr>
+	<tr>
+		<td>2016-08-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #956 from six42/version_date</td>
+	</tr>
+	<tr>
+		<td>2016-08-05</td>
+		<td>six42</td>
+		<td>As a Wiki User To understand the flow of changes I need to see the "last changed date" of a wiki page when comparing versions or when looking at the properties of a single page</td>
+	</tr>
+	<tr>
+		<td>2016-08-03</td>
+		<td>Arjan Molenaar</td>
+		<td>Allow to set statement timeout when running Slim in process.</td>
+	</tr>
+	<tr>
+		<td>2016-08-03</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #954 from etienneCharignon/patch-1</td>
+	</tr>
+	<tr>
+		<td>2016-08-02</td>
+		<td>Etienne Charignon</td>
+		<td>Juste a spelling mistake</td>
+	</tr>
+	<tr>
+		<td>2016-07-29</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix typos pointed out by @HenryDev</td>
+	</tr>
+	<tr>
+		<td>2016-07-28</td>
+		<td>Arjan Molenaar</td>
+		<td>Download gradle -all distro</td>
+	</tr>
+	<tr>
+		<td>2016-07-28</td>
+		<td>Arjan Molenaar</td>
+		<td>Externalize bintray upload properties.</td>
+	</tr>
+	<tr>
+		<td>2016-07-28</td>
+		<td>Arjan Molenaar</td>
+		<td>Make sure escaped tables also switch table type on colon</td>
+	</tr>
+	<tr>
+		<td>2016-07-28</td>
+		<td>Arjan Molenaar</td>
+		<td>fix javadoc</td>
+	</tr>
+	<tr>
+		<td>2016-07-28</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #953 from hansjoachim/loggers</td>
+	</tr>
+	<tr>
+		<td>2016-07-28</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Add missing Override annotation</td>
+	</tr>
+	<tr>
+		<td>2016-07-28</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Remove some more unused imports</td>
+	</tr>
+	<tr>
+		<td>2016-07-27</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Remove unused Loggers</td>
+	</tr>
+	<tr>
+		<td>2016-07-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #940 from six42/focusedtable</td>
+	</tr>
+	<tr>
+		<td>2016-07-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Ignore RecentChanges as new style .wiki page</td>
+	</tr>
+	<tr>
+		<td>2016-07-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Add test for yaml sub field with lots of space</td>
+	</tr>
+	<tr>
+		<td>2016-07-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Make WikiFilePage format the default for new pages</td>
+	</tr>
+	<tr>
+		<td>2016-07-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #950 from hansjoachim/warnings</td>
+	</tr>
+	<tr>
+		<td>2016-07-25</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Remove unused import</td>
+	</tr>
+	<tr>
+		<td>2016-07-25</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Merge branch 'master' into warnings</td>
+	</tr>
+	<tr>
+		<td>2016-07-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Also decode request key</td>
+	</tr>
+	<tr>
+		<td>2016-07-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Make WikiFilePage the default page type</td>
+	</tr>
+	<tr>
+		<td>2016-07-10</td>
+		<td>Arjan Molenaar</td>
+		<td>Exclude _root.wiki files in sub wiki listing</td>
+	</tr>
+	<tr>
+		<td>2016-07-09</td>
+		<td>Arjan Molenaar</td>
+		<td>Make properties handling more generic</td>
+	</tr>
+	<tr>
+		<td>2016-07-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Use interfaces where possible</td>
+	</tr>
+	<tr>
+		<td>2016-07-07</td>
+		<td>Arjan Molenaar</td>
+		<td>clearify naming in page factory</td>
+	</tr>
+	<tr>
+		<td>2016-07-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Store last modifying user</td>
+	</tr>
+	<tr>
+		<td>2016-07-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Front matter should deal colon in values</td>
+	</tr>
+	<tr>
+		<td>2016-07-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Let wiki file pages be loaded in a variaty of ways</td>
+	</tr>
+	<tr>
+		<td>2016-07-04</td>
+		<td>Arjan Molenaar</td>
+		<td>WikiFilePage can create it's own child pages</td>
+	</tr>
+	<tr>
+		<td>2016-07-04</td>
+		<td>Arjan Molenaar</td>
+		<td>MemoryFileSystem should care about parent directories</td>
+	</tr>
+	<tr>
+		<td>2016-07-04</td>
+		<td>Arjan Molenaar</td>
+		<td>Ensure we do not traverse "empty" subFiles</td>
+	</tr>
+	<tr>
+		<td>2016-07-04</td>
+		<td>Arjan Molenaar</td>
+		<td>boyscouting</td>
+	</tr>
+	<tr>
+		<td>2016-07-04</td>
+		<td>Arjan Molenaar</td>
+		<td>Move WikiPage.hasChildPage to BaseWikiPage</td>
+	</tr>
+	<tr>
+		<td>2016-07-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Store properties in wiki file page</td>
+	</tr>
+	<tr>
+		<td>2016-07-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Make versioning work for WikiPageFile</td>
+	</tr>
+	<tr>
+		<td>2016-07-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Can commit new page content, no properties yet</td>
+	</tr>
+	<tr>
+		<td>2016-07-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove extends construct from VersionsController interface.</td>
+	</tr>
+	<tr>
+		<td>2016-07-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove generic type from WikiPageFactory</td>
+	</tr>
+	<tr>
+		<td>2016-07-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Wiki pages are found.</td>
+	</tr>
+	<tr>
+		<td>2016-07-01</td>
+		<td>Arjan Molenaar</td>
+		<td>New style wiki pages can now be removed</td>
+	</tr>
+	<tr>
+		<td>2016-06-30</td>
+		<td>Arjan Molenaar</td>
+		<td>Read page properties based on Front matter</td>
+	</tr>
+	<tr>
+		<td>2016-06-30</td>
+		<td>Arjan Molenaar</td>
+		<td>Read wiki page content from file</td>
+	</tr>
+	<tr>
+		<td>2016-06-30</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove FrontMatter from wiki parser.</td>
+	</tr>
+	<tr>
+		<td>2016-06-28</td>
+		<td>Arjan Molenaar</td>
+		<td>Replaced a couple of obsolete page properties</td>
+	</tr>
+	<tr>
+		<td>2016-06-28</td>
+		<td>Arjan Molenaar</td>
+		<td>Can load .wiki file as root file (or in a directory)</td>
+	</tr>
+	<tr>
+		<td>2016-06-28</td>
+		<td>Arjan Molenaar</td>
+		<td>Can load page content from .wiki file</td>
+	</tr>
+	<tr>
+		<td>2016-06-16</td>
+		<td>Arjan Molenaar</td>
+		<td>cleanup.</td>
+	</tr>
+	<tr>
+		<td>2016-06-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Cleanup: rename new page class to WikiFilePage.</td>
+	</tr>
+	<tr>
+		<td>2016-06-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Can nest old style page in new style page.</td>
+	</tr>
+	<tr>
+		<td>2016-06-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Can traverse new style wiki pages, nested in old style pages.</td>
+	</tr>
+	<tr>
+		<td>2016-06-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Cleanup</td>
+	</tr>
+	<tr>
+		<td>2016-06-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Check page validity via WikiPageFactory.</td>
+	</tr>
+	<tr>
+		<td>2016-06-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Separate SubWikiPageFactory from FileSystemPageFactory.</td>
+	</tr>
+	<tr>
+		<td>2016-06-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Change VersionsContoller interface: simplified delete(File...).</td>
+	</tr>
+	<tr>
+		<td>2016-06-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix unit tests.</td>
+	</tr>
+	<tr>
+		<td>2016-06-10</td>
+		<td>Arjan Molenaar</td>
+		<td>Boyscouting property names</td>
+	</tr>
+	<tr>
+		<td>2016-06-10</td>
+		<td>Arjan Molenaar</td>
+		<td>Move PageXmlizer and WikiPageProperties to fitnesse.wiki.fs.</td>
+	</tr>
+	<tr>
+		<td>2016-06-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Move properties to WikiPageProperty class.</td>
+	</tr>
+	<tr>
+		<td>2016-06-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Use WikiPageProperty instead of WikiPageProperties wherever possible.</td>
+	</tr>
+	<tr>
+		<td>2016-06-02</td>
+		<td>Arjan Molenaar</td>
+		<td>Add Front matter symbol.</td>
+	</tr>
+	<tr>
+		<td>2016-07-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Use default gradle compile path</td>
+	</tr>
+	<tr>
+		<td>2016-07-18</td>
+		<td>Arjan Molenaar</td>
+		<td>Update build to make it easier to use in IDE's.</td>
+	</tr>
+	<tr>
+		<td>2016-07-16</td>
+		<td>six42</td>
+		<td>removed unused constructor which is called incorrectly under Windows.</td>
+	</tr>
+	<tr>
+		<td>2016-07-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Refactor SaveResponder: get rid of instance variables</td>
+	</tr>
+	<tr>
+		<td>2016-07-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #948 from fhoeben/exposePageToJUnit</td>
+	</tr>
+	<tr>
+		<td>2016-07-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #939 from mgurov/tearDownNicelyAfterStopTestOrSuiteException</td>
+	</tr>
+	<tr>
+		<td>2016-07-09</td>
+		<td>six42</td>
+		<td>Added warning that hybrid table is beta</td>
+	</tr>
+	<tr>
+		<td>2016-07-08</td>
+		<td>Fried Hoeben</td>
+		<td>Simplify code</td>
+	</tr>
+	<tr>
+		<td>2016-07-08</td>
+		<td>Fried Hoeben</td>
+		<td>Create helper to deal with annotated descriptions easily</td>
+	</tr>
+	<tr>
+		<td>2016-07-08</td>
+		<td>Fried Hoeben</td>
+		<td>Make description include annotation allowing access to test page</td>
+	</tr>
+	<tr>
+		<td>2016-07-08</td>
+		<td>Fried Hoeben</td>
+		<td>Introduce factory to create jUnit descriptions</td>
+	</tr>
+	<tr>
+		<td>2016-07-06</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Remove redundant semicolon</td>
+	</tr>
+	<tr>
+		<td>2016-07-06</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Remove redundant explicit type arguments</td>
+	</tr>
+	<tr>
+		<td>2016-07-06</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Add missing @Overrides</td>
+	</tr>
+	<tr>
+		<td>2016-07-06</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Remove unused method in test suite</td>
+	</tr>
+	<tr>
+		<td>2016-07-01</td>
+		<td>Mykola Gurov</td>
+		<td>Added unit test to the table processing method of the slim test system.</td>
+	</tr>
+	<tr>
+		<td>2016-07-03</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Remove unused method in testsuite</td>
+	</tr>
+	<tr>
+		<td>2016-07-02</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #947 from hansjoachim/warnings</td>
+	</tr>
+	<tr>
+		<td>2016-07-02</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #945 from hansjoachim/readme</td>
+	</tr>
+	<tr>
+		<td>2016-07-02</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Update build instructions</td>
+	</tr>
+	<tr>
+		<td>2016-07-02</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Add missing @Overrides</td>
+	</tr>
+	<tr>
+		<td>2016-07-02</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Removed unused imports</td>
+	</tr>
+	<tr>
+		<td>2016-06-30</td>
+		<td>Mykola Gurov</td>
+		<td>put Node as first argument, and the class second</td>
+	</tr>
+	<tr>
+		<td>2016-06-25</td>
+		<td>Arjan Molenaar</td>
+		<td>Ignore .gradletasknamecache</td>
+	</tr>
+	<tr>
+		<td>2016-06-24</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #916 from amolenaar/gradle</td>
+	</tr>
+	<tr>
+		<td>2016-06-21</td>
+		<td>six42</td>
+		<td>removed commented code and formatting issues</td>
+	</tr>
+	<tr>
+		<td>2016-06-21</td>
+		<td>six42</td>
+		<td>Rebase with master</td>
+	</tr>
+	<tr>
+		<td>2016-06-20</td>
+		<td>six42</td>
+		<td>Added HybridTable</td>
+	</tr>
+	<tr>
+		<td>2016-06-20</td>
+		<td>six42</td>
+		<td>Added HybridTable</td>
+	</tr>
+	<tr>
+		<td>2016-06-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Trying to debug failures on Travis-CI</td>
+	</tr>
+	<tr>
+		<td>2016-06-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix travis.yml</td>
+	</tr>
+	<tr>
+		<td>2016-06-18</td>
+		<td>Mykola Gurov</td>
+		<td>Slim: run TearDown after StopText exception and SuiteTeardown after StopSuite</td>
+	</tr>
+	<tr>
+		<td>2016-06-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge branch 'master' into gradle</td>
+	</tr>
+	<tr>
+		<td>2016-06-18</td>
+		<td>Arjan Molenaar</td>
+		<td>Determine total run time on availability in report instead of FitNesse version.</td>
+	</tr>
+	<tr>
+		<td>2016-06-18</td>
+		<td>Arjan Molenaar</td>
+		<td>Update readme.</td>
+	</tr>
+	<tr>
+		<td>2016-06-18</td>
+		<td>Arjan Molenaar</td>
+		<td>Add basic pitest support. This will take time...</td>
+	</tr>
+	<tr>
+		<td>2016-06-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Update release notes</td>
+	</tr>
+	<tr>
+		<td>2016-05-04</td>
+		<td>Arjan Molenaar</td>
+		<td>Do nor create javadoc and sources jar during normal build.</td>
+	</tr>
+	<tr>
+		<td>2016-05-04</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix javadoc creation.</td>
+	</tr>
+	<tr>
+		<td>2016-05-04</td>
+		<td>Arjan Molenaar</td>
+		<td>Cleanup .gitignore. Remove unused files.</td>
+	</tr>
+	<tr>
+		<td>2016-05-04</td>
+		<td>Arjan Molenaar</td>
+		<td>integration tests use standalone jar. Copy libs.</td>
+	</tr>
+	<tr>
+		<td>2016-05-02</td>
+		<td>Arjan Molenaar</td>
+		<td>Properly build standalone jar.</td>
+	</tr>
+	<tr>
+		<td>2016-05-02</td>
+		<td>Arjan Molenaar</td>
+		<td>Update fitnesse bundle. Use gradle defaulr test results location. remove obsolete clojure script.</td>
+	</tr>
+	<tr>
+		<td>2016-05-02</td>
+		<td>Arjan Molenaar</td>
+		<td>Process resources the correct way</td>
+	</tr>
+	<tr>
+		<td>2016-05-02</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove old build scripts</td>
+	</tr>
+	<tr>
+		<td>2016-04-29</td>
+		<td>Arjan Molenaar</td>
+		<td>update gradle wrapper properties.</td>
+	</tr>
+	<tr>
+		<td>2016-04-29</td>
+		<td>Arjan Molenaar</td>
+		<td>Move task to separate class, so logic can still be tested.</td>
+	</tr>
+	<tr>
+		<td>2016-04-28</td>
+		<td>Arjan Molenaar</td>
+		<td>Move UpdateList code to a Gradle plugin</td>
+	</tr>
+	<tr>
+		<td>2016-04-28</td>
+		<td>Arjan Molenaar</td>
+		<td>Create separate task for less compiler</td>
+	</tr>
+	<tr>
+		<td>2016-04-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix project name.</td>
+	</tr>
+	<tr>
+		<td>2016-04-27</td>
+		<td>Arjan Molenaar</td>
+		<td>pom generation matches the old pom version.</td>
+	</tr>
+	<tr>
+		<td>2016-04-27</td>
+		<td>Arjan Molenaar</td>
+		<td>aFix deployment to bintray.</td>
+	</tr>
+	<tr>
+		<td>2016-04-27</td>
+		<td>Arjan Molenaar</td>
+		<td>WIP build normal and standalone jar</td>
+	</tr>
+	<tr>
+		<td>2016-04-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Add Gradle build basics.</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<hr/>
+<br/><a href="../../FrontPage.html">.FrontPage</a> | <a href="../../FrontPage/FitNesseDevelopment/FrontPage.html">FrontPage</a> | <a href="../../RecentChanges.html">.RecentChanges</a><br/>
+</footer>
+</body>
+</html>

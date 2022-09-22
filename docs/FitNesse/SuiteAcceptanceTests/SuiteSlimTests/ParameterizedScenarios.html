@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteSlimTests.ParameterizedScenarios</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests.html">SuiteSlimTests</a></li>
+
+  </ol>
+</nav>
+<article>
+<table class="plain_text_table">
+	<tr>
+		<td>scenario</td>
+		<td>login user _ with password _</td>
+		<td>user name, password</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>check</td>
+		<td>echo</td>
+		<td>@userName</td>
+		<td>Bob</td>
+	</tr>
+	<tr>
+		<td>check</td>
+		<td>echo</td>
+		<td>@password</td>
+		<td>xyzzy</td>
+	</tr>
+</table>
+<br/><br/><table class="plain_text_table">
+	<tr class="hidden">
+		<td>script</td>
+	</tr>
+	<tr>
+		<td>login user Bob with password xyzzy</td>
+	</tr>
+</table>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>beat</td>
+		<td>name</td>
+		<td>with a</td>
+		<td>object</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>echo</td>
+		<td>@name</td>
+		<td colspan="2">Bill</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>echo</td>
+		<td>@object</td>
+		<td colspan="2">noodle</td>
+	</tr>
+</table>
+<br/><table class="plain_text_table">
+	<tr class="hidden">
+		<td>script</td>
+	</tr>
+	<tr>
+		<td>beat Bill with a noodle</td>
+	</tr>
+</table>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">login user with password</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>user name</td>
+		<td>password</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>Bob</td>
+		<td>xyzzy</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">script</td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>login user</td>
+		<td>Bob</td>
+		<td>with password</td>
+		<td>xyzzy</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">script</td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>login user with password;</td>
+		<td>Bob</td>
+		<td>xyzzy</td>
+	</tr>
+</table>
+<br/><h3 id="0">Scenarios can be defined without a filler name between the underscores</h3>
+<table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>my division _ _ _</td>
+		<td>numerator, denominator, quotient</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>setNumerator</td>
+		<td colspan="2">@numerator</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>setDenominator</td>
+		<td colspan="2">@denominator</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>quotient</td>
+		<td>@quotient</td>
+	</tr>
+</table>
+<br/>Use the Division class from the eg library to implement the scenario<br/><table>
+	<tr class="slimRowTitle">
+		<td>Library</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>eg.Division</td>
+	</tr>
+</table>
+<br/><h4 id="1">Test the scenario with a decision table</h4>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="4">my division</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>#</td>
+		<td>numerator</td>
+		<td>denominator</td>
+		<td>quotient</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>any comment</td>
+		<td>10</td>
+		<td>2</td>
+		<td>5.0</td>
+	</tr>
+</table>
+<br/>You can change the order of the columns<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">my division</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>quotient</td>
+		<td>#</td>
+		<td>numerator</td>
+		<td>denominator</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>5.0</td>
+		<td>any comment</td>
+		<td>10</td>
+		<td>2</td>
+	</tr>
+</table>
+<br/><br/><h4 id="2">Test the scenario with a script</h4>
+the order of the parameters can't be changed!<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="6">script</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td colspan="6">my division 20 5 4.0</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>my division</td>
+		<td>6</td>
+		<td></td>
+		<td>3</td>
+		<td></td>
+		<td>2.0</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>my division;</td>
+		<td>35</td>
+		<td>5</td>
+		<td colspan="3">7.0</td>
+	</tr>
+</table>
+<br/><br/>
+</article>
+<footer>
+<a href="../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../FrontPage.html">Front Page</a> | <a href="../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

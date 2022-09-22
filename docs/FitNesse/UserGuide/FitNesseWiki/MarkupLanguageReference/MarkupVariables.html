@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.FitNesseWiki.MarkupLanguageReference.MarkupVariables</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+<li><a href="../../../../FitNesse/UserGuide/FitNesseWiki.html">FitNesseWiki</a></li>
+<li><a href="../../../../FitNesse/UserGuide/FitNesseWiki/MarkupLanguageReference.html">MarkupLanguageReference</a></li>
+
+  </ol>
+</nav>
+<article>
+<h2 id="0">Defining and Expressing Variables.</h2>
+You can define a variable to represent any amount of text.<br/><ul>
+	<li>Variable names may contain letters, numbers, periods and underscores; e.g., MYTEST.someVar or user.name or USER_NAME </li>
+	<li>You can define a variable in three ways: <ul>
+	<li><span class="code">!define var {text}</span> - as a delimited block of text </li>
+	<li><span class="code">!define var othervar</span> - by copying the value of another variable </li>
+	<li><span class="code">!define var {${= 10 / 2 =}}</span> - as an <a href="../../../../FitNesse/UserGuide/FitNesseWiki/MarkupLanguageReference/MarkupExpressions.html">expression</a> </li>
+</ul>
+</li>
+	<li>The variable text can span many lines as shown below:</li>
+</ul>
+<span class="code">!define myVariable {<br/>This is the<br/>text of my<br/>variable<br/></span>}<br/><span class="meta">variable defined: myVariable=
+this is the
+text of my
+variable
+</span>
+<br/><br/>You express the value of a variable like this: <span class="code">${myVariable}</span>.  This expression is replaced with the value of the variable.<br/><br/><i>The value of the variable is: <br/>this is the<br/>text of my<br/>variable<br/>.</i><br/><br/>If the variable value contains wiki markup, it is interpreted as the variable is expressed.<br/><br/><span class="code">!define markedUp {This is '''bold'''}</span><br/><span class="meta">variable defined: markedUp=This is '''bold'''</span>
+<br/><span class="code">${markedUp}</span> is expressed as: This is <b>bold</b><br/><br/>A variable can reference other variables.<br/><br/><span class="code">!define y {y-value}</span><br/><span class="meta">variable defined: y=y-value</span>
+<br/><span class="code">!define x {The value of y is ${y}}</span><br/><span class="meta">variable defined: x=The value of y is ${y}</span>
+<br/><span class="code">${x}</span> is expressed as: The value of y is y-value<br/><span class="code">!define y {new-y-value}</span><br/><span class="meta">variable defined: y=new-y-value</span>
+<br/><span class="code">${x}</span> is expressed as: The value of y is new-y-value<br/><br/>A variable can be copied from another variable.<br/><span class="code">!define z y</span><br/><span class="meta">variable defined: z=new-y-value</span>
+<br/><span class="code">${z}</span> is expressed as: new-y-value<br/><br/>A variable can contain an expression<br/><span class="code">!define n 10</span><br/><span class="meta">variable defined: n=10</span>
+<br/><span class="code">!define q 2 </span><br/><span class="meta">variable defined: q=2</span>
+<br/><span class="code">!define d {${= ${n} / ${q} =}}</span><br/><span class="meta">variable defined: d=${= ${n} / ${q} =}</span>
+<br/><span class="code">${d}</span> is : 5<br/>IMPORTANT: If the variables used in the expression change than also the result changes! <br/><span class="code">!define q 5 </span><br/><span class="meta">variable defined: q=5</span>
+<br/><span class="code">${d}</span> is : 2<br/><br/><h3 id="1">Variable Scope</h3>
+If a variable is expressed on a page, but is not found, then its parent pages are searched in order.<br/>If the variable is not found in any ancestor pages, <span class="fitnesse">FitNesse</span> will inspect System.properties.<br/><br/><h3 id="2">Defining Variables In URL Input</h3>
+You can define variables in the URL input by using the format of <i>key</i>=<i>value</i> (<i>key</i> as variable name &amp; <i>value</i> as variable value).  <i>key</i> and <i>value</i> can be any string values.  Multiple variables can be specified separated by <i>&amp;</i>.<br/>Variable values specified in the URL input are given precedence over variables defined on the page or in System.properties for the same key.<br/><br/>See <a href="../../../../FitNesse/UserGuide/AdministeringFitNesse/RestfulServices.html">Restful Services</a><br/><br/><h3 id="3">Variables on <a href="../../../../FitNesse/UserGuide/FitNesseWiki/MarkupLanguageReference/MarkupPageInclude.html">included pages</a></h3>
+<ul>
+	<li>if you include a sub page into a  main page than you can use the variables define on the main page also in the included pages.</li>
+	<li>If you modify a variable on the sub page then the main page will also have the modified value.</li>
+	<li>If you define a variable on the sub page you can reference it later on the main page. </li>
+</ul>
+See <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/AcceptanceTestPatterns/ParameterizedIncludes.html">Parameterized Includes</a> <br/><br/><h3 id="4">Difference between variables and <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/SymbolsInTables.html">SLIM symbols</a></h3>
+<ul>
+	<li>Variables are evaluated at render time, before the test executes. This allows for values to be set based on page hierarchy and other things that are purely inputs to the tests.</li>
+	<li>Symbols only exist at execution time. They can be changed at runtime, so are distinct from variables, which cannot.</li>
+</ul>
+<br/><h3 id="5">Predefined Variables</h3>
+There are several <a href="../../../../FitNesse/UserGuide/QuickReferenceGuide.html#VARIABLES">pre-defined variables</a> that you can use on your pages.<br/><br/>See <a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteWidgetTests/TestVariables.html">Variable fitnesse test</a>, <a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteWidgetTests/TestParentVariables.html">Parent Variable fitnesse test</a>, <a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteWidgetTests/TestVariablesFromSystemProperties.html">Define Variables in System Properties test</a> and <a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/VariablesUsedInSubSubpage.html">Variables, Symbols and Include pages</a><br/>
+</article>
+<footer>
+<center>User Guide Contents</center><center><a href="../../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+</footer>
+</body>
+</html>

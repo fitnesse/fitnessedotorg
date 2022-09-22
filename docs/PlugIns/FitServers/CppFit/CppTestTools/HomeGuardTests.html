@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PlugIns.FitServers.CppFit.CppTestTools.HomeGuardTests</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../PlugIns.html">PlugIns</a></li>
+<li><a href="../../../../PlugIns/FitServers.html">FitServers</a></li>
+<li><a href="../../../../PlugIns/FitServers/CppFit.html">CppFit</a></li>
+<li><a href="../../../../PlugIns/FitServers/CppFit/CppTestTools.html">CppTestTools</a></li>
+
+  </ol>
+</nav>
+<article>
+<h3 id="0">Cpp Fit Example</h3>
+Download the latest HomeGuard.zip for your platform.<br/><br/><div class="collapsible closed"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">!3 Tell FitNesse how to find your project</p>
+	<div><i>This comand tells fitness how to start the application to test</i><br/>Different COMMAND_PATTERNs are needed based on the development environment.  Assuming that the HomeGuard project is in c:/Projects/Cpp/HomeGuard these command patterns are used.  Only one should be enabled at a time.  Remove the ! from the one not needed.  Adjust the paths as needed.<br/><br/>For Visual C++ use this !define COMMAND_PATTERN.  Also make sure the path is set correctly in HomeGuardAtRunner.bat<br/><span class="meta">variable defined: COMMAND_PATTERN=C:/SourceNode/fitnesse/CppTestToolsProjects/Cpp/HomeGuard/test/HomeGuardAtRunner.bat</span>
+<br/><br/>For gcc use this !define COMMAND_PATTERN<br/><span class="meta">variable defined: COMMAND_PATTERN=C:/Projects/Cpp/HomeGuard/HomeGuardFitnesseServer/HomeGuardFitnesseServer.exe</span>
+<br/></div>
+</div>
+!* !3 Home Guard is a home security system<br/><br/>Home Guard has a front panel with these capabilities<br/><ul>
+	<li>Segmented display, that can display a message</li>
+	<li>An arm/disarm button</li>
+	<li>Numeric keypad with # and *</li>
+	<li>An audible alarm</li>
+	<li>A visual alarm</li>
+	<li>It has a phone line to call the police and fire department</li>
+	<li>Home guard has a network interface that can be used by a PC to configure the system</li>
+</ul>
+<br/>Home guard has binary sensor inputs<br/><br/>Here are the stories and tests that define home guard requirements.  ArmSystem, BreakIn, and PowerOn should pass, the others have failures.<br/><br/><div class="contents">
+	<b>Contents:</b>
+	<ul class="toc1">
+		<li>
+			<a href="../../../../PlugIns/FitServers/CppFit/CppTestTools/HomeGuardTests/ArmSystem.html" class="static">ArmSystem</a>
+		</li>
+		<li>
+			<a href="../../../../PlugIns/FitServers/CppFit/CppTestTools/HomeGuardTests/BreakIn.html" class="static">BreakIn</a>
+		</li>
+		<li>
+			<a href="../../../../PlugIns/FitServers/CppFit/CppTestTools/HomeGuardTests/DefaultPassword.html" class="static">DefaultPassword</a>
+		</li>
+		<li>
+			<a href="../../../../PlugIns/FitServers/CppFit/CppTestTools/HomeGuardTests/DefineSensors.html" class="static">DefineSensors</a>
+		</li>
+		<li>
+			<a href="../../../../PlugIns/FitServers/CppFit/CppTestTools/HomeGuardTests/EventMonitor.html" class="static">EventMonitor</a>
+		</li>
+		<li>
+			<a href="../../../../PlugIns/FitServers/CppFit/CppTestTools/HomeGuardTests/FloodDetected.html" class="static">FloodDetected</a>
+		</li>
+		<li>
+			<a href="../../../../PlugIns/FitServers/CppFit/CppTestTools/HomeGuardTests/FrontPanelInteractions.html" class="static">FrontPanelInteractions</a>
+		</li>
+		<li>
+			<a href="../../../../PlugIns/FitServers/CppFit/CppTestTools/HomeGuardTests/NotArmedAndSesnorTrips.html" class="static">NotArmedAndSesnorTrips</a>
+		</li>
+		<li>
+			<a href="../../../../PlugIns/FitServers/CppFit/CppTestTools/HomeGuardTests/PowerOn.html" class="static">PowerOn</a>
+		</li>
+		<li>
+			<a href="../../../../PlugIns/FitServers/CppFit/CppTestTools/HomeGuardTests/SetUp.html" class="static">SetUp</a>
+		</li>
+		<li>
+			<a href="../../../../PlugIns/FitServers/CppFit/CppTestTools/HomeGuardTests/TearDown.html" class="static">TearDown</a>
+		</li>
+	</ul>
+</div>
+<br/>*!
+</article>
+<footer>
+<center>FitNesse v20220921</center><center><a href="../../../../FrontPage.html">Front Page</a> - <a href="../../../../FitNesse/UserGuide.html">User Guide</a> - <a href="../../../../FitNesseFeatures.html">Features</a> - <a href="../../../../FitNesseDownload.html">Download</a> - <a href="../../../../PlugIns.html">Plugins</a> - <a href="../../../../PlugIns.html#slimfixtures">Fixtures</a> - <a href="https://gitter.im/fitnesse-org/fitnesse">Gitter Community</a></center>
+</footer>
+</body>
+</html>

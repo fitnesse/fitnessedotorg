@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.FitNesseWiki.MarkupLanguageReference.MarkupPreformatted</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+<li><a href="../../../../FitNesse/UserGuide/FitNesseWiki.html">FitNesseWiki</a></li>
+<li><a href="../../../../FitNesse/UserGuide/FitNesseWiki/MarkupLanguageReference.html">MarkupLanguageReference</a></li>
+
+  </ol>
+</nav>
+<article>
+If you want a stretch of text that should be left alone then you can enclose that text in three braces as follows:<br/><b>{{{</b>Text to be left alone<b>}}}</b><br/>Between the braces no wiki words will be identified, no markup syntax will be decoded.  The text will be displayed in mono font exactly as it was typed. We use this technique a lot for showing samples of fixture code:<br/><pre>
+import fit.ColumnFixture;
+
+public class AddRemovePlayerFixture extends ColumnFixture {
+  public String playerName;
+  private Game theGame;
+
+  public boolean addPlayer() {
+    theGame = StaticGame.getInstance();
+    Player thePlayer = theGame.addPlayer(playerName);
+    return theGame.playerIsPlaying(thePlayer);
+  }
+
+  public int countPlayers() {
+    return theGame.getNumberOfPlayers();
+  }
+} </pre><br/><br/><a href="../../../../FitNesse/UserGuide/FitNesseWiki/MarkupLanguageReference/TodaysDate.html">Todays Date</a> and <a href="../../../../FitNesse/UserGuide/FitNesseWiki/MarkupLanguageReference/MarkupVariables.html">Markup Variables</a> WILL be evaluated inside preformatted block. <br/><br/><span class="meta">variable defined: MyVar=Hi</span>
+<br/><br/><b>{{{</b><br/>Say ${MyVar}, <br/>today is !today<br/><b>}}}</b><br/><br/>Will be rendered as:<br/><pre>
+Say Hi, 
+today is 21 Sep., 2022
+</pre><br/><br/>
+</article>
+<footer>
+<center>User Guide Contents</center><center><a href="../../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+</footer>
+</body>
+</html>

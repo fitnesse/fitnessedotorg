@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.WritingAcceptanceTests.SliM.SlimProtocol</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+<li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">WritingAcceptanceTests</a></li>
+<li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM.html">SliM</a></li>
+
+  </ol>
+</nav>
+<article>
+<h2 id="0">The Slim Protocol, version 0.5</h2>
+<br/>FitNesse communicates with the Slim Server via StdIn and StdOut (<i>[0.5]</i> default) or via a socket (see <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/SlimProtocol/PortManagement.html">&gt;Port Management</a>).  When you hit the <i>Test</i> button, FitNesse starts up a SlimServer process by issuing the appropriate command line.  FitNesse then sends a list of instructions to the SlimServer, and expects a list of responses back.  The instructions are things like <i>call function f(a,b,c)</i> or <i>make instance of class X with arguments p,q,r</i>.  The responses are simply the values that are returned by the instructions.<br/><br/><pre>
+             instruction list
+  +----------+    o---&gt;     +------------+      +----------+       +-----+
+  | FitNesse |---[socket]--&gt;| SlimServer |-----&gt;| Fixtures |------&gt;| SUT |
+  +----------+    &lt;---o     +------------+      +----------+       +-----+
+               response list
+</pre><br/><br/>Each instruction in the list is itself a list of strings.  Here is a typical instruction list:<pre>
+      [
+        [id_0, make, instance, fixture, argument],
+        [id_1, call, instance, f, 3],
+      ]</pre>The first instruction in this list tells the SlimServer to create an instance of a class named <i>fixture</i> using the constructor argument <i>argument</i>, and register the newly created instance under the name <i>instance</i>.  The next instruction causes the function <i>f</i> to be called on the instance <i>instance</i>, passing the value <i>3</i>.  The first column in each instruction is simply an instruction id.<br/><br/>The response to this instruction list might look like this:<pre>
+      [
+        [id_0, OK],
+        [id_1, 9]
+      ]
+</pre>Again, each element of the response list is itself a list of strings.  The first string in each response is the id of the instruction being responded to.  The second is the response value.  In this case the construction in instruction <i>id_0</i> was successful, and the call to function <i>f</i> with value <i>3</i> in instruction <i>id_1</i> returned a <i>9</i>.<br/><br/>That's pretty much it.  Lists of instructions go out.  Lists of responses come back.  Typically the instructions for an entire test page will be sent in one large list, yielding one large response list.<br/><br/>There is no type information in the instructions.  Each instruction is a list of strings.  Each response is a list of strings.  Strings and lists are the only two types in the entire protocol.  It is up to the SlimExecutor to find the functions and constructors that match the instructions, and to do the necessary type conversion.<br/><br/><h3 id="1">The Data</h3>
+The SlimServer maintains five pieces of data that are operated on by the instructions that it processes.<br/><br/><ul>
+	<li>A list of class search path items.</li>
+	<li>A dictionary of created objects. Each object is addressed by an instance name string.</li>
+	<li>A dictionary of symbol values. Each symbol value is addressed by a symbol name string.</li>
+	<li><i>[0.1]</i> <b>Library Instances:</b> A stack of library objects.</li>
+	<li><i>[0.3]</i> <b>Actors:</b> A stack of actor objects.</li>
+</ul>
+<br/><h3 id="2">The Instructions</h3>
+There are five instructions in the Slim protocol.  import, make, call, callAndAssign, and <i>[0.4]</i> assign.  That's all.<br/><br/><h4 id="3">Import</h4>
+[<i>&lt;id&gt;</i>, import, <i>&lt;path&gt;</i>]<br/><br/>This instruction causes the &lt;path&gt; to be added to the list of class search path items.  In java &lt;path&gt; gets added to the <i>CLASSPATH</i>.  In <i>.NET</i>, the &lt;path&gt; is a namespace.  You can send as many imports as you like.  The Slim system will use all imported paths to find fixture classes.  This instruction returns <i>OK</i>.<br/><br/><h4 id="4">Make</h4>
+[<i>&lt;id&gt;</i>, make, <i>&lt;instance&gt;</i>, <i>&lt;class&gt;</i>, <i>&lt;arg&gt;...</i>]<br/><br/>This instruction causes slim to search for a class named <i>&lt;class&gt;</i> using the list of class search path items.  <i>&lt;class&gt;</i> can also be fully qualified.  If found slim looks for a constructor with the right number of arguments.  If found, the <i>&lt;arg&gt;</i> strings are converted to the appropriate types, and the constructor is called.  The newly created instance is added to the dictionary of created objects with the name <i>&lt;instance&gt;</i>, and the instruction returns <i>OK</i>.<br/><br/><i>[0.1]</i> <b>Library Instances:</b> If a <i>make</i> instruction creates an object with an instance name that begins with <span class="code">library</span> then that instance is pushed on the stack of library objects.  These objects endure for the entire duration of the SlimServer execution.<br/><br/><i>[0.2]</i> <b>Fixture Chaining:</b> Symbols can be used in the <i>Make</i> command to represent a class name.  If the <i>&lt;class&gt;</i> argument of the <i>Make</i> command contains '$' characters, then Slim should replace any symbols that have been created by previous <i>callAndAssign</i> commands.  This allows FitNesse to compose fixture names from symbols set by fixtures, and therefore enables fixture chaining.<br/><br/><i>[0.3]</i> <b>Symbol Copy:</b> If <i>&lt;class&gt;</i> consists entirely of a single symbol name prefixed with $, and the item from the dictionary of symbol values with the symbol name is not a string, then the item is added to the dictionary of created objects with the name <i>&lt;instance&gt;</i>. The <i>&lt;arg&gt;</i> strings are ignored and no constructor is called.<br/><br/><h4 id="5">Call</h4>
+[<i>&lt;id&gt;</i>, call,<i>&lt;instance&gt;</i>,<i>&lt;function&gt;</i>,<i>&lt;arg&gt;...</i>]<br/><br/>This instruction causes slim to find a function named <i>&lt;function&gt;</i> in the class of the object from the dictionary of created objects with the name <i>&lt;instance&gt;</i>.  The function must have the same number of arguments as the instruction.  If found, each argument in the instruction is converted to the appropriate type, and then the function is called on the instance.  The <i>&lt;arg&gt;</i> strings may contain symbols (see below) which will be substituted before the type conversion is done. If the function returns a value, it is converted to a string and returned.  Otherwise the instruction returns the string: <i>/__VOID__/</i>.<br/><br/><i>[0.1]</i> <b>System Under Test:</b> Each fixture may have a way to declare a particular object to be the <i>System Under Test</i>.  In java this is done with the @SystemUnderTest attribute.  In RubySlim the object is accessed using the <i>sut</i> method.  In .NET, the fixture implements the DomainAdapter interface.  Whatever mechanism is used, if a the method specified by a <i>Call</i> or <i>CallAndAssign</i> is not found on the specified instance, then if there is a <i>System Under Test</i> object specified, and the method exists on that object, then it will be called.<br/><br/><i>[0.1]</i> <b>Library Instances:</b> If a method specified by a <i>Call</i> or <i>CallAndAssign</i> is not found on either the specified instance, or on the <i>System Under Test</i> then the stack of library objects is searched, starting at the top (latest).  If the method is found, it is called.<br/><br/><i>[0.3]</i> <b>Symbol As Object:</b> If an <i>&lt;arg&gt;</i> consists entirely of a single symbol name prefixed with $, then the item from the dictionary of symbol values with the symbol name is used directly as an argument in the function call.<br/><br/><h4 id="6">CallAndAssign</h4>
+[<i>&lt;id&gt;</i>, callAndAssign, <i>&lt;symbol&gt;</i>, <i>&lt;instance&gt;</i>, <i>&lt;function&gt;</i>, <i>&lt;arg&gt;...</i>]<br/><br/>This instruction is identical to <i>call</i> except that the return value is saved in the dictionary of symbol values with the name <i>&lt;symbol&gt;</i>.  Symbol names may only contain letters.<br/><br/><h4 id="7"><i>[0.4]</i> Assign</h4>
+[<i>&lt;id&gt;</i>, assign, <i>&lt;symbol&gt;</i>, <i>&lt;value&gt;</i>]<br/><br/>This instruction is used to set symbols on the SUT. The <i>&lt;value&gt;</i> is saved in the dictionary of symbol values with the name <i>&lt;symbol&gt;</i>. This instruction returns <i>OK</i>.<br/><br/><h3 id="8">Symbols</h3>
+That last one was probably puzzling.  Symbol values are strings or objects (or null values) that are kept in a dictionary.  The <i>callAndAssign</i> instruction is the only thing that can create a symbol.  Symbols are used in in the <i>&lt;arg&gt;</i> strings of the <i>make</i>, <i>call</i>, and <i>callAndAssign</i> instructions.  If one of those <i>&lt;arg&gt;</i> strings contains a $ followed by a symbol name (as in $V), and if the symbol has been assigned, then that string will be replaced by the value of the symbol. What this means is that the FitNesse side can tell Slim to remember a value in a symbol, and then to use that value later.<br/><br/><i>[0.3]</i> <b>Symbol As Object:</b> If the symbol is replaced within a string context, it will be converted to a string. If only the $ followed by a symbol name is given and an object is stored for that symbol, then the object will be used.<br/><br/><h3 id="9">Actors</h3>
+<i>[0.3]</i> The stack of library objects should be initialized with an instance of a class with the following 3 methods:<br/><br/><ul>
+	<li>getFixture(): returns the object from the dictionary of created objects named "scriptTableActor". Throws an exception if no object exists.</li>
+	<li>pushFixture(): pushes the object from the dictionary of created objects named "scriptTableActor" on to the stack of actor objects. Throws an exception if no object exists.</li>
+	<li>popFixture(): pops an object from the stack of actor objects and adds it to the dictionary of created objects with the name "scriptTableActor". Throws an exception if the stack is empty.</li>
+</ul>
+<br/>To support symbol assignments in Decision Tables which are implemented with a Scenario function is required in a Library:<br/><br/><ul>
+	<li>cloneSymbol</li>
+</ul>
+<br/><h3 id="10">Strings and Lists</h3>
+As we will see, slim views a list as a special kind of string.  Therefore functions can take and return lists as well as strings.  The lists must be lists of strings, but since a list is a special kind of string, lists of lists of lists of ... are possible.  The Slim executor will convert back and forth between these forms as needed.<br/><br/>A string is encoded as six or more digits followed by a colon, followed by the characters of the string.  The six+ digits are the number of characters in the string, not including the digits themselves.  Thus, the empty string is "000000:".  This length encoding scheme is used in other places so we'll use the token <i>&lt;length&gt;</i> to mean six digits followed by a colon.<br/><br/>If a string is <i>&lt;null&gt;</i>, then the four character string <i>null</i> will replace it.<br/><br/>A list is encoded as a string that begins with a '[', followed by a <i>&lt;length&gt;</i> specifying the number of items in the list.  This is followed by that many strings, each terminated by a colon, and then finally a ']'  Thus, this list: <i>[hello,world]</i> is encoded as the following string:<pre>000035:[000002:000005:hello:000005:world:]</pre>Take careful note of all the colons and counts.  Colons are terminators not separators.<br/><br/>As you can see, each item of a list is a string.  But since a string can encode a list, each item of a list can be another list.  So we can have very deep recursive definitions.<br/><br/><i>[0.4]</i> For versions older than 0.4, the length part of an encoded string was exactly six digits. For version 0.4 the size can grow beyond 6 digits for really long messages.<br/><br/><h3 id="11">Slim Server</h3>
+So when you send a list of instructions, what you are really sending is a string.  When you receive a list of responses, what you are really receiving is a string.  So the high level protocol of Slim is just strings.  It looks like this:<br/><br/><ol>
+	<li>FitNesse invokes the Slim Server via a command line.  One of the command line arguments is the port number of the socket to listen on. If the port number is 1 than the communication happens via StdIn and Stdout. For any other port number the Slim Server opens that socket and start listening. FitNesse connects to that socket.</li>
+	<li>Slim Server responds to the connect request with the string "Slim -- <i>V&lt;version&gt;</i>\n", where <i>&lt;version&gt;</i> is the version number of the slim <i>protocol</i>.  If this protocol ever changes, <i>that</i> version number will change.  This is the only string that is ever sent without the <i>&lt;length&gt;</i> encoding.  It is terminated by the <b>\n</b> instead.  Every other message that slim sends will be prefixed by a <i>&lt;length&gt;</i> in <i><span class="red">bytes</span></i>, followed by a colon.  <span class="red">NOTE:</span> Every other length in this document is in UTF-8 <i>characters</i>.  This one length is in bytes.</li>
+	<li>FitNesse sends a list of instructions encoded as a string of course.</li>
+	<li>Slim Server sends a list of responses similarly encoded.</li>
+	<li>3 and 4 repeat until FitNesse sends a <i>bye</i> directive.  This is simply the string <i>bye</i> properly encoded with <i>&lt;length&gt;</i>.  e.g. "000003:bye".</li>
+	<li>Slim Server shuts down.</li>
+</ol>
+<br/><h3 id="12">StdOut and StdErr from the SUT</h3>
+Everything written to StdOut and StdErr by the SUT is added by FitNesse to the Execution Log and stored with the test results.<br/><br/><i>[0.5]</i> In case the port number is 1 the communication is happening via StdIn and StdOut. As StdOut is in use for testing everything written to StdOut by the SUT is tunneled via StdErr <br/><ul>
+	<li>the Slim Server is prefixing every line from StdOut with "SOUT :". In case a single message spans multiple lines all following lines will be prefixed with "SOUT.:".  </li>
+	<li>the Slim Server is prefixing every line from StdErr with "SERR :". In case a single message spans multiple lines all following lines will be prefixed with "SERR.:".</li>
+	<li>both types of messages are then send via StdErr</li>
+	<li>FitNesse splits incoming text again into stdout and stderr and adds it to the appropriate section in the Execution Log</li>
+	<li>The above prefixes are never visible for the FitNesse user</li>
+	<li>if FitNesse receives text without such a prefix it adds the text as it is to the stdout section from the Execution Log</li>
+</ul>
+ <br/><h3 id="13">Exceptions</h3>
+Sometimes a function or a constructor will throw an exception in response to a <i>make</i>, <i>call</i>, or <i>callAndAssign</i> instruction. When this happens, the response value for that instruction will be: "__EXCEPTION__:<i>&lt;exception string&gt;</i>".  The <i>&lt;exception string&gt;</i> ought to be a stack trace or some other relevant debugging information.  If you want a nice yellow message to appear in one of the SLIM tables, then somewhere in the <i>&lt;&lt;exception string&gt;&gt;</i> put <i>message:&lt;&lt;</i> in front of the message and <i>&gt;&gt;</i> after it.  e.g.   <span class="code">message:&lt;&lt;can't find constructor&gt;&gt;</span><br/><br/><h4 id="14">Standard exception messages</h4>
+There are some standard exception messages that every Slim implementation should create.<br/><br/><table>
+	<tr>
+		<td>COULD_NOT_INVOKE_CONSTRUCTOR <i>&lt;some class&gt;</i></td>
+		<td>Where <i>&lt;some class&gt;</i> is the name of the class whose constructor cannot be invoked.</td>
+	</tr>
+	<tr>
+		<td>NO_METHOD_IN_CLASS <i>&lt;some method&gt;</i> <i>&lt;some class&gt;</i></td>
+		<td>Where <i>&lt;some method&gt;</i> is the name of the missing method.</td>
+	</tr>
+	<tr>
+		<td>NO_CONSTRUCTOR <i>&lt;some class&gt;</i></td>
+		<td>Where <i>&lt;some class&gt;</i> is the name of the class that is missing the constructor.</td>
+	</tr>
+	<tr>
+		<td>NO_CONVERTER_FOR_ARGUMENT_NUMBER <i>&lt;argument type&gt;</i></td>
+		<td>Where <i>&lt;argument type&gt;</i> is the class that has no corresponding converter.</td>
+	</tr>
+	<tr>
+		<td>NO_INSTANCE <i>&lt;instance name&gt;</i></td>
+		<td>Where <i>&lt;instance name&gt;</i> is the name of the missing instance.</td>
+	</tr>
+	<tr>
+		<td>NO_CLASS <i>&lt;some class&gt;</i></td>
+		<td>Where <i>&lt;some class&gt;</i> is the class that could not be found.</td>
+	</tr>
+	<tr>
+		<td>MALFORMED_INSTRUCTION [<i>instruction list</i>]</td>
+		<td>Where <i>instruction list</i> is a comma separated list of the instruction strings.</td>
+	</tr>
+	<tr>
+		<td>TIMED_OUT <i>&lt;n&gt;</i></td>
+		<td>The instruction timed out after <i>&lt;n&gt;</i> seconds. To enforce timeouts, set the <i>-s xx</i> flag (via the <i>slim.flags</i> variable)</td>
+	</tr>
+</table>
+<br/><h4 id="15">Aborting a Test</h4>
+If a fixture throws an exception with a <i>class</i> name that contains "<span class="code">StopTest</span>", then Slim should stop executing the instructions in the current batch, and return immediately.   The response for this type of exception should be "<span class="code">__EXCEPTION__:ABORT_SLIM_TEST:</span>" which may have an optional suffix of: "<span class="code">message:&lt;&lt;<i>reason</i>&gt;&gt;</span>".<br/><br/>To abort the test suite (stop execution directly), throw an exception with a class name that contains "<span class="code">StopSuite</span>". The syntax is identical to StopTest.<br/><br/><h3 id="16">Type Conversions</h3>
+The only types in the instructions and responses are lists and strings, and since the leaves of the lists must eventually be strings, all we really have to worry about are strings.  But we don't want to restrict our fixtures to use only Strings.  So Slim comes with some standard type converters that allow fixtures to take more convenient data types.<br/><br/><b>See: <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/DataTypes.html">Data Types</a></b>.<br/><i>[0.1]</i> <b>Hashes:</b> <span class="note">Optional</span> If one of the method arguments int a <i>Make</i>, <i>Call</i>, or <i>CallAndAssign</i> matches the "hash" format, then it should be converted into a dictionary, or a hash, or some convenient form for the fixture authors.  In Java they are converted into Maps.  In Ruby they are converted into Hashes.  Other languages may use other structures.  The "hash" format is the format produced by the Hash Widget<a title="create page" href="../../../../FitNesse/UserGuide/MarkupHashTable.html?edit&amp;nonExistent=true">[?]</a>, and is simply the HTML for a table with two columns and <i>n</i> rows. <span class="code">&lt;table&gt;&lt;tr&gt;&lt;td&gt;name&lt;/td&gt;&lt;td&gt;value&lt;/td&gt;&lt;/tr&gt;...&lt;/table&gt;</span>.<br/><br/><h3 id="17">Conclusion</h3>
+That's pretty much it.  If you want to port Slim to a new platform, I suggest you look at the code in the fitnesse.slim package.  Pay special attention to the ListSerializer and ListDeserializer classes.  Also check out the logic in Statement and StatementExecutor classes.  The unit tests ought to be expecially educational. You should be able to build equivalent unit tests without much fuss.  Finally, take a look at the unit tests in fitnesse.responders.run.slimResponder.  These should all still run with your new port (although you'll have to replace the command line that invokes the Slim Server).<br/>
+</article>
+<footer>
+<center>User Guide Contents</center><center><a href="../../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+</footer>
+</body>
+</html>

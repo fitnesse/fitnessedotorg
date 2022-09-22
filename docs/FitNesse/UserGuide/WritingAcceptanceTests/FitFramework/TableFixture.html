@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.WritingAcceptanceTests.FitFramework.TableFixture</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+<li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">WritingAcceptanceTests</a></li>
+<li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework.html">FitFramework</a></li>
+
+  </ol>
+</nav>
+<article>
+<h1 id="0">Custom Test Table Styles: TableFixture</h1>
+Sometimes, none of the existing <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/TestTableStyles.html">Test Table Styles</a> is exactly what you need to represent your various inputs and outputs properly. In thise case, programmers can use the <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/TableFixture.html">Table Fixture</a> style of <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FixtureCode.html">FixtureCode</a> to create custom test tables, by accessing and processing the cells in a table individually by row and column, and doing whatever needs doing with them.<br/><br/>You can use <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/TableFixture.html">Table Fixture</a> to devise any manner of custom tables, representing test inputs and outputs however you like. While this involves custom programming, it can be quite a powerful way to represent tests in a way that software development team members can all easily understand.<br/><br/><h2 id="1">Using TableFixture</h2>
+<a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/TableFixture.html">Table Fixture</a> provides some simple methods that allow exactly the arbitrary table cell access and processing that you need to make custom test tables.<br/><ul>
+	<li>The (row,column) coordinates are zero based,</li>
+	<li>with (0,0) being the upper left cell.</li>
+</ul>
+<br/>The methods of <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/TableFixture.html">Table Fixture</a> are:<br/><br/><table>
+	<tr>
+		<td colspan="2">Comment</td>
+	</tr>
+	<tr>
+		<td><pre>protected abstract void doStaticTable(int rows)</pre></td>
+		<td><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/TableFixture.html">Table Fixture</a> is an abstract class that you must derive from.  You must override <i>doStaticTable</i> to perform the functions of the fixture.  The number of rows in the table is passed in <i>rows</i>.</td>
+	</tr>
+	<tr>
+		<td><pre>protected Parse getCell(int row, int column)</pre></td>
+		<td>Returns the addressed table cell as a <i>Parse</i>.</td>
+	</tr>
+	<tr>
+		<td><pre>protected String getText(int row, int column)</pre></td>
+		<td>Returns the text within the addressed table cell.</td>
+	</tr>
+	<tr>
+		<td><pre>protected boolean blank(int row, int column)</pre></td>
+		<td>Returns <i>true</i> if the addressed table cell is blank.</td>
+	</tr>
+	<tr>
+		<td><pre>protected void wrong(int row, int column)</pre></td>
+		<td>Turns the addressed table cell red.</td>
+	</tr>
+	<tr>
+		<td><pre>protected void right(int row, int column)</pre></td>
+		<td>Turns the addressed table cell green.</td>
+	</tr>
+	<tr>
+		<td><pre>protected void wrong(int row, int column, String actual)</pre></td>
+		<td>Turns the addressed table cell red, and annotates it with the <i>actuall</i> value.</td>
+	</tr>
+	<tr>
+		<td><pre>protected void ignore(int row, int column)</pre></td>
+		<td>Turns the addressed cell gray.</td>
+	</tr>
+	<tr>
+		<td><pre>protected int getInt(int row, int column)</pre></td>
+		<td>Converts the addressed cell to an int, and returns it.</td>
+	</tr>
+</table>
+<br/><h2 id="2">An Example TableFixture Custom Test Table: Scoring a Bowling Game</h2>
+Consider the custom test table below.  It represents and scores an entire bowling game, showing the score for every frame. The rightmost cell represents what we expect the final score to be. Notice how closely this represents a real bowling game scoring card, or electronic game representation at a bowling alley? Let's first see the score for a perfect game:<br/><br/><table>
+	<tr>
+		<td colspan="22">eg.bowling.fixtures.FinalScore</td>
+	</tr>
+	<tr>
+		<td>10</td>
+		<td>10</td>
+		<td>10</td>
+		<td>10</td>
+		<td>10</td>
+		<td>10</td>
+		<td>10</td>
+		<td>10</td>
+		<td>10</td>
+		<td>10</td>
+		<td>10</td>
+		<td>10</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>300</td>
+	</tr>
+</table>
+<br/>Now how about a slightly flawed game:<br/><br/><table>
+	<tr>
+		<td colspan="22">eg.bowling.fixtures.FinalScore</td>
+	</tr>
+	<tr>
+		<td>10</td>
+		<td>10</td>
+		<td>4</td>
+		<td>10</td>
+		<td>10</td>
+		<td>10</td>
+		<td>10</td>
+		<td>10</td>
+		<td>10</td>
+		<td>10</td>
+		<td>10</td>
+		<td>10</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>262</td>
+	</tr>
+</table>
+<br/>And then finally, the sort of game you might ordinarily see. Well, I see it all the time, anyway:<br/><br/><table>
+	<tr>
+		<td colspan="22">eg.bowling.fixtures.FinalScore</td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>7</td>
+		<td>9</td>
+		<td>10</td>
+		<td>4</td>
+		<td>3</td>
+		<td>0</td>
+		<td>8</td>
+		<td>10</td>
+		<td>6</td>
+		<td>7</td>
+		<td>9</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>91</td>
+	</tr>
+</table>
+<br/><h3 id="3">The FixtureCode for FinalScore</h3>
+The fixture code for the above custom table style is as follows. It examines each of the input cells of the above table individually, as frame scores, and calculates the score for the game: <pre>public class FinalScore extends TableFixture
+{
+  private BowlingGame game;
+
+  protected void doStaticTable(int rows)
+  {
+    game = new BowlingGame();
+    doRolls();
+    doScore();
+  }
+
+  private void doRolls()
+  {
+    for(int i = 0; i &lt; 21; i++)
+    {
+      if(!blank(0, i))
+      {
+        int pins = getInt(0, i);
+        game.roll(pins);
+      }
+    }
+  }
+
+  private void doScore()
+  {
+    int expected = getInt(1, 21);
+    int actual = game.score(10);
+    if(actual == expected)
+      right(1, 21);
+    else
+      wrong(1, 21, "" + actual);
+  }
+}
+</pre><br/><br/>
+</article>
+<footer>
+<center>User Guide Contents</center><center><a href="../../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+</footer>
+</body>
+</html>

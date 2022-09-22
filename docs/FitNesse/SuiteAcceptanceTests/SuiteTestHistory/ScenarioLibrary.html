@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteTestHistory.ScenarioLibrary</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests/SuiteTestHistory.html">SuiteTestHistory</a></li>
+
+  </ol>
+</nav>
+<article>
+<table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>get history for page</td>
+		<td colspan="2">page</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>request page</td>
+		<td>@page?pageHistory</td>
+		<td>200</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td>$TESTPAGE=</td>
+		<td>echo</td>
+		<td colspan="2">@page</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td colspan="3">content</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td colspan="3">get top level history</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>request page</td>
+		<td>?testHistory</td>
+		<td>200</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td colspan="3">content</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>the number of page histories should be</td>
+		<td colspan="4">number</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>count of tag</td>
+		<td>TR</td>
+		<td>with id prefix</td>
+		<td>pageHistoryRow</td>
+		<td>@number</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>the page history bar for</td>
+		<td>date</td>
+		<td>should have</td>
+		<td>number</td>
+		<td>elements of class</td>
+		<td colspan="4">class</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>$date=</td>
+		<td>page history date signature of</td>
+		<td colspan="8">@date</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>count of tag</td>
+		<td>TD</td>
+		<td>with class</td>
+		<td>element @class</td>
+		<td>below tag</td>
+		<td>TR</td>
+		<td>with id prefix</td>
+		<td>pageHistoryRow_$date</td>
+		<td>@number</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>the page title should be</td>
+		<td>title</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>ensure</td>
+		<td>content contains</td>
+		<td>&lt;h1&gt;@title&lt;/h1&gt;</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>the page title should be a link to</td>
+		<td>page</td>
+		<td>with value</td>
+		<td>value</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>ensure</td>
+		<td>content contains</td>
+		<td colspan="3">&lt;li&gt;&lt;a href="/@page"&gt;@value&lt;/a&gt;&lt;/li&gt;</td>
+	</tr>
+</table>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>the bread crumb</td>
+		<td>crumb</td>
+		<td>should be a link to</td>
+		<td>page</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>ensure</td>
+		<td>content contains</td>
+		<td colspan="3">&lt;a href="/@page"&gt;@crumb&lt;/a&gt;</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>The page history bar for</td>
+		<td>date</td>
+		<td>should have a</td>
+		<td>id</td>
+		<td>with class</td>
+		<td>class</td>
+		<td>and value</td>
+		<td>value</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>$date=</td>
+		<td>page history date signature of</td>
+		<td colspan="7">@date</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>ensure</td>
+		<td>content of tag with id</td>
+		<td>pageHistoryRow_$date</td>
+		<td>contains</td>
+		<td colspan="5">&lt;td class="@id @class"&gt;@value&lt;/td&gt;</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td>content of tag with id</td>
+		<td colspan="7">pageHistoryRow_$date</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>The page history bar for</td>
+		<td>date</td>
+		<td>should have a date field with class</td>
+		<td>class</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>$date=</td>
+		<td>page history date signature of</td>
+		<td colspan="3">@date</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>ensure</td>
+		<td>content of tag with id</td>
+		<td>pageHistoryRow_$date</td>
+		<td>contains</td>
+		<td>&lt;td class="date_field @class"&gt;</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>the top level history line for</td>
+		<td>page</td>
+		<td>is a link to the page history</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>ensure</td>
+		<td>content contains</td>
+		<td colspan="2">&lt;a href="/@page?pageHistory"&gt;@page&lt;/a&gt;</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>The page history line for</td>
+		<td>date</td>
+		<td>should be a link to result</td>
+		<td>resultDate</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>ensure</td>
+		<td>content contains</td>
+		<td colspan="3">&lt;a href="$TESTPAGE?pageHistory&amp;resultDate=@resultDate"&gt;@date&lt;/a&gt;</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>the top level history line for</td>
+		<td>page</td>
+		<td>should have a</td>
+		<td>class</td>
+		<td>link with</td>
+		<td>sign</td>
+		<td>to result</td>
+		<td>resultDate</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>ensure</td>
+		<td>content contains</td>
+		<td colspan="7">&lt;td class="@class"&gt;&lt;a href="@page?pageHistory&amp;resultDate=@resultDate"&gt;@sign&lt;/a&gt;&lt;/td&gt;</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>the top level history line for</td>
+		<td>page</td>
+		<td>should not have a link to</td>
+		<td>resultDate</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>reject</td>
+		<td>content contains</td>
+		<td colspan="3">&lt;a href="@page?pageHistory&amp;resultDate=@resultDate"&gt;</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>class for pass fail in top level history line</td>
+		<td>page</td>
+		<td></td>
+		<td>pass class</td>
+		<td></td>
+		<td>pass count</td>
+		<td></td>
+		<td>fail class</td>
+		<td></td>
+		<td>fail count</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>ensure</td>
+		<td>html contains</td>
+		<td colspan="9">&lt;a href="/@page?pageHistory"&gt;@page&lt;/a&gt;&lt;/td&gt; &lt;td class="@passClass"&gt;@passCount&lt;/td&gt; &lt;td class="@failClass"&gt;@failCount&lt;/td&gt;</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>assume time is</td>
+		<td>time</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td>freeze clock at</td>
+		<td colspan="2">@time</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>with subpage</td>
+		<td>name</td>
+		<td>with content</td>
+		<td>content</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>create page</td>
+		<td>$IT.@name</td>
+		<td>with content</td>
+		<td colspan="2">@content</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>run suite</td>
+		<td colspan="2">name</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>request page</td>
+		<td>@name?suite</td>
+		<td>200</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<a href="../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../FrontPage.html">Front Page</a> | <a href="../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

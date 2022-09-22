@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteResponderTests.PartitionPreviewResponder.PartitionPreviewBasedOnFile</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteResponderTests.html">SuiteResponderTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteResponderTests/PartitionPreviewResponder.html">PartitionPreviewResponder</a></li>
+
+  </ol>
+</nav>
+<article>
+<br/>This test shows that the partitioner can work with a file containing the division of the suite, instead of calculating from scratch.<br/>The file is specified by the <span class="code">partitionIndexFile</span> parameter and should be placed in the files section.<br/><br/>The file may contain extra tests, they are ignored.<br/>Tests not listed in the file are split across all partitions and put <i>before</i> the tests listed in the file.<br/><br/>---<br/><br/><span class="meta">variable defined: TEST_SYSTEM=slim</span>
+<br/><br/>Create the file section<br/><table>
+	<tr class="slimRowTitle">
+		<td>file section</td>
+		<td>setup</td>
+	</tr>
+</table>
+<br/>Add some files<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">file section file adder</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>path</td>
+		<td>type</td>
+		<td>content</td>
+		<td>valid?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>partition.txt</td>
+		<td>file</td>
+		<td>Page	Partition	Test System	Order
+SuitePage.TestPage1	2	fit	99
+SuitePage.TestPage2	2	fit	0
+SuitePage.TestPage3	1	fit	0
+SuitePage.TestPage4	0	fit	0
+SuitePage.TestPage5	0	fit	1
+</td>
+		<td>true</td>
+	</tr>
+</table>
+<br/>Create a Suite page<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td>Page Builder</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>line</td>
+		<td>
+!path lib/*.jar
+</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>page</td>
+		<td>SuitePage</td>
+	</tr>
+</table>
+<br/>Create two sub pages<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td>Page Builder</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>line</td>
+		<td>|!-fitnesse.testutil.PassFixture-!|</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>page</td>
+		<td>SuitePage.TestPage1</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td>Page Builder</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>line</td>
+		<td>|!-fitnesse.testutil.PassFixture-!|</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>page</td>
+		<td>SuitePage.TestPage2</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td>Page Builder</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>line</td>
+		<td>|!-fitnesse.testutil.PassFixture-!|</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>page</td>
+		<td>SuitePage.TestPage3</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td>Page Builder</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>line</td>
+		<td>!define TEST_SYSTEM {slim}</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>page</td>
+		<td>SuitePage.TestPage4</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td>Page Builder</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>line</td>
+		<td>|!-fitnesse.testutil.PassFixture-!|</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>page</td>
+		<td>SuitePage.TestPage6</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td>Page Builder</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>line</td>
+		<td>|!-fitnesse.testutil.PassFixture-!|</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>page</td>
+		<td>SuitePage.TestPage7</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>valid?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>SuitePage?responder=partition&format=tsv&partitionCount=3&partitionIndexFile=partition.txt</td>
+		<td>true</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>contents?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td></td>
+	</tr>
+</table>
+<br/>The suite should report all TestPages in tab-separate format.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>headers</td>
+		<td>Content-Type: text/tab-separated-values</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>contents</td>
+		<td>Page\tPartition\tTest System\tOrder\n</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>SuitePage\.TestPage1\t2\tfit\t1\n</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>contents</td>
+		<td>SuitePage\.TestPage2\t2\tfit\t0\n</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>SuitePage\.TestPage3\t1\tfit\t1\n</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>contents</td>
+		<td>SuitePage\.TestPage4\t0\tslim\t1\n</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>SuitePage\.TestPage6\t0\tfit\t0\n</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>contents</td>
+		<td>SuitePage\.TestPage7\t1\tfit\t0\n</td>
+		<td>true</td>
+	</tr>
+</table>
+<br/>
+</article>
+<footer>
+<a href="../../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../../FrontPage.html">Front Page</a> | <a href="../../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

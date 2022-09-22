@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteWidgetTests.TestMultiLineTable</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests/SuiteWidgetTests.html">SuiteWidgetTests</a></li>
+
+  </ol>
+</nav>
+<article>
+<h3 id="0">This page tests a multi-line table.</h3>
+A multi-line table is created as follows <pre>|a|b|c|
+|d|e|f|</pre> The resulting text will be rendered in a one line table of the form.<pre>&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;a&lt;/td&gt;&lt;td&gt;b&lt;/td&gt;&lt;td&gt;c&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;d&lt;/td&gt;&lt;td&gt;e&lt;/td&gt;&lt;td&gt;f&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</pre><br/><ul>
+	<li>First create a page with a simple table in it.</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="2">script</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>start</td>
+		<td>Page Builder</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>line</td>
+		<td>|a|b|c|</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>line</td>
+		<td>|d|e|f|</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>page</td>
+		<td>MultiLineTablePage</td>
+	</tr>
+</table>
+<ul>
+	<li>Then request that page</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>valid?</td>
+		<td>contents?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>MultiLineTablePage</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+<ul>
+	<li>Make sure the html is correct for a simple table.</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="4">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+		<td>wrapped html?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>a</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>number</td>
+		<td>string?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>line</td>
+		<td>1</td>
+		<td>&lt;table></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>line</td>
+		<td>2</td>
+		<td>&lt;tr></td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>line</td>
+		<td>3</td>
+		<td>&lt;td>a&lt;/td></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>line</td>
+		<td>4</td>
+		<td>&lt;td>b&lt;/td></td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>line</td>
+		<td>5</td>
+		<td>&lt;td>c&lt;/td></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>line</td>
+		<td>6</td>
+		<td>&lt;/tr></td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>line</td>
+		<td>7</td>
+		<td>&lt;tr></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>line</td>
+		<td>8</td>
+		<td>&lt;td>d&lt;/td></td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>line</td>
+		<td>9</td>
+		<td>&lt;td>e&lt;/td></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>line</td>
+		<td>10</td>
+		<td>&lt;td>f&lt;/td></td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>line</td>
+		<td>11</td>
+		<td>&lt;/tr></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>line</td>
+		<td>12</td>
+		<td>&lt;/table></td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<a href="../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../FrontPage.html">Front Page</a> | <a href="../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

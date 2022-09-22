@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.FixtureGallery.FitLibraryFixtures.SequenceFixture</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+<li><a href="../../../../FitNesse/UserGuide/FixtureGallery.html">FixtureGallery</a></li>
+<li><a href="../../../../FitNesse/UserGuide/FixtureGallery/FitLibraryFixtures.html">FitLibraryFixtures</a></li>
+
+  </ol>
+</nav>
+<article>
+<br/><i>Previous page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/FitLibraryFixtures/DoFixture.html">DoFixture</a> Next page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/FitLibraryFixtures/ArrayFixture.html">ArrayFixture</a> Parent page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/FitLibraryFixtures.html">FitLibrary Fixtures</a></i><br/><h2 id="0">SequenceFixture</h2>
+<b> SequenceFixture </b> is very similar to <b> DoFixture </b> and has almost the same features &mdash; in fact the only difference between those two is the naming convention for methods. Instead of using odd cells to construct a method name, <b> SequenceFixture </b> takes the first cell in each row as the method name, and all other cells as arguments (if there are no keywords to modify the row functionality). All <b> DoFixture </b> keywords are supported in <b> SequenceFixture </b> too, as well as the flow mode (see <a href="../../../../FitNesse/UserGuide/FixtureGallery/ImportantConcepts/FlowMode.html">Flow Mode</a> ) and domain object wrapping (see <a href="../../../../FitNesse/UserGuide/FixtureGallery/ImportantConcepts/SystemUnderTest.html">System under test</a>). <br/><br/><h3 id="1">Table Format</h3>
+The table format is the same as for <b> DoFixture </b> (see <a href="../../../../FitNesse/UserGuide/FixtureGallery/FitLibraryFixtures/DoFixture.html">DoFixture</a>), with the difference in method naming. <br/><br/><pre>
+!|SequenceFixtureTest|
+|fill|10|x|
+|check|char at|4|x|
+|set list|A,B,C,D|
+|check|char at|2|C|
+</pre><br/><h3 id="2">Fixture class</h3>
+ The fixture class should extend <b> fitlibrary.SequenceFixture </b>. Declare public methods for all verifications and actions by taking the first cells as the method name, and using all other cells as arguments. <br/><br/><h3 id="3">Java Source Code</h3>
+<pre>
+package info.fitnesse.fixturegallery;
+import java.util.Arrays;
+import fitlibrary.SequenceFixture;
+
+public class SequenceFixtureTest extends SequenceFixture{
+	public String letters;
+	public void fill(int count,char c){
+		char[] arr=new char[count];
+		Arrays.fill(arr,c);
+		letters=new String(arr);
+	}
+	public void setList(char[] array){
+		letters=new String(array);
+	}
+	public char charAt(int position){
+		return letters.charAt(position);
+	}
+}
+</pre><br/><h3 id="4">.NET Source Code</h3>
+<pre>
+using System;
+
+namespace info.fitnesse.fixturegallery
+{
+    public class SequenceFixtureTest : fitlibrary.SequenceFixture
+    {
+        private String contents;
+        public void Fill(int howmany, String what)
+        {
+            contents = "";
+            for (int i = 0; i &lt; howmany; i++)
+            {
+                contents = contents + what;
+            }
+        }
+        public void SetList(String[] strings)
+        {
+            contents = "";
+            foreach (String s in strings)
+            {
+                contents = contents + s;
+            }
+        }
+        public char CharAt(int index)
+        {
+            return contents[index];
+        }
+    }
+}
+</pre><br/><h3 id="5">Python Source Code</h3>
+<pre>
+from fitLib.SequenceFixture import SequenceFixture
+from info.fitnesse.fixturegallery.typeadapter import buildListTypeAdapterFor
+
+class SequenceFixtureTest(SequenceFixture):
+    _typeDict = {}
+
+    def __init__(self):
+        self.letters = ""
+
+    _typeDict["fill.types"] = [ None, "Integer", "Char" ]
+    def fill(self, count, c):
+        self.letters = c * count    #&lt; FILL: Repeact char count times.
+
+    # JAVA: public void setList(char[] array){
+    ARRAY_OF_CHAR_TYPE_ADAPTER = buildListTypeAdapterFor("Char")
+    _typeDict["setList.types"] = [ None, ARRAY_OF_CHAR_TYPE_ADAPTER ]
+    def setList(self, array):
+        self.letters = "".join(array)   #&lt; Concatenate array of chars to string.
+
+    _typeDict["charAt.types"] = [ "Char", "Integer" ]
+    def charAt(self, position):
+        return self.letters[position]
+
+</pre><br/><h3 id="6">Usage</h3>
+<b> SequenceFixture </b> has all the flexibility and power of <b> DoFixture </b>, but without the silly method names. It is most useful for more technical workflow tests, especially to directly map<UserGuide tables to existing business domain services (see <a href="../../../../FitNesse/UserGuide/FixtureGallery/ImportantConcepts/SystemUnderTest.html">System under test</a>). <br/><br/><br/><i>Previous page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/FitLibraryFixtures/DoFixture.html">DoFixture</a> Next page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/FitLibraryFixtures/ArrayFixture.html">ArrayFixture</a> Parent page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/FitLibraryFixtures.html">FitLibrary Fixtures</a></i><br/>
+</article>
+<footer>
+<a href="../../../../FitNesse/UserGuide/FixtureGallery.html">Table of contents</a>| Fixture Gallery on <a href="http://sourceforge.net/projects/fixturegallery">SourceForge</a> | Fixture Gallery live wiki on  <a href="http://fitnesse.info/fixturegallery">UserGuide.Info</a> | <a href="http://gojko.net/fitnesse/fixturegallery">Comments and Feedback</a> | <a href="../../../../FrontPage.html">Front Page</a><br/>
+</footer>
+</body>
+</html>

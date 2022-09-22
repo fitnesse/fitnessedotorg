@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FrontPage.FitNesseDevelopment.FitNesseRelease20150424</title>
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../FrontPage.html">FrontPage</a></li>
+<li><a href="../../FrontPage/FitNesseDevelopment.html">FitNesseDevelopment</a></li>
+
+  </ol>
+</nav>
+<article>
+<h3>release 
+	<a href="">20150424</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20150424">fitnesse-standalone.jar</a></strong></td><td>9079776 bytes</td><td>0</td></tr></tbody></table><br/><br/><h3 id="0"><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> Release Notes 2015/04/24</h3>
+<p class="note">Uncle Bob Consulting LLC.</p>
+<br/><p class="note"><span class="red">Requires Java 1.6</span></p>
+<br/><h4 id="1">Major Changes since <a href="../../FrontPage/FitNesseDevelopment/FitNesseRelease20150226.html">20150226</a>:</h4>
+<br/><ul>
+	<li>!contents has a new <a href="../../FitNesse/UserGuide/FitNesseWiki/MarkupLanguageReference/MarkupContents.html">-H option</a> (<a href="https://github.com/unclebob/fitnesse/pull/718">718</a>)</li>
+	<li>The JUnit runner is notified of system exceptions (<a href="https://github.com/unclebob/fitnesse/pull/716">716</a>)</li>
+	<li>New Slim table type: <a href="../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/DefineAlias.html">Alias table</a> (<a href="https://github.com/unclebob/fitnesse/pull/711">711</a>)</li>
+	<li>Prevention of System.exit() calls is configurable (<a href="https://github.com/unclebob/fitnesse/pull/707">707</a>)</li>
+	<li>Improved error reporting when running test suites from the command line (<a href="https://github.com/unclebob/fitnesse/pull/706">706</a>)</li>
+	<li>Relaxed Test &amp; Page History to only secure-read permissions (<a href="https://github.com/unclebob/fitnesse/pull/696">696</a>)</li>
+	<li>Remove global slim timeout during testing; this issue was introduced in v20150226 (<a href="https://github.com/unclebob/fitnesse/pull/660">660</a>)</li>
+	<li>Expose table of symbols to TableTable<a title="create page" href="../../FrontPage/FitNesseDevelopment/UserGuide/WritingAcceptanceTests/SliM/TableTable.html?edit&amp;nonExistent=true">[?]</a> fixtures (<a href="https://github.com/unclebob/fitnesse/pull/644">644</a>)</li>
+	<li>Improve messages when Slim server crashes (<a href="https://github.com/unclebob/fitnesse/pull/662">662</a>)</li>
+	<li>Make the "bootstrap" theme the default (<a href="https://github.com/unclebob/fitnesse/pull/679">679</a>)</li>
+	<li>Relaxed Test &amp; Page History to require only secure-read permission (<a href="https://github.com/unclebob/fitnesse/pull/696">696</a>)</li>
+	<li>Slim converters produce user friendly errors (<a href="https://github.com/unclebob/fitnesse/pull/682">682</a>)</li>
+	<li>Documentation updates (<a href="https://github.com/unclebob/fitnesse/pull/668">668</a>, <a href="https://github.com/unclebob/fitnesse/pull/672">672</a>, <a href="https://github.com/unclebob/fitnesse/pull/681">681</a>)</li>
+	<li>Issues fixed:<ul>
+	<li>Fixes in file paths (<a href="https://github.com/unclebob/fitnesse/pull/667">667</a>, <a href="https://github.com/unclebob/fitnesse/pull/692">692</a>)</li>
+	<li>Fix issue with <i>!</i> in spreadsheet translation (<a href="https://github.com/unclebob/fitnesse/pull/678">678</a>)</li>
+	<li>Revert old behavior for Slim String converter: pass empty string for empty cells instead of <i>null</i> (<a href="https://github.com/unclebob/fitnesse/pull/687">687</a>)</li>
+</ul>
+</li>
+</ul>
+<br/><h4 id="2">Github ids of Contributors to this release:</h4>
+<br/><ul>
+	<li>Andrey Grinenko</li>
+	<li>Anis Ben Hamidene</li>
+	<li>Arjan Molenaar</li>
+	<li>Denis Koelewijn</li>
+	<li>Frank Scheffler</li>
+	<li>Fried Hoeben</li>
+	<li>Hans Joachim Desserud</li>
+	<li>Jean-Pierre Lambert</li>
+	<li>Mark Hopkins</li>
+	<li>Matt Warhaftig</li>
+	<li>Mike Stockdale</li>
+	<li>Tibor Vyletel</li>
+	<li>six42</li>
+</ul>
+<br/><span class="meta">Thanks to all of you!</span><br/><h3 id="3">Git History</h3>
+<br/><table>
+	<tr>
+		<td>2015-04-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #723 from benhamidene/issue722</td>
+	</tr>
+	<tr>
+		<td>2015-04-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #716 from fhoeben/TrackSlimTestAbort</td>
+	</tr>
+	<tr>
+		<td>2015-04-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #721 from maverick1601/sys_exit</td>
+	</tr>
+	<tr>
+		<td>2015-04-22</td>
+		<td>Anis Ben Hamidene</td>
+		<td>Issue 722: fixed error handling in MethodExecutor.callMethod</td>
+	</tr>
+	<tr>
+		<td>2015-04-21</td>
+		<td>Frank Scheffler</td>
+		<td>Fixes #719 by adding System.exit(0) call to SlimService to ensure main() method properly exits, even if non-daemon threads have been spawned by test fixture.</td>
+	</tr>
+	<tr>
+		<td>2015-04-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #718 from andrey012/content-H-option</td>
+	</tr>
+	<tr>
+		<td>2015-04-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #707 from benhamidene/issue703</td>
+	</tr>
+	<tr>
+		<td>2015-04-05</td>
+		<td>Anis Ben Hamidene</td>
+		<td>Issue 703: making prevention of System.exit() calls configurable. Introduced new property prevent.system.exit.</td>
+	</tr>
+	<tr>
+		<td>2015-04-19</td>
+		<td>Andrey Grinenko</td>
+		<td>content -H test fix</td>
+	</tr>
+	<tr>
+		<td>2015-04-19</td>
+		<td>Andrey Grinenko</td>
+		<td>content -H option - do not show :page name in this case</td>
+	</tr>
+	<tr>
+		<td>2015-04-18</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #715 from fhoeben/AlwaysCallTestComplete</td>
+	</tr>
+	<tr>
+		<td>2015-04-18</td>
+		<td>Andrey Grinenko</td>
+		<td>content -H option -- shows subWiki page's help text as title in TOC and shows subWiki page's name with small letters (i.e. swaps subWiki page's name and help text in TOC) Main reason - to let make titles in TOC contain pieces of text, that are not allowed in page name (i.e. non-ASCII chars).</td>
+	</tr>
+	<tr>
+		<td>2015-04-18</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #711 from six42/FixtureAlias</td>
+	</tr>
+	<tr>
+		<td>2015-04-18</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #706 from andrey012/report-404-in-single-command-mode</td>
+	</tr>
+	<tr>
+		<td>2015-04-18</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #701 from six42/ssl</td>
+	</tr>
+	<tr>
+		<td>2015-04-17</td>
+		<td>Fried Hoeben</td>
+		<td>Ensure we pass class needed by listeners to methods that can be overridden</td>
+	</tr>
+	<tr>
+		<td>2015-04-17</td>
+		<td>Fried Hoeben</td>
+		<td>Ensure runner subclasses can control which listeners (beside the java formatter) are added</td>
+	</tr>
+	<tr>
+		<td>2015-04-17</td>
+		<td>Fried Hoeben</td>
+		<td>Report how many test were not executed on exception in testSystem</td>
+	</tr>
+	<tr>
+		<td>2015-04-17</td>
+		<td>Fried Hoeben</td>
+		<td>Ensure we notify jUnit of test system abort because of exception</td>
+	</tr>
+	<tr>
+		<td>2015-04-17</td>
+		<td>Fried Hoeben</td>
+		<td>Also call testComplete on exception (#713)</td>
+	</tr>
+	<tr>
+		<td>2015-04-15</td>
+		<td>Andrey Grinenko</td>
+		<td>Test case added</td>
+	</tr>
+	<tr>
+		<td>2015-04-15</td>
+		<td>Andrey Grinenko</td>
+		<td>Merge branch 'master' of https://github.com/unclebob/fitnesse into report-404-in-single-command-mode</td>
+	</tr>
+	<tr>
+		<td>2015-04-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #708 from mwarhaftig/issue600</td>
+	</tr>
+	<tr>
+		<td>2015-04-14</td>
+		<td>six42</td>
+		<td>Revert "Change of TestTextFormatter to make duration more visible"</td>
+	</tr>
+	<tr>
+		<td>2015-04-14</td>
+		<td>six42</td>
+		<td>Revert "Make ScenarioLibraryShouldIncludeIncludedPages pass"</td>
+	</tr>
+	<tr>
+		<td>2015-04-14</td>
+		<td>six42</td>
+		<td>Revert "More compact layout of SuiteExecutionReport"</td>
+	</tr>
+	<tr>
+		<td>2015-04-14</td>
+		<td>six42</td>
+		<td>Revert "Bug Fix: Order of test execution"</td>
+	</tr>
+	<tr>
+		<td>2015-04-14</td>
+		<td>six42</td>
+		<td>resolved conflict</td>
+	</tr>
+	<tr>
+		<td>2015-04-14</td>
+		<td>six42</td>
+		<td>Alias for fixture names</td>
+	</tr>
+	<tr>
+		<td>2015-04-14</td>
+		<td>Andrey Grinenko</td>
+		<td>Merge branch 'master' of https://github.com/unclebob/fitnesse into report-404-in-single-command-mode</td>
+	</tr>
+	<tr>
+		<td>2015-04-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #705 from hansjoachim/imports</td>
+	</tr>
+	<tr>
+		<td>2015-04-07</td>
+		<td>Matt Warhaftig</td>
+		<td>Issue #600 - Added more realistic tests to HistoryPurger.</td>
+	</tr>
+	<tr>
+		<td>2015-04-07</td>
+		<td>Matt Warhaftig</td>
+		<td>Issue #600 - Lowered Purger non-test history file message to INFO.</td>
+	</tr>
+	<tr>
+		<td>2015-04-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Make Disgracer a top level class.</td>
+	</tr>
+	<tr>
+		<td>2015-04-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove public keywords from interface</td>
+	</tr>
+	<tr>
+		<td>2015-04-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Check credential properties for snapshot deployment.</td>
+	</tr>
+	<tr>
+		<td>2015-04-04</td>
+		<td>Andrey Grinenko</td>
+		<td>Problem: when Fitnesse is launched to run a test or a suite (with -c WikiName) - and if WikiName does not exists - there were NullPointerException, and java returned exit code = 0, which made Maven think, that build have succeeded. Fix: track the fact, that responder tries to return 404 and throw an exception, then catch exceptions in FitNesseMain.main() and set exit code to 1</td>
+	</tr>
+	<tr>
+		<td>2015-04-04</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Removed unused imports</td>
+	</tr>
+	<tr>
+		<td>2015-04-01</td>
+		<td>six42</td>
+		<td>More compact layout of SuiteExecutionReport</td>
+	</tr>
+	<tr>
+		<td>2015-04-01</td>
+		<td>six42</td>
+		<td>Make ScenarioLibraryShouldIncludeIncludedPages pass</td>
+	</tr>
+	<tr>
+		<td>2015-04-01</td>
+		<td>six42</td>
+		<td>Change of TestTextFormatter to make duration more visible</td>
+	</tr>
+	<tr>
+		<td>2015-04-01</td>
+		<td>six42</td>
+		<td>Bug Fix: Order of test execution</td>
+	</tr>
+	<tr>
+		<td>2015-03-31</td>
+		<td>Arjan Molenaar</td>
+		<td>Update contributing document.</td>
+	</tr>
+	<tr>
+		<td>2015-03-31</td>
+		<td>Arjan Molenaar</td>
+		<td>Updated release notes</td>
+	</tr>
+	<tr>
+		<td>2015-03-31</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #687 from amolenaar/fix/686</td>
+	</tr>
+	<tr>
+		<td>2015-03-30</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #695 from six42/ssl</td>
+	</tr>
+	<tr>
+		<td>2015-03-30</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #692 from sergebug/master</td>
+	</tr>
+	<tr>
+		<td>2015-03-30</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #696 from mwarhaftig/issue665</td>
+	</tr>
+	<tr>
+		<td>2015-03-28</td>
+		<td>Matt Warhaftig</td>
+		<td>Issue #665 - Relaxed Test &amp; Page History to only secure-read.</td>
+	</tr>
+	<tr>
+		<td>2015-03-28</td>
+		<td>six42</td>
+		<td>Add fixtures with parameters to the library</td>
+	</tr>
+	<tr>
+		<td>2015-03-24</td>
+		<td>unknown</td>
+		<td>fixes issue #691</td>
+	</tr>
+	<tr>
+		<td>2015-03-21</td>
+		<td>Arjan Molenaar</td>
+		<td>String converter should return empty string if empty string is provided. This is different from any other converter. Fixes #686.</td>
+	</tr>
+	<tr>
+		<td>2015-03-21</td>
+		<td>Arjan Molenaar</td>
+		<td>Update contributing file. We no longer have a changelog, just GitHub and milestones.</td>
+	</tr>
+	<tr>
+		<td>2015-03-20</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #682 from amolenaar/converter-errors</td>
+	</tr>
+	<tr>
+		<td>2015-03-20</td>
+		<td>Arjan Molenaar</td>
+		<td>Enforce UTF-8 on Velocity template rendering.</td>
+	</tr>
+	<tr>
+		<td>2015-03-20</td>
+		<td>Arjan Molenaar</td>
+		<td>Use constant for UTF-8, instead of strings where possible.</td>
+	</tr>
+	<tr>
+		<td>2015-03-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #644 from jplambert/tabletablegetsymbol</td>
+	</tr>
+	<tr>
+		<td>2015-03-19</td>
+		<td>Jean-Pierre Lambert</td>
+		<td>Added Known Limitation FitNesse page, removed path directives</td>
+	</tr>
+	<tr>
+		<td>2015-03-18</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #679 from amolenaar/default-theme</td>
+	</tr>
+	<tr>
+		<td>2015-03-16</td>
+		<td>Arjan Molenaar</td>
+		<td>Update Slim Decision table docs with nice example of converter error.</td>
+	</tr>
+	<tr>
+		<td>2015-03-16</td>
+		<td>Arjan Molenaar</td>
+		<td>Let Map converter implement the Converter interface, instead of PropertyEditorSupport.</td>
+	</tr>
+	<tr>
+		<td>2015-03-16</td>
+		<td>Arjan Molenaar</td>
+		<td>Make user-friendly errors when values can not be converted.</td>
+	</tr>
+	<tr>
+		<td>2015-03-16</td>
+		<td>Jean-Pierre Lambert</td>
+		<td>Added comment and FitNesse page</td>
+	</tr>
+	<tr>
+		<td>2015-03-16</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #681 from hansjoachim/paragraph</td>
+	</tr>
+	<tr>
+		<td>2015-03-15</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Remove extra character which broke half of the paragraph</td>
+	</tr>
+	<tr>
+		<td>2015-03-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #679 from amolenaar/default-theme</td>
+	</tr>
+	<tr>
+		<td>2015-03-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove less css as it is not used.</td>
+	</tr>
+	<tr>
+		<td>2015-03-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Add backwards compatibility support for IE8.</td>
+	</tr>
+	<tr>
+		<td>2015-03-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge branch 'master' of github.com:amolenaar/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2015-03-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix acceptance tests for Win32.</td>
+	</tr>
+	<tr>
+		<td>2015-03-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove FileUtil.buildPath, as it's behaviour is flaky.</td>
+	</tr>
+	<tr>
+		<td>2015-03-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Use forward slash as file separator internally.</td>
+	</tr>
+	<tr>
+		<td>2015-03-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Use File.(path)separator instead of looking for the system property.</td>
+	</tr>
+	<tr>
+		<td>2015-03-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Documentation updates.</td>
+	</tr>
+	<tr>
+		<td>2015-03-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix acceptance tests</td>
+	</tr>
+	<tr>
+		<td>2015-03-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Changed default theme to "bootstrap"</td>
+	</tr>
+	<tr>
+		<td>2015-03-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Allow configuration of test results directory via configuration property. See #640.</td>
+	</tr>
+	<tr>
+		<td>2015-03-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #678 from markhop/issue_674</td>
+	</tr>
+	<tr>
+		<td>2015-03-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #672 from markhop/docs_update</td>
+	</tr>
+	<tr>
+		<td>2015-03-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #668 from TiborVyletel/master</td>
+	</tr>
+	<tr>
+		<td>2015-03-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #662 from amolenaar/timeout</td>
+	</tr>
+	<tr>
+		<td>2015-03-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Move Slim test system tests to SuiteSlimTests.TestSystemSlimSuite.</td>
+	</tr>
+	<tr>
+		<td>2015-03-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Add test that checks Slim timeouts.</td>
+	</tr>
+	<tr>
+		<td>2015-03-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Handle timeouts of instructions that time out.</td>
+	</tr>
+	<tr>
+		<td>2015-03-10</td>
+		<td>Mark Hopkins</td>
+		<td>Fix issue #674 spreadsheet translation</td>
+	</tr>
+	<tr>
+		<td>2015-03-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Count exceptions when test system stopped.</td>
+	</tr>
+	<tr>
+		<td>2015-03-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Exit with non-zero exit code if test system stopped with exception.</td>
+	</tr>
+	<tr>
+		<td>2015-02-28</td>
+		<td>Arjan Molenaar</td>
+		<td>Ensure test history is always written, not only on successful execution.</td>
+	</tr>
+	<tr>
+		<td>2015-02-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove multiple messages.</td>
+	</tr>
+	<tr>
+		<td>2015-02-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Update acceptance tests.</td>
+	</tr>
+	<tr>
+		<td>2015-02-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Always invoke testSystemStopped when closing connection.</td>
+	</tr>
+	<tr>
+		<td>2015-02-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Fit should invoke TestSystemStopped only once.</td>
+	</tr>
+	<tr>
+		<td>2015-02-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Show error to wiki page</td>
+	</tr>
+	<tr>
+		<td>2015-02-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Throw custom exception on slim socket timeout</td>
+	</tr>
+	<tr>
+		<td>2015-02-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Add acceptance tests for timeout behaviour.</td>
+	</tr>
+	<tr>
+		<td>2015-02-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Add test for timeout behaviour. See #657.</td>
+	</tr>
+	<tr>
+		<td>2015-03-10</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge branch 'master' of github.com:unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2015-03-09</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #660 from six42/ssl</td>
+	</tr>
+	<tr>
+		<td>2015-03-09</td>
+		<td>Mike Stockdale</td>
+		<td>Merge pull request #670 from markhop/correct_see_widget</td>
+	</tr>
+	<tr>
+		<td>2015-03-09</td>
+		<td>Mark Hopkins</td>
+		<td>Better handling of possible null values</td>
+	</tr>
+	<tr>
+		<td>2015-03-09</td>
+		<td>six42</td>
+		<td>Use parseCommandLine for slim_flags</td>
+	</tr>
+	<tr>
+		<td>2015-03-08</td>
+		<td>Mark Hopkins</td>
+		<td>Handle malformed aliases</td>
+	</tr>
+	<tr>
+		<td>2015-03-08</td>
+		<td>Mark Hopkins</td>
+		<td>Corrections to Markup Language Reference section</td>
+	</tr>
+	<tr>
+		<td>2015-03-08</td>
+		<td>Mark Hopkins</td>
+		<td>Fix suite responder when !see has alias</td>
+	</tr>
+	<tr>
+		<td>2015-03-08</td>
+		<td>Mark Hopkins</td>
+		<td>More link correction for FitFramework</td>
+	</tr>
+	<tr>
+		<td>2015-03-07</td>
+		<td>Mark Hopkins</td>
+		<td>Correct links and wording for FitFramework docs</td>
+	</tr>
+	<tr>
+		<td>2015-03-07</td>
+		<td>Mark Hopkins</td>
+		<td>Add documentation of SummaryFixture</td>
+	</tr>
+	<tr>
+		<td>2015-03-07</td>
+		<td>Mark Hopkins</td>
+		<td>Change See widget to handle aliases</td>
+	</tr>
+	<tr>
+		<td>2015-03-07</td>
+		<td>Mark Hopkins</td>
+		<td>Correct more links and document decorated links</td>
+	</tr>
+	<tr>
+		<td>2015-03-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Change UpdateFileList to explicitly include files. This prevents system meta-data files from being included.</td>
+	</tr>
+	<tr>
+		<td>2015-03-06</td>
+		<td>Tibor Vyletel</td>
+		<td>one funny typo fixed: change -&gt; chain</td>
+	</tr>
+	<tr>
+		<td>2015-03-05</td>
+		<td>six42</td>
+		<td>Relocated TestSystemSlimSuite</td>
+	</tr>
+	<tr>
+		<td>2015-03-05</td>
+		<td>Mark Hopkins</td>
+		<td>Correct links, spelling and remove edit</td>
+	</tr>
+	<tr>
+		<td>2015-03-05</td>
+		<td>Mark Hopkins</td>
+		<td>One Minute Example documentation fixes</td>
+	</tr>
+	<tr>
+		<td>2015-03-05</td>
+		<td>six42</td>
+		<td>Merge branch 'master' of https://github.com/unclebob/fitnesse into ssl</td>
+	</tr>
+	<tr>
+		<td>2015-03-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Let's see if NOSONAR comment really makes a difference.</td>
+	</tr>
+	<tr>
+		<td>2015-03-03</td>
+		<td>Jean-Pierre Lambert</td>
+		<td>Added unit tests</td>
+	</tr>
+	<tr>
+		<td>2015-03-03</td>
+		<td>six42</td>
+		<td>Test Suite for Slim Test System Startup and testing with a timeout</td>
+	</tr>
+	<tr>
+		<td>2015-03-02</td>
+		<td>Arjan Molenaar</td>
+		<td>Add documentation on writing plugins.</td>
+	</tr>
+	<tr>
+		<td>2015-03-02</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix small typos in delete page.</td>
+	</tr>
+	<tr>
+		<td>2015-03-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Add example for complex scenario calling. Fixes #609.</td>
+	</tr>
+	<tr>
+		<td>2015-03-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #652 from fhoeben/extendableInstanceCreation</td>
+	</tr>
+	<tr>
+		<td>2015-03-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #661 from hansjoachim/issues</td>
+	</tr>
+	<tr>
+		<td>2015-03-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #659 from ngti/javadoc-cleanup</td>
+	</tr>
+	<tr>
+		<td>2015-03-01</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Close the closeable resource</td>
+	</tr>
+	<tr>
+		<td>2015-03-01</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Some more use of interface instead of concrete classes.</td>
+	</tr>
+	<tr>
+		<td>2015-03-01</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Removed unused imports</td>
+	</tr>
+	<tr>
+		<td>2015-03-01</td>
+		<td>six42</td>
+		<td>New helper class to test slim timeout</td>
+	</tr>
+	<tr>
+		<td>2015-03-01</td>
+		<td>six42</td>
+		<td>Remove global slim timeout during testing</td>
+	</tr>
+	<tr>
+		<td>2015-03-01</td>
+		<td>six42</td>
+		<td>bug fix: allow to parse more than 1 parameter with SLIM_FLAGS</td>
+	</tr>
+	<tr>
+		<td>2015-02-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Reduce test output.</td>
+	</tr>
+	<tr>
+		<td>2015-02-27</td>
+		<td>Arjan Molenaar</td>
+		<td>fix typos</td>
+	</tr>
+	<tr>
+		<td>2015-02-27</td>
+		<td>Denis Koelewijn</td>
+		<td>cleanup of javadoc errors and warnings</td>
+	</tr>
+	<tr>
+		<td>2015-02-25</td>
+		<td>Fried Hoeben</td>
+		<td>Use interface instead of class</td>
+	</tr>
+	<tr>
+		<td>2015-02-25</td>
+		<td>Fried Hoeben</td>
+		<td>Expose finding of class to subclasses</td>
+	</tr>
+	<tr>
+		<td>2015-02-25</td>
+		<td>Fried Hoeben</td>
+		<td>Ensure we can create an instance of the DefaultInteraction class on server startup. Move all instance construction logic (such as locating of constructor) into the DefaultInteraction</td>
+	</tr>
+	<tr>
+		<td>2015-02-24</td>
+		<td>Fried Hoeben</td>
+		<td>Merge branch 'master' of https://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2015-02-20</td>
+		<td>Jean-Pierre Lambert</td>
+		<td>Expose table of symbols to TableTable fixtures</td>
+	</tr>
+	<tr>
+		<td>2015-02-16</td>
+		<td>Fried Hoeben</td>
+		<td>Merge branch 'master' of https://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2015-02-16</td>
+		<td>Fried Hoeben</td>
+		<td>Merge branch 'master' of https://github.com/fhoeben/fitnesse</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<hr/>
+<br/><a href="../../FrontPage.html">.FrontPage</a> | <a href="../../FrontPage/FitNesseDevelopment/FrontPage.html">FrontPage</a> | <a href="../../RecentChanges.html">.RecentChanges</a><br/>
+</footer>
+</body>
+</html>

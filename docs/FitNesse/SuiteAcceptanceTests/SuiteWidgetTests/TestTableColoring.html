@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteWidgetTests.TestTableColoring</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests/SuiteWidgetTests.html">SuiteWidgetTests</a></li>
+
+  </ol>
+</nav>
+<article>
+<h2 id="0">This page tests table coloring.</h2>
+<ul>
+	<li>Test pages that use the Slim test system should have table row coloring to better highlight test flow.</li>
+</ul>
+<br/><h3 id="1">Test Fit test system does not include coloring.</h3>
+<ul>
+	<li>First create the test page.</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="4">Page creator.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>Page name.</td>
+		<td>Page contents.</td>
+		<td>Page attributes.</td>
+		<td>valid?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>FitTestPage</td>
+		<td>!define TEST_SYSTEM {fit}
+|Import|
+|fit.Fixture|
+
+|fitnesse.fixtures.ColumnFixtureTestFixture|
+|input|=output?|
+|1|one|
+
+|fitnesse.fixtures.PrimeNumberRowFixture|
+|prime|
+|2|
+
+| script: echo fixture |
+| check | echo | Hello | Hello |
+
+|fitnesse.fixtures.TearDown|</td>
+		<td></td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>PageHeader</td>
+		<td>header</td>
+		<td></td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>PageFooter</td>
+		<td>footer</td>
+		<td></td>
+		<td>true</td>
+	</tr>
+</table>
+<br/><ul>
+	<li>Then request the page.</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>valid?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>FitTestPage</td>
+		<td>true</td>
+	</tr>
+</table>
+<ul>
+	<li>Ensure that the table have no markup coloring class entries.</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="4">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+		<td>wrapped html?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>.*slimRowTitle.*</td>
+		<td>false</td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>contents</td>
+		<td>.*slimRowColor.*</td>
+		<td>false</td>
+		<td></td>
+	</tr>
+</table>
+<hr/>
+<br/><h3 id="2">Test Slim test system static page does NOT include coloring.</h3>
+<ul>
+	<li>First create the test page.</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="4">Page creator.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>Page name.</td>
+		<td>Page contents.</td>
+		<td>Page attributes.</td>
+		<td>valid?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>SlimTestPage</td>
+		<td>!define TEST_SYSTEM {slim}
+|Import|
+|fit.Fixture|
+
+|fitnesse.fixtures.ColumnFixtureTestFixture|
+|input|=output?|
+|1|one|
+
+|fitnesse.fixtures.PrimeNumberRowFixture|
+|prime|
+|2|
+
+|Library|
+|echo support|
+
+|scenario|f|a||b|
+|start|fitnesse.slim.test.TestSlim|
+
+|fit.TimedActionFixture|
+|start|fitnesse.fixtures.DelayedCountFixture|
+|check|counter|0|
+|press|count|
+|check|counter|1|
+
+|fitnesse.fixtures.TearDown|</td>
+		<td></td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>PageHeader</td>
+		<td>header</td>
+		<td></td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>PageFooter</td>
+		<td>footer</td>
+		<td></td>
+		<td>true</td>
+	</tr>
+</table>
+<br/><ul>
+	<li>Then request the page.</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>valid?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>SlimTestPage</td>
+		<td>true</td>
+	</tr>
+</table>
+<ul>
+	<li>Ensure that the table have correct number of title &amp; row markups for coloring.</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="4">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+		<td>wrapped html?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>.*slimRowTitle.*</td>
+		<td>false</td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>contents</td>
+		<td>.*slimRowColor.*</td>
+		<td>false</td>
+		<td></td>
+	</tr>
+</table>
+<br/><h3 id="3">Test Slim test system test page does include coloring.</h3>
+<ul>
+	<li>First create the test page.</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="4">Page creator.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>Page name.</td>
+		<td>Page contents.</td>
+		<td>Page attributes.</td>
+		<td>valid?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>SlimTestPage</td>
+		<td>!define TEST_SYSTEM {slim}
+|Import|
+|fit.Fixture|
+
+|fitnesse.fixtures.ColumnFixtureTestFixture|
+|input|=output?|
+|1|one|
+
+|fitnesse.fixtures.PrimeNumberRowFixture|
+|prime|
+|2|
+
+|Library|
+|echo support|
+
+|scenario|f|a||b|
+|start|fitnesse.slim.test.TestSlim|
+
+|fit.TimedActionFixture|
+|start|fitnesse.fixtures.DelayedCountFixture|
+|check|counter|0|
+|press|count|
+|check|counter|1|
+
+decision table based on scenario
+|f|
+|a|b|
+|1|2|
+
+|comment|
+|this should not be coloured|
+
+|comment: Hello|
+|and neither should this|
+
+probably decision table based on class
+|hello world|
+|in|out?|
+|John|Hi John|
+
+|script|echo fixture|
+|check|echo|Hi John|Hi John|
+|check|echo|Hi Pete|Hi Pete|
+
+
+|fitnesse.fixtures.TearDown|</td>
+		<td>Test=a</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>PageHeader</td>
+		<td>header</td>
+		<td></td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>PageFooter</td>
+		<td>footer</td>
+		<td></td>
+		<td>true</td>
+	</tr>
+</table>
+<br/><ul>
+	<li>Then request the page.</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>valid?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>SlimTestPage</td>
+		<td>true</td>
+	</tr>
+</table>
+<ul>
+	<li>Ensure that the table have correct number of title &amp; row markups for coloring.</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="4">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>match count?</td>
+		<td>wrapped html?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>slimRowTitle</td>
+		<td>15</td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>contents</td>
+		<td>slimRowColor</td>
+		<td>12</td>
+		<td></td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<a href="../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../FrontPage.html">Front Page</a> | <a href="../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FrontPage.FitNesseDevelopment.FitNesseRelease20040530</title>
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../FrontPage.html">FrontPage</a></li>
+<li><a href="../../FrontPage/FitNesseDevelopment.html">FitNesseDevelopment</a></li>
+
+  </ol>
+</nav>
+<article>
+<table>
+	<tr>
+		<td><h3 id="0">Security</h3></td>
+		<td><h3 id="1">Look and Feel</h3></td>
+		<td><h3 id="2">Graceful Names</h3></td>
+		<td><h3 id="3">Plugin Architecture</h3></td>
+	</tr>
+</table>
+ <br/><br/><ul>
+	<li>The biggest new feature is <i>security<a title="create page" href="../../FitNesse/SecurityDescription.html?edit&amp;nonExistent=true">[?]</a></i>.  It is now possible to create a set of users and passwords, and block access to certain pages. </li>
+	<li>You may notice the new look.  We've integrated FitNesse with CSS so you can customize<a title="create page" href="../../FitNesse/CustomizingLookAndFeel.html?edit&amp;nonExistent=true">[?]</a> your look and feel.</li>
+	<li>There is a new plug-in<a title="create page" href="../../FitNesse/PluginUsage.html?edit&amp;nonExistent=true">[?]</a> architecture that you can use to change the way wiki pages are stored.  <i>e.g. you could write a database back-end if you want.</i></li>
+	<li>The other major feature is <i>graceful names<a title="create page" href="../../FitNesse/GracefulName.html?edit&amp;nonExistent=true">[?]</a></i>.  This allows you to greatly improve the readability of your test tables.</li>
+</ul>
+<hr/>
+<br/>Other changes include:<br/><ul>
+	<li>You don't have to add your own Type Adapters anymore.  Just put a parse<a title="create page" href="../../FitNesse/DataTypesInFixtures.html?edit&amp;nonExistent=true">[?]</a> method in your objects. </li>
+	<li>Check out the Import<a title="create page" href="../../FitNesse/GracefulName.html?edit&amp;nonExistent=true">[?]</a> fixture.</li>
+	<li>Create comment tables in your tests with the Comment<a title="create page" href="../../FitNesse/CommentTables.html?edit&amp;nonExistent=true">[?]</a> fixture.</li>
+	<li>We fixed a bug that used to hang FIT if you used the wrong case in a fixture name.</li>
+	<li>We've greatly improved the error messages in Fit (Special thanks to Rick Mugridge and Brian Marick)</li>
+	<li>We fixed the bug that prevented literals from being used in ! tables.</li>
+	<li>If you start FitNesse with an empty or non-existent fitnesseroot directory it will build a whole new root structure for you.</li>
+	<li>You can use ! as well as ? and () for method names in column fixtures and row fixtures.</li>
+</ul>
+
+</article>
+<footer>
+<hr/>
+<br/><a href="../../FrontPage.html">.FrontPage</a> | <a href="../../FrontPage/FitNesseDevelopment/FrontPage.html">FrontPage</a> | <a href="../../RecentChanges.html">.RecentChanges</a><br/>
+</footer>
+</body>
+</html>

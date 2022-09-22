@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.FitNesseWiki.ExternalEditor</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../FitNesse/UserGuide.html">UserGuide</a></li>
+<li><a href="../../../FitNesse/UserGuide/FitNesseWiki.html">FitNesseWiki</a></li>
+
+  </ol>
+</nav>
+<article>
+<br/><h2 id="0">Using an external editor</h2>
+It might not always be convenient to use the in-browser editor. For example when you're writing fixture code. For those cases it is more convenient to edit wiki pages with the same editor you use to craft the fixtures.<br/><br/>To work efficiently with wiki pages you need to know one or two things:<br/><br/>Since August 2016, <span class="fitnesse">FitNesse</span> provides a simple single file format to store wiki pages (see note 1). The wiki file ends on a <i>.wiki</i> extension, so they can be easily recognised. The file basically consists of two sections:<br/><br/>1. a meta-data section (front matter)<br/>2. the wiki page content<br/><br/>To create a new page, simply create a file with a <i>.wiki</i> extension. For wiki pages, alphanumeric characters and underscores are allowed. It is not strictly necessary to use WikiWord page names. However, if you do not use WikiWords, you'll need to take some extra care when cross referencing.<br/><br/>To create a sub-wiki, simply create a directory with the same name as the wiki page, without the file extension.<br/><br/>If wiki files are ordered like this:<br/><br/><pre>MyPage.wiki
+MyPage/
+    SubWiki.wiki</pre>Then this means there are two wiki pages: <i>MyPage</i> and <i>MyPage.SubWiki</i>.<br/><br/>To edit content, one can directly start with editing the wiki page file. Those files can contain just page content, in which case they will be considered "static" pages. If pages start or end with either <i>Test</i> or <i>Suite</i> they are treated as such.<br/><br/>To add some meta data we use a Front matter. Front matters are made popular by static site generators such as <a href="https://jekyllrb.com">Jekyll</a>. It's basically a clearly delimited section at the beginning of the file. A front matter starts with a line of three dashes and ends with a similar line.<br/><br/><pre>---
+Test
+Help: one line explanation of a page
+---
+And some WikiText can end up here, along with tables and such.
+</pre><br/><br/>In this example there are two lines in defined in the front matter:<br/><br/>1. <i>Test</i> defines the Test property, so the page is an actual test page<br/>2. <i>Help</i> contains a small summary of the page. This page has one too, shown at the top of the page<br/><br/>After the three dashes ( <strike>- ) the real page content begins.</strike><br/><br/><h2 id="1">Front matter options</h2>
+At this point you know that you can provide some page meta data in the front matter section. But which properties are there? One way to find out is to set the properties with the Properties page of the wiki and see what changed to the page.<br/><br/>For starters, here's a list of useful properties:<br/><br/><ul>
+	<li><i>Test</i> - the page is a test page</li>
+	<li><i>Suite</i> - the page is a test suite; use either <i>Test</i> or <i>Suite</i></li>
+	<li><i>Help</i> - Provide a descriptive text for the page</li>
+	<li><i>Suites</i> - (plural) this property defines the tags defined to a page</li>
+</ul>
+<br/><h3 id="2">Menu properties</h3>
+The following properties define the options available in the menu. These are enabled by default and can be disabled by setting them to <i>false</i>, e.g. <i>Edit: no</i> will disable the edit functionality.<br/><br/><ul>
+	<li><i>Edit</i> - enable the edit button in the wiki</li>
+	<li><i>Versions</i> - show version history</li>
+	<li><i>Properties</i> - enter the properties page</li>
+	<li><i>Refactor</i> - includes rename, move and delete functionality</li>
+	<li><i>WhereUsed</i> - the where-used menu option is shown</li>
+	<li><i>RecentChanges</i> - links to the recently changed page</li>
+	<li><i>Files</i> - links to the files section</li>
+	<li><i>Search</i> - links to the search page</li>
+</ul>
+<br/><h3 id="3">Security</h3>
+The next set of properties will enable security for a wiki page. Disabled by default. Thet can be enabled by just defining them.<br/><br/><ul>
+	<li><i>secure-read</i></li>
+	<li><i>secure-write</i></li>
+	<li><i>secure-test</i></li>
+</ul>
+<br/><h3 id="4">Symbolic links</h3>
+<a href="../../../FitNesse/UserGuide/FitNesseWiki/SymbolicLinks.html">Symbolic Links</a> can also be defined in this section, although they're hard to test if you're not using the web interface:<br/><br/><pre>SymbolicLinks
+  Pagename: .FitNesse.UserGuide
+</pre><br/><br/>Note the indentation. <i>Pagename</i> is the local page name and <i>.FitNesse.UserGuide</i> is the link destination. all rules for normal <a href="../../../FitNesse/UserGuide/FitNesseWiki/SymbolicLinks.html">Symbolic Links</a> apply.<br/><br/>Here's an example for a fairly extensively edited front matter:<br/><br/><pre> ---
+Suite
+Suites: tag1, meta
+Help: Helping out with a small description
+Files: no
+Prune
+RecentChanges: no
+Versions: no
+secure-read
+SymbolicLinks
+  Pagename: .FitNesse.UserGuide
+ ---
+[page text comes here]
+</pre><br/><br/>The following terms are considered "falsy": <i>n</i>, <i>no</i>, <i>f</i>, <i>false</i>, and <i>0</i>. Truthy terms are: <i>y</i>, <i>yes</i>, <i>t</i>, <i>true</i>, and <i>1</i>.<br/><br/>Note that the wiki will save the properties alphabetically ordered.<br/><br/><h2 id="5">The old days</h2>
+In the old days, a wiki page consisted of a directory containing a <i>content.txt</i> file and an (optional) <i>properties.xml</i> file. The first was used to store the wiki content, the latter to store page properties. Editing pages was kind of a hassle, due to how files were structured.<br/>
+</article>
+<footer>
+<center>User Guide Contents</center><center><a href="../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+</footer>
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PlugIns.FitServers.CppFit.CppTestTools.CppFit</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../PlugIns.html">PlugIns</a></li>
+<li><a href="../../../../PlugIns/FitServers.html">FitServers</a></li>
+<li><a href="../../../../PlugIns/FitServers/CppFit.html">CppFit</a></li>
+<li><a href="../../../../PlugIns/FitServers/CppFit/CppTestTools.html">CppTestTools</a></li>
+
+  </ol>
+</nav>
+<article>
+Cpp Fit supports three types of fixtures.  Yes, it is a little behind the other Fit implementations, but is still very useful.<br/><br/>A fixture is an adapter that allows FitNesse and CppFit to interact with your application.  Fixtures are invoked by tables on your FitNesse pages.  A FitNesse table will cause a user defined fixture to be created and have members variables assigned and member functions called.  The methods of the fixture will call methods on your application's interface.  Your fixtures must inherit from the CppFit Fixture base classes as described below.  Fixtures usually are put in their own library, keeping the CppFit dependencies out of your application.
+
+The Java and C# Fit versions are designed using reflection.  Reflection allows the runtime support for those languages to interrogate the fixtures
+<br/><br/><div class="collapsible closed"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">!3 ColumnFixture</p>
+	<div>A ColumnFixture is used for submitting rows of data into an application.<br/><br/>The top row of the table identifies the fixture.  The column headings represent fields and methods on the ColumnFixture.  The following row data is either populated into a member variable of the fixture, or compared to the result of a function call.  This table  defines a set of sensors for testing the home security system.<br/><br/><table>
+	<tr>
+		<td colspan="5">HomeGuardFixtures.DefineSensors</td>
+	</tr>
+	<tr>
+		<td>port</td>
+		<td>name</td>
+		<td>type</td>
+		<td>submit?</td>
+		<td>reason?</td>
+	</tr>
+	<tr>
+		<td>A1</td>
+		<td>Paul’s</td>
+		<td>window</td>
+		<td>true</td>
+		<td>OK</td>
+	</tr>
+	<tr>
+		<td>A2</td>
+		<td>Porch</td>
+		<td>door</td>
+		<td>true</td>
+		<td>OK</td>
+	</tr>
+	<tr>
+		<td>A3</td>
+		<td>Front</td>
+		<td>door</td>
+		<td>true</td>
+		<td>OK</td>
+	</tr>
+	<tr>
+		<td>A4</td>
+		<td>Back</td>
+		<td>door</td>
+		<td>true</td>
+		<td>OK</td>
+	</tr>
+	<tr>
+		<td>A4</td>
+		<td>Back</td>
+		<td>door</td>
+		<td>false</td>
+		<td>duplicate id</td>
+	</tr>
+	<tr>
+		<td>A4</td>
+		<td>Garage</td>
+		<td>door</td>
+		<td>false</td>
+		<td>duplicate id</td>
+	</tr>
+	<tr>
+		<td>A5</td>
+		<td>Back</td>
+		<td>door</td>
+		<td>false</td>
+		<td>duplicate name</td>
+	</tr>
+</table>
+<br/>HomeGuardFixtures<a title="create page" href="../../../../PlugIns/FitServers/CppFit/CppTestTools/HomeGuardFixtures.html?edit&amp;nonExistent=true">[?]</a> is the library containing the fixtures<br/><ul>
+	<li>for MS, in a DLL</li>
+	<li>for gcc, static linking is only supported right now, so this is ignored</li>
+</ul>
+DefineSensors<a title="create page" href="../../../../PlugIns/FitServers/CppFit/CppTestTools/DefineSensors.html?edit&amp;nonExistent=true">[?]</a> is the name of a ColumnFixture<a title="create page" href="../../../../PlugIns/FitServers/CppFit/CppTestTools/ColumnFixture.html?edit&amp;nonExistent=true">[?]</a><br/>Fields<br/><ul>
+	<li>port, name, type</li>
+	<li>all names start with a lower case letter</li>
+	<li>multiple word names have the spaces squeezed out, letter following the space is made upper case</li>
+</ul>
+Methods<br/><ul>
+	<li>submit, reason</li>
+	<li>noted by ? ! or () following the name</li>
+	<li>the result of the function call is compared to the cell value</li>
+</ul>
+Data rows<br/><ul>
+	<li>Each data item from the row is put into its associated field or compared to the result of the associated function call.</li>
+</ul>
+<br/>The code to support this fixture looks like this.  Note that the table headings and row heading names match the names in the code.  The publish macros make the names known to the CppFit<br/><pre>
+class DefineSensors : public ColumnFixture
+{
+         
+  public:
+    explicit DefineSensors()
+      {
+      PUBLISH(DefineSensors,std::string,port);
+      PUBLISH(DefineSensors,std::string,name);
+      PUBLISH(DefineSensors,std::string,type);
+      PUBLISH(DefineSensors,std::string,submit);
+      PUBLISH(DefineSensors,std::string,reason);
+    }
+
+    virtual ~DefineSensors() {};
+
+    std::string submit()
+    {
+    	MockInputPort* p = new MockInputPort(port);
+    	HomeGuardContext::RegisterPort(p);
+    	Sensor::SensorType t;
+    	if (type == "window")
+    		t = Sensor::window;
+    	else if (type == "door")
+    		t = Sensor::window;
+    	else if (type == "fire")
+    		t = Sensor::fire;
+    	else if (type == "waterlevel")
+    		t = Sensor::waterlevel;
+    	else
+    	{
+    		theReason = std::string("Unknown sensor type");
+    		return "false";
+    	}
+    	
+    	if (HomeGuardContext::GetHomeGuard()-&gt;addSensor(t, name, p))
+    	{
+    		theReason = "none";
+    	   	return "true";
+    	}
+    	else
+    	{
+    		theReason = "Rejected by homeguard";
+    		return "false";
+    	}
+    }
+
+    std::string reason()
+    {
+      return theReason;
+    }
+
+  private:
+
+    std::string port;
+    std::string name;
+    std::string type;
+    std::string theReason;
+    
+    DefineSensors(const DefineSensors&amp;);
+    DefineSensors&amp; operator=(const DefineSensors&amp;);
+};
+</pre><br/></div>
+</div>
+!*&gt; !3 RowFixture<br/>A row fixture is for pulling a collection of data out of the system.  This table defines the expected content of the event log.<br/><br/><table>
+	<tr>
+		<td colspan="3">HomeGuardFixtures.EventLogOutput</td>
+	</tr>
+	<tr>
+		<td>sequence number</td>
+		<td>event</td>
+		<td>parameter</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>armed</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>disarmed</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>armed</td>
+		<td></td>
+	</tr>
+</table>
+<br/>RowFixture is a bit trickier.  There are two classes involved.  One class describes the overall RowFixture, the other class describes the data in each row.  In this example the row is described using an inner class called EventHolder.  Here the query method is just populating the list with dummy events. When this work is complete, the query method will talk to the application to get the event log data.<br/><pre>
+#include "Platform.h"
+#include "Fit/RowFixture.h"
+
+class EventLogOutput : public RowFixture
+{
+public:
+  EventLogOutput();
+  ~EventLogOutput();
+
+	class EventHolder : public Fixture
+	{
+	public:
+
+	    EventHolder(int sequenceNumber, string event, int parameter)
+	    : sequenceNumber(sequenceNumber)
+            , event(event)
+            , parameter(parameter) 
+            { 
+        	PUBLISH(EventHolder,int,sequenceNumber);
+		PUBLISH(EventHolder,string,event);
+		PUBLISH(EventHolder,int,parameter);
+	    }
+
+            int sequenceNumber;
+            string event;
+            int parameter;
+	};
+
+	virtual RowFixture::ObjectList query() const
+        {
+            int sequence = 1;
+            rows.push_back(new EventHolder(sequence++, "dummy event", 42));
+            rows.push_back(new EventHolder(sequence++, "another dummy", 42));
+	    return rows;
+        }
+
+	virtual const Fixture	*getTargetClass() const;
+        {
+	    return &amp;exampleEventHolder;
+        }
+  private:
+
+      EventHolder exampleEventHolder;
+      mutable RowFixture::ObjectList rows;
+
+      EventLogOutput(const EventLogOutput&amp;);
+      EventLogOutput&amp; operator=(const EventLogOutput&amp;);
+};
+</pre><br/><br/>*!!*&gt; !3 ActionFixture<br/>An ActionFixture<a title="create page" href="../../../../PlugIns/FitServers/CppFit/CppTestTools/ActionFixture.html?edit&amp;nonExistent=true">[?]</a> is used for simulating user interactions.  The top row identifies this as an action fixture.  Action fixture have keywords<br/><ul>
+	<li>start - initialize a specific action fixture</li>
+	<li>check - check that the field specified in cell two has the value specified in cell three</li>
+	<li>press - call the function in cell two</li>
+	<li>enter - call the function in cell two with cell three as a parameter</li>
+</ul>
+<br/><table>
+	<tr>
+		<td colspan="3">HomeGuardFixtures.ActionFixture</td>
+	</tr>
+	<tr>
+		<td>start</td>
+		<td colspan="2">HomeGuardFixtures.FrontPanel</td>
+	</tr>
+	<tr>
+		<td>check</td>
+		<td>display</td>
+		<td>not sure</td>
+	</tr>
+	<tr>
+		<td>check</td>
+		<td>arm led</td>
+		<td>not sure</td>
+	</tr>
+	<tr>
+		<td>press</td>
+		<td colspan="2">arm button</td>
+	</tr>
+	<tr>
+		<td>check</td>
+		<td>display</td>
+		<td>arm pressed</td>
+	</tr>
+	<tr>
+		<td>enter</td>
+		<td>digits</td>
+		<td>3141</td>
+	</tr>
+	<tr>
+		<td>check</td>
+		<td>display</td>
+		<td>3141</td>
+	</tr>
+	<tr>
+		<td>press</td>
+		<td colspan="2">enter button</td>
+	</tr>
+	<tr>
+		<td>check</td>
+		<td>display</td>
+		<td>enter pressed</td>
+	</tr>
+</table>
+<br/>The code looks like this.  This fixture needs to be wired to the application.  Right now it returns dummy data.<br/><pre>
+#include "Fit/ActionFixture.h"
+#include &lt;string&gt;
+
+class FrontPanel : public ActionFixture 
+{
+public:
+
+    FrontPanel()
+    {
+        thedigits = "";
+        display = "not sure";
+        armLed = "not sure";
+        
+        PUBLISH_ENTER(SetupProblem,std::string,digits);
+        
+        PUBLISH_COMMAND(SetupProblem,armButton);
+        PUBLISH_COMMAND(SetupProblem,enterButton);
+        
+        PUBLISH_CHECK(SetupProblem,std::string,display);
+        PUBLISH_CHECK(SetupProblem,std::string,armLed);
+        PUBLISH_CHECK(SetupProblem, std::string, display);      
+    }
+    
+    void armButton() { display = "arm pressed";}
+    void enterButton() { display = "enter pressed";}
+    
+    std::string display;
+    std::string armLed;
+    std::string thedigits;
+    void digits(std::string d) { display = d; }
+	
+};
+</pre><br/><br/>*!!*&gt; !3 Fixture<br/>The base class of all the fixture classes.  You use Fixture as a base for fixtures that initialize things, or clean things up, like the SetUp and TesrDown examples.<br/>*!!*&gt; !3 AppFixtureMaker<br/>You will have noticed the PUBLISH macros that inform Cpp Fit of the fields of the fixtures.  How does <a href="../../../../PlugIns/FitServers/CppFit/CppTestTools/CppFit.html">CppFit</a> know about the fixtures themselves?  You need to provide an AFM.  The code that needs a fixture will consult with your AFM to get the needed fixture.<br/><br/>In this case you create the CPP that goes with AppFixtureMaker<a title="create page" href="../../../../PlugIns/FitServers/CppFit/CppTestTools/AppFixtureMaker.html?edit&amp;nonExistent=true">[?]</a>.h<br/><pre>
+#include "Platform.h"
+#include "Fit/AppFixtureMaker.h"
+#include "Fit/Fixture.h"
+
+#include "FrontPanel.h"
+#include "DefineSensors.h"
+#include "EventLogOutput.h"
+
+#include &lt;iostream&gt;
+
+AppFixtureMaker::AppFixtureMaker()
+{
+}
+
+AppFixtureMaker::~AppFixtureMaker()
+{
+}
+
+Fixture* AppFixtureMaker::Make(const char* name)
+{
+    PUBLISH_FIXTURE(ActionFixture)
+    PUBLISH_FIXTURE(FrontPanel)
+    PUBLISH_FIXTURE(DefineSensors)
+    PUBLISH_FIXTURE(EventLogOutput)
+
+    return 0;
+}
+</pre><br/>*!!*&gt; !3 How Does FitNesse Find Your Fixtures<br/><b>Dynamic Loading</b> - NO CURRENTLY SUPPORTED<br/><a href="../../../../PlugIns/FitServers/CppFit/CppTestTools/CppFit/FormerDynamicLoadingInstructions.html">^FormerDynamicLoadingInstructions</a><br/><br/><b>Static Loading</b> <br/>When using gcc et. al. fixtures are compiled into a static library, and the library is linked into a fitnesse server main.  AppFixtureMaker creates fixtures.  Your application has to provide a FitNesse server.  See HomeGuardFitnesseServer as an example.  The COMMAND_PATTERN in your FitNesse tests must invoke your application specific fitnesse server.  The main page of the HomeGuard fitnesse pages has an example of the needed COMMAND_PATTERN-<br/>*!
+</article>
+<footer>
+<center>FitNesse v20220921</center><center><a href="../../../../FrontPage.html">Front Page</a> - <a href="../../../../FitNesse/UserGuide.html">User Guide</a> - <a href="../../../../FitNesseFeatures.html">Features</a> - <a href="../../../../FitNesseDownload.html">Download</a> - <a href="../../../../PlugIns.html">Plugins</a> - <a href="../../../../PlugIns.html#slimfixtures">Fixtures</a> - <a href="https://gitter.im/fitnesse-org/fitnesse">Gitter Community</a></center>
+</footer>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteSlimTests.SlimSymbols.SlimSymbolCanHoldInstanceUsedAsParameter</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests.html">SuiteSlimTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/SlimSymbols.html">SlimSymbols</a></li>
+
+  </ol>
+</nav>
+<article>
+<table>
+	<tr class="slimRowTitle">
+		<td>import</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>fitnesse.slim.test</td>
+	</tr>
+</table>
+<br/>You can store an object instance in a Slim symbol and then use the instance in parameters for methods or constructors.<br/>Here createTestSlimWithString(string) is a factory method that creates a new TestSlim instance, sets the given string and returns the object.<br/><br/>The boolean isSame(Object other) method returns whether the other object is the same as the current TestSlim table actor.<br/>The getStringFromOther(TestSlim other) method returns other.getStringArg().<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3">test slim</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>$TEST_SLIM_INSTANCE=</td>
+		<td>create test slim with string</td>
+		<td colspan="2">Uncle</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>get string arg</td>
+		<td colspan="2">null</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>reject</td>
+		<td>is same</td>
+		<td colspan="2">$TEST_SLIM_INSTANCE</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>get string from other</td>
+		<td>$TEST_SLIM_INSTANCE</td>
+		<td>Uncle</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>return constructor arg</td>
+		<td colspan="2">0</td>
+	</tr>
+</table>
+<br/>TestSlim has a constructor TestSlim(int, TestSlim)<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">script</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>start</td>
+		<td>test slim</td>
+		<td>1</td>
+		<td>$TEST_SLIM_INSTANCE</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>get string arg</td>
+		<td colspan="2">Uncle</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>return constructor arg</td>
+		<td colspan="2">1</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>reject</td>
+		<td>is same</td>
+		<td colspan="2">$TEST_SLIM_INSTANCE</td>
+	</tr>
+</table>
+<br/>An instance stored in a Slim symbol can also be used for instance chaining (ChainWithInstanceTest<a title="create page" href="../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/SlimSymbols/ChainWithInstanceTest.html?edit&amp;nonExistent=true">[?]</a>).<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="2">$TEST_SLIM_INSTANCE</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>ensure</td>
+		<td>is same</td>
+		<td>$TEST_SLIM_INSTANCE</td>
+	</tr>
+</table>
+<br/>
+</article>
+<footer>
+<a href="../../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../../FrontPage.html">Front Page</a> | <a href="../../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

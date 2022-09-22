@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PlugIns.DatabasePlugin</title>
+<link rel="stylesheet" type="text/css" href="../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../FitNesseDownload.html">Download</a></li>
+      <li><a href="../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../PlugIns.html">PlugIns</a></li>
+
+  </ol>
+</nav>
+<article>
+This is a Wiki Page plugin<a title="create page" href="../FitNesse/PluginUsage.html?edit&amp;nonExistent=true">[?]</a>.  Follow the instructions in README.TXT very carefully.  They are listed below in case you'd like to know what you're getting yourself into before downloading.<br/><br/><i>Note:</i> This plugin has only been tested on a very limited number of platforms with only one database.  Use at your own risk.<br/><br/><a href="files/plugins/database/fitnesse_db_20040604.zip">download for 20040604</a><br/><br/><h3 id="0">FitNesse Database Plugin</h3>
+by Stephen Starkey<br/><br/>This plugin provides a replacement to the standard file system back-end to FitNesse.  Instead of storing your Wiki pages in a standard hierarchical file system structure, they are stored in a database schema.  This makes searching, refactoring, etc. much faster, as databases are optimized for such things.<br/><br/>Please read this file fully before executing any steps.  It contains forward references which, when executed out of order, will cause much disappointment in the reader.<br/><br/>PACKAGE CONTENTS<br/><br/>Included in this package are the following:<br/><br/><table>
+	<tr>
+		<td><b>file</b></td>
+		<td><b>description</b></td>
+	</tr>
+	<tr>
+		<td>README.txt</td>
+		<td>This file</td>
+	</tr>
+	<tr>
+		<td>plugins.properties</td>
+		<td>A sample properties file that causes FitNesse to load the plugin</td>
+	</tr>
+	<tr>
+		<td>run.sh</td>
+		<td>An alternative run script that loads plugin classpaths in a standard way</td>
+	</tr>
+	<tr>
+		<td>run.bat</td>
+		<td>An alternative run script that loads plugin classpaths in a standard way</td>
+	</tr>
+	<tr>
+		<td>plugins/fitnesse_db.plugin</td>
+		<td>Used by the alternative run script to update the classpath</td>
+	</tr>
+	<tr>
+		<td>plugins/fitnesse_db.plugin.bat</td>
+		<td>Used by the alternative run script to update the classpath</td>
+	</tr>
+	<tr>
+		<td>plugins/fitnesse_db/fitnesse_db.jar</td>
+		<td>The library that provides the plugin</td>
+	</tr>
+	<tr>
+		<td>schema/fitnesse.sql</td>
+		<td>The schema that the plugin uses to store its data</td>
+	</tr>
+</table>
+<br/>KNOWN LIMITATIONS<br/><br/><ul>
+	<li>Virtual Wikis don't work.  This is a limitation in the architecture (serialization of WikiPages is required, and such serialization can not be done with pages that are database-backed).  Suggestions are very welcome as to how to overcome this limitation.</li>
+	<li>The Updater doesn't work.  It does a force-cast to FileSystemPage, which of course DatabasePage is not.  New properties will not be propagated with future .JAR file updates.  Always start FitNesse with the -o switch.</li>
+</ul>
+<br/>BEFORE INSTALLING<br/><br/><ul>
+	<li>A database server must be located and have the schema installed.  In MySQL, perform the following steps:<ul>
+	<li>Log on as root (mysql -u root)</li>
+	<li>Type "source schema/fitnesse.sql"</li>
+	<li>(optional) GRANT ALL PRIVILEGES ON fitnesse.* TO &lt;user&gt;@'localhost' IDENTIFIED BY &lt;password&gt;</li>
+	<li>(optional) GRANT ALL PRIVILEGES ON fitnesse.* TO &lt;user&gt; IDENTIFIED BY &lt;password&gt;</li>
+</ul>
+</li>
+</ul>
+<br/>AFTER INSTALLING<br/><br/><ul>
+	<li>(optional) import an existing FitNesseRoot:<ul>
+	<li>Go to your FitNesse installation directory</li>
+	<li>execute "java -classpath fitnesse.jar:fitnesse_db.jar:your_db_driver.jar com.xb.fitnesse.db.DatabaseImport FitNesseRoot"</li>
+</ul>
+</li>
+</ul>
+<br/>IF USING A WINDOWS SERVICE<br/><br/><ul>
+	<li>There is no way to make the Windows Service script extensible.  Follow the EASY INSTALLATION steps, and then do the following:<ul>
+	<li>Edit wrapper\fitnesse.conf<ul>
+	<li>Add new lines for each .JAR file (fitnesse_db.jar, database driver jar) below the first 2 wrapper.class.path.# lines</li>
+	<li>Ensure that wrapper.app.parameter.#=-o exists somewhere (where # is some sequential number)<ul>
+	<li>The Updater class does not work with DatabasePages</li>
+</ul>
+</li>
+</ul>
+</li>
+	<li>Restart the service</li>
+</ul>
+</li>
+</ul>
+<br/>EASY INSTALLATION<br/><br/><ul>
+	<li>Identify the location of your FitNesse installation.  We refer to this location as FITNESSE_ROOT</li>
+	<li>Copy the following files into their given locations.  If a plugins.properties already exists, append its contents instead of replacing it.</li>
+</ul>
+    plugins.properties                  -&gt; FITNESSE_ROOT<br/>    plugins/fitnesse_db/fitnesse_db.jar -&gt; FITNESSE_ROOT<br/><ul>
+	<li>Download your favorite JDBC Driver and place it in FITNESSE_ROOT<ul>
+	<li>This plugin has been tested with MySQL (<a href="http://dev.mysql.com/downloads/connector/j/3.0.html)">http://dev.mysql.com/downloads/connector/j/3.0.html)</a></li>
+</ul>
+</li>
+	<li>Edit your run script(s):<ul>
+	<li>Add fitnesse_db.jar and your JDBC driver to the classpath</li>
+</ul>
+</li>
+	<li>Edit plugins.properties (presume I have prefixed property names with com.xb.fitnesse.db):<ul>
+	<li>driver_classes      - the classes that need to be loaded into the classloader for the driver to work</li>
+	<li>connect_string      - the JDBC connect string required to connect to your database</li>
+	<li>maxconn             - the maximum number of connections to allow in the ConnectionPool</li>
+	<li>username (optional) - username to specify for the database connection</li>
+	<li>password (optional) - the user's password.  Leave this property blank for an empty password (do NOT comment out in this case!)</li>
+	<li>If you wish not to specify credentials at all, simply comment out these properties.</li>
+</ul>
+</li>
+</ul>
+<br/>EXTENSIBLE INSTALLATION<br/><br/> * Identify the location of your FitNesse installation.  We refer to this location as FITNESSE_ROOT<br/><ul>
+	<li>NOTE: this process will remove all existing plugins that don't use this plugin structure.</li>
+	<li>Copy the entire contents of this package, file structure intact, into FITNESSE_ROOT<ul>
+	<li>If you have an existing plugins.properties, simply append its contents instead of replacing it.</li>
+</ul>
+</li>
+</ul>
+ * Download your favorite JDBC Driver and place it in FITNESSE_ROOT<br/><ul>
+	<li>This plugin has been tested with MySQL (<a href="http://dev.mysql.com/downloads/connector/j/3.0.html)">http://dev.mysql.com/downloads/connector/j/3.0.html)</a></li>
+</ul>
+ * Edit plugins.properties (presume I have prefixed property names with com.xb.fitnesse.db):<br/><ul>
+	<li>driver_classes      - the classes that need to be loaded into the classloader for the driver to work</li>
+	<li>connect_string      - the JDBC connect string required to connect to your database</li>
+	<li>maxconn             - the maximum number of connections to allow in the ConnectionPool</li>
+	<li>username (optional) - username to specify for the database connection</li>
+	<li>password (optional) - the user's password.  Leave this property blank for an empty password (do NOT comment out in this case!)</li>
+	<li>If you wish not to specify credentials at all, simply comment out these properties.</li>
+</ul>
+ * Create a "plugin" for your database driver:<br/>  * In the plugins directory create a .plugin and .plugin_bat file just like fitnesse_db.plugin, etc<br/>  * Change the directory structure to add the database driver to the classpath instead
+</article>
+<footer>
+<center>FitNesse v20220921</center><center><a href="../FrontPage.html">Front Page</a> - <a href="../FitNesse/UserGuide.html">User Guide</a> - <a href="../FitNesseFeatures.html">Features</a> - <a href="../FitNesseDownload.html">Download</a> - <a href="../PlugIns.html">Plugins</a> - <a href="../PlugIns.html#slimfixtures">Fixtures</a> - <a href="https://gitter.im/fitnesse-org/fitnesse">Gitter Community</a></center>
+</footer>
+</body>
+</html>

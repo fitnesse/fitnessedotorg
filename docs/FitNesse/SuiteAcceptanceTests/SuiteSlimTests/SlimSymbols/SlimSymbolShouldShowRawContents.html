@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteSlimTests.SlimSymbols.SlimSymbolShouldShowRawContents</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests.html">SuiteSlimTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/SlimSymbols.html">SlimSymbols</a></li>
+
+  </ol>
+</nav>
+<article>
+Symbols should show the raw (in this case HTML) content that is used in the tests.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3">fitnesse.fixtures.EchoFixture</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>$Table_=</td>
+		<td>echo</td>
+		<td colspan="2"><table><tr><td>Test</td></tr></table></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>echo</td>
+		<td>$Table_</td>
+		<td>$Table_</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td>echo</td>
+		<td colspan="2">$Table_</td>
+	</tr>
+</table>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">script</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td>given page</td>
+		<td>TestPage</td>
+		<td>with content</td>
+		<td>
+!path lib/*.jar
+ 
+!define TEST_SYSTEM {slim}
+|script| fitnesse.fixtures.EchoFixture |
+| $Table= | echo | !-<table><tr><td>Test</td></tr></table>-! |
+| check | echo | $Table | $Table |
+| show | echo | $Table |
+</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>test results for page</td>
+		<td>TestPage</td>
+		<td>should contain</td>
+		<td>$Table&amp;lt;-[&amp;lt;table&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;td&amp;gt;Test&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;&amp;lt;/table&amp;gt;]</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>ensure</td>
+		<td>content contains</td>
+		<td colspan="2">$Table-&gt;[&lt;table&gt;&lt;tr&gt;&lt;td&gt;Test&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;]</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<a href="../../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../../FrontPage.html">Front Page</a> | <a href="../../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

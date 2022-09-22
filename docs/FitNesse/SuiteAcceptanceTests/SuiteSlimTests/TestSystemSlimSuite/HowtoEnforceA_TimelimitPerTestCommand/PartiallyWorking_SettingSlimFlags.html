@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteSlimTests.TestSystemSlimSuite.HowtoEnforceA_TimelimitPerTestCommand.PartiallyWorking_SettingSlimFlags</title>
+<link rel="stylesheet" type="text/css" href="../../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests.html">SuiteSlimTests</a></li>
+<li><a href="../../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/TestSystemSlimSuite.html">TestSystemSlimSuite</a></li>
+<li><a href="../../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/TestSystemSlimSuite.html.HowtoEnforceA_TimelimitPerTestCommand">HowtoEnforceA_TimelimitPerTestCommand</a></li>
+
+  </ol>
+</nav>
+<article>
+<span class="meta">variable defined: TEST_SYSTEM=SLIM</span>
+<br/><br/><h1 id="0">How to enforce that a test command takes only a limited amount of time during testing</h1>
+<br/>The slim client needs an extra parrameter -s timeoutLimit but this is not passed by default<br/><br/><br/>Defining the parameter via slim_flags will do the job. The timeout is now 1 second.<br/><span class="meta">variable defined: SLIM_FLAGS=-s 1</span>
+<br/><br/>To test that slim_flags are parsed correctly we also add the verbose option (-v) and have multiple spaces between the parameters. The extra spaces must be ignored.<br/><span class="meta">variable defined: SLIM_FLAGS=   -v      -s 1    </span>
+<br/><br/><br/>This table passes as the duration is less than the timeout<br/><table>
+	<tr>
+		<td colspan="2">fitnesse.slim.test.Sleep</td>
+	</tr>
+	<tr>
+		<td>Timer</td>
+		<td>do Sleep ?</td>
+	</tr>
+	<tr>
+		<td>100</td>
+		<td>WakeUp 100</td>
+	</tr>
+</table>
+<br/>This table passes as the duration of each command is less than the timeout also the duration of the full table is longer<br/><table>
+	<tr>
+		<td colspan="2">fitnesse.slim.test.Sleep</td>
+	</tr>
+	<tr>
+		<td>Timer</td>
+		<td>do Sleep ?</td>
+	</tr>
+	<tr>
+		<td>100</td>
+		<td>WakeUp 100</td>
+	</tr>
+	<tr>
+		<td>200</td>
+		<td>WakeUp 200</td>
+	</tr>
+	<tr>
+		<td>300</td>
+		<td>WakeUp 300</td>
+	</tr>
+	<tr>
+		<td>400</td>
+		<td>WakeUp 400</td>
+	</tr>
+	<tr>
+		<td>500</td>
+		<td>WakeUp 500</td>
+	</tr>
+	<tr>
+		<td>600</td>
+		<td>WakeUp 600</td>
+	</tr>
+</table>
+<br/>This table fails as the duration is above the timeout<br/>Note that the endTable command also creates an exception which is wrong<br/><table>
+	<tr>
+		<td colspan="2">fitnesse.slim.test.Sleep</td>
+	</tr>
+	<tr>
+		<td>Timer</td>
+		<td>do Sleep ?</td>
+	</tr>
+	<tr>
+		<td>20000</td>
+		<td>WakeUp 20000</td>
+	</tr>
+</table>
+<br/>Once a Timeout occured every test afterwards fails which is wrong<br/><table>
+	<tr>
+		<td colspan="2">fitnesse.slim.test.Sleep</td>
+	</tr>
+	<tr>
+		<td>Timer</td>
+		<td>do Sleep ?</td>
+	</tr>
+	<tr>
+		<td>100</td>
+		<td>WakeUp 100</td>
+	</tr>
+</table>
+<br/>
+</article>
+<footer>
+<a href="../../../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../../../FrontPage.html">Front Page</a> | <a href="../../../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

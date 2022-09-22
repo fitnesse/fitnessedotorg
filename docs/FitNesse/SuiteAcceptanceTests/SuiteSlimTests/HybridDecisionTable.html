@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteSlimTests.HybridDecisionTable</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests.html">SuiteSlimTests</a></li>
+
+  </ol>
+</nav>
+<article>
+The Hybrid Decision Table is a combination of the Decision Table  and the Dynamic Decision Table. <br/>A decision table requires for each table column the definition of a method. <br/>This is impractical when you deal with structured data that has a varying size like: hash maps, XML, properties, database tables, etc.<br/>The number of methods you need to write could be infinite.<br/><br/>A dynamic decision table has just one method which is called for all columns and your fixture has to do the dispatching. <br/>This solves the above problem but dispatching should be done by the test system and not by your fixture.<br/><br/>Sometimes you want both features in one table and that is when you use the Hybrid Decision table.<br/><br/>The Hybrid Decision Table allows the methods called for each column to be <br/>redefined and method parameters can be extracted from the column names.<br/><br/><br/><br/>Example<br/><br/><div class="collapsible closed"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">Setup</p>
+	<div><br/><table>
+	<tr class="slimRowTitle">
+		<td>import</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>fitnesse.slim.test</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>java.util</td>
+	</tr>
+</table>
+<br/><h5 id="0">define some string variables (just to show that this is supported)</h5>
+<table>
+	<tr class="slimRowTitle">
+		<td>script: Test Query</td>
+		<td colspan="2">5</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>$S1=</td>
+		<td>echo</td>
+		<td>abcdefghijklmnopqrstuvwxyz</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>$S2=</td>
+		<td>echo</td>
+		<td>123456789</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>$S3=</td>
+		<td>echo</td>
+		<td>"The fox jumps over the wall."</td>
+	</tr>
+</table>
+<br/><span class="meta">variable defined: SLIM_DT_GETTER=!-
+{
+"FormatVersion":"1.0",
+"MethodExtractorRules":[
+  {
+    "Scope":"property\\s+(\\w*)\\s*",
+    "TargetName":"get property",
+    "Parameters":"$1"
+  },
+  {
+    "Scope":"has Value\\s+'(\\w*)'\\s*",
+    "TargetName":"contains Value",
+    "Parameters":"$1"
+  },
+  {
+    "Scope":"(?s).*&lt;[i]&gt;(.*)&lt;/i&gt;.*",
+    "TargetName":"$1",
+    "Parameters":""
+  },
+  {
+    "Scope":"(?s)^([^\\n]*)\\n.*",
+    "TargetName":"$1",
+    "Parameters":""
+  }
+ ]
+}
+-!</span>
+<br/><span class="meta">variable defined: SLIM_DT_SETTER=!-
+{
+"FormatVersion":"1.0",
+"MethodExtractorRules":[
+  {
+    "Scope":"property\\s+(\\w*)\\s*",
+    "TargetName":"set property",
+    "Parameters":"$1"
+  },
+  {
+    "Scope":"(?s).*&lt;[i]&gt;(.*)&lt;/i&gt;.*",
+    "TargetName":"set $1",
+    "Parameters":""
+  },
+  {
+    "Scope":"(?s)^([^\\n]*)\\n.*",
+    "TargetName":"set $1",
+    "Parameters":""
+  },
+  {
+    "Scope":".+",
+    "TargetName":"set $0",
+    "Parameters":""  }
+ ]
+}
+-!</span>
+<br/><br/></div>
+</div>
+<br/><h3 id="1">Based on your test cases you might expect or need to add a varying number of properties to a collection.</h3>
+<h4 id="2">Test Case with 2 properties</h4>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="7">Properties</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>#</td>
+		<td>property a</td>
+		<td>property b</td>
+		<td>size?</td>
+		<td>property a?</td>
+		<td>property b?</td>
+		<td>has Value '123456789' ?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td></td>
+		<td>$S1</td>
+		<td>123456789</td>
+		<td>2</td>
+		<td>$S1</td>
+		<td>123456789</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td></td>
+		<td>$S2</td>
+		<td>"The fox jumps over the wall."</td>
+		<td>2</td>
+		<td>123456789</td>
+		<td>$S3</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td></td>
+		<td>$S3</td>
+		<td>abcdefghijklmnopqrstuvwxyz</td>
+		<td>2</td>
+		<td>$S3</td>
+		<td>$S1</td>
+		<td>false</td>
+	</tr>
+</table>
+<br/><h4 id="3">Test Case with 3 properties added and 2 expected</h4>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="9">Properties</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>#</td>
+		<td>property NEW</td>
+		<td>property a</td>
+		<td>property b</td>
+		<td>size?</td>
+		<td>property NEW?</td>
+		<td>property b?</td>
+		<td>has Value '123456789' ?</td>
+		<td>has Value 'FitNesse'?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td></td>
+		<td>Hello</td>
+		<td>$S1</td>
+		<td>$S2</td>
+		<td>3</td>
+		<td>Hello</td>
+		<td>123456789</td>
+		<td>true</td>
+		<td>false</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td></td>
+		<td>FitNesse</td>
+		<td>$S2</td>
+		<td>$S3</td>
+		<td>3</td>
+		<td></td>
+		<td>$S3</td>
+		<td>true</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td></td>
+		<td>World</td>
+		<td>$S3</td>
+		<td>$S1</td>
+		<td>3</td>
+		<td>World</td>
+		<td>$S1</td>
+		<td>false</td>
+		<td>false</td>
+	</tr>
+</table>
+<br/><br/><h4 id="4">Look in the collapsed setup how the mapping between column names and method names is done.</h4>
+The magic is done with two variables:<br/>SLIM_DT_SETTER  -  for input columns<br/>SLIM_DT_GETTER  - for output columns<br/><br/>For each variable you can define a list of <i>Method Extractor Rules</i> in JSON format. A Method Extractor Rule has 3 properties:<br/>1. Scope - a regular expression which identifies all columns for which this extractor should be applied.<br/>2. Target Name - a replacement string for the "Column Name" regular expression. This will be passed to the Disgracer to generate the final method name.<br/>3. Parameters - a colon separated list of parameters passed to the method called. <br/><br/>The list of rules is preceded with a version number <i>Format Version</i>. This must currently be always "1.0". <br/>Future versions might define additional features and will require a different version number. <br/><br/>If no Method Extractor Rule matches the current column name than the default rules of the Decision Table are used ("set " + column name).<br/><br/>The Hybrid Decision Table is no new table type but it modifies the behavior of the decision table with the help of the above variables.<br/>This has the advantage that you don't need to specify the table type in your test cases<br/>and leaves the decision to the implementer of the test cases if he wants to use a hybrid, dynamic or normal decision table.<br/><br/><br/><h3 id="5">More verbose decision tables</h3>
+<br/>The flexible pattern matching of the hybrid table can also be used to document your decision tables even more<br/><ul>
+	<li>describe the business logic for a column</li>
+	<li>or use GIVEN, WHEN, THEN verbosity in the table header directly</li>
+</ul>
+<br/>compare the below two tables with the standard one on this page <a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/DecisionTable.html">.FitNesse.UserGuide.WritingAcceptanceTests.SliM.DecisionTable</a> <br/><br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">should I buy milk</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>GIVEN I have <b>ZERO</b>
+<i>pints of milk remaining</i> 
+in my fridge </td>
+		<td>WHEN I have <b>AT LEAST</b> 3$<sup>1</sup>
+ <i>cash in wallet</i> <hr size="2"/>
+  <sup>1</sup>: the price for 
+a bottle of milk </td>
+		<td>OR I <b>HAVE</b> a <i>credit card</i></td>
+		<td>THEN I <i>go to store</i> 
+and buy milk!</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>0</td>
+		<td>0</td>
+		<td>no</td>
+		<td>no</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>0</td>
+		<td>1</td>
+		<td>no</td>
+		<td>no</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>0</td>
+		<td>2</td>
+		<td>no</td>
+		<td>no</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>0</td>
+		<td>3</td>
+		<td>no</td>
+		<td>yes</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>0</td>
+		<td>1</td>
+		<td>yes</td>
+		<td>yes</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>1</td>
+		<td>1</td>
+		<td>yes</td>
+		<td>no</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>2</td>
+		<td>5</td>
+		<td>yes</td>
+		<td>no</td>
+	</tr>
+</table>
+<br/><br/><span class="meta">if you like use in addition colours or other markup</span><br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">baseline: should I buy milk</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>GIVEN I have <b>zero</b>
+<span class="indigo"><i>pints of milk remaining</i></span> 
+in my fridge </td>
+		<td>WHEN I have <b>AT LEAST 3$</b><sup>1</sup>
+ <span class="indigo"><i>cash in wallet</i></span> <hr size="2"/>
+  <sup>1</sup>: the price for 
+a bottle of milk </td>
+		<td>OR I <b>have</b> a <u><i>credit card</i></u></td>
+		<td>THEN I <i>go to store</i> 
+and buy milk!</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>0</td>
+		<td>0</td>
+		<td>no</td>
+		<td>no</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td></td>
+		<td>1</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td></td>
+		<td>2</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td></td>
+		<td>3</td>
+		<td></td>
+		<td>yes</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td></td>
+		<td>1</td>
+		<td>yes</td>
+		<td>yes</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>1</td>
+		<td>1</td>
+		<td>yes</td>
+		<td>no</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>2</td>
+		<td>5</td>
+		<td>yes</td>
+		<td>no</td>
+	</tr>
+</table>
+<br/><br/>The test case writer has just to set the function name in <i>italic</i><br/>and can use any other text and formatting to descibe the scenario further<br/>The pattern used in the hybrid table is the below. <br/><br/><pre>
+!define SLIM_DT_GETTER (!-
+{
+"FormatVersion":"1.0",
+"MethodExtractorRules":[
+  {
+    "Scope":"(?s).*&lt;[i]&gt;(.*)&lt;/i&gt;.*",
+    "TargetName":"$1",
+    "Parameters":""
+  },
+  {
+    "Scope":"(?s)^([^\\n]*)\\n.*",
+    "TargetName":"$1",
+    "Parameters":""
+  }
+ ]
+}
+ -!)
+!define SLIM_DT_SETTER (!-
+{
+"FormatVersion":"1.0",
+"MethodExtractorRules":[
+  {
+    "Scope":"(?s).*&lt;[i]&gt;(.*)&lt;/i&gt;.*",
+    "TargetName":"set $1",
+    "Parameters":""
+  },
+  {
+    "Scope":".+",
+    "TargetName":"set $0",
+    "Parameters":""  }
+ ]
+}
+ -!)
+
+</pre><br/><br/><br/><h3 id="6">IMPORTANT: to avoid side effects always add a <a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/HybridDecisionTable/TearDown.html">&gt;TearDown</a> page to reset the mappings to the defaults.</h3>
+<br/><br/><br/>Further Reading:<br/><div class="contents">
+	<b>Contents:</b>
+	<ul class="toc1">
+		<li>
+			<a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/HybridDecisionTable/ImplementDynamicDecisionTableWithHybridTable.html" class="test">Implement Dynamic Decision Table With Hybrid Table +</a>
+		</li>
+		<li>
+			<a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/HybridDecisionTable/MethodExtractorRuleTest.html" class="test">Method Extractor Rule Test +</a>
+		</li>
+		<li>
+			<a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/HybridDecisionTable/SetUp.html" class="static">Set Up</a>
+		</li>
+		<li>
+			<a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/HybridDecisionTable/TearDown.html" class="static">Tear Down</a>
+			<span class="pageHelp">: Reset DT Getter and Setter variables</span>
+		</li>
+	</ul>
+</div>
+<br/>
+</article>
+<footer>
+<a href="../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../FrontPage.html">Front Page</a> | <a href="../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

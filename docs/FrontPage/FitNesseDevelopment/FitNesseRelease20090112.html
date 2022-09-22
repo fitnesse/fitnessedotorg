@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FrontPage.FitNesseDevelopment.FitNesseRelease20090112</title>
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../FrontPage.html">FrontPage</a></li>
+<li><a href="../../FrontPage/FitNesseDevelopment.html">FitNesseDevelopment</a></li>
+
+  </ol>
+</nav>
+<article>
+<h3>release 
+	<a href="">20090112</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse.jar?responder=releaseDownload&release=20090112">fitnesse.jar</a></strong></td><td>984868 bytes</td><td>0</td></tr></tbody></table><br/><br/><h3 id="0"><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> Release Notes 1/12/2009</h3>
+<p class="note">Uncle Bob, Object Mentor, Inc.</p>
+<br/><table>
+	<tr>
+		<td><h4 id="1">Since:</h4></td>
+		<td colspan="2">20081201</td>
+	</tr>
+	<tr>
+		<td><h4 id="2">Exepcted Release Date:</h4></td>
+		<td>20090112</td>
+		<td><span class="pass">RELEASED</span></td>
+	</tr>
+	<tr>
+		<td><h4 id="3">Theme:</h4></td>
+		<td colspan="2">Scenario Tables</td>
+	</tr>
+</table>
+<br/><table>
+	<tr>
+		<td><h2 id="4">Changes</h2></td>
+	</tr>
+	<tr>
+		<td>reset() in Decision Table added to User Guide</td>
+	</tr>
+	<tr>
+		<td>Scenario Table added to User Guide</td>
+	</tr>
+	<tr>
+		<td>Symbols work with scenario tables.  (big architectural change.  Expectations evaluated in sequence.</td>
+	</tr>
+	<tr>
+		<td>Script tables can call scenario tables.</td>
+	</tr>
+	<tr>
+		<td>Composed Decision Table works!  Removed fitlibraryGeneric due to collision with <a href="../../FrontPage/FitNesseDevelopment/SetUp.html">SetUp</a>.</td>
+	</tr>
+	<tr>
+		<td>Added new version of fitlibrary.jar, fitlibraryGeneric.jar.  Also got Composed decision table working initially.</td>
+	</tr>
+	<tr>
+		<td>fixed out of memory error in testConcurrentAddWidgets</td>
+	</tr>
+	<tr>
+		<td>Added pom.xml and fixed some Windows compatibility issues</td>
+	</tr>
+	<tr>
+		<td>FileResponder<a title="create page" href="../../FrontPage/FitNesseDevelopment/FileResponder.html?edit&amp;nonExistent=true">[?]</a> won't print exception if Is-Last-Modified date is unparseable.</td>
+	</tr>
+	<tr>
+		<td>Removed !fixture feature.</td>
+	</tr>
+	<tr>
+		<td>Added crap4j to the build</td>
+	</tr>
+	<tr>
+		<td>Added reset() to DecisionTable<a title="create page" href="../../FrontPage/FitNesseDevelopment/DecisionTable.html?edit&amp;nonExistent=true">[?]</a></td>
+	</tr>
+	<tr>
+		<td>Speed up processing of line breaks.  Eliminate LineBreakWidget<a title="create page" href="../../FrontPage/FitNesseDevelopment/LineBreakWidget.html?edit&amp;nonExistent=true">[?]</a></td>
+	</tr>
+	<tr>
+		<td>Much improved SLIM table processing.  HTML parsing instead of Wiki Parsing.</td>
+	</tr>
+	<tr>
+		<td>Fixed Gareth Powell's Bug.  Variables defined in included pages were not being evaluated.</td>
+	</tr>
+	<tr>
+		<td>Changed Default Responder email address.</td>
+	</tr>
+	<tr>
+		<td>Tweaks for RubySlim<a title="create page" href="../../FrontPage/FitNesseDevelopment/RubySlim.html?edit&amp;nonExistent=true">[?]</a></td>
+	</tr>
+	<tr>
+		<td>Reformat all source files to fitnesse standard,  Added README and bylawsForCommitters</td>
+	</tr>
+</table>
+<br/><br/><h3 id="5">Git History</h3>
+<table>
+	<tr>
+		<td>2009-01-12 11:08:01 -0600</td>
+		<td>unclebob</td>
+		<td>changed manifest so that java -jar fitnesse.jar will work.  Also changed UserGuide.  Added 'code' style.</td>
+	</tr>
+	<tr>
+		<td>2009-01-11 10:55:03 -0600</td>
+		<td>unclebob</td>
+		<td>Added ScenarioTable to user guide</td>
+	</tr>
+	<tr>
+		<td>2009-01-11 10:00:20 -0600</td>
+		<td>unclebob</td>
+		<td>Moved the simple wiki widget acceptance tests into the composed test SimplWidgets</td>
+	</tr>
+	<tr>
+		<td>2009-01-10 11:46:15 -0600</td>
+		<td>unclebob</td>
+		<td>Scenario tables work properly when called with wrong number of arguments.</td>
+	</tr>
+	<tr>
+		<td>2009-01-04 12:48:31 -0600</td>
+		<td>unclebob</td>
+		<td>fixed a 'harmless' NullPointerException for Expectations that don't process return values.</td>
+	</tr>
+	<tr>
+		<td>2009-01-04 12:39:13 -0600</td>
+		<td>unclebob</td>
+		<td>Symbols work with scenario tables.  (big architectural change.  Expectations evaluated in sequence.</td>
+	</tr>
+	<tr>
+		<td>2009-01-04 09:29:03 -0600</td>
+		<td>unclebob</td>
+		<td>Script tables can call scenario tables.</td>
+	</tr>
+	<tr>
+		<td>2008-12-30 22:26:07 -0600</td>
+		<td>unclebob</td>
+		<td>Composed Decision Table works!  Removed fitlibraryGeneric due to collision with SetUp.</td>
+	</tr>
+	<tr>
+		<td>2008-12-29 15:46:19 -0600</td>
+		<td>unclebob</td>
+		<td>Added new version of fitlibrary.jar, fitlibraryGeneric.jar.  Also got Composed decision table working initially.</td>
+	</tr>
+	<tr>
+		<td>2008-12-29 11:54:56 -0600</td>
+		<td>unclebob</td>
+		<td>Decision Table can now call ScenarioTable, but not generate output</td>
+	</tr>
+	<tr>
+		<td>2008-12-29 07:39:19 -0600</td>
+		<td>unclebob</td>
+		<td>ScenarioTable parses it's header and registers with TestSystem</td>
+	</tr>
+	<tr>
+		<td>2008-12-29 05:41:02 -0600</td>
+		<td>unclebob</td>
+		<td>more cleanup getting idea files out of git.</td>
+	</tr>
+	<tr>
+		<td>2008-12-28 10:33:19 -0600</td>
+		<td>unclebob</td>
+		<td>removed .iws and added FitNesseVersion.  Generally cleaned up git a bit.</td>
+	</tr>
+	<tr>
+		<td>2008-12-27 19:05:03 -0600</td>
+		<td>unclebob</td>
+		<td>fit out of memory error in testConcurrentAddWidgets</td>
+	</tr>
+	<tr>
+		<td>2008-12-27 18:54:17 -0600</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of git@github.com:unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2008-12-27 18:54:04 -0600</td>
+		<td>unclebob</td>
+		<td>getting ready for a pull</td>
+	</tr>
+	<tr>
+		<td>2008-12-26 10:19:55 -0600</td>
+		<td>unclebob</td>
+		<td>call widget and composed table description</td>
+	</tr>
+	<tr>
+		<td>2008-12-26 07:33:26 -0600</td>
+		<td>unclebob</td>
+		<td>Some ideas about composed tests</td>
+	</tr>
+	<tr>
+		<td>2008-12-21 20:34:29 -0500</td>
+		<td>Johannes Brodwall</td>
+		<td>Added pom.xml and fixed some Windows compatibility issues</td>
+	</tr>
+	<tr>
+		<td>2008-12-21 20:32:19 -0500</td>
+		<td>Johannes Brodwall</td>
+		<td>Added pom.xml and fixed some Windows compatibility issues</td>
+	</tr>
+	<tr>
+		<td>2008-12-21 06:36:33 -0600</td>
+		<td>unclebob</td>
+		<td>FileResponder won't print exception if Is-Last-Modified date is unparseable.</td>
+	</tr>
+	<tr>
+		<td>2008-12-18 20:56:07 -0600</td>
+		<td>unclebob</td>
+		<td>Yanked all the horrible \!fixture code out, and cleaned up a bit more crap.</td>
+	</tr>
+	<tr>
+		<td>2008-12-18 18:32:19 -0600</td>
+		<td>unclebob</td>
+		<td>De-Crap the Response.java class.  It has the highest crap metric.</td>
+	</tr>
+	<tr>
+		<td>2008-12-18 11:38:05 -0600</td>
+		<td>Brett L. Schuchert</td>
+		<td>Updated test to no longer used piped streams but instead a byte array input stream.</td>
+	</tr>
+	<tr>
+		<td>2008-12-17 21:58:42 -0600</td>
+		<td>unclebob</td>
+		<td>Added crap4j to the build</td>
+	</tr>
+	<tr>
+		<td>2008-12-17 20:04:26 -0600</td>
+		<td>unclebob</td>
+		<td>Kludge wait in MockResponseSender.send to simulate real socket behavior.  If this works I don't know why...</td>
+	</tr>
+	<tr>
+		<td>2008-12-17 17:58:01 -0600</td>
+		<td>unclebob</td>
+		<td>AtomicBoolean in MockResponseSender</td>
+	</tr>
+	<tr>
+		<td>2008-12-15 23:36:26 -0600</td>
+		<td>unclebob</td>
+		<td>Removed MockResponseSender(response) constructor because calling functions on partially constructed objects from different threads is probably a bad idea</td>
+	</tr>
+	<tr>
+		<td>2008-12-15 17:48:47 -0600</td>
+		<td>unclebob</td>
+		<td>Fixed another timing error in ResponseRequester, added some debugging prints</td>
+	</tr>
+	<tr>
+		<td>2008-12-15 13:26:08 -0600</td>
+		<td>unclebob</td>
+		<td>Fixed timing and logic flaw in FitClientTest</td>
+	</tr>
+	<tr>
+		<td>2008-12-15 13:00:52 -0600</td>
+		<td>unclebob</td>
+		<td>added debug to TestNoDefaultContructor acceptance tests to see why it sometimes fails hudson build</td>
+	</tr>
+	<tr>
+		<td>2008-12-15 11:09:33 -0600</td>
+		<td>unclebob</td>
+		<td>Put in prints to debug exceptionOcurred messages in hudson build</td>
+	</tr>
+	<tr>
+		<td>2008-12-14 08:28:13 -0600</td>
+		<td>unclebob</td>
+		<td>Added reset() to DecisionTable</td>
+	</tr>
+	<tr>
+		<td>2008-12-14 07:13:19 -0600</td>
+		<td>unclebob</td>
+		<td>Speed up processing of line breaks.  Eliminate LineBreakWidget</td>
+	</tr>
+	<tr>
+		<td>2008-12-13 18:00:29 -0600</td>
+		<td>unclebob</td>
+		<td>Don't push a commit until you are sure the build script passes.</td>
+	</tr>
+	<tr>
+		<td>2008-12-13 09:02:49 -0600</td>
+		<td>unclebob</td>
+		<td>Literalization has been expunged.</td>
+	</tr>
+	<tr>
+		<td>2008-12-13 08:45:39 -0600</td>
+		<td>unclebob</td>
+		<td>all WikiSlimTestSystem artifacts are gone.  All tests pass.</td>
+	</tr>
+	<tr>
+		<td>2008-12-13 07:54:58 -0600</td>
+		<td>unclebob</td>
+		<td>Killed WikiSlimTestSystem!  All tests pass</td>
+	</tr>
+	<tr>
+		<td>2008-12-13 07:40:09 -0600</td>
+		<td>unclebob</td>
+		<td>All acceptance tests are working again in HTMLization</td>
+	</tr>
+	<tr>
+		<td>2008-12-12 11:17:06 -0600</td>
+		<td>unclebob</td>
+		<td>Htmlization seems to work. Time to clean up left-over cruft</td>
+	</tr>
+	<tr>
+		<td>2008-12-09 13:52:21 -0600</td>
+		<td>unclebob</td>
+		<td>Added HtmlTableScanner and HtmlTable in preparation for HTMLization of SLIM.</td>
+	</tr>
+	<tr>
+		<td>2008-12-09 09:00:26 -0600</td>
+		<td>unclebob</td>
+		<td>Fixed Gareth Powell's Bug.  Variables defined in included pages were not being evaluated.</td>
+	</tr>
+	<tr>
+		<td>2008-12-08 08:11:19 -0600</td>
+		<td>unclebob</td>
+		<td>Added the iws file to satisfy intelliJ git plugin.</td>
+	</tr>
+	<tr>
+		<td>2008-12-08 08:08:06 -0600</td>
+		<td>unclebob</td>
+		<td>Changed Default Responder email address.</td>
+	</tr>
+	<tr>
+		<td>2008-12-08 07:48:39 -0600</td>
+		<td>unclebob</td>
+		<td>sync unclebob's changes since github creation</td>
+	</tr>
+	<tr>
+		<td>2008-12-08 06:46:41 -0600</td>
+		<td>unclebob</td>
+		<td>gitignore</td>
+	</tr>
+	<tr>
+		<td>2008-12-08 06:27:14 -0600</td>
+		<td>unclebob</td>
+		<td>Gathering unclebob's subversion library</td>
+	</tr>
+	<tr>
+		<td>2008-12-06 19:35:34 +0000</td>
+		<td>robertmartin</td>
+		<td>Added iml file to be in compliance with respository</td>
+	</tr>
+	<tr>
+		<td>2008-12-06 19:32:27 +0000</td>
+		<td>robertmartin</td>
+		<td>get RubySlim test out of the main line.  Moved it to srcSlimPortTests</td>
+	</tr>
+	<tr>
+		<td>2008-12-05 21:36:07 +0000</td>
+		<td>robertmartin</td>
+		<td>Tweaks for RubySlim</td>
+	</tr>
+	<tr>
+		<td>2008-12-01 22:13:22 +0000</td>
+		<td>robertmartin</td>
+		<td>Reformat all source files to fitnesse standard,  Added README and bylawsForCommitters</td>
+	</tr>
+	<tr>
+		<td>2008-12-01 06:00:29 +0000</td>
+		<td>jacmorel</td>
+		<td>Make SuiteResponderTest and TestResponderTest more reliable using a random socket port instead of a fixed one.</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<hr/>
+<br/><a href="../../FrontPage.html">.FrontPage</a> | <a href="../../FrontPage/FitNesseDevelopment/FrontPage.html">FrontPage</a> | <a href="../../RecentChanges.html">.RecentChanges</a><br/>
+</footer>
+</body>
+</html>

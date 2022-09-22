@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.FitNesseWiki.PageProperties</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../FitNesse/UserGuide.html">UserGuide</a></li>
+<li><a href="../../../FitNesse/UserGuide/FitNesseWiki.html">FitNesseWiki</a></li>
+
+  </ol>
+</nav>
+<article>
+<span class="fitnesse">FitNesse</span> pages can have attributes that alter the way the pages are displayed, and how they behave.  These can be enabled or disabled for a page by hitting the Properties menu item.<br/><br/><h3 id="0">Page Type</h3>
+<ul>
+	<li><b>Static</b>: This is just a content page.</li>
+	<li><b>Test</b>: This property instructs <i>FitNesse</i> to treat the page as a fitnesse test page:<ul>
+	<li>It enables the <b>Test</b> button, which submits the page to Fit to process all of the page's test tables.</li>
+	<li>Pages with the Test property enabled will have the <b>SetUp</b> and <b>TearDown</b> text applied to them. See&lt;UserGuide.AcceptanceTests.SpecialPages.<ul>
+	<li>SetUp will be prepended to the page, just after the PageHeader (if any).</li>
+	<li>TearDown will be appended to the page, just before the PageFooter page (if any).</li>
+</ul>
+</li>
+	<li>Pages with this property will be included in <i>test suite runs</i>.</li>
+</ul>
+</li>
+	<li><b>Suite</b>: Pages with this property are test suites. All sub pages are considered part of the suite. Any sub page with the <b>Test</b>property set is considered a test within the suite.<ul>
+	<li>The <b>Test Suite</b> button is enabled by this property.</li>
+	<li>A <i>test suite run</i> is activated by hitting the <b>Test Suite</b> button. All tests within the suite are run and their results reported.</li>
+</ul>
+</li>
+</ul>
+<br/><h3 id="1"></h3>
+<h4 id="2">Implicit Page Attributes</h4>
+<br/><ul>
+	<li>Pages that begin or end with <b>"Test"</b> or <b>"Example"</b> will automatically have the <b>Test</b> property set.</li>
+	<li>Pages that begin or end with <b>"Suite"</b> or end with "<b>Examples</b>" will automatically have the <b>Suite</b> property set.</li>
+	<li>Once these pages are created, you can set or clear these properties as usual.</li>
+</ul>
+<br/><h3 id="3">Actions</h3>
+<ul>
+	<li><b>Edit</b>:  When set, this property causes the <b>Edit</b> button to be displayed.  This is a poor man's read-only switch.  If you clear this checkbox then users will not have a convenient way to edit the page.  Of course they can always edit it by typing the <i>page?edit</i> URL <strike> but we don't have to tell them how to do that, do we?</strike></li>
+	<li><b>Search</b>:  This property enables or disables the <b>Search</b> button.  There's no real good reason to disable this button, but we put the ability in just for symmetry.</li>
+	<li><b>Versions</b>: Enables the <b>Versions</b> button.  Hitting this button brings up a list of old versions of the page.  If this property is not set, then the button will not be displayed, but versions will still be tracked.</li>
+	<li><b>Properties</b>: Enables the <b>Properties</b> button.  Hitting this button brings up a pages that allows you to edit all page properties mentioned here.  If you disable this property users will not have a convenient way to change the properties of a page.  (Of course they can always use the <i>page?properties</i> URL.)</li>
+</ul>
+<br/><h3 id="4">Navigation</h3>
+The following entries are shown in the Tools menu, if enabled<br/><br/><ul>
+	<li>Recent Changes: links to the .RecentChanges page</li>
+	<li>Files: links to the <a href="files/">http://files/</a> section</li>
+	<li>Search: opens an advanced search dialog.</li>
+</ul>
+<br/><h3 id="5">Security</h3>
+The permissions for the page can be changed to read, write and test.<br/>
+</article>
+<footer>
+<center>User Guide Contents</center><center><a href="../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+</footer>
+</body>
+</html>

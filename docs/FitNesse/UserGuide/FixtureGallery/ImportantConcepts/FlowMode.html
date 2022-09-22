@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.FixtureGallery.ImportantConcepts.FlowMode</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+<li><a href="../../../../FitNesse/UserGuide/FixtureGallery.html">FixtureGallery</a></li>
+<li><a href="../../../../FitNesse/UserGuide/FixtureGallery/ImportantConcepts.html">ImportantConcepts</a></li>
+
+  </ol>
+</nav>
+<article>
+<br/><i>Previous page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/ImportantConcepts/FixtureArguments.html">Fixture Arguments</a> Next page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/ImportantConcepts/TargetObject.html">Target objects</a> Parent page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/ImportantConcepts.html">Important concepts</a></i><br/><h2 id="0">Flow Mode</h2>
+ If <b> DoFixture </b> or <b> SequenceFixture </b> are loaded by the first table on a test page, they take over the entire test page processing. This allows you to split the test table into multiple tables, to make the test more readable. <br/><br/><pre>
+!|info.fitnesse.fixturegallery.DoFixtureTest|
+
+|fill|10|times with|x|
+
+|check|char at|4|x|
+
+|set list|A,B,C,D|
+
+|show|char at|2|
+</pre><br/> When the table is split like this, then each sub-table is first matched to an enclosing flow fixture method. If no such method exists, a fixture class is loaded as it would normally be, without the flow mode. This allows you to write tests that use <b> DoFixture </b> methods to implement story-like workflow, but still use the benefits of a more structured approach when that makes sense. <b> DoFixture </b> even helps you with that: if the flow mode method returns an instance of a <b> fit.Fixture </b> class or one of its subclasses, the rest of the active table is processed as if it were writen for that fixture. So you can use a <b> DoFixture </b> method to initialise other fixtures, prepare the context or clean up. If the flow method returns an array or list of objects, the table is analysed as if it was written for an <b> ArrayFixture </b> . Here is an example that uses an embedded fixture and array conversion: <br/><br/><pre>
+!|info.fitnesse.fixturegallery.DoFixtureFlowTest|
+
+!3 The following table is executed by an embedded !-SetUpFixture-!-!-!
+
+|prepare players|
+|player|post code|balance|
+|John Smith|SW4 66Z|10.00|
+|Michael Jordan|NE1 8AT|12.00|
+
+!3 The following table is executed by an !-ArrayFixture-!-!-!
+
+|list players|
+|name|post code|balance|
+|John Smith|SW4 66Z|10.00|
+|Michael Jordan|NE1 8AT|12.00|
+</pre><br/><h3 id="1">Java Source Code</h3>
+<pre>
+package info.fitnesse.fixturegallery;
+
+import info.fitnesse.fixturegallery.domain.Player;
+
+import java.util.List;
+
+import fit.Fixture;
+import fitlibrary.DoFixture;
+
+public class DoFixtureFlowTest extends DoFixture{
+	public Fixture preparePlayers(){
+		return new SetUpFixtureTest();
+	}
+	public List&lt;Player&gt; listPlayers(){
+		return Player.players;
+	}
+}
+</pre><br/><h3 id="2">.NET Source Code</h3>
+<pre>
+using System;
+using System.Collections.Generic;
+using System.Text;
+using fit;
+namespace info.fitnesse.fixturegallery
+{
+    public class DoFixtureFlowTest : fitlibrary.DoFixture
+    {
+        public Fixture PreparePlayers()
+        {
+            return new SetUpFixtureTest();
+        }
+        public List&lt;Player&gt; ListPlayers()
+        {
+            return Player.players;
+        }
+    }
+}
+</pre><br/><h3 id="3">Python Source Code</h3>
+<pre>
+from fitLib.DoFixture import DoFixture
+from fit.RowFixture import RowFixture
+from info.fitnesse.fixturegallery.SetUpFixtureTest  import SetUpFixtureTest
+from info.fitnesse.fixturegallery.domain.Player     import Player
+import types
+
+class DoFixtureFlowTest(DoFixture):
+    _typeDict = {}
+
+    _typeDict["preparePlayers.types"] = [ SetUpFixtureTest ]
+    def preparePlayers(self):
+        return SetUpFixtureTest()
+
+    _typeDict["listPlayers.types"] = [ "$Array" ] #&lt; ACTUALLY: List of Players
+    def listPlayers(self):
+        # -- DESIRED: return Player.players
+        #    But need to add type hints for list.scalarType .
+        return ( Player.players, Player._typeDict )
+        # ALTERNATIVES:
+        #   return RowFixture(Player.players, Player._typeDict)
+        #   return ArrayFixture(Player.players, Player._typeDict)
+</pre><br/><br/><i>Previous page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/ImportantConcepts/FixtureArguments.html">Fixture Arguments</a> Next page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/ImportantConcepts/TargetObject.html">Target objects</a> Parent page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/ImportantConcepts.html">Important concepts</a></i><br/>
+</article>
+<footer>
+<a href="../../../../FitNesse/UserGuide/FixtureGallery.html">Table of contents</a>| Fixture Gallery on <a href="http://sourceforge.net/projects/fixturegallery">SourceForge</a> | Fixture Gallery live wiki on  <a href="http://fitnesse.info/fixturegallery">UserGuide.Info</a> | <a href="http://gojko.net/fitnesse/fixturegallery">Comments and Feedback</a> | <a href="../../../../FrontPage.html">Front Page</a><br/>
+</footer>
+</body>
+</html>

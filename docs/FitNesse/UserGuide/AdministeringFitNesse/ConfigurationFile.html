@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.AdministeringFitNesse.ConfigurationFile</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../FitNesse/UserGuide.html">UserGuide</a></li>
+<li><a href="../../../FitNesse/UserGuide/AdministeringFitNesse.html">AdministeringFitNesse</a></li>
+
+  </ol>
+</nav>
+<article>
+Various plugins are supported by <span class="fitnesse">FitNesse</span>.<br/><br/><h3 id="0">Overview</h3>
+Below are a list of customizations you can make via this plugin architecture.  Each plugin will require an entry in the <i>plugins.properties</i> file.  This should be located in the working directory of <span class="fitnesse">FitNesse</span>.   If the file does not exist <span class="fitnesse">FitNesse</span> will run normally.  To enable a plugin, create this file, and add the specified entries.  All plugins will require complied Java code so make sure that the class path contains an entry to locate your plugins.<br/><br/>See also: <a href="../../../FitNesse/UserGuide/AdministeringFitNesse/CommandLineArguments.html">Command Line Arguments</a>.<br/><br/><h3 id="1">Theme</h3>
+<i>required property:</i> <b>Theme = &lt;theme name&gt;</b><br/><br/><i>motivation:</i> Customize the look and feel to match your liking. See <a href="../../../FitNesse/UserGuide/AdministeringFitNesse/WikiTheming.html">Wiki Theming</a> for details.<br/><br/><h3 id="2">Context root</h3>
+<i>required property:</i> <b>ContextRoot = &lt;root path name&gt;</b><br/><br/><i>motivation:</i> Customize the root url of FitNesse. This is convenient if FitNesse is running behind a proxy server.<br/><br/><h3 id="3">Wiki Page Factory</h3>
+<i>required property:</i> <b>WikiPageFactory = &lt;class name&gt;</b><br/><br/><i>motivation:</i> By default, wiki pages are stored as files on a file system (using the FileSystemWikiPage class). Providing a custom wiki page plugin allows pages to be stored using other means such as a database. Alternatively, FileSystemWikiPage can be extended to provide custom behavior when pages are create, saved, deleted, etc.<br/><br/>The class specified must implement the <i>fitnesse.wiki.WikiPageFactory</i> interface. It must provide a public default constructor or a constructor with the form:<i>public WikiPageFactory(Properties properties).</i> The Properties define the properties defined in the configuration properties file and on the command line.<br/><br/><h3 id="4">Versions Controller</h3>
+<i>required property:</i> <b>VersionsController = &lt;class name&gt;</b><br/><br/><i>motivation:</i> Custom version management for file system pages.<br/><br/>By default <span class="fitnesse">FitNesse</span> makes backups of pages (as zip files). This property can be used to define version management for the wiki pages. By default <span class="fitnesse">FitNesse</span> supports a Git based versions controller (fitnesse.wiki.fs.GitFileVersionsController) and a simple implementation that does not track changes (fitnesse.wiki.fs.SimpleFileVersionsController). Custom versions controllers can be defined, as long as they implement the fitnesse.wiki.fs.VersionsController interface.<br/><br/><h3 id="5">Recent Changes</h3>
+<i>required property:</i> <b>RecentChanges = &lt;class name&gt;</b><br/><br/><i>motivation:</i> If you have a custom versions controller installed, it's nice to see those changes on the recent changes page<br/><br/>By default <span class="fitnesse">FitNesse</span> maintains a page (<a href="../../../RecentChanges.html">RecentChanges</a>) that keeps track of changes made to the wiki. If you're using Git versioning, it's much more convenient to just list the changes from the SCM, instead of the ones maintained in the files (let alone the potential merge conflicts). For Git, fitnesse.wiki.fs.GitFileVersionsController supports the fitnesse.wiki.RecentChanges interface, so changes of the repository can be displayed, instead of the ones maintained in the RecentChanges file.<br/><br/><h3 id="6">Responders</h3>
+<i>required property:</i> <b>Responders = &lt;key:class name&gt;[,&lt;key:class name&gt;]</b><br/><br/><i>motivation:</i> Allows functional customization.  With this plugin you can customize the way <span class="fitnesse">FitNesse</span> responds to HTTP requests.<br/><br/>The property provided should be a comma separated list of key:value pairs, where value is the name of a class that implements <i>fitnesse.Responder</i>.  The key is used in the URL to designate which responder to invoke.  An example responder plugin might be an RssResponder that would generate RSS feeds for wiki page updates.  To do this you would first create the RssResponder to generate the RSS.  Then add the plugin property <span class="code"><i>Responders=rss:your.package.RssResponder</i></span>.  Then to invoke it you would use a URL like <span class="code"><i>http://fitnesse.org/RecentChanges?responder=rss</i></span> to get a feed on all the changes made to the <a href="../../../RecentChanges.html">RecentChanges</a> page.<br/><br/><h4 id="7">Disabled Responder</h4>
+The DisabledResponder is provided as a way to turn off at a very deep level other responders.  Using the Responders property in the <span class="code">plugins.properties</span>, you can disable any existing responder by defining it to use the DisabledResponder instead.  For example, the following line, will disable the addChild and new responders.<br/><br/>Responders =addChild:fitnesse.responders.DisabledResponder,new:org.fitnesse.responders.DisabledResponder<br/><br/><h3 id="8">Authenticator</h3>
+<i>required property:</i> <b>Authenticator = &lt;class name&gt;</b><br/><br/><i>motivation:</i> Custom security scheme. The class provided must extend the fitnesse.authentication.Authenticator class.  The class will be instantiated and asked <i>isAuthenticated(String username, String password)</i> when ever authentication is required.  See <a href="../../../FitNesse/UserGuide/AdministeringFitNesse/SecurityDescription.html">Security Description</a> for more information on security.<br/><br/><h3 id="9">Symbol Types</h3>
+<i>required property:</i> <b>SymbolTypes = &lt;class name&gt;[,&lt;class name]</b><br/><br/><i>motivation:</i> Custom look-n-feel, or custom functionality hook.<br/><br/>The plug-in class must extend <i>fitnesse.wikitext.SymbolType</i>. A plug-in class can specify up to four pieces of information for the parser.<br/><br/>The first is a name, specified in the super constructor. The name is just used for error reporting and debugging and so it can be any descriptive string.<br/><br/>The second is the wikiMatcher. This is an object that knows how to identify the symbol type in the source string. The Matcher class provides a lot of common matching behavior, so you can look at the Matcher source to find matching behavior.<br/><br/>The third is the wikiRule, which not all symbol types require. This is an object that implements a grammar production rule if our symbol type is composed of other symbol types (a non-terminal, in grammar-speak). A symbol type that is a terminal doesn't need a production rule. Look at the fitnesse.wikitext.parser package to see examples of how production rule classes are written.<br/><br/>The fourth is the htmlTranslation. This is an object that renders the symbol type as a string in the HTML output. We can implement the Translation interface and specify this as our translation object. The toTarget method renders our output.<br/><br/>Example:<br/><br/><pre>
+public class PiSymbolType extends SymbolType implements Translation {
+    public PiSymbolType () {
+        super("Pi");
+        wikiMatcher(new Matcher().string("!pi"));
+        htmlTranslation(this);
+    }
+
+    public String toTarget(Translator translator, Symbol symbol) {
+        return Double.toString(Math.PI);
+    }
+}
+</pre><br/><br/><h3 id="10">Content Filter</h3>
+<i>required property:</i> <b>ContentFilter = &lt;class name&gt;</b><br/><br/><i>motivation:</i> Restrict the content that is saved on wiki pages. (Damn spammers!)<br/><br/>The classes supplied must extend <i>fitnesse.responders.editing.ContentFilter</i>.  ContentFilter is an interface that declares one method:  <b>boolean isContentAcceptable(String content, String pageName)</b>.  When ever user attempts to save a page, <i>isContentAcceptable()</i> is invoked and the content is saved only if <i>true</i> is returned.<br/><br/><h3 id="11">Slim Tables</h3>
+<i>required property:</i> <b>SlimTables = &lt;table name:class name&gt;[,&lt;table name:class name&gt;]</b><br/><br/><i>motivation:</i> Allow for custom SLiM table types to be supported.<br/><br/>There may be certain (rare) situations where the default table types are not sufficient. This hook allows for custom SLiM table types. A custom table must extend fitnesse.slimTables.<br/><br/><h3 id="12">Custom Comparators</h3>
+<i>required property:</i> <b>CustomComparators = &lt;prefix:class name&gt;[,&lt;prefix:class name&gt;]</b><br/><br/><i>motivation:</i> The Slim protocol is all String values. It means that comparison of an expected and actual result for complex datatypes is limited to String equality or Regular Expression matching. If that is not sufficient, a Custom Comparator can do more sophisticated comparisons. Once registered, a Custom Comparator is triggered by its prefix, followed by a colon, in front of the expected value.<br/><br/>Example Comparator implementation:<br/><br/><pre>
+public class JSONAssertComparator implements CustomComparator {
+  @Override
+  public boolean matches(String actual, String expected) {
+    try {
+      JSONAssert.assertEquals(expected, actual, false);
+      return true;
+    } catch (JSONException e) {
+      throw new RuntimeException(e.getMessage(), e);
+    }
+  }
+}
+</pre><br/><br/>Example plugins.properties:<br/><br/><pre>
+CustomComparators = json:com.acme.JSONAssertComparator
+</pre><br/><br/>Example ScriptTable usage:<br/><br/><pre>
+|script|Customer                                 |
+|check |get|cust1|json:{id:cust1,name:"John Doe"}|
+</pre><br/><br/><h3 id="13">Test Systems</h3>
+<i>required property:</i> <b>TestSystems = &lt;key:class name&gt;[,&lt;key:class name&gt;]</b><br/><br/><i>motivation:</i> Allow for custom test systems to be supported.<br/><br/>In case there are situations where you can not get your tests working with the default test systems (Fit and Slim), you have the ability to define custom test systems. Classes should implement the fitnesse.testsystems.TestSystemFactory interface.<br/><br/><h3 id="14">Formatters</h3>
+<i>required property:</i> <b>Formatters = &lt;class name&gt;[,&lt;class name&gt;]</b><br/><br/><i>motivation:</i> Allow for extra reporting facilities during test execution.<br/><br/>Classes should implement the fitnesse.reporting.Formatter interface.<br/><br/><h3 id="15">Plug-ins</h3>
+<i>required property:</i> <b>Plugins = &lt;class name&gt;[,&lt;class name&gt;]</b><br/><br/><i>motivation:</i> Register multiple Responders, symbol types, WikiPage factories, test systems, Slim tables or comparators from a single Java class, instead of multiple entries in plugins.properties.<br/><br/>Please also have a look at the page on <a href="../../../FitNesse/UserGuide/AdministeringFitNesse/WritingPlugins.html">Writing Plugins</a>. It provides an alternative (simpler) way to register plugins by using the Java Service loader facility.<br/><br/>Plugins classes can provide one or more of the following methods to register components:<br/><br/><ul>
+	<li><b>registerResponders(ResponderFactory responderFactory)</b> - register responders using <i>ResponderFactory.addResponder(String key, Class responderClass)</i></li>
+	<li><b>registerSymbolTypes(SymbolProvider symbolProvider)</b> - register wiki symbol types using <i>symbolProvider.add(SymbolType symbolType)</i></li>
+	<li><b>registerWikiPageFactories(WikiPageFactoryRegistry wikiPageFactoryRegistry)</b> - register page factories used for specific sub pages using <i>wikiPageFactoryRegistry.registerWikiPageFactory(WikiPageFactory wikiPageFactory)</i></li>
+	<li><b>registerTestSystemFactories(TestSystemFactoryRegistry testSystemFactoryRegistry)</b> - register test system factories using <i>testSystemFactoryRegistry.registerTestSystemFactory(String name, TestSystemFactory testSystemFactory)</i></li>
+	<li><b>registerSlimTableFactories(SlimTableFactory slimTableFactory)</b> - register Slim table factories using <i>slimTableFactory.addTableType(String nameOrPrefix, Class<? extends SlimTable> tableClass)</i></li>
+	<li><b>registerCustomComparatorRegistries(CustomComparatorRegistry customComparatorRegistry)</b> - register custom comparators for checks done by the Slim test system using <i>customComparatorRegistry.addCustomComparator(String prefix, CustomComparator customComparator)</i></li>
+	<li><b>registerFormatters(FormatterRegistry formatterRegistry)</b> - register custom formatters using <i>formatterRegistry.registerFormatter(Class formatterClass)</i></li>
+</ul>
+<br/>Plugins are instantiated by FitNesse's ComponentFactory. By doing so they can support either one of those constructors:<br/><br/><ul>
+	<li>Plugin(ComponentFactory componentFactory)</li>
+	<li>Plugin(Properties properties)</li>
+	<li>Plugin()</li>
+</ul>
+<br/><h1 id="16">Other properties</h1>
+<br/>There are more properties which can be used to tweak parts of <span class="fitnesse">FitNesse</span>:<br/><br/><ul>
+	<li><b>newpage.default.content</b> - default page content for an empty page, in case you're not creating a new page based on a template page.</li>
+	<li><b>VersionsController<a title="create page" href="../../../FitNesse/UserGuide/AdministeringFitNesse/VersionsController.html?edit&amp;nonExistent=true">[?]</a>.days</b> - number of days to keep old page versions around when using the Zip file based versions controller.</li>
+	<li><b>test.history.days</b> - The number of days to keep test results around. Cleaned up after a new test run.</li>
+	<li><b>test.history.path</b> - Location to store the test results. The default location is <i>FitNesseRoot/files/testResults</i>.</li>
+	<li>Any variable that can be defined on a wiki page.</li>
+</ul>
+<br/>The Slim test system has a set of <a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM.html">custom properties</a> that can either be set on a page or in the configuration file.
+</article>
+<footer>
+<center>User Guide Contents</center><center><a href="../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+</footer>
+</body>
+</html>

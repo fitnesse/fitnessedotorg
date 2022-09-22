@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.WritingAcceptanceTests.SliM.ScriptTable</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+<li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">WritingAcceptanceTests</a></li>
+<li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM.html">SliM</a></li>
+
+  </ol>
+</nav>
+<article>
+<table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td>login dialog driver</td>
+		<td>Bob</td>
+		<td colspan="2">xyzzy</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>login with username</td>
+		<td>Bob</td>
+		<td>and password</td>
+		<td colspan="2">xyzzy</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>login message</td>
+		<td colspan="3">Bob logged in.</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>reject</td>
+		<td>login with username</td>
+		<td>Bob</td>
+		<td>and password</td>
+		<td>bad password</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>login message</td>
+		<td colspan="3">Bob not logged in.</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>check not</td>
+		<td>login message</td>
+		<td colspan="3">Bob logged in.</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>ensure</td>
+		<td>login with username</td>
+		<td>Bob</td>
+		<td>and password</td>
+		<td>xyzzy</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>note</td>
+		<td colspan="4">this is a comment</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td colspan="4">number of login attempts</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>$symbol=</td>
+		<td colspan="4">login message</td>
+	</tr>
+</table>
+<br/>The fixture for this table is:<pre>public class LoginDialogDriver {
+  private String userName;
+  private String password;
+  private String message;
+  private int loginAttempts;
+
+  public LoginDialogDriver(String userName, String password) {
+    this.userName = userName;
+    this.password = password;
+  }
+
+  public boolean loginWithUsernameAndPassword(String userName, String password) {
+    loginAttempts++;
+    boolean result = this.userName.equals(userName) &amp;&amp; this.password.equals(password);
+    if (result)
+      message = String.format("%s logged in.", this.userName);
+    else
+      message = String.format("%s not logged in.", this.userName);
+    return result;
+  }
+
+  public String loginMessage() {
+    return message;
+  }
+
+  public int numberOfLoginAttempts() {
+    return loginAttempts;
+  }
+} </pre><br/><br/>This should be pretty clear.  Each row is a single instruction in the script.<br/><br/>The first row is simply the word "Script" followed by the name and constructor arguments of the fixture (known as the "actor") that will be used by the rest of the table.  If there is no actor specified then the previous script table's actor on this test page will be used.<br/><br/>The first cell could also have been <br/><table>
+	<tr class="slimRowTitle">
+		<td>Script:login dialog driver</td>
+		<td>Bob</td>
+		<td>xyzzy</td>
+	</tr>
+</table>
+<br/>Most instructions involve some kind of function call.  By default, the name of the function is assembled from tokens in <i>every other</i> cell.  The arguments of the function are the intervening cells. Appending ";" to the end of a function name in a cell invokes sequential argument processing, which means that the arguments to the function are all subsequent cells.<br/><br/><i>Interposing Function Call (Default)</i><br/><br/><table>
+	<tr class="hidden">
+		<td colspan="4">comment</td>
+	</tr>
+	<tr>
+		<td>login with username</td>
+		<td>Bob</td>
+		<td>and password</td>
+		<td>xyzzy</td>
+	</tr>
+</table>
+<br/><i>Sequential Argument Processing Function Call</i><br/><br/><table>
+	<tr class="hidden">
+		<td colspan="3">comment</td>
+	</tr>
+	<tr>
+		<td>login with username and password;</td>
+		<td>Bob</td>
+		<td>xyzzy</td>
+	</tr>
+</table>
+<br/><ul>
+	<li>A function alone in a row will turn <span class="red">red</span> or <span class="green">green</span> if it returns a boolean.  Otherwise it will simply remain uncolored.</li>
+	<li>If <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/SymbolsInTables.html">a symbol assignment</a> is in the first cell, then it should be followed by a function.  The symbol is assigned the value returned by that function.</li>
+	<li>If the word <b><i>check</i></b> is in the first cell of a row, then a function call follows it.  The last cell of the table is the expression we expect to be matched by what the function actually returns.</li>
+	<li>If the word <b><i>check not</i></b> is in the first cell of a row, then a function call follows it.  The last cell of the table is the expression we expect <i>not</i> to be matched by what the function actually returns.</li>
+	<li>If the word <b><i>ensure</i></b> is in the first cell, then it should be followed by a function that should return a boolean <i>true</i> for <span class="green">green</span> and <i>false</i> for <span class="red">red</span>.</li>
+	<li>If the word <b><i>reject</i></b> is in the first cell, then it should be followed by a function that should return a boolean <i>false</i> for <span class="green">green</span> and <i>true</i> for <span class="red">red</span>.</li>
+	<li>If the word <b><i>note</i></b> is in the first cell, all other cells in that row will be ignored.<ul>
+	<li>Or if the first cell is blank.</li>
+	<li>Or if the first cell begins with # or *.</li>
+</ul>
+</li>
+	<li>If the word <b><i>show</i></b> is in the first cell, then it should be followed by a function.  A new cell will be added when the test is run, and it will contain the return value of the function.</li>
+	<li>If the word <b><i>start</i></b> appears in the first cell, then the rest of the row is the name and constructor arguments for a new actor, which replaces the existing actor.</li>
+</ul>
+
+</article>
+<footer>
+<center>User Guide Contents</center><center><a href="../../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+</footer>
+</body>
+</html>

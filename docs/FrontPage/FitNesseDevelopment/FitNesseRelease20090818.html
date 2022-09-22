@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FrontPage.FitNesseDevelopment.FitNesseRelease20090818</title>
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../FrontPage.html">FrontPage</a></li>
+<li><a href="../../FrontPage/FitNesseDevelopment.html">FitNesseDevelopment</a></li>
+
+  </ol>
+</nav>
+<article>
+<h3>release 
+	<a href="">20090818</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse.jar?responder=releaseDownload&release=20090818">fitnesse.jar</a></strong></td><td>4777069 bytes</td><td>0</td></tr></tbody></table><br/><br/><h3 id="0"><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> Release Notes 8/18/2009</h3>
+<p class="note">Uncle Bob, Object Mentor, Inc.</p>
+<br/><p class="note"><span class="red">Requires Java 1.6</span></p>
+<br/><h4 id="1">Contributors to this release:</h4>
+<ul>
+	<li>Darrin Holst</li>
+	<li>Gregor Gramlich</li>
+	<li>Justin Martin (LupusDei)</li>
+	<li>Markus Gaertner</li>
+	<li>Tim Andersen</li>
+	<li>unclebob</li>
+	<li>Paul Franz</li>
+	<li>Ilja Preuss</li>
+</ul>
+<br/><span class="meta">Thanks to all of you!</span><br/><table>
+	<tr>
+		<td><h4 id="2">Since:</h4></td>
+		<td colspan="2"><a href="../../FrontPage/FitNesseDevelopment/FitNesseRelease20090709.html">20090709</a></td>
+	</tr>
+	<tr>
+		<td><h4 id="3">Expected Release Date:</h4></td>
+		<td>20090813</td>
+		<td><span class="pass">RELEASED</span></td>
+	</tr>
+	<tr>
+		<td><h4 id="4">Theme:</h4></td>
+		<td colspan="2">Suite Specifcation Query</td>
+	</tr>
+</table>
+<br/><h3 id="5">Changes</h3>
+<ul>
+	<li>Fixed auto install to work better for some Windows machines.  &lt;grin&gt;</li>
+	<li>Removed silly need to restart after install.</li>
+	<li>Table by Table fuzzy-comparison of Test Histories.  Very cool!</li>
+	<li>New flexible query language for the creation of suites.  Now you can define suites based regular expression matching of page names and page contents. </li>
+	<li>Dependency Injection framework for Slim Services. (Should make new Slim ports even easier)</li>
+	<li>New CLASSPATH_PROPERTY variable to help with very long classpath strings.  </li>
+	<li>Individual test histories created when suites are run.</li>
+	<li>Suite results are compiled from history files.</li>
+	<li>Fixed bugs and security holes.</li>
+</ul>
+<br/><h3 id="6">Git History</h3>
+<table>
+	<tr>
+		<td>2009-08-18 16:10:16 -0500</td>
+		<td>unclebob</td>
+		<td>Update User Guide</td>
+	</tr>
+	<tr>
+		<td>2009-08-18 14:30:43 -0500</td>
+		<td>unclebob</td>
+		<td>More acceptance tests to Slim</td>
+	</tr>
+	<tr>
+		<td>2009-08-18 12:40:35 -0500</td>
+		<td>unclebob</td>
+		<td>housekeeping</td>
+	</tr>
+	<tr>
+		<td>2009-08-17 16:37:13 -0500</td>
+		<td>unclebob</td>
+		<td>Refactored lots of acceptance tests to use Slim.</td>
+	</tr>
+	<tr>
+		<td>2009-08-17 12:55:31 -0500</td>
+		<td>unclebob</td>
+		<td>fix inadvertent typo</td>
+	</tr>
+	<tr>
+		<td>2009-08-17 12:48:51 -0500</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of git://github.com/timander/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-08-17 12:46:00 -0500</td>
+		<td>unclebob</td>
+		<td>housekeeping</td>
+	</tr>
+	<tr>
+		<td>2009-08-17 11:43:24 -0500</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of git://github.com/ggramlich/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-08-17 11:42:47 -0500</td>
+		<td>unclebob</td>
+		<td>Refactoring Acceptance Tests.</td>
+	</tr>
+	<tr>
+		<td>2009-08-16 14:21:59 -0500</td>
+		<td>Tim Andersen</td>
+		<td>fixed spelling errors</td>
+	</tr>
+	<tr>
+		<td>2009-08-12 15:59:43 -0500</td>
+		<td>unclebob</td>
+		<td>Fixed #153, Duplicate Rows in OrderedQuery sometimes fails</td>
+	</tr>
+	<tr>
+		<td>2009-08-12 14:32:51 -0500</td>
+		<td>unclebob</td>
+		<td>Fixed bug that threw exception if extra columns were in OrderedQuery table</td>
+	</tr>
+	<tr>
+		<td>2009-08-12 21:17:32 +0200</td>
+		<td>Gregor Gramlich</td>
+		<td>Added abstract Jsr223Bridge and Jsr223StatementExecutor</td>
+	</tr>
+	<tr>
+		<td>2009-08-12 20:56:35 +0200</td>
+		<td>Gregor Gramlich</td>
+		<td>Refactored Slim to use dependency injection with SlimFactory as IoC container</td>
+	</tr>
+	<tr>
+		<td>2009-08-12 20:53:40 +0200</td>
+		<td>Gregor Gramlich</td>
+		<td>Cleaned up import</td>
+	</tr>
+	<tr>
+		<td>2009-08-07 10:24:43 -0500</td>
+		<td>unclebob</td>
+		<td>decrap fixture method</td>
+	</tr>
+	<tr>
+		<td>2009-08-07 08:30:33 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-08-06 18:37:01 -0500</td>
+		<td>unclebob</td>
+		<td>Fixed bug that was sensitive to order issues in different OS</td>
+	</tr>
+	<tr>
+		<td>2009-08-06 15:44:25 -0500</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of git://github.com/ggramlich/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-08-06 15:20:14 -0500</td>
+		<td>unclebob</td>
+		<td>Merged Suite Specifications</td>
+	</tr>
+	<tr>
+		<td>2009-08-06 08:02:45 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-08-06 00:45:55 -0500</td>
+		<td>LupusDei</td>
+		<td>housekeeping</td>
+	</tr>
+	<tr>
+		<td>2009-08-06 00:41:20 -0500</td>
+		<td>LupusDei</td>
+		<td>housekeeping</td>
+	</tr>
+	<tr>
+		<td>2009-08-06 00:37:56 -0500</td>
+		<td>LupusDei</td>
+		<td>housekeeping</td>
+	</tr>
+	<tr>
+		<td>2009-08-06 00:27:17 -0500</td>
+		<td>LupusDei</td>
+		<td>houskeeping</td>
+	</tr>
+	<tr>
+		<td>2009-08-06 00:25:07 -0500</td>
+		<td>LupusDei</td>
+		<td>housekeeping</td>
+	</tr>
+	<tr>
+		<td>2009-08-06 00:24:06 -0500</td>
+		<td>LupusDei</td>
+		<td>housekeeping</td>
+	</tr>
+	<tr>
+		<td>2009-08-05 16:19:01 -0500</td>
+		<td>unclebob</td>
+		<td>Improve SuiteAuthentication Acceptance Tests.</td>
+	</tr>
+	<tr>
+		<td>2009-08-05 15:52:52 -0500</td>
+		<td>LupusDei</td>
+		<td>Fixed the way suites are run such that each group of tests will be surrounded with appropriate setup and teardowns</td>
+	</tr>
+	<tr>
+		<td>2009-08-05 15:50:19 -0500</td>
+		<td>LupusDei</td>
+		<td>Fixed the way suites are run such that each group of tests will be surrounded with appropriate setup and teardowns</td>
+	</tr>
+	<tr>
+		<td>2009-08-05 12:10:40 -0500</td>
+		<td>LupusDei</td>
+		<td>Created method to surround page groups with SetUpTearDowns and finished SuiteSpecification</td>
+	</tr>
+	<tr>
+		<td>2009-08-03 13:12:25 -0500</td>
+		<td>LupusDei</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-08-03 13:11:09 -0500</td>
+		<td>LupusDei</td>
+		<td>Added SuiteSpecification matchfinder and runner, just need responder now</td>
+	</tr>
+	<tr>
+		<td>2009-08-02 22:20:45 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>started some effort to avoid repeats regarding some commonly used</td>
+	</tr>
+	<tr>
+		<td>2009-08-02 20:39:20 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>repaired accidentially broken acceptance test during rename operation</td>
+	</tr>
+	<tr>
+		<td>2009-08-02 18:26:23 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>Merge branch 'master' of git://github.com/ggramlich/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-08-02 17:26:27 +0200</td>
+		<td>Gregor Gramlich</td>
+		<td>Fixed date format for PageHistoryLineIsLinkToTestResult</td>
+	</tr>
+	<tr>
+		<td>2009-08-02 16:31:30 +0200</td>
+		<td>Gregor Gramlich</td>
+		<td>added unit test for BooleanConverter</td>
+	</tr>
+	<tr>
+		<td>2009-08-02 15:57:21 +0200</td>
+		<td>Gregor Gramlich</td>
+		<td>Fixed DateConverter</td>
+	</tr>
+	<tr>
+		<td>2009-08-02 15:29:43 +0200</td>
+		<td>Gregor Gramlich</td>
+		<td>Created unit test for application of DateConverter</td>
+	</tr>
+	<tr>
+		<td>2009-08-02 13:04:20 +0200</td>
+		<td>Gregor Gramlich</td>
+		<td>removed dummy.jar from .classpath file</td>
+	</tr>
+	<tr>
+		<td>2009-07-30 21:25:04 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-07-30 13:57:55 -0500</td>
+		<td>unclebob</td>
+		<td>Paul Franz fix for FileNotFound problems on WinXP</td>
+	</tr>
+	<tr>
+		<td>2009-07-30 12:04:01 -0500</td>
+		<td>unclebob</td>
+		<td>Ilja Preuss's COMMAND_PROPERTY feature.</td>
+	</tr>
+	<tr>
+		<td>2009-07-30 07:58:06 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-07-29 16:14:04 -0500</td>
+		<td>unclebob</td>
+		<td>Suite History now shown as a set of links.</td>
+	</tr>
+	<tr>
+		<td>2009-07-28 13:31:20 -0500</td>
+		<td>unclebob</td>
+		<td>XML for Suites is rendered from History Files</td>
+	</tr>
+	<tr>
+		<td>2009-07-26 21:37:26 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>started to introduce an enum type for PageTypes and incorporated it in some</td>
+	</tr>
+	<tr>
+		<td>2009-07-25 20:17:15 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>renamed SuiteFitAccetpanceTests to SuiteFitAcceptanceTests and checked</td>
+	</tr>
+	<tr>
+		<td>2009-07-25 20:13:50 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>removed dummy.jar from eclipse classpath after it got deleted in the repository</td>
+	</tr>
+	<tr>
+		<td>2009-07-25 20:12:58 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>added functionality to search for pruned pages as well as leaving these</td>
+	</tr>
+	<tr>
+		<td>2009-07-25 11:14:17 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-07-24 18:33:52 -0500</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of git://github.com/LupusDei/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-07-24 17:45:20 -0500</td>
+		<td>LupusDei</td>
+		<td>Final modifications to HistoryComparer</td>
+	</tr>
+	<tr>
+		<td>2009-07-24 17:13:13 -0500</td>
+		<td>unclebob</td>
+		<td>Converted to 1.6</td>
+	</tr>
+	<tr>
+		<td>2009-07-24 12:57:08 -0500</td>
+		<td>LupusDei</td>
+		<td>Merged with GitHub Master</td>
+	</tr>
+	<tr>
+		<td>2009-07-24 12:54:06 -0500</td>
+		<td>LupusDei</td>
+		<td>Search Responder Form repaired</td>
+	</tr>
+	<tr>
+		<td>2009-07-24 12:07:53 -0500</td>
+		<td>unclebob</td>
+		<td>Merged new Page History Comparator</td>
+	</tr>
+	<tr>
+		<td>2009-07-24 10:35:55 -0500</td>
+		<td>LupusDei</td>
+		<td>Removed two very sneaky print statements</td>
+	</tr>
+	<tr>
+		<td>2009-07-24 10:32:19 -0500</td>
+		<td>LupusDei</td>
+		<td>Added some more specific features to the comparer and cleaned it up</td>
+	</tr>
+	<tr>
+		<td>2009-07-23 15:01:05 -0500</td>
+		<td>LupusDei</td>
+		<td>Refactored TableComparer</td>
+	</tr>
+	<tr>
+		<td>2009-07-23 10:58:24 -0500</td>
+		<td>LupusDei</td>
+		<td>Finished fuzzy comparer, refactored code, added lots of tests.  HistoryComparer is now fully functional.</td>
+	</tr>
+	<tr>
+		<td>2009-07-23 17:51:31 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-07-23 10:25:28 -0500</td>
+		<td>unclebob</td>
+		<td>Removed automatic exit after install.  Darrin's changes made it unecessary.</td>
+	</tr>
+	<tr>
+		<td>2009-07-23 09:27:27 -0500</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of git://github.com/darrinholst/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-07-23 09:26:42 -0500</td>
+		<td>unclebob</td>
+		<td>Refactor formatters in preparation for memory efficient suites</td>
+	</tr>
+	<tr>
+		<td>2009-07-22 20:46:32 -0500</td>
+		<td>Darrin Holst</td>
+		<td>remove ant hack to include Test.class, the class was renamed</td>
+	</tr>
+	<tr>
+		<td>2009-07-22 20:44:35 -0500</td>
+		<td>Darrin Holst</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse into unclebob/master</td>
+	</tr>
+	<tr>
+		<td>2009-07-22 16:52:52 -0500</td>
+		<td>LupusDei</td>
+		<td>Comparer now works table by table, and best guest table matching.  Now Refactoring</td>
+	</tr>
+	<tr>
+		<td>2009-07-22 19:39:34 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-07-22 11:36:03 -0500</td>
+		<td>unclebob</td>
+		<td>Changed fitnesse.trinidate.Test to TestDescriptor</td>
+	</tr>
+	<tr>
+		<td>2009-07-21 17:48:09 -0500</td>
+		<td>Darrin Holst</td>
+		<td>include uncompressed dependencies in the final jar</td>
+	</tr>
+	<tr>
+		<td>2009-07-21 22:23:40 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-07-20 16:46:52 -0500</td>
+		<td>unclebob</td>
+		<td>Suites create individual page histories</td>
+	</tr>
+	<tr>
+		<td>2009-07-20 22:16:41 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>removed unused import</td>
+	</tr>
+	<tr>
+		<td>2009-07-17 16:07:29 -0500</td>
+		<td>unclebob</td>
+		<td>Lars Vonk's patches</td>
+	</tr>
+	<tr>
+		<td>2009-07-17 11:17:08 -0500</td>
+		<td>unclebob</td>
+		<td>merged History Comparison enhancement, and Gregor's bug fix.</td>
+	</tr>
+	<tr>
+		<td>2009-07-17 10:21:23 -0500</td>
+		<td>LupusDei</td>
+		<td>deleted test folders</td>
+	</tr>
+	<tr>
+		<td>2009-07-17 10:16:34 -0500</td>
+		<td>LupusDei</td>
+		<td>table by table alignment now correctly set</td>
+	</tr>
+	<tr>
+		<td>2009-07-17 10:14:13 -0500</td>
+		<td>unclebob</td>
+		<td>Secure the Add Child Responder</td>
+	</tr>
+	<tr>
+		<td>2009-07-16 16:02:03 -0500</td>
+		<td>LupusDei</td>
+		<td>First step of compare tables complete</td>
+	</tr>
+	<tr>
+		<td>2009-07-16 15:49:10 -0500</td>
+		<td>LupusDei</td>
+		<td>FitNesse symbol to string in outgoing slim tables error fixed, unfinised compare history</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<hr/>
+<br/><a href="../../FrontPage.html">.FrontPage</a> | <a href="../../FrontPage/FitNesseDevelopment/FrontPage.html">FrontPage</a> | <a href="../../RecentChanges.html">.RecentChanges</a><br/>
+</footer>
+</body>
+</html>

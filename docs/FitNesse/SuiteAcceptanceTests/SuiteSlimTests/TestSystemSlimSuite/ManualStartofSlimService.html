@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteSlimTests.TestSystemSlimSuite.ManualStartofSlimService</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests.html">SuiteSlimTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/TestSystemSlimSuite.html">TestSystemSlimSuite</a></li>
+
+  </ol>
+</nav>
+<article>
+The below configuration option is useful in two scenarios<br/><br/><h3 id="0">1) Pretesting on a developer workstation</h3>
+GIVEN you run a central FitNesse Wiki<br/>WHEN your developer did some code changes on his workstation<br/>AND he wants to see if the test still pass<br/>THEN you can start a SlimService on his workstation manual<br/>AND can execute all tests from your central Wiki <br/><br/><h3 id="1">2) Distributed Testing</h3>
+Given you run a central FitNesse Wiki on Linux<br/>WHEN you need to test some .net code on Windows<br/>THEN you can start a .Net SlimService on your Windows Server manual and run it in daemon mode<br/>AND can execute the test case from your central Wiki <br/><br/>Configure the test system as below:<br/><br/><pre>
+!define MANUALLY_START_TEST_RUNNER (true)
+!define slim.pool.size (1)
+!define SLIM_PORT {YOUR TEST PORT}
+!define SLIM_HOST {WORKSTATION or SERVER NAME}
+</pre><br/><br/>To demonstrate this we connect to the local Fitnesse Wiki webserver. This should connect but fail with a message that no Slim Header has been provided.<br/>Tip: Increase the slim.timeout if you need more time to startup the SlimService manual<br/>Important: <b>!define slim.pool.size (1)</b>  to avoid to try any other port than the port you specified.<br/>Note: if run from Junit no wiki server is started and this test would fail. The tag 'noJunit' has been added to remove it from Junit testing. :)<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">script</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>create page</td>
+		<td>TestPage</td>
+		<td>with content</td>
+		<td>
+!define TEST_SYSTEM {SLIM}
+!define slim.timeout {1}
+!define MANUALLY_START_TEST_RUNNER (true)
+!define slim.pool.size (1)
+!define SLIM_PORT {8080}
+!define SLIM_HOST {127.0.0.1}
+
+</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>request page</td>
+		<td>TestPage?test</td>
+		<td>200</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>ensure</td>
+		<td>content matches</td>
+		<td colspan="2">class="error".{0,60}SlimError: Timeout while reading slim header from client. Check that you are connecting to the right port and that the slim client is running.</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td>show collapsed</td>
+		<td colspan="3">content</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>request page</td>
+		<td>TestPage?executionLog</td>
+		<td>200</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>ensure</td>
+		<td>content matches</td>
+		<td colspan="2">Command.{0,20}Connection to running SlimService: 127.0.0.1:8080</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td>show collapsed</td>
+		<td colspan="3">content</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<a href="../../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../../FrontPage.html">Front Page</a> | <a href="../../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

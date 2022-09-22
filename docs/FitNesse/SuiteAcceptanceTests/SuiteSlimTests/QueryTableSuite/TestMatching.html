@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteSlimTests.QueryTableSuite.TestMatching</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests.html">SuiteSlimTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/QueryTableSuite.html">QueryTableSuite</a></li>
+
+  </ol>
+</nav>
+<article>
+<table>
+	<tr class="slimRowTitle">
+		<td>Query:SplitFixture</td>
+		<td>Bob;Bill;Ben</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td colspan="2">1</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td colspan="2">Bob</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td colspan="2">Bill</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td colspan="2">Ben</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>Query:SplitFixture</td>
+		<td>Bob;Bill;Ben</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td colspan="2">1</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td colspan="2">Bob</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td colspan="2">Ben</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td colspan="2">Bill</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>Subset Query:SplitFixture</td>
+		<td>Bob;Bill;Ben</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td colspan="2">1</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td colspan="2">Ben</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td colspan="2">Bill</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>Query:SplitFixture</td>
+		<td>Bob,Martin;Bill,Jones;Ben,Jacobs</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>1</td>
+		<td>2</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>Bob</td>
+		<td>Martin</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>Bill</td>
+		<td>Jones</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>Ben</td>
+		<td>Jacobs</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>Query:SplitFixture</td>
+		<td>Bob,Martin;Bill,Jones;Ben,Jacobs</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>1</td>
+		<td>2</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>Bob</td>
+		<td>=~/Mar.*/</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>Bill</td>
+		<td>=~/one/</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>=~/en/</td>
+		<td>Jacobs</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>Query:SplitFixture</td>
+		<td>1.1,2.3;5.5,6.9;3.1,5</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>1</td>
+		<td>2</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>1.1</td>
+		<td>&lt;3</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>&gt;3</td>
+		<td>5&lt;_&lt;7</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>~=3</td>
+		<td>!=6</td>
+	</tr>
+</table>
+<br/><span class="meta">variable defined: TABLE=| table |
+| value |
+</span>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>Query:split fixture</td>
+		<td><table>
+	<tr class="slimRowTitle">
+		<td>table</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>value</td>
+	</tr>
+</table></td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td colspan="2">1</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td colspan="2"><table>
+	<tr class="slimRowTitle">
+		<td>table</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>value</td>
+	</tr>
+</table></td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<a href="../../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../../FrontPage.html">Front Page</a> | <a href="../../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

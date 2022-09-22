@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.ProjectDeathByRequirements</title>
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../FitNesse/UserGuide.html">UserGuide</a></li>
+
+  </ol>
+</nav>
+<article>
+<h1 id="0">How to Kill a Software Project</h1>
+There are many ways to kill a software project, but this is one of the most common. If you have been in software development for awhile, you may have seen the following scenario before:<br/><h3 id="1">A Project Launches</h3>
+<ul>
+	<li>With the world's best intentions, a talented development team launches a project, full of gusto and high hopes.</li>
+	<li>They articulate their requirements for the system to each other using a natural language such as English, in formal or informal documents. Included are some diagrams, charts, user interface mockups and screenshots, and/or other artifacts.</li>
+	<li>Design and programming take place.</li>
+	<li>Weeks and months go by.</li>
+	<li>Some black-box functional testing takes place.</li>
+	<li>Wait a minute. Something is wrong here...</li>
+</ul>
+<h3 id="2">Problems!</h3>
+At some point, usually late in the project, the team discovers that among other problems, they are finding one or more of the following problems with the features being delivered:<br/><ul>
+	<li>They are <b>not</b> exactly what the customers/analysts/product managers think they <b>asked for</b>.</li>
+	<li>They are <b>not</b> exactly what those folks <b>wanted or needed</b>.</li>
+	<li>They are <b>not useable</b> by the system's eventual users.</li>
+	<li>Subsystems <b>cannot be integrated</b> with one another, because their interfaces are incompatible.</li>
+	<li>There is increasing dissention and mutual recrimination between team members about these issues. ("I did it the way you told me to!" "No you didn't! You never do!") People are getting angrier; morale is on the way down.</li>
+</ul>
+Management steps in and takes action:<br/><ul>
+	<li>Emergency meetings are scheduled. Even longer than normal, these affairs are particularly acrimonious.</li>
+	<li>Everybody works longer and longer hours. We must save the deadline and the system!</li>
+</ul>
+Despite heroic efforts, problems are not resolved as well as were hoped. The deadline and system remain under threat.<br/><br/>And so on. What went wrong? How did we get in this boat together?<br/><h2 id="3">What Went Wrong</h2>
+Many of these problems boil down to the following:<br/><ul>
+	<li>Natural languages are necessary to specify requirements, but <b>they are not sufficient</b>. The team misinterpreted the natural language requirements descriptions (despite all the charts, UI mockups, etc).</li>
+	<li>Throughout the project, the team received <b>too little feedback</b> about features being built.</li>
+	<li>The team did not begin receiving feature feedback <b>early enough</b>.</li>
+	<li>Throughout the project, the team received feature feedback <b>too infrequently</b>.</li>
+	<li>Post-facto, manual, GUI-based functional testing (despite its enormous costs) does a lousy job of exercising all the paths through a system's business logic. It's easy for such testing to miss parts of the system. So the team got poor feedback about whether all the right features were being delivered as required.</li>
+	<li>The combination of natural language requirements descriptions and executable <a href="../../FitNesse/UserGuide/AcceptanceTests.html">Acceptance Tests</a> is <b>necessary and sufficient</b> to describe requirements <b>completely, precisely, and deterministically</b>.</li>
+</ul>
+<br/><h2 id="4">With <span class="fitnesse">FitNesse</span> <a href="../../FitNesse/UserGuide/AcceptanceTests.html">Acceptance Tests</a>, You Can Avoid These Problems</h2>
+<a href="../../FitNesse/UserGuide/AcceptanceTests.html">Check it out!</a><br/>
+</article>
+<footer>
+<center>User Guide Contents</center><center><a href="../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+</footer>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteFitDecoratorTests.IncrementColumnsValues</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests/SuiteFitDecoratorTests.html">SuiteFitDecoratorTests</a></li>
+
+  </ol>
+</nav>
+<article>
+What if you want to increment the value of one of the columns of your fixture table at run time? You can use the IncrementColumnsValue decorator. This lets you increment column's values. This decorator supports the following data types:<br/><ul>
+	<li>int or integer</li>
+	<li>double</li>
+	<li>string</li>
+	<li>date</li>
+</ul>
+<br/><table>
+	<tr>
+		<td>Increment Columns Value</td>
+		<td>numerator</td>
+		<td>of type</td>
+		<td>int</td>
+		<td>by</td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<td colspan="6">Division</td>
+	</tr>
+	<tr>
+		<td>numerator</td>
+		<td>denominator</td>
+		<td colspan="4">quotient()</td>
+	</tr>
+	<tr>
+		<td>10</td>
+		<td>2</td>
+		<td colspan="4">5</td>
+	</tr>
+	<tr>
+		<td>10</td>
+		<td>3</td>
+		<td colspan="4">5</td>
+	</tr>
+	<tr>
+		<td>10</td>
+		<td>4</td>
+		<td colspan="4">5</td>
+	</tr>
+</table>
+<br/><table>
+	<tr>
+		<td>Increment Columns Value</td>
+		<td>numerator</td>
+		<td>of type</td>
+		<td>integer</td>
+		<td>by</td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<td colspan="6">Division</td>
+	</tr>
+	<tr>
+		<td>numerator</td>
+		<td>denominator</td>
+		<td colspan="4">quotient()</td>
+	</tr>
+	<tr>
+		<td>10</td>
+		<td>2</td>
+		<td colspan="4">5</td>
+	</tr>
+	<tr>
+		<td>10</td>
+		<td>3</td>
+		<td colspan="4">5</td>
+	</tr>
+	<tr>
+		<td>10</td>
+		<td>4</td>
+		<td colspan="4">5</td>
+	</tr>
+</table>
+<br/><table>
+	<tr>
+		<td>Increment Columns Value</td>
+		<td>numerator</td>
+		<td>of type</td>
+		<td>double</td>
+		<td>by</td>
+		<td>10.2</td>
+	</tr>
+	<tr>
+		<td colspan="6">Division</td>
+	</tr>
+	<tr>
+		<td>numerator</td>
+		<td>denominator</td>
+		<td colspan="4">quotient()</td>
+	</tr>
+	<tr>
+		<td>10.2</td>
+		<td>2</td>
+		<td colspan="4">5.1</td>
+	</tr>
+	<tr>
+		<td>10.2</td>
+		<td>4</td>
+		<td colspan="4">5.1</td>
+	</tr>
+</table>
+<br/><table>
+	<tr>
+		<td>Increment Columns Value</td>
+		<td>numerator</td>
+		<td>of type</td>
+		<td>string</td>
+		<td>by</td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<td colspan="6">Division</td>
+	</tr>
+	<tr>
+		<td>numerator</td>
+		<td>denominator</td>
+		<td colspan="4">quotient()</td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>1</td>
+		<td colspan="4">5</td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>11</td>
+		<td colspan="4">5</td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>111</td>
+		<td colspan="4">5</td>
+	</tr>
+</table>
+<br/>Updates the dates by 5 days.<br/><table>
+	<tr>
+		<td>Increment Columns Value</td>
+		<td>inDate</td>
+		<td>of type</td>
+		<td>date</td>
+		<td>by</td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<td colspan="6">Get Dates</td>
+	</tr>
+	<tr>
+		<td>inDate</td>
+		<td colspan="5">updatedDate()</td>
+	</tr>
+	<tr>
+		<td>12/02/2006</td>
+		<td colspan="5">12/02/2006</td>
+	</tr>
+	<tr>
+		<td>12/02/2006</td>
+		<td colspan="5">12/07/2006</td>
+	</tr>
+	<tr>
+		<td>12/22/2006</td>
+		<td colspan="5">01/01/2007</td>
+	</tr>
+</table>
+<br/>This decorator by itself is not as useful. But piped with other decorators this can be really handy.
+</article>
+<footer>
+<a href="../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../FrontPage.html">Front Page</a> | <a href="../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

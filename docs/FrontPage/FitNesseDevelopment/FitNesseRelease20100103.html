@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FrontPage.FitNesseDevelopment.FitNesseRelease20100103</title>
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../FrontPage.html">FrontPage</a></li>
+<li><a href="../../FrontPage/FitNesseDevelopment.html">FitNesseDevelopment</a></li>
+
+  </ol>
+</nav>
+<article>
+<h3>release 
+	<a href="">20100103</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse.jar?responder=releaseDownload&release=20100103">fitnesse.jar</a></strong></td><td>3918055 bytes</td><td>0</td></tr></tbody></table><br/><br/><h3 id="0"><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> Release Notes 1/03/2010</h3>
+<p class="note">Uncle Bob, Object Mentor, Inc.</p>
+<br/><p class="note"><span class="red">Requires Java 1.6</span></p>
+<br/><h4 id="1">Contributors to this release:</h4>
+<ul>
+	<li>Aviv Ben-Yosef</li>
+	<li>Jake Benilov</li>
+	<li>Lars Vonk</li>
+	<li>Markus Gaertner</li>
+	<li>Gojko Adzic</li>
+	<li>Mike Stockdale</li>
+	<li>Marisa Seal</li>
+	<li>Uncle Bob</li>
+</ul>
+ <br/><span class="meta">Thanks to all of you!</span><br/><table>
+	<tr>
+		<td><h4 id="2">Since:</h4></td>
+		<td colspan="2"><a href="../../FrontPage/FitNesseDevelopment/FitNesseRelease20091121.html">20091121</a></td>
+	</tr>
+	<tr>
+		<td><h4 id="3">Expected Release Date:</h4></td>
+		<td>20091228</td>
+		<td><span class="pass">RELEASED</span></td>
+	</tr>
+	<tr>
+		<td><h4 id="4">Theme:</h4></td>
+		<td colspan="2">Slim 0.1, BDD Style Tests.</td>
+	</tr>
+</table>
+<br/><h3 id="5">Major Changes</h3>
+<ul>
+	<li>Parameterized Scenario Tables: The Cucumber Killer.</li>
+	<li>Trinidad uses -c parameter for JUnit and Maven test runs.</li>
+	<li>Slim Version Number Protection.  Running with old Slim version produces warning. </li>
+	<li>Page Load and Test Run Slowdowns fixed.  </li>
+	<li>Can run nested Suites using !see.</li>
+	<li>Plain Text Tables.  e.g. tables without using vertical strokes.</li>
+	<li>Slim V0.1 Compatibility.</li>
+	<li>Library table for Slim (v0.1)</li>
+	<li>System Under Test fixture for Slim.  (v0.1)</li>
+	<li>Sequential Arguments in Script Tables. </li>
+	<li>Pages can now be saved in HTML format.  <a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> will still render and test them.  </li>
+</ul>
+<br/><br/><h3 id="6">Git History</h3>
+<table>
+	<tr>
+		<td>2010-01-03 15:29:35 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">housekeeping</td>
+	</tr>
+	<tr>
+		<td>2010-01-03 13:16:47 -0500</td>
+		<td>marisaseal</td>
+		<td colspan="3">Updating ScriptTable page in FitNesse user guide to reference sequential argument processing.</td>
+	</tr>
+	<tr>
+		<td>2010-01-03 12:24:57 -0500</td>
+		<td>marisaseal</td>
+		<td colspan="3">Check Slim version matches current version and display message at the top of the test page if versions do not match.</td>
+	</tr>
+	<tr>
+		<td>2010-01-01 15:02:43 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">added yet another Library statement to one of the acceptance tests</td>
+	</tr>
+	<tr>
+		<td>2010-01-01 12:21:06 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">Two bugs.  1. Returning Null from a library fixture won't be misinterpreted as 'no actor'  2. Added missing Library statements to SetUp pages in Acceptance Tests.</td>
+	</tr>
+	<tr>
+		<td>2009-12-28 12:32:10 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">housekeeping</td>
+	</tr>
+	<tr>
+		<td>2009-12-28 12:21:58 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">Merge branch 'master' of git://github.com/gojko/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-12-28 17:50:49 +0000</td>
+		<td>gojko</td>
+		<td colspan="3">docs for the new junit integration</td>
+	</tr>
+	<tr>
+		<td>2009-12-27 18:20:20 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">housekeeping</td>
+	</tr>
+	<tr>
+		<td>2009-12-27 18:13:14 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">Merge branch 'master' of http://github.com/gojko/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-12-27 23:24:33 +0000</td>
+		<td>gojko</td>
+		<td colspan="3">Merge git@github.com:unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-12-27 13:13:24 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">Added Plain Text Tables to User Guide</td>
+	</tr>
+	<tr>
+		<td>2009-12-27 19:03:19 +0000</td>
+		<td>gojko</td>
+		<td colspan="3">static issue for src/fitnesse/wiki/FileSystemPageZipFileVersioningTest.java resolved</td>
+	</tr>
+	<tr>
+		<td>2009-12-22 14:47:23 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">Deprecation message for TestRunners</td>
+	</tr>
+	<tr>
+		<td>2009-12-22 12:01:08 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">housekeeping</td>
+	</tr>
+	<tr>
+		<td>2009-12-22 06:39:10 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">Merge branch 'master' of git://github.com/rustbear/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-12-22 08:02:47 +0000</td>
+		<td>gojko</td>
+		<td colspan="3">- nohistory flag in request avoids generating history files</td>
+	</tr>
+	<tr>
+		<td>2009-12-22 07:34:44 +0000</td>
+		<td>gojko</td>
+		<td colspan="3">bugfix, suite responder runs a fast test if given &amp;debug</td>
+	</tr>
+	<tr>
+		<td>2009-12-22 00:10:57 +0000</td>
+		<td>gojko</td>
+		<td colspan="3">testhelper extracted</td>
+	</tr>
+	<tr>
+		<td>2009-12-21 23:49:36 +0100</td>
+		<td>rustbear</td>
+		<td colspan="3">added TestRunner password authentication (can be specified on the commandline with the -credentials flag)</td>
+	</tr>
+	<tr>
+		<td>2009-12-21 20:24:49 +0000</td>
+		<td>gojko</td>
+		<td colspan="3">resolved racing condition on SocketService</td>
+	</tr>
+	<tr>
+		<td>2009-12-21 16:01:52 +0000</td>
+		<td>gojko</td>
+		<td colspan="3">fitnesse suite support</td>
+	</tr>
+	<tr>
+		<td>2009-12-21 15:59:51 +0000</td>
+		<td>gojko</td>
+		<td colspan="3">fitnesse suite support</td>
+	</tr>
+	<tr>
+		<td>2009-12-21 06:06:37 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">Merge</td>
+	</tr>
+	<tr>
+		<td>2009-12-21 05:59:53 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">housekeeping.  Pulled SetUp and TearDown out of PageFooter</td>
+	</tr>
+	<tr>
+		<td>2009-12-21 10:28:37 +0100</td>
+		<td>Lars Vonk</td>
+		<td colspan="3">merged with EDGE</td>
+	</tr>
+	<tr>
+		<td>2009-12-21 10:22:05 +0100</td>
+		<td>Lars Vonk</td>
+		<td colspan="3">added acceptance test for setup link bug</td>
+	</tr>
+	<tr>
+		<td>2009-12-21 10:10:01 +0100</td>
+		<td>Lars Vonk</td>
+		<td colspan="3">fixed broken SetUp link, removed some unused code a long the way</td>
+	</tr>
+	<tr>
+		<td>2009-12-20 12:22:52 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">1953867 Fixed Nested Suites using \!see</td>
+	</tr>
+	<tr>
+		<td>2009-12-20 10:10:26 +0100</td>
+		<td>rustbear</td>
+		<td colspan="3">reduced some duplication in the test util class</td>
+	</tr>
+	<tr>
+		<td>2009-12-20 09:55:32 +0100</td>
+		<td>Jake Benilov</td>
+		<td colspan="3">removed fitlibrary jar from eclipse build path</td>
+	</tr>
+	<tr>
+		<td>2009-12-20 05:08:10 +0000</td>
+		<td>gojko</td>
+		<td colspan="3">first cut of new junit helper; works within junit but not with the suite</td>
+	</tr>
+	<tr>
+		<td>2009-12-16 20:50:14 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">Change CSS style for tables constructed with Plain Text Widget</td>
+	</tr>
+	<tr>
+		<td>2009-12-15 22:27:22 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">Merged refactoring</td>
+	</tr>
+	<tr>
+		<td>2009-12-15 23:06:30 -0500</td>
+		<td>marisaseal</td>
+		<td colspan="3">Refactored sequential argument processing code (includes Bob Martin's updates to getArgumentsStartingAt function). Corrected description of test method in related acceptance test.</td>
+	</tr>
+	<tr>
+		<td>2009-12-15 11:02:12 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">User Guide for Parameterized Scenarios.</td>
+	</tr>
+	<tr>
+		<td>2009-12-15 00:22:27 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">Parameterized Scenario Tables, The Cucumber Killer</td>
+	</tr>
+	<tr>
+		<td>2009-12-14 08:22:04 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">refactor ATs to use Library</td>
+	</tr>
+	<tr>
+		<td>2009-12-13 13:22:32 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">Merged lvonk's multipe SLIM actors.</td>
+	</tr>
+	<tr>
+		<td>2009-12-13 12:59:42 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">housekeeping</td>
+	</tr>
+	<tr>
+		<td>2009-12-13 01:17:06 +0100</td>
+		<td>Lars Vonk</td>
+		<td colspan="3">added acceptance tests, added userguide documentation</td>
+	</tr>
+	<tr>
+		<td>2009-12-12 23:41:04 +0100</td>
+		<td>Lars Vonk</td>
+		<td colspan="3">changed the order in which the method executors are run</td>
+	</tr>
+	<tr>
+		<td>2009-12-09 23:10:57 +0100</td>
+		<td>Lars Vonk</td>
+		<td colspan="3">renamed InstallTable to LibraryTable</td>
+	</tr>
+	<tr>
+		<td>2009-12-09 21:24:34 +0100</td>
+		<td>Lars Vonk</td>
+		<td colspan="3">Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-12-09 21:24:16 +0100</td>
+		<td>Lars Vonk</td>
+		<td colspan="3">added new files</td>
+	</tr>
+	<tr>
+		<td>2009-12-09 21:21:50 +0100</td>
+		<td>Lars Vonk</td>
+		<td colspan="3">http://www.pivotaltracker.com/story/show/1893142 refactored the execution of methods to be a chain</td>
+	</tr>
+	<tr>
+		<td>2009-12-09 11:10:12 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">Unbundled Trinidad</td>
+	</tr>
+	<tr>
+		<td>2009-12-09 10:56:51 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">housekeeping</td>
+	</tr>
+	<tr>
+		<td>2009-12-09 16:46:16 +0100</td>
+		<td>Lars Vonk</td>
+		<td colspan="3">Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-12-09 08:42:51 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">Merge branch 'master' of git://github.com/marisaseal/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-12-09 08:42:34 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">actually deleted the fitlibrary.jar file...</td>
+	</tr>
+	<tr>
+		<td>2009-12-09 09:16:21 -0500</td>
+		<td>marisaseal</td>
+		<td colspan="3">Sequential argument processing for method calls in Slim script tables invoked with the ";" suffix. Also fixed 2 failing unit tests.</td>
+	</tr>
+	<tr>
+		<td>2009-12-09 08:11:47 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">Unbundled fitlibrary and FitLibraryTestEngine in Trinidad</td>
+	</tr>
+	<tr>
+		<td>2009-12-09 14:29:06 +0100</td>
+		<td>Lars Vonk</td>
+		<td colspan="3">http://www.pivotaltracker.com/story/show/1893142 Added InstallTable, refactored slim table testing, removed duplication in tests by extracting super class</td>
+	</tr>
+	<tr>
+		<td>2009-12-08 20:19:45 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">Plain Text Table Widget</td>
+	</tr>
+	<tr>
+		<td>2009-12-08 12:13:08 -0600</td>
+		<td>unclebob</td>
+		<td>Preprocess page contents to remove all \r chars.  Fix #</td>
+		<td>tables</td>
+		<td>so that you can comment whole tables out.</td>
+	</tr>
+	<tr>
+		<td>2009-12-07 11:20:01 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">Added accpetance tests for hash widget</td>
+	</tr>
+	<tr>
+		<td>2009-12-07 15:05:13 +0100</td>
+		<td>Lars Vonk</td>
+		<td colspan="3">added systemundertest to userguide</td>
+	</tr>
+	<tr>
+		<td>2009-12-07 10:35:29 +0100</td>
+		<td>Lars Vonk</td>
+		<td colspan="3">removed codecomplete from master</td>
+	</tr>
+	<tr>
+		<td>2009-12-07 10:34:33 +0100</td>
+		<td>Lars Vonk</td>
+		<td colspan="3">removed codecomplete from master</td>
+	</tr>
+	<tr>
+		<td>2009-12-06 18:42:56 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">housekeeping</td>
+	</tr>
+	<tr>
+		<td>2009-12-06 18:30:14 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">housekeeping</td>
+	</tr>
+	<tr>
+		<td>2009-12-07 01:25:38 +0100</td>
+		<td>Markus Gaertner</td>
+		<td colspan="3">fixed TableTable bug with null return values and thrown exceptions</td>
+	</tr>
+	<tr>
+		<td>2009-12-06 17:34:20 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">Merge branch 'master' of git://github.com/jediwhale/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-12-06 16:15:22 +0100</td>
+		<td>Lars Vonk</td>
+		<td colspan="3">fixed packaging issue with system under test, added acceptance test</td>
+	</tr>
+	<tr>
+		<td>2009-12-05 16:07:06 +0100</td>
+		<td>Lars Vonk</td>
+		<td colspan="3">implemented SystemUnderTest functionality, if method is not on fixture slim will try to invoke it on a field annotated with @SystemUnderTest</td>
+	</tr>
+	<tr>
+		<td>2009-12-04 17:06:34 -0700</td>
+		<td>jediwhale</td>
+		<td colspan="3">Merge branch 'master' into folders</td>
+	</tr>
+	<tr>
+		<td>2009-12-04 17:05:01 -0700</td>
+		<td>jediwhale</td>
+		<td colspan="3">grrr</td>
+	</tr>
+	<tr>
+		<td>2009-12-04 16:56:52 -0700</td>
+		<td>jediwhale</td>
+		<td colspan="3">document external html pages</td>
+	</tr>
+	<tr>
+		<td>2009-12-03 00:01:37 +0100</td>
+		<td>Lars Vonk</td>
+		<td colspan="3">started implementing code completion</td>
+	</tr>
+	<tr>
+		<td>2009-12-01 09:34:34 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">Merge branch 'master' of git://github.com/abyx/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-12-01 09:25:06 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">Merge branch 'master' of git://github.com/lvonk/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-12-01 09:24:44 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">added 'plus.png' to images just in case.</td>
+	</tr>
+	<tr>
+		<td>2009-12-01 00:21:17 +0100</td>
+		<td>Lars Vonk</td>
+		<td colspan="3">moved tablefactory</td>
+	</tr>
+	<tr>
+		<td>2009-12-01 00:20:27 +0100</td>
+		<td>Lars Vonk</td>
+		<td colspan="3">moved factory to slimTables package</td>
+	</tr>
+	<tr>
+		<td>2009-11-30 23:46:14 +0100</td>
+		<td>Lars Vonk</td>
+		<td colspan="3">extracted tablefactory</td>
+	</tr>
+	<tr>
+		<td>2009-11-30 23:45:43 +0100</td>
+		<td>Lars Vonk</td>
+		<td colspan="3">fixed merge conflices</td>
+	</tr>
+	<tr>
+		<td>2009-11-30 23:42:29 +0100</td>
+		<td>Lars Vonk</td>
+		<td colspan="3">created slimtablefactory</td>
+	</tr>
+	<tr>
+		<td>2009-11-30 22:51:47 +0200</td>
+		<td>Aviv Ben-Yosef</td>
+		<td colspan="3">Fixed a typo</td>
+	</tr>
+	<tr>
+		<td>2009-11-25 13:05:31 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">Improved MockResponseSender tolerance to delays.</td>
+	</tr>
+	<tr>
+		<td>2009-11-25 09:20:06 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">changed variable resolution.  Faster and less memory intensive.</td>
+	</tr>
+	<tr>
+		<td>2009-11-25 06:16:32 -0600</td>
+		<td>unclebob</td>
+		<td colspan="3">updated user guide to talk about hash widget conversion in java and ruby slim</td>
+	</tr>
+	<tr>
+		<td>2009-11-24 21:00:08 -0700</td>
+		<td>jediwhale</td>
+		<td colspan="3">Merge branch 'master' into folders</td>
+	</tr>
+	<tr>
+		<td>2009-11-24 20:46:30 -0700</td>
+		<td>jediwhale</td>
+		<td colspan="3">external test only if has tables</td>
+	</tr>
+	<tr>
+		<td>2009-11-21 16:23:43 +0100</td>
+		<td>unclebob</td>
+		<td colspan="3">housekeeping</td>
+	</tr>
+	<tr>
+		<td>2009-11-21 15:19:18 +0100</td>
+		<td>unclebob</td>
+		<td colspan="3">Edward Glowaki:  Added cmPreDelete to the CmSystem.</td>
+	</tr>
+	<tr>
+		<td>2009-11-21 13:18:24 +0100</td>
+		<td>unclebob</td>
+		<td colspan="3">Gael Falez: Added page to TestHistoryResponder, allows you to see history for suites instead of everything.  Makes things much faster.</td>
+	</tr>
+</table>
+<br/>
+</article>
+<footer>
+<hr/>
+<br/><a href="../../FrontPage.html">.FrontPage</a> | <a href="../../FrontPage/FitNesseDevelopment/FrontPage.html">FrontPage</a> | <a href="../../RecentChanges.html">.RecentChanges</a><br/>
+</footer>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteAuthenticationTests.TestReadChildOfSecurePage</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests/SuiteAuthenticationTests.html">SuiteAuthenticationTests</a></li>
+
+  </ol>
+</nav>
+<article>
+Children of a page whose 'secure-read' property is set, also require authentication in order to read.  The 'secure-read' property acts as though it were inherited by the children pages.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">script</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>given read locked page</td>
+		<td colspan="3">ParentPage</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td>given page</td>
+		<td colspan="3">ParentPage.ChildPage</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td colspan="4">it should not be readable with no authentication</td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>it should not be readable by user</td>
+		<td>Aladdin</td>
+		<td>password</td>
+		<td>open please</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>it should be readable by user</td>
+		<td>Aladdin</td>
+		<td>password</td>
+		<td>open sesame</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<a href="../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../FrontPage.html">Front Page</a> | <a href="../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteSlimTests.SegregationOfRequirementsAndImplementation</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests.html">SuiteSlimTests</a></li>
+
+  </ol>
+</nav>
+<article>
+One of the key goals of <span class="fitnesse">FitNesse</span> is to encourage that requirements in <span class="fitnesse">FitNesse</span> are written before the coding of the implementation starts.<br/>Having said that the defintion of the requirements must be independent of the technical solution used to implement it.<br/>This sample page shows that the same requirement defintion can be implemented once with a java class implementing the decision table protokoll and once with a senario.<br/><br/><br/>The requirements are defined in a decision table on a sub page. <br/>The first implementation used is the Devision class from the eg library.<br/><table>
+	<tr class="slimRowTitle">
+		<td>import</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>eg</td>
+	</tr>
+</table>
+<br/><div class="collapsible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">Included page: <a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/SegregationOfRequirementsAndImplementation/CalculatorRequirements.html">&gt;CalculatorRequirements</a> <a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/SegregationOfRequirementsAndImplementation/CalculatorRequirements.html?edit&amp;redirectToReferer=true&amp;redirectAction=" class="edit">(edit)</a></p>
+	<div><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Division</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>numerator</td>
+		<td>denominator</td>
+		<td>quotient?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>10</td>
+		<td>2</td>
+		<td>5.0</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>12.6</td>
+		<td>3</td>
+		<td>4.2</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>22</td>
+		<td>7</td>
+		<td>~=3.14</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>9</td>
+		<td>3</td>
+		<td>&lt;5</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>11</td>
+		<td>2</td>
+		<td>4&lt;_&lt;6</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>100</td>
+		<td>4</td>
+		<td>$R1=</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>$R1</td>
+		<td>5</td>
+		<td>5.0</td>
+	</tr>
+</table>
+</div>
+</div>
+<br/><br/>Now we define a second technical solution using a <span class="fitnesse">FitNesse</span> scenario<br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>Division _ _ _</td>
+		<td>numerator, denominator, quotient?</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>setNumerator</td>
+		<td colspan="2">@numerator</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>setDenominator</td>
+		<td colspan="2">@denominator</td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$quotient=</td>
+		<td colspan="2">quotient</td>
+	</tr>
+</table>
+<br/><br/>Generate an instance of the class used by the scenario:<br/><table>
+	<tr class="slimRowTitle">
+		<td>Library</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>eg.Division</td>
+	</tr>
+</table>
+<br/><br/><br/>We retest the requirements and get the same results.<br/><br/><div class="collapsible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">Included page: <a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/SegregationOfRequirementsAndImplementation/CalculatorRequirements.html">&gt;CalculatorRequirements</a> <a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/SegregationOfRequirementsAndImplementation/CalculatorRequirements.html?edit&amp;redirectToReferer=true&amp;redirectAction=" class="edit">(edit)</a></p>
+	<div><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Division</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>numerator</td>
+		<td>denominator</td>
+		<td>quotient?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>10</td>
+		<td>2</td>
+		<td>5.0</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>12.6</td>
+		<td>3</td>
+		<td>4.2</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>22</td>
+		<td>7</td>
+		<td>~=3.14</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>9</td>
+		<td>3</td>
+		<td>&lt;5</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>11</td>
+		<td>2</td>
+		<td>4&lt;_&lt;6</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>100</td>
+		<td>4</td>
+		<td>$R1=</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>$R1</td>
+		<td>5</td>
+		<td>5.0</td>
+	</tr>
+</table>
+</div>
+</div>
+
+</article>
+<footer>
+<a href="../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../FrontPage.html">Front Page</a> | <a href="../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

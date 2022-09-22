@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.WritingAcceptanceTests.FitFramework.DataTypesInFixtures</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+<li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">WritingAcceptanceTests</a></li>
+<li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework.html">FitFramework</a></li>
+
+  </ol>
+</nav>
+<article>
+You can use all the standard Java data types in <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/RowFixture.html">Row Fixture</a> and <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/ColumnFixture.html">Column Fixture</a>.  These types are automatically translated in and out of cell contents for you.  They include:<br/><br/><ul>
+	<li>String<ul>
+	<li>A trimmed string.  You can use the keyword <i>null</i> or <i>blank</i> to mean a true java null, or an empty string respectively</li>
+</ul>
+</li>
+	<li>byte or Byte</li>
+	<li>short or Short</li>
+	<li>int or Integer</li>
+	<li>long or Long</li>
+	<li>float or Float</li>
+	<li>double or Double</li>
+	<li>char or Character</li>
+	<li>boolean or Boolean<ul>
+	<li>Will interpret <i>true</i>, <i>yes</i>, <i>y</i>, <i>+</i>, <i>1</i> to be true.</li>
+	<li>All else will be false.</li>
+</ul>
+</li>
+	<li>Array<ul>
+	<li>Any comma separated list of items will be converted into an array.</li>
+	<li>Click <a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteFixtureTests/SuiteColumnFixtureSpec/TestArraysInColumnFixture.html">here</a> to see the acceptance test for this.</li>
+</ul>
+</li>
+</ul>
+<br/><h3 id="0">Managing your own types with Fit.</h3>
+Any user defined type that implements toString and parse will be managed correctly by <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/RowFixture.html">Row Fixture</a> and <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/ColumnFixture.html">Column Fixture</a>.  The signatures of these methods are:<pre>String toString();
+static Object parse(String s);</pre>
+</article>
+<footer>
+<center>User Guide Contents</center><center><a href="../../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+</footer>
+</body>
+</html>

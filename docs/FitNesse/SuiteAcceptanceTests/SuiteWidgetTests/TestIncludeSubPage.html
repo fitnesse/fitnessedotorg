@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteWidgetTests.TestIncludeSubPage</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests/SuiteWidgetTests.html">SuiteWidgetTests</a></li>
+
+  </ol>
+</nav>
+<article>
+<h3 id="0">This page tests includes of a sub page.</h3>
+<br/>Make sure the !include >MySubPage syntax works.<br/><ul>
+	<li>First create a page to be included.</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="2">script</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>start</td>
+		<td>Page Builder</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>line</td>
+		<td>this subpage was included 3.14159</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>page</td>
+		<td>IncludingPage.IncludedPage</td>
+	</tr>
+</table>
+<ul>
+	<li>Next create a page to do the including.</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="2">script</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>start</td>
+		<td>Page Builder</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>line</td>
+		<td>before</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>line</td>
+		<td>&bang;include >IncludedPage</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>line</td>
+		<td>after</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>page</td>
+		<td>IncludingPage</td>
+	</tr>
+</table>
+<ul>
+	<li>Then request the including page.</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>valid?</td>
+		<td>contents?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>IncludingPage</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+<ul>
+	<li>Examine the requested page to be sure the included page was in fact included.</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="4">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+		<td>value</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>this subpage was included 3.14159</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<a href="../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../FrontPage.html">Front Page</a> | <a href="../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

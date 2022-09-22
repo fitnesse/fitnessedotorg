@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PlugIns.BlogPlugin</title>
+<link rel="stylesheet" type="text/css" href="../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../FitNesseDownload.html">Download</a></li>
+      <li><a href="../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../PlugIns.html">PlugIns</a></li>
+
+  </ol>
+</nav>
+<article>
+<center><h2 id="0">Blog Plugin</h2>
+</center><center>Gives FitNesse some blog-like behavior.</center><center>by Micah Martin<a title="create page" href="../MicahMartin.html?edit&amp;nonExistent=true">[?]</a></center><br/><h3 id="1">Download</h3>
+<a href="http://fitnesse.org/files/plugins/blogPlugin/blog.jar">blog.jar</a> - This is all you need to install the plugin<br/><a href="http://fitnesse.org/files/plugins/blogPlugin/blogPlugin.zip">blogPlugin.zip</a> - The source code.<br/><br/><br/><h3 id="2">Installation</h3>
+Make sure <i>blog.jar</i> is included in the classpath when FitNesse boots.<br/>Add the floowing to <i>plugins.properties</i><br/><pre>Responders = addBlogComment:com.objectmentor.fitnesse.AddBlogCommentResponder
+WikiWidgets = com.objectmentor.fitnesse.BlogCommentFormWidget</pre><br/><br/><h3 id="3">Usage</h3>
+This plugin provides a new wiki widget that is used like so:<br/><pre>!commentForm [taget page name]</pre><br/>When rendered the widget will show a form like the image below.  When the form is submitted, content will be added to the current page as a collapsable section.  Optionally, a alternative page can be specified as the target page where content will be saved.<br/><br/><img src="files/plugins/blogPlugin/commentForm.tiff"/>
+</article>
+<footer>
+<center>FitNesse v20220921</center><center><a href="../FrontPage.html">Front Page</a> - <a href="../FitNesse/UserGuide.html">User Guide</a> - <a href="../FitNesseFeatures.html">Features</a> - <a href="../FitNesseDownload.html">Download</a> - <a href="../PlugIns.html">Plugins</a> - <a href="../PlugIns.html#slimfixtures">Fixtures</a> - <a href="https://gitter.im/fitnesse-org/fitnesse">Gitter Community</a></center>
+</footer>
+</body>
+</html>

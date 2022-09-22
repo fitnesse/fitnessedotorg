@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteVersionsControllerTests</title>
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+
+  </ol>
+</nav>
+<article>
+<span class="meta">variable defined: TEST_SYSTEM=slim</span>
+<br/><br/>Deal with Versions Controllers and the versions they store<br/><br/><div class="collapsible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">Technical Note</p>
+	<div> This suite demonstrates the use of <a href="../../FitNesse/UserGuide/FitNesseWiki/SymbolicLinks.html">symbolic links </a> to test two different implementations against the same requirements.<br/> The requirements must only be written ones!<br/><br/> The suite also uses variable expressions to handle ambiguity in the different implementations.<br/>  <br/></div>
+</div>
+<br/><span class="meta">variable defined: Create_backup_for_initial_page_version=0</span>
+<br/><br/><div class="contents">
+	<b>Contents:</b>
+	<ul class="toc1">
+		<li>
+			<a href="../../FitNesse/SuiteAcceptanceTests/SuiteVersionsControllerTests/BusinessCase.html" class="static pruned">Business Case -</a>
+			<ul class="toc2">
+				<li>
+					<a href="../../FitNesse/SuiteAcceptanceTests/SuiteVersionsControllerTests/BusinessCase/BusinessRequirements.html" class="static">Business Requirements</a>
+					<ul class="toc3">
+						<li>
+							<a href="../../FitNesse/SuiteAcceptanceTests/SuiteVersionsControllerTests/BusinessCase/BusinessRequirements/DeletePage.html" class="test">Delete Page +</a>
+							<span class="pageHelp">: Delete a page will remove the history.</span>
+						</li>
+						<li>
+							<a href="../../FitNesse/SuiteAcceptanceTests/SuiteVersionsControllerTests/BusinessCase/BusinessRequirements/NewPage.html" class="test">New Page +</a>
+							<span class="pageHelp">: Create a new page might or might not create a backup file.</span>
+						</li>
+						<li>
+							<a href="../../FitNesse/SuiteAcceptanceTests/SuiteVersionsControllerTests/BusinessCase/BusinessRequirements/OldVersion.html" class="test">Old Version +</a>
+							<span class="pageHelp">: Check that the content of an older version can be retrieved</span>
+						</li>
+						<li>
+							<a href="../../FitNesse/SuiteAcceptanceTests/SuiteVersionsControllerTests/BusinessCase/BusinessRequirements/SavePage.html" class="test">Save Page +</a>
+							<span class="pageHelp">: Save changes to an existing page will create a backup of the old contents.</span>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<a href="../../FitNesse/SuiteAcceptanceTests/SuiteVersionsControllerTests/ScenarioLibrary.html" class="static">Scenario Library</a>
+		</li>
+		<li>
+			<a href="../../FitNesse/SuiteAcceptanceTests/SuiteVersionsControllerTests/TearDown.html" class="static">Tear Down</a>
+		</li>
+		<li>
+			<a href="../../FitNesse/SuiteAcceptanceTests/SuiteVersionsControllerTests/ZipFileController.html" class="suite">Zip File Controller *</a>
+			<ul class="toc2">
+				<li>
+					<a href="../../FitNesse/SuiteAcceptanceTests/SuiteVersionsControllerTests/BusinessCase/BusinessRequirements.html" class="static">Business Requirements ></a>
+					<ul class="toc3">
+						<li>
+							<a href="../../FitNesse/SuiteAcceptanceTests/SuiteVersionsControllerTests/BusinessCase/BusinessRequirements/DeletePage.html" class="test">Delete Page +</a>
+							<span class="pageHelp">: Delete a page will remove the history.</span>
+						</li>
+						<li>
+							<a href="../../FitNesse/SuiteAcceptanceTests/SuiteVersionsControllerTests/BusinessCase/BusinessRequirements/NewPage.html" class="test">New Page +</a>
+							<span class="pageHelp">: Create a new page might or might not create a backup file.</span>
+						</li>
+						<li>
+							<a href="../../FitNesse/SuiteAcceptanceTests/SuiteVersionsControllerTests/BusinessCase/BusinessRequirements/OldVersion.html" class="test">Old Version +</a>
+							<span class="pageHelp">: Check that the content of an older version can be retrieved</span>
+						</li>
+						<li>
+							<a href="../../FitNesse/SuiteAcceptanceTests/SuiteVersionsControllerTests/BusinessCase/BusinessRequirements/SavePage.html" class="test">Save Page +</a>
+							<span class="pageHelp">: Save changes to an existing page will create a backup of the old contents.</span>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="../../FitNesse/SuiteAcceptanceTests/SuiteVersionsControllerTests/ZipFileController/SetUp.html" class="static">Set Up</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<br/>
+</article>
+<footer>
+<a href="../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../FrontPage.html">Front Page</a> | <a href="../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

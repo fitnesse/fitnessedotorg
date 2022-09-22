@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.WritingAcceptanceTests.SliM.QueryTable</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+<li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">WritingAcceptanceTests</a></li>
+<li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM.html">SliM</a></li>
+
+  </ol>
+</nav>
+<article>
+The rows in a query table represent the expected results of a query.  <br/>You can specify them precisely if you like as in the following:<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>Query:employees hired before</td>
+		<td colspan="4">10-Dec-1980</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>company number</td>
+		<td>employee number</td>
+		<td>first name</td>
+		<td>last name</td>
+		<td>hire date</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>4808147</td>
+		<td>9942</td>
+		<td>Bill</td>
+		<td>Mitchell</td>
+		<td>19-Dec-1966</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>4808147</td>
+		<td>1429</td>
+		<td>Bob</td>
+		<td>Martin</td>
+		<td>10-Oct-1975</td>
+	</tr>
+</table>
+<br/>Or you can leave cells blank and allow them to be filled in:<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>Query:employees hired before</td>
+		<td colspan="3">10-Dec-1980</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>employee number</td>
+		<td>first name</td>
+		<td>last name</td>
+		<td>hire date</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>1429</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>8832</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+<br/>The code for the fixture is:<pre>package fitnesse.slim.test;
+
+import java.util.Date;
+import java.util.List;
+
+import static java.util.Arrays.asList;
+
+public class EmployeesHiredBefore {
+
+  public EmployeesHiredBefore(Date date) {
+  }
+
+  public void table(List&lt;List&lt;String&gt;&gt; table) {
+    // optional function
+  }
+
+  public List&lt;List&lt;List&lt;String&gt;&gt;&gt; query() {
+
+    return
+      asList( // table level
+        asList( // row level
+          asList("company number", "4808147"), // cell column name, value
+          asList("employee number", "1429"),
+          asList("first name", "Bob"),
+          asList("last name", "Martin"),
+          asList("hire date", "10-Oct-1974")
+        ),
+        asList(
+          asList("company number", "5123122"),
+          asList("employee number", "8832"),
+          asList("first name", "James"),
+          asList("last name", "Grenning"),
+          asList("hire date", "15-Dec-1979")
+        )
+      );
+  }
+}
+</pre><br/>Note the <i>list</i> function simply builds an ArrayList from it's arguments.  It's in the ListUtility class<br/><br/>The first thing to notice is the <i>Query:</i> in the first cell of the table.  This tells the Slim table processor that this is a query table.  Next notice the constructor argument.  (See <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/ConstructorArguments.html">Constructor Arguments</a>).  The column headers are <i>field names</i>.  The fixture class must have a <i>query</i> method that returns a list of rows.  Each row is a list of fields.  Each field is a two-element list composed of the <i>field name</i> and it's string value.<br/><br/>Each row in the table is checked to see if there is a match in the query response.  The fields are matched left to right.  If the leftmost field matches, then the row is considered to be "found".  Fields that don't match are marked in error as in the 10-Oct-1974 field above.  A cell that is left blank in the table will be filled in from the result and counted as ignored.  If the first cell of a row cannot be matched, then the row is considered <i>missing</i>.  If there is an unmatched row remaining in the query response, it is added to the table and marked <i>surplus</i>. The order of the rows is irrelevant.<br/><br/>If a <span class="code">table</span> method is declared in the fixture it will be called before the <span class="code">query</span> function is called.  It will be passed a list of rows which are themselves lists of cells.  The rows and cells represent the all but the first row of the table.  This is the same format at the <span class="code">doTable</span> method of Table table, and the <span class="code">table</span> method of Decision table.<br/><br/>In analogy to decision tables you can define comment columns by prefixing the header with the hash symbol.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>Query:employees hired before</td>
+		<td colspan="2">10-Dec-1980</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>last name</td>
+		<td>hire date</td>
+		<td># comment</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>Grenning</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>Martin</td>
+		<td></td>
+		<td>we hired him first</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<center>User Guide Contents</center><center><a href="../../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+</footer>
+</body>
+</html>

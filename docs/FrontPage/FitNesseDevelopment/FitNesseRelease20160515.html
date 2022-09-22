@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FrontPage.FitNesseDevelopment.FitNesseRelease20160515</title>
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../FrontPage.html">FrontPage</a></li>
+<li><a href="../../FrontPage/FitNesseDevelopment.html">FitNesseDevelopment</a></li>
+
+  </ol>
+</nav>
+<article>
+<h3>release 
+	<a href="">20160515</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20160515">fitnesse-standalone.jar</a></strong></td><td>4914077 bytes</td><td>0</td></tr></tbody></table><br/><br/><h3 id="0"><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> Release Notes 2016/05/15</h3>
+<p class="note">Uncle Bob Consulting LLC.</p>
+<br/><p class="note"><span class="red">Requires Java 1.7</span></p>
+<br/><h4 id="1">Major Changes since <a href="../../FrontPage/FitNesseDevelopment/FitNesseRelease20151230.html">20151230</a>:</h4>
+<br/><ul>
+	<li><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> requires Java 7 now (<a href="https://github.com/unclebob/fitnesse/issues/872">#872</a>, <a href="https://github.com/unclebob/fitnesse/issues/877">#877</a>)</li>
+	<li>New autocomplete feature for the "move page" page (<a href="https://github.com/unclebob/fitnesse/issues/867">#867</a>)</li>
+	<li>Name the link to execution log simply "Execution Log" (<a href="https://github.com/unclebob/fitnesse/issues/851">#851</a>)</li>
+	<li>Dynamically add fitnesse jartoclasspath (<a href="https://github.com/unclebob/fitnesse/issues/862">#862</a>, <a href="https://github.com/unclebob/fitnesse/issues/866">#866</a>)</li>
+	<li>Searching for tags across Symbolic links (<a href="https://github.com/unclebob/fitnesse/issues/488">#488</a>, <a href="https://github.com/unclebob/fitnesse/issues/888">#888</a>)</li>
+	<li>Add support for table-in-table editing in rich text editor (<a href="https://github.com/unclebob/fitnesse/issues/669">#669</a>, <a href="https://github.com/unclebob/fitnesse/issues/885">#885</a>)</li>
+	<li><i>@SystemUnderTest</i> now accepts method calls from subclasses (<a href="https://github.com/unclebob/fitnesse/issues/907">#907</a>)</li>
+	<li>Disallow uploading to folder <i>files/fitnesse</i> (<a href="https://github.com/unclebob/fitnesse/issues/889">#889</a>)</li>
+	<li>Avoid infinite cycles when using symlinks (<a href="https://github.com/unclebob/fitnesse/issues/888">#888</a>)</li>
+	<li>(Slim) Deal with escaping content in hash table (<a href="https://github.com/unclebob/fitnesse/issues/886">#886</a>)</li>
+	<li>Properly handle symbol assignment in first column of a query table (<a href="https://github.com/unclebob/fitnesse/issues/914">#914</a>)</li>
+	<li>Issues fixed:<ul>
+	<li>CompareVersions responder is not escaping output properly (<a href="https://github.com/unclebob/fitnesse/issues/861">#861</a>, <a href="https://github.com/unclebob/fitnesse/issues/869">#869</a>)</li>
+	<li>Improve code by honoring <i>InterruptedException<a title="create page" href="../../FrontPage/FitNesseDevelopment/InterruptedException.html?edit&amp;nonExistent=true">[?]</a></i> (<a href="https://github.com/unclebob/fitnesse/issues/874">#874</a>)</li>
+	<li><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> stops again when calling /?shutdown (<a href="https://github.com/unclebob/fitnesse/issues/875">#875</a>)</li>
+	<li>Fixed: Running suites does not show the tests summaries (<a href="https://github.com/unclebob/fitnesse/issues/876">#876</a>)</li>
+	<li>Fix escaping of HTML in Slim hash tables (<a href="https://github.com/unclebob/fitnesse/issues/878">#878</a>)</li>
+	<li>Fix class loading for <a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> resources (<a href="https://github.com/unclebob/fitnesse/issues/880">#880</a>)</li>
+	<li>Change json content type from <i>text/json</i> to <i>applicatioin/json</i> (<a href="https://github.com/unclebob/fitnesse/issues/891">#891</a>)</li>
+	<li>JUnit runner now plays nice with Gradle (<a href="https://github.com/unclebob/fitnesse/issues/909">#909</a>)</li>
+</ul>
+</li>
+</ul>
+   <br/><br/><h4 id="2">Github ids of Contributors to this release:</h4>
+<br/><ul>
+	<li>Alex de Kruijff</li>
+	<li>Alexander Orlov</li>
+	<li>Anis Ben Hamidene</li>
+	<li>Arjan Molenaar</li>
+	<li>Gert-Jan van der Heiden</li>
+	<li>Gordon Meiser</li>
+	<li>Hans Joachim Desserud</li>
+	<li>Jakub Goszczurny</li>
+	<li>Luca Favatella</li>
+	<li>LudovicVa</li>
+	<li>sgo</li>
+	<li>six42</li>
+	<li>the-noob</li>
+</ul>
+<br/><span class="meta">Thanks to all of you!</span><br/><h3 id="3">Git History</h3>
+<br/><table>
+	<tr>
+		<td>2016-05-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Update release notes.</td>
+	</tr>
+	<tr>
+		<td>2016-05-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #914 from szczurmys/master</td>
+	</tr>
+	<tr>
+		<td>2016-05-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #912 from the-noob/master</td>
+	</tr>
+	<tr>
+		<td>2016-05-13</td>
+		<td>Jakub Goszczurny</td>
+		<td>Ignore symbol assignment in QueryTable.scoreMatch(...).</td>
+	</tr>
+	<tr>
+		<td>2016-05-06</td>
+		<td>the-noob</td>
+		<td>Improved formatting for ScriptTable</td>
+	</tr>
+	<tr>
+		<td>2016-04-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Update release notes.</td>
+	</tr>
+	<tr>
+		<td>2016-04-25</td>
+		<td>Arjan Molenaar</td>
+		<td>Make wiki formatter work with nested tables. Fixes #887.</td>
+	</tr>
+	<tr>
+		<td>2016-04-25</td>
+		<td>Arjan Molenaar</td>
+		<td>Hash table is a Map&lt;String, String&gt;.</td>
+	</tr>
+	<tr>
+		<td>2016-04-25</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #909 from sgo/issue-908</td>
+	</tr>
+	<tr>
+		<td>2016-04-25</td>
+		<td>sgo</td>
+		<td>refactored JUnitRunNotifierResultsListener.testComplete to fire test finished once at the end instead of for every branch of the if-else structure.</td>
+	</tr>
+	<tr>
+		<td>2016-04-23</td>
+		<td>sgo</td>
+		<td>JUnit run notifier will fire test finished as well after test failures as some result listeners expect this behavior.</td>
+	</tr>
+	<tr>
+		<td>2016-04-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove duplicates: expandPrefix in WikiWord and WikiWordReference.</td>
+	</tr>
+	<tr>
+		<td>2016-04-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove duplicate code in QueryTable/SubQueryTable.</td>
+	</tr>
+	<tr>
+		<td>2016-04-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Perform `Explicit type can be repalced with &lt;&gt;` refactoring on project.</td>
+	</tr>
+	<tr>
+		<td>2016-04-22</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge branch 'LudovicVa-master'</td>
+	</tr>
+	<tr>
+		<td>2016-04-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Add an example for using SlimTableFactory.addAlias().</td>
+	</tr>
+	<tr>
+		<td>2016-04-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Boyscouting; improve code with Java 7 syntax.</td>
+	</tr>
+	<tr>
+		<td>2016-04-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #907 from GJatKvK/master</td>
+	</tr>
+	<tr>
+		<td>2016-04-12</td>
+		<td>Gert-Jan van der Heiden</td>
+		<td>SystemUnderTest now accepts method calls from subclass.</td>
+	</tr>
+	<tr>
+		<td>2016-04-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #905 from hansjoachim/sonarqube-java-7</td>
+	</tr>
+	<tr>
+		<td>2016-04-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #904 from hansjoachim/warnings</td>
+	</tr>
+	<tr>
+		<td>2016-04-03</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Tells SonarQube the project uses Java7</td>
+	</tr>
+	<tr>
+		<td>2016-04-03</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Since the iterator contains Strings, use more explicit type</td>
+	</tr>
+	<tr>
+		<td>2016-04-03</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Merge remote-tracking branch 'origin/master' into warnings</td>
+	</tr>
+	<tr>
+		<td>2016-04-01</td>
+		<td>Arjan Molenaar</td>
+		<td>remove redundant credentials</td>
+	</tr>
+	<tr>
+		<td>2016-03-30</td>
+		<td>Arjan Molenaar</td>
+		<td>Give ChunkedResponse a proper close() method, do now swallow exceptions.</td>
+	</tr>
+	<tr>
+		<td>2016-03-30</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #889 from amolenaar/files-fitnesse-upload</td>
+	</tr>
+	<tr>
+		<td>2016-03-29</td>
+		<td>Arjan Molenaar</td>
+		<td>Extends Closeable, instead of implementing close ourselves.</td>
+	</tr>
+	<tr>
+		<td>2016-03-25</td>
+		<td>Arjan Molenaar</td>
+		<td>Update release notes</td>
+	</tr>
+	<tr>
+		<td>2016-03-22</td>
+		<td>Arjan Molenaar</td>
+		<td>Add editorconfig file. See http://editorconfig.org</td>
+	</tr>
+	<tr>
+		<td>2016-03-18</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Add missing Override annotations</td>
+	</tr>
+	<tr>
+		<td>2016-03-18</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Remove redundant casting</td>
+	</tr>
+	<tr>
+		<td>2016-03-18</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Use StringBuilder.append instead of concatenating Strings for all Strings in this method</td>
+	</tr>
+	<tr>
+		<td>2016-03-18</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Convert fields to local variables where possible</td>
+	</tr>
+	<tr>
+		<td>2016-03-18</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Remove unused imports</td>
+	</tr>
+	<tr>
+		<td>2016-03-20</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #896 from akruijff/master</td>
+	</tr>
+	<tr>
+		<td>2016-03-20</td>
+		<td>Arjan Molenaar</td>
+		<td>Reduce log message when data could not be sent to FINE.</td>
+	</tr>
+	<tr>
+		<td>2016-03-20</td>
+		<td>Alex de Kruijff</td>
+		<td>Remove unnecessary code from SlimTestSystem</td>
+	</tr>
+	<tr>
+		<td>2016-03-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #888 from amolenaar/symlink-cycles</td>
+	</tr>
+	<tr>
+		<td>2016-03-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #886 from amolenaar/htmlutil-cleanup</td>
+	</tr>
+	<tr>
+		<td>2016-03-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #894 from lucafavatella/wiki-slim-formatting</td>
+	</tr>
+	<tr>
+		<td>2016-03-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #893 from lucafavatella/wiki-typo</td>
+	</tr>
+	<tr>
+		<td>2016-03-19</td>
+		<td>Luca Favatella</td>
+		<td>Revert spurious strike-through in slim protocol page</td>
+	</tr>
+	<tr>
+		<td>2016-03-18</td>
+		<td>Luca Favatella</td>
+		<td>Fix typo</td>
+	</tr>
+	<tr>
+		<td>2016-03-18</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #890 from lucafavatella/wiki-formatting</td>
+	</tr>
+	<tr>
+		<td>2016-03-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix content-type in tests.</td>
+	</tr>
+	<tr>
+		<td>2016-03-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #891 from nitrok/json-content-type</td>
+	</tr>
+	<tr>
+		<td>2016-03-17</td>
+		<td>Alexander Orlov</td>
+		<td>Change json content type from text/json to applicatioin/json</td>
+	</tr>
+	<tr>
+		<td>2016-03-17</td>
+		<td>Luca Favatella</td>
+		<td>Fix formatting</td>
+	</tr>
+	<tr>
+		<td>2016-03-16</td>
+		<td>Luca Favatella</td>
+		<td>Fix formatting</td>
+	</tr>
+	<tr>
+		<td>2016-03-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Disallow uploading to files/fitnesse.</td>
+	</tr>
+	<tr>
+		<td>2016-03-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Break cycles created by Symlinks.</td>
+	</tr>
+	<tr>
+		<td>2016-03-10</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix escaping for nested tables in hash table.</td>
+	</tr>
+	<tr>
+		<td>2016-03-10</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #885 from amolenaar/inline-tables</td>
+	</tr>
+	<tr>
+		<td>2016-03-10</td>
+		<td>Arjan Molenaar</td>
+		<td>Updated documentation for Maven plugins. Fixes #865.</td>
+	</tr>
+	<tr>
+		<td>2016-03-10</td>
+		<td>Arjan Molenaar</td>
+		<td>Add fitnesse debug bookmark back to documentation. Fixed #873.</td>
+	</tr>
+	<tr>
+		<td>2016-03-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Update release notes.</td>
+	</tr>
+	<tr>
+		<td>2016-03-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Escape and unescape hash table contents.</td>
+	</tr>
+	<tr>
+		<td>2016-03-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Clean up MapConverter.</td>
+	</tr>
+	<tr>
+		<td>2016-03-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Clean up fitnesse.html.HtmlUtil.</td>
+	</tr>
+	<tr>
+		<td>2016-03-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Use class' class loader instead of the system one.</td>
+	</tr>
+	<tr>
+		<td>2016-03-07</td>
+		<td>LudovicVa</td>
+		<td>addAlias</td>
+	</tr>
+	<tr>
+		<td>2016-03-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix scrolling of edit page.</td>
+	</tr>
+	<tr>
+		<td>2016-03-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Just do column spanning after all parsing is done.</td>
+	</tr>
+	<tr>
+		<td>2016-03-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix column spanning for nested tables.</td>
+	</tr>
+	<tr>
+		<td>2016-03-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Can now actually add nested tables.</td>
+	</tr>
+	<tr>
+		<td>2016-03-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Change single switch to if statement.</td>
+	</tr>
+	<tr>
+		<td>2016-03-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Render nested content properly.</td>
+	</tr>
+	<tr>
+		<td>2016-03-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Move wikitext processing to separate file.</td>
+	</tr>
+	<tr>
+		<td>2016-03-05</td>
+		<td>Arjan Molenaar</td>
+		<td>More thoroughly escaping of generated javascript fragments.</td>
+	</tr>
+	<tr>
+		<td>2016-03-04</td>
+		<td>LudovicVa</td>
+		<td>Add defaultTableType method</td>
+	</tr>
+	<tr>
+		<td>2016-03-04</td>
+		<td>Arjan Molenaar</td>
+		<td>reformat code.</td>
+	</tr>
+	<tr>
+		<td>2016-02-29</td>
+		<td>Arjan Molenaar</td>
+		<td>Update travis conf to build Java 7 again.</td>
+	</tr>
+	<tr>
+		<td>2016-02-29</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #877 from benhamidene/back2java7</td>
+	</tr>
+	<tr>
+		<td>2016-02-29</td>
+		<td>Arjan Molenaar</td>
+		<td>Add description to acceptance_tests target.</td>
+	</tr>
+	<tr>
+		<td>2016-02-29</td>
+		<td>Arjan Molenaar</td>
+		<td>remove unused variable from SlimResponder</td>
+	</tr>
+	<tr>
+		<td>2016-02-29</td>
+		<td>Arjan Molenaar</td>
+		<td>Clean up CSS a little.</td>
+	</tr>
+	<tr>
+		<td>2016-02-22</td>
+		<td>Anis Ben Hamidene</td>
+		<td>Resetting min. Java version needed to 1.7</td>
+	</tr>
+	<tr>
+		<td>2016-02-16</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove unused variable in javascript</td>
+	</tr>
+	<tr>
+		<td>2016-02-16</td>
+		<td>Arjan Molenaar</td>
+		<td>Make more fields final.</td>
+	</tr>
+	<tr>
+		<td>2016-02-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Cleanup, organize imports.</td>
+	</tr>
+	<tr>
+		<td>2016-02-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Move directory creation out of FitNesse class into FitNesseMain.</td>
+	</tr>
+	<tr>
+		<td>2016-02-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Move message about already used port number to FitNessMain.</td>
+	</tr>
+	<tr>
+		<td>2016-02-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #872 from amolenaar/java8</td>
+	</tr>
+	<tr>
+		<td>2016-02-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Create server threads as daemon threads and explicitly close execution pool.</td>
+	</tr>
+	<tr>
+		<td>2016-02-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #874 from amolenaar/interrupted-exception</td>
+	</tr>
+	<tr>
+		<td>2016-02-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #870 from amolenaar/bootstrap-3.3.6</td>
+	</tr>
+	<tr>
+		<td>2016-02-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Handle slim version mismatch as typed exception.</td>
+	</tr>
+	<tr>
+		<td>2016-02-14</td>
+		<td>Arjan Molenaar</td>
+		<td>SocketService: Set interrupted state on InterruptedException</td>
+	</tr>
+	<tr>
+		<td>2016-02-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove catch in wait fixture.</td>
+	</tr>
+	<tr>
+		<td>2016-02-14</td>
+		<td>Arjan Molenaar</td>
+		<td>FitClient: propagate interrupted exception.</td>
+	</tr>
+	<tr>
+		<td>2016-02-14</td>
+		<td>Arjan Molenaar</td>
+		<td>CommandRunner: set interrupt state on InterruptedException.</td>
+	</tr>
+	<tr>
+		<td>2016-02-14</td>
+		<td>Arjan Molenaar</td>
+		<td>StreamReader: Throw InterruptedIOException when read is interrupted.</td>
+	</tr>
+	<tr>
+		<td>2016-02-14</td>
+		<td>Arjan Molenaar</td>
+		<td>FileUtil: do not wait until file is deleted.</td>
+	</tr>
+	<tr>
+		<td>2016-02-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Do not throw RuntimeException from ClassPath class.</td>
+	</tr>
+	<tr>
+		<td>2016-02-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix issues denoted by SonarQube</td>
+	</tr>
+	<tr>
+		<td>2016-02-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Documentation updates: !contents</td>
+	</tr>
+	<tr>
+		<td>2016-02-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix vertical offset when jumping through test results.</td>
+	</tr>
+	<tr>
+		<td>2016-02-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Simplify SSL config in FitNesseContext.</td>
+	</tr>
+	<tr>
+		<td>2016-02-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Tweak #867 a little to make it look up all pages, and only for the move refactoring.</td>
+	</tr>
+	<tr>
+		<td>2016-02-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #867 from gmeiser/master</td>
+	</tr>
+	<tr>
+		<td>2016-02-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #869 from amolenaar/fix/861</td>
+	</tr>
+	<tr>
+		<td>2016-02-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge branch 'jar-lookup'</td>
+	</tr>
+	<tr>
+		<td>2016-02-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove Glyphicons.</td>
+	</tr>
+	<tr>
+		<td>2016-02-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Move bootstrap templates to general templates folder where possible.</td>
+	</tr>
+	<tr>
+		<td>2016-02-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Use history.back() instead of '#' hash to close popup.</td>
+	</tr>
+	<tr>
+		<td>2016-02-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Reset logo size, adjust margin instead.</td>
+	</tr>
+	<tr>
+		<td>2016-02-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Really center popups.</td>
+	</tr>
+	<tr>
+		<td>2016-02-10</td>
+		<td>Arjan Molenaar</td>
+		<td>Enhance interaction for modal-dialog.</td>
+	</tr>
+	<tr>
+		<td>2016-02-10</td>
+		<td>Arjan Molenaar</td>
+		<td>Use general modal-dialog classes for keyboard shortcut dialog.</td>
+	</tr>
+	<tr>
+		<td>2016-02-10</td>
+		<td>Arjan Molenaar</td>
+		<td>Small stylesheet updates focusing on Bootstrap.</td>
+	</tr>
+	<tr>
+		<td>2016-02-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove empty lines in acceptance test page footer</td>
+	</tr>
+	<tr>
+		<td>2016-02-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Display fitnesse logo slightly smaller, so it aligns nicely with the left margin.</td>
+	</tr>
+	<tr>
+		<td>2016-02-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix footer at bottom of window.</td>
+	</tr>
+	<tr>
+		<td>2016-02-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Update Bootstrap 3.3.6.</td>
+	</tr>
+	<tr>
+		<td>2016-02-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix nabber for versions comparer bootstrap theme.</td>
+	</tr>
+	<tr>
+		<td>2016-02-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Escape lines in versionsComparer.</td>
+	</tr>
+	<tr>
+		<td>2016-02-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove unused javascript file textinputs_jquery.js</td>
+	</tr>
+	<tr>
+		<td>2016-02-05</td>
+		<td>Arjan Molenaar</td>
+		<td>remove unused html file.</td>
+	</tr>
+	<tr>
+		<td>2016-02-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Wysiwyg editor initialises a single editor window.</td>
+	</tr>
+	<tr>
+		<td>2016-02-03</td>
+		<td>Arjan Molenaar</td>
+		<td>Upgrade commons-collections to latest version.</td>
+	</tr>
+	<tr>
+		<td>2016-02-01</td>
+		<td>Gordon Meiser</td>
+		<td>implemented an autocomplete feature for the "move page" (version 2)</td>
+	</tr>
+	<tr>
+		<td>2016-01-31</td>
+		<td>Arjan Molenaar</td>
+		<td>Decode URL path</td>
+	</tr>
+	<tr>
+		<td>2016-01-31</td>
+		<td>Arjan Molenaar</td>
+		<td>Clean up classpath in acceptance suite.</td>
+	</tr>
+	<tr>
+		<td>2016-01-31</td>
+		<td>Arjan Molenaar</td>
+		<td>Move Jar lookup logic in ClassPath class.</td>
+	</tr>
+	<tr>
+		<td>2016-01-31</td>
+		<td>Arjan Molenaar</td>
+		<td>Pass ClassPath around, instead of String</td>
+	</tr>
+	<tr>
+		<td>2016-01-31</td>
+		<td>Arjan Molenaar</td>
+		<td>Make jar file lookup smarter by performing a class lookup for the test runner.</td>
+	</tr>
+	<tr>
+		<td>2016-01-31</td>
+		<td>Arjan Molenaar</td>
+		<td>Add check to dynamically detect fitnesse.jar location.</td>
+	</tr>
+	<tr>
+		<td>2016-01-27</td>
+		<td>Arjan Molenaar</td>
+		<td>boyscouting: clean code in Javascript, slim client and zip file version controller.</td>
+	</tr>
+	<tr>
+		<td>2016-01-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix variable resolution for non-wikitext pages.</td>
+	</tr>
+	<tr>
+		<td>2016-01-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Move wikitext detection for SymbolicPage in one place.</td>
+	</tr>
+	<tr>
+		<td>2016-01-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Update Travis-ci config.</td>
+	</tr>
+	<tr>
+		<td>2016-01-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Upgrade Ant to 1.9.6.</td>
+	</tr>
+	<tr>
+		<td>2016-01-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Update JSON dependency to 20151123.</td>
+	</tr>
+	<tr>
+		<td>2016-01-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Bump minimal Java version to 8.</td>
+	</tr>
+	<tr>
+		<td>2016-01-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Replace tabs by spaces in build.xml.</td>
+	</tr>
+	<tr>
+		<td>2016-01-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Add unit test for Disgracer class.</td>
+	</tr>
+	<tr>
+		<td>2016-01-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Add extra logging in expediter.</td>
+	</tr>
+	<tr>
+		<td>2016-01-10</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #857 from six42/library</td>
+	</tr>
+	<tr>
+		<td>2016-01-10</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #851 from amolenaar/execution-log</td>
+	</tr>
+	<tr>
+		<td>2016-01-10</td>
+		<td>Arjan Molenaar</td>
+		<td>Base StackTraceEnricher tests on apache commons, that's more stable that the JDK.</td>
+	</tr>
+	<tr>
+		<td>2016-01-10</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #835 from hansjoachim/jdk9</td>
+	</tr>
+	<tr>
+		<td>2016-01-06</td>
+		<td>six42</td>
+		<td>Add autocomplete to CodeMirror editor + Save via keyboard</td>
+	</tr>
+	<tr>
+		<td>2016-01-04</td>
+		<td>six42</td>
+		<td>avoid duplicate testing</td>
+	</tr>
+	<tr>
+		<td>2016-01-04</td>
+		<td>six42</td>
+		<td>don't delete lib on clean</td>
+	</tr>
+	<tr>
+		<td>2016-01-03</td>
+		<td>six42</td>
+		<td>Duplicate of ScenarioLibrariesAreIncludedInTheCorrectOrder</td>
+	</tr>
+	<tr>
+		<td>2016-01-03</td>
+		<td>six42</td>
+		<td>Library with constructor parameters</td>
+	</tr>
+	<tr>
+		<td>2015-12-31</td>
+		<td>six42</td>
+		<td>Merge branch 'ShowResultPagesAsHTML' into library</td>
+	</tr>
+	<tr>
+		<td>2015-12-31</td>
+		<td>six42</td>
+		<td>Moved classpath to the test system setup</td>
+	</tr>
+	<tr>
+		<td>2015-12-30</td>
+		<td>six42</td>
+		<td>put quoted classpath back</td>
+	</tr>
+	<tr>
+		<td>2015-12-30</td>
+		<td>six42</td>
+		<td>put quoted  classpath back</td>
+	</tr>
+	<tr>
+		<td>2015-12-30</td>
+		<td>six42</td>
+		<td>puth classpath back</td>
+	</tr>
+	<tr>
+		<td>2015-12-27</td>
+		<td>six42</td>
+		<td>Make negative tests more readable</td>
+	</tr>
+	<tr>
+		<td>2015-12-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Name the link to execution log simply "Execution Log" instead of "Tests Executed OK" or "Errors Occurred". Now at least you should get a hint on what this button is revealing.</td>
+	</tr>
+	<tr>
+		<td>2015-11-25</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Restrict parameter instead</td>
+	</tr>
+	<tr>
+		<td>2015-11-21</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Added comment in case someone get tempted to simplify this</td>
+	</tr>
+	<tr>
+		<td>2015-11-21</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Cast value before returning. Fixes FTBFS with JDK9 (#746)</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<hr/>
+<br/><a href="../../FrontPage.html">.FrontPage</a> | <a href="../../FrontPage/FitNesseDevelopment/FrontPage.html">FrontPage</a> | <a href="../../RecentChanges.html">.RecentChanges</a><br/>
+</footer>
+</body>
+</html>

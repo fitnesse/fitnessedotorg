@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.WritingAcceptanceTests.FitFramework.SymbolsInTestTables</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+<li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">WritingAcceptanceTests</a></li>
+<li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework.html">FitFramework</a></li>
+
+  </ol>
+</nav>
+<article>
+<h1 id="0">Symbols: Passing Data Between Test Tables</h1>
+Sometimes you want to pass information between test tables.  Let's say you added a record to a database, and the database automatically generated a key to that record.  And lets say that in another table you wanted to use that key to fetch the record back.  You can use <i>symbols</i> for this.<br/><br/><table>
+	<tr>
+		<td colspan="3">SaveRecordInDatabase</td>
+	</tr>
+	<tr>
+		<td>name</td>
+		<td>date</td>
+		<td>=key?</td>
+	</tr>
+	<tr>
+		<td>Bob</td>
+		<td>today</td>
+		<td>bobKey</td>
+	</tr>
+	<tr>
+		<td>Bill</td>
+		<td>later</td>
+		<td>billKey</td>
+	</tr>
+</table>
+<br/>In this table two records are added to the database.  The keys for each record are saved in symbols named <i>bobKey</i> and <i>billKey</i>.  The <i>=key?</i> header indicates that the output of the <i>key()</i> method of the fixture is to be stored in a symbol whose name is in the cell.<br/><br/><table>
+	<tr>
+		<td colspan="4">FetchRecordsFromDatabase</td>
+	</tr>
+	<tr>
+		<td>key=</td>
+		<td>fetch()</td>
+		<td>name</td>
+		<td>date</td>
+	</tr>
+	<tr>
+		<td>billKey</td>
+		<td>true</td>
+		<td>Bill</td>
+		<td>later</td>
+	</tr>
+	<tr>
+		<td>bobKey</td>
+		<td>true</td>
+		<td>Bob</td>
+		<td>today</td>
+	</tr>
+</table>
+<br/>In this table the two keys are used to fetch the database records.  The <i>key=</i> header indicates that the value of the symbol whose name is in the cell should be stored in the <i>key</i> variable of the fixture.<br/><br/><br/><br/>
+</article>
+<footer>
+<center>User Guide Contents</center><center><a href="../../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+</footer>
+</body>
+</html>

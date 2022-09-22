@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.AdministeringFitNesse.WikiTheming</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../FitNesse/UserGuide.html">UserGuide</a></li>
+<li><a href="../../../FitNesse/UserGuide/AdministeringFitNesse.html">AdministeringFitNesse</a></li>
+
+  </ol>
+</nav>
+<article>
+(new since April 2012)<br/><br/>As of April 2012, FitNesse has a new layout. There are a few reasons for making this (incompatible) change:<br/><br/><ul>
+	<li>FitNesse had quite a techie edge to it. The menu items were not well structured and some pages looked messy (like Search)</li>
+	<li>Web standards have evolved, so should FitNesse</li>
+	<li>Lots of markup was generated directly from java code, now <a href="http://velocity.apache.org">Velocity</a> is performing the rendering</li>
+	<li>FitNesse was not easy to customize</li>
+	<li>The web interface looked old fashioned. Having a fresh look and feel appeals to people (yes it does)</li>
+	<li>FitNesse style related files (css, javascript, templates) were put in FitNesseRoot. This is not desired since it mixes application files with user data (with pages)</li>
+</ul>
+<br/>So here you are, in your new FitNesse, with a look and feel you're not accustomed to. How to deal with that?<br/><br/><h2 id="0">Theming to the rescue</h2>
+One of the benefits you'll have from the new layout is that the page L&amp;F is easier to change. FitNesse comes with a few styles built-in:<br/><br/><ul>
+	<li><i>fitnesse_straight</i> - the default style</li>
+	<li><i>fitnesse_mint</i> - a classy style</li>
+	<li><i>fitnesse_topnav</i> - a minimalistic style</li>
+	<li><i>bootstrap</i> - uses <a href="http://twitter.github.com/bootstrap">Twitter Bootstrap</a> as a basis for its styling</li>
+</ul>
+<br/>For all styles the HTML remains the same. The default style can be configured through <i>plugins.properties</i>, FitNesse's settings file (this is where you also configure custom symbols). Add the line<br/><br/><pre>
+Theme=fitnesse_mint
+</pre>(re)start FitNesse and the style will have completely changed.<br/><br/>Apart from the layout style, fitnesse loads a few stylesheets by default: <i>fitnesse_pages.css</i> and <i>fitnesse_wiki.css</i>. Both files serve the boilerplate for pages (like the properties page) and the wiki text.<br/><br/><h2 id="1">Rolling your own</h2>
+<span class="fitnesse">FitNesse</span> still has the ability to support custom user styling. In <a href="/files/fitnesse">FitNesseRoot/files/fitnesse</a> you can place your own files. Stylesheets go in a <i>css</i> directory, Javascript in <i>javascript</i> and images are filed in the <i>images</i> folder (note: those directories are not present by default, you'll have to create them by hand).<br/><br/>Now say you want to create your own style, named <i>my-style</i>. You'll need to create a stylesheet <i>FitNesseRoot/files/fitnesse/css/my-style.css</i> and an optional Javascript file <i>FitNesseRoot/files/fitnesse/javascript/my-style.js</i>.<br/><br/>The stylesheet can contain just your own styling or a combination of existing styles with your own additions on top of it.<br/><br/>To reuse one of the existing styles as an entry point, create a custom css file and import the base style you like to use, e.g.:<br/><br/><pre>
+@import url(fitnesse_straight.css); 
+</pre><br/><br/>Now you can simply add custom elements to it.<br/>For example, changing the logo to something fitting your project can be done by placing a 200 x 37 logo file names <i>fitnesse-logo-small.png</i> file in files/images/ and then shift-f5 reloading the page.<br/><br/><h3 id="2">Create a theme based on Bootstrap</h3>
+The Bootstrap theme took a slightly different route. It's using a subfolder for it's resources. The skeleton.vm template  (<a href="files/fitnesse/bootstrap/templates/skeleton.vm">files/fitnesse/bootstrap/templates/skeleton.vm</a>) contains the general markup and layout. It also contains references to the other resources used. You can find the resources used to compile the bootstrap style (lesscss templates) in fitnesse.jar: fitnesse/resources/bootstrap/less. Use those as a basis for the custom theme. There are a few more template files that are overwritten by the bootstrap theme. If the theme needs to be reusable, refer (<i>#parse</i>) the the bootstrap templates for a start and add your own customisations along the way.<br/><br/><h2 id="3">Packaging themes</h2>
+It's also possible to distribute themes in jar files (for example if you want to support a corporate theme for all your FitNesse projects). For that, package the css and javascript in a jar file, like this:<br/><br/><ul>
+	<li>fitnesse/resources/css/my-style.css</li>
+	<li>fitnesse/resources/javascript/my-style.js</li>
+	<li>fitnesse/resources/images/some-image.png</li>
+</ul>
+<br/>Add the jar file to your classpath and define the style (<i>my-style</i>) in your <i>plugins.properties</i>.<br/>
+</article>
+<footer>
+<center>User Guide Contents</center><center><a href="../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+</footer>
+</body>
+</html>

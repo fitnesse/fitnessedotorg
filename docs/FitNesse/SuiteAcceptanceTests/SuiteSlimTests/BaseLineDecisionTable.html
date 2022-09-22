@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteSlimTests.BaseLineDecisionTable</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests.html">SuiteSlimTests</a></li>
+
+  </ol>
+</nav>
+<article>
+<h2 id="0">The aim of the baseline decision table is to make tests easier to read.</h2>
+<br/><h3 id="1">Background</h3>
+The idea of a <a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/DecisionTable.html">decision table</a> is to demonstrate how different combinations of input parameters generate different results.<br/>To make the impact of each parameter to the output results transparent it is good practice to modify just one parameter from row to row.<br/>For big tables with many input parameters it is often not immediately visible to the reader which parameter changes from row to row.<br/><br/><h3 id="2">Syntax</h3>
+As a user of the <b>baseline decision table</b> you specify in the first row below the header in each column the values for all input and output parameters. <br/>This defines your <i>base scenario</i> and so far this is 100% identical to a normal decision table.<br/>In all following lines you just specify the values which differ from the <i>base scenario</i> all other columns are left empty.<br/><br/>This makes your table more readable. It is also easier to maintain in case a value must be changed.<br/>Don't repeat yourself is a good rule even when you write test cases. :)<br/><br/><h3 id="3">Fixture Code</h3>
+When the baseline decision table is tested all empty columns are filled by the Slim test system with the corresponding values from the <i>base scenario</i>. <br/>In all other aspects the bahviour is identical to the decision table. <br/>Your fixture code is identical to a <a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/DecisionTable.html">decision table</a>. The fixture will not be able to identif any difference between a baseline decision table and a normal <a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/DecisionTable.html">decision table</a>.  <br/><br/><h3 id="4">Example</h3>
+Let's look at an example which you know already from the <a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/DecisionTable.html">Decision Table</a><br/><br/><div class="collapsible closed"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">Dependencies</p>
+	<div><br/><table>
+	<tr class="slimRowTitle">
+		<td>import</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>fitnesse.slim.test</td>
+	</tr>
+</table>
+<br/></div>
+</div>
+<br/>Given I have at least one milk remaining<br/>Then I should NOT go to the store<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">baseline: should I buy milk</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>cash in wallet</td>
+		<td>credit card</td>
+		<td>pints of milk remaining</td>
+		<td>go to store?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>0</td>
+		<td>no</td>
+		<td>1</td>
+		<td>no</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td></td>
+		<td></td>
+		<td>2</td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td></td>
+		<td></td>
+		<td>7</td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>10</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td></td>
+		<td>yes</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>10</td>
+		<td>yes</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>1</td>
+		<td></td>
+		<td>1</td>
+		<td></td>
+	</tr>
+</table>
+<br/><br/>Given I have no milk remaining<br/>And a credit card <br/>Then I should go to the store<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">baseline: should I buy milk</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>cash in wallet</td>
+		<td>credit card</td>
+		<td>pints of milk remaining</td>
+		<td>go to store?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>0</td>
+		<td>yes</td>
+		<td>0</td>
+		<td>yes</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>1</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>2</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+<br/><br/>Given I have no milk remaining<br/>And at least three $ <br/>Then I should go to the store<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">baseline: should I buy milk</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>cash in wallet</td>
+		<td>credit card</td>
+		<td>pints of milk remaining</td>
+		<td>go to store?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>3</td>
+		<td>no</td>
+		<td>0</td>
+		<td>yes</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>10</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>7</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td></td>
+		<td>yes</td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+<br/>Given I have no milk remaining<br/>And no credit card<br/>And less then three $ <br/>Then I should NOT go to the store<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">baseline: should I buy milk</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>cash in wallet</td>
+		<td>credit card</td>
+		<td>pints of milk remaining</td>
+		<td>go to store?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>0</td>
+		<td>no</td>
+		<td>0</td>
+		<td>no</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>1</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>2</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+<br/><br/><div class="contents">
+	<b>Contents:</b>
+	<ul class="toc1">
+		<li>
+			<a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/BaseLineDecisionTable/ComparatorsAreSupported.html" class="test">Comparators Are Supported +</a>
+		</li>
+		<li>
+			<a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/BaseLineDecisionTable/HowtoIgnoreResultValues.html" class="test">Howto Ignore Result Values +</a>
+		</li>
+		<li>
+			<a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/BaseLineDecisionTable/MakingTheBaselineTableTheDefaultDecisionTable.html" class="test">Making The Baseline Table The Default Decision Table +</a>
+			<ul class="toc2">
+				<li>
+					<a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/BaseLineDecisionTable/MakingTheBaselineTableTheDefaultDecisionTable/TearDown.html" class="static">Tear Down</a>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/BaseLineDecisionTable/ScenariosAreSupported.html" class="test">Scenarios Are Supported +</a>
+			<span class="pageHelp">: baseline tables can also be implemented with a scenario</span>
+		</li>
+		<li>
+			<a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/BaseLineDecisionTable/TestFailuresAreMarked.html" class="test">Test Failures Are Marked +</a>
+			<ul class="toc2">
+				<li>
+					<a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/BaseLineDecisionTable/TestFailuresAreMarked/TestPage.html" class="test pruned">Test Page +-</a>
+					<span class="pageHelp">: same content as parent page, for manual execution required</span>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+</article>
+<footer>
+<a href="../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../FrontPage.html">Front Page</a> | <a href="../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

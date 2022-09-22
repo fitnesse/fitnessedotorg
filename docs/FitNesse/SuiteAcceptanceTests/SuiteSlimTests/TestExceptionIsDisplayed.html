@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteSlimTests.TestExceptionIsDisplayed</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests.html">SuiteSlimTests</a></li>
+
+  </ol>
+</nav>
+<article>
+<div class="contents">
+	<b>Contents:</b>
+	<ul class="toc1">
+		<li>
+			<a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/TestExceptionIsDisplayed/DisableExceptionTesting.html" class="test">Disable Exception Testing + (configuration)</a>
+		</li>
+		<li>
+			<a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/TestExceptionIsDisplayed/ParameterConversionExceptions.html" class="test">Parameter Conversion Exceptions +</a>
+			<ul class="toc2">
+				<li>
+					<a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/TestExceptionIsDisplayed/ParameterConversionExceptions/TestPage.html" class="test pruned">Test Page +- (negativeTest, includedByParent)</a>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/TestExceptionIsDisplayed/SlimExceptionResult.html" class="test">Slim Exception Result + (UNITTEST)</a>
+			<span class="pageHelp">: fitnesse.testsystems.slim.results.SlimExceptionResult</span>
+		</li>
+		<li>
+			<a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/TestExceptionIsDisplayed/TestPage.html" class="test pruned">Test Page +- (negativeTest, includedByParent)</a>
+		</li>
+	</ul>
+</div>
+<br/><br/><span class="meta">variable defined: TestPageName=Testpage</span>
+<br/><span class="meta">variable defined: minus=-</span>
+<br/><span class="meta">variable defined: exclamation=!</span>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="9">script</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td>given test page</td>
+		<td colspan="8">Testpage</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>and Test System setup is</td>
+		<td colspan="8">!define TEST_SYSTEM {slim}
+!path lib/*.jar
+</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>and Setup content is</td>
+		<td colspan="8">
+|import                                                        |
+|fitnesse.slim.test                                            |
+
+</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td>and Test content is</td>
+		<td colspan="8">!-<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>import</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>fitnesse.slim.test</td>
+	</tr>
+</table>
+<br/><br/><h2 id="0">if you expect an exception you can test for it and pass the test</h2>
+use the keyword <b>EXCEPTION:</b><br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Test Slim</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td># Scenario</td>
+		<td>throw Normal?</td>
+		<td>throw Exception With Message?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>Testing for an expected Exception</td>
+		<td>EXCEPTION:=~/This is my exception/</td>
+		<td>EXCEPTION:=~/Test message/</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>otherwise error is indicated. Watch how an exception with message is displayed shorter compared to a normal exception</td>
+		<td>This is my exception</td>
+		<td>Test message</td>
+	</tr>
+</table>
+<br/><h2 id="1">if you expect an exception but there is non then the cell will fail</h2>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Test Slim</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>string</td>
+		<td>getStringArg?</td>
+		<td>getStringArg?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>Hello</td>
+		<td>Hello</td>
+		<td>EXCEPTION: Hello</td>
+	</tr>
+</table>
+<br/><br/><br/><h2 id="2">An exception occurring in a not cell specific function call is added to the current row.</h2>
+This applies to: execute, reset, table, beginTable, endTable<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">DT:fitnesse.slim.test.DecisionTableExecuteThrows</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>x</td>
+		<td>x?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>5</td>
+		<td>5</td>
+	</tr>
+</table>
+<br/>and also to constructor failures<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>DT:ConstructorThrows</td>
+		<td>test goes on</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>x</td>
+		<td>x?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>5</td>
+		<td>5</td>
+	</tr>
+</table>
+<br/><br/>Multiple exceptions can happen in one row and in a in cell in the same row<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">DT:fitnesse.slim.test.DecisionTableExecuteThrows</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>Which Methods Fail</td>
+		<td>x</td>
+		<td>x?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>NONE</td>
+		<td>5</td>
+		<td>5</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>execute setX getX</td>
+		<td>5</td>
+		<td>5</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>reset</td>
+		<td>2</td>
+		<td>2</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>reset</td>
+		<td>5</td>
+		<td>5</td>
+	</tr>
+</table>
+<br/><h4 id="3">Everything goes wrong - Fitnesse catches all 7 exceptions</h4>
+The exceptions are added at the right level: <br/><ul>
+	<li>cell - for getter and setter </li>
+	<li>row - for reset and execute</li>
+	<li>table - for table, beginTable and endTable</li>
+</ul>
+ <br/><table>
+	<tr class="slimRowTitle">
+		<td>DT:fitnesse.slim.test.DecisionTableExecuteThrows</td>
+		<td>Total Disaster</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>x</td>
+		<td>x?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>5</td>
+		<td>5</td>
+	</tr>
+</table>
+<br/><br/><br/><h1 id="4">Scripts behave like decision tables</h1>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">script:fitnesse.slim.test.DecisionTableExecuteThrows</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>check</td>
+		<td>execute</td>
+		<td>EXCEPTION: =~/EXECUTE_THROWS/</td>
+	</tr>
+</table>
+<br/>A stop test is counted as fail and not as error<br/><table>
+	<tr class="slimRowTitle">
+		<td>script:ConstructorThrows</td>
+		<td colspan="2">stop test</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>check</td>
+		<td>execute</td>
+		<td>Not reached as test is stopped</td>
+	</tr>
+</table>
+<br/>-!<br/></td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>when page</td>
+		<td>Testpage</td>
+		<td colspan="7">is tested and HTML is extracted</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>then</td>
+		<td>8</td>
+		<td>assertions pass,</td>
+		<td>1</td>
+		<td>fail,</td>
+		<td>0</td>
+		<td>are ignored</td>
+		<td>18</td>
+		<td>exceptions thrown</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>and cell</td>
+		<td>.This is my exception. found in:[^&lt;]*</td>
+		<td>has result</td>
+		<td colspan="6">pass</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>and cell</td>
+		<td>.Test message. found in:[^&lt;]*</td>
+		<td>has result</td>
+		<td colspan="6">pass</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>and cell</td>
+		<td>This is my exception./span&gt;./td&gt;./tr&gt;.tr class="exception-detail closed-detail"&gt;.td&gt;__EXCEPTION__:java.lang.Excep[^&lt;]*</td>
+		<td>has result</td>
+		<td colspan="6">error</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>and cell</td>
+		<td>Test message</td>
+		<td>has result</td>
+		<td colspan="6">error</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>and cell</td>
+		<td>java.lang.RuntimeException: test goes on</td>
+		<td>has result</td>
+		<td colspan="6">error</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>and cell</td>
+		<td>The instance decisionTable_\d.setX. does not exist</td>
+		<td>has result</td>
+		<td colspan="6">error</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>and cell</td>
+		<td>5..span...td...tr..tr class="exception-detail closed-detail"..td.__EXCEPTION__:fitnesse.slim.SlimError: SETX_THROWS[^&lt;]*</td>
+		<td>has result</td>
+		<td colspan="6">error</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>and cell</td>
+		<td>.table&gt;.tr class="exception closed"&gt;.td&gt; .span class="error"&gt;5</td>
+		<td>has result</td>
+		<td colspan="6">error</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>and cell</td>
+		<td>5..span...td...tr..tr class="exception-detail closed-detail"..td.__EXCEPTION__:fitnesse.slim.SlimError: GETX_THROWS[^&lt;]*</td>
+		<td>has result</td>
+		<td colspan="6">error</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>and cell</td>
+		<td>.td colspan="2"&gt;.pre&gt;__EXCEPTION__:fitnesse.slim.SlimError: ENDTABLE_THROWS[^&lt;]*</td>
+		<td>has result</td>
+		<td colspan="6">exception-detail closed-detail</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>and cell</td>
+		<td>.td colspan="2"&gt;.pre&gt;__EXCEPTION__:fitnesse.slim.SlimError: BEGINTABLE_THROWS[^&lt;]*</td>
+		<td>has result</td>
+		<td colspan="6">exception-detail closed-detail</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>and cell</td>
+		<td>.td colspan="2"&gt;.pre&gt;__EXCEPTION__:fitnesse.slim.SlimError: DOTABLE_THROWS[^&lt;]*</td>
+		<td>has result</td>
+		<td colspan="6">exception-detail closed-detail</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>and cell</td>
+		<td>expected ..span class="diff".EXCEPTION: ..span.Hello.</td>
+		<td>has result</td>
+		<td colspan="6">fail</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>and cell</td>
+		<td>EXCEPTION:../span&gt;Hello]</td>
+		<td>has result</td>
+		<td colspan="6">diff</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>and cell</td>
+		<td>fitnesse.slim.test.StopTestException: stop test</td>
+		<td>has result</td>
+		<td colspan="6">fail</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>and cell</td>
+		<td>Test not run</td>
+		<td>has result</td>
+		<td colspan="6">ignore</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td># show Symbol</td>
+		<td colspan="8">$HTML_Input</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>show Symbol</td>
+		<td colspan="8">$HTML_Result</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>get collapsed executon log for page</td>
+		<td colspan="8">Testpage</td>
+	</tr>
+</table>
+<br/>
+</article>
+<footer>
+<a href="../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../FrontPage.html">Front Page</a> | <a href="../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

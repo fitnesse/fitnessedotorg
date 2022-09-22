@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FrontPage.FitNesseDevelopment.IterationReportJulyTwentyEighthOhThree</title>
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../FrontPage.html">FrontPage</a></li>
+<li><a href="../../FrontPage/FitNesseDevelopment.html">FitNesseDevelopment</a></li>
+
+  </ol>
+</nav>
+<article>
+Some very cool changes, some bug fixes, some minor improvements...<br/><br/>We are now seeing <a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> being used on several projects out there.  Seeing the way other people use the tool is extemely helpful in understanding how we can make this tool more useful.  One of the biggest problems using <a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> is that page creation is so final.  You can't delete, rename, or move pages that already exist.  Oh, if you're clever you'll realize that you can touch the files on disk and restart FitNesse but that is not very convenient and it is definitely not guarateed to work in the future.  We have introduced the concept of Refactoring into FitNesse.  Each page now has a Refactor attribute and button.  On the refactor screen you'll have the option to delete or rename the page.  Delete is fairly simple, delete the page and clear the cache.  But rename.... "If I rename this page, what will happen to all the WikiWords<a title="create page" href="../../FrontPage/FitNesseDevelopment/WikiWords.html?edit&amp;nonExistent=true">[?]</a> on other pages that link to this page?"  No worries.  We've taken care of this for you.  You may rename pages to your heart's desire and FitNesse will find all the references and change them accordingly.  No broken links will be created by renaming.  The <i>Move Page</i> refactoring is on the way.<br/><br/>Virtual Wiki is becoming a royal pain in the butt.  It's slow, it's problematic, it's an exception to our design...  It's also quite neccessary in a project environment.  We've compromised to make Virtual Wiki a read only feature.  You may view pages virtually and you may test pages virtually but you will no longer be able to edit pages virtually.  We find ourselves wanting to scoot Virtual Wiki even further out of focus due to features like Searching, Where Used, and Refactorings that don't want to use VW.<br/><br/>Special thanks go to our apprentices <i>Paul Pagel</i>, <i>Dan Flies</i>, and <i>Steve Thomas</i> for their indespensable help and comaraderie.
+</article>
+<footer>
+<hr/>
+<br/><a href="../../FrontPage.html">.FrontPage</a> | <a href="../../FrontPage/FitNesseDevelopment/FrontPage.html">FrontPage</a> | <a href="../../RecentChanges.html">.RecentChanges</a><br/>
+</footer>
+</body>
+</html>

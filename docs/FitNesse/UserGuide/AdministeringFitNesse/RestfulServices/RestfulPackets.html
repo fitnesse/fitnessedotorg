@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.AdministeringFitNesse.RestfulServices.RestfulPackets</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+<li><a href="../../../../FitNesse/UserGuide/AdministeringFitNesse.html">AdministeringFitNesse</a></li>
+<li><a href="../../../../FitNesse/UserGuide/AdministeringFitNesse/RestfulServices.html">RestfulServices</a></li>
+
+  </ol>
+</nav>
+<article>
+If you access a page with the ?packet responder as in <span class="code"><a href="http://myFitNesseHost/MyPage?packet">http://myFitNesseHost/MyPage?packet</a></span> you will get back a JSON packet that represents the tables on that page.  Only the tables will be part of the packet, any other text is ignored.  The JSON packet begins with an array named <span class="code">tables</span>.  Each element of that array corresponds to a table on the page.  The tables use an indentation style to represent the packets.  For example:<br/><br/><table>
+	<tr>
+		<td colspan="4">Customer</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>name</td>
+		<td colspan="2">Bob Someone</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>id</td>
+		<td colspan="2">8402</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="3">addr</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>Street</td>
+		<td>555 Witherspoon st.</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>city</td>
+		<td>Anyville</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>state</td>
+		<td>IL</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>zip</td>
+		<td>60083</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>phone</td>
+		<td colspan="2">555-1212</td>
+	</tr>
+</table>
+<br/>If you get the packet for this page by accessing <a href="http://localhost:8080/FitNesse.UserGuide.RestfulPackets?packet">http://localhost:8080/FitNesse.UserGuide.RestfulPackets?packet</a> you will get the following JSON packet:<br/><pre>
+{"tables": [
+ {"Customer":
+  { "addr":
+   { "Street": "555 Witherspoon st.",
+     "city": "Anyville",
+     "state": "IL",
+     "zip": "60083"
+   },
+    "id": "8402",
+    "name": "Bob Someone",
+    "phone": "555-1212"
+  }
+ }
+]}
+</pre><br/><br/><h3 id="0">JSONP</h3>
+If you'd like to use <i>JSONP</i> to fetch the packets. (Or any kind of script injection tecnique).  You can get fitnesse to return the appropriate format by adding <span class="code">&amp;jsonp=some_function</span> on the end of the url.  This will wrap the JSON packet in a function call that looks like this <span class="code">some_function({...})</span>  So, for example, try this link: <span class="code"><a href="http://localhost:8080/FitNesse.UserGuide.RestfulPackets?packet&amp;jsonp=load_me">http://localhost:8080/FitNesse.UserGuide.RestfulPackets?packet&amp;jsonp=load_me</a></span>.<br/><br/>
+</article>
+<footer>
+<center>User Guide Contents</center><center><a href="../../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+</footer>
+</body>
+</html>

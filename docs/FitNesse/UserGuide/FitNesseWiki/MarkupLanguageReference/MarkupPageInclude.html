@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.FitNesseWiki.MarkupLanguageReference.MarkupPageInclude</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+<li><a href="../../../../FitNesse/UserGuide/FitNesseWiki.html">FitNesseWiki</a></li>
+<li><a href="../../../../FitNesse/UserGuide/FitNesseWiki/MarkupLanguageReference.html">MarkupLanguageReference</a></li>
+
+  </ol>
+</nav>
+<article>
+To include the content from one page into another you may use the !include widget<br/><br/>Usage:<br/><b>!include PageName</b><br/><br/>For example if you wanted to all the content from <a href="../../../../FrontPage.html">.Front Page</a> to be displayed here you would simply type:<br/><br/>!include .FrontPage<br/><br/>As a result you will see <a href="../../../../FrontPage.html">.Front Page</a> below:<br/><hr size="2"/>
+<br/><div class="collapsible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">Included page: <a href="../../../../FrontPage.html">.FrontPage</a> <a href="../../../../FrontPage.html?edit&amp;redirectToReferer=true&amp;redirectAction=" class="edit">(edit)</a></p>
+	<div><style type="text/css">
+#banner {
+  margin-top: 20px;
+  text-align: center;
+  background-color: #09293B;
+  border: 1px solid #031017;
+  padding: 120px 20px 80px;
+  border-radius: 8px;
+}
+#slogan {
+  margin: 1em 0;
+  color: white;
+}
+#quote {
+  color: white;
+  text-align: right;
+  padding-right: 90px;
+}
+#calltoaction {
+  margin:50px 0 30px;
+}
+</style>
+<div id="banner" class="container">
+<img src="files/fitnesse/images/fitnesse-logo-large.png" alt="FitNesse logo"/>
+<h3 id="slogan">The fully integrated standalone wiki and acceptance testing framework</h3>
+<div id="quote">Be-monster not thy feature, wer't my fitnesse<br/>
+-- Shakespeare, King Lear</div>
+<div id="calltoaction"><a href="../../../../FitNesseDownload.html" class="btn btn-lg btn-success">Download FitNesse</a></div>
+</div><br/><br/><div class="container"><div class="row"><div class="col-sm-4"><br/><h2 id="0">It's a Collaboration tool</h2>
+Since FitNesse is a <a href="http://wiki.org/wiki.cgi?WhatIsWiki">wiki web server</a>, it has a very low entry and learning curve, which makes it an excellent tool to collaborate with, for example, business stakeholders.<br/>Read more...<a title="create page" href="../../../../FitNesse/UserGuide/FitNesseWiki/MarkupLanguageReference/FitNesse/UserGuide/ProjectDeathByRequirements.html?edit&amp;nonExistent=true">[?]</a><br/></div><div class="col-sm-4"><br/><h2 id="1">It's a Test tool</h2>
+The wiki pages created in FitNesse are run as tests. The specifications can be tested against the application itself, resulting in a roundtrip between specifications and implementation.<br/>Read more...<a title="create page" href="../../../../FitNesse/UserGuide/FitNesseWiki/MarkupLanguageReference/FitNesse/UserGuide/AcceptanceTests.html?edit&amp;nonExistent=true">[?]</a><br/></div><div class="col-sm-4"><br/><h2 id="2">It's Open</h2>
+FitNesse is an open source project. The code base is not owned by any company. A lot of information is shared by the FitNesse community. It's extremely adaptable and is used in areas ranging from Web/GUI tests to testing electronic components.<br/>Read more...<a title="create page" href="../../../../FitNesse/UserGuide/FitNesseWiki/MarkupLanguageReference/StayInformed.html?edit&amp;nonExistent=true">[?]</a><br/></div></div></div><br/><br/><br/></div>
+</div>
+<hr size="2"/>
+<br/><table>
+	<tr>
+		<td colspan="2"><b>Parameters:</b></td>
+	</tr>
+	<tr>
+		<td><span class="code">-seamless</span></td>
+		<td><i>causes the included page to be rendered without an enclosing box.</i></td>
+	</tr>
+	<tr>
+		<td><span class="code">-c</span></td>
+		<td><i>causes the included page to be collapsed.</i></td>
+	</tr>
+	<tr>
+		<td><span class="code">-setup</span></td>
+		<td><i>causes the included page to be used for test/suite setup.</i></td>
+	</tr>
+	<tr>
+		<td><span class="code">-teardown</span></td>
+		<td><i>causes the included page to be used for test/suite teardown.</i></td>
+	</tr>
+</table>
+<br/><h3 id="0"><b>Watch out for !include cycles</b></h3>
+Don't include a page that already includes the page that you are including from. ;-)<br/><br/><h3 id="1">Including Test snippets</h3>
+It is often useful to include portions of test tables into your tests. You do this to bring in common setup data or common test sequences (possibly modified with variables).  A convenient way to do this is to use the Backwards Search notation as follows:<pre>!include &lt;UtilityPage.MyUtility</pre><br/>This will hunt up the parent chain until UtilityPage is found, and then its child MyUtility will be included.<br/>
+</article>
+<footer>
+<center>User Guide Contents</center><center><a href="../../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+</footer>
+</body>
+</html>

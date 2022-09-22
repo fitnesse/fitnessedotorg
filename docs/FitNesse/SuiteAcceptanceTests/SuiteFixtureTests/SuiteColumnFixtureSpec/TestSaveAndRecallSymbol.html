@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteFixtureTests.SuiteColumnFixtureSpec.TestSaveAndRecallSymbol</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteFixtureTests.html">SuiteFixtureTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteFixtureTests/SuiteColumnFixtureSpec.html">SuiteColumnFixtureSpec</a></li>
+
+  </ol>
+</nav>
+<article>
+<h3 id="0">You can save and recall symbols in a ColumnFixture.  You do this by using the =id? and id= syntax.</h3>
+<br/><ul>
+	<li>=id? or =id() takes the output of a function and stores it in the symbol named by the cell.  In the example below the integer 1 is stored in the symbol <i>one</i>, and the integer 2 is stored in the symbol <i>two</i>.</li>
+	<li>id= recalls the value of the symbol named by the cell, and puts it in the <i>id</i> variable.</li>
+</ul>
+<br/><table>
+	<tr>
+		<td colspan="2">fitnesse.fixtures.ColumnFixtureTestFixture</td>
+	</tr>
+	<tr>
+		<td>input</td>
+		<td>=output?</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>one</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>two</td>
+	</tr>
+</table>
+<br/><table>
+	<tr>
+		<td colspan="2">fitnesse.fixtures.ColumnFixtureTestFixture</td>
+	</tr>
+	<tr>
+		<td>input=</td>
+		<td>output?</td>
+	</tr>
+	<tr>
+		<td>one</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td>two</td>
+		<td>2</td>
+	</tr>
+</table>
+<br/><b>With classed integral types, there's a chance the value may be null as a correct result:</b><br/><table>
+	<tr>
+		<td colspan="2">fitnesse.fixtures.ColumnFixtureTestFixture</td>
+	</tr>
+	<tr>
+		<td>integerInput</td>
+		<td>=integerOutput?</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>one</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>two</td>
+	</tr>
+	<tr>
+		<td>null</td>
+		<td>three</td>
+	</tr>
+</table>
+<br/><table>
+	<tr>
+		<td colspan="2">fitnesse.fixtures.ColumnFixtureTestFixture</td>
+	</tr>
+	<tr>
+		<td>integerInput=</td>
+		<td>integerOutput?</td>
+	</tr>
+	<tr>
+		<td>one</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td>two</td>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>three</td>
+		<td>null</td>
+	</tr>
+</table>
+<br/><pre>
+public class ColumnFixtureTestFixture extends ColumnFixture
+{
+  public int input;
+  public int output() {return input;}
+
+  public Integer integerInput;
+  public Integer integerOutput() { return integerInput; }
+
+  public boolean exception() throws Exception {throw new Exception("I thowed up");}
+}
+</pre><br/><br/>
+</article>
+<footer>
+<a href="../../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../../FrontPage.html">Front Page</a> | <a href="../../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

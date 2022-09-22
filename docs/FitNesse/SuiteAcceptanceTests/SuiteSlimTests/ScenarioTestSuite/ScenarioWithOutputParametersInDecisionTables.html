@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteSlimTests.ScenarioTestSuite.ScenarioWithOutputParametersInDecisionTables</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests.html">SuiteSlimTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/ScenarioTestSuite.html">ScenarioTestSuite</a></li>
+
+  </ol>
+</nav>
+<article>
+Output parameters in scenarios are flagged with a question mark in the header row, like in decision tables.<br/>For each output parameter a symbol with the same name must be assigned a value in the scenario.<br/><br/>See below a sample of a division scenario with output parameter "my result" <br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>my division</td>
+		<td>numerator</td>
+		<td></td>
+		<td>denominator</td>
+		<td></td>
+		<td>my result?</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>setNumerator</td>
+		<td colspan="6">@numerator</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>setDenominator</td>
+		<td colspan="6">@denominator</td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$myResult=</td>
+		<td colspan="6">quotient</td>
+	</tr>
+</table>
+<br/><br/>Get the Division implementation from the eg package<br/><table>
+	<tr class="slimRowTitle">
+		<td>Library</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>eg.Division</td>
+	</tr>
+</table>
+<br/><br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">my division</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>numerator</td>
+		<td>denominator</td>
+		<td>my result?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>10</td>
+		<td>2</td>
+		<td>$x=</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>$x</td>
+		<td>1</td>
+		<td>5.0</td>
+	</tr>
+</table>
+<br/><br/><h3 id="0">A result calculated in one row and assigned to a symbol can be used in the next row</h3>
+and the order of the columns doesn't matters<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">my division</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>my result?</td>
+		<td>numerator</td>
+		<td>denominator</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>$x=</td>
+		<td>1000</td>
+		<td>2</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>$x=</td>
+		<td>$x</td>
+		<td>2</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>$x=</td>
+		<td>$x</td>
+		<td>2</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>$x=</td>
+		<td>$x</td>
+		<td>2</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>$x=</td>
+		<td>$x</td>
+		<td>2</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>$x=</td>
+		<td>$x</td>
+		<td>2</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>7.8125</td>
+		<td>$x</td>
+		<td>2</td>
+	</tr>
+</table>
+<br/><h3 id="1">A result can be used in multiple columns in the decion table to do different checks</h3>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="4">my division</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>numerator</td>
+		<td>denominator</td>
+		<td>my result?</td>
+		<td>my result?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>10</td>
+		<td>2</td>
+		<td>5.0</td>
+		<td>&lt; 7.0</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>12.6</td>
+		<td>3</td>
+		<td>4.2</td>
+		<td>&gt; 3.0</td>
+	</tr>
+</table>
+<br/><br/>
+</article>
+<footer>
+<a href="../../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../../FrontPage.html">Front Page</a> | <a href="../../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

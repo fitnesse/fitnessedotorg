@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesseDownload</title>
+<link rel="stylesheet" type="text/css" href="css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="FitNesseFeatures.html">Features</a></li>
+      <li><a href="FitNesseDownload.html">Download</a></li>
+      <li><a href="PlugIns.html">Plug-ins</a></li>
+      <li><a href="FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  
+  </ol>
+</nav>
+<article>
+<h2 id="0">Official release</h2>
+<h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20220815.html">20220815</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20220815">fitnesse-standalone.jar</a></strong></td><td>5212131 bytes</td><td>0</td></tr></tbody></table><br/><br/>FitNesse requires the Java Runtime Environment (JRE) version 8 or 11.<br/><br/><b>Note</b>: As of release 20121220, <a href="FitNesse.html">FitNesse</a> comes in 2 flavours:<br/><br/><ul>
+	<li><i>Fitnesse.jar</i> is for use in Maven or Ivy.</li>
+	<li>Users who just want to run FitNesse by itself should download <i>fitnesse-standalone.jar</i> which comes with all dependencies (support libraries) included.</li>
+</ul>
+<br/>You can also find <a href="http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.fitnesse%22%20AND%20a%3A%22fitnesse%22">FitNesse in the Maven Central Repository</a>.<br/><p class="note">FitNesse includes <i>slf4j-jdk14</i>, an slf4j implementation, to write its logging. Users who want to use a different logging implementation should exclude <i>slf4j-jdk14</i> so there will be no conflicts.</p>
+<br/><h2 id="1">Source</h2>
+The source Code can be found on GitHub: <a href="http://github.com/unclebob/fitnesse">http://github.com/unclebob/fitnesse</a><br/><br/><hr/>
+<br/><h2 id="2">What's next</h2>
+It really takes very little time and effort to get <a href="FitNesse.html">FitNesse</a> running on your machine.<br/><br/> 0 Ensure you have a supported Java version installed (either version 8 or 11, <b>versions &gt;= 15 are not supported</b>).<br/><ol>
+	<li>Click on the most recent <span class="code">fitnesse-standalone.jar</span> file.<ul>
+	<li>If this is a brand new installation, just put it in some convenient empty directory.</li>
+	<li>If this is an update, then copy it on top of the old fitnesse(-standalone).jar in your current installation.</li>
+</ul>
+</li>
+	<li>Type <span class="code">java -jar fitnesse-standalone.jar</span><ul>
+	<li>It will ask you to be patient as it installs or updates.</li>
+	<li>Your shell should respond with something like this: <pre>
+    FitNesse (v20201213) Started...
+     	port:              8001
+     	root page:         fitnesse.wiki.FileSystemPage at ./FitNesseRoot
+     	logger:            none
+     	authenticator:     fitnesse.authentication.PromiscuousAuthenticator
+     	page factory:      fitnesse.responders.PageFactory
+     	page theme:        bootstrap
+     	page version expiration set to 14 days.</pre></li>
+</ul>
+</li>
+	<li>Start up a browser and go to <span class="code"><a href="http://localhost">http://localhost</a></span></li>
+	<li>The main <a href="FitNesse.html">FitNesse</a> screen should come up. That's it. You're ready to start using <a href="FitNesse.html">FitNesse</a>.</li>
+</ol>
+<br/><h3 id="3">It didn't work!</h3>
+Most likely you have another web server running. Web servers default to port 80, so if another one is running on your machine you'll have to specify another port via a CommandLineOption<a title="create page" href="CommandLineOption.html?edit&amp;nonExistent=true">[?]</a>.  Try this command: <span class="code">java -jar fitnesse-standalone.jar -p 8080</span><br/><br/>Then point your browser to <span class="code"><a href="http://localhost:8080">http://localhost:8080</a></span><br/><br/><div class="collapsible closed"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">Still no?  Open me up.</p>
+	<div><h3 id="4">What to Do If You Have the Wrong Java Runtime Environment</h3>
+<ul>
+	<li>Release 20190119 and later require Java 8</li>
+	<li>Release 20160515 and later require Java 7</li>
+	<li>Release 20090818 and later require Java 6</li>
+	<li>Release 20060719 and later require Java 5</li>
+</ul>
+<br/>FitNesse requires version 1.8 (Java 8) or Java 11 of the Java Runtime Environment (JRE). If you see the messages:<br/><br/><br/><pre>
+C:\fitnesse&gt;java -jar fitnesse-standalone.jar
+Exception in thread "main" java.lang.NoClassDefFoundError:
+java/lang/CharSequence
+        at fitnesse.FitNesse.parseCommandLine(Unknown Source)
+        at fitnesse.FitNesse.main(Unknown Source)
+</pre><br/>Then you need to download and install version 8 or 11 of the JRE. Follow these steps:<br/><br/><ul>
+	<li>Press a key to close the command window</li>
+	<li>Download a Java runtime (there are multiple providers, for instance <a href="https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html">Amazon</a>, <a href="https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=hotspot">AdoptOpenJDK</a> or <a href="https://www.azul.com/downloads/zulu-community/?version=java-8-lts&os=windows&package=jdk">Azul</a>) and download and install Java by following the instructions.</li>
+	<li>(if required) Change the PATH environment variable so that it points to the new JRE.<ul>
+	<li>Go to the /bin folder that contains java.exe, and copy the pathname (for example, <i>C:\Program Files\Amazon Corretto\jdk&lt;version&gt;</i>)</li>
+	<li>Go to Settings&gt;Control Panel&gt;System&gt;Advanced&gt;Environment Variables&gt;PATH&gt;Edit</li>
+	<li>Paste in that same complete pathname</li>
+	<li>Save the PATH environment variable, and close the System control panel</li>
+	<li>Start FitNesse again as described above</li>
+</ul>
+</li>
+</ul>
+<br/><h2 id="5">What to do if Apache Velocity is not found</h2>
+There are two builds of the <a href="FitNesse.html">FitNesse</a> binary:<br/><br/><ul>
+	<li><b>fitnesse.jar</b> contains only the fitnesse code, no dependencies. This is the version you use if you're using a dependency management system like <a href="http://maven.apache.org/">Maven</a> or <a href="http://ant.apache.org/ivy/">Apache Ivy</a>.</li>
+	<li><b>fitnesse-standalone.jar</b> is the big one-has-all jar file containing <a href="FitNesse.html">FitNesse</a> and support libraries.</li>
+</ul>
+<br/>If you're seeing this:<br/><br/><br/><pre>
+C:\fitnesse&gt;java -jar fitnesse.jar
+Exception in thread "main" java.lang.NoClassDefFoundError: org/apache/velocity/context/Context
+        at fitnesse.FitNesseContext.(FitNesseContext.java:29)
+        at fitnesse.FitNesseContext.(FitNesseContext.java:39)
+        at fitnesseMain.FitNesseMain.loadContext(FitNesseMain.java:88)
+        at fitnesseMain.FitNesseMain.launchFitNesse(FitNesseMain.java:36)
+</pre><br/>You probably want the latter.<br/></div>
+</div>
+<br/><h2 id="6">Learning More</h2>
+If you have not yet done so, check out the <a href="FitNesse/UserGuide/TwoMinuteExample.html">Two Minute Example</a>. To learn more about what <a href="FitNesse.html">FitNesse</a> acceptance testing is all about, see <a href="FitNesse/UserGuide/AcceptanceTests.html">AcceptanceTests</a>.  If you are ready to start creating <a href="FitNesse.html">FitNesse</a> pages and test tables, check out EditingFitNessePages<a title="create page" href="FitNesse/UserGuide/EditingFitNessePages.html?edit&amp;nonExistent=true">[?]</a> and CreatingTestTables<a title="create page" href="FitNesse/UserGuide/CreatingTestTables.html?edit&amp;nonExistent=true">[?]</a>.<br/><br/><h2 id="7">Memory Issues.</h2>
+When you use FitNesse extensively, some operations take more than the default memory allocated to the JVM.  This can cause tests to fail for <i>out of heap space</i> reasons.  You can fix this by adding the <span class="code">-Xmx100M</span> JVM argument to the java command line when you start FitNesse.  <span class="code">java -Xmx100M -jar fitnesse.jar</span>.<br/><br/><h3 id="8">Memory issues and the build.</h3>
+If you build FitNesse from source, the ant script may fail for <i>out of heap space</i> reasons.  You can fix this by setting the <span class="code">ANT_OPTS</span> environment variable to <span class="code">-Xmx100M</span>.<br/><br/><hr/>
+<br/><h2 id="9">Old Releases</h2>
+<h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20220319.html">20220319</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20220319">fitnesse-standalone.jar</a></strong></td><td>5191309 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20211030.html">20211030</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20211030">fitnesse-standalone.jar</a></strong></td><td>5184717 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20211006.html">20211006</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20211006">fitnesse-standalone.jar</a></strong></td><td>5184655 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20210606.html">20210606</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20210606">fitnesse-standalone.jar</a></strong></td><td>5183634 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20210605.html">20210605</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20210605">fitnesse-standalone.jar</a></strong></td><td>5183742 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20210516.html">20210516</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20210516">fitnesse-standalone.jar</a></strong></td><td>5183315 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20210410.html">20210410</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20210410">fitnesse-standalone.jar</a></strong></td><td>5181473 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20201213.html">20201213</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20201213">fitnesse-standalone.jar</a></strong></td><td>5164919 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20200501.html">20200501</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20200501">fitnesse-standalone.jar</a></strong></td><td>4863202 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20200404.html">20200404</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20200404">fitnesse-standalone.jar</a></strong></td><td>4863200 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20200308.html">20200308</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20200308">fitnesse-standalone.jar</a></strong></td><td>4862055 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20200307.html">20200307</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20200307">fitnesse-standalone.jar</a></strong></td><td>4861106 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20200304.html">20200304</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20200304">fitnesse-standalone.jar</a></strong></td><td>4861525 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20200205.html">20200205</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20200205">fitnesse-standalone.jar</a></strong></td><td>4722256 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20200128.html">20200128</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20200128">fitnesse-standalone.jar</a></strong></td><td>4714880 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20200108.html">20200108</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20200108">fitnesse-standalone.jar</a></strong></td><td>4715332 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20191229.html">20191229</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20191229">fitnesse-standalone.jar</a></strong></td><td>4715242 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20191217.html">20191217</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20191217">fitnesse-standalone.jar</a></strong></td><td>4704014 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20191110.html">20191110</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20191110">fitnesse-standalone.jar</a></strong></td><td>4703770 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20190716.html">20190716</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20190716">fitnesse-standalone.jar</a></strong></td><td>4703786 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20190628.html">20190628</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20190628">fitnesse-standalone.jar</a></strong></td><td>4701163 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20190620.html">20190620</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20190620">fitnesse-standalone.jar</a></strong></td><td>4691238 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20190508.html">20190508</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20190508">fitnesse-standalone.jar</a></strong></td><td>4691374 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20190428.html">20190428</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20190428">fitnesse-standalone.jar</a></strong></td><td>4691184 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20190421.html">20190421</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20190421">fitnesse-standalone.jar</a></strong></td><td>4690872 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20190418.html">20190418</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20190418">fitnesse-standalone.jar</a></strong></td><td>4690743 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20190417.html">20190417</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20190417">fitnesse-standalone.jar</a></strong></td><td>4691006 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20190416.html">20190416</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20190416">fitnesse-standalone.jar</a></strong></td><td>4687660 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20190409.html">20190409</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20190409">fitnesse-standalone.jar</a></strong></td><td>4687478 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20190406.html">20190406</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20190406">fitnesse-standalone.jar</a></strong></td><td>4687305 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20190224.html">20190224</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20190224">fitnesse-standalone.jar</a></strong></td><td>4687210 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20190216.html">20190216</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20190216">fitnesse-standalone.jar</a></strong></td><td>4687107 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20190202.html">20190202</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20190202">fitnesse-standalone.jar</a></strong></td><td>4686420 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20190127.html">20190127</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20190127">fitnesse-standalone.jar</a></strong></td><td>4686319 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20190119.html">20190119</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20190119">fitnesse-standalone.jar</a></strong></td><td>4675654 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20190118.html">20190118</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20190118">fitnesse-standalone.jar</a></strong></td><td>5010162 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20180127.html">20180127</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20180127">fitnesse-standalone.jar</a></strong></td><td>4993767 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20161106.html">20161106</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20161106">fitnesse-standalone.jar</a></strong></td><td>4959084 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20160618.html">20160618</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20160618">fitnesse-standalone.jar</a></strong></td><td>4924145 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20160515.html">20160515</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20160515">fitnesse-standalone.jar</a></strong></td><td>4914077 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20151230.html">20151230</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20151230">fitnesse-standalone.jar</a></strong></td><td>4918563 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20150814.html">20150814</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20150814">fitnesse-standalone.jar</a></strong></td><td>9216403 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20150424.html">20150424</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20150424">fitnesse-standalone.jar</a></strong></td><td>9079776 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20150226.html">20150226</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20150226">fitnesse-standalone.jar</a></strong></td><td>9045071 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20150114.html">20150114</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20150114">fitnesse-standalone.jar</a></strong></td><td>8978396 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20140901.html">20140901</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20140901">fitnesse-standalone.jar</a></strong></td><td>7656981 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20140630.html">20140630</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20140630">fitnesse-standalone.jar</a></strong></td><td>6323081 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20140623.html">20140623</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20140623">fitnesse-standalone.jar</a></strong></td><td>6325707 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20140418.html">20140418</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20140418">fitnesse-standalone.jar</a></strong></td><td>6309648 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20140201.html">20140201</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20140201">fitnesse-standalone.jar</a></strong></td><td>6871194 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20131110.html">20131110</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20131110">fitnesse-standalone.jar</a></strong></td><td>7055875 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20130530.html">20130530</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20130530">fitnesse-standalone.jar</a></strong></td><td>5377751 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20111026.html">20111026</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse.jar?responder=releaseDownload&release=20111026">fitnesse.jar</a></strong></td><td>4209712 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20110104.html">20110104</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse.jar?responder=releaseDownload&release=20110104">fitnesse.jar</a></strong></td><td>4174913 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20101101.html">20101101</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse.jar?responder=releaseDownload&release=20101101">fitnesse.jar</a></strong></td><td>4038994 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20100303.html">20100303</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse.jar?responder=releaseDownload&release=20100303">fitnesse.jar</a></strong></td><td>3966113 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20100103.html">20100103</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse.jar?responder=releaseDownload&release=20100103">fitnesse.jar</a></strong></td><td>3918055 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20091121.html">20091121</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse.jar?responder=releaseDownload&release=20091121">fitnesse.jar</a></strong></td><td>4822762 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20090818.html">20090818</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse.jar?responder=releaseDownload&release=20090818">fitnesse.jar</a></strong></td><td>4777069 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20090709.html">20090709</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse.jar?responder=releaseDownload&release=20090709">fitnesse.jar</a></strong></td><td>5326568 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20090513.html">20090513</a>
+</h3>
+The release directory could not be found.<br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20090321.html">20090321</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse.jar?responder=releaseDownload&release=20090321">fitnesse.jar</a></strong></td><td>1066873 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20090214.html">20090214</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse.jar?responder=releaseDownload&release=20090214">fitnesse.jar</a></strong></td><td>1005205 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20090112.html">20090112</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse.jar?responder=releaseDownload&release=20090112">fitnesse.jar</a></strong></td><td>984868 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20081201.html">20081201</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse.jar?responder=releaseDownload&release=20081201">fitnesse.jar</a></strong></td><td>870421 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20081115.html">20081115</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse.jar?responder=releaseDownload&release=20081115">fitnesse.jar</a></strong></td><td>868938 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20080812.html">20080812</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse.jar?responder=releaseDownload&release=20080812">fitnesse.jar</a></strong></td><td>736137 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20080702.html">20080702</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse.jar?responder=releaseDownload&release=20080702">fitnesse.jar</a></strong></td><td>695739 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20070619.html">20070619</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse.jar?responder=releaseDownload&release=20070619">fitnesse.jar</a></strong></td><td>663683 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20060719.html">20060719</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse.jar?responder=releaseDownload&release=20060719">fitnesse.jar</a></strong></td><td>495037 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20050731.html">20050731</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse.jar?responder=releaseDownload&release=20050731">fitnesse.jar</a></strong></td><td>475255 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20050405.html">20050405</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitlibrary.jar?responder=releaseDownload&release=20050405">fitlibrary.jar</a></strong></td><td>123526 bytes</td><td>0</td></tr><tr><td><strong><a href="/fitnesse.jar?responder=releaseDownload&release=20050405">fitnesse.jar</a></strong></td><td>468725 bytes</td><td>0</td></tr></tbody></table><br/><h3>release 
+	<a href="FrontPage/FitNesseDevelopment/FitNesseRelease20050301.html">20050301</a>
+</h3>
+The release directory could not be found.<br/>
+</article>
+<footer>
+<center>FitNesse v20220921</center><center><a href="FrontPage.html">Front Page</a> - <a href="FitNesse/UserGuide.html">User Guide</a> - <a href="FitNesseFeatures.html">Features</a> - <a href="FitNesseDownload.html">Download</a> - <a href="PlugIns.html">Plugins</a> - <a href="PlugIns.html#slimfixtures">Fixtures</a> - <a href="https://gitter.im/fitnesse-org/fitnesse">Gitter Community</a></center>
+</footer>
+</body>
+</html>

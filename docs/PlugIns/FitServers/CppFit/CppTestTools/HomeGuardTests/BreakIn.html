@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PlugIns.FitServers.CppFit.CppTestTools.HomeGuardTests.BreakIn</title>
+<link rel="stylesheet" type="text/css" href="../../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../../PlugIns.html">PlugIns</a></li>
+<li><a href="../../../../../PlugIns/FitServers.html">FitServers</a></li>
+<li><a href="../../../../../PlugIns/FitServers/CppFit.html">CppFit</a></li>
+<li><a href="../../../../../PlugIns/FitServers/CppFit/CppTestTools.html">CppTestTools</a></li>
+<li><a href="../../../../../PlugIns/FitServers/CppFit/CppTestTools/HomeGuardTests.html">HomeGuardTests</a></li>
+
+  </ol>
+</nav>
+<article>
+<span class="meta">variable defined: COMMAND_PATTERN=E:/Lancelot/Third_Party/cppFit/Projects/Cpp/HomeGuard/HomeGuardFitnesseServer/HomeGuardFitnesseServer.exe</span>
+-!<br/><h1 id="0">Break in detected</h1>
+<br/>When there is a break in, and the system is armed, the alarm is signaled and the police are called.<br/><br/><table>
+	<tr>
+		<td colspan="3">HomeGuardFixtures.CheckFrontPanel</td>
+	</tr>
+	<tr>
+		<td>visual alarm</td>
+		<td>siren</td>
+		<td>display</td>
+	</tr>
+	<tr>
+		<td>off</td>
+		<td>off</td>
+		<td>READY</td>
+	</tr>
+</table>
+<br/><table>
+	<tr>
+		<td colspan="5">HomeGuardFixtures.DefineSensors</td>
+	</tr>
+	<tr>
+		<td>port</td>
+		<td>name</td>
+		<td>Type</td>
+		<td>submit?</td>
+		<td>reason?</td>
+	</tr>
+	<tr>
+		<td>A1</td>
+		<td>Paul's</td>
+		<td>window</td>
+		<td>true</td>
+		<td>none</td>
+	</tr>
+	<tr>
+		<td>A2</td>
+		<td>Porch</td>
+		<td>door</td>
+		<td>true</td>
+		<td>none</td>
+	</tr>
+	<tr>
+		<td>A3</td>
+		<td>Sump</td>
+		<td>waterlevel</td>
+		<td>true</td>
+		<td>none</td>
+	</tr>
+	<tr>
+		<td>A4</td>
+		<td>Attic</td>
+		<td>fire</td>
+		<td>true</td>
+		<td>none</td>
+	</tr>
+</table>
+<br/><table>
+	<tr>
+		<td>HomeGuardFixtures.Control</td>
+	</tr>
+	<tr>
+		<td>arm system</td>
+	</tr>
+</table>
+<br/><table>
+	<tr>
+		<td>HomeGuardFixtures.TripSensor</td>
+	</tr>
+	<tr>
+		<td>port</td>
+	</tr>
+	<tr>
+		<td>A1</td>
+	</tr>
+</table>
+<br/><table>
+	<tr>
+		<td colspan="3">HomeGuardFixtures.CheckFrontPanel</td>
+	</tr>
+	<tr>
+		<td>visual alarm</td>
+		<td>siren</td>
+		<td>display</td>
+	</tr>
+	<tr>
+		<td>on</td>
+		<td>on</td>
+		<td>Paul's Window</td>
+	</tr>
+</table>
+<br/><table>
+	<tr>
+		<td>HomeGuardFixtures.CheckPhoneLine</td>
+	</tr>
+	<tr>
+		<td>last number dialed</td>
+	</tr>
+	<tr>
+		<td>ThePoliceNumber</td>
+	</tr>
+</table>
+<br/>
+</article>
+<footer>
+<center>FitNesse v20220921</center><center><a href="../../../../../FrontPage.html">Front Page</a> - <a href="../../../../../FitNesse/UserGuide.html">User Guide</a> - <a href="../../../../../FitNesseFeatures.html">Features</a> - <a href="../../../../../FitNesseDownload.html">Download</a> - <a href="../../../../../PlugIns.html">Plugins</a> - <a href="../../../../../PlugIns.html#slimfixtures">Fixtures</a> - <a href="https://gitter.im/fitnesse-org/fitnesse">Gitter Community</a></center>
+</footer>
+</body>
+</html>

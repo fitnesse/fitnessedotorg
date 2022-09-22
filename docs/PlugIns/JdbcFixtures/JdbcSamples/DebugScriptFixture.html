@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PlugIns.JdbcFixtures.JdbcSamples.DebugScriptFixture</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../PlugIns.html">PlugIns</a></li>
+<li><a href="../../../PlugIns/JdbcFixtures.html">JdbcFixtures</a></li>
+<li><a href="../../../PlugIns/JdbcFixtures/JdbcSamples.html">JdbcSamples</a></li>
+
+  </ol>
+</nav>
+<article>
+<br/><h3 id="0">Use Cases</h3>
+<table>
+	<tr>
+		<td>Script Fixture</td>
+		<td colspan="2">CREATE TABLE T ( NAME CHAR(25)     NULL)</td>
+	</tr>
+	<tr>
+		<td>statement?</td>
+		<td>parseCode</td>
+		<td>count</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+<br/><table>
+	<tr>
+		<td colspan="5">Script Fixture</td>
+	</tr>
+	<tr>
+		<td>line</td>
+		<td>parseCode</td>
+		<td>count</td>
+		<td>checkLines?</td>
+		<td>linecount</td>
+	</tr>
+	<tr>
+		<td>insert into t</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>values(:1)</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>/</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+<br/><br/><br/><table>
+	<tr>
+		<td colspan="4">Script Fixture</td>
+	</tr>
+	<tr>
+		<td>parseCode</td>
+		<td>count</td>
+		<td>statementTxt</td>
+		<td>checkLines?</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+<br/><table>
+	<tr>
+		<td colspan="8">Script Fixture</td>
+	</tr>
+	<tr>
+		<td>BIND1</td>
+		<td>EXECUTE</td>
+		<td>checkLines?</td>
+		<td>statementTxt</td>
+		<td>error</td>
+		<td>statement?</td>
+		<td>checkLines?</td>
+		<td>statementTxt</td>
+	</tr>
+	<tr>
+		<td>call1</td>
+		<td>true</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>call1</td>
+		<td>true</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+<br/><table>
+	<tr>
+		<td colspan="4">Comment</td>
+	</tr>
+	<tr>
+		<td colspan="4">Script Fixture</td>
+	</tr>
+	<tr>
+		<td>BIND1</td>
+		<td>call?</td>
+		<td>statementTxt</td>
+		<td>statement?</td>
+	</tr>
+	<tr>
+		<td>call2</td>
+		<td>true</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>call3</td>
+		<td>true</td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+<br/><table>
+	<tr>
+		<td colspan="4">Script Fixture</td>
+	</tr>
+	<tr>
+		<td>EXECUTE</td>
+		<td>line</td>
+		<td>BIND1</td>
+		<td>statement?</td>
+	</tr>
+	<tr>
+		<td>false</td>
+		<td>insert into t</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>false</td>
+		<td>values(:1)</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>true</td>
+		<td>/</td>
+		<td>call4</td>
+		<td></td>
+	</tr>
+</table>
+<br/><br/><table>
+	<tr>
+		<td>Select</td>
+		<td>T</td>
+	</tr>
+	<tr>
+		<td colspan="2">NAME</td>
+	</tr>
+	<tr>
+		<td colspan="2">call1</td>
+	</tr>
+	<tr>
+		<td colspan="2">call2</td>
+	</tr>
+</table>
+<br/><table>
+	<tr>
+		<td>Script Fixture</td>
+	</tr>
+	<tr>
+		<td>statement?</td>
+	</tr>
+</table>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</article>
+<footer>
+<center>FitNesse v20220921</center><center><a href="../../../FrontPage.html">Front Page</a> - <a href="../../../FitNesse/UserGuide.html">User Guide</a> - <a href="../../../FitNesseFeatures.html">Features</a> - <a href="../../../FitNesseDownload.html">Download</a> - <a href="../../../PlugIns.html">Plugins</a> - <a href="../../../PlugIns.html#slimfixtures">Fixtures</a> - <a href="https://gitter.im/fitnesse-org/fitnesse">Gitter Community</a></center>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FrontPage.FitNesseDevelopment.FitNesseRelease20150226</title>
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../FrontPage.html">FrontPage</a></li>
+<li><a href="../../FrontPage/FitNesseDevelopment.html">FitNesseDevelopment</a></li>
+
+  </ol>
+</nav>
+<article>
+<h3>release 
+	<a href="">20150226</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20150226">fitnesse-standalone.jar</a></strong></td><td>9045071 bytes</td><td>0</td></tr></tbody></table><br/><br/><h3 id="0"><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> Release Notes 2015/02/26</h3>
+<p class="note">Uncle Bob Consulting LLC.</p>
+<br/><p class="note"><span class="red">Requires Java 1.6</span></p>
+<br/><h4 id="1">Major Changes since <a href="../../FrontPage/FitNesseDevelopment/FitNesseRelease20150114.html">20150114</a>:</h4>
+<br/><ul>
+	<li>Fixed lot's of code style issues </li>
+	<li>Table coloring for Slim tables </li>
+	<li>Improved extensibility of Slim tables </li>
+	<li>Allow graceful names for Slim decision table output columns, when used in conjunction with scenario tables </li>
+	<li>Image support for rich text editor </li>
+	<li>Hash table editing support for rich text editor </li>
+	<li>Rich editor icons are now SVG images </li>
+	<li>Improved Slim Converters </li>
+	<li>Test execution log is stored in page history. It's no longer stored in ErrorLogs pages </li>
+	<li><i>?suite</i> and <i>?test</i> responders can now automatically clean up the test history </li>
+	<li>Added JUnit output format for suite runs: <i>?suite&amp;format=junit</i> </li>
+	<li>Issues fixed:<ul>
+	<li>Fixed errors that occurred when a different XML TransformerFactory was loaded </li>
+	<li>Fixed failure navigator in test history pages </li>
+	<li>Empty <i>suiteFilter</i> argument on <i>?suite</i> responder will be ignored </li>
+	<li>Test/Suite button is search results works from sub-wiki's</li>
+	<li>Allow Symlink rename/replace on existing Symlink </li>
+	<li>Prevent port conflicts for Slim runner when run in-process </li>
+</ul>
+</li>
+</ul>
+<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=10&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=10&amp;state=closed.</a><br/><br/><h4 id="2">Github ids of Contributors to this release:</h4>
+<br/><ul>
+	<li>Arjan Molenaar</li>
+	<li>Brian Davis</li>
+	<li>Denis Koelewijn</li>
+	<li>Fried Hoeben</li>
+	<li>Hans Joachim Desserud</li>
+	<li>Konstantin Vlasenko</li>
+	<li>Linquize</li>
+	<li>Mark Hopkins</li>
+	<li>Matt Warhaftig</li>
+	<li>Serge Zukov</li>
+	<li>Stefan Hendriks</li>
+	<li>Antoine Aumjaud</li>
+	<li>Matt Warhaftig</li>
+	<li>@reprive</li>
+	<li>@six42</li>
+</ul>
+<br/><span class="meta">Thanks to all of you!</span><br/><h3 id="3">Git History</h3>
+<br/><table>
+	<tr>
+		<td>2015-02-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix version in release notes.</td>
+	</tr>
+	<tr>
+		<td>2015-02-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix typo.</td>
+	</tr>
+	<tr>
+		<td>2015-02-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #650 from markhop/docs-update</td>
+	</tr>
+	<tr>
+		<td>2015-02-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #651 from reprive/master</td>
+	</tr>
+	<tr>
+		<td>2015-02-25</td>
+		<td>Mark Hopkins</td>
+		<td>Correct links between pages and display of images</td>
+	</tr>
+	<tr>
+		<td>2015-02-25</td>
+		<td>reprive</td>
+		<td>Made constructor for MemoryVersionsController public</td>
+	</tr>
+	<tr>
+		<td>2015-02-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Update release notes.</td>
+	</tr>
+	<tr>
+		<td>2015-02-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #642 from sergebug/master</td>
+	</tr>
+	<tr>
+		<td>2015-02-23</td>
+		<td>Arjan Molenaar</td>
+		<td>organise code.</td>
+	</tr>
+	<tr>
+		<td>2015-02-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Move Slim specifics out of StreamReader into a separate SlimStreamReader.</td>
+	</tr>
+	<tr>
+		<td>2015-02-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #649 from six42/ssl</td>
+	</tr>
+	<tr>
+		<td>2015-02-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #646 from hansjoachim/issues</td>
+	</tr>
+	<tr>
+		<td>2015-02-23</td>
+		<td>six42</td>
+		<td>removed compiler warning for class X500Name</td>
+	</tr>
+	<tr>
+		<td>2015-02-23</td>
+		<td>six42</td>
+		<td>Merge branch 'master' of https://github.com/unclebob/fitnesse into ssl</td>
+	</tr>
+	<tr>
+		<td>2015-02-22</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove redundant interface</td>
+	</tr>
+	<tr>
+		<td>2015-02-22</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove last occurrences of Serializable.</td>
+	</tr>
+	<tr>
+		<td>2015-02-22</td>
+		<td>Arjan Molenaar</td>
+		<td>Small code improvements</td>
+	</tr>
+	<tr>
+		<td>2015-02-22</td>
+		<td>Arjan Molenaar</td>
+		<td>Kill cyclic dependencies by moving Expression from fitnesse.util to fitnesse.wikitext.parser.</td>
+	</tr>
+	<tr>
+		<td>2015-02-22</td>
+		<td>Arjan Molenaar</td>
+		<td>Simplify percentage calculation.</td>
+	</tr>
+	<tr>
+		<td>2015-02-22</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove more Serializable interfaces</td>
+	</tr>
+	<tr>
+		<td>2015-02-22</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove unused variables.</td>
+	</tr>
+	<tr>
+		<td>2015-02-22</td>
+		<td>Arjan Molenaar</td>
+		<td>Use StringBuilder and avoid toString() where possible.</td>
+	</tr>
+	<tr>
+		<td>2015-02-22</td>
+		<td>Arjan Molenaar</td>
+		<td>WikiPage should not implement Serializable.</td>
+	</tr>
+	<tr>
+		<td>2015-02-22</td>
+		<td>Arjan Molenaar</td>
+		<td>changed public static final fields to package private where possible.</td>
+	</tr>
+	<tr>
+		<td>2015-02-22</td>
+		<td>Arjan Molenaar</td>
+		<td>Ensure in/output streams are closed</td>
+	</tr>
+	<tr>
+		<td>2015-02-22</td>
+		<td>six42</td>
+		<td>Merge pull request #4 from bad49/master</td>
+	</tr>
+	<tr>
+		<td>2015-02-22</td>
+		<td>Arjan Molenaar</td>
+		<td>Throw SlimError instead of RuntimeException.</td>
+	</tr>
+	<tr>
+		<td>2015-02-21</td>
+		<td>Arjan Molenaar</td>
+		<td>Add hashCode to ExecutionReport.</td>
+	</tr>
+	<tr>
+		<td>2015-02-21</td>
+		<td>Arjan Molenaar</td>
+		<td>Make SlimError a RuntimeException. Errors are supposed to be unrecoverable.</td>
+	</tr>
+	<tr>
+		<td>2015-02-21</td>
+		<td>Hans Joachim Desserud</td>
+		<td>As long as FitNesseSuite doesn't contain an overriding implemenation, this ends up calling the superclass anyway. Fix use of deprecated class</td>
+	</tr>
+	<tr>
+		<td>2015-02-21</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Replace use of String.indexOf with String.contains</td>
+	</tr>
+	<tr>
+		<td>2015-02-21</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Indentation: use 2 spaces instead of tab</td>
+	</tr>
+	<tr>
+		<td>2015-02-21</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Used empty string instead of constructor</td>
+	</tr>
+	<tr>
+		<td>2015-02-21</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Unnecessary toString() ++</td>
+	</tr>
+	<tr>
+		<td>2015-02-21</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Specifiy array size when using toArray() so it doesn't need to spend time looking it up</td>
+	</tr>
+	<tr>
+		<td>2015-02-21</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Remove unnecessary imports which have shown up the last week</td>
+	</tr>
+	<tr>
+		<td>2015-02-20</td>
+		<td>Arjan Molenaar</td>
+		<td>update release notes.</td>
+	</tr>
+	<tr>
+		<td>2015-02-20</td>
+		<td>Arjan Molenaar</td>
+		<td>Update documentation for log file config and test history.</td>
+	</tr>
+	<tr>
+		<td>2015-02-20</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #645 from hansjoachim/issues</td>
+	</tr>
+	<tr>
+		<td>2015-02-20</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Reapply fixes to PluginsLoader which have moved in the meantime</td>
+	</tr>
+	<tr>
+		<td>2015-02-20</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Merge latest changes from master</td>
+	</tr>
+	<tr>
+		<td>2015-02-19</td>
+		<td>Serge Zukov</td>
+		<td>Merge branch 'master' of https://github.com/unclebob/fitnesse.git</td>
+	</tr>
+	<tr>
+		<td>2015-02-19</td>
+		<td>Serge Zukov</td>
+		<td>A very simple version of jUnit formatter. Mostly based on the XmlSuiteReFormatter. Content could be adjusted via velosity suiteJunit.vm template.</td>
+	</tr>
+	<tr>
+		<td>2015-02-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #617 from fhoeben/PluginsWithoutProperties</td>
+	</tr>
+	<tr>
+		<td>2015-02-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Do not creash if content.txt is missing.</td>
+	</tr>
+	<tr>
+		<td>2015-02-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #627 from amolenaar/test-history</td>
+	</tr>
+	<tr>
+		<td>2015-02-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Add content to Administration section of the user guide</td>
+	</tr>
+	<tr>
+		<td>2015-02-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #636 from amolenaar/purge-history</td>
+	</tr>
+	<tr>
+		<td>2015-02-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Ensure SUT logging does not get lost: log to console if ran with nohistory option.</td>
+	</tr>
+	<tr>
+		<td>2015-02-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove empty page from acceptance suite.</td>
+	</tr>
+	<tr>
+		<td>2015-02-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Provide acceptance test for history purging from suite responder.</td>
+	</tr>
+	<tr>
+		<td>2015-02-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Updated release notes</td>
+	</tr>
+	<tr>
+		<td>2015-02-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #635 from mwarhaftig/issue633</td>
+	</tr>
+	<tr>
+		<td>2015-02-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Test/suite link should contain absolute page path. This was a relative path. Fixes #581.</td>
+	</tr>
+	<tr>
+		<td>2015-02-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Update documentation. Provide message in absence of execution log content.</td>
+	</tr>
+	<tr>
+		<td>2015-02-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #639 from mwarhaftig/issue610</td>
+	</tr>
+	<tr>
+		<td>2015-02-18</td>
+		<td>mwarhaftig</td>
+		<td>Issue #610 - Allow Sym Link rename/replace on existing Sym Link.</td>
+	</tr>
+	<tr>
+		<td>2015-02-16</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Modifiers in expected order</td>
+	</tr>
+	<tr>
+		<td>2015-02-16</td>
+		<td>mwarhaftig</td>
+		<td>Issue #633 - Removed unnecessary table coloring reflection logic.</td>
+	</tr>
+	<tr>
+		<td>2015-02-16</td>
+		<td>Fried Hoeben</td>
+		<td>Oops, that was not the best description</td>
+	</tr>
+	<tr>
+		<td>2015-02-16</td>
+		<td>Fried Hoeben</td>
+		<td>Make LegacyWrapper benefit from base class and log</td>
+	</tr>
+	<tr>
+		<td>2015-02-16</td>
+		<td>Fried Hoeben</td>
+		<td>Give all feature factories easy access to a LOG</td>
+	</tr>
+	<tr>
+		<td>2015-02-16</td>
+		<td>Fried Hoeben</td>
+		<td>Rename method to better reflect its work</td>
+	</tr>
+	<tr>
+		<td>2015-02-16</td>
+		<td>Fried Hoeben</td>
+		<td>Move logic to create wrappers for legacy plugins to PropertyBasedPFF</td>
+	</tr>
+	<tr>
+		<td>2015-02-16</td>
+		<td>Fried Hoeben</td>
+		<td>Merge pull request #1 from amolenaar/fhoeben-PluginsWithoutProperties</td>
+	</tr>
+	<tr>
+		<td>2015-02-16</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Loggers should be private static final</td>
+	</tr>
+	<tr>
+		<td>2015-02-16</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Modifiers in expected order</td>
+	</tr>
+	<tr>
+		<td>2015-02-16</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Indentation</td>
+	</tr>
+	<tr>
+		<td>2015-02-16</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Remove unused loggers</td>
+	</tr>
+	<tr>
+		<td>2015-02-16</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Fix raw type usage</td>
+	</tr>
+	<tr>
+		<td>2015-02-16</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Fix raw type usage based on Mockito Answer examples.</td>
+	</tr>
+	<tr>
+		<td>2015-02-16</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Fix unused variables</td>
+	</tr>
+	<tr>
+		<td>2015-02-16</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Fix raw type usage</td>
+	</tr>
+	<tr>
+		<td>2015-02-16</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove dependency on sun.reflect classes in tests.</td>
+	</tr>
+	<tr>
+		<td>2015-02-16</td>
+		<td>bad49</td>
+		<td>Added documentation on ssl client auth</td>
+	</tr>
+	<tr>
+		<td>2015-02-16</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #637 from ngti/javadoc-cleanup</td>
+	</tr>
+	<tr>
+		<td>2015-02-16</td>
+		<td>Denis Koelewijn</td>
+		<td>Merge branch 'master' into javadoc-cleanup</td>
+	</tr>
+	<tr>
+		<td>2015-02-16</td>
+		<td>Denis Koelewijn</td>
+		<td>javadoc cleanup</td>
+	</tr>
+	<tr>
+		<td>2015-02-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Use the classic plugin interface. Simplify plugin loading by wrapping old plugins in our new interface.</td>
+	</tr>
+	<tr>
+		<td>2015-02-15</td>
+		<td>mwarhaftig</td>
+		<td>Issue 633 - No class instantiation in ColoredSlimTable and added test cases.</td>
+	</tr>
+	<tr>
+		<td>2015-02-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #634 from hansjoachim/otherissues</td>
+	</tr>
+	<tr>
+		<td>2015-02-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #632 from hansjoachim/warnings</td>
+	</tr>
+	<tr>
+		<td>2015-02-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #628 from hansjoachim/issues</td>
+	</tr>
+	<tr>
+		<td>2015-02-14</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Replace concrete classes with interfaces</td>
+	</tr>
+	<tr>
+		<td>2015-02-14</td>
+		<td>bad49</td>
+		<td>Merged master fixed conflict.</td>
+	</tr>
+	<tr>
+		<td>2015-02-14</td>
+		<td>Hans Joachim Desserud</td>
+		<td>More array designators moved from the variable to the type. Also some Override annotations</td>
+	</tr>
+	<tr>
+		<td>2015-02-14</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Unused field</td>
+	</tr>
+	<tr>
+		<td>2015-02-14</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Move array designator from variable to type</td>
+	</tr>
+	<tr>
+		<td>2015-02-14</td>
+		<td>six42</td>
+		<td>made path strings OS independent</td>
+	</tr>
+	<tr>
+		<td>2015-02-14</td>
+		<td>six42</td>
+		<td>removed reference to obsolete class</td>
+	</tr>
+	<tr>
+		<td>2015-02-13</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Remove unused method</td>
+	</tr>
+	<tr>
+		<td>2015-02-13</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Doesn't assign to unused variabel</td>
+	</tr>
+	<tr>
+		<td>2015-02-13</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Return value is never used. Stop assigning it to a variable and switch to void</td>
+	</tr>
+	<tr>
+		<td>2015-02-13</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Doesn't assign to unused variabel</td>
+	</tr>
+	<tr>
+		<td>2015-02-13</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Doesn't assign to unused variabel</td>
+	</tr>
+	<tr>
+		<td>2015-02-13</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Doesn't assign to unused variabel</td>
+	</tr>
+	<tr>
+		<td>2015-02-13</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Unused and unneeded variabel</td>
+	</tr>
+	<tr>
+		<td>2015-02-13</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Doesn't need to be assigned to a variable</td>
+	</tr>
+	<tr>
+		<td>2015-02-12</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Foreach simplification</td>
+	</tr>
+	<tr>
+		<td>2015-02-12</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Switch from deprecated Junit assertions</td>
+	</tr>
+	<tr>
+		<td>2015-02-12</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Replace deprecated assertion</td>
+	</tr>
+	<tr>
+		<td>2015-02-12</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Remove more unnecessary suppresswarnings. And a couple of unused fields while I'm at it.</td>
+	</tr>
+	<tr>
+		<td>2015-02-12</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Simplify test setup a bit</td>
+	</tr>
+	<tr>
+		<td>2015-02-12</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Drop unnecessary suppressWarnings</td>
+	</tr>
+	<tr>
+		<td>2015-02-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Change SuiteHtmlFormatter to take a Writer, instead of subclassing.</td>
+	</tr>
+	<tr>
+		<td>2015-02-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Removed "Output Captured" finished state. Removed CompositeExecutionLog class.</td>
+	</tr>
+	<tr>
+		<td>2015-02-12</td>
+		<td>bad49</td>
+		<td>got SSL clientAuth in place still needs testing and fixed some of the SSL tests to work on Mac</td>
+	</tr>
+	<tr>
+		<td>2015-02-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Update modal style. Fix issues with IE9 (#629).</td>
+	</tr>
+	<tr>
+		<td>2015-02-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Add some extra precautions when executing tests. Make sure the stopTestSystem signal is sent whenever the test system errors. Hopefully fixes #582 to some extend.</td>
+	</tr>
+	<tr>
+		<td>2015-02-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Make test history page in line with other pages (breadcrumbs, title)</td>
+	</tr>
+	<tr>
+		<td>2015-02-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Let SuiteResponder purge old test results.</td>
+	</tr>
+	<tr>
+		<td>2015-02-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Move TEST_RESULT_FILE_DATE_PATTERN to PageHistory class.</td>
+	</tr>
+	<tr>
+		<td>2015-02-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Extracted history purger logic from PurgeHistoryResponder.</td>
+	</tr>
+	<tr>
+		<td>2015-02-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #622 from amolenaar/hashtable</td>
+	</tr>
+	<tr>
+		<td>2015-02-11</td>
+		<td>Hans Joachim Desserud</td>
+		<td>And another place where we can put the constants on the left side</td>
+	</tr>
+	<tr>
+		<td>2015-02-11</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Really put the constant on the left side</td>
+	</tr>
+	<tr>
+		<td>2015-02-11</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Use String.equalsIgnoreCase instead of converting to lower case. In some cases also place the constant on the lefthand side of the comparison. Skip manual null-check since it will also done by equalsIgnoreCase.</td>
+	</tr>
+	<tr>
+		<td>2015-02-09</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Follow naming conventions</td>
+	</tr>
+	<tr>
+		<td>2015-02-08</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Remove overriding methods which just call super</td>
+	</tr>
+	<tr>
+		<td>2015-02-10</td>
+		<td>Fried Hoeben</td>
+		<td>In general PluginFeatureFactories will just use the classes in their own package, so they can just access them without reflection. Move the complexity of componentFactory to the one factory which is truly dynamic: the property-based one</td>
+	</tr>
+	<tr>
+		<td>2015-02-10</td>
+		<td>Fried Hoeben</td>
+		<td>Indicate the the old-style of enabling properties is deprecated but instead a plugin should override the methods in PluginFeatureFactory instead</td>
+	</tr>
+	<tr>
+		<td>2015-02-09</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #625 from stefanhendriks/fix-bug/empty-suite-filter-should-ignore-suite-filter</td>
+	</tr>
+	<tr>
+		<td>2015-02-09</td>
+		<td>Stefan Hendriks</td>
+		<td>Do not filter when suiteFilter argument is empty string</td>
+	</tr>
+	<tr>
+		<td>2015-02-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #621 from fhoeben/DynamicPortForInProcessServer</td>
+	</tr>
+	<tr>
+		<td>2015-02-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #619 from hansjoachim/imports</td>
+	</tr>
+	<tr>
+		<td>2015-02-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #613 from antoine-aumjaud/features/FIT-ConvertersImprovements</td>
+	</tr>
+	<tr>
+		<td>2015-02-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #620 from fhoeben/ScenariosAskParentForScriptType</td>
+	</tr>
+	<tr>
+		<td>2015-02-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #615 from konstantinvlasenko/master</td>
+	</tr>
+	<tr>
+		<td>2015-02-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #618 from hansjoachim/isEmpty</td>
+	</tr>
+	<tr>
+		<td>2015-02-08</td>
+		<td>Fried Hoeben</td>
+		<td>Find a free port for in process server, and hang on to it (instead of releasing first and trying to re-acquire later)</td>
+	</tr>
+	<tr>
+		<td>2015-02-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Fully integrated hash table parsing in the RTE.</td>
+	</tr>
+	<tr>
+		<td>2015-02-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Little cleanup, only add comma to has table if there is actually data to add.</td>
+	</tr>
+	<tr>
+		<td>2015-02-08</td>
+		<td>Fried Hoeben</td>
+		<td>Ensure we handle multiple decision tables with different script table subclasses</td>
+	</tr>
+	<tr>
+		<td>2015-02-08</td>
+		<td>Fried Hoeben</td>
+		<td>Make decision tables using scenarios use the last used script table subclass, not script table. This removes the need to have a scenario table subclass just to use a different script table class from a decision table</td>
+	</tr>
+	<tr>
+		<td>2015-02-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Deal with empty rows in hash table.</td>
+	</tr>
+	<tr>
+		<td>2015-02-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Provide custom toolbar for hash tables.</td>
+	</tr>
+	<tr>
+		<td>2015-02-07</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Remove unused imports</td>
+	</tr>
+	<tr>
+		<td>2015-02-07</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Replace for-loop with foreach</td>
+	</tr>
+	<tr>
+		<td>2015-02-07</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Remove redundant casting</td>
+	</tr>
+	<tr>
+		<td>2015-02-07</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Removed duplicated if-check. Already taken care of by the while-loop</td>
+	</tr>
+	<tr>
+		<td>2015-02-07</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Flip ternary for clarification</td>
+	</tr>
+	<tr>
+		<td>2015-02-07</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Prefer isEmpty for checking emptiness</td>
+	</tr>
+	<tr>
+		<td>2015-02-07</td>
+		<td>Fried Hoeben</td>
+		<td>Ensure PluginFeatureFactories can return collections containing subclasses of expected types Add unit tests of loading via ServiceLoader</td>
+	</tr>
+	<tr>
+		<td>2015-02-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix insertion of new hash table via RTE</td>
+	</tr>
+	<tr>
+		<td>2015-02-07</td>
+		<td>Fried Hoeben</td>
+		<td>Also move 'plugin' finding and creation to PluginFeatureFactory</td>
+	</tr>
+	<tr>
+		<td>2015-02-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix hash table roundtrip. Added icon.</td>
+	</tr>
+	<tr>
+		<td>2015-02-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Hash tables show as real table in rich text editor</td>
+	</tr>
+	<tr>
+		<td>2015-02-07</td>
+		<td>Fried Hoeben</td>
+		<td>Load plugins using serviceLoader instead of always editing plugins.properties</td>
+	</tr>
+	<tr>
+		<td>2015-02-06</td>
+		<td>Konstantin Vlasenko</td>
+		<td>Merge branch 'master' of github.com:unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2015-02-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Add acceptance test for execution log.</td>
+	</tr>
+	<tr>
+		<td>2015-02-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Make test-, suite- and execution log report look more alike.</td>
+	</tr>
+	<tr>
+		<td>2015-02-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Fixed typo in ScenarioLib_r_ariesOrderSuite</td>
+	</tr>
+	<tr>
+		<td>2015-02-04</td>
+		<td>antoine-aumjaud</td>
+		<td>Improve converters: - fix NPE when value is null for all converters or when string is empty - create a generic array converter (works for all arrays), use underlying converter for elements - create a generic collections converter (works for all collections), use underlying converter for elements</td>
+	</tr>
+	<tr>
+		<td>2015-02-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Can link to execution log from page history.</td>
+	</tr>
+	<tr>
+		<td>2015-02-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #611 from linquize/img2</td>
+	</tr>
+	<tr>
+		<td>2015-02-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove creation of ErrorLogs pages, since this information is in the page history now.</td>
+	</tr>
+	<tr>
+		<td>2015-02-04</td>
+		<td>Arjan Molenaar</td>
+		<td>Add exceptionLog responder, as replacement for the ErrorLogs.</td>
+	</tr>
+	<tr>
+		<td>2015-02-04</td>
+		<td>Linquize</td>
+		<td>Insert Image: Add button to link to Manage files, so user can upload files</td>
+	</tr>
+	<tr>
+		<td>2015-02-03</td>
+		<td>Arjan Molenaar</td>
+		<td>fix stdout/stderr</td>
+	</tr>
+	<tr>
+		<td>2015-02-03</td>
+		<td>Arjan Molenaar</td>
+		<td>Read execution logs.</td>
+	</tr>
+	<tr>
+		<td>2015-02-03</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix history creation for single test execution.</td>
+	</tr>
+	<tr>
+		<td>2015-02-03</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #608 from ngti/javadoc-cleanup</td>
+	</tr>
+	<tr>
+		<td>2015-02-02</td>
+		<td>Arjan Molenaar</td>
+		<td>Add execution log information to test results.</td>
+	</tr>
+	<tr>
+		<td>2015-02-02</td>
+		<td>Arjan Molenaar</td>
+		<td>Execution log information is stored with suite history.</td>
+	</tr>
+	<tr>
+		<td>2014-11-24</td>
+		<td>Denis Koelewijn</td>
+		<td>quick fix for javadoc errors in java8</td>
+	</tr>
+	<tr>
+		<td>2015-02-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #569 from mwarhaftig/master</td>
+	</tr>
+	<tr>
+		<td>2015-02-01</td>
+		<td>Matt Warhaftig</td>
+		<td>Merge pull request #1 from amolenaar/mwarhaftig-master</td>
+	</tr>
+	<tr>
+		<td>2015-02-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove getTestSystem() from HtmlTranslator.</td>
+	</tr>
+	<tr>
+		<td>2015-02-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Catch Exception instead of Throwable for FitNesseRunner and ZipFileVersionsController.</td>
+	</tr>
+	<tr>
+		<td>2015-01-31</td>
+		<td>mwarhaftig</td>
+		<td>Merge remote-tracking branch 'upstream/master'</td>
+	</tr>
+	<tr>
+		<td>2015-01-31</td>
+		<td>mwarhaftig</td>
+		<td>Issue #558 - Added coloring.</td>
+	</tr>
+	<tr>
+		<td>2015-01-31</td>
+		<td>Arjan Molenaar</td>
+		<td>Fixed more issues found by SonarQube</td>
+	</tr>
+	<tr>
+		<td>2015-01-31</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #607 from hansjoachim/upgrade</td>
+	</tr>
+	<tr>
+		<td>2015-01-30</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Upgraded jgit to latest version</td>
+	</tr>
+	<tr>
+		<td>2015-01-30</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #606 from linquize/img</td>
+	</tr>
+	<tr>
+		<td>2015-01-31</td>
+		<td>Linquize</td>
+		<td>Remove the hyperlink "Open Modal"</td>
+	</tr>
+	<tr>
+		<td>2015-01-31</td>
+		<td>Linquize</td>
+		<td>Move insert image dialog upper</td>
+	</tr>
+	<tr>
+		<td>2015-01-31</td>
+		<td>Linquize</td>
+		<td>Make user thinks more selectable in insert image file list</td>
+	</tr>
+	<tr>
+		<td>2015-01-30</td>
+		<td>Linquize</td>
+		<td>Fix insert image URL textbox overflow</td>
+	</tr>
+	<tr>
+		<td>2015-01-30</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #605 from fhoeben/ScenarioTableDoc</td>
+	</tr>
+	<tr>
+		<td>2015-01-30</td>
+		<td>Linquize</td>
+		<td>Set insert image file list scroll bar to auto</td>
+	</tr>
+	<tr>
+		<td>2015-01-30</td>
+		<td>Fried Hoeben</td>
+		<td>Add documentation on constructor arguments</td>
+	</tr>
+	<tr>
+		<td>2015-01-30</td>
+		<td>Fried Hoeben</td>
+		<td>Add more extensive description for output columns</td>
+	</tr>
+	<tr>
+		<td>2015-01-29</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #597 from amolenaar/img</td>
+	</tr>
+	<tr>
+		<td>2015-01-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix security for files responder</td>
+	</tr>
+	<tr>
+		<td>2015-01-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Add / to directories in listing</td>
+	</tr>
+	<tr>
+		<td>2015-01-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Also add FitNesse manual pages to .gitignore.</td>
+	</tr>
+	<tr>
+		<td>2015-01-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #589 from linquize/gitignore</td>
+	</tr>
+	<tr>
+		<td>2015-01-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #595 from fhoeben/ScenarioGracefulOutput2</td>
+	</tr>
+	<tr>
+		<td>2015-01-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #592 from fhoeben/ScenarioOutputImprove</td>
+	</tr>
+	<tr>
+		<td>2015-01-25</td>
+		<td>Arjan Molenaar</td>
+		<td>Support addition of urls</td>
+	</tr>
+	<tr>
+		<td>2015-01-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Lookup in files section works with breadcrumbs</td>
+	</tr>
+	<tr>
+		<td>2015-01-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove non-stardard xml factory attribute "indent-number", fixed exception. Fixes #598.</td>
+	</tr>
+	<tr>
+		<td>2015-01-25</td>
+		<td>Arjan Molenaar</td>
+		<td>Do add directory slash suffix only in template.</td>
+	</tr>
+	<tr>
+		<td>2015-01-20</td>
+		<td>Arjan Molenaar</td>
+		<td>Can insert images from selection dialog.</td>
+	</tr>
+	<tr>
+		<td>2015-01-18</td>
+		<td>Arjan Molenaar</td>
+		<td>Pass on query parameters on redirect.</td>
+	</tr>
+	<tr>
+		<td>2015-01-18</td>
+		<td>Arjan Molenaar</td>
+		<td>Let directory responder also output information as JSON.</td>
+	</tr>
+	<tr>
+		<td>2015-01-18</td>
+		<td>Arjan Molenaar</td>
+		<td>Removed static factory method from files responder, so it can be accessed with the ?responder parameter.</td>
+	</tr>
+	<tr>
+		<td>2014-12-22</td>
+		<td>Arjan Molenaar</td>
+		<td>Add image icon.</td>
+	</tr>
+	<tr>
+		<td>2014-12-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Can add image via simple prompt box.</td>
+	</tr>
+	<tr>
+		<td>2014-12-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Can render and parse images.</td>
+	</tr>
+	<tr>
+		<td>2015-01-25</td>
+		<td>Fried Hoeben</td>
+		<td>Allow graceful names for output columns</td>
+	</tr>
+	<tr>
+		<td>2015-01-24</td>
+		<td>six42</td>
+		<td>Adding Network Security</td>
+	</tr>
+	<tr>
+		<td>2015-01-24</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix file selection box position on files page</td>
+	</tr>
+	<tr>
+		<td>2015-01-24</td>
+		<td>Fried Hoeben</td>
+		<td>Add test for multiple output parameters in decision table</td>
+	</tr>
+	<tr>
+		<td>2015-01-24</td>
+		<td>Fried Hoeben</td>
+		<td>Extra unit test of scenario output handling in decision table</td>
+	</tr>
+	<tr>
+		<td>2015-01-24</td>
+		<td>Fried Hoeben</td>
+		<td>More consistent handling of scenario in- and output parameters.</td>
+	</tr>
+	<tr>
+		<td>2015-01-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #566 from amolenaar/variableSource</td>
+	</tr>
+	<tr>
+		<td>2015-01-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #586 from linquize/const</td>
+	</tr>
+	<tr>
+		<td>2015-01-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #588 from hansjoachim/issues</td>
+	</tr>
+	<tr>
+		<td>2015-01-21</td>
+		<td>Hans Joachim Desserud</td>
+		<td>More Overrrides</td>
+	</tr>
+	<tr>
+		<td>2015-01-21</td>
+		<td>Hans Joachim Desserud</td>
+		<td>More @Override annotations</td>
+	</tr>
+	<tr>
+		<td>2015-01-21</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Use to type instead of filename to specify its an array</td>
+	</tr>
+	<tr>
+		<td>2015-01-20</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Use interface instead of specific class</td>
+	</tr>
+	<tr>
+		<td>2015-01-20</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Add missing @Overrides</td>
+	</tr>
+	<tr>
+		<td>2015-01-20</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Remove unnecessary semicolon</td>
+	</tr>
+	<tr>
+		<td>2015-01-19</td>
+		<td>Linquize</td>
+		<td>Deploy .gitignore file of FitNesseRoot</td>
+	</tr>
+	<tr>
+		<td>2015-01-18</td>
+		<td>Linquize</td>
+		<td>Add FitNesseRoot/.gitignore and move some entries into FitNesseRoot/.gitignore</td>
+	</tr>
+	<tr>
+		<td>2015-01-18</td>
+		<td>Linquize</td>
+		<td>Use more the constant FitNesseUtil.base</td>
+	</tr>
+	<tr>
+		<td>2015-01-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove highlight on wysiwyg edit box.</td>
+	</tr>
+	<tr>
+		<td>2015-01-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #568 from amolenaar/wysiwygicons</td>
+	</tr>
+	<tr>
+		<td>2015-01-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Simplified code related to Failure navigator in default theme. Now it shows up on the history page. Fixes #579.</td>
+	</tr>
+	<tr>
+		<td>2015-01-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Fixed failure navigator in history page for bootstrap theme</td>
+	</tr>
+	<tr>
+		<td>2015-01-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #584 from hansjoachim/upgrades</td>
+	</tr>
+	<tr>
+		<td>2015-01-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Update Slim protocol documentation. Fixes #564.</td>
+	</tr>
+	<tr>
+		<td>2015-01-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Link to "root" page works again. Fixed #583.</td>
+	</tr>
+	<tr>
+		<td>2015-01-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove "throws Exception" Alias test cases.</td>
+	</tr>
+	<tr>
+		<td>2015-01-15</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Upgrade to ivy 2.4.0</td>
+	</tr>
+	<tr>
+		<td>2015-01-15</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Upgrade jgit and mockito to latest version</td>
+	</tr>
+	<tr>
+		<td>2015-01-10</td>
+		<td>mwarhaftig</td>
+		<td>Merge remote-tracking branch 'upstream/master'</td>
+	</tr>
+	<tr>
+		<td>2015-01-02</td>
+		<td>Arjan Molenaar</td>
+		<td>WikiTestPage no longer requires a VariableSource</td>
+	</tr>
+	<tr>
+		<td>2015-01-02</td>
+		<td>Arjan Molenaar</td>
+		<td>Create one function for setting up a ParsingPage with the appropriate variable context.</td>
+	</tr>
+	<tr>
+		<td>2015-01-01</td>
+		<td>mwarhaftig</td>
+		<td>Merge remote-tracking branch 'upstream/master'</td>
+	</tr>
+	<tr>
+		<td>2014-12-29</td>
+		<td>Arjan Molenaar</td>
+		<td>Move UserVariableSource from ParsingPage to BaseWikiPage.</td>
+	</tr>
+	<tr>
+		<td>2014-12-29</td>
+		<td>six42</td>
+		<td>Merge pull request #3 from unclebob/master</td>
+	</tr>
+	<tr>
+		<td>2014-12-29</td>
+		<td>Arjan Molenaar</td>
+		<td>Simplified TestWikiPage page inclusion logic somewhat.</td>
+	</tr>
+	<tr>
+		<td>2014-12-29</td>
+		<td>Arjan Molenaar</td>
+		<td>Cleanup: drop SourcePage's notion of parent pages.</td>
+	</tr>
+	<tr>
+		<td>2014-12-29</td>
+		<td>Arjan Molenaar</td>
+		<td>Move the construction of variable sources and parent page handling to the wiki page, out of the ParsingPage.</td>
+	</tr>
+	<tr>
+		<td>2014-12-28</td>
+		<td>Arjan Molenaar</td>
+		<td>Split Page- and NamedPageVariableSource. Construct composite in constructor.</td>
+	</tr>
+	<tr>
+		<td>2014-12-28</td>
+		<td>Arjan Molenaar</td>
+		<td>Cache is no longer propagated to parent pages. Simplified caching as a result.</td>
+	</tr>
+	<tr>
+		<td>2014-12-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Move parent page looping ut of ParentPageVariableSource</td>
+	</tr>
+	<tr>
+		<td>2014-12-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Make special class that takes care of caching.</td>
+	</tr>
+	<tr>
+		<td>2014-12-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Moved parent page variable search in separate class.</td>
+	</tr>
+	<tr>
+		<td>2014-12-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Move variable search in separate VariableSources.</td>
+	</tr>
+	<tr>
+		<td>2014-12-25</td>
+		<td>Arjan Molenaar</td>
+		<td>Simplify use of ParsingPage.</td>
+	</tr>
+	<tr>
+		<td>2014-12-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Provide request parameters to FitNesseContext.getRootPage().</td>
+	</tr>
+	<tr>
+		<td>2014-12-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Make Request class more type safe.</td>
+	</tr>
+	<tr>
+		<td>2014-12-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove FitNesseFixtureContext.root.</td>
+	</tr>
+	<tr>
+		<td>2014-11-30</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove FitNesseUtil.makeTestContext(WikiPage) completely.</td>
+	</tr>
+	<tr>
+		<td>2014-11-30</td>
+		<td>Arjan Molenaar</td>
+		<td>Changed all but one FitNesseUtil.makeTestContext() to not pass in a root page as argument.</td>
+	</tr>
+	<tr>
+		<td>2014-11-30</td>
+		<td>Arjan Molenaar</td>
+		<td>First steps towards removing FitNesseContext.root</td>
+	</tr>
+	<tr>
+		<td>2014-11-29</td>
+		<td>Arjan Molenaar</td>
+		<td>Allow to configure WikiPageFactory via ContextConfigurator.</td>
+	</tr>
+	<tr>
+		<td>2014-11-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Provide variableSource through makePage method, not as a constructor argument for WikiPageFactories</td>
+	</tr>
+	<tr>
+		<td>2014-10-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Access root page via accessor: FixNesseContext.getRootPage().</td>
+	</tr>
+	<tr>
+		<td>2014-12-14</td>
+		<td>mwarhaftig</td>
+		<td>Issue #558 - Added table coloring based on Slim &amp; Fit Fixture class.</td>
+	</tr>
+	<tr>
+		<td>2014-12-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Changed wysiwyg editor toolbar to use SVG icons.</td>
+	</tr>
+	<tr>
+		<td>2014-11-04</td>
+		<td>six42</td>
+		<td>Merge pull request #2 from unclebob/master</td>
+	</tr>
+	<tr>
+		<td>2014-11-04</td>
+		<td>six42</td>
+		<td>Revert "Slim Query/Table Table: manage variables assignment in VariableStore"</td>
+	</tr>
+	<tr>
+		<td>2014-11-04</td>
+		<td>six42</td>
+		<td>Revert "removed dead code"</td>
+	</tr>
+	<tr>
+		<td>2014-11-04</td>
+		<td>six42</td>
+		<td>Revert "Sync again with unclebob/master"</td>
+	</tr>
+	<tr>
+		<td>2014-11-04</td>
+		<td>six42</td>
+		<td>Sync again with unclebob/master</td>
+	</tr>
+	<tr>
+		<td>2014-08-28</td>
+		<td>Cloud</td>
+		<td>workaround issue #514</td>
+	</tr>
+	<tr>
+		<td>2014-08-28</td>
+		<td>Cloud</td>
+		<td>Merge branch 'master' of https://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2013-05-15</td>
+		<td>Konstantin Vlasenko</td>
+		<td>misleading comment I believe we don't exclude symbolic links on symbolic pages.</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<hr/>
+<br/><a href="../../FrontPage.html">.FrontPage</a> | <a href="../../FrontPage/FitNesseDevelopment/FrontPage.html">FrontPage</a> | <a href="../../RecentChanges.html">.RecentChanges</a><br/>
+</footer>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteResponderTests.SuiteTestResponders.SuiteResponder.SetUpAndTearDownShouldBeIncludedProperly</title>
+<link rel="stylesheet" type="text/css" href="../../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../../../FitNesse/SuiteAcceptanceTests/SuiteResponderTests.html">SuiteResponderTests</a></li>
+<li><a href="../../../../../FitNesse/SuiteAcceptanceTests/SuiteResponderTests/SuiteTestResponders.html">SuiteTestResponders</a></li>
+<li><a href="../../../../../FitNesse/SuiteAcceptanceTests/SuiteResponderTests/SuiteTestResponders/SuiteResponder.html">SuiteResponder</a></li>
+
+  </ol>
+</nav>
+<article>
+<span class="meta">variable defined: TEST_SYSTEM=slim</span>
+<br/><br/><span class="meta">variable defined: PATHS=
+${SUT_PATH}
+!-!define TEST_SYSTEM (slim:A)-!
+</span>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>Library</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>page driver</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>echo fixture</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">given page with content</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>page</td>
+		<td>content</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>SuiteParent</td>
+		<td><br/>
+!path lib/*.jar
+<br/>!define TEST_SYSTEM (slim:A)<br/></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>SuiteParent.SuiteChildOne</td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>SuiteParent.SuiteChildOne.SuiteSetUp</td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>SuiteParent.SuiteChildOne.SuiteTearDown</td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>SuiteParent.SuiteChildOne.TestOneOne</td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>SuiteParent.SuiteChildOne.TestOneTwo</td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>SuiteParent.SuiteChildTwo</td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>SuiteParent.SuiteChildTwo.SuiteSetUp</td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>SuiteParent.SuiteChildTwo.SuiteTearDown</td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>SuiteParent.SuiteChildTwo.TestTwoOne</td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>SuiteParent.SuiteChildTwo.TestTwoTwo</td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>SuiteParent.SuiteChildThree</td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>SuiteParent.SuiteChildThree.TestThreeOne</td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>SuiteParent.SuiteChildThree.TestThreeTwo</td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>SuiteParent.SuiteChildOne.TestOneThree</td>
+		<td>!define TEST_SYSTEM {slim:B}</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">script</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>request page</td>
+		<td>SuiteParent?suite</td>
+		<td>200</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>ordered query:pages run in suite</td>
+		<td>SuiteChildOne</td>
+		<td>A</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td colspan="3">page name</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td colspan="3">SuiteChildOne.SuiteSetUp</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td colspan="3">SuiteChildOne.TestOneOne</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td colspan="3">SuiteChildOne.TestOneTwo</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td colspan="3">SuiteChildOne.SuiteTearDown</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>ordered query:pages run in suite</td>
+		<td>SuiteChildOne</td>
+		<td>B</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td colspan="3">page name</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td colspan="3">SuiteChildOne.SuiteSetUp</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td colspan="3">SuiteChildOne.TestOneThree</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td colspan="3">SuiteChildOne.SuiteTearDown</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>ordered query:pages run in suite</td>
+		<td>SuiteChildTwo</td>
+		<td>A</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td colspan="3">page name</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td colspan="3">SuiteChildTwo.SuiteSetUp</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td colspan="3">SuiteChildTwo.TestTwoOne</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td colspan="3">SuiteChildTwo.TestTwoTwo</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td colspan="3">SuiteChildTwo.SuiteTearDown</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>ordered query:pages run in suite</td>
+		<td>SuiteChildThree</td>
+		<td>A</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td colspan="3">page name</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td colspan="3">SuiteChildThree.TestThreeOne</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td colspan="3">SuiteChildThree.TestThreeTwo</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<a href="../../../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../../../FrontPage.html">Front Page</a> | <a href="../../../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

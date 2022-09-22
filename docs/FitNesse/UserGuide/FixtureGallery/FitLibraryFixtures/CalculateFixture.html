@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.FixtureGallery.FitLibraryFixtures.CalculateFixture</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+<li><a href="../../../../FitNesse/UserGuide/FixtureGallery.html">FixtureGallery</a></li>
+<li><a href="../../../../FitNesse/UserGuide/FixtureGallery/FitLibraryFixtures.html">FitLibraryFixtures</a></li>
+
+  </ol>
+</nav>
+<article>
+<br/><i>Previous page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/FitLibraryFixtures/SetUpFixture.html">SetUpFixture</a> Next page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/FitLibraryFixtures/DoFixture.html">DoFixture</a> Parent page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/FitLibraryFixtures.html">FitLibrary Fixtures</a></i><br/><h2 id="0">CalculateFixture</h2>
+<b> CalculateFixture </b> is used to verify the result of one or more calculations for different combinations of input arguments. It does the same job as <b> ColumnFixture </b> in a different table format and with lot less code in the fixture class. <br/><br/><h3 id="1">Table Format</h3>
+ The first row of the table is the fixture class name. After that, the second row contains names for input parameters, followed by an empty cell, then followed by names of calculations (output values). All rows after that specify values for input parameters and expected outcomes for calculations. An empty cell is again used to separate inputs from expected outputs. <br/><br/><pre>
+!|CalculateFixtureTest|
+|firstPart|secondPart||together|
+|Hello|World||Hello, World|
+|Houston|We Have a Problem||Houston, We Have a Problem|
+</pre><br/><h3 id="2">Fixture class</h3>
+ The fixture class should extend <b> fitlibrary.CalculateFixture </b>. It should declare one method for each calculation column. The method name must be equal to the calculation name concatenated with all parameter names (in this case <b> togetherFirstPartSecondPart </b>). You can use CamelCase naming to separate words. <br/><br/><h3 id="3">Java Source Code</h3>
+<pre>
+package info.fitnesse.fixturegallery;
+
+import fitlibrary.CalculateFixture;
+
+public class CalculateFixtureTest extends CalculateFixture{
+	public String togetherFirstPartSecondPart(String firstPart,String secondPart){
+		return firstPart+ ", "+secondPart;
+	}
+}
+</pre><br/><h3 id="4">.NET Source Code</h3>
+<pre>
+using fitlibrary;
+using System;
+
+namespace info.fitnesse.fixturegallery
+{
+	public class CalculateFixtureTest: CalculateFixture
+	{
+		public String TogetherFirstPartSecondPart(String firstPart,String secondPart)
+		{
+			return firstPart+ ", "+secondPart;
+		}
+	}
+}
+</pre><br/><h3 id="5">Python Source Code</h3>
+<pre>
+from fitLib.CalculateFixture import CalculateFixture
+
+class CalculateFixtureTest(CalculateFixture):
+    _typeDict = {}
+
+    # JAVA: String togetherFirstPartSecondPart(String firstPart,String secondPart){
+    _typeDict["togetherFirstPartSecondPart.types"] = ["String", "String", "String"]
+    def togetherFirstPartSecondPart(self, firstPart, secondPart):
+        return "%s, %s" % (firstPart, secondPart)
+
+</pre><br/><h3 id="6">Notes</h3>
+ The method names can be very long and typing them manually is a bit error prone. Instead of that, just write the table, run the test and it will fail for the first time.<UserGuide will print the name of the methods it looked for, so you can copy and paste that into your fixture code. <br/><br/><h3 id="7">Usage</h3>
+ Use the <b> CalculateFixture </b> to execute the same method or a set of methods for different combinations of input arguments and verify the results. If you just want to execute a method and the result is not important (or the method is <b> void </b>), use the <b> SetUpFixture </b> instead (see <a href="../../../../FitNesse/UserGuide/FixtureGallery/FitLibraryFixtures/SetUpFixture.html">SetUpFixture</a>). If you want to execute methods on a domain object after initialising the properties, the <b> ColumnFixture </b> (see <a href="../../../../FitNesse/UserGuide/FixtureGallery/BasicFitFixtures/ColumnFixture.html">ColumnFixture</a>) might be a better choice. The <b> ColumnFixture </b> will also allow you to just print the result of the calculation, not testing it. <b> CalculateFixture </b> treats an empty cell as a blank string, and compares it to the result, so it will fail the test if you leave an output cell empty. <br/><br/><br/><i>Previous page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/FitLibraryFixtures/SetUpFixture.html">SetUpFixture</a> Next page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/FitLibraryFixtures/DoFixture.html">DoFixture</a> Parent page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/FitLibraryFixtures.html">FitLibrary Fixtures</a></i><br/>
+</article>
+<footer>
+<a href="../../../../FitNesse/UserGuide/FixtureGallery.html">Table of contents</a>| Fixture Gallery on <a href="http://sourceforge.net/projects/fixturegallery">SourceForge</a> | Fixture Gallery live wiki on  <a href="http://fitnesse.info/fixturegallery">UserGuide.Info</a> | <a href="http://gojko.net/fitnesse/fixturegallery">Comments and Feedback</a> | <a href="../../../../FrontPage.html">Front Page</a><br/>
+</footer>
+</body>
+</html>

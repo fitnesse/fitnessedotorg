@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FrontPage.FitNesseDevelopment.FitNesseRelease20111026</title>
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../FrontPage.html">FrontPage</a></li>
+<li><a href="../../FrontPage/FitNesseDevelopment.html">FitNesseDevelopment</a></li>
+
+  </ol>
+</nav>
+<article>
+<h3>release 
+	<a href="">20111026</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse.jar?responder=releaseDownload&release=20111026">fitnesse.jar</a></strong></td><td>4209712 bytes</td><td>0</td></tr></tbody></table><br/><br/><h3 id="0"><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> Release Notes 10/26/2011</h3>
+<p class="note">Uncle Bob Consulting LLC.</p>
+<br/><p class="note"><span class="red">Requires Java 1.6</span></p>
+<br/><h4 id="1">Github ids of Contributors to this release:</h4>
+* Clare McLennan<a title="create page" href="../../FrontPage/FitNesseDevelopment/McLennan.html?edit&amp;nonExistent=true">[?]</a> <br/>* Conrad Müller <br/>* Dan Rollo <br/>* Gojko Adzic <br/>* Jake Benilov <br/>* Jerome Lacoste <br/>* John Zhu <br/>* Konstantin Vlasenko <br/>* Marco Paga <br/>* Markus Gärtner <br/>* Mike Stockdale <br/>* Robert C. Martin <br/>* Sean Freitag <br/>* woodybrood <br/><br/><span class="meta">Thanks to all of you!</span><br/><table>
+	<tr>
+		<td><h4 id="2">Since:</h4></td>
+		<td colspan="2"><a href="../../FrontPage/FitNesseDevelopment/FitNesseRelease20110104.html">20110104</a></td>
+	</tr>
+	<tr>
+		<td><h4 id="3">Expected Release Date:</h4></td>
+		<td>&lt;none&gt;</td>
+		<td><span class="pass">RELEASED</span></td>
+	</tr>
+</table>
+<br/><h3 id="4">Major Changes</h3>
+<ul>
+	<li>Debugging overworked</li>
+	<li>Updated documentation</li>
+	<li>fixes for new parser: render lists, list whitespace optional, defines in call, anchor names are rendered with spaces</li>
+	<li>changed "normal" pages to "static"</li>
+	<li>define table types</li>
+	<li>Test Suite overview</li>
+	<li>Maven cleanup and JUnit upgrade</li>
+	<li>new bindings for new slim runners</li>
+	<li>fitnesse version may now get a suffix</li>
+</ul>
+<br/><h3 id="5">Git History</h3>
+<br/><table>
+	<tr>
+		<td>2011-10-24 23:19:27 +0200</td>
+		<td>Markus Gärtner</td>
+		<td>preparing next FitNesse release</td>
+	</tr>
+	<tr>
+		<td>2011-10-23 23:52:53 +0200</td>
+		<td>Markus Gärtner</td>
+		<td>readded Clare's modifications</td>
+	</tr>
+	<tr>
+		<td>2011-10-23 23:52:19 +0200</td>
+		<td>Markus Gärtner</td>
+		<td>killing slimRunner in case of a fastTest now to prevent hanging slim test threads when running unit tests</td>
+	</tr>
+	<tr>
+		<td>2011-10-23 21:40:11 +0200</td>
+		<td>Markus Gärtner</td>
+		<td>marged changes for define table type changes from Clare</td>
+	</tr>
+	<tr>
+		<td>2010-08-21 13:11:35 +1200</td>
+		<td>Clare</td>
+		<td>Changed the javascript debug link so it works even if you have run the test you wish to debug.</td>
+	</tr>
+	<tr>
+		<td>2011-10-23 18:22:41 +0200</td>
+		<td>Markus Gärtner</td>
+		<td>backed out Clare's changes to have a green branch before incorporating them back in</td>
+	</tr>
+	<tr>
+		<td>2011-07-13 13:45:40 +0200</td>
+		<td>Jerome Lacoste (f19)</td>
+		<td>Fix indentation</td>
+	</tr>
+	<tr>
+		<td>2011-07-13 12:22:54 +0200</td>
+		<td>Jerome Lacoste (f19)</td>
+		<td>Allow fitnesse versions to have a suffix, e.g. 20100303_abc_1</td>
+	</tr>
+	<tr>
+		<td>2011-07-12 10:05:29 +0200</td>
+		<td>Jerome Lacoste</td>
+		<td>Allow one to override the version number from the command line</td>
+	</tr>
+	<tr>
+		<td>2011-10-23 11:51:40 +0200</td>
+		<td>Jake Benilov</td>
+		<td>removing git crud</td>
+	</tr>
+	<tr>
+		<td>2011-10-22 21:49:44 +0200</td>
+		<td>Markus Gärtner</td>
+		<td>fixed acceptance tests when run from the ant script</td>
+	</tr>
+	<tr>
+		<td>2011-10-22 21:22:29 +0200</td>
+		<td>Markus Gärtner</td>
+		<td>incorporated MAven changes also to the template version</td>
+	</tr>
+	<tr>
+		<td>2011-10-17 22:16:36 +0200</td>
+		<td>Markus Gärtner</td>
+		<td>added junit 4.10 to the classpath correctly and added the jar actually</td>
+	</tr>
+	<tr>
+		<td>2011-10-17 21:58:01 +0200</td>
+		<td>Markus Gärtner</td>
+		<td>added JUnit dependency to pom.xml.teplate as well</td>
+	</tr>
+	<tr>
+		<td>2011-10-17 13:29:45 +0200</td>
+		<td>Conrad Müller</td>
+		<td>Better name for that integration test</td>
+	</tr>
+	<tr>
+		<td>2011-10-17 07:45:35 +0200</td>
+		<td>Conrad Müller</td>
+		<td>Added an integration test for JavaFormatter</td>
+	</tr>
+	<tr>
+		<td>2011-10-17 13:14:09 +0200</td>
+		<td>Conrad Müller</td>
+		<td>Updated JUnit version to 4.10</td>
+	</tr>
+	<tr>
+		<td>2011-07-14 18:00:26 +0200</td>
+		<td>Conrad Müller</td>
+		<td>Add opening html tag to JUnit HTML output</td>
+	</tr>
+	<tr>
+		<td>2011-07-14 17:48:12 +0200</td>
+		<td>Conrad Müller</td>
+		<td>Fix JUnit HTML output on non-UTF-8 platforms</td>
+	</tr>
+	<tr>
+		<td>2011-07-20 14:41:10 +0200</td>
+		<td>Conrad Mueller</td>
+		<td>Added ExcludeSuiteFilter annotation to FitNesseSuite</td>
+	</tr>
+	<tr>
+		<td>2011-10-17 13:29:45 +0200</td>
+		<td>Conrad Müller</td>
+		<td>Better name for that integration test</td>
+	</tr>
+	<tr>
+		<td>2011-10-17 07:45:35 +0200</td>
+		<td>Conrad Müller</td>
+		<td>Added an integration test for JavaFormatter</td>
+	</tr>
+	<tr>
+		<td>2011-10-17 13:14:09 +0200</td>
+		<td>Conrad Müller</td>
+		<td>Updated JUnit version to 4.10</td>
+	</tr>
+	<tr>
+		<td>2011-08-27 15:53:44 -0500</td>
+		<td>Sean Freitag</td>
+		<td>Added ability to bind to a private field that is in the superclass of the target class</td>
+	</tr>
+	<tr>
+		<td>2011-08-27 15:05:38 -0500</td>
+		<td>Sean Freitag</td>
+		<td>Added ability to create a binding around private fields</td>
+	</tr>
+	<tr>
+		<td>2011-10-14 23:22:46 +0200</td>
+		<td>Markus Gärtner</td>
+		<td>changed mail address for questions</td>
+	</tr>
+	<tr>
+		<td>2011-09-23 15:20:10 -0400</td>
+		<td>Dan Rollo</td>
+		<td>maven pom.xml cleanups:  * Remove unneeded default &lt;groupId&gt; tags.  * Add plugin &lt;version&gt; tags.  * Add explicit, platform independent UTF-8 file encoding via property: project.build.sourceEncoding  * Remove dependency on obsolete fitlibrary (the required classes are already in the source tree).  * Replace &lt;system&gt; dependency on json with the latest published json artifact.  * Remove unneeded <span class="meta">undefined variable: basedir</span> from &lt;sourceDirectory&gt; tag value.</td>
+	</tr>
+	<tr>
+		<td>2011-08-27 15:53:44 -0500</td>
+		<td>Sean Freitag</td>
+		<td>Added ability to bind to a private field that is in the superclass of the target class</td>
+	</tr>
+	<tr>
+		<td>2011-08-27 15:05:38 -0500</td>
+		<td>Sean Freitag</td>
+		<td>Added ability to create a binding around private fields</td>
+	</tr>
+	<tr>
+		<td>2011-07-25 15:06:45 +1200</td>
+		<td>Clare McLennan</td>
+		<td>Improved the help for define table fixture.</td>
+	</tr>
+	<tr>
+		<td>2011-07-20 14:41:10 +0200</td>
+		<td>Conrad Mueller</td>
+		<td>Added ExcludeSuiteFilter annotation to FitNesseSuite</td>
+	</tr>
+	<tr>
+		<td>2011-07-18 09:22:30 -0500</td>
+		<td>unclebob</td>
+		<td>Removed TestRunnerTask and all connections</td>
+	</tr>
+	<tr>
+		<td>2011-07-14 18:00:26 +0200</td>
+		<td>Conrad Müller</td>
+		<td>Add opening html tag to JUnit HTML output</td>
+	</tr>
+	<tr>
+		<td>2011-07-14 17:48:12 +0200</td>
+		<td>Conrad Müller</td>
+		<td>Fix JUnit HTML output on non-UTF-8 platforms</td>
+	</tr>
+	<tr>
+		<td>2011-07-13 13:30:01 +0100</td>
+		<td>unclebob</td>
+		<td>delete cruft</td>
+	</tr>
+	<tr>
+		<td>2011-07-13 13:26:28 +0100</td>
+		<td>unclebob</td>
+		<td>refactoring</td>
+	</tr>
+	<tr>
+		<td>2011-07-13 13:45:40 +0200</td>
+		<td>Jerome Lacoste (f19)</td>
+		<td>Fix indentation</td>
+	</tr>
+	<tr>
+		<td>2011-07-13 12:22:54 +0200</td>
+		<td>Jerome Lacoste (f19)</td>
+		<td>Allow fitnesse versions to have a suffix, e.g. 20100303_abc_1</td>
+	</tr>
+	<tr>
+		<td>2011-07-12 10:05:29 +0200</td>
+		<td>Jerome Lacoste</td>
+		<td>Allow one to override the version number from the command line</td>
+	</tr>
+	<tr>
+		<td>2011-07-11 14:32:13 +0200</td>
+		<td>Jerome Lacoste (f19)</td>
+		<td>Rename PathsCollector into PathsProvider, remove unecessary backward compatibility and simplify code</td>
+	</tr>
+	<tr>
+		<td>2011-04-12 11:39:42 +0100</td>
+		<td>unknown</td>
+		<td>Configurable port added to JUnit suite runner.</td>
+	</tr>
+	<tr>
+		<td>2011-04-07 14:54:23 +0200</td>
+		<td>Jerome Lacoste (f19)</td>
+		<td>#24 allow SymbolTypes to represent more than one paths. A new interface is added for those SymbolTypes that want to generate more than one paths</td>
+	</tr>
+	<tr>
+		<td>2011-04-06 15:53:52 -0400</td>
+		<td>unclebob</td>
+		<td>Refactor Purge History</td>
+	</tr>
+	<tr>
+		<td>2011-04-04 09:46:27 -0700</td>
+		<td>John Zhu</td>
+		<td>Set failedCount in SuiteExecutionReportFormatter.testComplete so that when run suite test from ant run suite test from ant it will return correct failed test count.</td>
+	</tr>
+	<tr>
+		<td>2011-03-27 21:40:49 -0500</td>
+		<td>woodybrood</td>
+		<td>fix for problem where trying scenarios not defined as parameterized is too greedy and the wrong table is chosen.</td>
+	</tr>
+	<tr>
+		<td>2011-03-27 21:38:21 -0500</td>
+		<td>woodybrood</td>
+		<td>fix for problem where trying scenarios not defined as parameterized is too greedy and the wrong table is chosen.</td>
+	</tr>
+	<tr>
+		<td>2011-03-19 14:36:51 -0600</td>
+		<td>Mike Stockdale</td>
+		<td>parser multiple nested list</td>
+	</tr>
+	<tr>
+		<td>2011-03-09 15:44:45 -0700</td>
+		<td>Mike Stockdale</td>
+		<td>parser more tests</td>
+	</tr>
+	<tr>
+		<td>2011-03-07 11:32:03 -0800</td>
+		<td>unclebob</td>
+		<td>quick refactoring</td>
+	</tr>
+	<tr>
+		<td>2011-03-05 17:24:00 -0700</td>
+		<td>Mike Stockdale</td>
+		<td>parser missing provider in component factory</td>
+	</tr>
+	<tr>
+		<td>2011-03-03 17:03:29 -0700</td>
+		<td>Mike Stockdale</td>
+		<td>parser render variables inside preformat</td>
+	</tr>
+	<tr>
+		<td>2011-03-03 13:52:53 -0700</td>
+		<td>Mike Stockdale</td>
+		<td>parser preserve variables in wiki translator</td>
+	</tr>
+	<tr>
+		<td>2011-03-03 19:53:34 +0100</td>
+		<td>Marco Paga</td>
+		<td>Converters are managed by a registry</td>
+	</tr>
+	<tr>
+		<td>2011-03-02 21:16:58 -0600</td>
+		<td>woodybrood</td>
+		<td>added a test for new braces style argumment usage.</td>
+	</tr>
+	<tr>
+		<td>2011-03-02 16:29:19 -0600</td>
+		<td>woodybrood</td>
+		<td>Changed ScenarioTable to support argument references in scenarios to wrap argument in braces, such as @{argName}</td>
+	</tr>
+	<tr>
+		<td>2011-03-02 10:55:25 -0600</td>
+		<td>woodybrood</td>
+		<td>Fix line inconsistency when last line ends with a table.</td>
+	</tr>
+	<tr>
+		<td>2011-03-02 10:42:35 -0600</td>
+		<td>unclebob</td>
+		<td>Merge to push</td>
+	</tr>
+	<tr>
+		<td>2011-03-01 22:25:33 -0600</td>
+		<td>woodybrood</td>
+		<td>Added example to the user guide for environment variable in SymbolicLinks</td>
+	</tr>
+	<tr>
+		<td>2011-01-26 09:46:35 -0600</td>
+		<td>woodybrood</td>
+		<td>Changed the Symbolic Link to support environment variables. This allows reuse of information from another wiki.</td>
+	</tr>
+	<tr>
+		<td>2011-02-17 15:12:07 +0100</td>
+		<td>Jerome Lacoste</td>
+		<td>13 fitnesse can hang while reporting issue in early termination.</td>
+	</tr>
+	<tr>
+		<td>2011-02-17 07:12:05 -0700</td>
+		<td>Mike Stockdale</td>
+		<td>update slim protocol description</td>
+	</tr>
+	<tr>
+		<td>2011-02-16 22:39:54 +0000</td>
+		<td>Gojko Adzic</td>
+		<td>configurable port in junit, fixes lisa crispin's problem</td>
+	</tr>
+	<tr>
+		<td>2011-02-05 17:37:41 -0700</td>
+		<td>Mike Stockdale</td>
+		<td>parser empty variable reference</td>
+	</tr>
+	<tr>
+		<td>2011-01-29 11:12:07 -0700</td>
+		<td>Mike Stockdale</td>
+		<td>parser italic terminated by end cell</td>
+	</tr>
+	<tr>
+		<td>2011-01-20 16:55:11 -0700</td>
+		<td>Mike Stockdale</td>
+		<td>parser variable with literal whitespace in cell</td>
+	</tr>
+	<tr>
+		<td>2011-01-18 20:46:43 +1300</td>
+		<td>Clare McLennan</td>
+		<td>Suite overview - which shows which tests of a suite have run and which passed and failed finished.</td>
+	</tr>
+	<tr>
+		<td>2011-01-15 17:19:11 -0700</td>
+		<td>Mike Stockdale</td>
+		<td>parser preserve literal whitespace in cell</td>
+	</tr>
+	<tr>
+		<td>2011-01-16 10:44:37 +1300</td>
+		<td>Clare McLennan</td>
+		<td>Added help about the "define table type fixture", and an acceptance test for the functionality.</td>
+	</tr>
+	<tr>
+		<td>2011-01-15 23:22:41 +1300</td>
+		<td>Clare McLennan</td>
+		<td>Added "define table type" table type - allows people to define table type in advance so don't have to specify it in the test.</td>
+	</tr>
+	<tr>
+		<td>2011-01-15 22:36:22 +1300</td>
+		<td>Clare McLennan</td>
+		<td>Renamed "normal" page to "static". Since atleast half the pages in many fitnesse wikis are actually tests, static seemsa better description for these not-runnable pages.</td>
+	</tr>
+	<tr>
+		<td>2011-01-15 21:37:39 +1300</td>
+		<td>Clare McLennan</td>
+		<td>Renamed prune to skip in the UI, Renamed "normal" page to "static" in UI.   In all the systems I have seen most of the pages are tests, so 'normal' seems wrong (as well as not very informative)</td>
+	</tr>
+	<tr>
+		<td>2011-01-15 20:46:06 +1300</td>
+		<td>Clare McLennan</td>
+		<td>Renamed the "prune" attribute (in the gui only) to "skip (recursive)". This should make it more obvious to people what the functionality does and hopefully more people will use it.</td>
+	</tr>
+	<tr>
+		<td>2011-01-12 21:19:30 -0700</td>
+		<td>Mike Stockdale</td>
+		<td>parser handle non blank after today delta</td>
+	</tr>
+	<tr>
+		<td>2011-01-12 14:27:52 +0300</td>
+		<td>Konstantin Vlasenko</td>
+		<td>move InProgress logic to the PageInProgressFormatter</td>
+	</tr>
+	<tr>
+		<td>2011-01-11 14:29:26 +0300</td>
+		<td>Konstantin Vlasenko</td>
+		<td>use files/testProgress instead to monitor tests in progress</td>
+	</tr>
+	<tr>
+		<td>2011-01-11 14:28:04 +0300</td>
+		<td>Konstantin Vlasenko</td>
+		<td>fix to prevent tests failure</td>
+	</tr>
+	<tr>
+		<td>2011-01-11 13:36:25 +0300</td>
+		<td>Konstantin Vlasenko</td>
+		<td>version</td>
+	</tr>
+	<tr>
+		<td>2011-01-08 21:25:09 -0700</td>
+		<td>Mike Stockdale</td>
+		<td>parser render list</td>
+	</tr>
+	<tr>
+		<td>2011-01-08 17:44:57 -0700</td>
+		<td>Mike Stockdale</td>
+		<td>parser render nested list</td>
+	</tr>
+	<tr>
+		<td>2011-01-08 16:20:29 -0700</td>
+		<td>Mike Stockdale</td>
+		<td>parser list whitespace optional</td>
+	</tr>
+	<tr>
+		<td>2011-01-08 15:22:26 -0700</td>
+		<td>Mike Stockdale</td>
+		<td>parser define in cell</td>
+	</tr>
+	<tr>
+		<td>2011-01-06 21:06:46 -0700</td>
+		<td>Mike Stockdale</td>
+		<td>parser render anchor name with space</td>
+	</tr>
+	<tr>
+		<td>2011-01-06 12:16:12 -0600</td>
+		<td>unclebob</td>
+		<td>Fixed New Parser include -teardown not being hidden.</td>
+	</tr>
+	<tr>
+		<td>2010-12-28 15:15:28 +0300</td>
+		<td>Konstantin Vlasenko</td>
+		<td>SLIM_PORT 0 for TestsInProgress to allow running this test simultaneously on several clients</td>
+	</tr>
+	<tr>
+		<td>2010-12-27 18:47:41 +0300</td>
+		<td>Konstantin Vlasenko</td>
+		<td>fix: remove indication file on Test Stop</td>
+	</tr>
+	<tr>
+		<td>2010-12-27 15:45:22 +0300</td>
+		<td>Konstantin Vlasenko</td>
+		<td>+FitNesse.TestsInProgress (you can see all yout tests are currently executing)</td>
+	</tr>
+	<tr>
+		<td>2010-12-25 19:57:59 +0300</td>
+		<td>Konstantin Vlasenko</td>
+		<td>create lock file for test in progress</td>
+	</tr>
+	<tr>
+		<td>2010-12-17 17:42:38 +0300</td>
+		<td>Builder</td>
+		<td>use free available port if SLIM_PORT (0)</td>
+	</tr>
+	<tr>
+		<td>2010-09-22 15:36:26 +1200</td>
+		<td>Clare</td>
+		<td>Added a new way to debug slim, where developers manually kick off the slim process and fitnesse just connects to it.</td>
+	</tr>
+	<tr>
+		<td>2010-09-20 14:26:39 +1200</td>
+		<td>Clare</td>
+		<td>Renamed "prune" to skip and moved to the "execution" box on the properties page.</td>
+	</tr>
+	<tr>
+		<td>2010-08-21 13:11:35 +1200</td>
+		<td>Clare</td>
+		<td>Changed the javascript debug link so it works even if you have run the test you wish to debug.</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<hr/>
+<br/><a href="../../FrontPage.html">.FrontPage</a> | <a href="../../FrontPage/FitNesseDevelopment/FrontPage.html">FrontPage</a> | <a href="../../RecentChanges.html">.RecentChanges</a><br/>
+</footer>
+</body>
+</html>

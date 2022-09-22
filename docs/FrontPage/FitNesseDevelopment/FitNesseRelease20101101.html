@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FrontPage.FitNesseDevelopment.FitNesseRelease20101101</title>
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../FrontPage.html">FrontPage</a></li>
+<li><a href="../../FrontPage/FitNesseDevelopment.html">FitNesseDevelopment</a></li>
+
+  </ol>
+</nav>
+<article>
+<h3>release 
+	<a href="">20100303</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse.jar?responder=releaseDownload&release=20100303">fitnesse.jar</a></strong></td><td>3966113 bytes</td><td>0</td></tr></tbody></table><br/><br/><h3 id="0"><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> Release Notes 11/01/2010</h3>
+<p class="note">Uncle Bob, Object Mentor, Inc.</p>
+<br/><p class="note"><span class="red">Requires Java 1.6</span></p>
+<br/><h4 id="1">Github ids of Contributors to this release:</h4>
+* Ben Fulton<br/>* Clare<br/>* Gregor Gramlich<br/>* Jake Benilov<br/>* Markus Gaertner<br/>* gojko<br/>* pkuznets<br/>* prime8<br/>* unclebob<br/><br/><span class="meta">Thanks to all of you!</span><br/><table>
+	<tr>
+		<td><h4 id="2">Since:</h4></td>
+		<td colspan="2"><a href="../../FrontPage/FitNesseDevelopment/FitNesseRelease20100303.html">20100303</a></td>
+	</tr>
+	<tr>
+		<td><h4 id="3">Expected Release Date:</h4></td>
+		<td>&lt;none&gt;</td>
+		<td><span class="pass">RELEASED</span></td>
+	</tr>
+	<tr>
+		<td><h4 id="4">Theme:</h4></td>
+		<td colspan="2">Precompiled Scenarios</td>
+	</tr>
+</table>
+<br/><h3 id="5">Major Changes</h3>
+<ul>
+	<li>Precompiled Scenario Tables.  Makes big scenarios run a lot faster.</li>
+	<li>Show test suites and run times</li>
+	<li>Symbols can be used in fixture names to allow fixture chaining.</li>
+</ul>
+<br/><br/><h3 id="6">Git History</h3>
+<table>
+	<tr>
+		<td>2010-11-01 12:52:29 -0500</td>
+		<td>unclebob</td>
+		<td>housekeeping</td>
+	</tr>
+	<tr>
+		<td>2010-09-19 13:28:56 -0500</td>
+		<td>unclebob</td>
+		<td>make methods in MethodExecutor protected for Erik Pragt.</td>
+	</tr>
+	<tr>
+		<td>2010-09-13 12:40:28 +0200</td>
+		<td>unclebob</td>
+		<td>fix order of precompiled scenario libraries</td>
+	</tr>
+	<tr>
+		<td>2010-09-11 10:42:54 -0500</td>
+		<td>unclebob</td>
+		<td>add beginTable and endTable calls to DecisionTables</td>
+	</tr>
+	<tr>
+		<td>2010-09-10 19:29:43 -0500</td>
+		<td>unclebob</td>
+		<td>Precompile Scenarios at and above the suite level.</td>
+	</tr>
+	<tr>
+		<td>2010-08-16 13:47:11 -0500</td>
+		<td>unclebob</td>
+		<td>optimized imports</td>
+	</tr>
+	<tr>
+		<td>2010-08-16 13:28:32 -0500</td>
+		<td>unclebob</td>
+		<td>merge</td>
+	</tr>
+	<tr>
+		<td>2010-08-16 13:20:12 -0500</td>
+		<td>unclebob</td>
+		<td>housekeeping</td>
+	</tr>
+	<tr>
+		<td>2010-08-16 13:09:51 -0500</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of http://github.com/clare/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2010-08-16 13:02:36 -0500</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of http://github.com/MarkusGaertner/fitnessebacklogfixes</td>
+	</tr>
+	<tr>
+		<td>2010-08-16 12:54:48 -0500</td>
+		<td>unclebob</td>
+		<td>housekeeping</td>
+	</tr>
+	<tr>
+		<td>2010-08-14 16:46:29 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>added missing properties files</td>
+	</tr>
+	<tr>
+		<td>2010-08-14 16:38:54 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>Adapted Payroll example test as shown by Gojko on his blog: http://gojko.net/2010/06/16/anatomy-of-a-good-acceptance-test/</td>
+	</tr>
+	<tr>
+		<td>2010-07-31 14:38:24 +1200</td>
+		<td>Clare</td>
+		<td>Added Help widget so the "help text" that appears in the contents can now be used in the page also.   Then it can be used for a general description of the test.</td>
+	</tr>
+	<tr>
+		<td>2010-07-31 11:51:39 +1200</td>
+		<td>Clare</td>
+		<td>Remote_debug should now work for more languages such as c#.</td>
+	</tr>
+	<tr>
+		<td>2010-07-28 11:49:59 -0500</td>
+		<td>unclebob</td>
+		<td>Dan Woodward's patch for embedded underscores in scenario table names.</td>
+	</tr>
+	<tr>
+		<td>2010-07-11 12:07:36 -0500</td>
+		<td>unclebob</td>
+		<td>2864501 - Regular Expression Matcher and numeric comparisons now work in all Query tables</td>
+	</tr>
+	<tr>
+		<td>2010-06-13 08:13:43 -0400</td>
+		<td>prime8</td>
+		<td>Show test and suite run times in UI</td>
+	</tr>
+	<tr>
+		<td>2010-06-11 17:22:43 -0400</td>
+		<td>prime8</td>
+		<td>Remove static BaseFormatter.testTime</td>
+	</tr>
+	<tr>
+		<td>2010-06-07 11:12:11 -0700</td>
+		<td>unclebob</td>
+		<td>Added user guide for test times reporting</td>
+	</tr>
+	<tr>
+		<td>2010-06-06 08:56:15 -0400</td>
+		<td>prime8</td>
+		<td>Add test time measurement to formatters</td>
+	</tr>
+	<tr>
+		<td>2010-06-05 23:23:37 -0400</td>
+		<td>prime8</td>
+		<td>Replace DateAlteringClock for TimeAlteringClock</td>
+	</tr>
+	<tr>
+		<td>2010-06-05 19:45:08 -0400</td>
+		<td>prime8</td>
+		<td>Introduce TimeAlteringClock for testing. Add elapsedSeconds() to TimeMeasurement.</td>
+	</tr>
+	<tr>
+		<td>2010-06-04 21:12:56 -0400</td>
+		<td>prime8</td>
+		<td>Use TimeMeasurement to measure elapsed test times</td>
+	</tr>
+	<tr>
+		<td>2010-06-04 11:31:49 -0400</td>
+		<td>prime8</td>
+		<td>Replace all calls to System.currentTimeMillis() with Clock.currentTimeInMillis() and all calls to new Date() with Clock.currentDate(). Replace start-end elapsed time measurements with calls to TimeMeasurement.</td>
+	</tr>
+	<tr>
+		<td>2010-06-04 10:57:22 -0400</td>
+		<td>prime8</td>
+		<td>Encapsulated System.currentTimeMillis() and used to make start-end elapsed time measurements</td>
+	</tr>
+	<tr>
+		<td>2010-06-02 16:48:28 -0500</td>
+		<td>unclebob</td>
+		<td>housekeeping</td>
+	</tr>
+	<tr>
+		<td>2010-06-02 16:40:41 -0500</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of http://github.com/gojko/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2010-05-31 06:19:35 +0100</td>
+		<td>gojko</td>
+		<td>fitnesse socket service not started when running from JUnit; JUnit execution fails if no tests are executed"</td>
+	</tr>
+	<tr>
+		<td>2010-05-22 14:13:49 -0500</td>
+		<td>unclebob</td>
+		<td>Converted CaqchingPageTest to Junit 4</td>
+	</tr>
+	<tr>
+		<td>2010-05-16 11:49:53 -0500</td>
+		<td>unclebob</td>
+		<td>SLIM_VERSION symbol and Slim Protocol updated to 0.2</td>
+	</tr>
+	<tr>
+		<td>2010-05-16 10:32:07 -0500</td>
+		<td>unclebob</td>
+		<td>Allow Fixture Chaining</td>
+	</tr>
+	<tr>
+		<td>2010-04-25 10:30:01 -0500</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of http://github.com/benfulton/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2010-04-25 10:26:59 -0500</td>
+		<td>unclebob</td>
+		<td>merge</td>
+	</tr>
+	<tr>
+		<td>2010-04-14 22:00:50 -0400</td>
+		<td>Ben Fulton</td>
+		<td>Add a page footer to the user guide.  Move the Administering Fitnesse table out of the front of the user guide into its own page.</td>
+	</tr>
+	<tr>
+		<td>2010-04-13 02:32:16 -0700</td>
+		<td>pkuznets</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>2010-04-13 02:28:22 -0700</td>
+		<td>pkuznets</td>
+		<td>formatSymbol to resolve $xxxx  to $x-&gt;[value]xxx in case of $s defined and $xxxx not</td>
+	</tr>
+	<tr>
+		<td>2010-04-02 23:15:47 -0400</td>
+		<td>Ben Fulton</td>
+		<td>Add a CommandLineOption page to spell out exactly what the options are for starting Fitnesse.  Refer to it in the Downloading and Starting pages. Also add an image to show what successful startup should look like, and fix some duplicate links in the User Guide front page.</td>
+	</tr>
+	<tr>
+		<td>2010-04-02 07:52:40 -0700</td>
+		<td>Jake Benilov</td>
+		<td>bugfix: removed duplicate entries from UserGuide front page</td>
+	</tr>
+	<tr>
+		<td>2010-04-02 08:52:45 -0500</td>
+		<td>unclebob</td>
+		<td>merged Ben Fulton's User Guide Changes</td>
+	</tr>
+	<tr>
+		<td>2010-04-02 08:40:56 -0500</td>
+		<td>unclebob</td>
+		<td>housekeeping</td>
+	</tr>
+	<tr>
+		<td>2010-04-02 08:12:43 -0500</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of git://github.com/benilovj/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2010-04-02 00:31:18 -0500</td>
+		<td>unclebob</td>
+		<td>Clean up user guide and add test to Hash Widget.</td>
+	</tr>
+	<tr>
+		<td>2010-03-31 22:31:33 -0400</td>
+		<td>Ben Fulton</td>
+		<td>Add a separate section on creating fixtures, additional editing</td>
+	</tr>
+	<tr>
+		<td>2010-03-31 21:16:23 -0400</td>
+		<td>Ben Fulton</td>
+		<td>Expand some text</td>
+	</tr>
+	<tr>
+		<td>2010-03-31 18:24:44 +0200</td>
+		<td>Jake Benilov</td>
+		<td>newlines within multiline table cells are translated to HTML line breaks</td>
+	</tr>
+	<tr>
+		<td>2010-03-23 17:23:55 -0500</td>
+		<td>unclebob</td>
+		<td>fix typo in user guide.</td>
+	</tr>
+	<tr>
+		<td>2010-03-23 17:12:37 -0500</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of git://github.com/benilovj/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2010-03-23 07:29:26 -0500</td>
+		<td>unclebob</td>
+		<td>added release_jar to build.xml so that we can use the new hudson plugin for fitnesse</td>
+	</tr>
+	<tr>
+		<td>2010-03-23 00:17:32 +0100</td>
+		<td>Jake Benilov</td>
+		<td>cleanup and restructuring of the reference section of the User Guide</td>
+	</tr>
+	<tr>
+		<td>2010-03-21 07:57:18 -0500</td>
+		<td>unclebob</td>
+		<td>1893226 Broken link in user guide.</td>
+	</tr>
+	<tr>
+		<td>2010-03-20 22:37:01 -0500</td>
+		<td>unclebob</td>
+		<td>Merge branch 'consolidate_testrunners' of git://github.com/benilovj/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2010-03-20 22:00:14 -0500</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of git://github.com/ggramlich/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2010-03-20 23:33:09 +0100</td>
+		<td>Jake Benilov</td>
+		<td>Merge git://github.com/unclebob/fitnesse into consolidate_testrunners</td>
+	</tr>
+	<tr>
+		<td>2010-03-20 23:19:08 +0100</td>
+		<td>Jake Benilov</td>
+		<td>removed obsolete test runners (as well as their acceptance tests and mention of them from the user guide)</td>
+	</tr>
+	<tr>
+		<td>2010-03-20 14:05:25 -0500</td>
+		<td>unclebob</td>
+		<td>2463491, -c exit code didn't work for xml and html formatters</td>
+	</tr>
+	<tr>
+		<td>2010-03-19 15:27:31 -0500</td>
+		<td>unclebob</td>
+		<td>2341252, the message for 'check not' changed from 'expected' to 'is not'</td>
+	</tr>
+	<tr>
+		<td>2010-03-17 01:55:56 +0100</td>
+		<td>unclebob</td>
+		<td>change java output argument to produce fitnesse results file</td>
+	</tr>
+	<tr>
+		<td>2010-03-17 01:48:12 +0100</td>
+		<td>unclebob</td>
+		<td>Add acceptance_tests_xml to build.xml</td>
+	</tr>
+	<tr>
+		<td>2010-03-16 21:37:46 +0100</td>
+		<td>Gregor Gramlich</td>
+		<td>Merge branch 'HEAD' of git@github.com:ggramlich/fitnesse.git</td>
+	</tr>
+	<tr>
+		<td>2010-03-16 14:51:15 +0100</td>
+		<td>unclebob</td>
+		<td>removed gc calls in tests, houskeeping</td>
+	</tr>
+	<tr>
+		<td>2010-03-15 09:49:07 +0100</td>
+		<td>Gregor Gramlich</td>
+		<td>Debug mode is optional now for TestHelper rest command generation (defaults to DebugMode enabled)</td>
+	</tr>
+	<tr>
+		<td>2010-03-12 19:42:56 +0100</td>
+		<td>unclebob</td>
+		<td>removed double dollar processing</td>
+	</tr>
+	<tr>
+		<td>2010-03-12 18:55:54 +0100</td>
+		<td>unclebob</td>
+		<td>Removed -&gt;[null] when symbol x doesn't exist.</td>
+	</tr>
+	<tr>
+		<td>2010-03-11 05:40:20 +0100</td>
+		<td>unclebob</td>
+		<td>Removed whitespace:pre because of browser incompatibilities</td>
+	</tr>
+	<tr>
+		<td>2010-03-10 14:56:18 +0000</td>
+		<td>unclebob</td>
+		<td>moved MockRequestBuilder to fitnesse.http and cleaned up some docs.</td>
+	</tr>
+	<tr>
+		<td>2010-03-10 13:47:04 +0000</td>
+		<td>unclebob</td>
+		<td>housekeeping</td>
+	</tr>
+	<tr>
+		<td>2010-03-10 00:11:03 +0100</td>
+		<td>Jake Benilov</td>
+		<td>documented how authentication is possible with the -c command</td>
+	</tr>
+	<tr>
+		<td>2010-03-09 21:59:28 +0100</td>
+		<td>Jake Benilov</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2010-03-09 21:51:50 +0100</td>
+		<td>Jake Benilov</td>
+		<td>small test refactorings extended the -c command line parameter to accept input of the form username:password:command so that the -c flag can be used with password-protected fitnesse instances</td>
+	</tr>
+	<tr>
+		<td>2010-03-08 19:39:33 -0600</td>
+		<td>unclebob</td>
+		<td>housekeeping</td>
+	</tr>
+	<tr>
+		<td>2010-03-08 19:32:57 -0600</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of git://github.com/gojko/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2010-03-08 19:32:29 -0600</td>
+		<td>unclebob</td>
+		<td>added hash tests to test slim</td>
+	</tr>
+	<tr>
+		<td>2010-03-08 02:31:26 +0000</td>
+		<td>gojko</td>
+		<td>docs on outputing junit xml files</td>
+	</tr>
+	<tr>
+		<td>2010-03-08 02:26:08 +0000</td>
+		<td>gojko</td>
+		<td>junit xml output files</td>
+	</tr>
+	<tr>
+		<td>2010-03-07 08:34:57 -0600</td>
+		<td>unclebob</td>
+		<td>Fixed css for AddChildPage, and added includehtml argument for suites.</td>
+	</tr>
+	<tr>
+		<td>2010-03-04 11:39:34 -0600</td>
+		<td>unclebob</td>
+		<td>fixed acceptance tests for ListWidget change</td>
+	</tr>
+	<tr>
+		<td>2010-03-04 11:06:39 -0600</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of git://github.com/schmax/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2010-03-04 11:06:30 -0600</td>
+		<td>unclebob</td>
+		<td>housekeeping</td>
+	</tr>
+	<tr>
+		<td>2010-03-04 10:17:35 -0600</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of git://github.com/MarkusGaertner/fitnessebacklogfixes</td>
+	</tr>
+	<tr>
+		<td>2010-03-04 10:17:16 -0600</td>
+		<td>unclebob</td>
+		<td>housekeeping</td>
+	</tr>
+	<tr>
+		<td>2010-03-03 22:16:26 +0100</td>
+		<td>Markus Gaertner</td>
+		<td>took out hard-coded timezone value from unit tests</td>
+	</tr>
+	<tr>
+		<td>2010-03-03 22:04:46 +0100</td>
+		<td>Markus Gaertner</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2010-03-03 13:34:14 -0600</td>
+		<td>unclebob</td>
+		<td>housekeeping and release</td>
+	</tr>
+</table>
+<br/>
+</article>
+<footer>
+<hr/>
+<br/><a href="../../FrontPage.html">.FrontPage</a> | <a href="../../FrontPage/FitNesseDevelopment/FrontPage.html">FrontPage</a> | <a href="../../RecentChanges.html">.RecentChanges</a><br/>
+</footer>
+</body>
+</html>

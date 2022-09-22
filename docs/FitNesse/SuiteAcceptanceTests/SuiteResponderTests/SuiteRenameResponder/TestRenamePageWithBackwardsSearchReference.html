@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteResponderTests.SuiteRenameResponder.TestRenamePageWithBackwardsSearchReference</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteResponderTests.html">SuiteResponderTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteResponderTests/SuiteRenameResponder.html">SuiteRenameResponder</a></li>
+
+  </ol>
+</nav>
+<article>
+<h3 id="0">When a page is renamed, any links to that page from backwards references pages are changed.</h3>
+<br/>Create the test data.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Page creator.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>Page name.</td>
+		<td>Page contents.</td>
+		<td>valid?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>TopPage</td>
+		<td></td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>TopPage.TargetPage</td>
+		<td></td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>TopPage.MiddlePage</td>
+		<td></td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>TopPage.MiddlePage.MiddleTarget</td>
+		<td></td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>TopPage.MiddlePage.ReferingPage</td>
+		<td>&lt;TopPage.TargetPage &lt;TopPage.MiddlePage.MiddleTarget</td>
+		<td>true</td>
+	</tr>
+</table>
+<br/>Rename the top page.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>status?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>TopPage?responder=renamePage&amp;newName=RenamedTopPage&amp;refactorReferences=on</td>
+		<td></td>
+	</tr>
+</table>
+<br/>Next fetch the referring page.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>valid?</td>
+		<td>contents?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>RenamedTopPage.MiddlePage.ReferingPage</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+<br/>Make sure that the references have been changed.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>&lt;a href="../../../../RenamedTopPage.html\.TargetPage"&gt;&lt;RenamedTopPage\.TargetPage&lt;/a&gt;</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>contents</td>
+		<td>&lt;a href="../../../../RenamedTopPage.html\.MiddlePage\.MiddleTarget"&gt;&lt;RenamedTopPage\.MiddlePage\.MiddleTarget&lt;/a&gt;</td>
+		<td>true</td>
+	</tr>
+</table>
+<br/>Rename the middle page.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>status?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>RenamedTopPage.MiddlePage?responder=renamePage&amp;newName=RenamedMiddlePage&amp;refactorReferences=on</td>
+		<td></td>
+	</tr>
+</table>
+<br/>Next fetch the referring page.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>valid?</td>
+		<td>contents?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>RenamedTopPage.RenamedMiddlePage.ReferingPage</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>&lt;a href="../../../../RenamedTopPage.html\.TargetPage"&gt;&lt;RenamedTopPage\.TargetPage&lt;/a&gt;</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>contents</td>
+		<td>&lt;a href="../../../../RenamedTopPage.html\.RenamedMiddlePage\.MiddleTarget"&gt;&lt;RenamedTopPage\.RenamedMiddlePage\.MiddleTarget&lt;/a&gt;</td>
+		<td>true</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<a href="../../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../../FrontPage.html">Front Page</a> | <a href="../../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

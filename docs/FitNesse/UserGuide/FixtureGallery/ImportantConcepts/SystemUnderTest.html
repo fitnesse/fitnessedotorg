@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.FixtureGallery.ImportantConcepts.SystemUnderTest</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+<li><a href="../../../../FitNesse/UserGuide/FixtureGallery.html">FixtureGallery</a></li>
+<li><a href="../../../../FitNesse/UserGuide/FixtureGallery/ImportantConcepts.html">ImportantConcepts</a></li>
+
+  </ol>
+</nav>
+<article>
+<br/><i>Previous page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/ImportantConcepts/TargetObject.html">Target objects</a> Next page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/ImportantConcepts/FixtureSymbols.html">Symbols</a> Parent page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/ImportantConcepts.html">Important concepts</a></i><br/><h2 id="0">System under test</h2>
+<b> DoFixture </b> and <b> SequenceFixture </b> can be used to automate testing of your business domain classes directly, without the need to redeclare or wrap the business class methods in a fixture. That feature is called <i>System under test</i>. In Java, call the <b> setSystemUnderTest </b> method and pass your business domain object. In .NET, assign the business object to the <b> mySystemUnderTest </b> property. Note that generic (template) classes cannot be used for this purpose in Java, because FIT will fail to find the appropriate class parameters and try to use <b> Object </b> arguments for all methods. <br/><br/>Even when the system under test is defined, you can still call methods of the fixture in your tests. If there is no appropriate method of the fixture, FIT looks for an appropriate method in the system under test. Here is an example that works with standard .NET queues (to make it work with Java, we have to wrap the generic <b> Queue </b> interface into a non-generic class).<br/><br/><pre>
+!|SystemUnderTest|
+|Enqueue|directly calling queue|
+|check|count|1|
+|Generate|12|Messages|
+|check|count|13|
+|check|dequeue|directly calling queue|
+</pre><br/><h3 id="1">Java Source Code</h3>
+<pre>
+package info.fitnesse.fixturegallery;
+
+import fitlibrary.DoFixture;
+import info.fitnesse.fixturegallery.domain.*;
+
+public class SystemUnderTest extends DoFixture{
+
+	Queue  queue;
+	public SystemUnderTest (){
+		queue=new Queue();
+		setSystemUnderTest(queue);
+	}
+	public void generateMessages(int i){
+		for (int cnt=0; cnt&lt;i;cnt++){
+			queue.enqueue("M"+i);
+		}
+	}
+}
+</pre><br/><h3 id="2">.NET Source Code</h3>
+<pre>
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace info.fitnesse.fixturegallery
+{
+    public class SystemUnderTest: fitlibrary.DoFixture
+    {
+        Queue&lt;string&gt; queue = new Queue&lt;string&gt;();
+        public SystemUnderTest()
+        {
+            this.mySystemUnderTest = queue;
+        }
+        public void GenerateMessages(int howmuch)
+        {
+            for (int i = 0; i &lt; howmuch; i++)
+                queue.Enqueue("M" + i);
+        }
+    }
+}
+</pre><br/><h3 id="3">Python Source Code</h3>
+<pre>
+from fitLib.DoFixture import DoFixture
+from info.fitnesse.fixturegallery.domain.Queue import Queue
+
+class SystemUnderTest(DoFixture):
+    _typeDict = {
+        # -- NEEDED-FOR: SystemUnderTestExample
+        "GenerateMessages.RenameTo": "generateMessages"
+    }
+
+    def __init__(self):
+        self.queue = Queue()
+        self.setSystemUnderTest(self.queue)
+
+    _typeDict["generateMessages.types"] = [ None, "Integer" ]
+    def generateMessages(self, i):
+        for dummy in xrange(i):
+            self.queue.enqueue("M%d" % i)
+</pre><br/><br/><i>Previous page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/ImportantConcepts/TargetObject.html">Target objects</a> Next page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/ImportantConcepts/FixtureSymbols.html">Symbols</a> Parent page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/ImportantConcepts.html">Important concepts</a></i><br/>
+</article>
+<footer>
+<a href="../../../../FitNesse/UserGuide/FixtureGallery.html">Table of contents</a>| Fixture Gallery on <a href="http://sourceforge.net/projects/fixturegallery">SourceForge</a> | Fixture Gallery live wiki on  <a href="http://fitnesse.info/fixturegallery">UserGuide.Info</a> | <a href="http://gojko.net/fitnesse/fixturegallery">Comments and Feedback</a> | <a href="../../../../FrontPage.html">Front Page</a><br/>
+</footer>
+</body>
+</html>

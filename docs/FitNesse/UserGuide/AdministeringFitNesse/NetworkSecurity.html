@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.AdministeringFitNesse.NetworkSecurity</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../FitNesse/UserGuide.html">UserGuide</a></li>
+<li><a href="../../../FitNesse/UserGuide/AdministeringFitNesse.html">AdministeringFitNesse</a></li>
+
+  </ol>
+</nav>
+<article>
+<h2 id="0">Protect your servers and your data!</h2>
+To protect the integrity of your environment it is strongly recommended to encrypt and authenticate the network traffic<br/>between the different <span class="fitnesse">FitNesse</span> processes. Both will be achieved with SSL. <br/>Without this <br/><ul>
+	<li>passwords will be send unencrypted over the network </li>
+	<li>your system under test would accept commands from any server which can access it over the network. </li>
+	<li>this is especially an issue if the system under test runs in demon mode. </li>
+</ul>
+<br/>In addition to this also enable user authentication with a <a href="../../../FitNesse/UserGuide/AdministeringFitNesse/PasswordCipher.html">Password Cipher</a> .<br/> <br/><h4 id="1"><b>Only with self created certificates you achieve security!</b></h4>
+SSL requires <i>certificates</i> which identify uniquely each server.<br/>It just takes 1 minutes to create your own certificates, please take the time to do this.<br/>The certificates in the fitnesse distribution are just there for running junit tests. Never use them for your fitnesse instance. <br/><br/><h2 id="2">1. Creating your private SSL keys and certificates</h2>
+The below just gives the commands how you can create certificates and how to sign them yourself to get started. <br/>In a professional environment your company might have further guidelines. Please contact your network or security administrator.<br/>If you are new to SSL browse the web to understand how it works.<br/><br/>A minimum SSL configuration consists of <br/><table>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>value used in sample commands</td>
+		<td>Must be changed by you</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>A keystore file per server with the private key of each of your server which has been certified</td>
+		<td><b>fitnesse.jks</b></td>
+		<td>No</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>A password for this keystore file</td>
+		<td><b>PutYourKeyStorePasswordHere</b></td>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>A truststore file which defines with whom your servers should be allowed to communicate</td>
+		<td><b>fittrust.jks</b></td>
+		<td>No</td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td>A password for this truststore file</td>
+		<td><b>PutYourTrustPasswordHere</b></td>
+		<td>Yes</td>
+	</tr>
+</table>
+<br/>The first three must be known by <span class="fitnesse">FitNesse</span> at runtime. To do this you expand the class <b>fitnesse.socketservice.SslParameters</b><br/>The last one is only required when you want to modify the truststore. For running <span class="fitnesse">FitNesse</span> it is not required.<br/><br/>The tool <b>keytool</b> is used to generate the keys. It is part of the jdk.<br/><br/>Below are sample commands to get started. You might add or change values according to your setup.<br/><br/><div class="collapsible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">1.1 Switch to the directory from which you start fitnesse </p>
+	<div>cd .. <br/></div>
+</div>
+<br/><div class="collapsible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">1.2 Create your server keys and certificate </p>
+	<div>keytool -genkey -keyalg RSA -alias selfsigned -keystore <b>fitnesse.jks</b> -storepass <b>PutYourKeyStorePasswordHere</b> -validity 400<br/></div>
+</div>
+You will be asked for further input. <br/>When asked for your first and last name enter your server name with the domain instead like <i>www.fitnesse.org</i>.<br/>The remaining items don't matter.<br/>When asked for the <i>key password</i> just press enter.<br/>After this step a new file <b>fitnesse.jks</b> is in your current folder<br/><br/><div class="collapsible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">1.3  Protect the <b>fitnesse.jks</b> with all measures your operating system supports</p>
+	<div>chmod ...<br/></div>
+</div>
+<b>IMPORTANT</b>: Give only read access to users who need this!<br/>Remove read and write access for anybody else.<br/><br/><h3 id="3">1.4 Tell <span class="fitnesse">FitNesse</span> your password and the name and location of the keystore file</h3>
+<br/>Create the following class and add it to the classpath of <span class="fitnesse">FitNesse</span><br/><div class="collapsible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">custom SSL Parameter class</p>
+	<div>package <b>your.package</b><br/>import fitnesse.socketservice.SslParameters;<br/><br/>public class <b>YourServerSslParameters</b> extends SslParameters {<br/>  public <b>YourServerSslParameters</b>(){<br/>	super();<br/>	// Below is only for demonstration purpose <br/>	// Don't hard code passwords in clear text<br/>	// A) Ask the user to enter it each time the system starts. That's the most secure way but often not convenient.<br/>	// B) Read it from a file where it is stored obfuscated.<br/>	String password = "<b>PutYourKeyStorePasswordHere</b>";<br/>	setKeyStorePassword(password);<br/>	setKeyStoreFilename("<b>fitnesse.jks</b>");<br/>	setTrustStoreFilename("<b>fitnesse.jks</b>");<br/>  }<br/>}<br/></div>
+</div>
+<br/>You can use the same class also for <b>YourSutSslParameters</b> in the following steps.<br/><br/><br/><h2 id="4">2. Secure Communication between the browser and the Wiki Server</h2>
+Instead of http the communication will be https<br/><br/><h3 id="5">2.1 Add the following to plugins.properties</h3>
+<br/><div class="collapsible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">plugins.properties</p>
+	<div>##<br/>#  Wiki Server uses https<br/>wiki.protocol=https<br/>wiki.protocol.ssl.parameter.class=<b>your.package.YourServerSslParameters</b><br/></div>
+</div>
+<br/><h3 id="6">2.2 In your browser</h3>
+Enter <b><a href="https://localhost:port">https://localhost:port</a></b> in your webbrowser to connect to the wiki server<br/><br/>If you signed the <i>certificates</i> yourself your browser will give a security warning. <br/>Accept this warning after you checked the certificate. Add a permanent exception for this certificate to your browser <br/>to avoid that you get this warning each time in the future.<br/><br/><h3 id="7">2.3 Client Authentication</h3>
+If users have certificates, client authentication may be required.  To enable client authentication set the following plugins.properties:<br/><br/><div class="collapsible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">plugins.properties</p>
+	<div>##<br/>#  Wiki Server uses https<br/>wiki.protocol=https<br/>wiki.protocol.ssl.parameter.class=<b>your.package.YourServerSslParameters</b><br/>wiki.protocol.ssl.client.auth=<b>required</b><br/></div>
+</div>
+<br/>Authorization can be accomplished with client certificates with the creation of a custom Authenticator.  The Authenticator has access to the peer dn from the Request.  Access can be granted or denied based on the dn.<br/><br/><h2 id="8">3. Secure Communication between  the Test System and the System Under Test</h2>
+<br/>This is currently only supported for the SLIM java client.<br/>FIT and SLIM clients for other programming languages must still be enhanced.<br/><br/><h3 id="9">3.1. Configuring SSL on the Test System</h3>
+The <span class="fitnesse">FitNesse</span> Test System and the <span class="fitnesse">FitNesse</span> Wiki server are a single process and share the same SSL configuration<br/>If you have not enabled https for the wiki you have to add the below to configure SSL for the test system.<br/><br/><div class="collapsible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">plugins.properties</p>
+	<div>wiki.protocol.ssl.parameter.class=<b>your.package.YourServerSslParameters</b><br/></div>
+</div>
+<br/><h3 id="10">3.2. Configuring SSL on the SUT</h3>
+Either enable this for individual test pages by defining the variable<br/><div class="collapsible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">SLIM_SSL</p>
+	<div> !define SLIM_SSL (<b>your.package.YourSutSslParameters</b>) <br/></div>
+</div>
+<br/>or enable this for all SLIM Test Systems on all pages by adding below to 'plugins.properties'.<br/>This configuration takes precedents above an individual page configuration.<br/><br/><div class="collapsible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">plugins.properties</p>
+	<div>##<br/>#  Enable SSL on the Test Systems <br/>slim.ssl=<b>your.package.YourSutSslParameters</b><br/></div>
+</div>
+<br/>If you use remote debugging and started the SUT manually add the following additional parameter to the command line<br/><div class="collapsible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">SSL command line parameter</p>
+	<div>-ssl <b>your.package.YourSutSslParameters</b><br/></div>
+</div>
+<br/><br/><br/><h2 id="11">4. Troubleshooting SSL configuration</h2>
+<br/><h3 id="12">4.1. Start <span class="fitnesse">FitNesse</span> with the following two extra parameters to get more output to identify any issues</h3>
+<ul>
+	<li>-v</li>
+	<li>-Djavax.net.debug=ssl,keymanager</li>
+</ul>
+<br/><div class="collapsible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">Example</p>
+	<div>java <i>-Djavax.net.debug=ssl,keymanager</i> -cp fitnesse-standalone.jar fitnesseMain.FitNesseMain <i>-v</i><br/></div>
+</div>
+<h3 id="13">4.2. Define the following on your test page to get more output from the SUT</h3>
+<div class="collapsible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">variables on test pages</p>
+	<div> !define SLIM_FLAGS (-v)<br/> !define COMMAND_PATTERN  (java <i>-Djavax.net.debug=ssl,keymanager</i> -cp %p %m)<br/></div>
+</div>
+ <br/><br/><h3 id="14">4.3. Define the following properties to speed up troubleshooting</h3>
+This reduces the number of connection attempts. A test with a faulty configuration is then aborted quicker.<br/><div class="collapsible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">plugins.properties</p>
+	<div>slim.timeout=1<br/>slim.pool.size=1<br/></div>
+</div>
+ <br/><br/><br/><h3 id="15">4.4. Typical error messages in the output from the SUT</h3>
+<div class="collapsible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">Error while executing SLIM instructions: Connection has been shutdown: javax.net.ssl.SSLHandshakeException: Received fatal alert: certificate_unknown</p>
+	<div>Test System is not trusting the SUT - Add the certificate from the SUZ to the truststore on the server<br/></div>
+</div>
+<br/><div class="collapsible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">Error while executing SLIM instructions: Connection has been shutdown: javax.net.ssl.SSLHandshakeException: null cert chain</p>
+	<div>SUT is not trustig the Test System - Add the certificate from the server to the truststore on the SUT<br/></div>
+</div>
+<br/><div class="collapsible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">java.security.NoSuchAlgorithmException: Error constructing implementation ... java.io.IOException: Keystore was tampered with, or password was incorrect</p>
+	<div>Check the password you provided for the keystore<br/></div>
+</div>
+<br/><h2 id="16">5. Configuring SSL for a multi server environment</h2>
+If your system under test doesn't runs on the same server as your Wiki Server consider the blow setup.<br/><br/><div class="collapsible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">1.1 Command to create your server keys and certificate </p>
+	<div>keytool -genkey -keyalg RSA -alias selfsigned -keystore <b>fitnesse.jks</b> -storepass <b>PutYourKeyStorePasswordHere</b> -validity 400<br/>keytool -export -alias selfsigned -file fitnesse.cer -keystore <b>fitnesse.jks</b> -storepass <b>PutYourKeyStorePasswordHere</b><br/></div>
+</div>
+You will be asked for further input. <br/>When asked for your first and last name enter your server name with the domain instead like <i>www.fitnesse.org</i>.<br/>The remaining items don't matter.<br/>When asked for the <i>key password</i> just press enter.<br/><br/>If you have more then one server on which you run SUT you should do this for each server.<br/>To not overwrite the keystores and certificates change each time the <b>fitnesse.jks</b> and <b>fitnesse.cer</b> parameters.<br/><br/><b>IMPORTANT</b>: Protect the <b>fitnesse.jks</b> with all measures your operating system supports! Give only read access to users who need this. <br/>Remove read and write access for anybody else.<br/><br/><br/><div class="collapsible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">1.2 Commands to create your trust store </p>
+	<div>keytool -import -v -trustcacerts -alias <b>uniqueSUTName</b> -storepass <b>PutYourTrustPasswordHere</b> -file fitnesse.cer -keystore <b>fittrust.jks</b><br/></div>
+</div>
+If you have created more than one set of files repeat this command for each <b>*.cer</b> file but put all in the <br/>same truststore file <b>fittrust.jks</b> <br/><br/><br/><h3 id="17">1.3 Configure <span class="fitnesse">FitNesse</span> with your certificates</h3>
+Once you have run these commands you have two types of files in your current directory <b>fitnesse.jks</b> and <b>fittrust.jks</b><br/>Copy both into your <span class="fitnesse">FitNesse</span> directoy from which you start <span class="fitnesse">FitNesse</span> or your SUT. Make again sure that your <b>fitnesse.jks</b> <br/>and <b>fittrust.jks</b> are protected.<br/><br/>Create the following class and add it to the classpath of <span class="fitnesse">FitNesse</span><br/><div class="collapsible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">custom SSL Parameter class</p>
+	<div>package <b>your.package</b><br/>import fitnesse.socketservice.SslParameters;<br/><br/>public class <b>YourServerSslParameters</b> extends SslParameters {<br/>  public <b>YourServerSslParameters</b>(){<br/>	super();<br/>	// Below is only for demonstration purpose <br/>	// Don't hard code passwords in clear text<br/>	// A) Ask the user to enter it each time the system starts. That's the most secure way but often not convenient.<br/>	// B) Read it from a file where it is stored obfuscated.<br/>	String password = "<b>PutYourKeyStorePasswordHere</b>";<br/>	setKeyStorePassword(password);<br/>	setKeyStoreFilename("<b>fitnesse.jks</b>");<br/>	setTrustStoreFilename("<b>fittrust.jks</b>");<br/>  }<br/>}<br/></div>
+</div>
+<br/>Create identical classes named <b>YourSutSslParameters</b> for each server running SUT but give the values of the <br/><b>fitnesse.jks</b> you created for each server and add the class to the classpath of the SUT.<br/>
+</article>
+<footer>
+<center>User Guide Contents</center><center><a href="../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+</footer>
+</body>
+</html>

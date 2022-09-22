@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteSlimTests.ScenarioTestSuite.ScriptSubclassUsedForDecisionTable</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests.html">SuiteSlimTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/ScenarioTestSuite.html">ScenarioTestSuite</a></li>
+
+  </ol>
+</nav>
+<article>
+Scenarios can be called from decision tables. They should respect the actor (i.e. fixture instance) and Slim table type (i.e. script table or a subclass) of the last script created.<br/><br/><h2 id="0">When we create a script using Slim's standard script table, the decision table should use that subtype also.</h2>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>my division1</td>
+		<td>numerator</td>
+		<td></td>
+		<td>denominator</td>
+		<td></td>
+		<td>expected</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>setNumerator</td>
+		<td colspan="6">@numerator</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>setDenominator</td>
+		<td colspan="6">@denominator</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>quotient</td>
+		<td colspan="5">@expected</td>
+	</tr>
+</table>
+<br/><br/>Get the Division implementation from the eg package, and use a script subclass that uses 'verify' instead of the 'check' keyword.<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td>eg.Division</td>
+	</tr>
+</table>
+<br/><br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">my division1</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>numerator</td>
+		<td>denominator</td>
+		<td>expected</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>10</td>
+		<td>2</td>
+		<td>5.0</td>
+	</tr>
+</table>
+<br/><br/><h2 id="1">When we create a script using a subclass of Slim's standard script table, the decision table should use that subtype also.</h2>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>my division2</td>
+		<td>numerator</td>
+		<td></td>
+		<td>denominator</td>
+		<td></td>
+		<td>expected</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>setNumerator</td>
+		<td colspan="6">@numerator</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>setDenominator</td>
+		<td colspan="6">@denominator</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>verify</td>
+		<td>quotient</td>
+		<td colspan="5">@expected</td>
+	</tr>
+</table>
+<br/><br/>Get the Division implementation from the eg package, and use a script subclass that uses 'verify' instead of the 'check' keyword.<br/><table>
+	<tr class="slimRowTitle">
+		<td>verify script</td>
+		<td>eg.Division</td>
+	</tr>
+</table>
+<br/><br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">my division2</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>numerator</td>
+		<td>denominator</td>
+		<td>expected</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>10</td>
+		<td>2</td>
+		<td>5.0</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<a href="../../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../../FrontPage.html">Front Page</a> | <a href="../../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

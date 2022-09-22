@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PlugIns.JdbcFixtures.JdbcSamples.PrintTable</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../PlugIns.html">PlugIns</a></li>
+<li><a href="../../../PlugIns/JdbcFixtures.html">JdbcFixtures</a></li>
+<li><a href="../../../PlugIns/JdbcFixtures/JdbcSamples.html">JdbcSamples</a></li>
+
+  </ol>
+</nav>
+<article>
+Get Sample Data<br/><br/>A <b><a href="../../../PlugIns/JdbcFixtures/JdbcSamples/PrintTable.html">PrintTable</a></b> fixture will print a table from the <b><a href="../../../PlugIns/JdbcFixtures/JdbcSamples/DefaultConnection.html">DefaultConnection</a></b> to standard error output. A box will appear after the the <i>Test</i> button is pressed. The box will say that an error has occured. <br/><br/>An error may, in fact, have happened. The table may not exist. The database connection may not be correct. The java library (jar files) may not be referenced correctly.<br/><br/>The intended output should be the contents of a table or the results of a query. This output can be pasted into a Wiki Page. <br/><br/><h2 id="0">Syntax:</h2>
+<h3 id="1">Parameters</h3>
+<ol>
+	<li>A fixture name, for example <b>Select</b> or <b>Insert</b>. </li>
+	<li><i>Table</i> or <b>SELECT . . .</b> </li>
+</ol>
+<h3 id="2">Columns</h3>
+ <i>optional</i> the names of columns from the table or query <br/><br/><table>
+	<tr>
+		<td>Print Table</td>
+		<td>Load Table</td>
+		<td>dept</td>
+	</tr>
+	<tr>
+		<td>dname</td>
+		<td>deptno</td>
+		<td>loc</td>
+	</tr>
+</table>
+<br/><table>
+	<tr>
+		<td>Print Table</td>
+		<td>Load Table</td>
+		<td>dept</td>
+	</tr>
+</table>
+<br/><table>
+	<tr>
+		<td>Print Table</td>
+		<td>Check Table</td>
+		<td>select dname,deptno from dept</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<center>FitNesse v20220921</center><center><a href="../../../FrontPage.html">Front Page</a> - <a href="../../../FitNesse/UserGuide.html">User Guide</a> - <a href="../../../FitNesseFeatures.html">Features</a> - <a href="../../../FitNesseDownload.html">Download</a> - <a href="../../../PlugIns.html">Plugins</a> - <a href="../../../PlugIns.html#slimfixtures">Fixtures</a> - <a href="https://gitter.im/fitnesse-org/fitnesse">Gitter Community</a></center>
+</footer>
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FrontPage.FitNesseDevelopment.FitNesseRelease20160618</title>
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../FrontPage.html">FrontPage</a></li>
+<li><a href="../../FrontPage/FitNesseDevelopment.html">FitNesseDevelopment</a></li>
+
+  </ol>
+</nav>
+<article>
+<h3>release 
+	<a href="">20160618</a>
+</h3>
+<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20160618">fitnesse-standalone.jar</a></strong></td><td>4924145 bytes</td><td>0</td></tr></tbody></table><br/><br/><h3 id="0"><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> Release Notes 2016/06/18</h3>
+<p class="note">Uncle Bob Consulting LLC.</p>
+<br/><p class="note"><span class="red">Requires Java 1.7</span></p>
+<br/><h4 id="1">Major Changes since <a href="../../FrontPage/FitNesseDevelopment/FitNesseRelease20160515.html">20160515</a>:</h4>
+<br/><ul>
+	<li>Add ability to specify the locale used to format evaluated expressions</li>
+	<li><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> is more strict in propagating exceptions, instead of only logging them</li>
+	<li><i>WikiPage<a title="create page" href="../../FrontPage/FitNesseDevelopment/WikiPage.html?edit&amp;nonExistent=true">[?]</a></i> interface now has a <i>remove()</i> method. This will replace the <i>removeChild()</i> method in the near future</li>
+	<li>Updated <i>FixtureInteraction<a title="create page" href="../../FrontPage/FitNesseDevelopment/FixtureInteraction.html?edit&amp;nonExistent=true">[?]</a></i> interface</li>
+	<li>Issues fixed:<ul>
+	<li>Display of Map results from fixtures should allow nested HTML</li>
+	<li>Fix assignment of output parameters of scenarios with graceful names in decision tables</li>
+	<li>Fix Where Used page for pages under a Symbolic Link</li>
+</ul>
+</li>
+</ul>
+<br/><h4 id="2">Github ids of Contributors to this release:</h4>
+<br/><ul>
+	<li>Arjan Molenaar</li>
+	<li>Florian Léger</li>
+	<li>Fried Hoeben</li>
+	<li>Hans Joachim Desserud</li>
+	<li>LudovicVa<a title="create page" href="../../FrontPage/FitNesseDevelopment/LudovicVa.html?edit&amp;nonExistent=true">[?]</a></li>
+	<li>Robert C. Martin</li>
+</ul>
+<br/><span class="meta">Thanks to all of you!</span><br/><h3 id="3">Git History</h3>
+<br/><table>
+	<tr>
+		<td>2016-06-16</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #930 from amolenaar/wiki-remove</td>
+	</tr>
+	<tr>
+		<td>2016-06-16</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #929 from Enovea/master</td>
+	</tr>
+	<tr>
+		<td>2016-06-16</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #923 from amolenaar/propagate-exceptions</td>
+	</tr>
+	<tr>
+		<td>2016-06-16</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #911 from LudovicVa/master</td>
+	</tr>
+	<tr>
+		<td>2016-06-12</td>
+		<td>Robert C. Martin</td>
+		<td>refactoring</td>
+	</tr>
+	<tr>
+		<td>2016-06-12</td>
+		<td>Robert C. Martin</td>
+		<td>improve testing of Binding, and refactor</td>
+	</tr>
+	<tr>
+		<td>2016-06-08</td>
+		<td>Robert C. Martin</td>
+		<td>refactor ActionFixture and ColumnFixture</td>
+	</tr>
+	<tr>
+		<td>2016-06-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Processed remarks made by Fried Hoeben. And some indentation.</td>
+	</tr>
+	<tr>
+		<td>2016-06-08</td>
+		<td>Robert C. Martin</td>
+		<td>added tests for ColumnFixture</td>
+	</tr>
+	<tr>
+		<td>2016-06-08</td>
+		<td>Robert C. Martin</td>
+		<td>add mutation testing for fitnesse in parts</td>
+	</tr>
+	<tr>
+		<td>2016-06-07</td>
+		<td>Robert C. Martin</td>
+		<td>Got mutation testing for fit working again</td>
+	</tr>
+	<tr>
+		<td>2016-06-06</td>
+		<td>Robert C. Martin</td>
+		<td>Merge branch 'master' of github.com:unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2016-06-06</td>
+		<td>Robert C. Martin</td>
+		<td>final refactoring of Action Fixture and Tests</td>
+	</tr>
+	<tr>
+		<td>2016-06-06</td>
+		<td>LudovicVa</td>
+		<td>Invoke via the interaction the around slim method</td>
+	</tr>
+	<tr>
+		<td>2016-06-02</td>
+		<td>Arjan Molenaar</td>
+		<td>boyscouting.</td>
+	</tr>
+	<tr>
+		<td>2016-06-06</td>
+		<td>LudovicVa</td>
+		<td>Update CachedInteraction.java</td>
+	</tr>
+	<tr>
+		<td>2016-06-06</td>
+		<td>LudovicVa</td>
+		<td>Make fields final</td>
+	</tr>
+	<tr>
+		<td>2016-06-06</td>
+		<td>LudovicVa</td>
+		<td>Update TestSlimInvocationAware.java</td>
+	</tr>
+	<tr>
+		<td>2016-06-04</td>
+		<td>Robert C. Martin</td>
+		<td>move taskdef inside mutation testing</td>
+	</tr>
+	<tr>
+		<td>2016-06-04</td>
+		<td>Robert C. Martin</td>
+		<td>pitest mutation testing</td>
+	</tr>
+	<tr>
+		<td>2016-06-04</td>
+		<td>Arjan Molenaar</td>
+		<td>Use IllegalStateException on places where no exceptions should occur at all.</td>
+	</tr>
+	<tr>
+		<td>2016-06-04</td>
+		<td>Arjan Molenaar</td>
+		<td>More specific exceptions</td>
+	</tr>
+	<tr>
+		<td>2016-06-04</td>
+		<td>Robert C. Martin</td>
+		<td>added pitest to ivy and ant</td>
+	</tr>
+	<tr>
+		<td>2016-06-04</td>
+		<td>Arjan Molenaar</td>
+		<td>WikiPageProperties should throw WikiPageLoadException</td>
+	</tr>
+	<tr>
+		<td>2016-06-04</td>
+		<td>Robert C. Martin</td>
+		<td>mend</td>
+	</tr>
+	<tr>
+		<td>2016-06-04</td>
+		<td>Robert C. Martin</td>
+		<td>Action Fixture Covered</td>
+	</tr>
+	<tr>
+		<td>2016-06-04</td>
+		<td>Arjan Molenaar</td>
+		<td>SlimTableFactory throws specific exeption on error.</td>
+	</tr>
+	<tr>
+		<td>2016-06-04</td>
+		<td>Arjan Molenaar</td>
+		<td>Clean up RuntimeException in the wiki package.</td>
+	</tr>
+	<tr>
+		<td>2016-06-04</td>
+		<td>Arjan Molenaar</td>
+		<td>MockSocket can throw exceptions.</td>
+	</tr>
+	<tr>
+		<td>2016-06-04</td>
+		<td>Arjan Molenaar</td>
+		<td>No need for exception handling in wiki.refactoring</td>
+	</tr>
+	<tr>
+		<td>2016-06-03</td>
+		<td>Arjan Molenaar</td>
+		<td>DateTimeUtil should propagate ParseException.</td>
+	</tr>
+	<tr>
+		<td>2016-06-03</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove RuntimeException from history and formatter code.</td>
+	</tr>
+	<tr>
+		<td>2016-06-03</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove a couple of occurrences where RuntimeException was thrown. Some places caught exceptions in vain, other places could benefit from more specific exceptions.</td>
+	</tr>
+	<tr>
+		<td>2016-06-03</td>
+		<td>Arjan Molenaar</td>
+		<td>Test system related code does no longer throw IOException. Where needed custom exceptions are thrown.</td>
+	</tr>
+	<tr>
+		<td>2016-06-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix maven url, so IDE's can pick it up.</td>
+	</tr>
+	<tr>
+		<td>2016-06-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Implement default remove() in BaseWikiPage. Ensure backwards compatibility for now.</td>
+	</tr>
+	<tr>
+		<td>2016-06-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Use WikiPage.remove() everywhere</td>
+	</tr>
+	<tr>
+		<td>2016-06-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Deprecate WikiPage.removeChildPage in favor of WikiPage.remove().</td>
+	</tr>
+	<tr>
+		<td>2016-06-01</td>
+		<td>Florian Léger</td>
+		<td>Add FORMAT_LOCALE variable to specify locale for formatted expression evaluation</td>
+	</tr>
+	<tr>
+		<td>2016-05-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #917 from amolenaar/refactoring</td>
+	</tr>
+	<tr>
+		<td>2016-05-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #928 from Enovea/master</td>
+	</tr>
+	<tr>
+		<td>2016-05-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Update SymbolicPage equality algorithm.</td>
+	</tr>
+	<tr>
+		<td>2016-05-27</td>
+		<td>Florian Léger</td>
+		<td>Fix assignation of output parameters of scenarios with graceful names in decision tables</td>
+	</tr>
+	<tr>
+		<td>2016-05-21</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #924 from hansjoachim/readme</td>
+	</tr>
+	<tr>
+		<td>2016-05-21</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Now that Java7 is required, update instructions for setting up IDEA</td>
+	</tr>
+	<tr>
+		<td>2016-05-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #921 from fhoeben/ImproveMapConvertorsEscaping</td>
+	</tr>
+	<tr>
+		<td>2016-05-18</td>
+		<td>Fried Hoeben</td>
+		<td>Allow same nested content when converting Maps as in HtmlTables (except slim variables) Fixes #920</td>
+	</tr>
+	<tr>
+		<td>2016-05-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Moved FixtureInteraction to SlimExecutionContext.</td>
+	</tr>
+	<tr>
+		<td>2016-05-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Replace static SocketFactory by interface+implementations.</td>
+	</tr>
+	<tr>
+		<td>2016-05-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Add deprecation warnings. Should pass a SocketFactory around instead of SSL properties.</td>
+	</tr>
+	<tr>
+		<td>2016-05-06</td>
+		<td>LudovicVa</td>
+		<td>Change interface for compatibility with InteractionAwareFixtures</td>
+	</tr>
+	<tr>
+		<td>2016-05-06</td>
+		<td>LudovicVa</td>
+		<td>Moving method finding to Fixture Interaction</td>
+	</tr>
+	<tr>
+		<td>2016-04-30</td>
+		<td>LudovicVa</td>
+		<td>Merge remote-tracking branch 'refs/remotes/unclebob/master'</td>
+	</tr>
+	<tr>
+		<td>2016-04-09</td>
+		<td>Arjan Molenaar</td>
+		<td>Improve exception propagation.</td>
+	</tr>
+	<tr>
+		<td>2016-04-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Use FileUtil.close(), instead of it's own try/catch block</td>
+	</tr>
+	<tr>
+		<td>2016-04-06</td>
+		<td>Arjan Molenaar</td>
+		<td>CompositeTestSystemListener will remove listeners that throw IOException.</td>
+	</tr>
+	<tr>
+		<td>2016-04-03</td>
+		<td>Arjan Molenaar</td>
+		<td>Housekeeping: whitespace.</td>
+	</tr>
+	<tr>
+		<td>2016-04-03</td>
+		<td>Arjan Molenaar</td>
+		<td>Simplify FileUtil.close(), log exception (do not throw).</td>
+	</tr>
+	<tr>
+		<td>2016-04-03</td>
+		<td>Arjan Molenaar</td>
+		<td>Propagate IOException in FileUtil.</td>
+	</tr>
+	<tr>
+		<td>2016-04-03</td>
+		<td>Arjan Molenaar</td>
+		<td>Ensure all (test system) handlers are invoked, even if exceptions occur.</td>
+	</tr>
+	<tr>
+		<td>2016-04-01</td>
+		<td>Arjan Molenaar</td>
+		<td>Housekeeping: white space</td>
+	</tr>
+	<tr>
+		<td>2016-04-01</td>
+		<td>Arjan Molenaar</td>
+		<td>FitNesseExpedited.send() propagates IO exception. Same with Response.getEncodedBytes()</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<hr/>
+<br/><a href="../../FrontPage.html">.FrontPage</a> | <a href="../../FrontPage/FitNesseDevelopment/FrontPage.html">FrontPage</a> | <a href="../../RecentChanges.html">.RecentChanges</a><br/>
+</footer>
+</body>
+</html>

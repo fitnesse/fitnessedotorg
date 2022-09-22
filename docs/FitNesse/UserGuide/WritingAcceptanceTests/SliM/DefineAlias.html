@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.WritingAcceptanceTests.SliM.DefineAlias</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+<li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">WritingAcceptanceTests</a></li>
+<li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM.html">SliM</a></li>
+
+  </ol>
+</nav>
+<article>
+The "Define Alias" table is designed to help you to segregate requirements from the implementation.<br/><br/>Normally the table name must be a graceful name of the class name used in your implementation.<br/><br/>This might not be convenient in some situations. <br/><ul>
+	<li>your implementation is a generic framework, in this case it is unlikely that classnames match the business names</li>
+	<li>your implementation needs technical configuration parameters which are not important to the business </li>
+</ul>
+<br/>  <br/>Below is a dynamic decision table without any alias. This will be used in the following examples with alias definitions<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="9">ddt: add up change</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td># description</td>
+		<td>1c</td>
+		<td>5c</td>
+		<td>10c</td>
+		<td>25c</td>
+		<td>50c</td>
+		<td>$1</td>
+		<td>total cents?</td>
+		<td>$ total?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>some simple addition</td>
+		<td>2</td>
+		<td>2</td>
+		<td>4</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>52</td>
+		<td>0.52</td>
+	</tr>
+</table>
+<br/><br/><h4 id="0">Use Case 1</h4>
+The business expects a different name "add change" than your class name "add up change"<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Define alias</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>add change</td>
+		<td>add up change</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="9">ddt: add change</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td># description</td>
+		<td>1c</td>
+		<td>5c</td>
+		<td>10c</td>
+		<td>25c</td>
+		<td>50c</td>
+		<td>$1</td>
+		<td>total cents?</td>
+		<td>$ total?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>some simple addition</td>
+		<td>2</td>
+		<td>2</td>
+		<td>4</td>
+		<td>0</td>
+		<td>0</td>
+		<td>1</td>
+		<td>152</td>
+		<td>1.52</td>
+	</tr>
+</table>
+<br/><h4 id="1">Use Case 2</h4>
+The business expects a different name "add up" than your class name "add up change" <br/>and in addition the test case is defined as decision table but you implemented it as dynamic decision table.<br/>You can overwrite the table type and the name.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Define alias</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>add up</td>
+		<td>ddt: add up change</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="9">dt: add up</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td># description</td>
+		<td>1c</td>
+		<td>5c</td>
+		<td>10c</td>
+		<td>25c</td>
+		<td>50c</td>
+		<td>$1</td>
+		<td>total cents?</td>
+		<td>$ total?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>some simple addition</td>
+		<td>2</td>
+		<td>2</td>
+		<td>4</td>
+		<td>0</td>
+		<td>1</td>
+		<td>0</td>
+		<td>102</td>
+		<td>1.02</td>
+	</tr>
+</table>
+<br/><h4 id="2">Use Case 3</h4>
+The names are matching but you need to overwrite the table type.<br/>Note that the <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/DefineTableType.html">Define Table Type</a> table will not overwrite type definitions given in the test.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Define alias</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>add up change</td>
+		<td>ddt:</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="9">dt: add up change</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td># description</td>
+		<td>1c</td>
+		<td>5c</td>
+		<td>10c</td>
+		<td>25c</td>
+		<td>50c</td>
+		<td>$1</td>
+		<td>total cents?</td>
+		<td>$ total?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>some simple addition</td>
+		<td>2</td>
+		<td>2</td>
+		<td>4</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>52</td>
+		<td>0.52</td>
+	</tr>
+</table>
+<br/><br/><h4 id="3">Use Case 4</h4>
+The requirements have been written beforehand with a business name.<br/>Your implementation requires that you prepare the test fixture in a script.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td>add up change</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td>$myfixture=</td>
+		<td>get fixture</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Define alias</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>add money</td>
+		<td>$myfixture</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="9">ddt: add money</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td># description</td>
+		<td>1c</td>
+		<td>5c</td>
+		<td>10c</td>
+		<td>25c</td>
+		<td>50c</td>
+		<td>$1</td>
+		<td>total cents?</td>
+		<td>$ total?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>some simple addition</td>
+		<td>2</td>
+		<td>2</td>
+		<td>4</td>
+		<td>4</td>
+		<td>0</td>
+		<td>1</td>
+		<td>252</td>
+		<td>2.52</td>
+	</tr>
+</table>
+<br/>It doesn't matters if you define the alias before or after you create the fixture.<br/>Again you can add a table type definition if required<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Define alias</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>add more money</td>
+		<td>ddt: $anotherFixture</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td>add up change</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>$anotherFixture=</td>
+		<td>get fixture</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="9">add more money</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td># description</td>
+		<td>1c</td>
+		<td>5c</td>
+		<td>10c</td>
+		<td>25c</td>
+		<td>50c</td>
+		<td>$1</td>
+		<td>total cents?</td>
+		<td>$ total?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>some simple addition</td>
+		<td>2</td>
+		<td>2</td>
+		<td>4</td>
+		<td>4</td>
+		<td>0</td>
+		<td>1</td>
+		<td>252</td>
+		<td>2.52</td>
+	</tr>
+</table>
+<br/><br/>Another example with a constructor parameter<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td>test query</td>
+		<td>2</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td colspan="2">query</td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$tq=</td>
+		<td colspan="2">get fixture</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Define alias</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>my query</td>
+		<td>query: $tq</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">my query</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>n</td>
+		<td>2n</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>1</td>
+		<td>2</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>2</td>
+		<td>4</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td>test query</td>
+		<td>3</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td colspan="2">query</td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$tq=</td>
+		<td colspan="2">get fixture</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Define alias</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>my query</td>
+		<td>subset query: $tq</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">my query</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>n</td>
+		<td>2n</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>2</td>
+		<td>4</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>3</td>
+		<td>6</td>
+	</tr>
+</table>
+<br/><h4 id="4">Use Case 5</h4>
+If you can't use an <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/ImportTable.html">Import</a> statement or you have import conflicts you can't resolve.<br/>The alias can help you to get around these.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Define alias</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>what is in my pocket</td>
+		<td>ddt: fitnesse.slim.test.AddUpChange</td>
+	</tr>
+</table>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="9">what is in my pocket</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td># description</td>
+		<td>1c</td>
+		<td>5c</td>
+		<td>10c</td>
+		<td>25c</td>
+		<td>50c</td>
+		<td>$1</td>
+		<td>total cents?</td>
+		<td>$ total?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>some simple addition</td>
+		<td>2</td>
+		<td>2</td>
+		<td>4</td>
+		<td>4</td>
+		<td>0</td>
+		<td>1</td>
+		<td>252</td>
+		<td>2.52</td>
+	</tr>
+</table>
+<br/>The alias fixture allows QA people to implement requirements by reusing existing framework functions and without writing new code. <br/>Still your test pages are easy to read, especially for project managers, BA's and Product owners who might not understand how Fitnesse works. <br/><br/>Hint: Try putting the "Define Alias" fixtures in the same place as your "Import" fixtures.   The setup pages are a good place for these!<br/>
+</article>
+<footer>
+<center>User Guide Contents</center><center><a href="../../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+</footer>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteResponderTests.SuiteSearchResponder.TestContentSearch</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteResponderTests.html">SuiteResponderTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteResponderTests/SuiteSearchResponder.html">SuiteSearchResponder</a></li>
+
+  </ol>
+</nav>
+<article>
+<center><h2 id="0">Title Search</h2>
+</center><br/>Searches for the specified string in the content of every wiki page.<br/>It's triggered by the following URL:<br/><br/><a href="http://&lt;host&gt;/search?responder=search&amp;searchType=content&amp;searchString=&lt;text&gt;">http://&lt;host&gt;/search?responder=search&amp;searchType=content&amp;searchString=&lt;text&gt;</a><br/><br/><div class="collapsible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">Included page: <a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteResponderTests/SuiteSearchResponder/SamplePages.html">SamplePages</a> <a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteResponderTests/SuiteSearchResponder/SamplePages.html?edit&amp;redirectToReferer=true&amp;redirectAction=" class="edit">(edit)</a></p>
+	<div>Here are some sample pages.<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Page creator.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>Page name.</td>
+		<td>Page contents.</td>
+		<td>valid?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>PageAbc</td>
+		<td>This page has ABCs</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>XyzPage</td>
+		<td>A page with XYZ</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>BasePage</td>
+		<td>This is the base page</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>BasePage.ChildPage</td>
+		<td>This is the child page</td>
+		<td>true</td>
+	</tr>
+</table>
+</div>
+</div>
+<br/>Search for a page PageAbc<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>status?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>search?responder=search&searchType=content&searchString=PageAbc</td>
+		<td></td>
+	</tr>
+</table>
+<br/>Check for the proper title.<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+		<td>wrapped html?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>Content Search</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+<br/>Since no page, not even PageAbc contains that content, no results will be returned.<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>>PageAbc<</td>
+		<td>false</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>contents</td>
+		<td>No pages matched your search criteria.</td>
+		<td>true</td>
+	</tr>
+</table>
+<br/>Now search for ABC.<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>status?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>search?responder=search&searchType=content&searchString=ABC</td>
+		<td></td>
+	</tr>
+</table>
+<br/>Make sure we get PageAbc in the result list.<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+		<td>wrapped html?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>PageAbc</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+<br/>Now search for xyz.<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>status?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>search?responder=search&searchType=content&searchString=xyz</td>
+		<td></td>
+	</tr>
+</table>
+<br/>Make sure we get XyzPage in the result list.  Searches are case insensitive.<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+		<td>wrapped html?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>XyzPage</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+<br/>Now search for the word page.<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>status?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>search?responder=search&searchType=content&searchString=page</td>
+		<td></td>
+	</tr>
+</table>
+<br/>Make sure we get all 4 pages in the result list.<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>PageAbc</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>contents</td>
+		<td>XyzPage</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>BasePage</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>contents</td>
+		<td>BasePage.ChildPage</td>
+		<td>true</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<a href="../../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../../FrontPage.html">Front Page</a> | <a href="../../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

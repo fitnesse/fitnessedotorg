@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteWidgetTests.TestExistingWikiWordLink</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests/SuiteWidgetTests.html">SuiteWidgetTests</a></li>
+
+  </ol>
+</nav>
+<article>
+<h2 id="0">Test that <i>existing</i> <a href="../../../FitNesse/SuiteAcceptanceTests/SuiteWidgetTests/WikiPageReference.html">WikiPageReference</a> tokens are converted to links.</h2>
+<ul>
+	<li>A <a href="../../../FitNesse/SuiteAcceptanceTests/SuiteWidgetTests/WikiPageReference.html">WikiPageReference</a> is said to be <i>existing</i> if the page to which it refers already exists in the wiki.</li>
+	<li>A <a href="../../../FitNesse/SuiteAcceptanceTests/SuiteWidgetTests/WikiPageReference.html">WikiPageReference</a> can be a simple <a href="../../../FitNesse/SuiteAcceptanceTests/SuiteWidgetTests/WikiWord.html">.FitNesse.SuiteAcceptanceTests.SuiteWidgetTests.WikiWord</a>, or it can be a <a href="../../../FitNesse/SuiteAcceptanceTests/SuiteWidgetTests/WikiPagePath.html">WikiPagePath</a>.</li>
+	<li>A <a href="../../../FitNesse/SuiteAcceptanceTests/SuiteWidgetTests/WikiPageReference.html">WikiPageReference</a> that begins with a dot ("<b>.</b>") is taken to be relative to the <i>root</i> of the wiki.</li>
+	<li>A <a href="../../../FitNesse/SuiteAcceptanceTests/SuiteWidgetTests/WikiPageReference.html">WikiPageReference</a> that does not begin with a dot is taken to be relative to the parent of the current page.</li>
+</ul>
+<hr/>
+<br/><h3 id="1">Test simple relative <a href="../../../FitNesse/SuiteAcceptanceTests/SuiteWidgetTests/WikiPageReference.html">WikiPageReference</a>.</h3>
+<ul>
+	<li>Create pages at the root level.  One page refers to the other.</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Page creator.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>Page name.</td>
+		<td>Page contents.</td>
+		<td>valid?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>SomePage</td>
+		<td>some page</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>RelativeReferencePage</td>
+		<td>SomePage</td>
+		<td>true</td>
+	</tr>
+</table>
+<ul>
+	<li>Then request the page with the reference</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>valid?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>RelativeReferencePage</td>
+		<td>true</td>
+	</tr>
+</table>
+<ul>
+	<li>Make sure the rendered page has a link.</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="4">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+		<td>value</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>&lt;a href="../../../SomePage.html"&gt;SomePage&lt;/a&gt;</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+<hr/>
+<br/><h3 id="2">Test simple global <a href="../../../FitNesse/SuiteAcceptanceTests/SuiteWidgetTests/WikiWord.html">.FitNesse.SuiteAcceptanceTests.SuiteWidgetTests.WikiWord</a></h3>
+<ul>
+	<li>Create pages at the root level.  One page refers to the other using a global <a href="../../../FitNesse/SuiteAcceptanceTests/SuiteWidgetTests/WikiPageReference.html">WikiPageReference</a>.</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Page creator.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>Page name.</td>
+		<td>Page contents.</td>
+		<td>valid?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>GlobalReferencePage</td>
+		<td>.SomePage</td>
+		<td>true</td>
+	</tr>
+</table>
+<ul>
+	<li>Then request the page with the reference</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>valid?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>GlobalReferencePage</td>
+		<td>true</td>
+	</tr>
+</table>
+<ul>
+	<li>Make sure the rendered page has a link.</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="4">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+		<td>value</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>&lt;a href="../../../SomePage.html"&gt;.SomePage&lt;/a&gt;</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+<hr/>
+<br/><h3 id="3">Test relative <a href="../../../FitNesse/SuiteAcceptanceTests/SuiteWidgetTests/WikiPagePath.html">WikiPagePath</a></h3>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Page creator.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>Page name.</td>
+		<td>Page contents.</td>
+		<td>valid?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>SomePage.SubPage</td>
+		<td>sub page</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>SomePage.RelativeReference</td>
+		<td>SubPage</td>
+		<td>true</td>
+	</tr>
+</table>
+<ul>
+	<li>Then request the page with the reference</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>valid?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>SomePage.RelativeReference</td>
+		<td>true</td>
+	</tr>
+</table>
+<ul>
+	<li>Make sure the link is to SomePage.SubPage</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="4">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+		<td>value</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>&lt;a href="../../../SomePage/SubPage.html"&gt;SubPage&lt;/a&gt;</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+<hr/>
+<br/><h3 id="4">Test global <a href="../../../FitNesse/SuiteAcceptanceTests/SuiteWidgetTests/WikiPagePath.html">WikiPagePath</a></h3>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Page creator.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>Page name.</td>
+		<td>Page contents.</td>
+		<td>valid?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>SomePage.GlobalReference</td>
+		<td>.SomePage.SubPage</td>
+		<td>true</td>
+	</tr>
+</table>
+<ul>
+	<li>Then request the page with the reference</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>valid?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>SomePage.GlobalReference</td>
+		<td>true</td>
+	</tr>
+</table>
+<ul>
+	<li>Make sure the link is to SomePage.SubPage</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="4">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+		<td>value</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>&lt;a href="../../../SomePage/SubPage.html"&gt;.SomePage.SubPage&lt;/a&gt;</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+<br/><br/><br/><br/>
+</article>
+<footer>
+<a href="../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../FrontPage.html">Front Page</a> | <a href="../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

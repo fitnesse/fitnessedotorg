@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteResponderTests.SuiteRenameResponder.TestRenameDoesNotMove</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteResponderTests.html">SuiteResponderTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteResponderTests/SuiteRenameResponder.html">SuiteRenameResponder</a></li>
+
+  </ol>
+</nav>
+<article>
+<h3 id="0">A page may <i>not</i> be renamed to a name with dots in it.</h3>
+<h3 id="1">Another way of saying this is that renaming a page does not change it's position.</h3>
+<br/>First build the page to rename, and another page to try to move it beneath.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Page creator.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>Page name.</td>
+		<td>Page contents.</td>
+		<td>valid?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>MyPage</td>
+		<td>X</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>TargetPage</td>
+		<td>X</td>
+		<td>true</td>
+	</tr>
+</table>
+<br/>Then rename that page.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>status?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>MyPage?responder=renamePage&newName=TargetPage.SomePage</td>
+		<td>400</td>
+	</tr>
+</table>
+<br/>Make sure that we got an error message.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+		<td>wrapped html?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>Cannot rename</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+<br/>The renamed page should not exist.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>valid?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>TargetPage.SomePage?getPage&amp;dontCreatePage</td>
+		<td>false</td>
+	</tr>
+</table>
+<br/>The old page should still exist.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>valid?</td>
+		<td>contents?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>MyPage</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<a href="../../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../../FrontPage.html">Front Page</a> | <a href="../../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

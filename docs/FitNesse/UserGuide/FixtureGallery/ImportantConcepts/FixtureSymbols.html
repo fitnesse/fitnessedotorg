@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.FixtureGallery.ImportantConcepts.FixtureSymbols</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+<li><a href="../../../../FitNesse/UserGuide/FixtureGallery.html">FixtureGallery</a></li>
+<li><a href="../../../../FitNesse/UserGuide/FixtureGallery/ImportantConcepts.html">ImportantConcepts</a></li>
+
+  </ol>
+</nav>
+<article>
+<br/><i>Previous page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/ImportantConcepts/SystemUnderTest.html">System under test</a> Next page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/ImportantConcepts/MarkupVariables.html">Markup Variables</a> Parent page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/ImportantConcepts.html">Important concepts</a></i><br/><h2 id="0">Symbols</h2>
+ Symbols are global variables in FIT. They can be used to dynamically exchange values between tables. For example, you can create a new domain object (eg a player) and store his ID or the whole object into a symbol, so that it can later be used in a different test. <br/><br/><h3 id="1">Symbols in Java</h3>
+ In the Java implementation of FIT, <b> ColumnFixture </b> supports a special syntax for symbols. Add an equals sign before the column name to signal that the value of the method should not be tested, but instead stored into a symbol. Then put the symbol names into the cells instead of expected outcomes. To retrieve the symbol later in a different table, put the equals sign after the column name and again use the symbol name in the cell. <br/><br/><pre>
+!|ColumnFixtureTest|
+|firstPart|secondPart|=together()|
+|Hello|World|line1|
+
+!|SymbolsTest|
+|check|symbol value|line1|Hello, World|
+|set symbol value|line2|Hello|
+
+!|ColumnFixtureTest|
+|firstPart=|secondPart|together()|
+|line1|World|Hello, World, World|
+|line2|World|Hello, World|
+
+</pre><br/> There are no changes required to the <b> ColumnFixture </b> class &mdash; it does not care about the fact that symbols are used at all. When you run the test, the actual symbol values will be printed in the cell for your convenience (see <a href="../../../../FitNesse/UserGuide/FixtureGallery/ImportantConcepts/FixtureSymbols.html#figconceptssymbols">Figure 2</a>). <br/><br/><br/><a id="figconceptssymbols"></a><br/><h3 id="2">Figure 2: UserGuide prints symbol values in test reports</h3>
+<img src="files/images/javasym.png"/><br/> You can access the symbol values programmatically from your code using static methods <b> Fixture.getSymbol </b> and <b> Fixture.setSymbol </b> in the Java implementation of FIT. Here is the source code for the middle table from the previous example: <br/><br/><pre>
+package info.fitnesse.fixturegallery;
+
+import fitlibrary.SequenceFixture;
+import fit.Fixture;;
+
+public class SymbolsTest extends SequenceFixture{
+	public Object symbolValue(String s){
+		return Fixture.getSymbol(s);
+	}
+	public void setSymbolValue(String symbol, String value){
+		Fixture.setSymbol(symbol, value);
+	}
+}
+</pre><br/><h3 id="3">Symbols in .NET</h3>
+ Symbols are much more flexible in the .NET implementation of FIT. Instead of entire columns, symbols work for individual cells. Use <b> >>name </b> to store a cell value into a symbol, or <b> <<name </b> to read the value of of the symbol and use it in a cell. Like in the Java implementation, the current symbol value is printed in the cell when you run the test to make it easier to troubleshoot. <br/><br/><pre>
+!|ColumnFixtureTest|
+|firstpart|secondpart|together?|
+|Hello|World|Hello, World|
+|Houston|We Have a Problem|&gt;&gt;houston|
+
+
+!|ColumnFixtureTest|
+|firstpart|secondpart|together?|
+|&lt;&lt;houston|World|Houston, We Have a Problem, World|
+
+</pre><br/> This syntax works in all fixtures, not just for <b> ColumnFixture </b>. By default, it is not active in FitLibrary fixtures, but you can turn that feature on with the following table: <br/><br/><pre>
+!|Cell Handler Loader|
+|load|SymbolSaveHandler|FitLibrary|
+|load|SymbolRecallHandler|FitLibrary|
+</pre><br/> In the .NET implementation of FIT, <b> Fixture.Save </b> and <b> Fixture.Recall </b> are used to set and read symbol values from the code. <br/><br/><h3 id="4">Symbols in Python</h3>
+Python supports the Java syntax and a symbol cell syntax as well, similar to .NET. The difference is that <b> << </b> is always used, but the operation depends on the position relative to the symbol name. Use <b> name<< </b> to store a cell value into a symbol, or <b> <<name </b> to read the value of of the symbol and use it in a cell. <br/><br/><pre>
+!*** Variant 1: When all rows require symbol storage or retrieval
+!|ColumnFixtureTest|
+|firstPart|secondPart|=together()|
+|Hello|World|line1|
+
+!|SymbolsTest|
+|check|symbol value|line1|Hello, World|
+|set symbol value|line2|Hello|
+
+!|ColumnFixtureTest|
+|firstPart=|secondPart|together()|
+|line1|World|Hello, World, World|
+|line2|World|Hello, World|
+
+***!
+!*** Variant 2: When one or more rows require symbol storage or retrieval
+!|ColumnFixtureTest|
+|firstPart|secondPart|together()|
+|Hello|World|&lt;&lt;line1|
+
+!|SymbolsTest|
+|check|symbol value|line1|Hello, World|
+|set symbol value|line2|Hello|
+
+!|ColumnFixtureTest|
+|firstPart|secondPart|together()|
+|line1&lt;&lt;|World|Hello, World, World|
+|line2&lt;&lt;|World|Hello, World|
+
+***!
+</pre><br/><br/><i>Previous page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/ImportantConcepts/SystemUnderTest.html">System under test</a> Next page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/ImportantConcepts/MarkupVariables.html">Markup Variables</a> Parent page: <a href="../../../../FitNesse/UserGuide/FixtureGallery/ImportantConcepts.html">Important concepts</a></i><br/>
+</article>
+<footer>
+<a href="../../../../FitNesse/UserGuide/FixtureGallery.html">Table of contents</a>| Fixture Gallery on <a href="http://sourceforge.net/projects/fixturegallery">SourceForge</a> | Fixture Gallery live wiki on  <a href="http://fitnesse.info/fixturegallery">UserGuide.Info</a> | <a href="http://gojko.net/fitnesse/fixturegallery">Comments and Feedback</a> | <a href="../../../../FrontPage.html">Front Page</a><br/>
+</footer>
+</body>
+</html>

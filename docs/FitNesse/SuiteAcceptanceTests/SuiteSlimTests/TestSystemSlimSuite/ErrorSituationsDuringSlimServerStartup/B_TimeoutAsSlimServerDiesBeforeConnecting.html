@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteSlimTests.TestSystemSlimSuite.ErrorSituationsDuringSlimServerStartup.B_TimeoutAsSlimServerDiesBeforeConnecting</title>
+<link rel="stylesheet" type="text/css" href="../../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests.html">SuiteSlimTests</a></li>
+<li><a href="../../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/TestSystemSlimSuite.html">TestSystemSlimSuite</a></li>
+<li><a href="../../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/TestSystemSlimSuite/ErrorSituationsDuringSlimServerStartup.html">ErrorSituationsDuringSlimServerStartup</a></li>
+
+  </ol>
+</nav>
+<article>
+<h2 id="0">Identify if the Slim Server process dies during startup</h2>
+ <br/>If a slim server process dies before a connection has been established this should be identified quickly and the test aborted.<br/>We use a test runner class which doesn't exists. This ensures the slim server dies.<br/><br/><br/><table>
+	<tr>
+		<td colspan="4">script</td>
+	</tr>
+	<tr>
+		<td>create page</td>
+		<td>TestPage</td>
+		<td>with content</td>
+		<td>
+!define TEST_SYSTEM {SLIM}
+!define slim.timeout {2}
+!define SLIM_PORT {0}
+!define TEST_RUNNER {something.that.does.not.exists}
+
+</td>
+	</tr>
+	<tr>
+		<td>check</td>
+		<td>request page</td>
+		<td>TestPage?test</td>
+		<td>200</td>
+	</tr>
+	<tr>
+		<td>ensure</td>
+		<td>content contains</td>
+		<td colspan="2">Error SLiM server died before a connection could be established.</td>
+	</tr>
+	<tr>
+		<td>show collapsed</td>
+		<td colspan="3">content</td>
+	</tr>
+	<tr>
+		<td>check</td>
+		<td>request page</td>
+		<td>TestPage?executionLog</td>
+		<td>200</td>
+	</tr>
+	<tr>
+		<td>show collapsed</td>
+		<td colspan="3">content</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<a href="../../../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../../../FrontPage.html">Front Page</a> | <a href="../../../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteSlimTests.TestCustomConverter</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests.html">SuiteSlimTests</a></li>
+
+  </ol>
+</nav>
+<article>
+We check whether a custom converter for lists can be used to change how lists are returned to the wiki.<br/><br/>Whether a converter is applied to a method's result depends on its declared return type:<br/><br/><ul>
+	<li>List (exactly, no sub-interface or class implementing it): converter is <b>not applied</b> (this is needed for some Slim tables, such as QueryTable).</li>
+	<li>All return types: converter is applied, based on the actual class of the object returned, or on its declared type when <span class="code">null</span> is returned </li>
+</ul>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>import</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>fitnesse.slim.test</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="2">TestSlimWithConverter</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td colspan="3">reset converters</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>get object</td>
+		<td>[a, b, c]</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>get list</td>
+		<td>[a, b, c]</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>get array list</td>
+		<td>[a, b, c]</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>same list</td>
+		<td colspan="2">[a, b, c]</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td colspan="3">set list converter</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>get object</td>
+		<td>{a, b, c}</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>get list</td>
+		<td>[a, b, c]</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>get array list</td>
+		<td>{a, b, c}</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>same list</td>
+		<td colspan="2">{a, b, c}</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>same list</td>
+		<td colspan="2">[a, b, c]</td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td colspan="3">remove list converter</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>get object</td>
+		<td>[a, b, c]</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>get list</td>
+		<td>[a, b, c]</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>get array list</td>
+		<td>[a, b, c]</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>same list</td>
+		<td colspan="2">[a, b, c]</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<a href="../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../FrontPage.html">Front Page</a> | <a href="../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

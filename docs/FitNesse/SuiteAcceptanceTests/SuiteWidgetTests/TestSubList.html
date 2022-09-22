@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteWidgetTests.TestSubList</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests/SuiteWidgetTests.html">SuiteWidgetTests</a></li>
+
+  </ol>
+</nav>
+<article>
+<h3 id="0">A sub list</h3>
+<br/>A list created as follows <pre> * Item one
+  * Item two</pre> should be rendered as a list with a sub list.<br/><ul>
+	<li>First create a page with a simple table in it.</li>
+</ul>
+<p class="note">We use backslash is a way to capture the leading space before the *.</p>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="2">script</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>start</td>
+		<td>Page Builder</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>line</td>
+		<td>\ * Item One</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>line</td>
+		<td>\  * Item Two</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>page</td>
+		<td>SubList</td>
+	</tr>
+</table>
+<ul>
+	<li>Then request that page</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>valid?</td>
+		<td>contents?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>SubList</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+<ul>
+	<li>Make sure the html is correct for a simple table.</li>
+</ul>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="4">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+		<td>value</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>&lt;li&gt;Item One&lt;ul&gt;</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Response Examiner.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>number</td>
+		<td>string?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>line</td>
+		<td>1</td>
+		<td>&lt;ul&gt;</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>line</td>
+		<td>2</td>
+		<td>&lt;li&gt;Item One&lt;ul&gt;</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>line</td>
+		<td>3</td>
+		<td>&lt;li&gt;Item Two&lt;/li&gt;</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>line</td>
+		<td>4</td>
+		<td>&lt;/ul&gt;</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>line</td>
+		<td>5</td>
+		<td>&lt;/li&gt;</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>line</td>
+		<td>6</td>
+		<td>&lt;/ul&gt;</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<a href="../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../FrontPage.html">Front Page</a> | <a href="../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

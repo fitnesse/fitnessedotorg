@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FrontPage.FitNesseDevelopment.StoryList</title>
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../FrontPage.html">FrontPage</a></li>
+<li><a href="../../FrontPage/FitNesseDevelopment.html">FitNesseDevelopment</a></li>
+
+  </ol>
+</nav>
+<article>
+Features that are either completed or under development for the next release.<br/><br/><hr/>
+<br/><a href="../../FrontPage/FitNesseDevelopment/FitNesseRelease20040910.html">FitNesseRelease20040910</a><br/><ul>
+	<li><a href="../../FrontPage/FitNesseDevelopment/WhereUsed.html">WhereUsed</a> button</li>
+	<li>email address are turned into links</li>
+	<li>anchor links </li>
+	<li>bug fixes</li>
+	<li>improved stability in test execution</li>
+	<li>new TestRunner<a title="create page" href="../../FrontPage/FitNesseDevelopment/TestRunner.html?edit&amp;nonExistent=true">[?]</a></li>
+	<li>new Spreadsheet table conversion</li>
+	<li>title search feature.  Search no longer uses regular expressions.</li>
+	<li>https enabled in link widget</li>
+	<li>plugin capability for authentication modules</li>
+	<li>improvements for <a href="../../FrontPage/FitNesseDevelopment/DotNet.html">DotNet</a></li>
+</ul>
+ <hr/>
+<br/><a href="../../FrontPage/FitNesseDevelopment/FitNesseRelease20040604.html">FitNesseRelease20040604</a><br/> * CSS integration.<br/><ul>
+	<li>New look and feel for <a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> using style sheets.</li>
+	<li>All deprecated HTML tags and attributes are replaced with CSS</li>
+	<li>FIT now uses CSS instead of deprecated HTML.</li>
+</ul>
+ * Plugin framework<br/><ul>
+	<li>WikiPage<a title="create page" href="../../FrontPage/FitNesseDevelopment/WikiPage.html?edit&amp;nonExistent=true">[?]</a> - allows for Steve Starkey's database plugin</li>
+	<li>HtmlPage<a title="create page" href="../../FrontPage/FitNesseDevelopment/HtmlPage.html?edit&amp;nonExistent=true">[?]</a> - allows for customizable page content and structure</li>
+</ul>
+ * <b>Fitnesse class renamed to <a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a></b> !!!<br/> * Automatic building of FitNesseRoot<a title="create page" href="../../FrontPage/FitNesseDevelopment/FitNesseRoot.html?edit&amp;nonExistent=true">[?]</a> and all neccesarry files where needed.  You can start a <a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> instance from scratch.<br/> * Column types can now have parse(String s) methods.  If the method exists it will be called as a last resort.  This method can be overridden by the parse method of the Fixture derivative.<br/> * Package Memory.  Once a package is used on a page, you don't have to prefix the fixtures with it again.<br/> * Graceful Names.  Fixture and variable names can be written as punctuated sentences.  e.g. "Page creator." translates to "PageCreator".  <br/> * fit.Import fixture allows you to import packages into fit so that they don't have to be used as prefixes to fixtures.  The fixture has one column, each row is another fixture name.<br/> * fit.Comment fixture allows you to create a table named "Comment" that does nothing.<br/> * The 'fit' package is always searched for a fixture.<br/> * Fixed bug where wrong case in fixture name hangs fit.<br/> * ! suffix for <a href="../../FrontPage/FitNesseDevelopment/ColumnFixture.html">ColumnFixture</a> methods.  quitient! works the same as quotient? and quotient()<br/> * literals are allowed in test tables<br/> * Multiuser authentication with plain text or encrypted passwords.<br/> * Friendly FIT errors.
+</article>
+<footer>
+<hr/>
+<br/><a href="../../FrontPage.html">.FrontPage</a> | <a href="../../FrontPage/FitNesseDevelopment/FrontPage.html">FrontPage</a> | <a href="../../RecentChanges.html">.RecentChanges</a><br/>
+</footer>
+</body>
+</html>

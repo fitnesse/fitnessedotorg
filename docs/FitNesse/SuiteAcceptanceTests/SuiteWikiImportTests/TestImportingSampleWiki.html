@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteWikiImportTests.TestImportingSampleWiki</title>
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../FitNesse/SuiteAcceptanceTests/SuiteWikiImportTests.html">SuiteWikiImportTests</a></li>
+
+  </ol>
+</nav>
+<article>
+<center><h3 id="0">Importing Sample Wiki</h3>
+</center>The Wiki Import feature is triggered by requesting a wiki page along with two parameters:<br/><ul>
+	<li>responder=import</li>
+	<li>remoteUrl=&lt;url of wiki to import&gt;</li>
+</ul>
+<br/>e.g. http://localhost/ImportingPage?responder=import&remoteUrl=http://fitnesse.org/FitNesse<br/><br/>A wiki page structure is provided by the set up page.<br/><br/>Create an importing page.<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Page creator.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>Page name.</td>
+		<td>Page contents.</td>
+		<td>valid?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>ImportingPage</td>
+		<td>!contents</td>
+		<td>true</td>
+	</tr>
+</table>
+<br/>This ImportingPage will now import the SampleWiki page.<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>valid?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>ImportingPage?responder=import&amp;remoteUrl=http://localhost:9123/SampleWiki</td>
+		<td>true</td>
+	</tr>
+</table>
+<br/>The above request will initiate a chunked response where all the imported pages are listed.<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">Response Examiner</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+		<td>wrapped html?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>ChildPageOne</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Response Examiner</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>type</td>
+		<td>pattern</td>
+		<td>matches?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>GrandChildPageOne</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>contents</td>
+		<td>GreatGrandChildPageOne</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>ChildPageTwo</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>contents</td>
+		<td>GrandChildPageTwo</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>contents</td>
+		<td>ChildPageThree</td>
+		<td>true</td>
+	</tr>
+</table>
+<br/>All the pages that were import can now be retrieved.<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">Response Requester.</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>uri</td>
+		<td>valid?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>ImportingPage.ChildPageOne</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>ImportingPage.ChildPageOne.GrandChildPageOne</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>ImportingPage.ChildPageOne.GrandChildPageOne.GreatGrandChildPageOne</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>ImportingPage.ChildPageTwo</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>ImportingPage.ChildPageTwo.GrandChildPageTwo</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>ImportingPage.ChildPageThree</td>
+		<td>true</td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<a href="../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../FrontPage.html">Front Page</a> | <a href="../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.WritingAcceptanceTests.AcceptanceTestPatterns.BuildOperateCheck</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+<li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">WritingAcceptanceTests</a></li>
+<li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/AcceptanceTestPatterns.html">AcceptanceTestPatterns</a></li>
+
+  </ol>
+</nav>
+<article>
+This pattern shows up repeatedly in <span class="fitnesse">FitNesse</span> Acceptance Tests. You need to use several tables on a single page, in order to fully test a given requirement. These tables naturally fall into three categories:<br/><br/><ol>
+	<li><b>Build</b>: One or more tables to <i>Build</i> the test data.  These tables are typically based upon a <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/ColumnFixture.html">ColumnFixture</a> that has the equivalent of a <span class="code">valid()</span> function.  The rows in the table load and save data, and the <span class="code">valid()</span> function returns a boolean indicating whether the data was valid and properly saved.</li>
+	<li><b>Operate</b>: A table to operate on the data.  This table is typically based upon a <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/ColumnFixture.html">ColumnFixture</a> and has always had the equivalent of a <span class="code">valid()</span> function.  The columns specify the arguments of the operation and the <span class="code">valid()</span> function performs the operation and return a boolean to indicate success.</li>
+	<li><b>Check</b>: One or more tables to validate the operation.  These fixtures might be of the style <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/ColumnFixture.html">ColumnFixture</a> or <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/RowFixture.html">RowFixture</a>.  It is in these tables that the real acceptance tests are performed.  The other two tables just set up conditions for the <b>Check</b> operation.</li>
+</ol>
+<br/><b>Note</b>: This pattern is quite similar to the automated <a href="http://weblogs.java.net/pub/wlg/854">unit testing pattern</a> Bill Wake discovered that he calls "<b>Arrange, Act, Assert</b>," (as you might find in the <a href="http://encyclopedia.thefreedictionary.com/XUnit">xUnit</a> style of unit testing tools:  <a href="http://www.junit.org">JUnit</a> for Java, or <a href="http://www.nunit.org">NUnit</a> for C#). There may be no semantic difference. The syntactic difference is that in unit tests, you can typically express all of your arranging, acting, and asserting as a few lines of code in a single test method. In <span class="fitnesse">FitNesse</span> you need a page containing several tables to express all of your building, operating, and checking.<br/><br/><h3 id="0">Examples:</h3>
+<table>
+	<tr>
+		<td><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteWikiPageResponderTests/TestBreadCrumbs.html">Test Bread Crumbs</a></td>
+		<td><i>Classic BOC fitnesse test for showing that <span class="fitnesse">FitNesse</span> deals properly with bold widgets.</i></td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<center>User Guide Contents</center><center><a href="../../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+</footer>
+</body>
+</html>

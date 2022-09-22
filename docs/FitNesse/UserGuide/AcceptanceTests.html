@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.UserGuide.AcceptanceTests</title>
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../FitNesse/UserGuide.html">UserGuide</a></li>
+
+  </ol>
+</nav>
+<article>
+<h1 id="0">Automated Acceptance Tests: Building the Right Code</h1>
+FitNesse automated acceptance tests are power tools for fixing a broken requirements process. Skillfully applied, such tests make it possible to avoid the problems of <a href="../../FitNesse/UserGuide/ProjectDeathByRequirements.html">Project Death By Requirements</a>. (Note: if you have not yet done so, you should probably first get a quick intro on FitNesse tests at the <a href="../../FitNesse/UserGuide/TwoMinuteExample.html">Two Minute Example</a>.)<br/><br/><h2 id="1">The Advantages of FitNesse Tests</h2>
+FitNesse automated acceptance tests have several advantages over many kinds of traditional black-box, GUI-based functional tests:<br/><br/><ul>
+	<li>FitNesse tests can give us feature feedback <b>very early</b> in the project. In fact, the tests ought to be written <b>first</b>, so programmers can <i>code to</i> the tests.</li>
+	<li>FitNesse tests can give us feature feedback <b>very frequently</b>. They can be run manually or automatically by anyone with web access to the server, as frequently as required. Every week, every day, every hour in a crunch.</li>
+	<li>FitNesse tests are <b>deterministic</b>: they either run green or red. If they run green for a given requirement, either the requirement is done and we move on to others, or the set of tests is not yet exactly right, in which case we refine them. Either way, we are <b>successively refining</b> the system in an orderly way. With each new test running green, we can all see the system getting better, more valuable, closer to what we need.</li>
+	<li>Being based on example data, FitNesse tests <b>exercise more paths through the business logic</b>. When you use FitNesse, you run less risk of missing important features or functional behavior.</li>
+</ul>
+<br/><h2 id="2">Acceptance Tests vs. Unit Tests</h2>
+If you are familiar with the emerging <a href="http://encyclopedia.thefreedictionary.com/XUnit">xUnit</a> style of automated unit testing (e.g., using <a href="http://www.junit.org">JUnit</a> for Java, or <a href="http://www.nunit.org">NUnit</a> for C#), you may well wonder why both kinds of testing are necessary, and how they work together. Let's discuss that.<br/><br/><h3 id="3"><a href="http://encyclopedia.thefreedictionary.com/XUnit">xUnit</a>: Building the <i>Code Right</i></h3>
+Automated unit tests (or programmer tests, as they are increasingly called), are white-box tests that describe and verify very low-level behavior. Especially when working test-first, programmers rely on such tests to make sure that the design is sound, and that there are no defects. Such tests are built by and largely for programmers, and can be independent of functionality.<br/><br/>If a team using <a href="http://www.junit.org">JUnit</a> or <a href="http://www.nunit.org">NUnit</a> to do Test-Driven Development is still hampered by a broken requirements process, they can easily end up building robust, lean, well-factored code with no business value. (This is, in fact, happening with increasing frequency.)<br/><br/><h3 id="4">FitNesse: Building the <i>Right Code</i></h3>
+FitNesse automated tests are about building the right code in the first place: the code with the most business value. While programmers may be involved in writing such tests, they are not just for programmers. FitNesse tests are especially for customers, business analysts, testing professionals, support staff, management, and all other stakeholders who need evidence that the project is producing solid return on investment.<br/><br/><h3 id="5">"Running, Tested Features"</h3>
+Ron Jeffries articulates the idea that the ultimate software project metric, the one closest to ROI, is <b><a href="http://ronjeffries.com/xprog/articles/jatrtsmetric/">Running, Tested Features</a></b>. How many RTF did we deliver last iteration, or last month, or last release? <b>Only a tool like </b>FitNesse<b> can answer these questions.</b><br/><br/>Without a solid tool for automated acceptance tests, you cannot know how many RTF you produce per unit time, so perhaps you cannot easily determine what your project ROI is. Perhaps your team is headed for <a href="../../FitNesse/UserGuide/ProjectDeathByRequirements.html">Project Death By Requirements</a>.<br/><br/><h2 id="6">Consider Using Both Tools</h2>
+If you use FitNesse without using <a href="http://www.junit.org">JUnit</a> or <a href="http://www.nunit.org">NUnit</a> to test-drive and refactor your code, you may end up with tremendous business value, but rotten, buggy code. Even if the bugs don't kill you, this is short-sighted; it's a way of sacrificing release 3 to release 1. You have to keep the code lean and extensible to prevent code rot. Otherwise, your rotten codebase will need to be rewritten from scratch, long before it has exhausted its business value.<br/><br/>With both tools, you can balance production and production capacity. You can deliver the features that produce highest ROI, while producing robust, clean, extensible code. You might find that you get addicted to the early, frequent feedback that automated tests provide. Your whole team could get addicted to Building the Right Code, and Building the Code Right.<br/><br/><h2 id="7">Summary</h2>
+<ul>
+	<li>FitNesse automated acceptance tests have several advantages over traditional functional testing. These advantages are good both for requirements management and for feature verification.</li>
+	<li>Only automated acceptance testing (such as that provided by FitNesse) enables you to measure <a href="http://www.xprogramming.com/xpmag/jatRtsMetric.htm">Running, Tested Features</a>, which is a key metric for measuring software project progress and success.</li>
+	<li>FitNesse automated acceptance testing is a natural complement to <a href="http://encyclopedia.thefreedictionary.com/XUnit">xUnit</a>-based unit testing. The former helps you build the right code, while the latter helps you build the code right. Consider using both tools.</li>
+</ul>
+<br/><h2 id="8">Learning More</h2>
+If you have not yet done so, check out the <a href="../../FitNesse/UserGuide/TwoMinuteExample.html">Two Minute Example</a>. For more information on how teams can work together with FitNesse tests to deliver better systems, see <a href="../../FitNesse/UserGuide/DeliveringTheRightSystem.html">Delivering The Right System</a>.<br/><br/>If you are ready to start creating FitNesse pages and test tables, check out how to <a href="../../FitNesse/UserGuide/FitNesseWiki.html">work with FitNesse wiki pages</a> and <a href="../../FitNesse/UserGuide/WritingAcceptanceTests.html">create acceptance tests</a>.<br/>
+</article>
+<footer>
+<center>User Guide Contents</center><center><a href="../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+</footer>
+</body>
+</html>

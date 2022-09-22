@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteSlimTests.TestExceptionIsDisplayed.SlimExceptionResult</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests.html">SuiteSlimTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/TestExceptionIsDisplayed.html">TestExceptionIsDisplayed</a></li>
+
+  </ol>
+</nav>
+<article>
+<div class="collapsible closed"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">Scenario</p>
+	<div><br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>Transform Exception with StackTrace to Message</td>
+		<td>exception</td>
+		<td></td>
+		<td>message?</td>
+		<td></td>
+		<td>isNoInstanceException?</td>
+		<td></td>
+		<td>isNoMethodInClassException?</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>start</td>
+		<td>SlimExceptionResult;</td>
+		<td>NOT IMPORTANT</td>
+		<td colspan="6">@exception</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>$message=</td>
+		<td colspan="8">getMessage</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>$isNoInstanceException=</td>
+		<td colspan="8">isNoInstanceException</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>$isNoMethodInClassException=</td>
+		<td colspan="8">isNoMethodInClassException</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>$isStopSuiteException=</td>
+		<td colspan="8">isStopSuiteException</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>$isStopTestException=</td>
+		<td colspan="8">isStopTestException</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>$getExecutionResult=</td>
+		<td colspan="8">getExecutionResult</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>import</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>fitnesse.testsystems.slim.results</td>
+	</tr>
+</table>
+</div>
+</div>
+<br/><br/><h3 id="0">Given a <b>SlimExceptionResult</b></h3>
+<h3 id="1">When the exception message has a message tag</h3>
+<h3 id="2">Then the exception message is shortened</h3>
+<h3 id="3">Else it is null</h3>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Transform Exception with StackTrace to Message</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>#Case</td>
+		<td>exception</td>
+		<td>message?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>no message tags</td>
+		<td>Hello FitNesse</td>
+		<td>null</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>has message tags</td>
+		<td>message:&lt;&lt;Hello FitNesse&gt;&gt;</td>
+		<td>Hello FitNesse</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>has message tags with HTML</td>
+		<td>message:&lt;&lt;&lt;div&gt;Bad things&lt;br/&gt;&lt;span&gt;&lt;b&gt;happened&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&gt;&gt;</td>
+		<td>&lt;div&gt;Bad things&lt;br/&gt;&lt;span&gt;&lt;b&gt;happened&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>multi line message</td>
+		<td>ignored ignored message:&lt;&lt;Line 1
+Line 2
+Line 3>> ignored ignored </td>
+		<td>Line 1
+Line 2
+Line 3</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>has message tags</td>
+		<td>__EXCEPTION__:ABORT_SLIM_TEST:message:&lt;&lt;fitnesse.slim.test.StopTestException: stop test&gt;&gt;
+	at fitnesse.slim.test.ConstructorThrows.<init>(ConstructorThrows.java:6) [file:/home/six42/git/fitnesse/build/classes/java/main/]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) [rt.jar:1.8.0_222]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) [rt.jar:1.8.0_222]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [file:/home/six42/git/fitnesse/build/classes/java/main/]]</td>
+		<td>fitnesse.slim.test.StopTestException: stop test</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>no message tag</td>
+		<td>fitnesse.slim.SlimError: SETX_THROWS 
+	at fitnesse.slim.test.DecisionTableExecuteThrows.setX(DecisionTableExecuteThrows.java:35) [file:/home/six42/git/fitnesse/build/classes/java/main/]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) [rt.jar:1.8.0_222]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) [rt.jar:1.8.0_222]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_222]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [file:/home/six42/git/fitnesse/build/classes/java/main/]</td>
+		<td>null</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>messages in caused by exceptions might overwrite the latest exception text and information can be lost</td>
+		<td>java.lang.InstantiationException: Failed to call static method 'java.time.Instant.ofEpochSecond': 
+Caused by: fitnesse.slim.SlimError: message:&lt;&lt;Can't convert Hello to long.&gt;&gt;
+	at fitnesse.slim.converters.LongConverter.getObject(LongConverter.java:12) [file:/home/six42/git/fitnesse/bin/main/]
+	at java.lang.Thread.run(Thread.java:748) [rt.jar:1.8.0_222]
+Caused by: java.lang.NumberFormatException: For input string: "Hello"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65) [rt.jar:1.8.0_222]
+	at java.lang.Long.parseLong(Long.java:589) [rt.jar:1.8.0_222]
+	at java.lang.Long.valueOf(Long.java:803) [rt.jar:1.8.0_222]
+	at java.lang.Thread.run(Thread.java:748) [rt.jar:1.8.0_222]</td>
+		<td>Can't convert Hello to long.</td>
+	</tr>
+</table>
+<br/><h3 id="4">Given a <b>SlimExceptionResult</b></h3>
+<h3 id="5">When the exception message has two message tags</h3>
+<h3 id="6">Then the exception message is shortened</h3>
+<h3 id="7">AND only the first message is printed</h3>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Transform Exception with StackTrace to Message</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>#Case</td>
+		<td>exception</td>
+		<td>message?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>two messages</td>
+		<td>ignored ignored message:&lt;&lt;Top Message!&gt;&gt;
+Line 2
+Caused by: fitnesse.slim.SlimError: message:&lt;&lt;Causing Message.&gt;&gt;
+Line 3>> ignored ignored </td>
+		<td>Top Message!</td>
+	</tr>
+</table>
+<br/><h3 id="8">Given a <b>SlimExceptionResult</b></h3>
+<h3 id="9">AND it has a message</h3>
+<h3 id="10">When the message has a FLAG/TAG defined in fitnesse.slim.SlimServer</h3>
+<h3 id="11">Then the exception message is split on each space</h3>
+<h3 id="12">AND a transformation of the text happens</h3>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">Transform Exception with StackTrace to Message</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>#flag</td>
+		<td>exception</td>
+		<td>message?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>NO_CONVERTER_FOR_ARGUMENT_NUMBER</td>
+		<td>fitnesse.slim.SlimError: message:&lt;&lt;NO_CONVERTER_FOR_ARGUMENT_NUMBER java.time.temporal.TemporalAccessor. ignores everything after second space&gt;&gt;
+	at fitnesse.slim.ConverterSupport.convertArg(ConverterSupport.java:36) [file:/home/six42/git/fitnesse/bin/main/]
+	at fitnesse.slim.ConverterSupport.convertArgs(ConverterSupport.java:17) [file:/home/six42/git/fitnesse/bin/main/]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.convertArgs(SimpleInteraction.java:306) [file:/home/six42/git/fitnesse/bin/main/]
+	at fitnesse.slim.SlimService$1.run(SlimService.java:158) [file:/home/six42/git/fitnesse/bin/main/]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [rt.jar:1.8.0_222]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [rt.jar:1.8.0_222]
+	at java.lang.Thread.run(Thread.java:748) [rt.jar:1.8.0_222]</td>
+		<td>No converter for java.time.temporal.TemporalAccessor.</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>COULD_NOT_INVOKE_CONSTRUCTOR</td>
+		<td>message:&lt;&lt;COULD_NOT_INVOKE_CONSTRUCTOR TestSlim[1] ignores everything after second space&gt;&gt;
+	at fitnesse.slim.converters.IntConverter.getObject(IntConverter.java:14) [file:/home/six42/git/fitnesse/bin/main/]
+	at fitnesse.slim.converters.IntConverter.getObject(IntConverter.java:1) [file:/home/six42/git/fitnesse/bin/main/]
+	at fitnesse.slim.ConverterSupport.convertArgs(ConverterSupport.java:17) [file:/home/six42/git/fitnesse/bin/main/]
+Caused by: java.lang.NumberFormatException: For input string: "five"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65) [rt.jar:1.8.0_222]
+	at java.lang.Integer.parseInt(Integer.java:580) [rt.jar:1.8.0_222]
+	at java.lang.Integer.valueOf(Integer.java:766) [rt.jar:1.8.0_222]</td>
+		<td>Could not invoke constructor for TestSlim[1]</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>classic translation NO_METHOD_IN_CLASS used when only two spaces in the message</td>
+		<td>fitnesse.slim.SlimError: message:&lt;&lt;NO_METHOD_IN_CLASS nonExistingMethod[1] fitnesse.slim.test.TestSlim.&gt;&gt;
+	at fitnesse.slim.MethodExecutionResult$NoMethod.returnValue(MethodExecutionResult.java:34) [file:/home/six42/git/fitnesse/bin/main/]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [file:/home/six42/git/fitnesse/bin/main/]
+	at fitnesse.slim.instructions.CallAndOptionalAssignInstruction.executeInternal(CallAndOptionalAssignInstruction.java:30) [file:/home/six42/git/fitnesse/bin/main/]
+	at fitnesse.slim.SlimService.access$0(SlimService.java:167) [file:/home/six42/git/fitnesse/bin/main/]</td>
+		<td>Method nonExistingMethod[1] not found in fitnesse.slim.test.TestSlim.</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>modern translation NO_METHOD_IN_CLASS allows to gives hints to the user</td>
+		<td>fitnesse.slim.SlimError: message:&lt;&lt;NO_METHOD_IN_CLASS No Method nonExistingMethod[1] in class fitnesse.slim.test.TestSlim.
+ Available methods:
+addTo(int, int) -> int
+concatenateThreeArgs(java.lang.String, java.lang.String, java.lang.String) -> class java.lang.String
+createTestSlimWithString(java.lang.String) -> class fitnesse.slim.test.TestSlim
+die() -> void
+echoBoolean(boolean) -> boolean
+echoDouble(double) -> double
+echoInt(int) -> int
+echoList(java.util.List) -> interface java.util.List
+echoString(java.lang.String) -> class java.lang.String
+equals(java.lang.Object) -> boolean>>
+	at fitnesse.slim.MethodExecutionResult$NoMethod.returnValue(MethodExecutionResult.java:34) [file:/home/six42/git/fitnesse/bin/main/]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [file:/home/six42/git/fitnesse/bin/main/]
+	at fitnesse.slim.instructions.CallAndOptionalAssignInstruction.executeInternal(CallAndOptionalAssignInstruction.java:30) [file:/home/six42/git/fitnesse/bin/main/]
+	at fitnesse.slim.SlimService.access$0(SlimService.java:167) [file:/home/six42/git/fitnesse/bin/main/]</td>
+		<td>No Method nonExistingMethod[1] in class fitnesse.slim.test.TestSlim.
+ Available methods:
+addTo(int, int) -> int
+concatenateThreeArgs(java.lang.String, java.lang.String, java.lang.String) -> class java.lang.String
+createTestSlimWithString(java.lang.String) -> class fitnesse.slim.test.TestSlim
+die() -> void
+echoBoolean(boolean) -> boolean
+echoDouble(double) -> double
+echoInt(int) -> int
+echoList(java.util.List) -> interface java.util.List
+echoString(java.lang.String) -> class java.lang.String
+equals(java.lang.Object) -> boolean</td>
+	</tr>
+</table>
+<br/><h3 id="13">Given a <b>SlimExceptionResult</b></h3>
+<h3 id="14">AND it has a message</h3>
+<h3 id="15">When the message has a NO_METHOD_IN_CLASS or NO_INSTANCE flag</h3>
+<h3 id="16">Then status flags are set on the object</h3>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">baseline: Transform Exception with StackTrace to Message</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>#flag</td>
+		<td>exception</td>
+		<td>isNoInstanceException?</td>
+		<td>isNoMethodInClassException?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>COULD_NOT_INVOKE_CONSTRUCTOR</td>
+		<td>message:&lt;&lt;COULD_NOT_INVOKE_CONSTRUCTOR TestSlim[1] ignores everything after second space&gt;&gt;
+	at fitnesse.slim.converters.IntConverter.getObject(IntConverter.java:14) [file:/home/six42/git/fitnesse/bin/main/]
+	at fitnesse.slim.converters.IntConverter.getObject(IntConverter.java:1) [file:/home/six42/git/fitnesse/bin/main/]
+	at fitnesse.slim.ConverterSupport.convertArgs(ConverterSupport.java:17) [file:/home/six42/git/fitnesse/bin/main/]
+Caused by: java.lang.NumberFormatException: For input string: "five"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65) [rt.jar:1.8.0_222]
+	at java.lang.Integer.parseInt(Integer.java:580) [rt.jar:1.8.0_222]
+	at java.lang.Integer.valueOf(Integer.java:766) [rt.jar:1.8.0_222]</td>
+		<td>false</td>
+		<td>false</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>classic translation NO_METHOD_IN_CLASS used when only two spaces in themessage</td>
+		<td>fitnesse.slim.SlimError: message:&lt;&lt;NO_METHOD_IN_CLASS nonExistingMethod[1] fitnesse.slim.test.TestSlim.&gt;&gt;
+	at fitnesse.slim.MethodExecutionResult$NoMethod.returnValue(MethodExecutionResult.java:34) [file:/home/six42/git/fitnesse/bin/main/]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [file:/home/six42/git/fitnesse/bin/main/]
+	at fitnesse.slim.instructions.CallAndOptionalAssignInstruction.executeInternal(CallAndOptionalAssignInstruction.java:30) [file:/home/six42/git/fitnesse/bin/main/]
+	at fitnesse.slim.SlimService.access$0(SlimService.java:167) [file:/home/six42/git/fitnesse/bin/main/]</td>
+		<td></td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>modern translation NO_METHOD_IN_CLASS allows to gives hints to the user</td>
+		<td>fitnesse.slim.SlimError: message:&lt;&lt;NO_METHOD_IN_CLASS No Method nonExistingMethod[1] in class fitnesse.slim.test.TestSlim.
+ Available methods:
+addTo(int, int) -> int
+concatenateThreeArgs(java.lang.String, java.lang.String, java.lang.String) -> class java.lang.String
+createTestSlimWithString(java.lang.String) -> class fitnesse.slim.test.TestSlim
+die() -> void
+echoBoolean(boolean) -> boolean
+echoDouble(double) -> double
+echoInt(int) -> int
+echoList(java.util.List) -> interface java.util.List
+echoString(java.lang.String) -> class java.lang.String
+equals(java.lang.Object) -> boolean>>
+	at fitnesse.slim.MethodExecutionResult$NoMethod.returnValue(MethodExecutionResult.java:34) [file:/home/six42/git/fitnesse/bin/main/]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [file:/home/six42/git/fitnesse/bin/main/]
+	at fitnesse.slim.instructions.CallAndOptionalAssignInstruction.executeInternal(CallAndOptionalAssignInstruction.java:30) [file:/home/six42/git/fitnesse/bin/main/]
+	at fitnesse.slim.SlimService.access$0(SlimService.java:167) [file:/home/six42/git/fitnesse/bin/main/]</td>
+		<td></td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>NO_INSTANCE</td>
+		<td>message:&lt;&lt;NO_INSTANCE TestSlim ignores everything after second space&gt;&gt;
+	at fitnesse.slim.converters.IntConverter.getObject(IntConverter.java:14) [file:/home/six42/git/fitnesse/bin/main/]
+	at java.lang.Integer.valueOf(Integer.java:766) [rt.jar:1.8.0_222]</td>
+		<td>true</td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>NO_METHOD_IN_CLASS but no message</td>
+		<td>fitnesse.slim.SlimError: NO_METHOD_IN_CLASS No Method nonExistingMethod[1] in class fitnesse.slim.test.TestSlim.
+ Available methods:
+addTo(int, int) -> int
+	at fitnesse.slim.MethodExecutionResult$NoMethod.returnValue(MethodExecutionResult.java:34) [file:/home/six42/git/fitnesse/bin/main/]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [file:/home/six42/git/fitnesse/bin/main/]
+	at fitnesse.slim.instructions.CallAndOptionalAssignInstruction.executeInternal(CallAndOptionalAssignInstruction.java:30) [file:/home/six42/git/fitnesse/bin/main/]
+	at fitnesse.slim.SlimService.access$0(SlimService.java:167) [file:/home/six42/git/fitnesse/bin/main/]</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>NO_INSTANCE but no message</td>
+		<td>NO_INSTANCE TestSlim
+	at fitnesse.slim.converters.IntConverter.getObject(IntConverter.java:14) [file:/home/six42/git/fitnesse/bin/main/]
+	at java.lang.Integer.valueOf(Integer.java:766) [rt.jar:1.8.0_222]</td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+
+</article>
+<footer>
+<a href="../../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../../FrontPage.html">Front Page</a> | <a href="../../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>

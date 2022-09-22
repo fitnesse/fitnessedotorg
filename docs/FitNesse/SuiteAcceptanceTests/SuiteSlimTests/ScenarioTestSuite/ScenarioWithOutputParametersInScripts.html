@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitNesse.SuiteAcceptanceTests.SuiteSlimTests.ScenarioTestSuite.ScenarioWithOutputParametersInScripts</title>
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap/fitnesse-bootstrap.css">
+</head>
+<body class="wikiPage">
+<nav class="navbar-fixed-top " role="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+    </ul>
+  </div>
+  <ol class="breadcrumb">
+  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests.html">SuiteSlimTests</a></li>
+<li><a href="../../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/ScenarioTestSuite.html">ScenarioTestSuite</a></li>
+
+  </ol>
+</nav>
+<article>
+<h1 id="0">Scripts can call scenarios with output parameters</h1>
+<br/>Output parameters in scenarios are flagged with a question mark in the header row, like in decision tables.<br/>For each output parameter a symbol with the same name must be assigned a value in the scenario.<br/><br/>In the calling script you can than access the output parameter.<br/>A scenario can have also more than one output parameter<br/><br/>See below a sample of a division scenario with output parameter "quotient" <br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>Mydivision</td>
+		<td>numerator</td>
+		<td></td>
+		<td>denominator</td>
+		<td></td>
+		<td>quotient?</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>setNumerator</td>
+		<td colspan="6">@numerator</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>setDenominator</td>
+		<td colspan="6">@denominator</td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$quotient=</td>
+		<td colspan="6">quotient</td>
+	</tr>
+</table>
+<br/><br/>Get the Division implementation from the eg package<br/><table>
+	<tr class="slimRowTitle">
+		<td>Library</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>eg.Division</td>
+	</tr>
+</table>
+<br/>The recommended syntax to call the scnario from a script is as below<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">script</td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>Mydivision;</td>
+		<td>35</td>
+		<td colspan="2">5</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>echo</td>
+		<td>$quotient</td>
+		<td>7.0</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="5">script</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>Mydivision</td>
+		<td>40</td>
+		<td></td>
+		<td>4</td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>echo</td>
+		<td>$quotient</td>
+		<td colspan="2">10.0</td>
+	</tr>
+</table>
+<br/>The below is not recommended and might not work in the future<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="6">script</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>Mydivision</td>
+		<td>40</td>
+		<td></td>
+		<td>10</td>
+		<td></td>
+		<td>_</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>echo</td>
+		<td>$quotient</td>
+		<td colspan="3">4.0</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">script</td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>Mydivision;</td>
+		<td>35</td>
+		<td>5</td>
+		<td>_</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>echo</td>
+		<td>$quotient</td>
+		<td>7.0</td>
+	</tr>
+</table>
+<br/><br/>The following syntax is currently  not working<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">script</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td colspan="4"># Mydivision 35 5</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td># check</td>
+		<td>echo</td>
+		<td>$quotient</td>
+		<td>7.0</td>
+	</tr>
+</table>
+<br/><br/><br/>
+</article>
+<footer>
+<a href="../../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../../FrontPage.html">Front Page</a> | <a href="../../../../FitNesse/UserGuide.html">User Guide</a>
+</footer>
+</body>
+</html>
