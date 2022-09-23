@@ -2,9 +2,9 @@
 <html>
 <head>
 <title>PlugIns.FitServers.PerL</title>
-<link rel="stylesheet" type="text/css" href="../../css/fitnesse_wiki.css">
-<link rel="stylesheet" type="text/css" href="../../css/fitnesse_pages.css">
-<link rel="stylesheet" type="text/css" href="../../css/bootstrap/fitnesse-bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../../files/fitnesse/css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../files/fitnesse/css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
 </head>
 <body class="wikiPage">
 <nav class="navbar-fixed-top " role="navigation">
@@ -29,7 +29,7 @@
 <article>
 <center><h3 id="0">Perl <a href="../../PlugIns/FitServers/FitServer.html">FitServer</a></h3>
 </center><br/>Written by Michael Conners.<br/><br/><h3 id="1">Downloads:</h3>
-<a href="files/fit/perl/perl-FitServer.tar.gz">http://files/fit/perl/perl-FitServer.tar.gz</a><br/><br/><h3 id="2">Comments:</h3>
+<a href="../../files/fit/perl/perl-FitServer.tar.gz">http://files/fit/perl/perl-FitServer.tar.gz</a><br/><br/><h3 id="2">Comments:</h3>
 The perl <a href="../../PlugIns/FitServers/FitServer.html">FitServer</a> requires an installation of perl, <span class="fitnesse">FitNesse</span>, and the <br/>Test-C2FIT-0.01a perl module (<a href="http://search.cpan.org/~tjbyrne/Test-C2FIT-0.01a/)">http://search.cpan.org/~tjbyrne/Test-C2FIT-0.01a/)</a><br/><br/>I installed the the files FitServer.pl and FitServer.pm in a perl directory located at the <br/>same level as the dotnet directory on the fitserver . you should just be able to untar<br/> the file perl-FitServer.tar.gz at that location. The tarfile contains the following<br/><br/>perl/<br/>perl/FitServer.pl<br/>perl/FitServer.pm<br/>perl/README.txt<br/>perl/Test/<br/>perl/Test/C2FIT/<br/>perl/Test/C2FIT/eg/<br/>perl/Test/C2FIT/eg/ArithmeticColumnFixture.pm<br/>perl/Test/C2FIT/eg/ArithmeticFixture.pm<br/><br/>This has only been tested on win xp and server 2003, Mac OS X 10.4 and linux, it has not been tried on any other <br/>unix variant, but i would expect that it would work simply by editing the first line of FitServer.pl and <br/>pointing to the path of your perl installation. On non MS platforms you may also be able to alter the <br/>TEST_RUNNER variable specified below to only contain perl/FitServer.pl (Notice the 'forward slash'!)<br/>if you set exec bit on (for example 'chmod +x perl/FitServer.pl').<br/><br/><br/>The Test::C2FIT::eg::ArithmeticColumnFixture is now part of the tar file, these were actually part <br/>of the Test::C2FIT distro<br/><br/>I added the following to my wiki page.<br/><br/><br/><br/><span class="meta">variable defined: COMMAND_PATTERN=%m</span>
 <br/><span class="meta">variable defined: TEST_RUNNER=perl perl\FitServer.pl</span>
 <br/><br/><br/><table>

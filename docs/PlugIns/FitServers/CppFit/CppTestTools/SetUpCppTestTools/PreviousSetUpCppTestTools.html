@@ -2,9 +2,9 @@
 <html>
 <head>
 <title>PlugIns.FitServers.CppFit.CppTestTools.SetUpCppTestTools.PreviousSetUpCppTestTools</title>
-<link rel="stylesheet" type="text/css" href="../../../../../css/fitnesse_wiki.css">
-<link rel="stylesheet" type="text/css" href="../../../../../css/fitnesse_pages.css">
-<link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap/fitnesse-bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../../../../../files/fitnesse/css/fitnesse_wiki.css">
+<link rel="stylesheet" type="text/css" href="../../../../../files/fitnesse/css/fitnesse_pages.css">
+<link rel="stylesheet" type="text/css" href="../../../../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
 </head>
 <body class="wikiPage">
 <nav class="navbar-fixed-top " role="navigation">
@@ -34,7 +34,7 @@
 	<p class="title">!3 Define CPP_TEST_TOOLS environment variable</p>
 	<div>Set up the environment variable CPP_TEST_TOOLS to point to where you will install CppTestTools, I'll use c:/tools/CppTestTools in this example.  Make sure you use forward slashes in the path.  Windows does not care but gcc does.<br/></div>
 </div>
-!*&gt; !3 Download the latest<br/>For Micrsoft Visual Studio VC++6 (Let VS.NET upgrade the workspace to a solution)<br/><a href="files/CppTestTools/CppTestTools-ms-200602111320.zip">http://files/CppTestTools/CppTestTools-ms-200602111320.zip</a><br/><br/>For gcc <br/><a href="files/CppTestTools/CppTestTools-gcc-200602131550.zip">http://files/CppTestTools/CppTestTools-gcc-200602131550.zip</a><br/><br/>*!!*&gt; !3 Unzip and Build<br/>Unzip and install the tools to a location such as c:/tools<br/><br/>CppTestTools includes <br/><ul>
+!*&gt; !3 Download the latest<br/>For Micrsoft Visual Studio VC++6 (Let VS.NET upgrade the workspace to a solution)<br/><a href="../../../../../files/CppTestTools/CppTestTools-ms-200602111320.zip">http://files/CppTestTools/CppTestTools-ms-200602111320.zip</a><br/><br/>For gcc <br/><a href="../../../../../files/CppTestTools/CppTestTools-gcc-200602131550.zip">http://files/CppTestTools/CppTestTools-gcc-200602131550.zip</a><br/><br/>*!!*&gt; !3 Unzip and Build<br/>Unzip and install the tools to a location such as c:/tools<br/><br/>CppTestTools includes <br/><ul>
 	<li>UnitTestHarness</li>
 	<li>CppFit</li>
 	<li>NewClass.sh A shell script to create a ^NewClass</li>
@@ -53,7 +53,7 @@ perl -pi~ -e 's/\r\n?/\n/g NewClass.sh
 perl -pi~ -e 's/\r\n?/\n/g NewInterface.sh
 perl -pi~ -e 's/\r\n?/\n/g NewCModule.sh
 perl -pi~ -e 's/\r\n?/\n/g GenerateSrcFiles.sh
-</pre><br/>*!!*&gt; !3 Download the example Microsoft project<br/>For Micrsoft Visual Studio VC++6 (Let VS.NET upgrade the workspace to a solution)<br/><br/>A microsoft example project<br/><a href="files/CppTestTools/HomeGuard-ms-200602111223.zip">http://files/CppTestTools/HomeGuard-ms-200602111223.zip</a><br/><br/>Visual Studio Starter Project<br/><a href="files/CppTestTools/VSStarterProject.zip">http://files/CppTestTools/VSStarterProject.zip</a><br/><br/>*!!*&gt; !3 Download the example gcc project<br/>A gcc example project<br/><a href="files/CppTestTools/HomeGuard-gcc-200602110939.zip">http://files/CppTestTools/HomeGuard-gcc-200602110939.zip</a><br/><br/>A gcc starter unit test only project<br/><a href="files/CppTestTools/StarterUnitTestProject-gcc-200602111320.zip">http://files/CppTestTools/StarterUnitTestProject-gcc-200602111320.zip</a><br/><br/><a href="files/CppTestTools/HomeGuardTests20060305.zip">http://files/CppTestTools/HomeGuardTests20060305.zip</a><br/>*!!*&gt; !3 Download the FitNesse pages for the example project<br/><br/>HomeGuard FitNesse pages - unzip these into your FitNesseRoot and add a link on your FrontPage<br/><a href="files/CppTestTools/HomeGuardTests20060305.zip">http://files/CppTestTools/HomeGuardTests20060305.zip</a><br/>*!
+</pre><br/>*!!*&gt; !3 Download the example Microsoft project<br/>For Micrsoft Visual Studio VC++6 (Let VS.NET upgrade the workspace to a solution)<br/><br/>A microsoft example project<br/><a href="../../../../../files/CppTestTools/HomeGuard-ms-200602111223.zip">http://files/CppTestTools/HomeGuard-ms-200602111223.zip</a><br/><br/>Visual Studio Starter Project<br/><a href="../../../../../files/CppTestTools/VSStarterProject.zip">http://files/CppTestTools/VSStarterProject.zip</a><br/><br/>*!!*&gt; !3 Download the example gcc project<br/>A gcc example project<br/><a href="../../../../../files/CppTestTools/HomeGuard-gcc-200602110939.zip">http://files/CppTestTools/HomeGuard-gcc-200602110939.zip</a><br/><br/>A gcc starter unit test only project<br/><a href="../../../../../files/CppTestTools/StarterUnitTestProject-gcc-200602111320.zip">http://files/CppTestTools/StarterUnitTestProject-gcc-200602111320.zip</a><br/><br/><a href="../../../../../files/CppTestTools/HomeGuardTests20060305.zip">http://files/CppTestTools/HomeGuardTests20060305.zip</a><br/>*!!*&gt; !3 Download the FitNesse pages for the example project<br/><br/>HomeGuard FitNesse pages - unzip these into your FitNesseRoot and add a link on your FrontPage<br/><a href="../../../../../files/CppTestTools/HomeGuardTests20060305.zip">http://files/CppTestTools/HomeGuardTests20060305.zip</a><br/>*!
 </article>
 <footer>
 <center>FitNesse v20220923</center><center><a href="../../../../../FrontPage.html">Front Page</a> - <a href="../../../../../FitNesse/UserGuide.html">User Guide</a> - <a href="../../../../../FitNesseFeatures.html">Features</a> - <a href="../../../../../FitNesseDownload.html">Download</a> - <a href="../../../../../PlugIns.html">Plugins</a> - <a href="../../../../../PlugIns.html#slimfixtures">Fixtures</a> - <a href="https://gitter.im/fitnesse-org/fitnesse">Gitter Community</a></center>
