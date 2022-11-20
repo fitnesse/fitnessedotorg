@@ -1,35 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>FitNesse.UserGuide.WritingAcceptanceTests.FitFramework.ExceptionsInFitTables</title>
-<link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/css/fitnesse_wiki.css">
-<link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/css/fitnesse_pages.css">
-<link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
-</head>
-<body class="wikiPage">
-<nav class="navbar-fixed-top " role="navigation">
-  <div class="navbar navbar-default">
-    <div class="navbar-header">
-      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
-      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
-      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
-      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
-    </ul>
-  </div>
-  <ol class="breadcrumb">
-  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
-<li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
-<li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">WritingAcceptanceTests</a></li>
-<li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework.html">FitFramework</a></li>
-<li>ExceptionsInFitTables</li>
-
-  </ol>
-</nav>
-<article>
-If something goes wrong when you push the <i>test</i> button, the most likely cause is that you haven't specified the classpath.  Edit the test page and add a !path directive for every classpath that you want included.  See BuildingClassPaths<a title="create page" href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/BuildingClassPaths.html?edit&amp;nonExistent=true">[?]</a> for more information.<br/><br/>Another common problem is a mispelling of the test fixture, or one of the column names.  The symptom is an exception appearing in the table cell that contains the mispelling.<br/><br/>Hit the <i>Test</i> button to see what these errors look like.<br/><br/><table>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FitNesse.UserGuide.WritingAcceptanceTests.FitFramework.ExceptionsInFitTables</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../files/fitnesse/images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/css/fitnesse_wiki.css">
+    <link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/css/fitnesse_pages.css">
+    <link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
+    <script src="../../../../files/fitnesse/javascript/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="../../../../files/fitnesse/javascript/fitnesse.js" type="text/javascript"></script>
+    <script src="../../../../files/fitnesse/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../../../../files/fitnesse/bootstrap/js/respond.js" type="text/javascript"></script>
+  </head>
+  <body class="wikiPage">
+    <nav class="navbar-fixed-top " role="navigation">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+          <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+          <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+          <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+        </ul>
+      </div>
+      <ol class="page-actions btn-group">
+        <li class="expandall btn btn-xs">Expand All</li>
+        <li class="collapseall btn btn-xs">Collapse All</li>
+      </ol>
+      <ol class="breadcrumb">
+        <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+        <li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+        <li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">WritingAcceptanceTests</a></li>
+        <li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework.html">FitFramework</a></li>
+        <li>ExceptionsInFitTables</li>
+      </ol>
+    </nav>
+    <header>
+    </header>
+    <article>
+      If something goes wrong when you push the <i>test</i> button, the most likely cause is that you haven't specified the classpath.  Edit the test page and add a !path directive for every classpath that you want included.  See BuildingClassPaths<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.FitFramework.BuildingClassPaths?edit&amp;nonExistent=true">[?]</a> for more information.<br/><br/>Another common problem is a mispelling of the test fixture, or one of the column names.  The symptom is an exception appearing in the table cell that contains the mispelling.<br/><br/>Hit the <i>Test</i> button to see what these errors look like.<br/><br/><table>
 	<tr>
 		<td>eg.thisTestFixtureDoesNotExist</td>
 	</tr>
@@ -52,7 +64,7 @@ If something goes wrong when you push the <i>test</i> button, the most likely ca
 		<td>5</td>
 	</tr>
 </table>
-<br/>Another odd problem can occurr if the name of the fixture is a WikiWord<a title="create page" href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/WikiWord.html?edit&amp;nonExistent=true">[?]</a>.  If the corresponding wiki page does not exist, then a ? is appended to it.  Fit sees this ? and thinks it's part of the classname.  Hit the <i>Test</i> button and then look at the table below.  You should see a ? in the table at the end of the fixture name.  You should also see that ? in the exception report that follows it.  Look closely.<br/><br/><table>
+<br/>Another odd problem can occurr if the name of the fixture is a WikiWord<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.FitFramework.WikiWord?edit&amp;nonExistent=true">[?]</a>.  If the corresponding wiki page does not exist, then a ? is appended to it.  Fit sees this ? and thinks it's part of the classname.  Hit the <i>Test</i> button and then look at the table below.  You should see a ? in the table at the end of the fixture name.  You should also see that ? in the exception report that follows it.  Look closely.<br/><br/><table>
 	<tr>
 		<td colspan="3">somePackage.ClassThatLooksLikeWikiWordButIsntOne</td>
 	</tr>
@@ -62,12 +74,12 @@ If something goes wrong when you push the <i>test</i> button, the most likely ca
 		<td>c</td>
 	</tr>
 </table>
-<br/>If you have a problem like this, then what you need to do is surround the name of the fixture in !-  and  -! (see MarkupLiteralText<a title="create page" href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/MarkupLiteralText.html?edit&amp;nonExistent=true">[?]</a>).<br/><pre>|! -somePackage.ClassThatLooksLikeWikiWordButIsntOne- !|
+<br/>If you have a problem like this, then what you need to do is surround the name of the fixture in !-  and  -! (see MarkupLiteralText<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.FitFramework.MarkupLiteralText?edit&amp;nonExistent=true">[?]</a>).<br/><pre>|! -somePackage.ClassThatLooksLikeWikiWordButIsntOne- !|
 |a|b|c|</pre><br/>Or you can also use the literal tables like this:<br/><pre>!|somePackage.ClassThatLooksLikeWikiWordButIsntOne|
 |a|b|c|</pre><br/><b>Tip for viewing exceptions in small font</b><br/>If you have a scroll-wheel mouse, hold the ctrl key and scroll the wheel. It increases/decreases the font size quickly in most browsers.<br/><br/><br/>
-</article>
-<footer>
-<center>User Guide Contents</center><center><a href="../../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
-</footer>
-</body>
+    </article>
+    <footer>
+      <center>User Guide Contents</center><center><a href="../../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+    </footer>
+  </body>
 </html>

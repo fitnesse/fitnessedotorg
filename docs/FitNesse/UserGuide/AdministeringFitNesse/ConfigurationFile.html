@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>FitNesse.UserGuide.AdministeringFitNesse.ConfigurationFile</title>
-<link rel="stylesheet" type="text/css" href="../../../files/fitnesse/css/fitnesse_wiki.css">
-<link rel="stylesheet" type="text/css" href="../../../files/fitnesse/css/fitnesse_pages.css">
-<link rel="stylesheet" type="text/css" href="../../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
-</head>
-<body class="wikiPage">
-<nav class="navbar-fixed-top " role="navigation">
-  <div class="navbar navbar-default">
-    <div class="navbar-header">
-      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
-      <li><a href="../../../FitNesseDownload.html">Download</a></li>
-      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
-      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
-    </ul>
-  </div>
-  <ol class="breadcrumb">
-  <li><a href="../../../FitNesse.html">FitNesse</a></li>
-<li><a href="../../../FitNesse/UserGuide.html">UserGuide</a></li>
-<li><a href="../../../FitNesse/UserGuide/AdministeringFitNesse.html">AdministeringFitNesse</a></li>
-<li>ConfigurationFile</li>
-
-  </ol>
-</nav>
-<article>
-Various plugins are supported by <span class="fitnesse">FitNesse</span>.<br/><br/><h3 id="0">Overview</h3>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FitNesse.UserGuide.AdministeringFitNesse.ConfigurationFile</title>
+    <link rel="shortcut icon" type="image/png" href="../../../files/fitnesse/images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="../../../files/fitnesse/css/fitnesse_wiki.css">
+    <link rel="stylesheet" type="text/css" href="../../../files/fitnesse/css/fitnesse_pages.css">
+    <link rel="stylesheet" type="text/css" href="../../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
+    <script src="../../../files/fitnesse/javascript/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="../../../files/fitnesse/javascript/fitnesse.js" type="text/javascript"></script>
+    <script src="../../../files/fitnesse/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../../../files/fitnesse/bootstrap/js/respond.js" type="text/javascript"></script>
+  </head>
+  <body class="wikiPage">
+    <nav class="navbar-fixed-top " role="navigation">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+          <li><a href="../../../FitNesseDownload.html">Download</a></li>
+          <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+          <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+        </ul>
+      </div>
+      <ol class="page-actions btn-group">
+        <li class="expandall btn btn-xs">Expand All</li>
+        <li class="collapseall btn btn-xs">Collapse All</li>
+      </ol>
+      <ol class="breadcrumb">
+        <li><a href="../../../FitNesse.html">FitNesse</a></li>
+        <li><a href="../../../FitNesse/UserGuide.html">UserGuide</a></li>
+        <li><a href="../../../FitNesse/UserGuide/AdministeringFitNesse.html">AdministeringFitNesse</a></li>
+        <li>ConfigurationFile</li>
+      </ol>
+    </nav>
+    <header>
+      <p class="lead">Configure FitNesse the way you like.</p>
+    </header>
+    <article>
+      Various plugins are supported by <span class="fitnesse">FitNesse</span>.<br/><br/><h3 id="0">Overview</h3>
 Below are a list of customizations you can make via this plugin architecture.  Each plugin will require an entry in the <i>plugins.properties</i> file.  This should be located in the working directory of <span class="fitnesse">FitNesse</span>.   If the file does not exist <span class="fitnesse">FitNesse</span> will run normally.  To enable a plugin, create this file, and add the specified entries.  All plugins will require complied Java code so make sure that the class path contains an entry to locate your plugins.<br/><br/>See also: <a href="../../../FitNesse/UserGuide/AdministeringFitNesse/CommandLineArguments.html">Command Line Arguments</a>.<br/><br/><h3 id="1">Theme</h3>
 <i>required property:</i> <b>Theme = &lt;theme name&gt;</b><br/><br/><i>motivation:</i> Customize the look and feel to match your liking. See <a href="../../../FitNesse/UserGuide/AdministeringFitNesse/WikiTheming.html">Wiki Theming</a> for details.<br/><br/><h3 id="2">Context root</h3>
 <i>required property:</i> <b>ContextRoot = &lt;root path name&gt;</b><br/><br/><i>motivation:</i> Customize the root url of FitNesse. This is convenient if FitNesse is running behind a proxy server.<br/><br/><h3 id="3">Wiki Page Factory</h3>
@@ -90,15 +103,15 @@ CustomComparators = json:com.acme.JSONAssertComparator
 <br/><h1 id="16">Other properties</h1>
 <br/>There are more properties which can be used to tweak parts of <span class="fitnesse">FitNesse</span>:<br/><br/><ul>
 	<li><b>newpage.default.content</b> - default page content for an empty page, in case you're not creating a new page based on a template page.</li>
-	<li><b>VersionsController<a title="create page" href="../../../FitNesse/UserGuide/AdministeringFitNesse/VersionsController.html?edit&amp;nonExistent=true">[?]</a>.days</b> - number of days to keep old page versions around when using the Zip file based versions controller.</li>
+	<li><b>VersionsController<a title="create page" href="FitNesse.UserGuide.AdministeringFitNesse.VersionsController?edit&amp;nonExistent=true">[?]</a>.days</b> - number of days to keep old page versions around when using the Zip file based versions controller.</li>
 	<li><b>test.history.days</b> - The number of days to keep test results around. Cleaned up after a new test run.</li>
 	<li><b>test.history.path</b> - Location to store the test results. The default location is <i>FitNesseRoot/files/testResults</i>.</li>
 	<li>Any variable that can be defined on a wiki page.</li>
 </ul>
 <br/>The Slim test system has a set of <a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM.html">custom properties</a> that can either be set on a page or in the configuration file.
-</article>
-<footer>
-<center>User Guide Contents</center><center><a href="../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
-</footer>
-</body>
+    </article>
+    <footer>
+      <center>User Guide Contents</center><center><a href="../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+    </footer>
+  </body>
 </html>

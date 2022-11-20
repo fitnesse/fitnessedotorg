@@ -1,34 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>FitNesse.UserGuide.FixtureGallery.SourceCode</title>
-<link rel="stylesheet" type="text/css" href="../../../files/fitnesse/css/fitnesse_wiki.css">
-<link rel="stylesheet" type="text/css" href="../../../files/fitnesse/css/fitnesse_pages.css">
-<link rel="stylesheet" type="text/css" href="../../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
-</head>
-<body class="wikiPage">
-<nav class="navbar-fixed-top " role="navigation">
-  <div class="navbar navbar-default">
-    <div class="navbar-header">
-      <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="../../../FitNesseFeatures.html">Features</a></li>
-      <li><a href="../../../FitNesseDownload.html">Download</a></li>
-      <li><a href="../../../PlugIns.html">Plug-ins</a></li>
-      <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
-    </ul>
-  </div>
-  <ol class="breadcrumb">
-  <li><a href="../../../FitNesse.html">FitNesse</a></li>
-<li><a href="../../../FitNesse/UserGuide.html">UserGuide</a></li>
-<li><a href="../../../FitNesse/UserGuide/FixtureGallery.html">FixtureGallery</a></li>
-<li>SourceCode</li>
-
-  </ol>
-</nav>
-<article>
-<i>Previous page: <a href="../../../FitNesse/UserGuide/FixtureGallery/GalleryIntroduction.html">Introduction</a> Next page: <a href="../../../FitNesse/UserGuide/FixtureGallery/BasicFitFixtures.html">Basic FIT fixtures</a> Parent page: <a href="../../../FitNesse/UserGuide/FixtureGallery/TableOfContents.html">Table of contents</a></i><br/><h2 id="0">Source code</h2>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FitNesse.UserGuide.FixtureGallery.SourceCode</title>
+    <link rel="shortcut icon" type="image/png" href="../../../files/fitnesse/images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="../../../files/fitnesse/css/fitnesse_wiki.css">
+    <link rel="stylesheet" type="text/css" href="../../../files/fitnesse/css/fitnesse_pages.css">
+    <link rel="stylesheet" type="text/css" href="../../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
+    <script src="../../../files/fitnesse/javascript/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="../../../files/fitnesse/javascript/fitnesse.js" type="text/javascript"></script>
+    <script src="../../../files/fitnesse/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../../../files/fitnesse/bootstrap/js/respond.js" type="text/javascript"></script>
+  </head>
+  <body class="wikiPage">
+    <nav class="navbar-fixed-top " role="navigation">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+          <li><a href="../../../FitNesseDownload.html">Download</a></li>
+          <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+          <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+        </ul>
+      </div>
+      <ol class="page-actions btn-group">
+        <li class="expandall btn btn-xs">Expand All</li>
+        <li class="collapseall btn btn-xs">Collapse All</li>
+      </ol>
+      <ol class="breadcrumb">
+        <li><a href="../../../FitNesse.html">FitNesse</a></li>
+        <li><a href="../../../FitNesse/UserGuide.html">UserGuide</a></li>
+        <li><a href="../../../FitNesse/UserGuide/FixtureGallery.html">FixtureGallery</a></li>
+        <li>SourceCode</li>
+      </ol>
+    </nav>
+    <header>
+    </header>
+    <article>
+      <i>Previous page: <a href="../../../FitNesse/UserGuide/FixtureGallery/GalleryIntroduction.html">Introduction</a> Next page: <a href="../../../FitNesse/UserGuide/FixtureGallery/BasicFitFixtures.html">Basic FIT fixtures</a> Parent page: <a href="../../../FitNesse/UserGuide/FixtureGallery/TableOfContents.html">Table of contents</a></i><br/><h2 id="0">Source code</h2>
 You can get the source code for all the examples from this document from SourceForge (<a href="http://sourceforge.net/projects/fixturegallery">http://sourceforge.net/projects/fixturegallery</a> ). A lot of examples in this document demonstrate how to work with business domain services and objects. To keep things as simple as possible, and still show all relevant features, all those examples use the following "business" classes:<br/><br/><h3 id="1">Java domain code</h3>
 <pre>
 package info.fitnesse.fixturegallery.domain;
@@ -251,9 +263,9 @@ class Words(object):
         someWords[1] = Words(firstPart="Houston", secondPart="We Have a Problem")
         return someWords
 </pre><br/><br/><i>Previous page: <a href="../../../FitNesse/UserGuide/FixtureGallery/GalleryIntroduction.html">Introduction</a> Next page: <a href="../../../FitNesse/UserGuide/FixtureGallery/BasicFitFixtures.html">Basic FIT fixtures</a> Parent page: <a href="../../../FitNesse/UserGuide/FixtureGallery/TableOfContents.html">Table of contents</a></i><br/>
-</article>
-<footer>
-<a href="../../../FitNesse/UserGuide/FixtureGallery.html">Table of contents</a>| Fixture Gallery on <a href="http://sourceforge.net/projects/fixturegallery">SourceForge</a> | Fixture Gallery live wiki on  <a href="http://fitnesse.info/fixturegallery">UserGuide.Info</a> | <a href="http://gojko.net/fitnesse/fixturegallery">Comments and Feedback</a> | <a href="../../../FrontPage.html">Front Page</a><br/>
-</footer>
-</body>
+    </article>
+    <footer>
+      <a href="../../../FitNesse/UserGuide/FixtureGallery.html">Table of contents</a>| Fixture Gallery on <a href="http://sourceforge.net/projects/fixturegallery">SourceForge</a> | Fixture Gallery live wiki on  <a href="http://fitnesse.info/fixturegallery">UserGuide.Info</a> | <a href="http://gojko.net/fitnesse/fixturegallery">Comments and Feedback</a> | <a href="../../../FrontPage.html">Front Page</a><br/>
+    </footer>
+  </body>
 </html>

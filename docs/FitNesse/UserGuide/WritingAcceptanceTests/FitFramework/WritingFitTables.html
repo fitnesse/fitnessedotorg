@@ -1,35 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>FitNesse.UserGuide.WritingAcceptanceTests.FitFramework.WritingFitTables</title>
-<link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/css/fitnesse_wiki.css">
-<link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/css/fitnesse_pages.css">
-<link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
-</head>
-<body class="wikiPage">
-<nav class="navbar-fixed-top " role="navigation">
-  <div class="navbar navbar-default">
-    <div class="navbar-header">
-      <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
-      <li><a href="../../../../FitNesseDownload.html">Download</a></li>
-      <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
-      <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
-    </ul>
-  </div>
-  <ol class="breadcrumb">
-  <li><a href="../../../../FitNesse.html">FitNesse</a></li>
-<li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
-<li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">WritingAcceptanceTests</a></li>
-<li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework.html">FitFramework</a></li>
-<li>WritingFitTables</li>
-
-  </ol>
-</nav>
-<article>
-The name of a <i>fitnesse test page</i> begins with <b>"Test"</b>, or has the <b>Test</b> attribute set.  See <a href="../../../../FitNesse/UserGuide/FitNesseWiki/PageProperties.html">Page Attributes</a>.  This makes sure that the page will have a <b>Test</b> button.<br/><br/><i>Fitnesse tests</i> are written in <i>Fit</i> format (<a href="http://fit.c2.com">http://fit.c2.com</a> ).  This format is very simple.  The page can contain any text at all.  Any tables that exist on the page will be interpreted by <i>Fit</i>.<br/><br/>A <i>Fit</i> table begins with a row that contains the classname of the test fixture that will interpret the rest of the table.  Usually you write these test fixtures.  There are a number of test fixture base classes that make writing these fixtures very simple.<br/><br/>The rest of the rows in a <i>Fit</i> table have formats that are determined by the fixture.<br/><br/><table>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FitNesse.UserGuide.WritingAcceptanceTests.FitFramework.WritingFitTables</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../files/fitnesse/images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/css/fitnesse_wiki.css">
+    <link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/css/fitnesse_pages.css">
+    <link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
+    <script src="../../../../files/fitnesse/javascript/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="../../../../files/fitnesse/javascript/fitnesse.js" type="text/javascript"></script>
+    <script src="../../../../files/fitnesse/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../../../../files/fitnesse/bootstrap/js/respond.js" type="text/javascript"></script>
+  </head>
+  <body class="wikiPage">
+    <nav class="navbar-fixed-top " role="navigation">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+          <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+          <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+          <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+        </ul>
+      </div>
+      <ol class="page-actions btn-group">
+        <li class="expandall btn btn-xs">Expand All</li>
+        <li class="collapseall btn btn-xs">Collapse All</li>
+      </ol>
+      <ol class="breadcrumb">
+        <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+        <li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+        <li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">WritingAcceptanceTests</a></li>
+        <li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework.html">FitFramework</a></li>
+        <li>WritingFitTables</li>
+      </ol>
+    </nav>
+    <header>
+    </header>
+    <article>
+      The name of a <i>fitnesse test page</i> begins with <b>"Test"</b>, or has the <b>Test</b> attribute set.  See <a href="../../../../FitNesse/UserGuide/FitNesseWiki/PageProperties.html">Page Attributes</a>.  This makes sure that the page will have a <b>Test</b> button.<br/><br/><i>Fitnesse tests</i> are written in <i>Fit</i> format (<a href="http://fit.c2.com">http://fit.c2.com</a> ).  This format is very simple.  The page can contain any text at all.  Any tables that exist on the page will be interpreted by <i>Fit</i>.<br/><br/>A <i>Fit</i> table begins with a row that contains the classname of the test fixture that will interpret the rest of the table.  Usually you write these test fixtures.  There are a number of test fixture base classes that make writing these fixtures very simple.<br/><br/>The rest of the rows in a <i>Fit</i> table have formats that are determined by the fixture.<br/><br/><table>
 	<tr>
 		<td colspan="2"><center><h3 id="0">Fixtures and Examples</h3>
 </center></td>
@@ -90,9 +102,9 @@ The name of a <i>fitnesse test page</i> begins with <b>"Test"</b>, or has the <b
 	</tr>
 </table>
 <br/>
-</article>
-<footer>
-<center>User Guide Contents</center><center><a href="../../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
-</footer>
-</body>
+    </article>
+    <footer>
+      <center>User Guide Contents</center><center><a href="../../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+    </footer>
+  </body>
 </html>

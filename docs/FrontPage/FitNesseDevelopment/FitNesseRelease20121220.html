@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>FrontPage.FitNesseDevelopment.FitNesseRelease20121220</title>
-<link rel="stylesheet" type="text/css" href="../../files/fitnesse/css/fitnesse_wiki.css">
-<link rel="stylesheet" type="text/css" href="../../files/fitnesse/css/fitnesse_pages.css">
-<link rel="stylesheet" type="text/css" href="../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
-</head>
-<body class="wikiPage">
-<nav class="navbar-fixed-top " role="navigation">
-  <div class="navbar navbar-default">
-    <div class="navbar-header">
-      <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="../../FitNesseFeatures.html">Features</a></li>
-      <li><a href="../../FitNesseDownload.html">Download</a></li>
-      <li><a href="../../PlugIns.html">Plug-ins</a></li>
-      <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
-    </ul>
-  </div>
-  <ol class="breadcrumb">
-  <li><a href="../../FrontPage.html">FrontPage</a></li>
-<li><a href="../../FrontPage/FitNesseDevelopment.html">FitNesseDevelopment</a></li>
-<li>FitNesseRelease20121220</li>
-
-  </ol>
-</nav>
-<article>
-<h3>release 
-	<a href="">20121220</a>
-</h3>
-<table><thead><tr><th>File</th><th>Size</th><th># of Downloads</th></thead><tbody><tr><td><strong><a href="/fitnesse-standalone.jar?responder=releaseDownload&release=20121220">fitnesse-standalone.jar</a></strong></td><td>5271132 bytes</td><td>0</td></tr></tbody></table><br/><br/><h3 id="0"><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> Release Notes 12/20/2012</h3>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FrontPage.FitNesseDevelopment.FitNesseRelease20121220</title>
+    <link rel="shortcut icon" type="image/png" href="../../files/fitnesse/images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/css/fitnesse_wiki.css">
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/css/fitnesse_pages.css">
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
+    <script src="../../files/fitnesse/javascript/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/javascript/fitnesse.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/bootstrap/js/respond.js" type="text/javascript"></script>
+  </head>
+  <body class="wikiPage">
+    <nav class="navbar-fixed-top " role="navigation">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="../../FitNesseFeatures.html">Features</a></li>
+          <li><a href="../../FitNesseDownload.html">Download</a></li>
+          <li><a href="../../PlugIns.html">Plug-ins</a></li>
+          <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+        </ul>
+      </div>
+      <ol class="page-actions btn-group">
+        <li class="expandall btn btn-xs">Expand All</li>
+        <li class="collapseall btn btn-xs">Collapse All</li>
+      </ol>
+      <ol class="breadcrumb">
+        <li><a href="../../FrontPage.html">FrontPage</a></li>
+        <li><a href="../../FrontPage/FitNesseDevelopment.html">FitNesseDevelopment</a></li>
+        <li>FitNesseRelease20121220</li>
+      </ol>
+    </nav>
+    <header>
+    </header>
+    <article>
+      !release 20121220<br/><br/><h3 id="0"><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> Release Notes 12/20/2012</h3>
 <p class="note">Uncle Bob Consulting LLC.</p>
 <br/><p class="note"><span class="red">Requires Java 1.6</span></p>
 <br/><h4 id="1">Github ids of Contributors to this release:</h4>
@@ -46,7 +55,7 @@
 	</tr>
 </table>
 <br/><h3 id="4">Major Changes</h3>
-<b>Ivy Support</b><br/>We have implemented Ivy support into the development of <a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a>. This is a big change for most users, as it changes the jar file that people have been using.  If you are not using Ivy or Maven, we now recommend you use the “fitnesse-standalone.jar” instead of the “fitnesse.jar” file. This is a good change, though we do expect it to cause some initial confusion. If you do not use Maven or Ivy, you must switch to using the fitnesse-standalone.jar file.<br/>If you’re using either Maven or Ivy to manage dependencies, set up a dependency to org.fitnesse:fitnesse.<br/><br/><b>New WYSIWYG Editor</b><br/>Arjan Molenaar has brought to <a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> a native WYSIWYG editor.  No plugins required.  The editor is just a radio button click away on the edit page. It supports inserting tables, collapsible sections and more.  It even does a nice job of allowing a flexible number of columns in each row.<br/><br/><b>New Theming Engine w/ HTML5 markup</b><br/>Again, Arjan has contributed a big improvement to the look and feel of <a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a>. The HTML pages served up by <a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> are now HTML5 and include significant improvements in the CSS.  Five different themes are provided out of the box, including the gorgeous Bootstrap theme. Instructions are provided on how to modify the themes and supply your own.<br/><br/><b>Failure Navigator</b><br/>Josh Pordon has contributed a new way to quickly get to the failures in your <a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> tests.  When a test has a failure or an exception, the Failure Navigator will be visible and will scroll you to each failure or exception with a click of a button.<br/><br/><b>SuiteFilter Improvements</b><br/>Josh Pordon has added the ability to filter for pages that match all of the supplied filter tags instead of just matching on one of them.  Instead of “suiteFilter=tag1,tag2”, use “runTestsMatchingAllTags=tag1,tag2” and only the tests that have both tags will run.<br/><br/><b>TemplateLibrary</b><br/>Again, Josh has contributed a very useful enhancement.  Instead of a single template option in the plugin.properties page, you can now have multiple templates.  Creating a page called TemplateLibrary<a title="create page" href="../../FrontPage/FitNesseDevelopment/TemplateLibrary.html?edit&amp;nonExistent=true">[?]</a> will allow you to add multiple template pages as children of the TemplateLibrary<a title="create page" href="../../FrontPage/FitNesseDevelopment/TemplateLibrary.html?edit&amp;nonExistent=true">[?]</a>.  All of templates added this way can be accessed in the plain text editor and inserted into the edit field.  Best part, templates can be big (like a fleshed out template with any required test parts) or small (such as a single table that you use a lot).<br/><br/><br/><b>Fixture Interaction Controls</b><br/>Also new in this release is a contribution from Andrew NAME. This change allows you to do run your <a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> tests with execution disabled or additional logging turned on. This can be useful when diagnosing issues or investigating performance issues.<br/><br/><h3 id="5">Git History</h3>
+<b>Ivy Support</b><br/>We have implemented Ivy support into the development of <a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a>. This is a big change for most users, as it changes the jar file that people have been using.  If you are not using Ivy or Maven, we now recommend you use the “fitnesse-standalone.jar” instead of the “fitnesse.jar” file. This is a good change, though we do expect it to cause some initial confusion. If you do not use Maven or Ivy, you must switch to using the fitnesse-standalone.jar file.<br/>If you’re using either Maven or Ivy to manage dependencies, set up a dependency to org.fitnesse:fitnesse.<br/><br/><b>New WYSIWYG Editor</b><br/>Arjan Molenaar has brought to <a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> a native WYSIWYG editor.  No plugins required.  The editor is just a radio button click away on the edit page. It supports inserting tables, collapsible sections and more.  It even does a nice job of allowing a flexible number of columns in each row.<br/><br/><b>New Theming Engine w/ HTML5 markup</b><br/>Again, Arjan has contributed a big improvement to the look and feel of <a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a>. The HTML pages served up by <a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> are now HTML5 and include significant improvements in the CSS.  Five different themes are provided out of the box, including the gorgeous Bootstrap theme. Instructions are provided on how to modify the themes and supply your own.<br/><br/><b>Failure Navigator</b><br/>Josh Pordon has contributed a new way to quickly get to the failures in your <a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> tests.  When a test has a failure or an exception, the Failure Navigator will be visible and will scroll you to each failure or exception with a click of a button.<br/><br/><b>SuiteFilter Improvements</b><br/>Josh Pordon has added the ability to filter for pages that match all of the supplied filter tags instead of just matching on one of them.  Instead of “suiteFilter=tag1,tag2”, use “runTestsMatchingAllTags=tag1,tag2” and only the tests that have both tags will run.<br/><br/><b>TemplateLibrary</b><br/>Again, Josh has contributed a very useful enhancement.  Instead of a single template option in the plugin.properties page, you can now have multiple templates.  Creating a page called TemplateLibrary<a title="create page" href="FrontPage.FitNesseDevelopment.TemplateLibrary?edit&amp;nonExistent=true">[?]</a> will allow you to add multiple template pages as children of the TemplateLibrary<a title="create page" href="FrontPage.FitNesseDevelopment.TemplateLibrary?edit&amp;nonExistent=true">[?]</a>.  All of templates added this way can be accessed in the plain text editor and inserted into the edit field.  Best part, templates can be big (like a fleshed out template with any required test parts) or small (such as a single table that you use a lot).<br/><br/><br/><b>Fixture Interaction Controls</b><br/>Also new in this release is a contribution from Andrew NAME. This change allows you to do run your <a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> tests with execution disabled or additional logging turned on. This can be useful when diagnosing issues or investigating performance issues.<br/><br/><h3 id="5">Git History</h3>
 <br/><table>
 	<tr>
 		<td>2012-12-20 07:38:32 +0100</td>
@@ -3951,10 +3960,10 @@
 	</tr>
 </table>
 
-</article>
-<footer>
-<hr/>
+    </article>
+    <footer>
+      <hr/>
 <br/><a href="../../FrontPage.html">.FrontPage</a> | <a href="../../FrontPage/FitNesseDevelopment/FrontPage.html">FrontPage</a> | <a href="../../RecentChanges.html">.RecentChanges</a><br/>
-</footer>
-</body>
+    </footer>
+  </body>
 </html>

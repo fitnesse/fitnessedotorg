@@ -1,5 +1,7 @@
-!2 Official release
-!release 20221102 .FrontPage.FitNesseDevelopment.FitNesseRelease20221102
+!2 Official release: 20221102
+
+!-GitHub-! [[release notes][https://github.com/unclebob/fitnesse/releases/tag/20221102]].
+Download [[fitnesse-standalone.jar][https://github.com/unclebob/fitnesse/releases/download/20221102/fitnesse-standalone.jar]].
 
 !-FitNesse-! requires the Java Runtime Environment (JRE) version 8 or 11.
 
@@ -14,7 +16,6 @@ You can also find [[!-FitNesse-! in the Maven Central Repository][http://search.
 !2 Source
 The source Code can be found on !-GitHub-!: http://github.com/unclebob/fitnesse
 
-----
 !2 What's next
 It really takes very little time and effort to get FitNesse running on your machine.
 
@@ -97,80 +98,3 @@ When you use !-FitNesse-! extensively, some operations take more than the defaul
 
 !3 Memory issues and the build.
 If you build !-FitNesse-! from source, the ant script may fail for ''out of heap space'' reasons.  You can fix this by setting the !style_code(ANT_OPTS) environment variable to !style_code(!--Xmx100M-!).
-
-----
-!2 Old Releases
-!release 20220815 .FrontPage.FitNesseDevelopment.FitNesseRelease20220815
-!release 20220319 .FrontPage.FitNesseDevelopment.FitNesseRelease20220319
-!release 20211030 .FrontPage.FitNesseDevelopment.FitNesseRelease20211030
-!release 20211006 .FrontPage.FitNesseDevelopment.FitNesseRelease20211006
-!release 20210606 .FrontPage.FitNesseDevelopment.FitNesseRelease20210606
-!release 20210605 .FrontPage.FitNesseDevelopment.FitNesseRelease20210605
-!release 20210516 .FrontPage.FitNesseDevelopment.FitNesseRelease20210516
-!release 20210410 .FrontPage.FitNesseDevelopment.FitNesseRelease20210410
-!release 20201213 .FrontPage.FitNesseDevelopment.FitNesseRelease20201213
-!release 20200501 .FrontPage.FitNesseDevelopment.FitNesseRelease20200501
-!release 20200404 .FrontPage.FitNesseDevelopment.FitNesseRelease20200404
-!release 20200308 .FrontPage.FitNesseDevelopment.FitNesseRelease20200308
-!release 20200307 .FrontPage.FitNesseDevelopment.FitNesseRelease20200307
-!release 20200304 .FrontPage.FitNesseDevelopment.FitNesseRelease20200304
-!release 20200205 .FrontPage.FitNesseDevelopment.FitNesseRelease20200205
-!release 20200128 .FrontPage.FitNesseDevelopment.FitNesseRelease20200128
-!release 20200108 .FrontPage.FitNesseDevelopment.FitNesseRelease20200108
-!release 20191229 .FrontPage.FitNesseDevelopment.FitNesseRelease20191229
-!release 20191217 .FrontPage.FitNesseDevelopment.FitNesseRelease20191217
-!release 20191110 .FrontPage.FitNesseDevelopment.FitNesseRelease20191110
-!release 20190716 .FrontPage.FitNesseDevelopment.FitNesseRelease20190716
-!release 20190628 .FrontPage.FitNesseDevelopment.FitNesseRelease20190628
-!release 20190620 .FrontPage.FitNesseDevelopment.FitNesseRelease20190620
-!release 20190508 .FrontPage.FitNesseDevelopment.FitNesseRelease20190508
-!release 20190428 .FrontPage.FitNesseDevelopment.FitNesseRelease20190428
-!release 20190421 .FrontPage.FitNesseDevelopment.FitNesseRelease20190421
-!release 20190418 .FrontPage.FitNesseDevelopment.FitNesseRelease20190418
-!release 20190417 .FrontPage.FitNesseDevelopment.FitNesseRelease20190417
-!release 20190416 .FrontPage.FitNesseDevelopment.FitNesseRelease20190416
-!release 20190409 .FrontPage.FitNesseDevelopment.FitNesseRelease20190409
-!release 20190406 .FrontPage.FitNesseDevelopment.FitNesseRelease20190406
-!release 20190224 .FrontPage.FitNesseDevelopment.FitNesseRelease20190224
-!release 20190216 .FrontPage.FitNesseDevelopment.FitNesseRelease20190216
-!release 20190202 .FrontPage.FitNesseDevelopment.FitNesseRelease20190202
-!release 20190127 .FrontPage.FitNesseDevelopment.FitNesseRelease20190127
-!release 20190119 .FrontPage.FitNesseDevelopment.FitNesseRelease20190119
-!release 20190118 .FrontPage.FitNesseDevelopment.FitNesseRelease20190118
-!release 20180127 .FrontPage.FitNesseDevelopment.FitNesseRelease20180127
-!release 20161106 .FrontPage.FitNesseDevelopment.FitNesseRelease20161106
-!release 20160618 .FrontPage.FitNesseDevelopment.FitNesseRelease20160618
-!release 20160515 .FrontPage.FitNesseDevelopment.FitNesseRelease20160515
-!release 20151230 .FrontPage.FitNesseDevelopment.FitNesseRelease20151230
-!release 20150814 .FrontPage.FitNesseDevelopment.FitNesseRelease20150814
-!release 20150424 .FrontPage.FitNesseDevelopment.FitNesseRelease20150424
-!release 20150226 .FrontPage.FitNesseDevelopment.FitNesseRelease20150226
-!release 20150114 .FrontPage.FitNesseDevelopment.FitNesseRelease20150114
-!release 20140901 .FrontPage.FitNesseDevelopment.FitNesseRelease20140901
-!release 20140630 .FrontPage.FitNesseDevelopment.FitNesseRelease20140630
-!release 20140623 .FrontPage.FitNesseDevelopment.FitNesseRelease20140623
-!release 20140418 .FrontPage.FitNesseDevelopment.FitNesseRelease20140418
-!release 20140201 .FrontPage.FitNesseDevelopment.FitNesseRelease20140201
-!release 20131110 .FrontPage.FitNesseDevelopment.FitNesseRelease20131110
-!release 20130530 .FrontPage.FitNesseDevelopment.FitNesseRelease20130530
-!release 20111026 .FrontPage.FitNesseDevelopment.FitNesseRelease20111026
-!release 20110104 .FrontPage.FitNesseDevelopment.FitNesseRelease20110104
-!release 20101101 .FrontPage.FitNesseDevelopment.FitNesseRelease20101101
-!release 20100303 .FrontPage.FitNesseDevelopment.FitNesseRelease20100303
-!release 20100103 .FrontPage.FitNesseDevelopment.FitNesseRelease20100103
-!release 20091121 .FrontPage.FitNesseDevelopment.FitNesseRelease20091121
-!release 20090818 .FrontPage.FitNesseDevelopment.FitNesseRelease20090818
-!release 20090709 .FrontPage.FitNesseDevelopment.FitNesseRelease20090709
-!release 20090513 .FrontPage.FitNesseDevelopment.FitNesseRelease20090513
-!release 20090321 .FrontPage.FitNesseDevelopment.FitNesseRelease20090321
-!release 20090214 .FrontPage.FitNesseDevelopment.FitNesseRelease20090214
-!release 20090112 .FrontPage.FitNesseDevelopment.FitNesseRelease20090112
-!release 20081201 .FrontPage.FitNesseDevelopment.FitNesseRelease20081201
-!release 20081115 .FrontPage.FitNesseDevelopment.FitNesseRelease20081115
-!release 20080812 .FrontPage.FitNesseDevelopment.FitNesseRelease20080812
-!release 20080702 .FrontPage.FitNesseDevelopment.FitNesseRelease20080702
-!release 20070619 .FrontPage.FitNesseDevelopment.FitNesseRelease20070619
-!release 20060719 .FrontPage.FitNesseDevelopment.FitNesseRelease20060719
-!release 20050731 .FrontPage.FitNesseDevelopment.FitNesseRelease20050731
-!release 20050405 .FrontPage.FitNesseDevelopment.FitNesseRelease20050405
-!release 20050301 .FrontPage.FitNesseDevelopment.FitNesseRelease20050301
