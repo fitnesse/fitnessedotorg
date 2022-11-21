@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FitNesse.SuiteAcceptanceTests.SuiteSlimTests.TestSequentialArgumentProcessing</title>
+    <link rel="shortcut icon" type="image/png" href="../../../files/fitnesse/images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="../../../files/fitnesse/css/fitnesse_wiki.css">
+    <link rel="stylesheet" type="text/css" href="../../../files/fitnesse/css/fitnesse_pages.css">
+    <link rel="stylesheet" type="text/css" href="../../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
+    <script src="../../../files/fitnesse/javascript/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="../../../files/fitnesse/javascript/fitnesse.js" type="text/javascript"></script>
+    <script src="../../../files/fitnesse/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../../../files/fitnesse/bootstrap/js/respond.js" type="text/javascript"></script>
+  </head>
+  <body class="wikiPage">
+    <nav class="navbar-fixed-top " role="navigation">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+          <li><a href="../../../FitNesseDownload.html">Download</a></li>
+          <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+          <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+        </ul>
+      </div>
+      <ol class="page-actions btn-group">
+        <li class="expandall btn btn-xs">Expand All</li>
+        <li class="collapseall btn btn-xs">Collapse All</li>
+      </ol>
+      <ol class="breadcrumb">
+        <li><a href="../../../FitNesse.html">FitNesse</a></li>
+        <li><a href="../../../FitNesse/SuiteAcceptanceTests.html">SuiteAcceptanceTests</a></li>
+        <li><a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests.html">SuiteSlimTests</a></li>
+        <li>TestSequentialArgumentProcessing</li>
+      </ol>
+    </nav>
+    <header>
+    </header>
+    <article>
+      <h1 id="0">Sequential Argument Processing in Script Tables</h1>
+<i>concatenateThreeArgs(String first, String second, String third)</i> returns the concatenated arguments, separated by a space<br/><h3 id="1">Affixing a semi-colon ";" to the end of a cell's contents should invoke sequential argument processing. Mixing every-other-cell and sequential-cell processing within the same row is permitted.</h3>
+<table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="4">fitnesse.slim.test.TestSlim</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>concatenate three args;</td>
+		<td>1</td>
+		<td>2.0</td>
+		<td colspan="2">three</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>concatenate</td>
+		<td>a</td>
+		<td>three args;</td>
+		<td>b</td>
+		<td>c</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>concatenate three</td>
+		<td>x</td>
+		<td>args;</td>
+		<td>why</td>
+		<td>zee</td>
+	</tr>
+</table>
+<br/><h3 id="2">Results of the function call should be equal regardless of processing style.</h3>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="7">script</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>$RESULT_WITH_EVERY_OTHER_CELL_PROCESSING=</td>
+		<td>concatenate</td>
+		<td>a</td>
+		<td>three</td>
+		<td>b</td>
+		<td>args</td>
+		<td>c</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>$RESULT_WITH_SEQUENTIAL_CELL_PROCESSING=</td>
+		<td>concatenate three args;</td>
+		<td>a</td>
+		<td>b</td>
+		<td colspan="3">c</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>$RESULT_WITH_MIXED_PROCESSING=</td>
+		<td>concatenate</td>
+		<td>a</td>
+		<td>three args;</td>
+		<td>b</td>
+		<td colspan="2">c</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>echo string</td>
+		<td>$RESULT_WITH_SEQUENTIAL_CELL_PROCESSING</td>
+		<td colspan="4">$RESULT_WITH_EVERY_OTHER_CELL_PROCESSING</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>echo string</td>
+		<td>$RESULT_WITH_MIXED_PROCESSING</td>
+		<td colspan="4">$RESULT_WITH_EVERY_OTHER_CELL_PROCESSING</td>
+	</tr>
+</table>
+<br/><h3 id="3">Script Table Keywords</h3>
+<table>
+	<tr class="slimRowTitle">
+		<td colspan="6">script</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>concatenate three args;</td>
+		<td>1</td>
+		<td>2.0</td>
+		<td>three</td>
+		<td>1 2.0 three</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>check not</td>
+		<td>concatenate three args;</td>
+		<td>a</td>
+		<td>b</td>
+		<td>c</td>
+		<td>something else</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td>concatenate three args;</td>
+		<td>a</td>
+		<td>b</td>
+		<td colspan="2">c</td>
+	</tr>
+</table>
+<br/><h3 id="4">Sequential argument processing can be used in scenario tables</h3>
+<table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>concatenate</td>
+		<td>input1</td>
+		<td>and</td>
+		<td>input2</td>
+		<td>and</td>
+		<td>input3</td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$RESULT=</td>
+		<td>concatenate three args;</td>
+		<td>@input1</td>
+		<td>@input2</td>
+		<td colspan="3">@input3</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="6">script</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>concatenate</td>
+		<td>a</td>
+		<td>and</td>
+		<td>b</td>
+		<td>and</td>
+		<td>c</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>echo string</td>
+		<td>$RESULT</td>
+		<td colspan="3">a b c</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>concatenate</td>
+		<td>input1</td>
+		<td>and</td>
+		<td>input2</td>
+		<td>and</td>
+		<td>input3</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>input1</td>
+		<td>input2</td>
+		<td colspan="4">input3</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>x</td>
+		<td>y</td>
+		<td colspan="4">z</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">script</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>echo string</td>
+		<td>$RESULT</td>
+		<td>x y z</td>
+	</tr>
+</table>
+<br/><h3 id="5">Script name's character case should be identical to scenario name's character case.</h3>
+<table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>conCatentate _ _ _</td>
+		<td colspan="3">input1,input2,input3</td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$RESULT=</td>
+		<td>concatenate three args;</td>
+		<td>@input1</td>
+		<td>@input2</td>
+		<td>@input3</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">script</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td colspan="4">conCatentate a b c</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>echo string</td>
+		<td>$RESULT</td>
+		<td>a b c</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>conCatentate;</td>
+		<td>a</td>
+		<td>b</td>
+		<td>c</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>echo string</td>
+		<td>$RESULT</td>
+		<td>a b c</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>con</td>
+		<td>input1</td>
+		<td>cAt</td>
+		<td>input2</td>
+		<td>enate</td>
+		<td>input3</td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$RESULT=</td>
+		<td>concatenate three args;</td>
+		<td>@input1</td>
+		<td>@input2</td>
+		<td colspan="3">@input3</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>ConCAtEnate;</td>
+		<td>input1</td>
+		<td>input2</td>
+		<td>input3</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>input1</td>
+		<td>input2</td>
+		<td colspan="2">input3</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>x</td>
+		<td>y</td>
+		<td colspan="2">z</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>echo string</td>
+		<td>$RESULT</td>
+		<td>x y z</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>Con</td>
+		<td>input1</td>
+		<td>CAt</td>
+		<td>input2</td>
+		<td>Enate</td>
+		<td>input3</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>input1</td>
+		<td>input2</td>
+		<td colspan="4">input3</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>x</td>
+		<td>y</td>
+		<td colspan="4">z</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>echo string</td>
+		<td>$RESULT</td>
+		<td colspan="3">x y z</td>
+	</tr>
+</table>
+
+    </article>
+    <footer>
+      <a href="../../../FitNesse/SuiteAcceptanceTests.html">FitNesse's own acceptance test suite</a> | <a href="../../../FrontPage.html">Front Page</a> | <a href="../../../FitNesse/UserGuide.html">User Guide</a>
+    </footer>
+  </body>
+</html>

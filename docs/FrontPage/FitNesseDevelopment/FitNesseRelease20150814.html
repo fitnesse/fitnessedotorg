@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FrontPage.FitNesseDevelopment.FitNesseRelease20150814</title>
+    <link rel="shortcut icon" type="image/png" href="../../files/fitnesse/images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/css/fitnesse_wiki.css">
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/css/fitnesse_pages.css">
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
+    <script src="../../files/fitnesse/javascript/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/javascript/fitnesse.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/bootstrap/js/respond.js" type="text/javascript"></script>
+  </head>
+  <body class="wikiPage">
+    <nav class="navbar-fixed-top " role="navigation">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="../../FitNesseFeatures.html">Features</a></li>
+          <li><a href="../../FitNesseDownload.html">Download</a></li>
+          <li><a href="../../PlugIns.html">Plug-ins</a></li>
+          <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+        </ul>
+      </div>
+      <ol class="page-actions btn-group">
+        <li class="expandall btn btn-xs">Expand All</li>
+        <li class="collapseall btn btn-xs">Collapse All</li>
+      </ol>
+      <ol class="breadcrumb">
+        <li><a href="../../FrontPage.html">FrontPage</a></li>
+        <li><a href="../../FrontPage/FitNesseDevelopment.html">FitNesseDevelopment</a></li>
+        <li>FitNesseRelease20150814</li>
+      </ol>
+    </nav>
+    <header>
+    </header>
+    <article>
+      !release 20150814<br/><br/><h3 id="0"><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> Release Notes 2015/08/14</h3>
+<p class="note">Uncle Bob Consulting LLC.</p>
+<br/><p class="note"><span class="red">Requires Java 1.6</span></p>
+<br/><h4 id="1">Major Changes since <a href="../../FrontPage/FitNesseDevelopment/FitNesseRelease20150424.html">20150424</a>:</h4>
+<br/><ul>
+	<li>Syntax highlighting in plain text editor (<a href="https://github.com/unclebob/fitnesse/pull/631">631</a>)</li>
+	<li>Support generic behavior in Slim (Java) fixture via when fixtures implement <a href="../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/InteractionAwareFixture.html">InteractionAwareFixture</a> (<a href="https://github.com/unclebob/fitnesse/pull/724">724</a>)</li>
+	<li>Tag filtering is now all case insensitive (<a href="https://github.com/unclebob/fitnesse/pull/728">728</a>)</li>
+	<li>Improved slim hash table handling (<a href="https://github.com/unclebob/fitnesse/pull/739">739</a>)</li>
+	<li>Support custom formatters (<a href="https://github.com/unclebob/fitnesse/pull/764">764</a>)</li>
+	<li>Non wiki word page names are properly resolved when using !include statements</li>
+	<li>Page-in-progress formatter has been removed (<a href="https://github.com/unclebob/fitnesse/pull/767">767</a>)</li>
+	<li>Issues fixed:<ul>
+	<li>NPE in SuiteHistoryFormatter (<a href="https://github.com/unclebob/fitnesse/pull/736">736</a>)</li>
+	<li>WYSIWYG (rich text) breaks inlinecode in table (<a href="https://github.com/unclebob/fitnesse/pull/756">756</a>)</li>
+	<li>Rich text editor retains line breaks (<a href="https://github.com/unclebob/fitnesse/pull/756">756</a>, <a href="https://github.com/unclebob/fitnesse/pull/77">777</a>)</li>
+	<li>XML result files do no longer contain HTML output by default (as it was a few releases ago) (<a href="https://github.com/unclebob/fitnesse/pull/771">771</a>)</li>
+</ul>
+</li>
+</ul>
+<br/><h4 id="2">Github ids of Contributors to this release:</h4>
+<br/><ul>
+	<li>Alex (A.) Kogon</li>
+	<li>Alex Kogon</li>
+	<li>Andre Albino Pereira</li>
+	<li>Arjan Molenaar</li>
+	<li>Dmitriy Kartashov</li>
+	<li>Fried Hoeben</li>
+	<li>Hans Joachim Desserud</li>
+	<li>Jeroen Ruijgers</li>
+	<li>Linquize</li>
+	<li>Matt Warhaftig</li>
+	<li>Nithin Satheesan</li>
+	<li>Maxim Maximov</li>
+	<li>Martijn van der Blom</li>
+</ul>
+<br/><span class="meta">Thanks to all of you!</span><br/><h3 id="3">Git History</h3>
+<br/><table>
+	<tr>
+		<td>2015-08-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #781 from nytins/master</td>
+	</tr>
+	<tr>
+		<td>2015-08-11</td>
+		<td>Nithin Satheesan</td>
+		<td>Remove garbage text.</td>
+	</tr>
+	<tr>
+		<td>2015-08-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Make RecentChanges page a little more chatty, so it can report errors.</td>
+	</tr>
+	<tr>
+		<td>2015-07-31</td>
+		<td>Arjan Molenaar</td>
+		<td>Update release notes.</td>
+	</tr>
+	<tr>
+		<td>2015-07-31</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #777 from amolenaar/include-non-wiki-word</td>
+	</tr>
+	<tr>
+		<td>2015-07-31</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #778 from hansjoachim/issues</td>
+	</tr>
+	<tr>
+		<td>2015-07-31</td>
+		<td>Arjan Molenaar</td>
+		<td>Update error message on invalid wiki page.</td>
+	</tr>
+	<tr>
+		<td>2015-07-31</td>
+		<td>Arjan Molenaar</td>
+		<td>Update acceptance tests.</td>
+	</tr>
+	<tr>
+		<td>2015-07-31</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Revert constant back to regular field since it broke the tests</td>
+	</tr>
+	<tr>
+		<td>2015-07-31</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Convert fields to local variables when they were only used in one place</td>
+	</tr>
+	<tr>
+		<td>2015-07-31</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Convert to constant</td>
+	</tr>
+	<tr>
+		<td>2015-07-29</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Some more @Overrides where appropriate</td>
+	</tr>
+	<tr>
+		<td>2015-07-29</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Use existing constant instead of Boolean constructor. Also avoids boxing</td>
+	</tr>
+	<tr>
+		<td>2015-07-29</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Remove redundant String.format without arguments</td>
+	</tr>
+	<tr>
+		<td>2015-07-28</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Tiny style fixes</td>
+	</tr>
+	<tr>
+		<td>2015-07-28</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Use isEmpty() instead of comparing size with 0</td>
+	</tr>
+	<tr>
+		<td>2015-07-31</td>
+		<td>Arjan Molenaar</td>
+		<td>Let !include handle non-wiki-word page names.</td>
+	</tr>
+	<tr>
+		<td>2015-07-30</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #776 from unclebob/wysiwyg-linebreaks</td>
+	</tr>
+	<tr>
+		<td>2015-07-30</td>
+		<td>Arjan Molenaar</td>
+		<td>Retain new lines in wysiwyg editor.</td>
+	</tr>
+	<tr>
+		<td>2015-07-30</td>
+		<td>Arjan Molenaar</td>
+		<td>syntax fix in wysiwyg javascript.</td>
+	</tr>
+	<tr>
+		<td>2015-07-28</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #772 from alexkogon/addSlimFailureErrorMessage</td>
+	</tr>
+	<tr>
+		<td>2015-07-28</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #775 from hansjoachim/issues</td>
+	</tr>
+	<tr>
+		<td>2015-07-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix confirmation dialog when navigating away from the edit page. Fixes #774.</td>
+	</tr>
+	<tr>
+		<td>2015-07-27</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Sprinkle with some @Overrides</td>
+	</tr>
+	<tr>
+		<td>2015-07-27</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Sort modifiers</td>
+	</tr>
+	<tr>
+		<td>2015-07-27</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Removed unused imports</td>
+	</tr>
+	<tr>
+		<td>2015-07-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #767 from amolenaar/removePageInProgressFormatter</td>
+	</tr>
+	<tr>
+		<td>2015-07-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Add test case that exposes threading issue outlined in #768.</td>
+	</tr>
+	<tr>
+		<td>2015-07-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Copy lists before returning them to the outside world. Might fix #768.</td>
+	</tr>
+	<tr>
+		<td>2015-07-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #773 from mwarhaftig/issue771</td>
+	</tr>
+	<tr>
+		<td>2015-07-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #769 from mvanderblom/master</td>
+	</tr>
+	<tr>
+		<td>2015-07-25</td>
+		<td>Matt Warhaftig</td>
+		<td>Issue #771 - Default includeHtml suite xml results flag to false.</td>
+	</tr>
+	<tr>
+		<td>2015-07-26</td>
+		<td>Alex Kogon</td>
+		<td>forgot to add new message to throwable after second clean copy</td>
+	</tr>
+	<tr>
+		<td>2015-07-24</td>
+		<td>Alex (A.) Kogon</td>
+		<td>added error message for slim failure to output</td>
+	</tr>
+	<tr>
+		<td>2015-07-10</td>
+		<td>mvanderblom</td>
+		<td>Converted runtime in millis to runtime in seconds in junit xml output format as per: http://llg.cubic.org/docs/junit/</td>
+	</tr>
+	<tr>
+		<td>2015-07-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove PageInProgressFormatter</td>
+	</tr>
+	<tr>
+		<td>2015-07-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Update release notes.</td>
+	</tr>
+	<tr>
+		<td>2015-07-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Add a line of documentation on the Formatters extension point.</td>
+	</tr>
+	<tr>
+		<td>2015-07-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #764 from amolenaar/formatters</td>
+	</tr>
+	<tr>
+		<td>2015-07-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #763 from fhoeben/AllowMultipleTestSystemsDuringJUnitRun</td>
+	</tr>
+	<tr>
+		<td>2015-07-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #765 from hansjoachim/upgrades</td>
+	</tr>
+	<tr>
+		<td>2015-07-06</td>
+		<td>Arjan Molenaar</td>
+		<td>refresh code mirror when switching between rich text and plain text. See also #760.</td>
+	</tr>
+	<tr>
+		<td>2015-07-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #766 from DmitriyKartashov/CodeMirror</td>
+	</tr>
+	<tr>
+		<td>2015-07-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #755 from andreptb/master</td>
+	</tr>
+	<tr>
+		<td>2015-07-06</td>
+		<td>DmitriyKartashov</td>
+		<td>fix for #760 Save in the richText isn't working (build #858).</td>
+	</tr>
+	<tr>
+		<td>2015-07-06</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Upgrade rhino to latest release (1.7.7)</td>
+	</tr>
+	<tr>
+		<td>2015-07-06</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Upgrade ant to latest release (1.9.6)</td>
+	</tr>
+	<tr>
+		<td>2015-07-02</td>
+		<td>Fried Hoeben</td>
+		<td>Make listener more extension friendly</td>
+	</tr>
+	<tr>
+		<td>2015-07-02</td>
+		<td>Fried Hoeben</td>
+		<td>Fix for #762, only check total number of tests after all test systems have been executed</td>
+	</tr>
+	<tr>
+		<td>2015-06-29</td>
+		<td>Arjan Molenaar</td>
+		<td>auto-load properties file for upload credentials.</td>
+	</tr>
+	<tr>
+		<td>2015-06-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Instantiate formatters before a test run.</td>
+	</tr>
+	<tr>
+		<td>2015-06-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Register custom formatters</td>
+	</tr>
+	<tr>
+		<td>2015-06-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Use more callbacks for plugin registration.</td>
+	</tr>
+	<tr>
+		<td>2015-06-24</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix issue with code block in table cell. Fixes #756</td>
+	</tr>
+	<tr>
+		<td>2015-06-23</td>
+		<td>Andre Albino Pereira</td>
+		<td>Removed SlimTestContextImpl default constructor and .pageToTest set to final, tests that instantiate SlimTestContextImpl adapted</td>
+	</tr>
+	<tr>
+		<td>2015-06-21</td>
+		<td>Arjan Molenaar</td>
+		<td>Make file open/close logic simpler.</td>
+	</tr>
+	<tr>
+		<td>2015-06-21</td>
+		<td>Arjan Molenaar</td>
+		<td>Simplify ColoredSlimTable a little.</td>
+	</tr>
+	<tr>
+		<td>2015-06-21</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix few javascript possible javascript issues in CodeMirror code.</td>
+	</tr>
+	<tr>
+		<td>2015-06-20</td>
+		<td>Andre Albino Pereira</td>
+		<td>SlimTestContext modified to provide current TestPage</td>
+	</tr>
+	<tr>
+		<td>2015-06-16</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix Sonar issues as described in #747</td>
+	</tr>
+	<tr>
+		<td>2015-06-16</td>
+		<td>Arjan Molenaar</td>
+		<td>Close stream on recent changes page.</td>
+	</tr>
+	<tr>
+		<td>2015-06-16</td>
+		<td>Arjan Molenaar</td>
+		<td>Properly assert results, even if testAssertionVerified is not called (for Fit for example).</td>
+	</tr>
+	<tr>
+		<td>2015-06-16</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #754 from fhoeben/ImprovejUnitRunner</td>
+	</tr>
+	<tr>
+		<td>2015-06-16</td>
+		<td>Fried Hoeben</td>
+		<td>Fix #753 by not reporting errors/exceptions that have already been reported at the page level (e.g. when 1 page in the run failed jUnit saw 2 test failures)</td>
+	</tr>
+	<tr>
+		<td>2015-06-16</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #739 from fhoeben/ImprovedSlimHashHandling</td>
+	</tr>
+	<tr>
+		<td>2015-06-16</td>
+		<td>Fried Hoeben</td>
+		<td>Ensure unit test works with standard converters to begin with, and leaves converter registry in default state after it is completed</td>
+	</tr>
+	<tr>
+		<td>2015-06-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #751 from amolenaar/symbol-offset</td>
+	</tr>
+	<tr>
+		<td>2015-06-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #750 from hansjoachim/options</td>
+	</tr>
+	<tr>
+		<td>2015-06-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #748 from mwarhaftig/issue736</td>
+	</tr>
+	<tr>
+		<td>2015-06-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #745 from linquize/test-target-dir</td>
+	</tr>
+	<tr>
+		<td>2015-06-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #730 from DmitriyKartashov/CodeMirror</td>
+	</tr>
+	<tr>
+		<td>2015-06-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Add support for windows style newline and endposition.</td>
+	</tr>
+	<tr>
+		<td>2015-06-02</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Mention all possible options in the example usage line</td>
+	</tr>
+	<tr>
+		<td>2015-05-31</td>
+		<td>Matt Warhaftig</td>
+		<td>Issue #736 - Return Slim Test stop test errors.</td>
+	</tr>
+	<tr>
+		<td>2015-05-24</td>
+		<td>DmitriyKartashov</td>
+		<td>added page with licenses and components</td>
+	</tr>
+	<tr>
+		<td>2015-05-24</td>
+		<td>Linquize</td>
+		<td>Unit test classes should not write files at parent directory</td>
+	</tr>
+	<tr>
+		<td>2015-05-21</td>
+		<td>Fried Hoeben</td>
+		<td>Document special handling of List return values in user guide</td>
+	</tr>
+	<tr>
+		<td>2015-05-21</td>
+		<td>Fried Hoeben</td>
+		<td>Add a wiki test page that shows/documents the usage of converters for lists</td>
+	</tr>
+	<tr>
+		<td>2015-05-21</td>
+		<td>Fried Hoeben</td>
+		<td>When a collection must be created an ArrayList can be used</td>
+	</tr>
+	<tr>
+		<td>2015-05-21</td>
+		<td>Fried Hoeben</td>
+		<td>Only results of methods that are declared to return exactly List (not subclasses) should not be converted to strings</td>
+	</tr>
+	<tr>
+		<td>2015-05-21</td>
+		<td>Fried Hoeben</td>
+		<td>Revert "Use actual type (and not method return type) for message result type, if possible"</td>
+	</tr>
+	<tr>
+		<td>2015-05-20</td>
+		<td>DmitriyKartashov</td>
+		<td>adding border no editor</td>
+	</tr>
+	<tr>
+		<td>2015-05-20</td>
+		<td>DmitriyKartashov</td>
+		<td>Merge branch 'master' of https://github.com/unclebob/fitnesse into CodeMirror</td>
+	</tr>
+	<tr>
+		<td>2015-05-20</td>
+		<td>DmitriyKartashov</td>
+		<td>revert</td>
+	</tr>
+	<tr>
+		<td>2015-05-20</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #728 from salandur/698_suitefilter_casesensitivity</td>
+	</tr>
+	<tr>
+		<td>2015-05-20</td>
+		<td>Fried Hoeben</td>
+		<td>Check for superclass' interfaces is only ever needed if no converter was found for original interface, so can be nested inside the previous if</td>
+	</tr>
+	<tr>
+		<td>2015-05-19</td>
+		<td>Fried Hoeben</td>
+		<td>List and Array converters should also convert using the actual type of elements, if possible. If the element is null, only then the declared type's converter should be used</td>
+	</tr>
+	<tr>
+		<td>2015-05-19</td>
+		<td>Fried Hoeben</td>
+		<td>Also consider interfaces implemented by superclasses</td>
+	</tr>
+	<tr>
+		<td>2015-05-19</td>
+		<td>Fried Hoeben</td>
+		<td>Make list converter null safe</td>
+	</tr>
+	<tr>
+		<td>2015-05-19</td>
+		<td>Fried Hoeben</td>
+		<td>Move element conversion to helper class</td>
+	</tr>
+	<tr>
+		<td>2015-05-19</td>
+		<td>Fried Hoeben</td>
+		<td>Also use converters when rendering keys</td>
+	</tr>
+	<tr>
+		<td>2015-05-19</td>
+		<td>Fried Hoeben</td>
+		<td>cleanup determining value</td>
+	</tr>
+	<tr>
+		<td>2015-05-19</td>
+		<td>Fried Hoeben</td>
+		<td>Fix null handling of MapConverter.toString()</td>
+	</tr>
+	<tr>
+		<td>2015-05-19</td>
+		<td>Fried Hoeben</td>
+		<td>Ensure null elements are not a problem for DefaultConverter</td>
+	</tr>
+	<tr>
+		<td>2015-05-19</td>
+		<td>Fried Hoeben</td>
+		<td>StringConverter's toString(obj) is not a suitable converter to pass in arbitrary objects (it can only handle Strings), therefore for generic collections, and arrays we should use a different converter as fallback</td>
+	</tr>
+	<tr>
+		<td>2015-05-19</td>
+		<td>Fried Hoeben</td>
+		<td>When we don't have a converter: don't use the String converter (which only works on strings) but use use toString()</td>
+	</tr>
+	<tr>
+		<td>2015-05-19</td>
+		<td>Fried Hoeben</td>
+		<td>Allow subclasses to override how values are added to the HashTable</td>
+	</tr>
+	<tr>
+		<td>2015-05-18</td>
+		<td>Fried Hoeben</td>
+		<td>Use convertors to generate values in hashtable</td>
+	</tr>
+	<tr>
+		<td>2015-05-18</td>
+		<td>Fried Hoeben</td>
+		<td>Nested maps are shown on wiki page as nested HashTables</td>
+	</tr>
+	<tr>
+		<td>2015-05-18</td>
+		<td>Fried Hoeben</td>
+		<td>Use actual type (and not method return type) for message result type, if possible</td>
+	</tr>
+	<tr>
+		<td>2015-05-18</td>
+		<td>Fried Hoeben</td>
+		<td>Ensure we also check interfaces implemented by interfaces</td>
+	</tr>
+	<tr>
+		<td>2015-05-18</td>
+		<td>Fried Hoeben</td>
+		<td>Allow registration of Object converter, which will be used as last resort</td>
+	</tr>
+	<tr>
+		<td>2015-05-18</td>
+		<td>Fried Hoeben</td>
+		<td>Ensure we also use registered converters for superclasses and implemented interfaces</td>
+	</tr>
+	<tr>
+		<td>2015-05-18</td>
+		<td>Fried Hoeben</td>
+		<td>Mention Slim support of HashTable widget</td>
+	</tr>
+	<tr>
+		<td>2015-05-16</td>
+		<td>Arjan Molenaar</td>
+		<td>reformat table tests.</td>
+	</tr>
+	<tr>
+		<td>2015-05-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix link to JUnit example. Thanks to marclustig.</td>
+	</tr>
+	<tr>
+		<td>2015-05-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Parse \r\n style newlines same as \n.</td>
+	</tr>
+	<tr>
+		<td>2015-05-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix snapshot build.</td>
+	</tr>
+	<tr>
+		<td>2015-05-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Replace Symbol.closeType with polymorphism on SymbolType.</td>
+	</tr>
+	<tr>
+		<td>2015-05-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Add tests for escaped text, literal text and comment.</td>
+	</tr>
+	<tr>
+		<td>2015-05-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Use local version of emptyIterator, since Java6 doesn't have one.</td>
+	</tr>
+	<tr>
+		<td>2015-05-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #732 from fhoeben/SlimExceptionResultWithNewline</td>
+	</tr>
+	<tr>
+		<td>2015-05-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Use more descriptive symbol names for table row and cell.</td>
+	</tr>
+	<tr>
+		<td>2015-05-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Make a custom lecture for the wiki text based on our own.</td>
+	</tr>
+	<tr>
+		<td>2015-05-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Use CharSequence for text scanning.</td>
+	</tr>
+	<tr>
+		<td>2015-05-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Add text offsets to symbols. This way it's possible to trace back a symbol to a piece of text.</td>
+	</tr>
+	<tr>
+		<td>2015-05-11</td>
+		<td>Arjan Molenaar</td>
+		<td>parser code improvements.</td>
+	</tr>
+	<tr>
+		<td>2015-05-08</td>
+		<td>Jeroen Ruijgers</td>
+		<td>added test case</td>
+	</tr>
+	<tr>
+		<td>2015-05-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Add text offset to SymbolMatch.</td>
+	</tr>
+	<tr>
+		<td>2015-05-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #732 from fhoeben/SlimExceptionResultWithNewline</td>
+	</tr>
+	<tr>
+		<td>2015-05-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Add NOSONAR comment to FitNesse's Throwable catches</td>
+	</tr>
+	<tr>
+		<td>2015-05-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Add NOSONAR comment to Fit's Throwable catches.</td>
+	</tr>
+	<tr>
+		<td>2015-05-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #729 from hansjoachim/issues</td>
+	</tr>
+	<tr>
+		<td>2015-05-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #725 from 2xmax/wintestsfix</td>
+	</tr>
+	<tr>
+		<td>2015-05-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #724 from fhoeben/InteractionWithInterceptorSupport</td>
+	</tr>
+	<tr>
+		<td>2015-05-03</td>
+		<td>DmitriyKartashov</td>
+		<td>fix header folding (now it's hierarchical) show cursor when selected : true</td>
+	</tr>
+	<tr>
+		<td>2015-05-02</td>
+		<td>Fried Hoeben</td>
+		<td>Not allowing a pre- and postfix is a bad idea (as shown by other unit tests)</td>
+	</tr>
+	<tr>
+		<td>2015-05-02</td>
+		<td>Fried Hoeben</td>
+		<td>Make tests pass</td>
+	</tr>
+	<tr>
+		<td>2015-05-02</td>
+		<td>Fried Hoeben</td>
+		<td>More tests to show 'non-messages' are recognized</td>
+	</tr>
+	<tr>
+		<td>2015-05-02</td>
+		<td>Fried Hoeben</td>
+		<td>Add unit test showing problem</td>
+	</tr>
+	<tr>
+		<td>2015-05-01</td>
+		<td>DmitriyKartashov</td>
+		<td>fix headers markup highlight and folding</td>
+	</tr>
+	<tr>
+		<td>2015-05-01</td>
+		<td>DmitriyKartashov</td>
+		<td>Merge branch 'master' of https://github.com/unclebob/fitnesse into CodeMirror</td>
+	</tr>
+	<tr>
+		<td>2015-05-01</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Catch more specific exception</td>
+	</tr>
+	<tr>
+		<td>2015-05-01</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Re-remove unused imports</td>
+	</tr>
+	<tr>
+		<td>2015-05-01</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Reorder modifiers</td>
+	</tr>
+	<tr>
+		<td>2015-05-01</td>
+		<td>DmitriyKartashov</td>
+		<td>add comments to markup highlight</td>
+	</tr>
+	<tr>
+		<td>2015-05-01</td>
+		<td>DmitriyKartashov</td>
+		<td>Install CodeMirror part six</td>
+	</tr>
+	<tr>
+		<td>2015-05-01</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Replace some synchronized classes with unsynchronized ones</td>
+	</tr>
+	<tr>
+		<td>2015-05-01</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Replace tabs with space in a couple of files</td>
+	</tr>
+	<tr>
+		<td>2015-05-01</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Added @Overrides Replaced Stringbuffer with StringBuilder Changed line endings to LF which seemed more consistent with other files</td>
+	</tr>
+	<tr>
+		<td>2015-05-01</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Simplify for-loop</td>
+	</tr>
+	<tr>
+		<td>2015-05-01</td>
+		<td>Hans Joachim Desserud</td>
+		<td>Removed unused imports</td>
+	</tr>
+	<tr>
+		<td>2015-05-01</td>
+		<td>DmitriyKartashov</td>
+		<td>Install CodeMirror part six</td>
+	</tr>
+	<tr>
+		<td>2015-05-01</td>
+		<td>DmitriyKartashov</td>
+		<td>Install CodeMirror part five</td>
+	</tr>
+	<tr>
+		<td>2015-05-01</td>
+		<td>Jeroen Ruijgers</td>
+		<td>fixes #698: tag filtering is case insensitive</td>
+	</tr>
+	<tr>
+		<td>2015-04-27</td>
+		<td>Fried Hoeben</td>
+		<td>Add documentation on InteractionAwareFixture to the wiki</td>
+	</tr>
+	<tr>
+		<td>2015-04-27</td>
+		<td>maksim-dell</td>
+		<td>fixed test on windows</td>
+	</tr>
+	<tr>
+		<td>2015-04-25</td>
+		<td>Fried Hoeben</td>
+		<td>Move handling of wrapped exception to Fixture/DefaultInteraction</td>
+	</tr>
+	<tr>
+		<td>2015-04-25</td>
+		<td>Fried Hoeben</td>
+		<td>Don't use reflection on each 'around invocation'</td>
+	</tr>
+	<tr>
+		<td>2015-04-24</td>
+		<td>Fried Hoeben</td>
+		<td>Remove class no longer needed now test page is removed</td>
+	</tr>
+	<tr>
+		<td>2015-04-24</td>
+		<td>Fried Hoeben</td>
+		<td>Fix comment</td>
+	</tr>
+	<tr>
+		<td>2015-04-24</td>
+		<td>Fried Hoeben</td>
+		<td>Remove test page not really relevant for this change.</td>
+	</tr>
+	<tr>
+		<td>2015-04-24</td>
+		<td>Fried Hoeben</td>
+		<td>Simplify array creation</td>
+	</tr>
+	<tr>
+		<td>2015-04-24</td>
+		<td>Fried Hoeben</td>
+		<td>Rename aroundMethod</td>
+	</tr>
+	<tr>
+		<td>2015-04-24</td>
+		<td>Fried Hoeben</td>
+		<td>Ensure aroundMethodInvoke is invoked via interaction</td>
+	</tr>
+	<tr>
+		<td>2015-04-24</td>
+		<td>Fried Hoeben</td>
+		<td>Add support to have a fixture intercept the calls made by Slim to it</td>
+	</tr>
+	<tr>
+		<td>2015-04-24</td>
+		<td>Fried Hoeben</td>
+		<td>Add test to see we can change the interaction used by Slim using slim.flags property</td>
+	</tr>
+	<tr>
+		<td>2015-04-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Updated release notes.</td>
+	</tr>
+	<tr>
+		<td>2015-03-28</td>
+		<td>DmitriyKartashov</td>
+		<td>Install CodeMirror part four</td>
+	</tr>
+	<tr>
+		<td>2015-03-24</td>
+		<td>DmitriyKartashov</td>
+		<td>Install CodeMirror part three</td>
+	</tr>
+	<tr>
+		<td>2015-03-23</td>
+		<td>DmitriyKartashov</td>
+		<td>Install CodeMirror part two</td>
+	</tr>
+	<tr>
+		<td>2015-03-23</td>
+		<td>DmitriyKartashov</td>
+		<td>Merge branch 'master' of https://github.com/unclebob/fitnesse into CodeMirror</td>
+	</tr>
+	<tr>
+		<td>2015-02-17</td>
+		<td>DmitriyKartashov</td>
+		<td>Install CodeMirror part one</td>
+	</tr>
+</table>
+
+    </article>
+    <footer>
+      <hr/>
+<br/><a href="../../FrontPage.html">.FrontPage</a> | <a href="../../FrontPage/FitNesseDevelopment/FrontPage.html">FrontPage</a> | <a href="../../RecentChanges.html">.RecentChanges</a><br/>
+    </footer>
+  </body>
+</html>

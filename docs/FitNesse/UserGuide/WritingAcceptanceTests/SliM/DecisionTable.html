@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FitNesse.UserGuide.WritingAcceptanceTests.SliM.DecisionTable</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../files/fitnesse/images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/css/fitnesse_wiki.css">
+    <link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/css/fitnesse_pages.css">
+    <link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
+    <script src="../../../../files/fitnesse/javascript/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="../../../../files/fitnesse/javascript/fitnesse.js" type="text/javascript"></script>
+    <script src="../../../../files/fitnesse/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../../../../files/fitnesse/bootstrap/js/respond.js" type="text/javascript"></script>
+  </head>
+  <body class="wikiPage">
+    <nav class="navbar-fixed-top " role="navigation">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+          <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+          <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+          <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+        </ul>
+      </div>
+      <ol class="page-actions btn-group">
+        <li class="expandall btn btn-xs">Expand All</li>
+        <li class="collapseall btn btn-xs">Collapse All</li>
+      </ol>
+      <ol class="breadcrumb">
+        <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+        <li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+        <li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">WritingAcceptanceTests</a></li>
+        <li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM.html">SliM</a></li>
+        <li>DecisionTable</li>
+      </ol>
+    </nav>
+    <header>
+    </header>
+    <article>
+      <table>
+	<tr class="slimRowTitle">
+		<td colspan="4">should I buy milk</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>cash in wallet</td>
+		<td>credit card</td>
+		<td>pints of milk remaining</td>
+		<td>go to store?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>0</td>
+		<td>no</td>
+		<td>0</td>
+		<td>no</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>10</td>
+		<td>no</td>
+		<td>0</td>
+		<td>yes</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>0</td>
+		<td>yes</td>
+		<td>0</td>
+		<td>yes</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>10</td>
+		<td>yes</td>
+		<td>0</td>
+		<td>yes</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>0</td>
+		<td>no</td>
+		<td>1</td>
+		<td>no</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>10</td>
+		<td>no</td>
+		<td>1</td>
+		<td>no</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>0</td>
+		<td>yes</td>
+		<td>1</td>
+		<td>no</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>10</td>
+		<td>yes</td>
+		<td>1</td>
+		<td>nope</td>
+	</tr>
+</table>
+<br/>This is a decision table; sometimes known as a truth table. This particular table has three inputs and one output.<br/><br/>Here is the fixture code that it invokes:<pre>
+package fitnesse.slim.test;
+
+public class ShouldIBuyMilk {
+  private int dollars;
+  private int pints;
+  private boolean creditCard;
+
+  public void setCashInWallet(int dollars) {
+    this.dollars = dollars;
+  }
+
+  public void setPintsOfMilkRemaining(int pints) {
+    this.pints = pints;
+  }
+
+  public void setCreditCard(String valid) {
+    creditCard = "yes".equals(valid);
+  }
+
+  public String goToStore() {
+    return (pints == 0 &amp;&amp; (dollars &gt; 2 || creditCard)) ? "yes" : "no";
+  }
+
+  // The following functions are optional.  If they aren't declared they'll be ignored.
+  public void execute() {
+  }
+
+  public void reset() {
+  }
+
+  public void table(List&lt;List&lt;String&gt;&gt; table) {
+  }
+
+  public void beginTable() {
+  }
+
+  public void endTable() {
+  }
+} </pre><br/><br/>That pretty much explains it all. But let's look at the details a bit more closely.<br/><br/>First of all, there's the name of the table: "should I buy milk". This is named for a decision to be made. That's good style. Decision tables should be named for decisions. However that name also translates to the fixture class ShouldIBuyMilk. If you run this test you'll notice that the name turns green. This means that Slim found the fixture class and was able to create an instance of it.<br/><br/>The first cell could also have been <i>Decision:should I buy milk</i>, <i>DT:should I buy milk</i>, or <i>ShouldIBuyMilk</i>, etc.. The code <i>Decision:</i> or <i>DT:</i> tells Slim what kind of table this is.  Decision table is the default.<br/><br/>Next, there's the row of column headers. If you look carefully at them you'll see that they all correspond to functions in the fixture class. However, the first three correspond to <i>set</i> functions. That's because they don't have a <i>?</i>. The Decision Table considers them to be inputs, and automatically calls the appropriately named <i>set</i> function.<br/><br/>The last column header does have a <i>?</i>. Decision Table considers it to be an output and so calls it as a function and expects a return value. That return value is compared to the contents of the column and turns the corresponding cell red or green depending whether it matches. Note that the cell that contains 'nope' does not match the 'no' that is returned.<br/><br/>The flow is very simple.<br/><br/><ol>
+	<li>First the <span class="code">ShouldIBuyMilk</span> fixture is constructed.</li>
+	<li>Next the <span class="code">table</span> method is called if it exists. (see below).</li>
+	<li>Next the <span class="code">beginTable</span> method is called, if it exists. Use this for initializations if you want to.</li>
+	<li>Then for each row in the table:<ol>
+	<li>First the <span class="code">reset</span> function is called (if present), just in case you want to prepare or clean up.</li>
+	<li>Then all the inputs are loaded by calling the appropriate <span class="code">set</span> functions. Inputs are loaded in the left to right order of their appearance in the header.</li>
+	<li>Then the <span class="code">execute</span> function of the fixture is called (if present).</li>
+	<li>Finally all the output functions are called, again in left to right order, and the return values compared to their table cells.</li>
+</ol>
+</li>
+	<li>Finally the <span class="code">endTable</span> method is called, if it exists. Use this for closedown and cleanup if you want to.</li>
+</ol>
+<br/><h4 id="0">Optional Functions</h4>
+<ul>
+	<li><span class="code">beginTable</span> - is called once, just after the <span class="code">table</span> method, and just before the rows are processed. This is for setup and initialization stuff.</li>
+	<li><span class="code">endTable</span> = is called once, just after the last row has been processed. It's the last function to be called by the table. Use it for cleanup and closedowns.</li>
+	<li><span class="code">reset</span> - is called once for each row before any <span class="code">set</span> or output functions are called.</li>
+	<li><span class="code">execute</span> - is called once for each row just after all the <span class="code">set</span> functions have been called, and just before the first output function (if any) are called.</li>
+	<li><span class="code">table</span> - is called just after the constructor and before the first row is processed. It is passed a list of lists that contain all the cells of the table except for the very first row. The argument contains a list of rows, each row is a list of cells. This is the same format that is passed to the <span class="code">doTable</span> method of the Table table. For the table above the argument would be: <br/><span class="code">[[cash in wallet, credit card, pints of milk remaining, go to store?], [0, no, 0, no], [10, no, 0, yes], [0, yes, 0, yes], [10, yes, 0, yes], [0, no, 1, no], [10, no, 1, no], [0, yes, 1, no], [10, yes, 1, nope]]</span></li>
+</ul>
+<br/>There's not much more to it than that.<br/><br/><h4 id="1">Well, yes there is.</h4>
+But for that you should look at <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/SymbolsInTables.html">Symbols In Tables</a> and <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/ValueComparisons.html">Value Comparisons</a><br/><br/><h4 id="2">Exceptions</h4>
+<br/>When exceptions occur in a decision table, they're displayed in line.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">should I buy milk</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>cash in wallet</td>
+		<td>credit card</td>
+		<td>pints of milk remaining</td>
+		<td>go to store?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>0</td>
+		<td>yes</td>
+		<td>1</td>
+		<td>no</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>0</td>
+		<td>yes</td>
+		<td>one</td>
+		<td>no</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">decision table all done wrong</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>foo</td>
+		<td>bar</td>
+		<td>baz?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>-</td>
+		<td></td>
+		<td>/</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td></td>
+		<td>*</td>
+		<td></td>
+	</tr>
+</table>
+<br/><h4 id="3">Documentation</h4>
+<br/>If you want to document the data given in a particular row you can just add an extra cell to the right.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="5">should I buy milk</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>cash in wallet</td>
+		<td>credit card</td>
+		<td>pints of milk remaining</td>
+		<td colspan="2">go to store?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>0</td>
+		<td>no</td>
+		<td>0</td>
+		<td colspan="2">no</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>10</td>
+		<td>no</td>
+		<td>0</td>
+		<td>yes</td>
+		<td>plenty of money but no need for a pint</td>
+	</tr>
+</table>
+<br/>For more detailed documentation you can add designated comment columns anywhere. Just prefix the header with a hash symbol.<br/><br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="5">should I buy milk</td>
+	</tr>
+	<tr class="slimRowTitle">
+		<td>cash in wallet</td>
+		<td># comment</td>
+		<td>credit card</td>
+		<td>pints of milk remaining</td>
+		<td>go to store?</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>-2</td>
+		<td>we actually allow negative amounts, meaning debt</td>
+		<td>no</td>
+		<td>0</td>
+		<td>no</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>1</td>
+		<td>must have at least 2 euros</td>
+		<td>no</td>
+		<td>0</td>
+		<td>no</td>
+	</tr>
+</table>
+
+    </article>
+    <footer>
+      <center>User Guide Contents</center><center><a href="../../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+    </footer>
+  </body>
+</html>

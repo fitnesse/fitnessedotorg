@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FrontPage.FitNesseDevelopment.FitNesseRelease20090214</title>
+    <link rel="shortcut icon" type="image/png" href="../../files/fitnesse/images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/css/fitnesse_wiki.css">
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/css/fitnesse_pages.css">
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
+    <script src="../../files/fitnesse/javascript/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/javascript/fitnesse.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/bootstrap/js/respond.js" type="text/javascript"></script>
+  </head>
+  <body class="wikiPage">
+    <nav class="navbar-fixed-top " role="navigation">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="../../FitNesseFeatures.html">Features</a></li>
+          <li><a href="../../FitNesseDownload.html">Download</a></li>
+          <li><a href="../../PlugIns.html">Plug-ins</a></li>
+          <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+        </ul>
+      </div>
+      <ol class="page-actions btn-group">
+        <li class="expandall btn btn-xs">Expand All</li>
+        <li class="collapseall btn btn-xs">Collapse All</li>
+      </ol>
+      <ol class="breadcrumb">
+        <li><a href="../../FrontPage.html">FrontPage</a></li>
+        <li><a href="../../FrontPage/FitNesseDevelopment.html">FitNesseDevelopment</a></li>
+        <li>FitNesseRelease20090214</li>
+      </ol>
+    </nav>
+    <header>
+    </header>
+    <article>
+      !release 20090214<br/><br/><h3 id="0"><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> Release Notes 2/14/2009</h3>
+<p class="note">Uncle Bob, Object Mentor, Inc.</p>
+<br/><table>
+	<tr>
+		<td><h4 id="1">Since:</h4></td>
+		<td colspan="2"><a href="../../FrontPage/FitNesseDevelopment/FitNesseRelease20090112.html">20090112</a></td>
+	</tr>
+	<tr>
+		<td><h4 id="2">Exepcted Release Date:</h4></td>
+		<td>20090214</td>
+		<td><span class="pass">RELEASED</span></td>
+	</tr>
+	<tr>
+		<td><h4 id="3">Theme:</h4></td>
+		<td colspan="2">Improvements</td>
+	</tr>
+</table>
+<br/><h3 id="4">Changes</h3>
+<ul>
+	<li>CM system integration.  It's easy to integrate your favorite CM system with <a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a>.  See User Guide.</li>
+	<li>Three different versions of !style widget, and many new CSS classes to use with it.</li>
+	<li>Format button on edit page makes wiki tables more readable.</li>
+	<li>Improved Table table.  Allows you to return tables of different geometries.  Lots of new stuff.  See User Guide.</li>
+	<li>Query table and Decision table have new <span class="code">table(List&lt;List&lt;String&gt;&gt;)</span> method which is passed the table itself.  See User Guide.</li>
+	<li>FitNesseVersion added to XML reports</li>
+	<li>Packet Responder allows you to get JSON packets from tables on a page.  See RESTfulServices in User Guide.</li>
+</ul>
+<br/><h3 id="5">Git History</h3>
+<table>
+	<tr>
+		<td>2009-02-14 17:59:58 -0600</td>
+		<td>unclebob</td>
+		<td>Release 20090214</td>
+	</tr>
+	<tr>
+		<td>2009-02-13 11:49:52 -0600</td>
+		<td>unclebob</td>
+		<td>PacketResponder works</td>
+	</tr>
+	<tr>
+		<td>2009-02-12 10:48:12 -0600</td>
+		<td>unclebob</td>
+		<td>Add FitNesseVersion to xml test and suite reports</td>
+	</tr>
+	<tr>
+		<td>2009-02-12 10:33:03 -0600</td>
+		<td>unclebob</td>
+		<td>Better fix to HtmlParser bug</td>
+	</tr>
+	<tr>
+		<td>2009-02-12 10:13:34 -0600</td>
+		<td>unclebob</td>
+		<td>Fixed HtmlParser bug with first line of page is not blank</td>
+	</tr>
+	<tr>
+		<td>2009-02-11 15:22:08 -0600</td>
+		<td>unclebob</td>
+		<td>refactored TestContents AT</td>
+	</tr>
+	<tr>
+		<td>2009-02-11 13:19:49 -0600</td>
+		<td>unclebob</td>
+		<td>Added table method to Decision table.  Updated user guide.</td>
+	</tr>
+	<tr>
+		<td>2009-02-11 09:13:04 -0600</td>
+		<td>unclebob</td>
+		<td>call table() method in QueryFixture passing whole table</td>
+	</tr>
+	<tr>
+		<td>2009-02-05 17:06:47 -0600</td>
+		<td>unclebob</td>
+		<td>More ATs to BDD</td>
+	</tr>
+	<tr>
+		<td>2009-02-04 17:46:25 -0600</td>
+		<td>unclebob</td>
+		<td>Refactored some ATs to BDD style</td>
+	</tr>
+	<tr>
+		<td>2009-01-29 19:11:16 -0600</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of git://github.com/darrinholst/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-01-29 19:09:30 -0600</td>
+		<td>unclebob</td>
+		<td>Refactored PropertiesResponderTest</td>
+	</tr>
+	<tr>
+		<td>2009-01-29 18:14:10 -0600</td>
+		<td>Darrin</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-01-29 12:01:41 -0600</td>
+		<td>unclebob</td>
+		<td>added json format to properties responder</td>
+	</tr>
+	<tr>
+		<td>2009-01-25 20:19:16 -0600</td>
+		<td>Darrin</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-01-24 20:35:26 -0600</td>
+		<td>unclebob</td>
+		<td>decrap the bowling fixture in slim test</td>
+	</tr>
+	<tr>
+		<td>2009-01-23 20:48:22 -0600</td>
+		<td>Darrin Holst</td>
+		<td>change wiki formatter to emulate html table rendering format and add a word wrap toggler</td>
+	</tr>
+	<tr>
+		<td>2009-01-23 17:19:00 -0600</td>
+		<td>unclebob</td>
+		<td>Composed TestBackwardsSearchWidget</td>
+	</tr>
+	<tr>
+		<td>2009-01-23 15:35:59 -0600</td>
+		<td>unclebob</td>
+		<td>PropertyEditor support for Slim</td>
+	</tr>
+	<tr>
+		<td>2009-01-23 12:24:35 -0600</td>
+		<td>unclebob</td>
+		<td>Decrap bowling fixtures</td>
+	</tr>
+	<tr>
+		<td>2009-01-23 11:52:45 -0600</td>
+		<td>unclebob</td>
+		<td>Added Tore Bastiansen's changes to TableTable and then added lots of other goodies to it.  Added UserGuide docs to explain it.</td>
+	</tr>
+	<tr>
+		<td>2009-01-23 10:15:37 -0600</td>
+		<td>unclebob</td>
+		<td>Improved rendering of symbols passed into constructors in slim tables.</td>
+	</tr>
+	<tr>
+		<td>2009-01-23 09:30:27 -0600</td>
+		<td>unclebob</td>
+		<td>Move slim tables into slimTables package</td>
+	</tr>
+	<tr>
+		<td>2009-01-23 08:37:38 -0600</td>
+		<td>unclebob</td>
+		<td>Removed crap4j target from build.xml because some folks don't have the crap4j libraries and Ant isn't very</td>
+	</tr>
+	<tr>
+		<td>2009-01-22 22:50:33 -0600</td>
+		<td>unclebob</td>
+		<td>forkmode='once' in build.xml junit, speeds junit tests up a lot</td>
+	</tr>
+	<tr>
+		<td>2009-01-22 17:52:04 -0600</td>
+		<td>unclebob</td>
+		<td>FitNesseRoot/properties</td>
+	</tr>
+	<tr>
+		<td>2009-01-22 15:32:19 -0600</td>
+		<td>unclebob</td>
+		<td>relicensed to CPL 1.0</td>
+	</tr>
+	<tr>
+		<td>2009-01-22 15:16:24 -0600</td>
+		<td>unclebob</td>
+		<td>added tools for managing licenses</td>
+	</tr>
+	<tr>
+		<td>2009-01-22 12:34:51 -0600</td>
+		<td>unclebob</td>
+		<td>Specify actor of script table after 'script' statement.</td>
+	</tr>
+	<tr>
+		<td>2009-01-22 10:45:04 -0600</td>
+		<td>unclebob</td>
+		<td>format button on edit page</td>
+	</tr>
+	<tr>
+		<td>2009-01-21 21:39:51 -0600</td>
+		<td>Darrin</td>
+		<td>uncomment other javascript tests</td>
+	</tr>
+	<tr>
+		<td>2009-01-21 21:36:57 -0600</td>
+		<td>Darrin</td>
+		<td>add a format button to the edit page</td>
+	</tr>
+	<tr>
+		<td>2009-01-21 12:01:39 -0600</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of git://github.com/deanwampler/fitnesse into pomVersionFix</td>
+	</tr>
+	<tr>
+		<td>2009-01-21 11:42:01 -0600</td>
+		<td>unclebob</td>
+		<td>Fix Wiki Import Watermark Bug</td>
+	</tr>
+	<tr>
+		<td>2009-01-21 10:25:32 -0600</td>
+		<td>Dean Wampler</td>
+		<td>The version number is now embedded in pom.xml during a build.</td>
+	</tr>
+	<tr>
+		<td>2009-01-20 11:40:18 -0600</td>
+		<td>unclebob</td>
+		<td>Added new Acceptance tests for comparators.</td>
+	</tr>
+	<tr>
+		<td>2009-01-19 12:33:13 -0600</td>
+		<td>unclebob</td>
+		<td>Link back to test page from ErrorLog page</td>
+	</tr>
+	<tr>
+		<td>2009-01-16 14:32:46 -0600</td>
+		<td>unclebob</td>
+		<td>Fixed GitCmSystem timing bug and enhanced documentation.</td>
+	</tr>
+	<tr>
+		<td>2009-01-16 14:15:18 -0600</td>
+		<td>unclebob</td>
+		<td>Three versions of !style.</td>
+	</tr>
+	<tr>
+		<td>2009-01-15 20:13:05 -0600</td>
+		<td>unclebob</td>
+		<td>Adjust testLastModifiedTime tolerance to 5S</td>
+	</tr>
+	<tr>
+		<td>2009-01-15 17:48:37 -0600</td>
+		<td>unclebob</td>
+		<td>Eliminate timing issue with GitCmSystem</td>
+	</tr>
+	<tr>
+		<td>2009-01-15 14:27:23 -0600</td>
+		<td>unclebob</td>
+		<td>added documentation for CM_SYSTEM</td>
+	</tr>
+	<tr>
+		<td>2009-01-15 12:29:40 -0600</td>
+		<td>unclebob</td>
+		<td>Added GitCmSystem so that FitNesse plays nicely with git</td>
+	</tr>
+	<tr>
+		<td>2009-01-15 09:59:31 -0600</td>
+		<td>unclebob</td>
+		<td>Got CmSystem stubs working.</td>
+	</tr>
+	<tr>
+		<td>2009-01-14 11:40:15 -0600</td>
+		<td>unclebob</td>
+		<td>fixed broken acceptance tests with TestRunner summary counts</td>
+	</tr>
+	<tr>
+		<td>2009-01-14 09:37:16 -0600</td>
+		<td>unclebob</td>
+		<td>tallied page counts in TestRunner verbose output</td>
+	</tr>
+	<tr>
+		<td>2009-01-14 09:31:53 -0600</td>
+		<td>unclebob</td>
+		<td>added summary counts back to TestRunner verbose outout</td>
+	</tr>
+	<tr>
+		<td>2009-01-13 17:08:35 -0600</td>
+		<td>unclebob</td>
+		<td>Bug: Silent failure if SlimServer did not start.</td>
+	</tr>
+	<tr>
+		<td>2009-01-12 11:08:01 -0600</td>
+		<td>unclebob</td>
+		<td>changed manifest so that java -jar fitnesse.jar will work.  Also changed UserGuide.  Added 'code' style.</td>
+	</tr>
+</table>
+<br/>
+    </article>
+    <footer>
+      <hr/>
+<br/><a href="../../FrontPage.html">.FrontPage</a> | <a href="../../FrontPage/FitNesseDevelopment/FrontPage.html">FrontPage</a> | <a href="../../RecentChanges.html">.RecentChanges</a><br/>
+    </footer>
+  </body>
+</html>

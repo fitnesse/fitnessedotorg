@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FitNesse.UserGuide.WritingAcceptanceTests.SliM.SystemUnderTest</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../files/fitnesse/images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/css/fitnesse_wiki.css">
+    <link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/css/fitnesse_pages.css">
+    <link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
+    <script src="../../../../files/fitnesse/javascript/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="../../../../files/fitnesse/javascript/fitnesse.js" type="text/javascript"></script>
+    <script src="../../../../files/fitnesse/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../../../../files/fitnesse/bootstrap/js/respond.js" type="text/javascript"></script>
+  </head>
+  <body class="wikiPage">
+    <nav class="navbar-fixed-top " role="navigation">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+          <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+          <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+          <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+        </ul>
+      </div>
+      <ol class="page-actions btn-group">
+        <li class="expandall btn btn-xs">Expand All</li>
+        <li class="collapseall btn btn-xs">Collapse All</li>
+      </ol>
+      <ol class="breadcrumb">
+        <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+        <li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+        <li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">WritingAcceptanceTests</a></li>
+        <li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM.html">SliM</a></li>
+        <li>SystemUnderTest</li>
+      </ol>
+    </nav>
+    <header>
+    </header>
+    <article>
+      <h3 id="0">System Under Test</h3>
+<br/><b>Currently only available in Java</b><br/><br/>Using SystemUnderTest allows you to let SliM directly invoke a method on your SystemUnderTest without having to create a method in a SliM fixture for it.<br/><br/><h4 id="1">Example</h4>
+<pre>
+import fitnesse.slim.SystemUnderTest;
+
+/**
+ * The slim fixture.
+ */
+public class SlimDriver {
+  
+  // field MUST be declared PUBLIC
+  @SystemUnderTest
+  public Service service = new Service();
+
+  public void init() {
+    Database.clean();
+  }
+
+}
+
+/**
+ * The service under test.
+ */
+public class Service {
+
+  public void createPerson(String name) {
+    Database.persist(new Person("name"));
+  }
+
+  public boolean exists(String name) {
+    return Database.get(name) != null;
+  }
+ 
+}
+
+</pre><br/><br/>With the @SystemUnderTest annotation you can now say:<br/><br/><table>
+	<tr>
+		<td>script</td>
+		<td colspan="2">SlimDriver</td>
+	</tr>
+	<tr>
+		<td colspan="3">init</td>
+	</tr>
+	<tr>
+		<td>create person</td>
+		<td colspan="2">Ben Vonk</td>
+	</tr>
+	<tr>
+		<td>ensure</td>
+		<td>exists</td>
+		<td>Ben Vonk</td>
+	</tr>
+</table>
+<br/>When a method that should be invoked on the SliM fixture is missing, it will try to invoke that method on a <b>public</b> field annotated with SystemUnderTest.<br/><br/>
+    </article>
+    <footer>
+      <center>User Guide Contents</center><center><a href="../../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+    </footer>
+  </body>
+</html>

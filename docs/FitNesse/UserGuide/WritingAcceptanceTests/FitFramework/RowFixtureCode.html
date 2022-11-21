@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FitNesse.UserGuide.WritingAcceptanceTests.FitFramework.RowFixtureCode</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../files/fitnesse/images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/css/fitnesse_wiki.css">
+    <link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/css/fitnesse_pages.css">
+    <link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
+    <script src="../../../../files/fitnesse/javascript/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="../../../../files/fitnesse/javascript/fitnesse.js" type="text/javascript"></script>
+    <script src="../../../../files/fitnesse/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../../../../files/fitnesse/bootstrap/js/respond.js" type="text/javascript"></script>
+  </head>
+  <body class="wikiPage">
+    <nav class="navbar-fixed-top " role="navigation">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+          <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+          <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+          <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+        </ul>
+      </div>
+      <ol class="page-actions btn-group">
+        <li class="expandall btn btn-xs">Expand All</li>
+        <li class="collapseall btn btn-xs">Collapse All</li>
+      </ol>
+      <ol class="breadcrumb">
+        <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+        <li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+        <li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">WritingAcceptanceTests</a></li>
+        <li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework.html">FitFramework</a></li>
+        <li>RowFixtureCode</li>
+      </ol>
+    </nav>
+    <header>
+    </header>
+    <article>
+      <h1 id="0">How <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/RowFixture.html">Row Fixture</a> Fixture Code Works</h1>
+<br/>Here is our simplistic prime number test table again:<br/><br/><table>
+	<tr>
+		<td>fitnesse.fixtures.PrimeNumberRowFixture</td>
+	</tr>
+	<tr>
+		<td>prime</td>
+	</tr>
+	<tr>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>5</td>
+	</tr>
+	<tr>
+		<td>7</td>
+	</tr>
+	<tr>
+		<td>11</td>
+	</tr>
+</table>
+<br/>Hit the test button to run this test. OK, we got them all. How does the table tell the code what to expect?<br/><br/>Each data column specifies a query <b>key</b>. Above, <i>prime</i> is our only key. We just want to see whether our set of primes contains each of these numbers.<br/><br/>Now here is the code for the PrimeNumberRowFixture:<pre>package fitnesse.fixtures;
+
+import fit.RowFixture;
+
+public class PrimeNumberRowFixture extends RowFixture {
+  public Object[] query() throws Exception {
+    PrimeData[] array = new PrimeData[5];
+    array[0] = new PrimeData(11);
+    array[1] = new PrimeData(5);
+    array[2] = new PrimeData(3);
+    array[3] = new PrimeData(7);
+    array[4] = new PrimeData(2);
+    return array;
+  }
+
+  public Class getTargetClass() {
+    return PrimeData.class;
+  }
+} </pre> All we are doing is assembling and returning an array of PrimeData objects: these are our <i>records</i>. We also use the special <i>getTargetClass()</i> method to specify to Fit the type of the <b>record</b> objects we need it to inspect for us. In this case, <i>PrimeData.class</i>.<br/><br/>Notice that the <b>key</b> column name (<i>prime</i>) in the table corresponds to the public member variable <i>prime</i> in PrimeData.  Fit inspects each of the PrimeData objects in the returned array, comparing the table cell values in the <i>prime</i> column with the contents of the <i>prime</i> variable in PrimeData. Here is the code for PrimeData: <pre>package fitnesse.fixtures;
+
+public class PrimeData {
+  public int prime;
+  public PrimeData(int prime) {
+    this.prime = prime;
+  }
+} </pre>  Notice also that the order of the records in our query array is not the same as the order of key values in the table.  <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/RowFixture.html">Row Fixture</a> does not care about the order of the records returned by a query, as long as they are all there, and as long as there are no extras.<br/><br/><h2 id="1">Employee Pay Records Example: Testing Fields in Returned Records</h2>
+Here is our sample table (from the <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/RowFixture.html">Row Fixture</a> page) that checks that a company's employees were paid correctly:<br/><br/><table>
+	<tr>
+		<td colspan="2">fitnesse.fixtures.EmployeePayRecordsRowFixture</td>
+	</tr>
+	<tr>
+		<td>id</td>
+		<td>pay()</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>1000</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>2000</td>
+	</tr>
+</table>
+<br/>And here is the corresponding fixture code:<pre>package fitnesse.fixtures;
+
+import fit.RowFixture;
+
+public class EmployeePayRecordsRowFixture extends RowFixture  {
+  public Object[] query() throws Exception {
+    EmployeePayRecord[] records = new EmployeePayRecord[2];
+    records[0] = new EmployeePayRecord(1, 1000);
+    records[1] = new EmployeePayRecord(2,2000);
+    return records;
+  }
+  public Class getTargetClass() {
+    return EmployeePayRecord.class;
+  }
+} </pre> Again, we are merely assembling an array of records; in this case, employee payroll records. We also identify the class of the <b>record</b> type Fit must inspect: <i>EmployeePayRecord.class</i>. Now here is EmployeePayRecord: <pre>package fitnesse.fixtures;
+
+public class EmployeePayRecord {
+  public int id;
+  private double salary;
+  public EmployeePayRecord(int id, double salary) {
+    this.id = id;
+    this.salary = salary;
+  }
+  public double pay() {
+    return salary;
+  }
+} </pre> To identify each row in the table, Fit finds the corresponding <span class="code">EmployeePayRecord</span> by matching the <i>id</i> value in the table with the contents of the <i>id</i> variable, and matching the <i>salary</i> value in the table with the contents of the <i>salary</i> variable. For each found record, Fit then checks the value in the <i>pay?</i> column against the amount returned by the <i>pay()</i> method.<br/><br/><h3 id="2">Wait a Minute. We're Just Assembling The Query Results in the Fixture!</h3>
+Yeah, you're right. We're cheating, in the interest of clarity and simplicity. These examples show the mechanics of <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/RowFixtureCode.html">Row Fixture Code</a>, but not a realistic use. It will rarely make sense to be assembling the array you need within the fixture code, since that does not demonstrate that your production code correctly provides the query results you need.<br/><br/>When you write application code in order to get tests like the above to pass, you will likely want to have an array of the right objects already handy, so that something like EmployeePayRecordsRowFixture can just grab it, instead of having to assemble it. Alternatively, you might have production code ready to grab the array of query results from a database. In either case, the fixture code would just ask the production code to return the array of records it needs.<br/><br/><h2 id="3">Learning More</h2>
+To learn more about the <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/RowFixture.html">Row Fixture</a> style of test table, see <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/RowFixture.html">Row Fixture</a>.<br/>To learn more about how <span class="fitnesse">FitNesse</span> fixture code works in general, check out <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FixtureCode.html">FixtureCode</a>.<br/>Also check out the other <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/TestTableStyles.html">Test Table Styles</a>.<br/><br/><br/><br/>
+    </article>
+    <footer>
+      <center>User Guide Contents</center><center><a href="../../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+    </footer>
+  </body>
+</html>

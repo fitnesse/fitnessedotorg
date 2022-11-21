@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FrontPage.FitNesseDevelopment.FitNesseRelease20140418</title>
+    <link rel="shortcut icon" type="image/png" href="../../files/fitnesse/images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/css/fitnesse_wiki.css">
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/css/fitnesse_pages.css">
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
+    <script src="../../files/fitnesse/javascript/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/javascript/fitnesse.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/bootstrap/js/respond.js" type="text/javascript"></script>
+  </head>
+  <body class="wikiPage">
+    <nav class="navbar-fixed-top " role="navigation">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="../../FitNesseFeatures.html">Features</a></li>
+          <li><a href="../../FitNesseDownload.html">Download</a></li>
+          <li><a href="../../PlugIns.html">Plug-ins</a></li>
+          <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+        </ul>
+      </div>
+      <ol class="page-actions btn-group">
+        <li class="expandall btn btn-xs">Expand All</li>
+        <li class="collapseall btn btn-xs">Collapse All</li>
+      </ol>
+      <ol class="breadcrumb">
+        <li><a href="../../FrontPage.html">FrontPage</a></li>
+        <li><a href="../../FrontPage/FitNesseDevelopment.html">FitNesseDevelopment</a></li>
+        <li>FitNesseRelease20140418</li>
+      </ol>
+    </nav>
+    <header>
+    </header>
+    <article>
+      !release 20140418<br/><br/><h3 id="0"><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> Release Notes 2014/04/18</h3>
+<p class="note">Uncle Bob Consulting LLC.</p>
+<br/><p class="note"><span class="red">Requires Java 1.6</span></p>
+<br/><h4 id="1">Major Changes since <a href="../../FrontPage/FitNesseDevelopment/FitNesseRelease20140201.html">20140201</a>:</h4>
+<br/><ul>
+	<li>Introduced new logo.</li>
+	<li>New table type for Slim: <a href="../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/DynamicDecisionTable.html">Dynamic Decision table</a>.</li>
+	<li>Add <i>script:</i> prefix. Script tables can be defined as <i>script:Fixture name</i>.</li>
+	<li>Wiki server is no longer started when FitNesse is started with <i>-c</i> option.</li>
+	<li>FitNesseRoot location can be changed in JUnit FitNesseSuite annotation.</li>
+	<li>Comment columns for slim decision and query tables.</li>
+	<li>Shortcut keys (press <i>?</i>).</li>
+	<li>Configurable <a href="../../FitNesse/UserGuide/AdministeringFitNesse/ConfigurationFile.html">Context root</a>.</li>
+	<li>Updated the <a href="../../FitNesse/UserGuide.html">.FitNesse.UserGuide</a> structure.</li>
+	<li>Improved Where Used feature in the Tools menu.</li>
+	<li><i>JAVA_HOME</i> variable is now used, if set, to find the java executable for java subprocesses.</li>
+	<li>Properties <i>slim.timeout</i> and <i>slim.debug.timeout</i> can be used to configure timeouts (start up and finish) for SLIM test runs.</li>
+	<li>The rich text editor is now an in-page editor (does not use an iframe anymore).</li>
+	<li>Can auto-format on save when editing a page in plain text mode.</li>
+	<li>Issues fixed:<ul>
+	<li><i>Add</i> menu should only show templates ending on <i>-Page.</i></li>
+	<li>Missing stylesheets added to JUnit test results.</li>
+	<li>Fix representation issue with ignored field in SLim TableTable.</li>
+</ul>
+</li>
+</ul>
+<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=5&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=5&amp;state=closed.</a><br/><br/><h4 id="2">Github ids of Contributors to this release:</h4>
+<br/><ul>
+	<li>Andreas Leidig</li>
+	<li>Arjan Molenaar</li>
+	<li>Arnout Engelen</li>
+	<li>Elier Delgado</li>
+	<li>Gregor Gramlich</li>
+	<li>Jon Ward</li>
+	<li>Mark Hopkins</li>
+	<li>Nicole Rauch</li>
+	<li>Serge Zukov</li>
+	<li>Gregor Gramlich</li>
+	<li>mbarchfe (github id)</li>
+	<li>roby (github id)</li>
+</ul>
+<br/><span class="meta">Thanks to all of you!</span><br/><h3 id="3">Git History</h3>
+<br/><table>
+	<tr>
+		<td>2014-04-18</td>
+		<td>Arjan Molenaar</td>
+		<td>Update release notes.</td>
+	</tr>
+	<tr>
+		<td>2014-04-16</td>
+		<td>Arjan Molenaar</td>
+		<td>Update documentation for SlimTables configutation item.</td>
+	</tr>
+	<tr>
+		<td>2014-04-16</td>
+		<td>Arjan Molenaar</td>
+		<td>Make ScenarioTable a little more extendable.</td>
+	</tr>
+	<tr>
+		<td>2014-04-16</td>
+		<td>Arjan Molenaar</td>
+		<td>Make methods protected in ScriptTable to improve reusability</td>
+	</tr>
+	<tr>
+		<td>2014-04-16</td>
+		<td>Arjan Molenaar</td>
+		<td>One more clean up action in wikitext test</td>
+	</tr>
+	<tr>
+		<td>2014-04-16</td>
+		<td>Arjan Molenaar</td>
+		<td>Update org.json version.</td>
+	</tr>
+	<tr>
+		<td>2014-04-10</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #433 from raboof/autoformat</td>
+	</tr>
+	<tr>
+		<td>2014-04-09</td>
+		<td>Arnout Engelen</td>
+		<td>Automatically format the wikitext on save (#355)</td>
+	</tr>
+	<tr>
+		<td>2014-04-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix wysiwyg unit tests.</td>
+	</tr>
+	<tr>
+		<td>2014-04-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge branch 'master' into contenteditable</td>
+	</tr>
+	<tr>
+		<td>2014-04-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Update FitNesse straight css. Fix #247</td>
+	</tr>
+	<tr>
+		<td>2014-04-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Update release notes.</td>
+	</tr>
+	<tr>
+		<td>2014-04-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix issues with ignored fields in SliM TableTable</td>
+	</tr>
+	<tr>
+		<td>2014-04-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge branch 'fix/427'</td>
+	</tr>
+	<tr>
+		<td>2014-04-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge branch 'fix/351'</td>
+	</tr>
+	<tr>
+		<td>2014-04-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Add configurable timeout for start up and shutdown of SLIM system under test. Fixes #254.</td>
+	</tr>
+	<tr>
+		<td>2014-04-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Also copy extra stylesheet resources for JUnit tests. Fixes #285.</td>
+	</tr>
+	<tr>
+		<td>2014-04-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix unit tests again.</td>
+	</tr>
+	<tr>
+		<td>2014-04-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Add configurable timeout for running slim tests in debug mode.</td>
+	</tr>
+	<tr>
+		<td>2014-04-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #425 from sergebug/master</td>
+	</tr>
+	<tr>
+		<td>2014-04-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Add aria-haspopup to Add and Tools menu.</td>
+	</tr>
+	<tr>
+		<td>2014-04-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Check for StopTest exceptions thrown from constructor.</td>
+	</tr>
+	<tr>
+		<td>2014-04-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Update release notes</td>
+	</tr>
+	<tr>
+		<td>2014-04-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Collapsible section state uses padding now.</td>
+	</tr>
+	<tr>
+		<td>2014-04-03</td>
+		<td>Arjan Molenaar</td>
+		<td>Update styling for content editable block.</td>
+	</tr>
+	<tr>
+		<td>2014-04-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Grow/shrink edit section on resize events.</td>
+	</tr>
+	<tr>
+		<td>2014-04-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix events. Should act on content editable frame only.</td>
+	</tr>
+	<tr>
+		<td>2014-04-04</td>
+		<td>Arjan Molenaar</td>
+		<td>Reset meta style to default, since it messes up rich text editing.</td>
+	</tr>
+	<tr>
+		<td>2014-04-04</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix collapsible sections in wysiwyg editor</td>
+	</tr>
+	<tr>
+		<td>2014-04-04</td>
+		<td>Arjan Molenaar</td>
+		<td>Change Collapsable to Collapsible.</td>
+	</tr>
+	<tr>
+		<td>2014-04-04</td>
+		<td>Arjan Molenaar</td>
+		<td>include editor.css in editor and fix jshints in wikitext-spec.</td>
+	</tr>
+	<tr>
+		<td>2014-04-02</td>
+		<td>Serge Zukov</td>
+		<td>javaExecutable did not support JAVA_HOME folders with space in it, for example "Program Files". Added wrapping into double quotes if space is present in JAVA_HOME.</td>
+	</tr>
+	<tr>
+		<td>2014-04-02</td>
+		<td>Serge Zukov</td>
+		<td>Merge branch 'master' of https://github.com/unclebob/fitnesse.git</td>
+	</tr>
+	<tr>
+		<td>2014-03-31</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove some more of the iframe stuff.</td>
+	</tr>
+	<tr>
+		<td>2014-03-28</td>
+		<td>Arjan Molenaar</td>
+		<td>Update release notes.</td>
+	</tr>
+	<tr>
+		<td>2014-03-28</td>
+		<td>Arjan Molenaar</td>
+		<td>Only templates ending on -Page show up in Add menu. Fixes #426.</td>
+	</tr>
+	<tr>
+		<td>2014-03-28</td>
+		<td>Arjan Molenaar</td>
+		<td>Set max height for Add menu in bootstrap theme.</td>
+	</tr>
+	<tr>
+		<td>2014-03-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Improve code quality for wysiwyg editor.</td>
+	</tr>
+	<tr>
+		<td>2014-03-25</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #422 from jonrward/respect-JAVA_HOME</td>
+	</tr>
+	<tr>
+		<td>2014-03-24</td>
+		<td>Serge Zukov</td>
+		<td>Test was failing in Windows due to the search results order. Used contains instead of index.</td>
+	</tr>
+	<tr>
+		<td>2014-03-24</td>
+		<td>Jon Ward</td>
+		<td>Fix unit tests broken by 93961744c</td>
+	</tr>
+	<tr>
+		<td>2014-03-22</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove css class error-nag-hidden. Use hidden instead.</td>
+	</tr>
+	<tr>
+		<td>2014-03-22</td>
+		<td>Arjan Molenaar</td>
+		<td>Changed failure navigator to a bootstrap button panel.</td>
+	</tr>
+	<tr>
+		<td>2014-03-21</td>
+		<td>Arjan Molenaar</td>
+		<td>Make meta style in line with bootstrap style.</td>
+	</tr>
+	<tr>
+		<td>2014-03-21</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix links on front page.</td>
+	</tr>
+	<tr>
+		<td>2014-03-21</td>
+		<td>Arjan Molenaar</td>
+		<td>Use different font.</td>
+	</tr>
+	<tr>
+		<td>2014-03-21</td>
+		<td>Arjan Molenaar</td>
+		<td>Update bootstrap theme to 3.1.1</td>
+	</tr>
+	<tr>
+		<td>2014-03-21</td>
+		<td>Arjan Molenaar</td>
+		<td>Update Less to 1.7.0.</td>
+	</tr>
+	<tr>
+		<td>2014-03-21</td>
+		<td>Arjan Molenaar</td>
+		<td>Use bootstrap panels style for collapsible sections</td>
+	</tr>
+	<tr>
+		<td>2014-03-20</td>
+		<td>Arjan Molenaar</td>
+		<td>Updated Release notes.</td>
+	</tr>
+	<tr>
+		<td>2014-03-20</td>
+		<td>Arjan Molenaar</td>
+		<td>Rename page PluginUsage to ConfigurationFile.</td>
+	</tr>
+	<tr>
+		<td>2014-03-20</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #419 from amolenaar/newuserguide</td>
+	</tr>
+	<tr>
+		<td>2014-03-20</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix links now GettingStarted content is on the first page.</td>
+	</tr>
+	<tr>
+		<td>2014-03-20</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #420 from amolenaar/whereused</td>
+	</tr>
+	<tr>
+		<td>2014-03-20</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove return value from PageFinder.search().</td>
+	</tr>
+	<tr>
+		<td>2014-03-20</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove unused page finders.</td>
+	</tr>
+	<tr>
+		<td>2014-03-20</td>
+		<td>Arjan Molenaar</td>
+		<td>Also find pages with format PageName?property</td>
+	</tr>
+	<tr>
+		<td>2014-03-19</td>
+		<td>Jon Ward</td>
+		<td>Update ReleaseNotes for JAVA_HOME change</td>
+	</tr>
+	<tr>
+		<td>2014-03-19</td>
+		<td>Jon Ward</td>
+		<td>Respect the JAVA_HOME environment variable</td>
+	</tr>
+	<tr>
+		<td>2014-03-19</td>
+		<td>Arjan Molenaar</td>
+		<td>WhereUsed function now also finds pages in aliases ([[tag][PageName]])</td>
+	</tr>
+	<tr>
+		<td>2014-03-18</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove capacity field from symbol class.</td>
+	</tr>
+	<tr>
+		<td>2014-03-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Moved GettingStarted stuff to top level.</td>
+	</tr>
+	<tr>
+		<td>2014-03-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove FitLibrary user guide pages.</td>
+	</tr>
+	<tr>
+		<td>2014-03-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Little cleanup in FixtureGallery content.</td>
+	</tr>
+	<tr>
+		<td>2014-03-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Content updates. Mainly fixed links.</td>
+	</tr>
+	<tr>
+		<td>2014-03-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Corrections, mainly in GettingStarted and Wiki section.</td>
+	</tr>
+	<tr>
+		<td>2014-03-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Treat FitNesse as a special word. It's not linked, unless a page called FitNesse exists.</td>
+	</tr>
+	<tr>
+		<td>2014-03-16</td>
+		<td>Arjan Molenaar</td>
+		<td>Restructure user guide</td>
+	</tr>
+	<tr>
+		<td>2014-03-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #361 from amolenaar/context-root</td>
+	</tr>
+	<tr>
+		<td>2014-03-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Move page name from title to breadcrumb.</td>
+	</tr>
+	<tr>
+		<td>2014-03-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Whoops. Need to keep the tests working...</td>
+	</tr>
+	<tr>
+		<td>2014-03-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Add comment to plugins.properties.</td>
+	</tr>
+	<tr>
+		<td>2014-03-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Update release notes.</td>
+	</tr>
+	<tr>
+		<td>2014-03-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Update documentation</td>
+	</tr>
+	<tr>
+		<td>2014-03-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Update file rename and delete dialogs.</td>
+	</tr>
+	<tr>
+		<td>2014-03-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix acceptance tests for new context root code.</td>
+	</tr>
+	<tr>
+		<td>2014-03-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix context roots for all pages.</td>
+	</tr>
+	<tr>
+		<td>2014-03-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix file rename and deletion with context root.</td>
+	</tr>
+	<tr>
+		<td>2014-03-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Image links (and links to files/ content) works.</td>
+	</tr>
+	<tr>
+		<td>2014-03-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix redirects in other parts of bootstrap theme.</td>
+	</tr>
+	<tr>
+		<td>2014-03-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix context root in redirects from responders.</td>
+	</tr>
+	<tr>
+		<td>2014-03-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Redirect if context root is set, but trailing slash is missing.</td>
+	</tr>
+	<tr>
+		<td>2014-03-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Expose contextRoot to templates.</td>
+	</tr>
+	<tr>
+		<td>2014-03-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Can remove context root from requests</td>
+	</tr>
+	<tr>
+		<td>2014-03-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Add context-root to FitNesseContext.</td>
+	</tr>
+	<tr>
+		<td>2014-03-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Do not make ajax call for question.mark html.</td>
+	</tr>
+	<tr>
+		<td>2014-03-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix styling on small screens for bootstrap theme.</td>
+	</tr>
+	<tr>
+		<td>2014-03-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix versions navbar for bootstrap theme</td>
+	</tr>
+	<tr>
+		<td>2014-03-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Update page footer content</td>
+	</tr>
+	<tr>
+		<td>2014-03-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Updated style for bootstrap theme.</td>
+	</tr>
+	<tr>
+		<td>2014-03-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Update logo in "fitnesse_straight" theme.</td>
+	</tr>
+	<tr>
+		<td>2014-03-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Use new logo as favicon.</td>
+	</tr>
+	<tr>
+		<td>2014-03-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove obsolete images.</td>
+	</tr>
+	<tr>
+		<td>2014-03-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Update release notes.</td>
+	</tr>
+	<tr>
+		<td>2014-03-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #417 from ggramlich/dynamic_decision_table</td>
+	</tr>
+	<tr>
+		<td>2014-03-10</td>
+		<td>Gregor Gramlich</td>
+		<td>Documentation for dynamic decision table</td>
+	</tr>
+	<tr>
+		<td>2014-03-10</td>
+		<td>Gregor Gramlich</td>
+		<td>Merge remote-tracking branch 'origin/master' into dynamic_decision_table</td>
+	</tr>
+	<tr>
+		<td>2014-03-10</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #416 from elier/master</td>
+	</tr>
+	<tr>
+		<td>2014-03-07</td>
+		<td>Elier Delgado</td>
+		<td>Adding new logo sources and images</td>
+	</tr>
+	<tr>
+		<td>2014-03-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #414 from amolenaar/script-colon-prefix</td>
+	</tr>
+	<tr>
+		<td>2014-03-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #405 from ggramlich/encoding_for_output_captured</td>
+	</tr>
+	<tr>
+		<td>2014-03-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #413 from sergebug/master</td>
+	</tr>
+	<tr>
+		<td>2014-03-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Support script: prefix.</td>
+	</tr>
+	<tr>
+		<td>2014-03-02</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #412 from NicoleRauch/master</td>
+	</tr>
+	<tr>
+		<td>2014-03-02</td>
+		<td>Nicole Rauch</td>
+		<td>Java 7 returns localized error messages which causes two tests to fail (because they explicitly check parts of the error message). Adding the locale to the java command invocation fixes this.</td>
+	</tr>
+	<tr>
+		<td>2014-03-01</td>
+		<td>Gregor Gramlich</td>
+		<td>Implemented DynamicDecisionTable (see https://www.pivotaltracker.com/story/show/2510237 )</td>
+	</tr>
+	<tr>
+		<td>2014-03-01</td>
+		<td>Gregor Gramlich</td>
+		<td>extracted method in test to reduce duplication</td>
+	</tr>
+	<tr>
+		<td>2014-03-01</td>
+		<td>Gregor Gramlich</td>
+		<td>extracted inner class DecisionTableCaller from DecisionTable</td>
+	</tr>
+	<tr>
+		<td>2014-03-01</td>
+		<td>Gregor Gramlich</td>
+		<td>formatting</td>
+	</tr>
+	<tr>
+		<td>2014-03-01</td>
+		<td>Gregor Gramlich</td>
+		<td>static import for VOID_TAG</td>
+	</tr>
+	<tr>
+		<td>2014-03-01</td>
+		<td>Gregor Gramlich</td>
+		<td>changed makeDecisionTableAndBuildInstructions to a void method</td>
+	</tr>
+	<tr>
+		<td>2014-03-01</td>
+		<td>Gregor Gramlich</td>
+		<td>inline instructions method</td>
+	</tr>
+	<tr>
+		<td>2014-03-01</td>
+		<td>Gregor Gramlich</td>
+		<td>Make DecisionTableTest extend and use SlimTableTestSupport</td>
+	</tr>
+	<tr>
+		<td>2014-02-27</td>
+		<td>Serge Zukov</td>
+		<td>Excluded tmp folder content.</td>
+	</tr>
+	<tr>
+		<td>2014-02-27</td>
+		<td>Serge Zukov</td>
+		<td>testHistory page did not hide tests which passed last time.</td>
+	</tr>
+	<tr>
+		<td>2014-02-27</td>
+		<td>Serge Zukov</td>
+		<td>removed orphan javascript reference; hide passed tests is currently inside fitnesse.js</td>
+	</tr>
+	<tr>
+		<td>2014-02-24</td>
+		<td>Serge Zukov</td>
+		<td>Merge branch 'master' of https://github.com/unclebob/fitnesse.git</td>
+	</tr>
+	<tr>
+		<td>2014-02-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Fixed one more typo in wysiwyg code.</td>
+	</tr>
+	<tr>
+		<td>2014-02-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Clean up now unused pages.</td>
+	</tr>
+	<tr>
+		<td>2014-02-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Import tests can not depend on FitNesse server running.</td>
+	</tr>
+	<tr>
+		<td>2014-02-11</td>
+		<td>Arjan Molenaar</td>
+		<td>No need to start a FitNesse server when command is provided on the command line.</td>
+	</tr>
+	<tr>
+		<td>2014-02-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Make a copy of the SlimTableFactory for every test system.</td>
+	</tr>
+	<tr>
+		<td>2014-02-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Rich text editor can now handle variables in hash tables.</td>
+	</tr>
+	<tr>
+		<td>2014-02-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Update rich text editor. Fixes #407.</td>
+	</tr>
+	<tr>
+		<td>2014-02-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #392 from robobario/master</td>
+	</tr>
+	<tr>
+		<td>2014-02-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #401 from mbarchfe/commentedcolumns</td>
+	</tr>
+	<tr>
+		<td>2014-02-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #406 from leider/master</td>
+	</tr>
+	<tr>
+		<td>2014-02-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Added hint for '?' functionality to page footer.</td>
+	</tr>
+	<tr>
+		<td>2014-02-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix spacing in execution log. Fixes #275.</td>
+	</tr>
+	<tr>
+		<td>2014-02-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Avoid error by expecting an Integer after execution of FitNesseMain.</td>
+	</tr>
+	<tr>
+		<td>2014-02-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #400 from markhop/shortcut_keys</td>
+	</tr>
+	<tr>
+		<td>2014-02-10</td>
+		<td>Andreas Leidig</td>
+		<td>FitNesseSuite retrieves FitnesseDir also via system property</td>
+	</tr>
+	<tr>
+		<td>2014-02-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix custom comparator in scenario tables. Fixes #399.</td>
+	</tr>
+	<tr>
+		<td>2014-02-10</td>
+		<td>gramlich</td>
+		<td>Use UTF-8 encoding for the captured Standard Output and Standard Error on the ErrorLogs ("Output Captured") Pages</td>
+	</tr>
+	<tr>
+		<td>2014-02-09</td>
+		<td>mbarchfe</td>
+		<td>updated wiki pages with comment examples</td>
+	</tr>
+	<tr>
+		<td>2014-02-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Added Glob Custom comparator. Used for testing custom comparators.</td>
+	</tr>
+	<tr>
+		<td>2014-02-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Add INCLUDE_SCENARIO_LIBRARIES property. It allows for including Scenario libraries in third-party test systems or explicitly not include them in Slim test pages.</td>
+	</tr>
+	<tr>
+		<td>2014-02-04</td>
+		<td>mbarchfe</td>
+		<td>comment column in decision table</td>
+	</tr>
+	<tr>
+		<td>2014-02-04</td>
+		<td>mbarchfe</td>
+		<td>added comment columns for Query tables</td>
+	</tr>
+	<tr>
+		<td>2014-01-29</td>
+		<td>Mark Hopkins</td>
+		<td>Updated UserGuide ShortcutKeys page to show new facility</td>
+	</tr>
+	<tr>
+		<td>2014-01-29</td>
+		<td>Mark Hopkins</td>
+		<td>Ensure shortcut keys only fire on normal wiki page not edit page</td>
+	</tr>
+	<tr>
+		<td>2014-01-29</td>
+		<td>Mark Hopkins</td>
+		<td>Get help modal working under straight theme</td>
+	</tr>
+	<tr>
+		<td>2014-01-29</td>
+		<td>Mark Hopkins</td>
+		<td>Make / and s go different places for search</td>
+	</tr>
+	<tr>
+		<td>2014-01-28</td>
+		<td>Mark Hopkins</td>
+		<td>Add keyboard shortcut help using ? key</td>
+	</tr>
+	<tr>
+		<td>2014-01-28</td>
+		<td>Mark Hopkins</td>
+		<td>Implement shortcut keys using mousetrap library</td>
+	</tr>
+	<tr>
+		<td>2014-01-18</td>
+		<td>roby</td>
+		<td>the slim service can be configured to have a statement timeout</td>
+	</tr>
+	<tr>
+		<td>2013-12-09</td>
+		<td>Serge Zukov</td>
+		<td>Merge remote-tracking branch 'upstream/master'</td>
+	</tr>
+</table>
+
+    </article>
+    <footer>
+      <hr/>
+<br/><a href="../../FrontPage.html">.FrontPage</a> | <a href="../../FrontPage/FitNesseDevelopment/FrontPage.html">FrontPage</a> | <a href="../../RecentChanges.html">.RecentChanges</a><br/>
+    </footer>
+  </body>
+</html>

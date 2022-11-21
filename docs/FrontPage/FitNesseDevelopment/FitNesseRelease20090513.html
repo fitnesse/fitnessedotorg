@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FrontPage.FitNesseDevelopment.FitNesseRelease20090513</title>
+    <link rel="shortcut icon" type="image/png" href="../../files/fitnesse/images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/css/fitnesse_wiki.css">
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/css/fitnesse_pages.css">
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
+    <script src="../../files/fitnesse/javascript/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/javascript/fitnesse.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/bootstrap/js/respond.js" type="text/javascript"></script>
+  </head>
+  <body class="wikiPage">
+    <nav class="navbar-fixed-top " role="navigation">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="../../FitNesseFeatures.html">Features</a></li>
+          <li><a href="../../FitNesseDownload.html">Download</a></li>
+          <li><a href="../../PlugIns.html">Plug-ins</a></li>
+          <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+        </ul>
+      </div>
+      <ol class="page-actions btn-group">
+        <li class="expandall btn btn-xs">Expand All</li>
+        <li class="collapseall btn btn-xs">Collapse All</li>
+      </ol>
+      <ol class="breadcrumb">
+        <li><a href="../../FrontPage.html">FrontPage</a></li>
+        <li><a href="../../FrontPage/FitNesseDevelopment.html">FitNesseDevelopment</a></li>
+        <li>FitNesseRelease20090513</li>
+      </ol>
+    </nav>
+    <header>
+    </header>
+    <article>
+      !release 20090513<br/><br/><h3 id="0"><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> Release Notes 5/13/2009</h3>
+<p class="note">Uncle Bob, Object Mentor, Inc.</p>
+<br/><h4 id="1">Contributors to this release:</h4>
+<ul>
+	<li>Clare McLennan</li>
+	<li>Markus Gaertner</li>
+	<li>Darrin Holst</li>
+	<li>David Leonard</li>
+	<li>Brett L. Schuchert</li>
+	<li>Mike Stockdale</li>
+	<li>Scott Frederick</li>
+	<li>Ingo Feltes</li>
+	<li>Gregor Gramlich</li>
+</ul>
+<br/><br/><span class="meta">Thanks to all of you!</span><br/><table>
+	<tr>
+		<td><h4 id="2">Since:</h4></td>
+		<td colspan="2"><a href="../../FrontPage/FitNesseDevelopment/FitNesseRelease20090321.html">20090321</a></td>
+	</tr>
+	<tr>
+		<td><h4 id="3">Expected Release Date:</h4></td>
+		<td>20090501</td>
+		<td><span class="pass">RELEASED</span></td>
+	</tr>
+	<tr>
+		<td><h4 id="4">Theme:</h4></td>
+		<td colspan="2">Test History</td>
+	</tr>
+</table>
+<br/><h3 id="5">Changes</h3>
+<ul>
+	<li>Test History.  <a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> now records the outcome of every test, and allows you to redisplay the results at any time. </li>
+	<li>GSSAPI/SPNEGO authentication.  </li>
+	<li>Stop Test exception for Slim allows a slim fixture to stop the execution of the whole test page.</li>
+	<li>Parametric Scenario Table reference in Decision Tables.</li>
+	<li>'Examples' suffix for suite pages.</li>
+	<li>Junit-like Moving Progress bar for Suites.</li>
+</ul>
+ <br/><h3 id="6">Git History</h3>
+<table>
+	<tr>
+		<td>2009-05-12 15:11:06 -0500</td>
+		<td>unclebob</td>
+		<td>junk</td>
+	</tr>
+	<tr>
+		<td>2009-05-12 14:55:21 -0500</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of git://github.com/dleonard0/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-05-12 14:06:13 -0500</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of git://github.com/darrinholst/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-05-12 14:00:01 -0500</td>
+		<td>unclebob</td>
+		<td>Merged Clare's changes</td>
+	</tr>
+	<tr>
+		<td>2009-05-12 13:47:16 -0500</td>
+		<td>unclebob</td>
+		<td>Merged with Markus</td>
+	</tr>
+	<tr>
+		<td>2009-05-12 13:42:12 -0500</td>
+		<td>unclebob</td>
+		<td>Update Updaters</td>
+	</tr>
+	<tr>
+		<td>2009-05-12 09:04:45 -0500</td>
+		<td>unclebob</td>
+		<td>All Test History Acceptance Tests pass</td>
+	</tr>
+	<tr>
+		<td>2009-05-11 20:28:22 -0500</td>
+		<td>unclebob</td>
+		<td>Test History is working.  Acceptance tests not finished yet.</td>
+	</tr>
+	<tr>
+		<td>2009-05-11 13:46:17 -0600</td>
+		<td>David Leonard</td>
+		<td>Enable selective SPNEGO auth by page security</td>
+	</tr>
+	<tr>
+		<td>2009-05-11 09:10:34 -0600</td>
+		<td>David Leonard</td>
+		<td>Add Main-Class manifest information to maven pom</td>
+	</tr>
+	<tr>
+		<td>2009-05-11 09:09:27 -0600</td>
+		<td>David Leonard</td>
+		<td>Correct example jaas.conf in NegotiateAuthenticator javadoc</td>
+	</tr>
+	<tr>
+		<td>2009-05-10 20:52:10 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>fixed page history bug where directories where taken as possible test results</td>
+	</tr>
+	<tr>
+		<td>2009-05-10 19:02:44 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>removed meaningless number and replaced it by Calendar.DECEMBER</td>
+	</tr>
+	<tr>
+		<td>2009-05-10 23:10:19 +1200</td>
+		<td>Clare</td>
+		<td>Added a remote_debug option for the test and suite filters, that will you to debug easily in any language.  See fitnesse/UserGu</td>
+	</tr>
+	<tr>
+		<td>2009-02-20 16:31:13 -0700</td>
+		<td>David Leonard</td>
+		<td>Add an authenticator for GSSAPI/SPNEGO authentication.</td>
+	</tr>
+	<tr>
+		<td>2009-02-20 16:29:14 -0700</td>
+		<td>David Leonard</td>
+		<td>Add Request#setCredentials() for authenticators</td>
+	</tr>
+	<tr>
+		<td>2009-02-20 16:24:30 -0700</td>
+		<td>David Leonard</td>
+		<td>Fix the Base64 codec to work with binary data.</td>
+	</tr>
+	<tr>
+		<td>2009-05-08 15:47:49 -0600</td>
+		<td>David Leonard</td>
+		<td>resolve ambiguity in test not handled by compiler</td>
+	</tr>
+	<tr>
+		<td>2009-05-08 15:46:32 -0600</td>
+		<td>David Leonard</td>
+		<td>Add maven dependency for velocity 1.6.2</td>
+	</tr>
+	<tr>
+		<td>2009-05-08 22:56:51 +1200</td>
+		<td>Clare</td>
+		<td>Added a 'top of the page' link to html output of each test in a suite. It should help navigating up and down long suite pages</td>
+	</tr>
+	<tr>
+		<td>2009-05-08 19:27:56 +1200</td>
+		<td>Clare</td>
+		<td>Finished Stop test exceptions.  See page FitNesse.UserGuide.SliM.ExceptionHandling details on how to use this functionality.</td>
+	</tr>
+	<tr>
+		<td>2009-05-07 21:21:20 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-05-06 16:19:23 -0500</td>
+		<td>unclebob</td>
+		<td>fixed rename bug.</td>
+	</tr>
+	<tr>
+		<td>2009-05-06 15:26:36 -0500</td>
+		<td>unclebob</td>
+		<td>Added acceptance tests for Page History.  Breadcrumbs, etc.</td>
+	</tr>
+	<tr>
+		<td>2009-05-05 19:21:56 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-05-04 16:00:45 -0500</td>
+		<td>unclebob</td>
+		<td>parametric scenario table reference for decision table</td>
+	</tr>
+	<tr>
+		<td>2009-05-04 15:04:23 -0500</td>
+		<td>unclebob</td>
+		<td>Acceptance Tests for Test History</td>
+	</tr>
+	<tr>
+		<td>2009-05-04 19:01:18 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-05-04 21:39:12 +1200</td>
+		<td>Clare</td>
+		<td>Throwing an exception with 'StopTest' in the name in java now stops the current test from executing.  Other tests in the suite</td>
+	</tr>
+	<tr>
+		<td>2009-05-03 19:13:25 -0500</td>
+		<td>unclebob</td>
+		<td>PageHistoryResponder</td>
+	</tr>
+	<tr>
+		<td>2009-04-30 21:24:28 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-04-29 17:56:36 -0500</td>
+		<td>unclebob</td>
+		<td>Clean up test history</td>
+	</tr>
+	<tr>
+		<td>2009-04-25 23:05:39 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-04-25 11:31:20 -0500</td>
+		<td>unclebob</td>
+		<td>testHistory responder.</td>
+	</tr>
+	<tr>
+		<td>2009-04-19 16:57:33 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>finalized work on properties searcher</td>
+	</tr>
+	<tr>
+		<td>2009-04-17 21:08:29 -0500</td>
+		<td>Darrin Holst</td>
+		<td>Merge branch 'master' of git@github.com:darrinholst/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-04-17 21:02:01 -0500</td>
+		<td>Darrin Holst</td>
+		<td>fix wiki formatter so that it works on tables that start with a !</td>
+	</tr>
+	<tr>
+		<td>2009-04-17 21:02:01 -0500</td>
+		<td>Darrin Holst</td>
+		<td>fix wiki formatter so that it works on tables that start with a \!</td>
+	</tr>
+	<tr>
+		<td>2009-04-17 19:39:14 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-04-17 16:43:24 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-04-17 16:43:24 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-04-16 16:21:31 -0500</td>
+		<td>unclebob</td>
+		<td>merge</td>
+	</tr>
+	<tr>
+		<td>2009-04-16 16:01:46 -0500</td>
+		<td>unclebob</td>
+		<td>ever test writes XML record in file/testResults.  XML of scenario tables generated correctly.</td>
+	</tr>
+	<tr>
+		<td>2009-04-16 18:36:22 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-04-15 20:38:31 -0500</td>
+		<td>unclebob</td>
+		<td>XML format written to testResults directory</td>
+	</tr>
+	<tr>
+		<td>2009-04-15 18:32:14 -0500</td>
+		<td>Brett L. Schuchert</td>
+		<td>Added SetUp and TearDown pages back into the Footer. Used thread locals to "communicate" the top level entry page</td>
+	</tr>
+	<tr>
+		<td>2009-04-15 11:19:44 -0500</td>
+		<td>Brett L. Schuchert</td>
+		<td>Updated build to use FITNESSE_TEST_PORT environment variable, if defined, or default to port 8080 as before.</td>
+	</tr>
+	<tr>
+		<td>2009-04-15 16:48:08 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-04-15 09:27:14 -0500</td>
+		<td>Brett L. Schuchert</td>
+		<td>Pages ending with "Examples" now have their Suite property set.</td>
+	</tr>
+	<tr>
+		<td>2009-04-14 18:01:20 -0500</td>
+		<td>Brett L. Schuchert</td>
+		<td>Basic cleanup. Removed warnings. Updated classpath for Eclipse users.</td>
+	</tr>
+	<tr>
+		<td>2009-04-14 22:43:39 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>incorporated first version of new search form for properties. Added the ability</td>
+	</tr>
+	<tr>
+		<td>2009-04-14 22:27:11 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-04-13 14:05:27 -0500</td>
+		<td>unclebob</td>
+		<td>Added table to xml test results.</td>
+	</tr>
+	<tr>
+		<td>2009-04-13 14:05:27 -0500</td>
+		<td>unclebob</td>
+		<td>Added table to xml test results.</td>
+	</tr>
+	<tr>
+		<td>2009-04-13 12:34:40 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>changed K&lt;C3&gt;&lt;B6&gt;ln to unicode representation string to avoid warnings during</td>
+	</tr>
+	<tr>
+		<td>2009-04-11 22:57:09 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-04-11 10:31:18 -0500</td>
+		<td>unclebob</td>
+		<td>Fixed race condition in stop button test</td>
+	</tr>
+	<tr>
+		<td>2009-04-10 23:16:39 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>removed svnkit from buildpath for eclipse</td>
+	</tr>
+	<tr>
+		<td>2009-04-09 21:46:30 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>added velocity library to classpath for eclipse</td>
+	</tr>
+	<tr>
+		<td>2009-04-08 21:33:03 -0500</td>
+		<td>unclebob</td>
+		<td>Fix scenario bug in XML output and improve scenario table naming scheme.</td>
+	</tr>
+	<tr>
+		<td>2009-04-08 07:42:37 -0500</td>
+		<td>unclebob</td>
+		<td>deleted svnkit.jar</td>
+	</tr>
+	<tr>
+		<td>2009-04-07 17:26:30 -0500</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of git://github.com/MarkusGaertner/fitnessebacklogfixes</td>
+	</tr>
+	<tr>
+		<td>2009-04-07 17:25:04 -0500</td>
+		<td>unclebob</td>
+		<td>fixed conflicts</td>
+	</tr>
+	<tr>
+		<td>2009-04-07 21:15:13 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-04-07 12:19:27 -0500</td>
+		<td>unclebob</td>
+		<td>minor edits</td>
+	</tr>
+	<tr>
+		<td>2009-04-06 18:06:04 -0700</td>
+		<td>jediwhale</td>
+		<td>for windows users</td>
+	</tr>
+	<tr>
+		<td>2009-04-06 18:46:54 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-04-06 22:09:02 +1200</td>
+		<td>Clare</td>
+		<td>Colour in status bar now shows how many tests are complete - matches junit</td>
+	</tr>
+	<tr>
+		<td>2009-04-05 21:46:46 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>fixed front page links after user guide refactoring</td>
+	</tr>
+	<tr>
+		<td>2009-04-05 13:19:30 -0500</td>
+		<td>unclebob</td>
+		<td>fix and clean up TICKET_ID and SAVE_ID attributes that control merges of wiki pages.</td>
+	</tr>
+	<tr>
+		<td>2009-04-04 14:15:33 -0500</td>
+		<td>unclebob</td>
+		<td>Cleanup and fix MultipleTestRunner</td>
+	</tr>
+	<tr>
+		<td>2009-04-03 09:45:03 -0500</td>
+		<td>sfred</td>
+		<td>Updated Plugins page in UserGuide.</td>
+	</tr>
+	<tr>
+		<td>2009-04-03 06:50:04 -0500</td>
+		<td>unclebob</td>
+		<td>Fix UTF-8 problems in Java slim</td>
+	</tr>
+	<tr>
+		<td>2009-04-03 00:15:41 -0500</td>
+		<td>unclebob</td>
+		<td>Fixed invalid page error message</td>
+	</tr>
+	<tr>
+		<td>2009-04-02 23:35:24 -0500</td>
+		<td>unclebob</td>
+		<td>Merged conflicts</td>
+	</tr>
+	<tr>
+		<td>2009-04-02 22:21:37 -0500</td>
+		<td>unclebob</td>
+		<td>Fixed bug that swallowed exceptiosn thrown by fixture constructors in slim.</td>
+	</tr>
+	<tr>
+		<td>2009-04-03 12:23:48 +1300</td>
+		<td>Clare McLennan</td>
+		<td>Main properties are now ordered so this file should not change until new functionality is added</td>
+	</tr>
+	<tr>
+		<td>2009-04-03 11:58:03 +1300</td>
+		<td>Clare McLennan</td>
+		<td>Removed dates and frequently changing information from properties files, so fitnesse works better with SC systems</td>
+	</tr>
+	<tr>
+		<td>2009-04-02 12:48:55 -0500</td>
+		<td>unclebob</td>
+		<td>Added status and tags elements to XML test results</td>
+	</tr>
+	<tr>
+		<td>2009-03-31 19:52:21 -0500</td>
+		<td>unclebob</td>
+		<td>Fixed Slim Symbol bugs.  Can be blank or null.  Thanks Brett\!</td>
+	</tr>
+	<tr>
+		<td>2009-03-31 18:54:54 +0800</td>
+		<td>unclebob</td>
+		<td>Velocity builds XML of TestResults and SuiteResults.</td>
+	</tr>
+	<tr>
+		<td>2009-03-31 17:14:29 +0800</td>
+		<td>unclebob</td>
+		<td>fix some doc issues</td>
+	</tr>
+	<tr>
+		<td>2009-03-28 23:13:52 +0800</td>
+		<td>unclebob</td>
+		<td>deleted old user guide files</td>
+	</tr>
+	<tr>
+		<td>2009-03-31 07:25:17 -0500</td>
+		<td>unclebob</td>
+		<td>Decrap</td>
+	</tr>
+	<tr>
+		<td>2009-03-31 05:54:54 -0500</td>
+		<td>unclebob</td>
+		<td>Velocity builds XML of TestResults and SuiteResults.</td>
+	</tr>
+	<tr>
+		<td>2009-03-31 04:29:39 -0500</td>
+		<td>unclebob</td>
+		<td>merged Scott Frederick's revisioncontrol changes.</td>
+	</tr>
+	<tr>
+		<td>2009-03-31 04:15:47 -0500</td>
+		<td>unclebob</td>
+		<td>Merge branch 'revisioncontrol'</td>
+	</tr>
+	<tr>
+		<td>2009-03-31 04:14:29 -0500</td>
+		<td>unclebob</td>
+		<td>fix some doc issues</td>
+	</tr>
+	<tr>
+		<td>2009-03-30 23:33:48 -0500</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of git://github.com/liberty/fitnesse into revisioncontrol</td>
+	</tr>
+	<tr>
+		<td>2009-03-30 22:24:40 -0500</td>
+		<td>sfred</td>
+		<td>Extracted revisioncontrol packages, to be implemented in a separate plugin. Refactored core components to make them more open t</td>
+	</tr>
+	<tr>
+		<td>2009-03-30 00:10:21 -0500</td>
+		<td>unclebob</td>
+		<td>Added velocity to XmlFormatter</td>
+	</tr>
+	<tr>
+		<td>2009-03-28 10:13:52 -0500</td>
+		<td>unclebob</td>
+		<td>deleted old user guide files</td>
+	</tr>
+	<tr>
+		<td>2009-03-27 12:50:59 -0500</td>
+		<td>unclebob</td>
+		<td>revamped UserGuide</td>
+	</tr>
+	<tr>
+		<td>2009-03-26 21:52:51 +1300</td>
+		<td>Clare</td>
+		<td>Added missing waitfixture required for TestResponderTest</td>
+	</tr>
+	<tr>
+		<td>2009-03-25 21:44:35 -0500</td>
+		<td>unclebob</td>
+		<td>Merge Clare's progress bar</td>
+	</tr>
+	<tr>
+		<td>2009-03-25 21:41:09 -0500</td>
+		<td>unclebob</td>
+		<td>added testResult template</td>
+	</tr>
+	<tr>
+		<td>2009-03-23 00:23:53 +1300</td>
+		<td>Clare</td>
+		<td>Added junit-like moving progress bar to suites</td>
+	</tr>
+	<tr>
+		<td>2009-03-21 13:07:08 -0500</td>
+		<td>unclebob</td>
+		<td>css patch by Ingo Feltes</td>
+	</tr>
+</table>
+<br/>
+    </article>
+    <footer>
+      <hr/>
+<br/><a href="../../FrontPage.html">.FrontPage</a> | <a href="../../FrontPage/FitNesseDevelopment/FrontPage.html">FrontPage</a> | <a href="../../RecentChanges.html">.RecentChanges</a><br/>
+    </footer>
+  </body>
+</html>

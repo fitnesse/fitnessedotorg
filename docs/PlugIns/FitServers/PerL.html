@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PlugIns.FitServers.PerL</title>
+    <link rel="shortcut icon" type="image/png" href="../../files/fitnesse/images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/css/fitnesse_wiki.css">
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/css/fitnesse_pages.css">
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
+    <script src="../../files/fitnesse/javascript/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/javascript/fitnesse.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/bootstrap/js/respond.js" type="text/javascript"></script>
+  </head>
+  <body class="wikiPage">
+    <nav class="navbar-fixed-top " role="navigation">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="../../FitNesseFeatures.html">Features</a></li>
+          <li><a href="../../FitNesseDownload.html">Download</a></li>
+          <li><a href="../../PlugIns.html">Plug-ins</a></li>
+          <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+        </ul>
+      </div>
+      <ol class="page-actions btn-group">
+        <li class="expandall btn btn-xs">Expand All</li>
+        <li class="collapseall btn btn-xs">Collapse All</li>
+      </ol>
+      <ol class="breadcrumb">
+        <li><a href="../../PlugIns.html">PlugIns</a></li>
+        <li><a href="../../PlugIns/FitServers.html">FitServers</a></li>
+        <li>PerL</li>
+      </ol>
+    </nav>
+    <header>
+    </header>
+    <article>
+      <center><h3 id="0">Perl <a href="../../PlugIns/FitServers/FitServer.html">FitServer</a></h3>
+</center><br/>Written by Michael Conners.<br/><br/><h3 id="1">Downloads:</h3>
+<a href="../../files/fit/perl/perl-FitServer.tar.gz">http://files/fit/perl/perl-FitServer.tar.gz</a><br/><br/><h3 id="2">Comments:</h3>
+The perl <a href="../../PlugIns/FitServers/FitServer.html">FitServer</a> requires an installation of perl, <span class="fitnesse">FitNesse</span>, and the <br/>Test-C2FIT-0.01a perl module (<a href="http://search.cpan.org/~tjbyrne/Test-C2FIT-0.01a/)">http://search.cpan.org/~tjbyrne/Test-C2FIT-0.01a/)</a><br/><br/>I installed the the files FitServer.pl and FitServer.pm in a perl directory located at the <br/>same level as the dotnet directory on the fitserver . you should just be able to untar<br/> the file perl-FitServer.tar.gz at that location. The tarfile contains the following<br/><br/>perl/<br/>perl/FitServer.pl<br/>perl/FitServer.pm<br/>perl/README.txt<br/>perl/Test/<br/>perl/Test/C2FIT/<br/>perl/Test/C2FIT/eg/<br/>perl/Test/C2FIT/eg/ArithmeticColumnFixture.pm<br/>perl/Test/C2FIT/eg/ArithmeticFixture.pm<br/><br/>This has only been tested on win xp and server 2003, Mac OS X 10.4 and linux, it has not been tried on any other <br/>unix variant, but i would expect that it would work simply by editing the first line of FitServer.pl and <br/>pointing to the path of your perl installation. On non MS platforms you may also be able to alter the <br/>TEST_RUNNER variable specified below to only contain perl/FitServer.pl (Notice the 'forward slash'!)<br/>if you set exec bit on (for example 'chmod +x perl/FitServer.pl').<br/><br/><br/>The Test::C2FIT::eg::ArithmeticColumnFixture is now part of the tar file, these were actually part <br/>of the Test::C2FIT distro<br/><br/>I added the following to my wiki page.<br/><br/><br/><br/><span class="meta">variable defined: COMMAND_PATTERN=%m</span>
+<br/><span class="meta">variable defined: TEST_RUNNER=perl perl\FitServer.pl</span>
+<br/><br/><br/><table>
+	<tr>
+		<td colspan="6">eg.ArithmeticColumnFixture</td>
+	</tr>
+	<tr>
+		<td>x</td>
+		<td>y</td>
+		<td>plus()</td>
+		<td>times()</td>
+		<td>divide()</td>
+		<td>floating()</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>3</td>
+		<td>5</td>
+		<td>6</td>
+		<td>0</td>
+		<td>0.6666667</td>
+	</tr>
+	<tr>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>error</td>
+		<td>error</td>
+	</tr>
+	<tr>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>200</td>
+		<td>300</td>
+		<td>500</td>
+		<td>60000</td>
+		<td>0</td>
+		<td>0.6666667</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>3</td>
+		<td>5</td>
+		<td>6</td>
+		<td>0</td>
+		<td>0.6666667</td>
+	</tr>
+	<tr>
+		<td>200</td>
+		<td>3</td>
+		<td>203</td>
+		<td>600</td>
+		<td>66</td>
+		<td>66.6666666666667</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>-3</td>
+		<td>-1</td>
+		<td>-6</td>
+		<td>0</td>
+		<td>-0.6666667</td>
+	</tr>
+</table>
+<br/>and set it's properties to test and it worked fine.
+    </article>
+    <footer>
+      <center>FitNesse v20221102</center><center><a href="../../FrontPage.html">Front Page</a> - <a href="../../FitNesse/UserGuide.html">User Guide</a> - <a href="../../FitNesseFeatures.html">Features</a> - <a href="../../FitNesseDownload.html">Download</a> - <a href="../../PlugIns.html">Plugins</a> - <a href="../../PlugIns.html#slimfixtures">Fixtures</a> - <a href="https://gitter.im/fitnesse-org/fitnesse">Gitter Community</a></center>
+    </footer>
+  </body>
+</html>

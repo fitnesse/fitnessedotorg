@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FrontPage.FitNesseDevelopment.FitNesseRelease20150114</title>
+    <link rel="shortcut icon" type="image/png" href="../../files/fitnesse/images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/css/fitnesse_wiki.css">
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/css/fitnesse_pages.css">
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
+    <script src="../../files/fitnesse/javascript/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/javascript/fitnesse.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/bootstrap/js/respond.js" type="text/javascript"></script>
+  </head>
+  <body class="wikiPage">
+    <nav class="navbar-fixed-top " role="navigation">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="../../FitNesseFeatures.html">Features</a></li>
+          <li><a href="../../FitNesseDownload.html">Download</a></li>
+          <li><a href="../../PlugIns.html">Plug-ins</a></li>
+          <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+        </ul>
+      </div>
+      <ol class="page-actions btn-group">
+        <li class="expandall btn btn-xs">Expand All</li>
+        <li class="collapseall btn btn-xs">Collapse All</li>
+      </ol>
+      <ol class="breadcrumb">
+        <li><a href="../../FrontPage.html">FrontPage</a></li>
+        <li><a href="../../FrontPage/FitNesseDevelopment.html">FitNesseDevelopment</a></li>
+        <li>FitNesseRelease20150114</li>
+      </ol>
+    </nav>
+    <header>
+    </header>
+    <article>
+      !release 20150114<br/><br/><h3 id="0"><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> Release Notes 2015/01/14</h3>
+<p class="note">Uncle Bob Consulting LLC.</p>
+<br/><p class="note"><span class="red">Requires Java 1.6</span></p>
+<br/><h4 id="1">Major Changes since <a href="../../FrontPage/FitNesseDevelopment/FitNesseRelease20140901.html">20140901</a>:</h4>
+<br/><ul>
+	<li>Big cleanup. Removed classes:<ul>
+	<li>util.StringUtil, use org.apache.commons.lang.StringUtils instead.</li>
+	<li>util.ListUtility, use java.util.Arrays instead.</li>
+	<li>fitnesse.wikitext.Utils, use fitnesse.html.HtmlUtil instead.</li>
+	<li>fitnesse.FitFilter.</li>
+</ul>
+</li>
+	<li>Page names do no longer have to follow WikiWord syntax (<a href="https://github.com/unclebob/fitnesse/pull/513">513</a>)</li>
+	<li>Implemented Slim StopSuiteException - stops whole suite from executing</li>
+	<li>More flexible filter definitions for JUnit runner (<a href="https://github.com/unclebob/fitnesse/pull/555">555</a>)</li>
+	<li>Can customize property characters used in !contents (<a href="https://github.com/unclebob/fitnesse/pull/541">541</a>)</li>
+	<li>Deal more nicely with Slim scenario output parameters (<a href="https://github.com/unclebob/fitnesse/pull/536">536</a>)</li>
+	<li>Allow for url parameters as variables in wiki pages (<a href="https://github.com/unclebob/fitnesse/pull/531">531</a>)</li>
+	<li>Raise an error if a new page will override an existing page (<a href="https://github.com/unclebob/fitnesse/pull/459">459</a>)</li>
+	<li>Issues fixed:<ul>
+	<li>Reverted old test behavior: only the current page will be tested (previously also test sub-pages were executed) (<a href="https://github.com/unclebob/fitnesse/pull/538">538</a>)</li>
+	<li>Fix SimpleFileVersionsController so it can be configured in <i>plugins.properties</i>.</li>
+	<li>Remember Wrap and Auto-format options in Safari (<a href="https://github.com/unclebob/fitnesse/pull/521">521</a>)</li>
+	<li>?properties responder is now returning more properties when asked for json output (<a href="https://github.com/unclebob/fitnesse/pull/517">517</a>)</li>
+</ul>
+</li>
+</ul>
+<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=9&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=9&amp;state=closed.</a><br/><br/><h4 id="2">Github ids of Contributors to this release:</h4>
+<br/><ul>
+	<li>Arjan Molenaar</li>
+	<li>Fried Hoeben</li>
+	<li>Hans Joachim Desserud</li>
+	<li>Jeroen Ruijgers</li>
+	<li>Nicole Rauch</li>
+	<li>Robert C. Martin</li>
+	<li>Antoine Aumjaud</li>
+	<li>Matt Warhaftig</li>
+	<li>Serge Zukov</li>
+	<li>six42</li>
+</ul>
+<br/><span class="meta">Thanks to all of you!</span><br/><h3 id="3">Git History</h3>
+<br/><table>
+	<tr>
+		<td>2015-01-14</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Updated release notes.</td>
+	</tr>
+	<tr>
+		<td>2015-01-14</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #577 from hansjoachim/junit4.12</td>
+	</tr>
+	<tr>
+		<td>2015-01-14</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #576 from salandur/issue_575</td>
+	</tr>
+	<tr>
+		<td>2015-01-13</td>
+		<td>Hans Joachim Desserud</td>
+		<td colspan="2">Switch from junit-dep to junit and upgrade to latest version (4.12)</td>
+	</tr>
+	<tr>
+		<td>2015-01-12</td>
+		<td>Jeroen Ruijgers</td>
+		<td colspan="2">fixes 575: When using a Query decission table, not all wrongs are reported in the JUnitRunNotifierResultsListener</td>
+	</tr>
+	<tr>
+		<td>2015-01-07</td>
+		<td>Jeroen Ruijgers</td>
+		<td colspan="2">fixes 575: When using a Query decission table, not all wrongs are reported in the JUnitRunNotifierResultsListener</td>
+	</tr>
+	<tr>
+		<td>2015-01-05</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #573 from salandur/master</td>
+	</tr>
+	<tr>
+		<td>2015-01-05</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #574 from mwarhaftig/issue537</td>
+	</tr>
+	<tr>
+		<td>2015-01-01</td>
+		<td>mwarhaftig</td>
+		<td colspan="2">Ignore ';' when script table looking up scenario name.</td>
+	</tr>
+	<tr>
+		<td>2014-12-30</td>
+		<td>Jeroen Ruijgers</td>
+		<td colspan="2">fixes #572: When running tests with 'runTestsMatchingAllTags' and 'excludeSuiteFilter', the exclude filter behaves AND-like</td>
+	</tr>
+	<tr>
+		<td>2014-12-24</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Revert 563e87f, added extra acceptance test. Fixes #570.</td>
+	</tr>
+	<tr>
+		<td>2014-12-22</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #571 from hansjoachim/dependencies</td>
+	</tr>
+	<tr>
+		<td>2014-12-19</td>
+		<td>Hans Joachim Desserud</td>
+		<td colspan="2">Upgraded dependencies</td>
+	</tr>
+	<tr>
+		<td>2014-12-10</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Try to solve compile issue on Jenkins. Can't reproduce it locally.</td>
+	</tr>
+	<tr>
+		<td>2014-12-08</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Format wiki text when switching from rich to text area when auto format is on.</td>
+	</tr>
+	<tr>
+		<td>2014-12-07</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Fixed typo Occured -&gt; Occurred.</td>
+	</tr>
+	<tr>
+		<td>2014-12-06</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Escape ( ) new lines defined in table cells. Fixes #471.</td>
+	</tr>
+	<tr>
+		<td>2014-12-06</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Update release notes.</td>
+	</tr>
+	<tr>
+		<td>2014-12-06</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #554 from amolenaar/xml-transformer</td>
+	</tr>
+	<tr>
+		<td>2014-10-21</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Use java.xml.transform to produce XML. This should prevent encoding issues.</td>
+	</tr>
+	<tr>
+		<td>2014-12-06</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Change badge to refer to latest release.</td>
+	</tr>
+	<tr>
+		<td>2014-12-05</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #563 from sergebug/master</td>
+	</tr>
+	<tr>
+		<td>2014-12-05</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #561 from NicoleRauch/master</td>
+	</tr>
+	<tr>
+		<td>2014-12-03</td>
+		<td>unknown</td>
+		<td colspan="2">Added CSS for print media.</td>
+	</tr>
+	<tr>
+		<td>2014-12-01</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #562 from hansjoachim/mockito</td>
+	</tr>
+	<tr>
+		<td>2014-11-08</td>
+		<td>Nicole Rauch</td>
+		<td colspan="2">Removed an unused field.</td>
+	</tr>
+	<tr>
+		<td>2014-11-08</td>
+		<td>Nicole Rauch</td>
+		<td colspan="2">Static fields and methods should be accessed in a static way.</td>
+	</tr>
+	<tr>
+		<td>2014-11-08</td>
+		<td>Nicole Rauch</td>
+		<td colspan="2">Removed unused methods.</td>
+	</tr>
+	<tr>
+		<td>2014-11-08</td>
+		<td>Nicole Rauch</td>
+		<td colspan="2">Removed unused imports.</td>
+	</tr>
+	<tr>
+		<td>2014-11-29</td>
+		<td>Hans Joachim Desserud</td>
+		<td colspan="2">Upgrade Mockito dependency</td>
+	</tr>
+	<tr>
+		<td>2014-11-26</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Remove VersionsController.setHistoryDepth(). When needed use the ComponentFactory facilities to configure history depth.</td>
+	</tr>
+	<tr>
+		<td>2014-11-26</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Create components created via a property/parameter only once.</td>
+	</tr>
+	<tr>
+		<td>2014-11-19</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #557 from mwarhaftig/master</td>
+	</tr>
+	<tr>
+		<td>2014-11-19</td>
+		<td>mwarhaftig</td>
+		<td colspan="2">Issue 553 - Undid unnecessary changes to TestExecutionReportTest.</td>
+	</tr>
+	<tr>
+		<td>2014-11-19</td>
+		<td>mwarhaftig</td>
+		<td colspan="2">Merge branch 'master' of https://github.com/mwarhaftig/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2014-11-19</td>
+		<td>mwarhaftig</td>
+		<td colspan="2">Issue 553 - Remove invalid control characters via velocity directive.</td>
+	</tr>
+	<tr>
+		<td>2014-11-13</td>
+		<td>unknown</td>
+		<td colspan="2">eclipse insists on excluding folder</td>
+	</tr>
+	<tr>
+		<td>2014-11-13</td>
+		<td>mwarhaftig</td>
+		<td colspan="2">Issue 553 - Added testcase to TestExecutionReportTest.</td>
+	</tr>
+	<tr>
+		<td>2014-11-13</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #555 from salandur/configurable_fitnesse_runner</td>
+	</tr>
+	<tr>
+		<td>2014-11-11</td>
+		<td>Jeroen Ruijgers</td>
+		<td colspan="2">added system property to @Suite and @SuiteFilter annotations</td>
+	</tr>
+	<tr>
+		<td>2014-11-11</td>
+		<td>Jeroen Ruijgers</td>
+		<td colspan="2">added the AND strategy for the SuiteFilter to the FitNesseRunner</td>
+	</tr>
+	<tr>
+		<td>2014-11-09</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #552 from mwarhaftig/master</td>
+	</tr>
+	<tr>
+		<td>2014-11-09</td>
+		<td>mwarhaftig</td>
+		<td colspan="2">Issue #541 - Added SymLinks &amp; PROPERTY_CHARACTERS variable to !contents.</td>
+	</tr>
+	<tr>
+		<td>2014-11-09</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #551 from NicoleRauch/master</td>
+	</tr>
+	<tr>
+		<td>2014-11-08</td>
+		<td>Nicole Rauch</td>
+		<td colspan="2">Fixed a broken link.</td>
+	</tr>
+	<tr>
+		<td>2014-11-07</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Fix tests and styling issue in bootstrap theme.</td>
+	</tr>
+	<tr>
+		<td>2014-11-07</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #549 from six42/keyboard</td>
+	</tr>
+	<tr>
+		<td>2014-11-07</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge branch 'ignored-scenario'</td>
+	</tr>
+	<tr>
+		<td>2014-11-04</td>
+		<td>six42</td>
+		<td colspan="2">Revert "Slim Query/Table Table: manage variables assignment in VariableStore"</td>
+	</tr>
+	<tr>
+		<td>2014-11-04</td>
+		<td>six42</td>
+		<td colspan="2">Revert "removed dead code"</td>
+	</tr>
+	<tr>
+		<td>2014-11-04</td>
+		<td>six42</td>
+		<td colspan="2">additional keyboard shortcuts</td>
+	</tr>
+	<tr>
+		<td>2014-11-02</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Scenario's are marked as "ignored" if they contain no checks.</td>
+	</tr>
+	<tr>
+		<td>2014-11-01</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #492 from amolenaar/stopsuite</td>
+	</tr>
+	<tr>
+		<td>2014-11-01</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Remove offending test (stalls unit tests on windows for me).</td>
+	</tr>
+	<tr>
+		<td>2014-11-01</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">The Acceptance tests use a different port number. Slim servers started from tests use the default ports.</td>
+	</tr>
+	<tr>
+		<td>2014-11-01</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Be more verbose on SlimService errors. Port cycling starts at SLIM_PORT.</td>
+	</tr>
+	<tr>
+		<td>2014-10-31</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #538 from amolenaar/testresponder</td>
+	</tr>
+	<tr>
+		<td>2014-10-31</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Raise an error if trying to create a new page for an already existing page. Fixes #459.</td>
+	</tr>
+	<tr>
+		<td>2014-10-31</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Remove unused listener.</td>
+	</tr>
+	<tr>
+		<td>2014-10-31</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Make sure slim servers spawned in acceptance tests of not use conflicting port numbers.</td>
+	</tr>
+	<tr>
+		<td>2014-10-31</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Query tables should play well when not run.</td>
+	</tr>
+	<tr>
+		<td>2014-10-31</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Implemented SuiteSuite(Exception) feature. Now the whole suite execution can be stopped due to a StopSuite exception.</td>
+	</tr>
+	<tr>
+		<td>2014-10-31</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Remove port from command line execution. We do not start a server at all.</td>
+	</tr>
+	<tr>
+		<td>2014-10-30</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Add (single) test responder as specialization of suitereponder.</td>
+	</tr>
+	<tr>
+		<td>2014-10-30</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Rename TestResponder to SuiteResponder. Next, we'll create a specialised TestResponder.</td>
+	</tr>
+	<tr>
+		<td>2014-10-30</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #513 from amolenaar/wikiword</td>
+	</tr>
+	<tr>
+		<td>2014-10-30</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #525 from antoine-aumjaud/features/FIT-SetSymbolInStoreFromExpectation with protocol change addition.</td>
+	</tr>
+	<tr>
+		<td>2014-10-30</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Small protocol update (wiki) and cleanup in code.</td>
+	</tr>
+	<tr>
+		<td>2014-10-30</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Increment Slim server version. Raise exception if assign instruction is called for slim server version &lt; 0.4.</td>
+	</tr>
+	<tr>
+		<td>2014-10-29</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #525 from antoine-aumjaud/features/FIT-SetSymbolInStoreFromExpectation</td>
+	</tr>
+	<tr>
+		<td>2014-10-29</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #544 from amolenaar/fix/544</td>
+	</tr>
+	<tr>
+		<td>2014-10-26</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Remove UrlPathVariableSource dependency from ParsingPage.</td>
+	</tr>
+	<tr>
+		<td>2014-10-26</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #531 from mwarhaftig/master</td>
+	</tr>
+	<tr>
+		<td>2014-10-26</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Provide a special callback in case a test system can not start.</td>
+	</tr>
+	<tr>
+		<td>2014-10-26</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Fix test for custom comparator. It now works when executed from fitnesse-standalone.jar as well.</td>
+	</tr>
+	<tr>
+		<td>2014-10-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Move getValuefrom{Query</td>
+		<td>Table}ResultSymbol() to a separate helper class.</td>
+	</tr>
+	<tr>
+		<td>2014-10-23</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Updated README</td>
+	</tr>
+	<tr>
+		<td>2014-10-21</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #536 from six42/scenario_with_output</td>
+	</tr>
+	<tr>
+		<td>2014-10-21</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Update JGit to 3.5.0</td>
+	</tr>
+	<tr>
+		<td>2014-10-21</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Standalone zip should not contain META-INF stuff from dependencies.</td>
+	</tr>
+	<tr>
+		<td>2014-10-18</td>
+		<td>six42</td>
+		<td colspan="2">removed dead code</td>
+	</tr>
+	<tr>
+		<td>2014-10-18</td>
+		<td>six42</td>
+		<td colspan="2">Slim Query/Table Table: manage variables assignment in VariableStore</td>
+	</tr>
+	<tr>
+		<td>2014-10-17</td>
+		<td>six42</td>
+		<td colspan="2">Scenario with output parameters (alpha)</td>
+	</tr>
+	<tr>
+		<td>2014-10-16</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #534 from hansjoachim/upgrade-jgit</td>
+	</tr>
+	<tr>
+		<td>2014-10-16</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Remove architecture image from OneMinuteDescription page. It's confusing for newcomers.</td>
+	</tr>
+	<tr>
+		<td>2014-10-16</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Update client side page name validation.</td>
+	</tr>
+	<tr>
+		<td>2014-10-16</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Forbid pages names root and files to be created.</td>
+	</tr>
+	<tr>
+		<td>2014-10-13</td>
+		<td>mwarhaftig</td>
+		<td colspan="2">Issue #529 - Cleaned up unused Java imports.</td>
+	</tr>
+	<tr>
+		<td>2014-10-13</td>
+		<td>mwarhaftig</td>
+		<td colspan="2">Issue #529 - Passed UrlVariableSource to ParsingPage so no urlParams field.</td>
+	</tr>
+	<tr>
+		<td>2014-10-13</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #535 from hansjoachim/path</td>
+	</tr>
+	<tr>
+		<td>2014-10-12</td>
+		<td>mwarhaftig</td>
+		<td colspan="2">Issue #529 - Kept SystemVariableSource immutable. Passed request to ParsingPage.</td>
+	</tr>
+	<tr>
+		<td>2014-10-12</td>
+		<td>Hans Joachim Desserud</td>
+		<td colspan="2">Mark Linux path</td>
+	</tr>
+	<tr>
+		<td>2014-10-11</td>
+		<td>Hans Joachim Desserud</td>
+		<td colspan="2">Upgrade JGit to version 3.0</td>
+	</tr>
+	<tr>
+		<td>2014-10-10</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Removed BaseWikiPageResponder.</td>
+	</tr>
+	<tr>
+		<td>2014-10-10</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Redirect to symbolics section of properties page after modifying symlinks.</td>
+	</tr>
+	<tr>
+		<td>2014-10-10</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Fix aliases to support lower case wiki words.</td>
+	</tr>
+	<tr>
+		<td>2014-10-09</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Removed class fitnesse.wikitext.parser.WikiWordPath.</td>
+	</tr>
+	<tr>
+		<td>2014-10-09</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Now I can create and view a wikipage.</td>
+	</tr>
+	<tr>
+		<td>2014-10-08</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">update release notes.</td>
+	</tr>
+	<tr>
+		<td>2014-10-08</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Fix SimpleFileVersionsController so it can be configured in plugins.properties.</td>
+	</tr>
+	<tr>
+		<td>2014-10-07</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #532 from sergebug/master</td>
+	</tr>
+	<tr>
+		<td>2014-10-06</td>
+		<td>mwarhaftig</td>
+		<td colspan="2">Issue 529 - Gave URL params precedence over markup variables.</td>
+	</tr>
+	<tr>
+		<td>2014-10-06</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #530 from six42/master</td>
+	</tr>
+	<tr>
+		<td>2014-10-05</td>
+		<td>mwarhaftig</td>
+		<td colspan="2">Issue #529 - Added url key value pairs to test and page responders.</td>
+	</tr>
+	<tr>
+		<td>2014-10-06</td>
+		<td>six42</td>
+		<td colspan="2">Extended SlimHelperLibrary</td>
+	</tr>
+	<tr>
+		<td>2014-10-06</td>
+		<td>six42</td>
+		<td colspan="2">Scenario with output parameters (beta)</td>
+	</tr>
+	<tr>
+		<td>2014-10-05</td>
+		<td>six42</td>
+		<td colspan="2">Bug fix: A newly added page was not added to the recent changes page</td>
+	</tr>
+	<tr>
+		<td>2014-10-05</td>
+		<td>six42</td>
+		<td colspan="2">A practical example of the usage of smbolic links</td>
+	</tr>
+	<tr>
+		<td>2014-10-02</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Remove InMemoryPage.createChildPage().</td>
+	</tr>
+	<tr>
+		<td>2014-10-02</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Clean up VariableStore and SlimExecutionContext a little.</td>
+	</tr>
+	<tr>
+		<td>2014-09-30</td>
+		<td>szukov</td>
+		<td colspan="2">If classpath contained folders with spaces wrap string representation of full classpath into doublequotes otherwise class path split into few commandline parameters and external runners could not load classes.</td>
+	</tr>
+	<tr>
+		<td>2014-09-19</td>
+		<td>antoine-aumjaud</td>
+		<td colspan="2">format</td>
+	</tr>
+	<tr>
+		<td>2014-09-19</td>
+		<td>antoine-aumjaud</td>
+		<td colspan="2">merge</td>
+	</tr>
+	<tr>
+		<td>2014-09-19</td>
+		<td>antoine-aumjaud</td>
+		<td colspan="2">fix acceptance tests</td>
+	</tr>
+	<tr>
+		<td>2014-09-19</td>
+		<td>antoine-aumjaud</td>
+		<td colspan="2">fix tests</td>
+	</tr>
+	<tr>
+		<td>2014-09-19</td>
+		<td>antoine-aumjaud</td>
+		<td colspan="2">Remove java compilation warning</td>
+	</tr>
+	<tr>
+		<td>2014-09-19</td>
+		<td>antoine-aumjaud</td>
+		<td colspan="2">Add acceptance tests</td>
+	</tr>
+	<tr>
+		<td>2014-09-18</td>
+		<td>antoine-aumjaud</td>
+		<td colspan="2">Create assign instruction and return variables in result</td>
+	</tr>
+	<tr>
+		<td>2014-09-16</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Partially revert cf5381f after discussion on #519.</td>
+	</tr>
+	<tr>
+		<td>2014-09-15</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #520 from mwarhaftig/master</td>
+	</tr>
+	<tr>
+		<td>2014-09-15</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Fix cookies in Safari. Path component was malformed according to Safari (and rightly so). Now use default path ('/') and domain. Fixes #521.</td>
+	</tr>
+	<tr>
+		<td>2014-09-15</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Loosen use of symbols to `\w+`. Assignment and utilisation of symbols is not consistent for slim.</td>
+	</tr>
+	<tr>
+		<td>2014-09-15</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Fix symbol assignment. Make sure HTML escaping is done according to spec. Fixes #519.</td>
+	</tr>
+	<tr>
+		<td>2014-09-11</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Remove bottom padding from hash table.</td>
+	</tr>
+	<tr>
+		<td>2014-09-11</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Also present $var-&gt;[&lt;html/&gt;] properly, mainly for hash tables. Does not work if the symbol is used in a larger text.</td>
+	</tr>
+	<tr>
+		<td>2014-09-15</td>
+		<td>mwarhaftig</td>
+		<td colspan="2">Issue 251 - Added spacing between range comparison parts.</td>
+	</tr>
+	<tr>
+		<td>2014-09-11</td>
+		<td>mwarhaftig</td>
+		<td colspan="2">Fitnesse Issue #461 - Have !today option work if arguments followed by other text.</td>
+	</tr>
+	<tr>
+		<td>2014-09-10</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request "Clean up package dependencies #518".</td>
+	</tr>
+	<tr>
+		<td>2014-09-06</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Move ClassPathBuilder to TestRunner package.</td>
+	</tr>
+	<tr>
+		<td>2014-09-06</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Moved VariableSource out of MultipleTestSystems. TestPage's can tell their class path. Introduce ClassPath class, so elements and separator can be kept separator.</td>
+	</tr>
+	<tr>
+		<td>2014-09-05</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Send test ticket as header with a test run. Now you can start/stop tests remotely via the API. Hopefully fixes #503.</td>
+	</tr>
+	<tr>
+		<td>2014-09-05</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Remove RunningTestingTracker from FitNesseContext. Put it directly on TestResponder. MultipleTestsRunner no longer takes RunningTestingTracker as argument.</td>
+	</tr>
+	<tr>
+		<td>2014-09-05</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Little cleanup in BaseFormatter.</td>
+	</tr>
+	<tr>
+		<td>2014-09-05</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Fix timestamp used to store the page reference in tests. Should avoid errors like #514 from reoccurring.</td>
+	</tr>
+	<tr>
+		<td>2014-09-05</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Support spaces in link names (mainly url's). Fixes #502.</td>
+	</tr>
+	<tr>
+		<td>2014-09-05</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Link should also render PNG images, like it does with JPG and GIF.</td>
+	</tr>
+	<tr>
+		<td>2014-09-05</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Add properties Help, Suites and Files to JSON output. Fixes #517.</td>
+	</tr>
+	<tr>
+		<td>2014-09-03</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Get dependencies on fit, slim and server straight.</td>
+	</tr>
+	<tr>
+		<td>2014-09-03</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Emptied util package. Moved most of it to fitnesse.util. Only dependencies used from the fit package are left (also used from fitnesse).</td>
+	</tr>
+	<tr>
+		<td>2014-09-02</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Replace ListUtility implementations with JDK classes.</td>
+	</tr>
+	<tr>
+		<td>2014-08-31</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Replace all usages of util.StringUtil by commons-lang StringUtils.</td>
+	</tr>
+	<tr>
+		<td>2014-09-03</td>
+		<td>Robert C. Martin</td>
+		<td colspan="2">removed TestHistoryXml/properties.xml</td>
+	</tr>
+	<tr>
+		<td>2014-09-03</td>
+		<td>Robert C. Martin</td>
+		<td colspan="2">Merge branch 'master' of github.com:unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2014-09-03</td>
+		<td>Robert C. Martin</td>
+		<td colspan="2">fix line-counts</td>
+	</tr>
+	<tr>
+		<td>2014-09-03</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merge pull request #516 from fhoeben/FixScenarioTableExtensibility</td>
+	</tr>
+	<tr>
+		<td>2014-09-03</td>
+		<td>Fried Hoeben</td>
+		<td colspan="2">Fix visibility to allow createChild to be overridden in other package</td>
+	</tr>
+	<tr>
+		<td>2014-08-31</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Merged fitnese.wiki.mem with fitnesse.wiki.fs. The relation was cyclic.</td>
+	</tr>
+	<tr>
+		<td>2014-08-31</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Remove dependency from fitnesse.wiki on fitnesse.testrunner.</td>
+	</tr>
+	<tr>
+		<td>2014-08-31</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Move code from fitnesse.wikitext.Utils to fitnesse.html.HtmlUtil. Resolves cycle between fitnesse.html and -.wikitext.</td>
+	</tr>
+	<tr>
+		<td>2014-08-31</td>
+		<td>Arjan Molenaar</td>
+		<td colspan="2">Move WikiPageActions to fitnesse.responders.</td>
+	</tr>
+</table>
+
+    </article>
+    <footer>
+      <hr/>
+<br/><a href="../../FrontPage.html">.FrontPage</a> | <a href="../../FrontPage/FitNesseDevelopment/FrontPage.html">FrontPage</a> | <a href="../../RecentChanges.html">.RecentChanges</a><br/>
+    </footer>
+  </body>
+</html>

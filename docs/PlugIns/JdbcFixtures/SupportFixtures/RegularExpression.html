@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PlugIns.JdbcFixtures.SupportFixtures.RegularExpression</title>
+    <link rel="shortcut icon" type="image/png" href="../../../files/fitnesse/images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="../../../files/fitnesse/css/fitnesse_wiki.css">
+    <link rel="stylesheet" type="text/css" href="../../../files/fitnesse/css/fitnesse_pages.css">
+    <link rel="stylesheet" type="text/css" href="../../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
+    <script src="../../../files/fitnesse/javascript/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="../../../files/fitnesse/javascript/fitnesse.js" type="text/javascript"></script>
+    <script src="../../../files/fitnesse/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../../../files/fitnesse/bootstrap/js/respond.js" type="text/javascript"></script>
+  </head>
+  <body class="wikiPage">
+    <nav class="navbar-fixed-top " role="navigation">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+          <li><a href="../../../FitNesseDownload.html">Download</a></li>
+          <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+          <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+        </ul>
+      </div>
+      <ol class="page-actions btn-group">
+        <li class="expandall btn btn-xs">Expand All</li>
+        <li class="collapseall btn btn-xs">Collapse All</li>
+      </ol>
+      <ol class="breadcrumb">
+        <li><a href="../../../PlugIns.html">PlugIns</a></li>
+        <li><a href="../../../PlugIns/JdbcFixtures.html">JdbcFixtures</a></li>
+        <li><a href="../../../PlugIns/JdbcFixtures/SupportFixtures.html">SupportFixtures</a></li>
+        <li>RegularExpression</li>
+      </ol>
+    </nav>
+    <header>
+    </header>
+    <article>
+      <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/regex/Matcher.html">java.util.regex.Matcher</a><br/><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/regex/Pattern.html">java.util.regex.Pattern</a><br/><br/><table>
+	<tr>
+		<td>Comment</td>
+		<td colspan="12"><b>Pattern Fixture's fields and methods</b></td>
+	</tr>
+	<tr>
+		<td>regularExpression</td>
+		<td>input</td>
+		<td>replacement</td>
+		<td>ith</td>
+		<td>group()</td>
+		<td>replaceAll()</td>
+		<td>compile()</td>
+		<td>matcher()</td>
+		<td>find()</td>
+		<td>result()</td>
+		<td>appendReplacement()</td>
+		<td>appendTail()</td>
+		<td>groupi()</td>
+	</tr>
+	<tr>
+		<td>String</td>
+		<td>String</td>
+		<td>String</td>
+		<td>int</td>
+		<td>String</td>
+		<td>String</td>
+		<td>String</td>
+		<td>String</td>
+		<td>String</td>
+		<td>String</td>
+		<td>String</td>
+		<td>String</td>
+		<td>String</td>
+	</tr>
+</table>
+<br/><ul>
+	<li><b>regularExpression</b> A set of optional and required characters that form a pattern. The pattern may use parentheses to create <b>groups</b>.</li>
+	<li><b>compile()</b> generates a <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/regex/Pattern.html">java.util.regex.Pattern</a> from <i>regularExpression</i>.</li>
+	<li><b>input</b> A string that may contain a regular expression.</li>
+	<li><b>matcher()</b> generates a <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/regex/Matcher.html">java.util.regex.Matcher</a> from <i>input</i> using the <i>java.util.regex.Pattern</i> from <i>compile()</i>.</li>
+	<li><b>find()</b> Searches <i>input</i> for a <i>regularExpression</i> using a <i>java.util.regex.Matcher</i> from <i>matcher()</i>. It sets <i>ith</i> to 0, so that <i>groupi()</i> starts at the first sub-group. It returns true if the search succeeds. If the match succeeds then more information can be obtained via <i>group()</i> and <i>groupi()</i>. </li>
+	<li><b>group()</b>  Returns the entire input subsequence matched by the previous <i>find()</i>.</li>
+	<li><b>groupi()</b>  Returns the <i>ith</i> input subsequence matched by the previous <i>find()</i>. It increments <i>ith</i>. </li>
+	<li><b>replacement</b> <i>appendReplacement()</i> and <i>replaceAll()</i> generate a <i>result()</i>, which is a copy of <i>input</i> with the <i>replacement</i> substituted for the <i>regularExpression</i>.</li>
+	<li><b>appendReplacement()</b> Implements a non-terminal append-and-replace step. Attempts to <i>find()</i>. If successful, it appends <i>replacement</i> to the <i>result()</i> and returns <i>true</i>.</li>
+	<li><b>appendTail()</b> Implements a terminal append-and-replace step.</li>
+	<li><b>replaceAll()</b> Replaces every occurrence of the <i>regularExpression</i> in the <i>input</i> with <i> replacement</i>.</li>
+	<li><b>result()</b> returns the resulting string from <i>appendReplacement()</i> and <i>appendTail()</i></li>
+</ul>
+<hr/>
+<br/><h1 id="0">Searching for expressions</h1>
+<h3 id="1">Using group() and group(int)</h3>
+<ul>
+	<li>Define a pattern for an apple, orange, or peach.</li>
+</ul>
+<table>
+	<tr>
+		<td>Pattern Fixture</td>
+	</tr>
+	<tr>
+		<td>regularExpression</td>
+	</tr>
+	<tr>
+		<td>(apple)|(orange)|(peach)</td>
+	</tr>
+</table>
+ <br/><table>
+	<tr>
+		<td>Pattern Fixture</td>
+	</tr>
+	<tr>
+		<td>compile?</td>
+	</tr>
+	<tr>
+		<td></td>
+	</tr>
+</table>
+<ul>
+	<li>Match against a string</li>
+</ul>
+<table>
+	<tr>
+		<td>Pattern Fixture</td>
+	</tr>
+	<tr>
+		<td>input</td>
+	</tr>
+	<tr>
+		<td>An apple, orange or peach a day will keep the doctor away.</td>
+	</tr>
+</table>
+<br/><br/><table>
+	<tr>
+		<td>Pattern Fixture</td>
+	</tr>
+	<tr>
+		<td>matcher?</td>
+	</tr>
+	<tr>
+		<td></td>
+	</tr>
+</table>
+<ul>
+	<li>Find each match. The group() and group(int index) functions return information about the match. group() and group(0) return the entire matching input sequence. The index corresponds to the number of left parenthesis from the beginning of the string, so</li>
+</ul>
+group(1) denotes <i>apple</i>. group(4) is undefined because the string has only 3 left parenthesis, so it throws an exception.<br/><br/><table>
+	<tr>
+		<td colspan="8">Pattern Fixture</td>
+	</tr>
+	<tr>
+		<td>find?</td>
+		<td>group?</td>
+		<td>groupi?</td>
+		<td>groupi?</td>
+		<td>groupi?</td>
+		<td>groupi?</td>
+		<td>groupi?</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>true</td>
+		<td>apple</td>
+		<td>apple</td>
+		<td>apple</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td>true</td>
+		<td>orange</td>
+		<td>orange</td>
+		<td></td>
+		<td>orange</td>
+		<td></td>
+		<td></td>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>true</td>
+		<td>peach</td>
+		<td>peach</td>
+		<td></td>
+		<td></td>
+		<td>peach</td>
+		<td></td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>false</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>4</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>5</td>
+	</tr>
+</table>
+<ul>
+	<li>Note that the fourth row fails to find any more expressions, but the fifth row starts back over at the beginning.</li>
+</ul>
+<br/><br/><hr/>
+<br/><h1 id="2">Replacing expressions</h1>
+<h3 id="3">Using appendReplacement() and appendTail()</h3>
+<table>
+	<tr>
+		<td colspan="4">Pattern Fixture</td>
+	</tr>
+	<tr>
+		<td>regularExpression</td>
+		<td>input</td>
+		<td>replacement</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>cat</td>
+		<td>one cat two cats in the yard</td>
+		<td>dog</td>
+		<td>Repace <i>cat</i> with <i>dog</i></td>
+	</tr>
+</table>
+ <br/><table>
+	<tr>
+		<td colspan="2">Pattern Fixture</td>
+	</tr>
+	<tr>
+		<td>compile?</td>
+		<td>matcher?</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+<br/><table>
+	<tr>
+		<td colspan="4">Pattern Fixture</td>
+	</tr>
+	<tr>
+		<td>appendReplacement?</td>
+		<td>appendReplacement?</td>
+		<td>appendReplacement?</td>
+		<td>appendTail?</td>
+	</tr>
+	<tr>
+		<td>one dog</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+<hr/>
+<br/><h1 id="4">Regular Expression Constructs</h1>
+This example uses shows how to use regular expressions to find parameters in a SQL script. The syntax for a parameter is <br/><ul>
+	<li>a colon</li>
+	<li>whitespace <i>optional</i></li>
+	<li><b>in</b>, <b>out</b> or <b>inout</b> <i>optional</i></li>
+	<li>and a single digit</li>
+</ul>
+<br/><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/regex/Pattern.html">java.util.regex.Pattern</a> contains a full list of constructs for defining regular expressions. <br/><br/><br/><table>
+	<tr>
+		<td>Comment</td>
+		<td colspan="3">:\s*(((in)?(out)?\s+)?(\d))\b</td>
+	</tr>
+	<tr>
+		<td><b>Characters</b></td>
+		<td><b>Matches</b></td>
+		<td colspan="2"><b>Example                                 </b></td>
+	</tr>
+	<tr>
+		<td>:</td>
+		<td>:</td>
+		<td colspan="2">:</td>
+	</tr>
+	<tr>
+		<td>\s*</td>
+		<td>Any number of whitespace characters:</td>
+		<td colspan="2">[ \t\n\x0B\f\r]</td>
+	</tr>
+	<tr>
+		<td>(</td>
+		<td>Expression 1</td>
+		<td colspan="2"><b>in 1</b> or <b> inout 2</b> or <b> out 3 </b> or <b> 4</b></td>
+	</tr>
+	<tr>
+		<td>(</td>
+		<td>Expression 2 - within Expression 1</td>
+		<td colspan="2"><b>in </b> or <b>inout </b> or <b>out </b></td>
+	</tr>
+	<tr>
+		<td>(</td>
+		<td>Expression 3 - within Expression 2</td>
+		<td colspan="2"><b>in</b></td>
+	</tr>
+	<tr>
+		<td>)?</td>
+		<td><b>)</b> -End ofExpression 3.<b>?</b> optional</td>
+		<td colspan="2">see above</td>
+	</tr>
+	<tr>
+		<td>(</td>
+		<td>Expression 4 - within Expression 2</td>
+		<td colspan="2"><b>out</b></td>
+	</tr>
+	<tr>
+		<td>)?</td>
+		<td><b>)</b> -End ofExpression 4.<b>?</b> optional</td>
+		<td colspan="2">see above</td>
+	</tr>
+	<tr>
+		<td>\s+</td>
+		<td>There must be at least one space following <i>in</i>/<i>out</i></td>
+		<td colspan="2">[ \t\n\x0B\f\r]</td>
+	</tr>
+	<tr>
+		<td>)?</td>
+		<td><b>)</b> -End ofExpression 2 (the <i>in</i>/<i>out</i> expression).<b>?</b> optional</td>
+		<td colspan="2">see above</td>
+	</tr>
+	<tr>
+		<td>(\d)</td>
+		<td>Expression 5</td>
+		<td colspan="2">0 1 2 3 ... 9</td>
+	</tr>
+	<tr>
+		<td>\b</td>
+		<td>Word Boundary - Followed by <b>whitespace</b> or <b>end of string</b></td>
+		<td></td>
+		<td><b><i>Not </i>123</b> or <b>1ABC</b></td>
+	</tr>
+</table>
+<br/><br/><br/><table>
+	<tr>
+		<td colspan="4">Pattern Fixture</td>
+	</tr>
+	<tr>
+		<td>regularExpression</td>
+		<td>input</td>
+		<td>compile?</td>
+		<td>matcher?</td>
+	</tr>
+	<tr>
+		<td>:\s*(((in)?(out)?\s+)?(\d))\b</td>
+		<td>Begin  :   out 1 : = : 2 :in 3 :inout 4;  end; :inin 5 :outout 6  :77 :8</td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+<br/>':inin 5', ':outout6' and ':77' do not have the correct syntax.<br/><br/><table>
+	<tr>
+		<td colspan="7">Pattern Fixture</td>
+	</tr>
+	<tr>
+		<td>find?</td>
+		<td>groupi?</td>
+		<td>groupi?</td>
+		<td>groupi?</td>
+		<td>groupi?</td>
+		<td>groupi?</td>
+		<td>groupi?</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+<br/><h1 id="5">Replacing with a Group Reference</h1>
+<h3 id="6">Using replaceAll() and $<i>G</i></h3>
+<b>replacemenent</b> can refer to the original capturing group with a $<i>G</i>, where <i>G</i> is between 0 and 9.<br/><br/>Call <b>replaceAll()</b> with same Expression<br/><table>
+	<tr>
+		<td colspan="4">Pattern Fixture</td>
+	</tr>
+	<tr>
+		<td>matcher?</td>
+		<td>replacement</td>
+		<td>replaceAll()</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>$0</td>
+		<td>Begin  :   out 1 : = : 2 :in 3 :inout 4;  end; :inin 5 :outout 6  :77 :8</td>
+		<td><i>Output matches input</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>:$1</td>
+		<td>Begin  :out 1 : = :2 :in 3 :inout 4;  end; :inin 5 :outout 6  :77 :8</td>
+		<td><i>Strip spaces after colon </i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>:$5</td>
+		<td>Begin  :1 : = :2 :3 :4;  end; :inin 5 :outout 6  :77 :8</td>
+		<td><i>Strip spaces and </i><b>in/out/inout</b></td>
+	</tr>
+</table>
+<br/><br/><br/>
+    </article>
+    <footer>
+      <center>FitNesse v20221102</center><center><a href="../../../FrontPage.html">Front Page</a> - <a href="../../../FitNesse/UserGuide.html">User Guide</a> - <a href="../../../FitNesseFeatures.html">Features</a> - <a href="../../../FitNesseDownload.html">Download</a> - <a href="../../../PlugIns.html">Plugins</a> - <a href="../../../PlugIns.html#slimfixtures">Fixtures</a> - <a href="https://gitter.im/fitnesse-org/fitnesse">Gitter Community</a></center>
+    </footer>
+  </body>
+</html>

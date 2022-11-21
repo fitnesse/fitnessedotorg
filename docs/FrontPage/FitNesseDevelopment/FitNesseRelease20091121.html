@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FrontPage.FitNesseDevelopment.FitNesseRelease20091121</title>
+    <link rel="shortcut icon" type="image/png" href="../../files/fitnesse/images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/css/fitnesse_wiki.css">
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/css/fitnesse_pages.css">
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
+    <script src="../../files/fitnesse/javascript/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/javascript/fitnesse.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/bootstrap/js/respond.js" type="text/javascript"></script>
+  </head>
+  <body class="wikiPage">
+    <nav class="navbar-fixed-top " role="navigation">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="../../FitNesseFeatures.html">Features</a></li>
+          <li><a href="../../FitNesseDownload.html">Download</a></li>
+          <li><a href="../../PlugIns.html">Plug-ins</a></li>
+          <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+        </ul>
+      </div>
+      <ol class="page-actions btn-group">
+        <li class="expandall btn btn-xs">Expand All</li>
+        <li class="collapseall btn btn-xs">Collapse All</li>
+      </ol>
+      <ol class="breadcrumb">
+        <li><a href="../../FrontPage.html">FrontPage</a></li>
+        <li><a href="../../FrontPage/FitNesseDevelopment.html">FitNesseDevelopment</a></li>
+        <li>FitNesseRelease20091121</li>
+      </ol>
+    </nav>
+    <header>
+    </header>
+    <article>
+      !release 20091121<br/><br/><h3 id="0"><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> Release Notes 11/21/2009</h3>
+<p class="note">Uncle Bob, Object Mentor, Inc.</p>
+<br/><p class="note"><span class="red">Requires Java 1.6</span></p>
+<br/><h4 id="1">Contributors to this release:</h4>
+<ul>
+	<li>Uncle Bob</li>
+	<li>Gregor Gramlich</li>
+	<li>Johannes Brodwall</li>
+	<li>Lars Vonk</li>
+	<li>Llewellyn Falco</li>
+	<li>Markus Gaertner</li>
+	<li>Tim Andersen</li>
+	<li>Edward Glowaki</li>
+	<li>Gael Falez</li>
+	<li>Erik Pragt</li>
+	<li>Jonathan Barrett</li>
+	<li>Dan Woodward</li>
+</ul>
+ <br/><span class="meta">Thanks to all of you!</span><br/><table>
+	<tr>
+		<td><h4 id="2">Since:</h4></td>
+		<td colspan="2"><a href="../../FrontPage/FitNesseDevelopment/FitNesseRelease20090818.html">20090818</a></td>
+	</tr>
+	<tr>
+		<td><h4 id="3">Expected Release Date:</h4></td>
+		<td>20091031</td>
+		<td><span class="pass">RELEASED</span></td>
+	</tr>
+	<tr>
+		<td><h4 id="4">Theme:</h4></td>
+		<td colspan="2">Command Line Test Running with -c</td>
+	</tr>
+</table>
+<br/><h3 id="5">Major Changes</h3>
+<ul>
+	<li>The -c command line argument allows you to run tests or suites (or any other Restful command) from the command line without starting the server.  This is perfect for ant tasks!  Check the User Guide for examples.</li>
+	<li>Suites XML reports are much more compact (and don't blow memory!).  Instead of containing all the test results, the XML is now a summary of the results that contains links to the test history.</li>
+	<li>New Widget: !{name:bob, addr:here} creates a special table called a "hash" (for lack of a better term).  If a hash is contained in a test table cell, the HTML will be sent to the Test System.  The Java slim implementation has an automatic converter that will convert this HTML to a HashMap.</li>
+	<li>-i command line argument for 'install only'.  This will cause the initial installation stuff to run, copying files etc, and fitnesse will quit instead of starting up.</li>
+	<li>New variable:  FITNESSE_ROOTPATH.  (See User Guide).</li>
+	<li>New Slim Table: SubsetQueryTable (See User Guide).</li>
+	<li>New Plugin for Maven classpath generation.  See Downloads Page.</li>
+	<li>Plugins will automatically be found if placed in the <i>plugins</i> folder.  No need for -cp arguments anymore.  java -jar fitnesse.jar works for all situations.</li>
+	<li>Tables can start with a hidden row by using #|some row|.  This allows you to get rid of the ugly first rows in Script tables.</li>
+	<li>The ugly tree panel is gone!  (yay!)</li>
+</ul>
+<br/><h3 id="6">Git History</h3>
+<table>
+	<tr>
+		<td>2009-11-21 16:23:43 +0100</td>
+		<td>unclebob</td>
+		<td>housekeeping</td>
+	</tr>
+	<tr>
+		<td>2009-11-21 15:19:18 +0100</td>
+		<td>unclebob</td>
+		<td>Edward Glowaki:  Added cmPreDelete to the CmSystem.</td>
+	</tr>
+	<tr>
+		<td>2009-11-21 13:18:24 +0100</td>
+		<td>unclebob</td>
+		<td>Gael Falez: Added page to TestHistoryResponder, allows you to see history for suites instead of everything.  Makes things much faster.</td>
+	</tr>
+	<tr>
+		<td>2009-11-19 14:11:17 +0100</td>
+		<td>unclebob</td>
+		<td>Changed build.xml to use new command line REST execution for acceptance tests.</td>
+	</tr>
+	<tr>
+		<td>2009-11-19 08:10:13 +0100</td>
+		<td>unclebob</td>
+		<td>-c command line argument to execute any REST command, and ?format=text for tests and suites.</td>
+	</tr>
+	<tr>
+		<td>2009-11-16 12:33:11 -0600</td>
+		<td>unclebob</td>
+		<td>-c argument to execute a single command</td>
+	</tr>
+	<tr>
+		<td>2009-11-13 13:22:53 -0600</td>
+		<td>unclebob</td>
+		<td>Added MapEditor so that fixtures that take Maps will translate from tables created by HashWidgets</td>
+	</tr>
+	<tr>
+		<td>2009-11-10 15:45:02 -0600</td>
+		<td>unclebob</td>
+		<td>Fix Erik Pragt's variable bug.  Get rid of tree panel.</td>
+	</tr>
+	<tr>
+		<td>2009-11-04 15:36:35 -0600</td>
+		<td>unclebob</td>
+		<td>Changed sort order for Page History to Latest First</td>
+	</tr>
+	<tr>
+		<td>2009-11-03 18:11:59 -0600</td>
+		<td>unclebob</td>
+		<td>Fix bug in variable replacement.</td>
+	</tr>
+	<tr>
+		<td>2009-11-02 12:16:06 -0600</td>
+		<td>unclebob</td>
+		<td>housekeeping</td>
+	</tr>
+	<tr>
+		<td>2009-10-26 10:04:48 +0100</td>
+		<td>Gregor Gramlich</td>
+		<td>Tables may start with a hidden row by adding a # at the beginning</td>
+	</tr>
+	<tr>
+		<td>2009-10-25 21:56:13 +0100</td>
+		<td>Gregor Gramlich</td>
+		<td>Evaluate variables within variables for PageData</td>
+	</tr>
+	<tr>
+		<td>2009-10-24 22:47:11 +0200</td>
+		<td>Gregor Gramlich</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse.git</td>
+	</tr>
+	<tr>
+		<td>2009-10-24 10:55:44 -0500</td>
+		<td>unclebob</td>
+		<td>added -i to Usage message.</td>
+	</tr>
+	<tr>
+		<td>2009-10-24 07:28:07 -0500</td>
+		<td>unclebob</td>
+		<td>Added fitnesse.jar to the default COMMAND_PATTERN so that newbies have an easier time getting tests to run.</td>
+	</tr>
+	<tr>
+		<td>2009-10-23 13:00:00 -0500</td>
+		<td>unclebob</td>
+		<td>Lighthouse #163: !include-ing a parent page throws exceptions.  Added error message.</td>
+	</tr>
+	<tr>
+		<td>2009-10-19 18:22:42 +0200</td>
+		<td>Gregor Gramlich</td>
+		<td>Store rendered variables, so that variables within variable definitions can are evaluated for PageData</td>
+	</tr>
+	<tr>
+		<td>2009-10-18 16:00:24 +0200</td>
+		<td>unclebob</td>
+		<td>Fixed #161, simple scenario name with unnamed argument not recognized as scenario</td>
+	</tr>
+	<tr>
+		<td>2009-10-17 16:29:57 +0200</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of git://github.com/ggramlich/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-10-17 16:29:47 +0200</td>
+		<td>unclebob</td>
+		<td>housekeeping</td>
+	</tr>
+	<tr>
+		<td>2009-10-17 13:46:08 +0200</td>
+		<td>Lars Vonk</td>
+		<td>removed maven lib from classpath</td>
+	</tr>
+	<tr>
+		<td>2009-10-17 13:42:58 +0200</td>
+		<td>Lars Vonk</td>
+		<td>removed maven classpath support to separate plugin</td>
+	</tr>
+	<tr>
+		<td>2009-10-16 09:35:00 +0200</td>
+		<td>Gregor Gramlich</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse.git</td>
+	</tr>
+	<tr>
+		<td>2009-10-14 00:16:38 +0200</td>
+		<td>unclebob</td>
+		<td>housekeeping</td>
+	</tr>
+	<tr>
+		<td>2009-10-13 23:12:39 +0200</td>
+		<td>Lars Vonk</td>
+		<td>fixed endless loop in running tests with trinidad in case the slimport is already in use</td>
+	</tr>
+	<tr>
+		<td>2009-10-13 21:58:37 +0200</td>
+		<td>Lars Vonk</td>
+		<td>merged with master fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-10-10 18:10:03 -0500</td>
+		<td>unclebob</td>
+		<td>Symbols in TableTable are reported properly</td>
+	</tr>
+	<tr>
+		<td>2009-10-10 22:15:18 +0200</td>
+		<td>Gregor Gramlich</td>
+		<td>Javascript Table Formatter: Do not remove table prefixes and suffixes</td>
+	</tr>
+	<tr>
+		<td>2009-10-10 12:07:16 -0500</td>
+		<td>unclebob</td>
+		<td>PluginsClassLoader now uses util.FileUtil</td>
+	</tr>
+	<tr>
+		<td>2009-10-10 11:43:26 -0500</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of git://github.com/timander/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-10-10 07:11:14 -0500</td>
+		<td>unclebob</td>
+		<td>Moved classpath management code to FileUtil</td>
+	</tr>
+	<tr>
+		<td>2009-10-09 18:15:13 -0500</td>
+		<td>Tim Andersen</td>
+		<td>applied the code style using fitnesse.xml and wrote a test for plugins directory not existing</td>
+	</tr>
+	<tr>
+		<td>2009-10-09 18:00:01 -0500</td>
+		<td>Tim Andersen</td>
+		<td>used URLClassLoader instead of changing java.class.path to dynamically load plugin jars (Lighthouse #63)</td>
+	</tr>
+	<tr>
+		<td>2009-10-09 13:53:14 -0500</td>
+		<td>Tim Andersen</td>
+		<td>created PluginClasspathLoader to dynamically add jars in the plugins folder to the classpath at runtime (Lighthouse #63)</td>
+	</tr>
+	<tr>
+		<td>2009-10-07 02:19:01 +0200</td>
+		<td>Lars Vonk</td>
+		<td>forgot to add new stuff... still learning git.</td>
+	</tr>
+	<tr>
+		<td>2009-10-07 02:05:40 +0200</td>
+		<td>Lars Vonk</td>
+		<td>added maven classpath generation support from pom file. currently only supports the compile scope.</td>
+	</tr>
+	<tr>
+		<td>2009-10-06 08:46:43 -0500</td>
+		<td>unclebob</td>
+		<td>housekeeping</td>
+	</tr>
+	<tr>
+		<td>2009-10-06 08:36:57 -0500</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of git://github.com/ggramlich/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-10-06 08:36:39 -0500</td>
+		<td>unclebob</td>
+		<td>housekeeping</td>
+	</tr>
+	<tr>
+		<td>2009-10-06 11:57:31 +0200</td>
+		<td>Gregor Gramlich</td>
+		<td>Subset query documentation</td>
+	</tr>
+	<tr>
+		<td>2009-10-06 10:35:26 +0200</td>
+		<td>Gregor Gramlich</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse.git</td>
+	</tr>
+	<tr>
+		<td>2009-10-05 21:55:51 +0200</td>
+		<td>Gregor Gramlich</td>
+		<td>Slim Subset Query table</td>
+	</tr>
+	<tr>
+		<td>2009-10-05 14:49:04 -0500</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of git://github.com/MarkusGaertner/fitnessebacklogfixes</td>
+	</tr>
+	<tr>
+		<td>2009-10-05 14:45:43 -0500</td>
+		<td>unclebob</td>
+		<td>housekeeping</td>
+	</tr>
+	<tr>
+		<td>2009-10-05 14:37:13 -0500</td>
+		<td>unclebob</td>
+		<td>Merge branch 'dans_changes' of git://github.com/woodybrood/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-10-01 23:06:57 +0200</td>
+		<td>Markus Gaertner</td>
+		<td>some refactoring regarding textarea handling in the css definitions to avoid</td>
+	</tr>
+	<tr>
+		<td>2009-09-30 20:43:44 -0500</td>
+		<td>unknown</td>
+		<td>Updates based on my last build and fixes for the junits</td>
+	</tr>
+	<tr>
+		<td>2009-09-30 15:03:37 -0500</td>
+		<td>unclebob</td>
+		<td>merge</td>
+	</tr>
+	<tr>
+		<td>2009-09-30 14:48:28 -0500</td>
+		<td>unclebob</td>
+		<td>jcbarrett@internode.on.net Jonathan Barrett, FITNESSE_ROOTPATH variable</td>
+	</tr>
+	<tr>
+		<td>2009-09-30 08:38:00 -0500</td>
+		<td>unknown</td>
+		<td>Merge branch 'HEAD' of http://github.com/unclebob/fitnesse.git into dans_changes</td>
+	</tr>
+	<tr>
+		<td>2009-09-30 07:04:17 -0500</td>
+		<td>unknown</td>
+		<td>My changes</td>
+	</tr>
+	<tr>
+		<td>2009-09-22 02:04:56 +0200</td>
+		<td>Johannes Brodwall</td>
+		<td>Updated pom.xml and pom.xml.template with newest dependencies:</td>
+	</tr>
+	<tr>
+		<td>2009-09-18 10:08:16 -0500</td>
+		<td>unclebob</td>
+		<td>housekeeping</td>
+	</tr>
+	<tr>
+		<td>2009-09-18 07:13:41 -0700</td>
+		<td>Llewellyn Falco</td>
+		<td>Merge branch 'master' into LatestChangesAAA</td>
+	</tr>
+	<tr>
+		<td>2009-09-14 10:44:24 -0500</td>
+		<td>unclebob</td>
+		<td>Merge branch 'master' of git://github.com/ggramlich/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-09-14 10:30:10 -0500</td>
+		<td>unclebob</td>
+		<td>Dan Woodward fixed OS dependency in UpdateFileList.</td>
+	</tr>
+	<tr>
+		<td>2009-09-12 08:26:33 -0700</td>
+		<td>Llewellyn Falco</td>
+		<td>added -i command line (install only)</td>
+	</tr>
+	<tr>
+		<td>2009-09-11 21:39:27 +0200</td>
+		<td>Gregor Gramlich</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse.git</td>
+	</tr>
+	<tr>
+		<td>2009-09-11 11:01:02 -0500</td>
+		<td>unclebob</td>
+		<td>Dan Woodward's fix for multiple symbols in a cell.</td>
+	</tr>
+	<tr>
+		<td>2009-09-08 05:56:11 -0500</td>
+		<td>unclebob</td>
+		<td>Added hash tables to user guide.</td>
+	</tr>
+	<tr>
+		<td>2009-09-07 12:17:56 -0500</td>
+		<td>unclebob</td>
+		<td>Added HashWidget</td>
+	</tr>
+	<tr>
+		<td>2009-09-04 04:28:45 -0500</td>
+		<td>unclebob</td>
+		<td>Fixed bug that did not allow more than one colon in a TableTable response</td>
+	</tr>
+	<tr>
+		<td>2009-09-03 21:23:24 +0200</td>
+		<td>Gregor Gramlich</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse.git</td>
+	</tr>
+	<tr>
+		<td>2009-09-03 21:17:51 +0200</td>
+		<td>Gregor Gramlich</td>
+		<td>Adapted Jsr223 signatures to work with Rhino</td>
+	</tr>
+	<tr>
+		<td>2009-08-27 17:58:26 -0500</td>
+		<td>unclebob</td>
+		<td>Added PageHeader and PageFooter to automatic update list.</td>
+	</tr>
+	<tr>
+		<td>2009-08-27 16:41:56 -0500</td>
+		<td>unclebob</td>
+		<td>Fix test compare when -d switch is used.</td>
+	</tr>
+	<tr>
+		<td>2009-08-20 22:24:31 +0200</td>
+		<td>Gregor Gramlich</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse</td>
+	</tr>
+	<tr>
+		<td>2009-08-20 15:00:16 -0500</td>
+		<td>unclebob</td>
+		<td>Made Suite XML a LOT smaller and included pageHistoryLinks</td>
+	</tr>
+	<tr>
+		<td>2009-08-20 13:30:07 -0500</td>
+		<td>unclebob</td>
+		<td>housekeeping</td>
+	</tr>
+	<tr>
+		<td>2009-08-19 22:06:47 +0200</td>
+		<td>Gregor Gramlich</td>
+		<td>Merge branch 'master' of git://github.com/unclebob/fitnesse.git</td>
+	</tr>
+	<tr>
+		<td>2009-08-19 21:26:53 +0200</td>
+		<td>Gregor Gramlich</td>
+		<td>extracted Slim JUnit test base classes</td>
+	</tr>
+	<tr>
+		<td>2009-08-18 16:10:16 -0500</td>
+		<td>unclebob</td>
+		<td>Update User Guide</td>
+	</tr>
+	<tr>
+		<td>2009-08-18 14:30:43 -0500</td>
+		<td>unclebob</td>
+		<td>More acceptance tests to Slim</td>
+	</tr>
+	<tr>
+		<td>2009-08-18 12:40:35 -0500</td>
+		<td>unclebob</td>
+		<td>housekeeping</td>
+	</tr>
+</table>
+
+    </article>
+    <footer>
+      <hr/>
+<br/><a href="../../FrontPage.html">.FrontPage</a> | <a href="../../FrontPage/FitNesseDevelopment/FrontPage.html">FrontPage</a> | <a href="../../RecentChanges.html">.RecentChanges</a><br/>
+    </footer>
+  </body>
+</html>

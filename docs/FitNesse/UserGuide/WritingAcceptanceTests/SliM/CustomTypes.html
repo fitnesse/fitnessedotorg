@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FitNesse.UserGuide.WritingAcceptanceTests.SliM.CustomTypes</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../files/fitnesse/images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/css/fitnesse_wiki.css">
+    <link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/css/fitnesse_pages.css">
+    <link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
+    <script src="../../../../files/fitnesse/javascript/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="../../../../files/fitnesse/javascript/fitnesse.js" type="text/javascript"></script>
+    <script src="../../../../files/fitnesse/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../../../../files/fitnesse/bootstrap/js/respond.js" type="text/javascript"></script>
+  </head>
+  <body class="wikiPage">
+    <nav class="navbar-fixed-top " role="navigation">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+          <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+          <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+          <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+        </ul>
+      </div>
+      <ol class="page-actions btn-group">
+        <li class="expandall btn btn-xs">Expand All</li>
+        <li class="collapseall btn btn-xs">Collapse All</li>
+      </ol>
+      <ol class="breadcrumb">
+        <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+        <li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+        <li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">WritingAcceptanceTests</a></li>
+        <li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM.html">SliM</a></li>
+        <li>CustomTypes</li>
+      </ol>
+    </nav>
+    <header>
+    </header>
+    <article>
+      <h2 id="0">Adding custom type converters to Slim (Java)</h2>
+If you have a fixture whose methods take or return a class that is not one of the standard Slim types, you can add a customer type converter very easily.  There are two different ways to do this.<br/><br/>First, you can use the standard <span class="code">PropertyEditor</span> mechanism.  You can read about this in the Javadocs for <span class="code">PropertyEditor</span>.  In short, if you have a class named <span class="code">MyType</span> you can create a class named <span class="code">MyTypeEditor</span> that implements the <span class="code">PropertyEditor</span> interface (usually by extending <span class="code">PropertyEditorSupport</span>).  That's pretty much it.  There are three different search paths for this class, but I'll let you read about that in the Javadocs.<br/><p class="note">There is an example of this in fitnesse.slim.test.ZorkEditor</p>
+<br/>Or, you can use the lower level approach of registering a converter.<br/>The converter must derive from fitnesse.slim.Converter.<br/><pre>
+package fitnesse.slim;
+public interface Converter {
+  public String toString(Object o);
+  Object fromString(String arg);
+} </pre> As you can see this is pretty simple.  Your derivative must implement the toString method to convert your type to a string; and it must implement the fromString method to convert the string into your custom type.<br/><br/>Then, in the constructor of first fixture to uses that type simply put the following line of code: <pre>fitnesse.slim.converters.ConverterRegistry.addConverter(MyClass.class, new MyClassConverter())</pre><br/><br/><b>Please note</b> the application of converters to methods returning <span class="code">List</span>s is special: whether a converter is applied to a method's result depends on its <i>declared</i> return type:<br/><ul>
+	<li>List (exactly, no sub-interface or class implementing it): converter is <b>not applied</b> (this is needed for some Slim tables, such as QueryTable).</li>
+	<li>All return types: converter is applied, based on the actual class of the object returned, or on its declared type when <span class="code">null</span> is returned </li>
+</ul>
+<br/><br/>The technique for other language platforms should be similar to this.  Check the documentation of the Slim port for your platform. <br/>
+    </article>
+    <footer>
+      <center>User Guide Contents</center><center><a href="../../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+    </footer>
+  </body>
+</html>

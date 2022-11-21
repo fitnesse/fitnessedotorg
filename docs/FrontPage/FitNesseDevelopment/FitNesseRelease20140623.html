@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FrontPage.FitNesseDevelopment.FitNesseRelease20140623</title>
+    <link rel="shortcut icon" type="image/png" href="../../files/fitnesse/images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/css/fitnesse_wiki.css">
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/css/fitnesse_pages.css">
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
+    <script src="../../files/fitnesse/javascript/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/javascript/fitnesse.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/bootstrap/js/respond.js" type="text/javascript"></script>
+  </head>
+  <body class="wikiPage">
+    <nav class="navbar-fixed-top " role="navigation">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="../../FitNesseFeatures.html">Features</a></li>
+          <li><a href="../../FitNesseDownload.html">Download</a></li>
+          <li><a href="../../PlugIns.html">Plug-ins</a></li>
+          <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+        </ul>
+      </div>
+      <ol class="page-actions btn-group">
+        <li class="expandall btn btn-xs">Expand All</li>
+        <li class="collapseall btn btn-xs">Collapse All</li>
+      </ol>
+      <ol class="breadcrumb">
+        <li><a href="../../FrontPage.html">FrontPage</a></li>
+        <li><a href="../../FrontPage/FitNesseDevelopment.html">FitNesseDevelopment</a></li>
+        <li>FitNesseRelease20140623</li>
+      </ol>
+    </nav>
+    <header>
+    </header>
+    <article>
+      !release 20140623<br/><br/><h3 id="0"><a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> Release Notes 2014/06/23</h3>
+<p class="note">Uncle Bob Consulting LLC.</p>
+<br/><p class="note"><span class="red">Requires Java 1.6</span></p>
+<br/><h4 id="1">Major Changes since <a href="../../FrontPage/FitNesseDevelopment/FitNesseRelease20140418.html">20140418</a>:</h4>
+<br/><ul>
+	<li>Author information for GitVersionController.</li>
+	<li><i>?suite</i> and <i>?test</i> are now the same responder.</li>
+	<li>More useful failure message for jUnit runner.</li>
+	<li>Use String arrays for commands. This should avoid errors with spaces in path names.</li>
+	<li>Improved matching for query tables.</li>
+	<li>Plugins are now loaded relative to the <a href="../../FrontPage/FitNesseDevelopment/FitNesse.html">FitNesse</a> root path.</li>
+	<li>SLIM can handle checks on Map's.</li>
+	<li>Refactoring on wiki subsystem.</li>
+	<li>Issues fixed:<ul>
+	<li>Support more than one level of symlinks.</li>
+	<li>ErrorLog is written for tests ran with <i>format=text</i> or <i>format=xml</i>.</li>
+	<li>Rich Text Format horizontal scrollbar is missing.</li>
+	<li>Failure navigator should only show in case of failures.</li>
+</ul>
+</li>
+</ul>
+<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=6&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=6&amp;state=closed.</a><br/><br/><h4 id="2">Github ids of Contributors to this release:</h4>
+<br/><ul>
+	<li>Antoine Aumjaud</li>
+	<li>Arjan Molenaar</li>
+	<li>Arnout Engelen</li>
+	<li>Gregor Gramlich</li>
+	<li>Markus Gärtner</li>
+	<li>Serge Zukov</li>
+	<li>Stanimir Stamenkov</li>
+	<li>Yavor Nikolov</li>
+	<li>antoine-aumjaud</li>
+	<li>lldias</li>
+	<li>six42</li>
+</ul>
+<br/><span class="meta">Thanks to all of you!</span><br/><h3 id="3">Git History</h3>
+<br/><table>
+	<tr>
+		<td>2014-06-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix release notes' date.</td>
+	</tr>
+	<tr>
+		<td>2014-06-22</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #463 from stanio/fileuris</td>
+	</tr>
+	<tr>
+		<td>2014-06-22</td>
+		<td>Stanimir Stamenkov</td>
+		<td>Merge pull request #2 from amolenaar/stanio-uri</td>
+	</tr>
+	<tr>
+		<td>2014-06-21</td>
+		<td>Arjan Molenaar</td>
+		<td>Add WikiPageUtil.resolveFileUri() to resolve file: URI's. As a fallback for non-hierarchical and authoritative uri's, try to resolve a file relative to the root path.</td>
+	</tr>
+	<tr>
+		<td>2014-06-21</td>
+		<td>Stanimir Stamenkov</td>
+		<td>Merge pull request #1 from amolenaar/stanio-uri</td>
+	</tr>
+	<tr>
+		<td>2014-06-21</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #463 from stanio/fileuris</td>
+	</tr>
+	<tr>
+		<td>2014-06-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Update release notes.</td>
+	</tr>
+	<tr>
+		<td>2014-06-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Use getChildPage to implement hasChildPage (instead of addChildPage, which adds a new page).</td>
+	</tr>
+	<tr>
+		<td>2014-06-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove autoCommit property from FileSystemPage. It has only been used in tests.</td>
+	</tr>
+	<tr>
+		<td>2014-06-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Let FileSystemPage no longer depend on the other page types. The road to extensibility.</td>
+	</tr>
+	<tr>
+		<td>2014-06-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Clean up in FileSystemPage</td>
+	</tr>
+	<tr>
+		<td>2014-06-19</td>
+		<td>Arjan Molenaar</td>
+		<td>move symbolicPageFactory to FileSystemPage.</td>
+	</tr>
+	<tr>
+		<td>2014-06-19</td>
+		<td>Arjan Molenaar</td>
+		<td>Dismantle BaseWikiPage: get rid of methods getNormalChildren and getNormalChildPage. Technically speaking, the only pages that can have symlinks are FileSystemPages. So only those pages need to resolve symlinks.</td>
+	</tr>
+	<tr>
+		<td>2014-06-18</td>
+		<td>Arjan Molenaar</td>
+		<td>Make it a real variable tool, working on a variable source.</td>
+	</tr>
+	<tr>
+		<td>2014-06-18</td>
+		<td>Arjan Molenaar</td>
+		<td>Improve EnvironmentVariableTool to VariableTool: can do any sort of variable replacement now.</td>
+	</tr>
+	<tr>
+		<td>2014-06-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Collapse variable.</td>
+	</tr>
+	<tr>
+		<td>2014-06-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Small update in user guide.</td>
+	</tr>
+	<tr>
+		<td>2014-06-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix typo</td>
+	</tr>
+	<tr>
+		<td>2014-06-17</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge branch 'fix/398'. Should fix #398.</td>
+	</tr>
+	<tr>
+		<td>2014-06-16</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #472 from six42/master</td>
+	</tr>
+	<tr>
+		<td>2014-06-14</td>
+		<td>six42</td>
+		<td>Merge remote-tracking branch 'upstream/master'</td>
+	</tr>
+	<tr>
+		<td>2014-06-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Add note on scenario parameters. Fixes #390.</td>
+	</tr>
+	<tr>
+		<td>2014-06-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #431 from amolenaar/commandrunneroutput</td>
+	</tr>
+	<tr>
+		<td>2014-06-13</td>
+		<td>six42</td>
+		<td>Further explications to variables, expressions and symbols</td>
+	</tr>
+	<tr>
+		<td>2014-06-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Update release notes.</td>
+	</tr>
+	<tr>
+		<td>2014-06-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Few textual improvements in UserGuide.oneMinuteDescription.</td>
+	</tr>
+	<tr>
+		<td>2014-06-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #468 from ggramlich/normalize_params_xml</td>
+	</tr>
+	<tr>
+		<td>2014-06-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Let SuiteReformatter close the history formatter before doing the reformatting. Fixed #460.</td>
+	</tr>
+	<tr>
+		<td>2014-06-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Cleanup redundant method in TestResponder.</td>
+	</tr>
+	<tr>
+		<td>2014-06-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Deal with Test not run (ignore) messages accordingly.</td>
+	</tr>
+	<tr>
+		<td>2014-06-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #467 from antoine-aumjaud/features/FIT-TableTableChangeIgnoreBehavior</td>
+	</tr>
+	<tr>
+		<td>2014-06-09</td>
+		<td>Arjan Molenaar</td>
+		<td>Invoke log publication from TestResponder.</td>
+	</tr>
+	<tr>
+		<td>2014-06-09</td>
+		<td>Arjan Molenaar</td>
+		<td>Forward exception from test system stop event to execution log.</td>
+	</tr>
+	<tr>
+		<td>2014-06-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Provide callback interface for ExecutionLog.</td>
+	</tr>
+	<tr>
+		<td>2014-06-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove print lines from PageDriver</td>
+	</tr>
+	<tr>
+		<td>2014-06-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Add line endings to log.</td>
+	</tr>
+	<tr>
+		<td>2014-06-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Make TestSystemListener methods private to MultipleTestsRunner (using inner class).</td>
+	</tr>
+	<tr>
+		<td>2014-06-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Explicitly mark MultipleTestSystemFactory as override.</td>
+	</tr>
+	<tr>
+		<td>2014-06-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove dead code (TestHtmlFormatter)</td>
+	</tr>
+	<tr>
+		<td>2014-06-08</td>
+		<td>Arjan Molenaar</td>
+		<td>Removed dangling debug line in suite xml file.</td>
+	</tr>
+	<tr>
+		<td>2014-06-06</td>
+		<td>Gregor Gramlich</td>
+		<td>removed unnecessary argument that shadowed class attribute</td>
+	</tr>
+	<tr>
+		<td>2014-06-06</td>
+		<td>Gregor Gramlich</td>
+		<td>In PageData.initializeAttributes() only set the attributes, without a value</td>
+	</tr>
+	<tr>
+		<td>2014-06-06</td>
+		<td>Gregor Gramlich</td>
+		<td>New Test to show the difference between the way the default attributes are created with the constructor of PageData and when saved through SavePropertiesResponder</td>
+	</tr>
+	<tr>
+		<td>2014-06-06</td>
+		<td>Gregor Gramlich</td>
+		<td>moved method setOrRemoveAttribute from SaveResponder and SavePropertiesResponder to PageData fixed some warnings</td>
+	</tr>
+	<tr>
+		<td>2014-06-06</td>
+		<td>Gregor Gramlich</td>
+		<td>standardize HelpText and Suites attribute handling in SavePropertiesResponder and SaveResponder</td>
+	</tr>
+	<tr>
+		<td>2014-06-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Write output to an interface.</td>
+	</tr>
+	<tr>
+		<td>2014-06-06</td>
+		<td>Arjan Molenaar</td>
+		<td>CommandRunner reads output per line.</td>
+	</tr>
+	<tr>
+		<td>2014-06-06</td>
+		<td>antoine-aumjaud</td>
+		<td>Improve code</td>
+	</tr>
+	<tr>
+		<td>2014-06-06</td>
+		<td>antoine-aumjaud</td>
+		<td>Format</td>
+	</tr>
+	<tr>
+		<td>2014-06-05</td>
+		<td>Stanimir Stamenkov</td>
+		<td>Support "file:" links with no authority specified (Issue #244)</td>
+	</tr>
+	<tr>
+		<td>2014-06-05</td>
+		<td>antoine-aumjaud</td>
+		<td>Change ignore behavior, as other code, replace the existing content by the message</td>
+	</tr>
+	<tr>
+		<td>2014-06-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #465 from lldias/gitfixes</td>
+	</tr>
+	<tr>
+		<td>2014-06-03</td>
+		<td>lldias</td>
+		<td>[git] sets the author of the commit operation (when available)</td>
+	</tr>
+	<tr>
+		<td>2014-06-03</td>
+		<td>lldias</td>
+		<td>[git] fix for IndexOutOfBoundsException when viewing RecentChanges</td>
+	</tr>
+	<tr>
+		<td>2014-06-02</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #458 from amolenaar/junit</td>
+	</tr>
+	<tr>
+		<td>2014-06-02</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #462 from stanio/master</td>
+	</tr>
+	<tr>
+		<td>2014-06-01</td>
+		<td>Stanimir Stamenkov</td>
+		<td>Don't encode source text to bytes and have the parser decode it back</td>
+	</tr>
+	<tr>
+		<td>2014-06-01</td>
+		<td>Stanimir Stamenkov</td>
+		<td>Drop unnecessary Document parameter where Element parameter also given</td>
+	</tr>
+	<tr>
+		<td>2014-06-01</td>
+		<td>Stanimir Stamenkov</td>
+		<td>Simplify getElementText() - employ Element.getTextContent()</td>
+	</tr>
+	<tr>
+		<td>2014-06-01</td>
+		<td>Stanimir Stamenkov</td>
+		<td>Remove duplicate method</td>
+	</tr>
+	<tr>
+		<td>2014-05-28</td>
+		<td>Arjan Molenaar</td>
+		<td>Show error messages in JUnit result.</td>
+	</tr>
+	<tr>
+		<td>2014-05-27</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove unused class fitnesse.junit.JUnitXMLTestListener.</td>
+	</tr>
+	<tr>
+		<td>2014-05-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #457 from antoine-aumjaud/features/FIT-Log_output_v2</td>
+	</tr>
+	<tr>
+		<td>2014-05-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Can now check maps returned from fixture. Fixes #442.</td>
+	</tr>
+	<tr>
+		<td>2014-05-26</td>
+		<td>Arjan Molenaar</td>
+		<td>Move hash testing to it's own fixture.</td>
+	</tr>
+	<tr>
+		<td>2014-05-23</td>
+		<td>antoine-aumjaud</td>
+		<td>Add a log in std output for backward compatibility with jenkins plungin</td>
+	</tr>
+	<tr>
+		<td>2014-05-22</td>
+		<td>Arjan Molenaar</td>
+		<td>Clean up wysiwyg code.</td>
+	</tr>
+	<tr>
+		<td>2014-05-22</td>
+		<td>Arjan Molenaar</td>
+		<td>Allow edit page to scroll. This would help when edit box is resized unintended.</td>
+	</tr>
+	<tr>
+		<td>2014-05-21</td>
+		<td>Arjan Molenaar</td>
+		<td>When explicitly executing a test or suite marked as "pruned", it will be executed. Previously only explicitly calling "test" on a test case would execute, a suite wouldn't.</td>
+	</tr>
+	<tr>
+		<td>2014-05-16</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove finalErrorCount field from BaseFormatter. Now a special test system listener is added when executing from command line.</td>
+	</tr>
+	<tr>
+		<td>2014-05-15</td>
+		<td>Arjan Molenaar</td>
+		<td>Make FitNesseMain.launch private.</td>
+	</tr>
+	<tr>
+		<td>2014-05-14</td>
+		<td>Arjan Molenaar</td>
+		<td>cleanup: syntax.</td>
+	</tr>
+	<tr>
+		<td>2014-05-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove SuiteResponder. Everything is handled by TestResponder now.</td>
+	</tr>
+	<tr>
+		<td>2014-05-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove tables code from testResults. It's not populated any way.</td>
+	</tr>
+	<tr>
+		<td>2014-05-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove complexity from piece of PageCrawler code.</td>
+	</tr>
+	<tr>
+		<td>2014-05-14</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge test responder and suite responder code.</td>
+	</tr>
+	<tr>
+		<td>2014-05-21</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #455 from antoine-aumjaud/features/FIT-DOC-CommandLineOption</td>
+	</tr>
+	<tr>
+		<td>2014-05-20</td>
+		<td>Antoine Aumjaud</td>
+		<td>Fix merge issue</td>
+	</tr>
+	<tr>
+		<td>2014-05-20</td>
+		<td>Antoine Aumjaud</td>
+		<td>Fix description of -o fitnesse command line arg</td>
+	</tr>
+	<tr>
+		<td>2014-05-18</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #451 from antoine-aumjaud/features/FIT-DOC-FixBehaviorMessage</td>
+	</tr>
+	<tr>
+		<td>2014-05-18</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #450 from antoine-aumjaud/features/FIT-DOC-FixCompileError</td>
+	</tr>
+	<tr>
+		<td>2014-05-18</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #447 from javornikolov/fix-fixture-get-args-for-table-formatting</td>
+	</tr>
+	<tr>
+		<td>2014-05-18</td>
+		<td>Arjan Molenaar</td>
+		<td>Clean up.</td>
+	</tr>
+	<tr>
+		<td>2014-05-18</td>
+		<td>Arjan Molenaar</td>
+		<td>Page path should be preserved when traversing symlinks.</td>
+	</tr>
+	<tr>
+		<td>2014-05-18</td>
+		<td>Arjan Molenaar</td>
+		<td>Avoid null pointer exception on errors in symlink path.</td>
+	</tr>
+	<tr>
+		<td>2014-05-18</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix error when linked page does on exist when creating the link</td>
+	</tr>
+	<tr>
+		<td>2014-05-13</td>
+		<td>Antoine Aumjaud</td>
+		<td>Fix documentation issues about TableTable in userguide</td>
+	</tr>
+	<tr>
+		<td>2014-05-13</td>
+		<td>Antoine Aumjaud</td>
+		<td>Fix compilation error</td>
+	</tr>
+	<tr>
+		<td>2014-05-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove setters from TestSummary again.</td>
+	</tr>
+	<tr>
+		<td>2014-05-13</td>
+		<td>Arjan Molenaar</td>
+		<td>Make TestSummary member fields private.</td>
+	</tr>
+	<tr>
+		<td>2014-05-12</td>
+		<td>Arjan Molenaar</td>
+		<td>Only write Suite history results for Suite pages. This will prevent calling them for Test pages.</td>
+	</tr>
+	<tr>
+		<td>2014-05-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix unintended showing of failure navigator in bootstrap theme. Fixes #448.</td>
+	</tr>
+	<tr>
+		<td>2014-05-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Small improvement to symlink responder.</td>
+	</tr>
+	<tr>
+		<td>2014-05-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Fix upload responder test for java 7</td>
+	</tr>
+	<tr>
+		<td>2014-05-11</td>
+		<td>Arjan Molenaar</td>
+		<td>fix some error message. They can no longer contain html markup.</td>
+	</tr>
+	<tr>
+		<td>2014-05-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove unused properties file.</td>
+	</tr>
+	<tr>
+		<td>2014-05-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Escape content in templates.</td>
+	</tr>
+	<tr>
+		<td>2014-05-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Do properly handle null values in Escape directive.</td>
+	</tr>
+	<tr>
+		<td>2014-05-11</td>
+		<td>Arjan Molenaar</td>
+		<td>Provide a decent error message if test system does not exist.</td>
+	</tr>
+	<tr>
+		<td>2014-05-07</td>
+		<td>Arjan Molenaar</td>
+		<td>Simplify duplicate file handling in UploadResponder. This prevents an infinite loop when files start with invalid characters, such as \0.</td>
+	</tr>
+	<tr>
+		<td>2014-05-06</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #220 from amolenaar/plugins-from-root</td>
+	</tr>
+	<tr>
+		<td>2014-05-06</td>
+		<td>Yavor Nikolov</td>
+		<td>Fixture.getArgsFor table fix: don't do unformat Unformat is corrupting text with &lt; and &gt; when comes from   block</td>
+	</tr>
+	<tr>
+		<td>2014-05-06</td>
+		<td>Yavor Nikolov</td>
+		<td>Refactor Fixture.testFixtureArguments</td>
+	</tr>
+	<tr>
+		<td>2014-05-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Remove ToDo and JunkParent page.</td>
+	</tr>
+	<tr>
+		<td>2014-05-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Renamed AdministeringFitnesse to AdministeringFitNesse.</td>
+	</tr>
+	<tr>
+		<td>2014-05-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #439 from six42/master</td>
+	</tr>
+	<tr>
+		<td>2014-05-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Add JDK configurations to build against.</td>
+	</tr>
+	<tr>
+		<td>2014-05-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #445 from javornikolov/image-parser-options-output-ordering</td>
+	</tr>
+	<tr>
+		<td>2014-05-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #444 from javornikolov/page-lists-setup-tear-down-tests-fix</td>
+	</tr>
+	<tr>
+		<td>2014-05-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #443 from javornikolov/fix-packet-responder-test-json-asserts</td>
+	</tr>
+	<tr>
+		<td>2014-05-05</td>
+		<td>Yavor Nikolov</td>
+		<td>Image parser: sort options by their keys This ensures deterministic output:     style="border:1px solid black;margin:5px 5px 5px 5px" and not allowing the alternative:     style="margin:5px 5px 5px 5px;border:1px solid black"</td>
+	</tr>
+	<tr>
+		<td>2014-05-05</td>
+		<td>Yavor Nikolov</td>
+		<td>Fix PageListSetUpTearDownSurrounderTest Assert that pages are surrounded by suite setup/teardown without expecting pre-defined ordering of all pages (since the latter is not guaranteed)</td>
+	</tr>
+	<tr>
+		<td>2014-05-05</td>
+		<td>Yavor Nikolov</td>
+		<td>Fix json asserts in PacketResponderTest By definition json attributes are unordered so simple toString comparison is not deterministic.</td>
+	</tr>
+	<tr>
+		<td>2014-05-05</td>
+		<td>Arjan Molenaar</td>
+		<td>Use StringBuilder append instead of String concatenation.</td>
+	</tr>
+	<tr>
+		<td>2014-04-27</td>
+		<td>six42</td>
+		<td>Add Full Reference Guide and extra links to the Quick Reference Guide</td>
+	</tr>
+	<tr>
+		<td>2014-04-27</td>
+		<td>six42</td>
+		<td>Merge pull request #1 from unclebob/master</td>
+	</tr>
+	<tr>
+		<td>2014-04-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #437 from amolenaar/commandline</td>
+	</tr>
+	<tr>
+		<td>2014-04-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #438 from sergebug/master</td>
+	</tr>
+	<tr>
+		<td>2014-04-23</td>
+		<td>Arjan Molenaar</td>
+		<td>Load plugins from the plugins directory relative to the rootPath (-d)</td>
+	</tr>
+	<tr>
+		<td>2014-04-22</td>
+		<td>Serge Zukov</td>
+		<td>autoUpdate by default was set to false. Due to this remote WIKI import was always removing auto-import attribute during test execution. Changed default value to true.</td>
+	</tr>
+	<tr>
+		<td>2014-04-21</td>
+		<td>Arjan Molenaar</td>
+		<td>Cleanup, for consistency.</td>
+	</tr>
+	<tr>
+		<td>2014-04-21</td>
+		<td>Arjan Molenaar</td>
+		<td>Use String[] for command lines. This makes it more predictable how the system will start.</td>
+	</tr>
+	<tr>
+		<td>2014-04-21</td>
+		<td>Arjan Molenaar</td>
+		<td>Fixed JUnit issue in IntelliJ. Order is different from command line runner.</td>
+	</tr>
+	<tr>
+		<td>2014-04-21</td>
+		<td>Arjan Molenaar</td>
+		<td>Merge pull request #436 from raboof/query_table</td>
+	</tr>
+	<tr>
+		<td>2014-04-19</td>
+		<td>Markus Gärtner</td>
+		<td>reformatted for unix</td>
+	</tr>
+	<tr>
+		<td>2014-04-19</td>
+		<td>Arnout Engelen</td>
+		<td>Improve matching invalid rows in query tables #380</td>
+	</tr>
+	<tr>
+		<td>2014-04-18</td>
+		<td>Arnout Engelen</td>
+		<td>Failing unit test for query table matching #380</td>
+	</tr>
+	<tr>
+		<td>2014-04-18</td>
+		<td>Arnout Engelen</td>
+		<td>Merge branch 'master' into query_table</td>
+	</tr>
+	<tr>
+		<td>2014-03-22</td>
+		<td>Arjan Molenaar</td>
+		<td>Check if directory exists, before creating it.</td>
+	</tr>
+	<tr>
+		<td>2014-01-13</td>
+		<td>Arnout Engelen</td>
+		<td>Show a situation where the decision table has 'invalid' and 'missing' rows</td>
+	</tr>
+</table>
+
+    </article>
+    <footer>
+      <hr/>
+<br/><a href="../../FrontPage.html">.FrontPage</a> | <a href="../../FrontPage/FitNesseDevelopment/FrontPage.html">FrontPage</a> | <a href="../../RecentChanges.html">.RecentChanges</a><br/>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FitNesse.UserGuide.WritingAcceptanceTests.FitFramework.RowFixture</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../files/fitnesse/images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/css/fitnesse_wiki.css">
+    <link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/css/fitnesse_pages.css">
+    <link rel="stylesheet" type="text/css" href="../../../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
+    <script src="../../../../files/fitnesse/javascript/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="../../../../files/fitnesse/javascript/fitnesse.js" type="text/javascript"></script>
+    <script src="../../../../files/fitnesse/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../../../../files/fitnesse/bootstrap/js/respond.js" type="text/javascript"></script>
+  </head>
+  <body class="wikiPage">
+    <nav class="navbar-fixed-top " role="navigation">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
+          <li><a href="../../../../FitNesseDownload.html">Download</a></li>
+          <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
+          <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+        </ul>
+      </div>
+      <ol class="page-actions btn-group">
+        <li class="expandall btn btn-xs">Expand All</li>
+        <li class="collapseall btn btn-xs">Collapse All</li>
+      </ol>
+      <ol class="breadcrumb">
+        <li><a href="../../../../FitNesse.html">FitNesse</a></li>
+        <li><a href="../../../../FitNesse/UserGuide.html">UserGuide</a></li>
+        <li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">WritingAcceptanceTests</a></li>
+        <li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework.html">FitFramework</a></li>
+        <li>RowFixture</li>
+      </ol>
+    </nav>
+    <header>
+    </header>
+    <article>
+      <h1 id="0">Checking Query Results Using RowFixture</h1>
+This style of test table is best for checking the results of queries. For the sake of discussion, let's call each of the items that you get back from a query a <b>record</b>. A <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/RowFixture.html">Row Fixture</a> lets you test that you get back <b>exactly the set of records</b> from a query that you expect to get.<br/><br/>Here is a simplistic example. Let's say that we have asked our application for the first five prime numbers.  We want to make sure we got them all.<br/><br/><table>
+	<tr>
+		<td>fitnesse.fixtures.PrimeNumberRowFixture</td>
+	</tr>
+	<tr>
+		<td>prime</td>
+	</tr>
+	<tr>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>5</td>
+	</tr>
+	<tr>
+		<td>7</td>
+	</tr>
+	<tr>
+		<td>11</td>
+	</tr>
+</table>
+<br/>This test table style does not read the way that a <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/ColumnFixture.html">Column Fixture</a> style test table does. In this case, each cell in the <i>prime</i> column represents a <b>key</b> that identifies one of the records we expect to get back (in this case, a prime number). And <b>the entire set of rows of data</b> represent the output we expect to get back: no more and no less than that <b>exact set of records</b> (though they need not be in that exact order).<br/><br/>Hit the test button to run this test. OK, we got them all. For an explanation of the fixture code for this <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/RowFixture.html">Row Fixture</a> example, see <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/RowFixtureCode.html">Row Fixture Code</a>.<br/><br/><h2 id="1">Missing Records</h2>
+The following table shows what happens when you ask for a record that doesn't exist. <i>(Note the extra 12.</i>)<br/><br/><table>
+	<tr>
+		<td>fitnesse.fixtures.PrimeNumberRowFixture</td>
+	</tr>
+	<tr>
+		<td>prime</td>
+	</tr>
+	<tr>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>5</td>
+	</tr>
+	<tr>
+		<td>7</td>
+	</tr>
+	<tr>
+		<td>11</td>
+	</tr>
+	<tr>
+		<td>12</td>
+	</tr>
+</table>
+<br/><h2 id="2">Surplus Records</h2>
+And this table shows what happens when you don't ask for a record that <i>is</i> in the query results.  <i>(Note the 11 is missing.)</i><br/><br/><table>
+	<tr>
+		<td>fitnesse.fixtures.PrimeNumberRowFixture</td>
+	</tr>
+	<tr>
+		<td>prime</td>
+	</tr>
+	<tr>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>5</td>
+	</tr>
+	<tr>
+		<td>7</td>
+	</tr>
+</table>
+<br/><h2 id="3">Testing Fields in Returned Records</h2>
+Often you want to see that you got a specific set of records back, <b>and</b>  you want to <b>test certain fields in the returned records</b>. For this you use the same question-mark syntax we saw used for output columns in <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/ColumnFixture.html">Column Fixture</a> style tables.<br/><br/>For example, lets say that we have a database of employee records.  We want to test that the employees were paid correctly. The <i>pay?</i> column in the table below specifies the exact amount we expect to get back for the pay field of each returned employee record:<br/><br/><table>
+	<tr>
+		<td colspan="2">fitnesse.fixtures.EmployeePayRecordsRowFixture</td>
+	</tr>
+	<tr>
+		<td>id</td>
+		<td>pay?</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>1000</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>2000</td>
+	</tr>
+</table>
+<br/><h3 id="4">Incorrect Output</h3>
+Here's what it would look like if the pay was not correct for the employee whose id is 2. It looks just as it does for incorrect output values in a <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/ColumnFixture.html">Column Fixture</a> table cell:<br/><br/><table>
+	<tr>
+		<td colspan="2">fitnesse.fixtures.EmployeePayRecordsRowFixture</td>
+	</tr>
+	<tr>
+		<td>id</td>
+		<td>pay?</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>1000</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>3000</td>
+	</tr>
+</table>
+<br/><h3 id="5">Missing or Extra Records</h3>
+And regardless whether you check aspects of queried records, <span class="fitnesse">FitNesse</span> shows you whether any are missing or extra:<br/><br/><table>
+	<tr>
+		<td colspan="2">fitnesse.fixtures.EmployeePayRecordsRowFixture</td>
+	</tr>
+	<tr>
+		<td>id</td>
+		<td>pay()</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>1000</td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>5000</td>
+	</tr>
+</table>
+<br/>To see the fixture code for these tables, see <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/RowFixtureCode.html">Row Fixture Code</a>.<br/><br/><h2 id="6">Querying Using Multiple "Keys"</h2>
+Sometimes we need more than one piece of data to uniquely identify a record.<br/><br/>Suppose we have records for the last three months' worth of paychecks.  Each paycheck is uniquely identified by the <i>employeeId</i> and the <i>date</i>.  We want to make sure that the checks were generated properly. We use a <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/RowFixture.html">Row Fixture</a> table to ask for a set of checks identified by both <i>employeeId</i> <b>and</b> <i>date</i>:<br/><br/><table>
+	<tr>
+		<td colspan="4">fitnesse.fixtures.PayCheckRecordFixture</td>
+	</tr>
+	<tr>
+		<td>date</td>
+		<td>employeeId</td>
+		<td>name</td>
+		<td>pay()</td>
+	</tr>
+	<tr>
+		<td>3/1/03</td>
+		<td>1</td>
+		<td></td>
+		<td>1000</td>
+	</tr>
+	<tr>
+		<td>3/1/03</td>
+		<td>2</td>
+		<td></td>
+		<td>2002</td>
+	</tr>
+	<tr>
+		<td>4/1/03</td>
+		<td>1</td>
+		<td></td>
+		<td>1015</td>
+	</tr>
+	<tr>
+		<td>4/1/03</td>
+		<td>2</td>
+		<td></td>
+		<td>2003</td>
+	</tr>
+</table>
+<br/>Notice, once again, that the order of the table rows doesn't matter.  For example, this table also works fine for that same query:<br/><br/><table>
+	<tr>
+		<td colspan="4">fitnesse.fixtures.PayCheckRecordFixture</td>
+	</tr>
+	<tr>
+		<td>date</td>
+		<td>employeeId</td>
+		<td>name</td>
+		<td>pay()</td>
+	</tr>
+	<tr>
+		<td>4/1/03</td>
+		<td>1</td>
+		<td></td>
+		<td>1015</td>
+	</tr>
+	<tr>
+		<td>3/1/03</td>
+		<td>1</td>
+		<td></td>
+		<td>1000</td>
+	</tr>
+	<tr>
+		<td>4/1/03</td>
+		<td>2</td>
+		<td></td>
+		<td>2003</td>
+	</tr>
+	<tr>
+		<td>3/1/03</td>
+		<td>2</td>
+		<td></td>
+		<td>2002</td>
+	</tr>
+</table>
+<br/><h3 id="7">Blank Fields</h3>
+Notice the <i>name</i> field. We provided the field name, knowing that it was part of each record, but we provided no expected values in that column. As a result, <span class="fitnesse">FitNesse</span> did not make this field part of the key for finding records, but merely filled in the values found for that field in each record, so we could see them. Here's what would have happened if we filled in the <i>name</i> column correctly for some cells, and incorrectly for another.<br/><br/><table>
+	<tr>
+		<td colspan="4">fitnesse.fixtures.PayCheckRecordFixture</td>
+	</tr>
+	<tr>
+		<td>date</td>
+		<td>employeeId</td>
+		<td>name</td>
+		<td>pay()</td>
+	</tr>
+	<tr>
+		<td>3/1/03</td>
+		<td>1</td>
+		<td>Bob</td>
+		<td>1000</td>
+	</tr>
+	<tr>
+		<td>4/1/03</td>
+		<td>1</td>
+		<td>Bob</td>
+		<td>1015</td>
+	</tr>
+	<tr>
+		<td>3/1/03</td>
+		<td>2</td>
+		<td>Bill</td>
+		<td>2002</td>
+	</tr>
+	<tr>
+		<td>4/1/03</td>
+		<td>2</td>
+		<td>Biff</td>
+		<td>2003</td>
+	</tr>
+</table>
+<br/>And here's what would happen if a row were missing or surplus.<br/><br/><table>
+	<tr>
+		<td colspan="4">fitnesse.fixtures.PayCheckRecordFixture</td>
+	</tr>
+	<tr>
+		<td>date</td>
+		<td>employeeId</td>
+		<td>name</td>
+		<td>pay()</td>
+	</tr>
+	<tr>
+		<td>3/1/03</td>
+		<td>1</td>
+		<td></td>
+		<td>1000</td>
+	</tr>
+	<tr>
+		<td>4/1/03</td>
+		<td>1</td>
+		<td></td>
+		<td>1015</td>
+	</tr>
+	<tr>
+		<td>3/1/03</td>
+		<td>2</td>
+		<td></td>
+		<td>2002</td>
+	</tr>
+	<tr>
+		<td>4/1/03</td>
+		<td>3</td>
+		<td></td>
+		<td>2003</td>
+	</tr>
+</table>
+<br/><h2 id="8">Summary</h2>
+<ul>
+	<li><a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/RowFixture.html">Row Fixture</a> tables are designed for checking that you get back exactly the set of records you want from a query.</li>
+	<li><span class="fitnesse">FitNesse</span> will cause the test to fail if the query had any <b>missing</b> or <b>surplus</b> records.</li>
+	<li>You can also test fields in the returned records.</li>
+	<li>If you provide a field name column, but provide no expected values for it, then <span class="fitnesse">FitNesse</span> will fill in the returned values so you can see them.</li>
+</ul>
+<br/><h2 id="9">Learning More</h2>
+To learn about the fixture code for the above examples, see <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/RowFixtureCode.html">Row Fixture Code</a>.<br/>Also check out the other <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/FitFramework/TestTableStyles.html">Test Table Styles</a>.<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    </article>
+    <footer>
+      <center>User Guide Contents</center><center><a href="../../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+    </footer>
+  </body>
+</html>

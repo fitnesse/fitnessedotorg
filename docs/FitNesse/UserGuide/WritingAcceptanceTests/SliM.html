@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FitNesse.UserGuide.WritingAcceptanceTests.SliM</title>
+    <link rel="shortcut icon" type="image/png" href="../../../files/fitnesse/images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="../../../files/fitnesse/css/fitnesse_wiki.css">
+    <link rel="stylesheet" type="text/css" href="../../../files/fitnesse/css/fitnesse_pages.css">
+    <link rel="stylesheet" type="text/css" href="../../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
+    <script src="../../../files/fitnesse/javascript/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="../../../files/fitnesse/javascript/fitnesse.js" type="text/javascript"></script>
+    <script src="../../../files/fitnesse/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../../../files/fitnesse/bootstrap/js/respond.js" type="text/javascript"></script>
+  </head>
+  <body class="wikiPage">
+    <nav class="navbar-fixed-top " role="navigation">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <a href="../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="../../../FitNesseFeatures.html">Features</a></li>
+          <li><a href="../../../FitNesseDownload.html">Download</a></li>
+          <li><a href="../../../PlugIns.html">Plug-ins</a></li>
+          <li><a href="../../../FitNesse/UserGuide.html">User Guide</a></li>
+        </ul>
+      </div>
+      <ol class="page-actions btn-group">
+        <li class="expandall btn btn-xs">Expand All</li>
+        <li class="collapseall btn btn-xs">Collapse All</li>
+      </ol>
+      <ol class="breadcrumb">
+        <li><a href="../../../FitNesse.html">FitNesse</a></li>
+        <li><a href="../../../FitNesse/UserGuide.html">UserGuide</a></li>
+        <li><a href="../../../FitNesse/UserGuide/WritingAcceptanceTests.html">WritingAcceptanceTests</a></li>
+        <li>SliM</li>
+      </ol>
+    </nav>
+    <header>
+    </header>
+    <article>
+      <span class="meta">variable defined: TEST_SYSTEM=slim</span>
+<br/><h2 id="0">The <i>SLIM</i> Test System</h2>
+Slim (Simple List Invocation Method) is an alternative to Fit. Rather than running all the HTML processing, comparisons, and colorizing in the System Under Test (SUT), Slim keeps all that behavior on in <span class="fitnesse">FitNesse</span>. What executes in the SUT is a very tiny kernel that implements the <a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/SlimProtocol.html"><i>Slim Protocol</i></a>. This protocol is a bare bones RPC system that allows <span class="fitnesse">FitNesse</span> to call functions in the SUT.<br/><br/>This strategy has a number of advantages:<br/><br/><ul>
+	<li>The Slim protocol is very easy to port. Getting new platforms to use SLIM is a matter of a few hours of work.</li>
+	<li>All the features are on the <span class="fitnesse">FitNesse</span> side, so test tables remain consistent regardless of the platform of the SUT.</li>
+	<li>Since HTML is not an intrinsic part of SLIM, new test syntaxes can be explored.</li>
+</ul>
+<br/><h3 id="1">Using the SLIM Test System</h3>
+If you want a test page to be run under SLIM, you simply set the TEST_SYSTEM variable to "slim" instead of "fit".<br/><br/><pre>!define TEST_SYSTEM {slim} </pre>If this variable is set on your page, (as it is on this page!) or on any parent page, then your page will be run with Slim. That's all there is to it.<br/><br/><h3 id="2">The Slim Tables</h3>
+The first cell of a slim table tells you what kind of table it is. Here are the table types so far:<br/><br/><table>
+	<tr>
+		<td><a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/DecisionTable.html">Decision Table</a></td>
+		<td>Supplies the inputs and outputs for decisions. This is similar to the Fit Column Fixture</td>
+	</tr>
+	<tr>
+		<td><a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/BaseLineDecisionTable.html">Baseline Decision Table</a></td>
+		<td>Almost identical to a <a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/DecisionTable.html">&gt;Decision Table</a> but more readable for very big tables with many columns as only the changed values from one line to the baseline must be specified. The fixture implementation is identical to <a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/DecisionTable.html">&gt;Decision Table</a>.</td>
+	</tr>
+	<tr>
+		<td><a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/DynamicDecisionTable.html">Dynamic Decision Table</a></td>
+		<td>Has the same syntax as a <a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/DecisionTable.html">&gt;Decision Table</a>, but differs in the fixture implementation. It passes the column headers as parameters to the fixture.</td>
+	</tr>
+	<tr>
+		<td><a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/HybridDecisionTable.html">Hybrid Decision Table</a></td>
+		<td>Combines the advantages in the fixture implementation of a Decision and a Dynamic Decision Table. Also supported by a <a href="../../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/BaseLineDecisionTable.html">Baseline Decision Table</a></td>
+	</tr>
+	<tr>
+		<td><a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/QueryTable.html">Query Table</a></td>
+		<td>Supplies the expected results of a query. This is similar to the Fit Row Fixture</td>
+	</tr>
+	<tr>
+		<td><a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/SubsetQueryTable.html">Subset Query Table</a></td>
+		<td>Supplies a subset of the expected results of a query.</td>
+	</tr>
+	<tr>
+		<td><a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/OrderedQueryTable.html">Ordered query Table</a></td>
+		<td>Supplies the expected results of a query. The rows are expected to be in order. This is similar to the Fit Row Fixture</td>
+	</tr>
+	<tr>
+		<td><a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/ScriptTable.html">Script Table</a></td>
+		<td>A series of actions and checks. Similar to Do Fixture.</td>
+	</tr>
+	<tr>
+		<td><a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/TableTable.html">Table Table</a></td>
+		<td>Whatever you want it to be!</td>
+	</tr>
+	<tr>
+		<td><a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/ImportTable.html">Import</a></td>
+		<td>Add a path to the fixture search path.</td>
+	</tr>
+	<tr>
+		<td><a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/CommentTable.html">Comment</a></td>
+		<td>A table that does nothing.</td>
+	</tr>
+	<tr>
+		<td><a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/ScenarioTable.html">Scenario Table</a></td>
+		<td>A table that can be called from other tables.</td>
+	</tr>
+	<tr>
+		<td><a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/LibraryTable.html">Library Table</a></td>
+		<td>A table that installs fixtures available for all test pages</td>
+	</tr>
+	<tr>
+		<td><a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/DefineTableType.html">Define Table Type</a></td>
+		<td>A helper table that defines the default table type for named fixtures.</td>
+	</tr>
+	<tr>
+		<td><a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/DefineAlias.html">Define Alias</a></td>
+		<td>A helper table that defines alias names for fixtures.</td>
+	</tr>
+</table>
+<br/><h4 id="3">Data Types.</h4>
+The data in your tables is all Strings. However your fixtures don't want to be constrained to Strings. So Slim comes with several standard data type converters that will automatically convert the strings in the tables into the data types expected by your fixtures.<br/><br/><b>See: <a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/DataTypes.html">&gt;Data Types</a></b><br/>You can also create your own custom type converters if you like.<br/><br/><b>See: <a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/CustomTypes.html">&gt;Custom Types</a></b><br/>Content returned from the SUT will be escaped by default, so your fixture can return a piece of output without the need to transform it to HTML compatible output. On the other hand, if you're returning HTML content (e.g. a &lt;table&gt;..&lt;/table&gt;), <span class="fitnesse">FitNesse</span> will try to detect that (based on a valid HTML start and end tag) and will render the HTML in-line.<br/><br/><h4 id="4">Configure SLIM</h4>
+The Slim test system can be configured using the following properties:<br/><br/><table>
+	<tr>
+		<td>slim.port</td>
+		<td>8085</td>
+		<td>Base port for SLIM.</td>
+	</tr>
+	<tr>
+		<td>slim.pool.size</td>
+		<td>10</td>
+		<td>The size of the pool of ports to cycle through. By default the ports 8085 up to 8095 are used (<i>slim.port</i> + <i>slim.pool.size</i>).</td>
+	</tr>
+	<tr>
+		<td>slim.host</td>
+		<td>localhost</td>
+		<td>The host the SLIM server will be running on. This is mostly useful if you're running a remote SLIM server.</td>
+	</tr>
+	<tr>
+		<td>slim.flags</td>
+		<td></td>
+		<td>Extra flags to provide to the SLIM server. Arguments supported by the slim service are: 
+[-v] [-i interactionClass] [-s statementTimeout] [-d] [-ssl parameterClass]</td>
+	</tr>
+	<tr>
+		<td>slim.timeout</td>
+		<td>10 seconds</td>
+		<td>Connection timeout starting and finishing a test run.</td>
+	</tr>
+	<tr>
+		<td>slim.debug.timeout</td>
+		<td><i>slim.timeout</i></td>
+		<td>Same as <i>slim.timeout</i>, used when the debug property is set (falls back to <i>slim.timeout</i>).</td>
+	</tr>
+	<tr>
+		<td>manually.start.test.runner.on.debug</td>
+		<td>false</td>
+		<td>Do not launch a SLIM server if the test is ran in debug mode.</td>
+	</tr>
+</table>
+<br/>Those properties can be either provided by a wiki page, on the command line (e.g. <i>-Dslim.port=9000</i>) or in the plugins.properties file.<br/><br/><h4 id="5">Extra Goodies that are consistent throughout all Slim tables and ports.</h4>
+<table>
+	<tr>
+		<td><a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/ExceptionHandling.html"><i>Exception Handling</i></a></td>
+	</tr>
+	<tr>
+		<td><a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/SymbolsInTables.html"><i>Symbols in tables</i></a></td>
+	</tr>
+	<tr>
+		<td><a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/ExpressionsInTables.html"><i>Expressions in tables</i></a></td>
+	</tr>
+	<tr>
+		<td><a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/ConstructorArguments.html"><i>Constructor arguments</i></a></td>
+	</tr>
+	<tr>
+		<td><a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/ValueComparisons.html"><i>Value comparisons</i></a></td>
+	</tr>
+	<tr>
+		<td><a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/GracefulNames.html"><i>Graceful names</i></a></td>
+	</tr>
+</table>
+<br/><h4 id="6">Java goodies</h4>
+<table>
+	<tr>
+		<td><a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/SystemUnderTest.html"><i>System Under Test</i></a></td>
+	</tr>
+	<tr>
+		<td><a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/InteractionAwareFixture.html"><i>Interaction Aware Fixture</i></a></td>
+	</tr>
+</table>
+
+    </article>
+    <footer>
+      <center>User Guide Contents</center><center><a href="../../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+    </footer>
+  </body>
+</html>

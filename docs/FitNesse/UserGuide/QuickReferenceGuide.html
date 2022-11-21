@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FitNesse.UserGuide.QuickReferenceGuide</title>
+    <link rel="shortcut icon" type="image/png" href="../../files/fitnesse/images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/css/fitnesse_wiki.css">
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/css/fitnesse_pages.css">
+    <link rel="stylesheet" type="text/css" href="../../files/fitnesse/bootstrap/css/fitnesse-bootstrap.css">
+    <script src="../../files/fitnesse/javascript/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/javascript/fitnesse.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../../files/fitnesse/bootstrap/js/respond.js" type="text/javascript"></script>
+  </head>
+  <body class="wikiPage">
+    <nav class="navbar-fixed-top " role="navigation">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <a href="../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="../../FitNesseFeatures.html">Features</a></li>
+          <li><a href="../../FitNesseDownload.html">Download</a></li>
+          <li><a href="../../PlugIns.html">Plug-ins</a></li>
+          <li><a href="../../FitNesse/UserGuide.html">User Guide</a></li>
+        </ul>
+      </div>
+      <ol class="page-actions btn-group">
+        <li class="expandall btn btn-xs">Expand All</li>
+        <li class="collapseall btn btn-xs">Collapse All</li>
+      </ol>
+      <ol class="breadcrumb">
+        <li><a href="../../FitNesse.html">FitNesse</a></li>
+        <li><a href="../../FitNesse/UserGuide.html">UserGuide</a></li>
+        <li>QuickReferenceGuide</li>
+      </ol>
+    </nav>
+    <header>
+    </header>
+    <article>
+      <div class="collapsible invisible"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">HIDDEN!</p>
+	<div><br/><br/><br/><br/><span class="meta">variable defined: TopFONT=!-&lt;font style="font-family:Arial;font-size:8pt"&gt;-!</span>
+<br/><span class="meta">variable defined: FONTend=!-&lt;/font&gt;-!</span>
+<br/><span class="meta">variable defined: TopOfPAGE=${TopFONT}${SPC}${SPC}${SPC}${SPC}${SPC}${SPC}${SPC}${SPC}[[${LPAREN}to top${RPAREN}][#TopOfPAGE]]${FONTend}</span>
+<br/><span class="meta">variable defined: FitNESSE=!-FitNesse-!</span>
+<br/><table>
+	<tr>
+		<td><span class="meta">variable defined: OPT=''[''</span></td>
+		<td><span class="meta">variable defined: OPTend='']''</span></td>
+		<td colspan="2"><span class="meta">variable defined: OR=''!-        |-!''</span></td>
+	</tr>
+	<tr>
+		<td><span class="meta">variable defined: DOT='''.'''</span></td>
+		<td><span class="meta">variable defined: LT='''&lt;'''</span></td>
+		<td colspan="2"><span class="meta">variable defined: GT='''&gt;'''</span></td>
+	</tr>
+	<tr>
+		<td><span class="meta">variable defined: BAR='''!- | -!'''</span></td>
+		<td><span class="meta">variable defined: LBRACE='''{'''</span></td>
+		<td colspan="2"><span class="meta">variable defined: RBRACE='''}'''</span></td>
+	</tr>
+	<tr>
+		<td><span class="meta">variable defined: DIVend=!-&lt;/div&gt;-!</span></td>
+		<td><span class="meta">variable defined: LPAREN='''('''</span></td>
+		<td colspan="2"><span class="meta">variable defined: RPAREN=''')'''</span></td>
+	</tr>
+	<tr>
+		<td><span class="meta">variable defined: BANG='''!-!-!'''</span></td>
+		<td><span class="meta">variable defined: SPC=!- -!</span>
+'''</td>
+		<td colspan="2"><span class="meta">variable defined: NL=!-&lt;br/&gt;-!</span></td>
+	</tr>
+	<tr>
+		<td><span class="meta">variable defined: TEXT=''text''</span></td>
+		<td></td>
+		<td><span class="meta">variable defined: SLASH='''/'''</span></td>
+		<td><span class="meta">variable defined: NUL=</span></td>
+	</tr>
+	<tr>
+		<td><span class="meta">variable defined: PageNAME=''!-PageName-!''</span></td>
+		<td colspan="3"><span class="meta">variable defined: PagePATH=''!-PagePath-!''</span></td>
+	</tr>
+	<tr>
+		<td><span class="meta">variable defined: LabelNAME=''label-name''</span></td>
+		<td colspan="3"><span class="meta">variable defined: AnyPagePATH=''!-AnyPagePath-!''</span></td>
+	</tr>
+	<tr>
+		<td><span class="meta">variable defined: CODE=!-&lt;font style="font-family:Courier New"&gt;-!</span></td>
+		<td colspan="3"><span class="meta">variable defined: CODEend=${FONTend}</span></td>
+	</tr>
+</table>
+<br/><br/><span class="meta">variable defined: BUTTON=!-&lt;span style="color:white;background-color:darkblue"&gt;-!</span>
+<br/><span class="meta">variable defined: BUTTONend=!- &lt;/span&gt;-!</span>
+<br/><br/><span class="meta">variable defined: FitNesseCHARACTERSET=${OPT}'''-Dfile.encoding=UTF-8'''${OPTend}</span>
+<br/><span class="meta">variable defined: FitNesseOptCLASSPATH='''-cp fitnesse.jar'''${OPT}''';'''${NUL}''other.jar.or.path''${OPTend}...</span>
+<br/><span class="meta">variable defined: FitNesseOptEXPIRE='''-e''' ''days''</span>
+<br/><span class="meta">variable defined: FitNesseOptOMIT='''-o'''</span>
+<br/><span class="meta">variable defined: FitNesseOptPORT='''-p''' ''port#''</span>
+<br/><span class="meta">variable defined: FitNesseOptROOT='''-r''' ''N${NUL}ameOfRootPage''</span>
+<br/><span class="meta">variable defined: FitNesseOptDIR='''-d''' ''/path/to/fitnesse/root''</span>
+<br/><span class="meta">variable defined: FitNesseOptLOG='''-l''' ''/log/file/path/and/name''</span>
+<br/><span class="meta">variable defined: FitNesseOptOneAUTH=''username''${NUL}''':'''${NUL}''password''</span>
+<br/><span class="meta">variable defined: FitNesseOptFileAUTH=''/auth/file/path/and/name''</span>
+<br/><br/><span class="meta">variable defined: HorizontalLINES=|${CODE}''over-text''${NUL}'''!------!'''${NUL}''under-text''${CODEend}|thinnest|
+| ${CODE}''over-text''${NUL}'''!-------!'''${NUL}''under-text''${CODEend}    |safest - no conflict with workflow phase separators|
+|${CODE}''over-text''${NUL}'''!-----------!'''${NUL}''under-text''${CODEend}|thicker                                            |
+</span>
+<br/>!define HEADER LINES (<b>!</b><b>1</b> <i>largest heading text</i><br/><b>!</b><b>2</b> <i>middle heading text</i><br/><b>!</b><b>3</b> <i>smaller heading text</i><br/>and so on up to <b>!</b><b>6</b><br/>)<br/><span class="meta">variable defined: HEADINGS=${BANG}'''!headings''' generates a list of all header lines
+</span>
+<br/><span class="meta">variable defined: CollapsibleEXPANDED=${BANG}'''*''' ${OPT}''title''${OPTend}
+${SPC}${SPC}'' multi-line wiki text ''
+${SPC}${SPC}'' N.B.: Multiple asterisks are allowed, e.g.,'' ${BANG}'''****''' ${TEXT}
+'''*'''${BANG}
+</span>
+<br/><span class="meta">variable defined: CollapsibleCOLLAPSED=${BANG}'''*'''${GT} ${OPT}''title''${OPTend}
+${SPC}${SPC}'' multi-line wiki text ''
+${SPC}${SPC}'' N.B.: Multiple asterisks are allowed, e.g.,'' '''${BANG}****'''${GT} ${TEXT}
+'''*'''${BANG}
+</span>
+<br/><span class="meta">variable defined: CollapsibleINVISIBLE=${BANG}'''*'''${LT} ${OPT}''title''${OPTend}
+${SPC}${SPC}'' multi-line wiki text ''
+${SPC}${SPC}'' N.B.: Multiple asterisks are allowed, e.g.,'' ${BANG}'''****'''${LT} ${TEXT}
+'''*'''${BANG}
+</span>
+<br/><span class="meta">variable defined: LSQUARE='''['''</span>
+<br/><span class="meta">variable defined: RSQUARE=''']'''</span>
+<br/><span class="meta">variable defined: PageLINKS=|${CODE} ${DOT}R${NUL}ootPage${OPT}${DOT}C${NUL}hildPage${OPTend}  ${CODEend}| from root         |
+|${CODE} S${NUL}ameLevelPage${OPT}${DOT}C${NUL}hildPage${OPTend}   ${CODEend}|sibling          |
+|${CODE} ${GT}C${NUL}hildPage${OPT}${DOT}C${NUL}hildPage${OPTend}  ${CODEend}|child or symbolic|
+|${CODE} ${LSQUARE}${LSQUARE}${TEXT}${RSQUARE}${LSQUARE}${AnyPagePATH}${RSQUARE}${RSQUARE} ${CODEend} | in an alias |
+</span>
+<br/><span class="meta">variable defined: CollapSIBLE=|${CODE} ${CollapsibleEXPANDED}  ${CODEend}| expanded  | |
+|${CODE} ${CollapsibleCOLLAPSED} ${CODEend}|collapsed|                                     |
+|${CODE} ${CollapsibleINVISIBLE} ${CODEend}|invisible|''useful for hidding define's, etc.''|
+</span>
+<br/><span class="meta">variable defined: HASH='''!-#-!'''</span>
+ |<br/><br/><span class="meta">variable defined: JumpTO=
+| ${CODE} ${TEXT} ${HASH}${LabelNAME} ${TEXT} ${CODEend} | in-line |
+| ${CODE} ${DOT}${HASH}${LabelNAME} ${CODEend} | left-justified |
+| ${CODE} ${LSQUARE}${LSQUARE}${TEXT}${RSQUARE}${LSQUARE}${HASH}${LabelNAME}${RSQUARE}${RSQUARE} ${CODEend} | in an alias |
+</span>
+<br/><br/><br/><span class="meta">variable defined: ExternalLINKS=|${CODE} '''http:'''${SLASH}${SLASH}''url-path'' ${NL} ${CODEend}| Web    |
+| ${CODE} '''http:'''${SLASH}${SLASH}'''files'''${SLASH}''localPath'' ${CODEend} | Local |
+| ${CODE} ${LSQUARE}${LSQUARE}${TEXT}${RSQUARE}${LSQUARE}/files'''${SLASH}''localPath''${NUL}${RSQUARE}${RSQUARE} ${CODEend}''' | Alias |
+| ${CODE} ${LSQUARE}${LSQUARE}${TEXT}${RSQUARE}${LSQUARE}${AnyPagePATH}${HASH}${LabelNAME}${RSQUARE}${RSQUARE} ${CODEend} | Alias |
+| ${CODE} ${TEXT}'''@'''${TEXT}${DOT}${TEXT} ${CODEend} | mailto |
+</span>
+<br/><br/><br/><span class="meta">variable defined: IncludePAGE=|${CODE} ${BANG}'''include''' ${AnyPagePATH}    ${CODEend}| expanded border  |
+| ${CODE} ${BANG}'''include -c''' ${AnyPagePATH} ${CODEend} | collapsed border |
+| ${CODE} ${BANG}'''include -seamless''' ${AnyPagePATH} ${CODEend} | no border |
+| ${CODE} ${BANG}'''include -setup''' ${AnyPagePATH} ${CODEend} | appears like S${NUL}etUp |
+| ${CODE} ${BANG}'''include -teardown''' ${AnyPagePATH} ${CODEend} | appears like T${NUL}earDown |
+| ${CODE} ${BAR}${SPC}${BANG}'''include ''' ${AnyPagePATH}${SPC}${BAR} ${CODEend} | in a table cell |
+
+</span>
+<br/><span class="meta">variable defined: TocInsert=| Contents List | ${CODE} ${BANG}'''contents'''     ${CODEend} |
+| Contents Tree | ${CODE} ${BANG}'''contents -R'''  ${CODEend} |
+| Contents Sub-tree | ${CODE} ${BANG}'''contents -R'''${OPT}''nn''${OPTend}${CODEend} |
+| Contents List - Graceful | ${CODE} ${BANG}'''contents -g'''     ${CODEend} |
+| Contents List - Properties | ${CODE} ${BANG}'''contents -p'''     ${CODEend} |
+| Contents List - Suite Filters | ${CODE} ${BANG}'''contents -f'''     ${CODEend} |
+| Contents List - Help Text | ${CODE} ${BANG}'''contents -h'''     ${CODEend} |
+| Contents List - Test Page Count | ${CODE} ${BANG}'''contents -c'''     ${CODEend} |
+</span>
+<br/><br/><br/><span class="meta">variable defined: PictureINSERT=|${CODE} ${BANG}'''img''' ''url-to-image-file'' ${CODEend}| in-line |
+| ${CODE} ${BANG}'''img-l''' ''url-to-image-file'' ${CODEend} | image left-justified, text wraps on right |
+| ${CODE} ${BANG}'''img-r''' ''url-to-image-file'' ${CODEend} | image right-justified, text wraps on the left |
+| ${CODE} '''${BANG}'''img'''${OPT}'''-l'''${OR}'''-r'''${OPTend} ''url-to-image-file''${NUL}''' ${CODEend} | as a clickable link |
+
+</span>
+<br/><br/><br/><span class="meta">variable defined: FixtureTABLE=${BANG}${BAR} ''fixture specification'' ${BAR}
+${OPT}${BAR} ''optional table row'' ${BAR}${OPT} ''optional 2nd column'' ${BAR}${OPTend}'''...'''${OPTend} ${OPT}${BAR} ''optional table row'' ${BAR}${OPT} ''optional 2nd column'' ${BAR}${OPTend}'''...'''${OPTend} ${SPC}${SPC}${SPC}${SPC}${SPC}${SPC}${SPC}''':''' </span>
+<br/><br/><br/><span class="meta">variable defined: SearchForFIXTURE=G${NUL}raceFullName${NL}'''fit.'''G${NUL}raceFullName${NL}G${NUL}raceFullName'''Fixture'''${NL}'''fit.'''G${NUL}raceFullName'''Fixture'''</span>
+<br/><span class="meta">variable defined: SearchForMETHOD=graceFullMethod${LPAREN}${RPAREN}${NL}'''get'''G${NUL}raceFullMethod${LPAREN}${RPAREN}${NL}'''set'''G${NUL}raceFullMethod${LPAREN}${RPAREN} ${LPAREN}if setter context${RPAREN}</span>
+<br/><span class="meta">variable defined: SearchForARG1=methodName${LPAREN}''p1''${RPAREN}${NL}'''get'''M${NUL}ethodName(''p1''${RPAREN}${NL} '''set'''M${NUL}ethodName(''p1''${RPAREN}</span>
+<br/><span class="meta">variable defined: SearchForARG1TOO=methodNameToo${LPAREN}''p1''${RPAREN}${NL}'''get'''M${NUL}ethodNameToo${LPAREN}''p1''${RPAREN}${NL}'''set'''M${NUL}ethodNameToo${LPAREN}''p1''${RPAREN}</span>
+<br/><span class="meta">variable defined: SearchForARG2=methodName${LPAREN}''p1'',''p2''${RPAREN}${NL}'''get'''M${NUL}ethodName${LPAREN}''p1'',''p2''${RPAREN}${NL}'''set'''M${NUL}ethodName${LPAREN}''p1'',''p2''${RPAREN}</span>
+<br/><span class="meta">variable defined: SearchForARG2TOO=methodNameToo${LPAREN}''p1'',''p2''${RPAREN}${NL}'''get'''M${NUL}ethodNameToo${LPAREN}''p1'',''p2''${RPAREN}${NL}'''set'''M${NUL}ethodNameToo${LPAREN}''p1'',''p2''${RPAREN}</span>
+<br/><span class="meta">variable defined: FixtureNAMING=|!note The cells below are on one line regardless of word-wrapping |
+| '''table spec''' | '''Searches for:''' |
+| ${CODE} ${BANG}${BAR} Grace Full Name ${BAR} ${CODEend} | ${SearchForFIXTURE} |
+| ${CODE} ${BANG}${BAR} grace full method ${BAR} ${CODEend} | ${SearchForMETHOD} |
+| ${CODE} ${BANG}${BAR} method name ${BAR}''p1''${BAR} ${CODEend} | ${SearchForARG1} |
+| ${CODE} ${BANG}${BAR} method name ${BAR}''p1''${BAR} too ${BAR} ${CODEend} | ${SearchForARG1TOO} |
+| ${CODE} ${BANG}${BAR} method name ${BAR}''p1''${BAR} also ${BAR}''p2''${BAR} ${CODEend} | ${SearchForARG2} |
+| ${CODE} ${BANG}${BAR} method name ${BAR}''p1''${BAR}''' also ${BAR}''p2''${BAR} too ${BAR} ${CODEend}''' | ${SearchForARG2TOO} |
+
+</span>
+<br/><br/></div>
+</div>
+<br/><br/><br/><h1 id="0">FitNesse Cheat Sheet</h1>
+<a id="TopOfPAGE"></a><br/><h2 id="1">Sections</h2>
+<ul>
+	<li><b><a href="#FitNesseCommandLINE"> FitNesse Command Line </a> </b></li>
+	<li><b><a href="#CharacterFORMATTING"> Character Formatting     </a> </b></li>
+	<li><b><a href="#LineBlockFORMATTING"> Line &amp; Block Formatting  </a> </b></li>
+	<li><b><a href="#LinksAndREFERENCES"> Links &amp; References       </a> </b></li>
+	<li><b><a href="#IncludesINFORMATIONAL"> Includes &amp; Informational </a> </b></li>
+	<li><b><a href="#VARIABLES"> Variable Usage           </a> </b></li>
+	<li><b><a href="#GlobalVARIABLES"> Global Variables         </a> </b></li>
+	<li><b><a href="#GlobalPROPERTIES"> Global Properties        </a> </b></li>
+	<li><b><a href="#TestTABLES"> Testable Tables          </a> </b></li>
+	<li><b><a href="#FitNesseACTIONS"> Wiki Page Actions        </a> </b></li>
+</ul>
+<br/><br/><h2 id="2">Glossary</h2>
+<table>
+	<tr>
+		<td><i>PagePath</i></td>
+		<td><font style="font-family:Courier New"> <i>PageName</i><b>.</b><i>[</i><i>PageName</i><i>]</i> </font></td>
+	</tr>
+	<tr>
+		<td><i>AnyPagePath</i></td>
+		<td><font style="font-family:Courier New"> <i>[</i><b>&lt;</b><i>        |</i><b>.</b><i>        |</i><b>&gt;</b><i>]</i><i>PagePath</i> </font></td>
+	</tr>
+	<tr>
+		<td>Symbolic Link</td>
+		<td>A locally-defined alias to any accessible page.<br/>Symbolic links are created by clicking <span style="color:white;background-color:darkblue">Properties </span><br/>and entering information in the bottom section<br/>titled "Symbolic Links".</td>
+	</tr>
+</table>
+<br/><br/><a id="FitNesseCommandLINE"></a><br/><hr/>
+<br/><h2 id="3">FitNesse Command Line and Options <font style="font-family:Arial;font-size:8pt">        <a href="#TopOfPAGE"><b>(</b>to top<b>)</b></a></font></h2>
+<table>
+	<tr>
+		<td colspan="3"><font style="font-family:Courier New"> <i>[</i><i>path/to/java/</i><i>]</i><b>java</b> <i>[</i><b>-Dfile.encoding=UTF-8</b><i>]</i> <b>-cp fitnesse.jar</b><i>[</i><b>;</b><i>other.jar.or.path</i><i>]</i>... <b>fitnesse.FitNesse</b> <i>[</i><b>-o</b><i>]</i> <i>[</i><b>-p</b> <i>port#</i><i>]</i> <i>[</i><b>-d</b> <i>/path/to/fitnesse/root</i><i>]</i> <i>[</i><b>-r</b> <i>NameOfRootPage</i><i>]</i> <i>[</i><b>-e</b> <i>days</i><i>]</i> <i>[</i><b>-l</b> <i>/log/file/path/and/name</i><i>]</i> <i>[</i><b>-a</b> <i>{</i><i>username</i><b>:</b><i>password</i> <i>        |</i> <i>/auth/file/path/and/name</i><i>}</i><i>]</i> <i>[</i><i>other arguments</i><i>]</i> </font></td>
+	</tr>
+	<tr>
+		<td><b> <i>option</i> </b></td>
+		<td><b> <i>default</i> </b></td>
+		<td><b> <i>description</i> </b></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"><b>-a</b> <i>username</i><b>:</b><i>password</i></font></td>
+		<td><font style="font-family:Courier New"> <i>no auth</i>     </font></td>
+		<td>Enforces access for one user</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"><b>-a</b> <i>/auth/file/path/and/name</i></font></td>
+		<td><font style="font-family:Courier New"> <i>no auth</i>     </font></td>
+		<td>Enforces access for a file of users with encrypted passwords</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"><b>-d</b> <i>/path/to/fitnesse/root</i></font></td>
+		<td><font style="font-family:Courier New"> <b>.</b>          </font></td>
+		<td>Path to the fitnesse <i>wiki</i> home where FitNesseRoot or <i>-r name</i> resides</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"><b>-e</b> <i>days</i></font></td>
+		<td><font style="font-family:Courier New"> <b>14</b>        </font></td>
+		<td>Number of days to retain older versions (.zip files)</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"><b>-l</b> <i>/log/file/path/and/name</i></font></td>
+		<td><font style="font-family:Courier New"> <i>off</i>         </font></td>
+		<td>Where to put and what to call the run log</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"><b>-o</b></font></td>
+		<td><font style="font-family:Courier New"> <i>update</i>      </font></td>
+		<td>Prevents (omits) updating FitNesseRoot content</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"><b>-p</b> <i>port#</i></font></td>
+		<td><font style="font-family:Courier New"> <b>80</b>        </font></td>
+		<td>Port for FitNesse to listen on</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"><b>-r</b> <i>NameOfRootPage</i></font></td>
+		<td><font style="font-family:Courier New"> <b>FitNesseRoot</b> </font></td>
+		<td>Name of root folder in the fitnesse <i>wiki</i> home or <i>-d</i> path</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"><i>[</i><b>-Dfile.encoding=UTF-8</b><i>]</i></font></td>
+		<td><font style="font-family:Courier New"> <i>off</i> </font></td>
+		<td>Unicode characters support in Test History Page</td>
+	</tr>
+</table>
+<br/><br/><br/><a id="FitNesseACTIONS"></a><br/><h2 id="4">FitNesse Actions <font style="font-family:Arial;font-size:8pt">        <a href="#TopOfPAGE"><b>(</b>to top<b>)</b></a></font></h2>
+<table>
+	<tr>
+		<td><b>Edit</b> this page</td>
+		<td><font style="font-family:Courier New"> <i>url</i><b>?edit</b>        </font></td>
+	</tr>
+	<tr>
+		<td><b>Create</b> a new page directly</td>
+		<td><font style="font-family:Courier New"><i>current-url</i><b>.</b>NewPageName</font><br/><b>or</b> <br/> <font style="font-family:Courier New"><i>current-url</i><b>.</b>NewPageName<b>?edit</b></font></td>
+	</tr>
+	<tr>
+		<td><b>Test</b> this page</td>
+		<td><font style="font-family:Courier New"> <i>url</i><b>?test</b>        </font></td>
+	</tr>
+	<tr>
+		<td><b>Suite</b> test this page</td>
+		<td><font style="font-family:Courier New"> <i>url</i><b>?suite</b>        </font></td>
+	</tr>
+	<tr>
+		<td>Set <b>properties</b> of this page</td>
+		<td><font style="font-family:Courier New"> <i>url</i><b>?properties</b>  </font></td>
+	</tr>
+	<tr>
+		<td>See <b>versions</b> of this page</td>
+		<td><font style="font-family:Courier New"> <i>url</i><b>?versions</b>    </font></td>
+	</tr>
+	<tr>
+		<td><b>Refactor</b> this page</td>
+		<td><font style="font-family:Courier New"> <i>url</i><b>?refactor</b>    </font></td>
+	</tr>
+	<tr>
+		<td><b>Search</b> pages from here</td>
+		<td><font style="font-family:Courier New"> <i>url</i><b>?searchForm</b>  </font></td>
+	</tr>
+	<tr>
+		<td><b>Where</b> is this page referenced?</td>
+		<td><font style="font-family:Courier New"> <i>url</i><b>?whereUsed</b>   </font></td>
+	</tr>
+	<tr>
+		<td><b>Debug</b> this test page</td>
+		<td><font style="font-family:Courier New"> <i>url</i><b>?debug</b>       </font></td>
+	</tr>
+	<tr>
+		<td><b>Suite</b> test this page with a suite filter "passing"</td>
+		<td><font style="font-family:Courier New"> <i>url</i><b>?responder=suite&amp;suiteFilter=passing</b>       </font></td>
+	</tr>
+</table>
+<br/><br/><a id="CharacterFORMATTING"></a><br/><h2 id="5">Character Formatting <font style="font-family:Arial;font-size:8pt">        <a href="#TopOfPAGE"><b>(</b>to top<b>)</b></a></font></h2>
+<table>
+	<tr>
+		<td>Comment</td>
+		<td><font style="font-family:Courier New"> <b>#</b><i>text</i>    </font></td>
+		<td><i>Can also be used to comment-out markup</i></td>
+	</tr>
+	<tr>
+		<td>Italics</td>
+		<td><font style="font-family:Courier New"> <b>''</b><i>text</i><b>''</b>   </font></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Bold</td>
+		<td><font style="font-family:Courier New"> <b>'''</b><i>text</i><b>'''</b> </font></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Style</td>
+		<td><font style="font-family:Courier New"> <b>!style_<someStyle>(text)</b> </font></td>
+		<td>The style of <i>text</i> will be the CSS class <i>&lt;someStyle&gt;</i></td>
+	</tr>
+	<tr>
+		<td>Strike-through</td>
+		<td><font style="font-family:Courier New"> <b>--</b><i>text</i><b>--</b>   </font></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>"As-is"/escaping</td>
+		<td><font style="font-family:Courier New"> <b><b>!</b>-</b><i>text</i><b>-<b>!</b></b> </font></td>
+		<td><i>Can also be used to insert HTML tags directly</i></td>
+	</tr>
+	<tr>
+		<td>"As-is"</td>
+		<td><font style="font-family:Courier New"> <b><b>!</b>&lt;</b><i>text</i><b>&gt;<b>!</b></b> </font></td>
+		<td><i>Will escape HTML tags so they display in plain text.</i></td>
+	</tr>
+	<tr>
+		<td>Alias Link</td>
+		<td><font style="font-family:Courier New"> <b><i>text</i></b> </font></td>
+		<td></td>
+	</tr>
+</table>
+<br/><br/><a id="LineBlockFORMATTING"></a><br/><h2 id="6">Line &amp; Block Formatting <font style="font-family:Arial;font-size:8pt">        <a href="#TopOfPAGE"><b>(</b>to top<b>)</b></a></font></h2>
+<table>
+	<tr>
+		<td>workflow break</td>
+		<td colspan="2"><font style="font-family:Courier New"> <b>----</b> </font>...separates each "phase"</td>
+	</tr>
+	<tr>
+		<td>Horizontal Line</td>
+		<td colspan="2"><table>
+	<tr>
+		<td><font style="font-family:Courier New"><i>over-text</i><b>----</b><i>under-text</i></font></td>
+		<td>thinnest</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"><i>over-text</i><b>-----</b><i>under-text</i></font></td>
+		<td>safest - no conflict with workflow phase separators</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"><i>over-text</i><b>---------</b><i>under-text</i></font></td>
+		<td>thicker</td>
+	</tr>
+</table></td>
+	</tr>
+	<tr>
+		<td>Note</td>
+		<td colspan="2"><font style="font-family:Courier New"> <b>!</b><b>note</b> <i>text</i> </font></td>
+	</tr>
+	<tr>
+		<td>Headings</td>
+		<td colspan="2"><font style="font-family:Courier New"> <b>!</b><b>!headings</b> generates a list of all header lines<br/> </font></td>
+	</tr>
+	<tr>
+		<td>Centered</td>
+		<td colspan="2"><font style="font-family:Courier New"> <b>!</b><b>c</b> <i>text</i> </font></td>
+	</tr>
+	<tr>
+		<td>Formatted "as is"</td>
+		<td><font style="font-family:Courier New"> <b>{{{</b><i>text</i><b>}}}</b> </font></td>
+		<td>note: causes extra line afterward</td>
+	</tr>
+	<tr>
+		<td>Collapsible</td>
+		<td colspan="2"><table>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>!</b><b>*</b> <i>[</i><i>title</i><i>]</i><br/>  <i> multi-line wiki text </i><br/>  <i> N.B.: Multiple asterisks are allowed, e.g.,</i> <b>!</b><b>****</b> <i>text</i><br/><b>*</b><b>!</b><br/>  </font></td>
+		<td>expanded</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>!</b><b>*</b><b>&gt;</b> <i>[</i><i>title</i><i>]</i><br/>  <i> multi-line wiki text </i><br/>  <i> N.B.: Multiple asterisks are allowed, e.g.,</i> <b><b>!</b>****</b><b>&gt;</b> <i>text</i><br/><b>*</b><b>!</b><br/> </font></td>
+		<td>collapsed</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>!</b><b>*</b><b>&lt;</b> <i>[</i><i>title</i><i>]</i><br/>  <i> multi-line wiki text </i><br/>  <i> N.B.: Multiple asterisks are allowed, e.g.,</i> <b>!</b><b>****</b><b>&lt;</b> <i>text</i><br/><b>*</b><b>!</b><br/> </font></td>
+		<td>invisible</td>
+		<td><i>useful for hidding define's, etc.</i></td>
+	</tr>
+</table></td>
+	</tr>
+</table>
+<br/><br/><a id="LinksAndREFERENCES"></a><br/><h2 id="7">Links &amp; References <font style="font-family:Arial;font-size:8pt">        <a href="#TopOfPAGE"><b>(</b>to top<b>)</b></a></font></h2>
+<table>
+	<tr>
+		<td>Page links</td>
+		<td colspan="2"><table>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>.</b>RootPage<i>[</i><b>.</b>ChildPage<i>]</i>  </font></td>
+		<td>from root</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> SameLevelPage<i>[</i><b>.</b>ChildPage<i>]</i>   </font></td>
+		<td>sibling</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>&gt;</b>ChildPage<i>[</i><b>.</b>ChildPage<i>]</i>  </font></td>
+		<td>child or symbolic</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>[</b><b>[</b><i>text</i><b>]</b><b>[</b><i>AnyPagePath</i><b>]</b><b>]</b> </font></td>
+		<td>in an alias</td>
+	</tr>
+</table></td>
+	</tr>
+	<tr>
+		<td>Cross-reference &amp;<br/>Suite Include</td>
+		<td colspan="2"><font style="font-family:Courier New"> <b>!</b><b>see</b> <i>AnyPagePath</i> </font></td>
+	</tr>
+	<tr>
+		<td>Define "in-page" label</td>
+		<td><font style="font-family:Courier New"> <b>!</b><b>anchor</b> <i>label-name</i> </font></td>
+		<td>a.k.a. anchor</td>
+	</tr>
+	<tr>
+		<td>Jump to "in-page" label</td>
+		<td colspan="2"><br/><table>
+	<tr>
+		<td><font style="font-family:Courier New"> <i>text</i> <b>#</b><i>label-name</i> <i>text</i> </font></td>
+		<td>in-line</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>.</b><b>#</b><i>label-name</i> </font></td>
+		<td>left-justified</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>[</b><b>[</b><i>text</i><b>]</b><b>[</b><b>#</b><i>label-name</i><b>]</b><b>]</b> </font></td>
+		<td>in an alias</td>
+	</tr>
+</table></td>
+	</tr>
+	<tr>
+		<td>External Links</td>
+		<td colspan="2"><table>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>http:</b><b>/</b><b>/</b><i>url-path</i> <br/> </font></td>
+		<td>Web</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>http:</b><b>/</b><b>/</b><b>files</b><b>/</b><i>localPath</i> </font></td>
+		<td>Local</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>[</b><b>[</b><i>text</i><b>]</b><b>[</b>/files<b><b>/</b><i>localPath</i><b>]</b><b>]</b> </font></b></td>
+		<td>Alias</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>[</b><b>[</b><i>text</i><b>]</b><b>[</b><i>AnyPagePath</i><b>#</b><i>label-name</i><b>]</b><b>]</b> </font></td>
+		<td>Alias</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <i>text</i><b>@</b><i>text</i><b>.</b><i>text</i> </font></td>
+		<td>mailto</td>
+	</tr>
+</table></td>
+	</tr>
+</table>
+<p class="note">Link texts containing WikiText may be escaped. E.g. <i>[[<b><b>!</b>-</b>FitNesse<b>-<b>!</b></b>][http://fitnesse.org]]</i>.</p>
+<br/><br/><a id="IncludesINFORMATIONAL"></a><br/><h2 id="8">Includes &amp; Informational <font style="font-family:Arial;font-size:8pt">        <a href="#TopOfPAGE"><b>(</b>to top<b>)</b></a></font></h2>
+<table>
+	<tr>
+		<td>Timestamp</td>
+		<td><font style="font-family:Courier New"> <b>!</b><b>lastmodified</b>     </font></td>
+	</tr>
+	<tr>
+		<td>Timestamp</td>
+		<td><font style="font-family:Courier New"> <b>!</b><b>today</b>            </font></td>
+	</tr>
+	<tr>
+		<td>Help text</td>
+		<td><font style="font-family:Courier New"> <b>!</b><b>help</b>            </font></td>
+	</tr>
+	<tr>
+		<td><a href="../../FitNesse/UserGuide/FitNesseWiki/MarkupLanguageReference/MarkupContents.html">Table of Content</a></td>
+		<td><table>
+	<tr>
+		<td>Contents List</td>
+		<td><font style="font-family:Courier New"> <b>!</b><b>contents</b>     </font></td>
+	</tr>
+	<tr>
+		<td>Contents Tree</td>
+		<td><font style="font-family:Courier New"> <b>!</b><b>contents -R</b>  </font></td>
+	</tr>
+	<tr>
+		<td>Contents Sub-tree</td>
+		<td><font style="font-family:Courier New"> <b>!</b><b>contents -R</b><i>[</i><i>nn</i><i>]</i></font></td>
+	</tr>
+	<tr>
+		<td>Contents List - Graceful</td>
+		<td><font style="font-family:Courier New"> <b>!</b><b>contents -g</b>     </font></td>
+	</tr>
+	<tr>
+		<td>Contents List - Properties</td>
+		<td><font style="font-family:Courier New"> <b>!</b><b>contents -p</b>     </font></td>
+	</tr>
+	<tr>
+		<td>Contents List - Suite Filters</td>
+		<td><font style="font-family:Courier New"> <b>!</b><b>contents -f</b>     </font></td>
+	</tr>
+	<tr>
+		<td>Contents List - Help Text</td>
+		<td><font style="font-family:Courier New"> <b>!</b><b>contents -h</b>     </font></td>
+	</tr>
+	<tr>
+		<td>Contents List - Test Page Count</td>
+		<td><font style="font-family:Courier New"> <b>!</b><b>contents -c</b>     </font></td>
+	</tr>
+</table></td>
+	</tr>
+	<tr>
+		<td><a href="../../FitNesse/UserGuide/WritingAcceptanceTests/AcceptanceTestPatterns/ParameterizedIncludes.html">Include Page</a></td>
+		<td><table>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>!</b><b>include</b> <i>AnyPagePath</i>    </font></td>
+		<td>expanded border</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>!</b><b>include -c</b> <i>AnyPagePath</i> </font></td>
+		<td>collapsed border</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>!</b><b>include -seamless</b> <i>AnyPagePath</i> </font></td>
+		<td>no border</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>!</b><b>include -setup</b> <i>AnyPagePath</i> </font></td>
+		<td>appears like SetUp</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>!</b><b>include -teardown</b> <i>AnyPagePath</i> </font></td>
+		<td>appears like TearDown</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <b> | </b> <b>!</b><b>include </b> <i>AnyPagePath</i> <b> | </b> </font></td>
+		<td>in a table cell</td>
+	</tr>
+</table>
+<br/></td>
+	</tr>
+	<tr>
+		<td><a href="../../FitNesse/UserGuide/FitNesseWiki/MarkupLanguageReference/MarkupPicture.html">Picture Insert</a></td>
+		<td><table>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>!</b><b>img</b> <i>url-to-image-file</i> </font></td>
+		<td>in-line</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>!</b><b>img-l</b> <i>url-to-image-file</i> </font></td>
+		<td>image left-justified, text wraps on right</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>!</b><b>img-r</b> <i>url-to-image-file</i> </font></td>
+		<td>image right-justified, text wraps on the left</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <b><b>!</b></b>img<b><i>[</i></b>-l<b><i>        |</i></b>-r<b><i>]</i> <i>url-to-image-file</i></b> </font></td>
+		<td>as a clickable link</td>
+	</tr>
+</table>
+<br/></td>
+	</tr>
+</table>
+<br/><br/><a id="VARIABLES"></a><br/><h2 id="9"><a href="../../FitNesse/UserGuide/FitNesseWiki/MarkupLanguageReference/MarkupVariables.html">Variables</a> <font style="font-family:Arial;font-size:8pt">        <a href="#TopOfPAGE"><b>(</b>to top<b>)</b></a></font></h2>
+<table>
+	<tr>
+		<td>Variable Definition</td>
+		<td colspan="2"><font style="font-family:Courier New"> <b>!</b><b>define</b> <i>name</i> <b>{</b><i>value</i><b>}</b> <br/><b>!</b><b>define</b> <i>name</i> <b>(</b><i>value</i><b>)</b><br/><b>!</b><b>define</b> <i>name</i> <b>[</b><i>value</i><b>]</b> </font><br/></td>
+	</tr>
+	<tr>
+		<td>Variable Usage</td>
+		<td colspan="2"><font style="font-family:Courier New"> <b>$</b><b>{</b><i>name</i><b>}</b> </font></td>
+	</tr>
+	<tr>
+		<td><a href="../../FitNesse/UserGuide/FitNesseWiki/MarkupLanguageReference/MarkupExpressions.html">Expression Evaluation</a></td>
+		<td><font style="font-family:Courier New"> <b>${=</b><i>expression</i><b>=}</b> </font></td>
+		<td><i>expression</i> may contain variables</td>
+	</tr>
+</table>
+<br/><br/><a id="GlobalVARIABLES"></a><br/><h2 id="10">Global Variables <font style="font-family:Arial;font-size:8pt">        <a href="#TopOfPAGE"><b>(</b>to top<b>)</b></a></font></h2>
+<table>
+	<tr>
+		<td><b> NAME </b></td>
+		<td><b> Java Default </b></td>
+		<td><b>FitLibrary (Unix) Default</b></td>
+		<td><b> .NET Default       </b></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> COMMAND_PATTERN   </font></td>
+		<td> java -cp %p %m </td>
+		<td> java -cp %p %m </td>
+		<td> %m %p  </td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> REMOTE_DEBUG_COMMAND</font></td>
+		<td> REMOTE DEBUG COMMAND, or java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 -cp %p %m</td>
+		<td>java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 -cp %p %m</td>
+		<td>java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 -cp %p %m</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> PATH_SEPARATOR    </font></td>
+		<td>  :   <i>(system-dependent)</i></td>
+		<td>  :   <i>(system-dependent)</i></td>
+		<td>  ;  </td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> TEST_RUNNER       </font></td>
+		<td>fit.FitServer</td>
+		<td>fitlibrary.suite.FitLibraryServer</td>
+		<td>dotnet\FitServer.exe</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> REMOTE_DEBUG_RUNNER </font></td>
+		<td>TEST_RUNNER </td>
+		<td>same as for java</td>
+		<td>dotnet\FitServer.exe</td>
+	</tr>
+</table>
+<br/><table>
+	<tr>
+		<td><b> NAME </b></td>
+		<td><b> Default </b></td>
+		<td><b> Values </b></td>
+		<td><b> Notes </b></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> TEST_SYSTEM </font></td>
+		<td><center>fit </center></td>
+		<td><center>fit|slim </center></td>
+		<td><i> Selects the test system to use for this, and descendant pages.</i></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> SLIM_PORT </font> <i>(deprecated)</i></td>
+		<td><center>1 </center></td>
+		<td><center>integer </center></td>
+		<td><i> 1= communicate via STDIN/STDOUT requires no network ports
+0= find a free port automatically
+else Defines the starting port number and rotates in a range defined by slim.pool.size (10).</i></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> SLIM_HOST </font> <i>(deprecated)</i></td>
+		<td><center>localhost </center></td>
+		<td><center>string </center></td>
+		<td><i> The name of the host on which SlimServer is running.</i></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> SLIM_VERSION </font></td>
+		<td><center>nil </center></td>
+		<td><center>string </center></td>
+		<td><i> The minimum Slim Protocol Version required for this page.  Used to turn off slim protocol error messages.</i></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <a href="../../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/TestSystemSlimSuite/ManualStartofSlimService.html">MANUALLY_START_TEST_RUNNER</a> </font></td>
+		<td><center>false </center></td>
+		<td><center>true<b> | </b>false </center></td>
+		<td><i> When set to true then fitnesse will not create it's own slim runner, and will instead connect to an existing runner on port <font style="font-family:Courier New"> SLIM_PORT </font> on host <font style="font-family:Courier New"> SLIM_HOST </font>.</i></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> MANUALLY_START_TEST_RUNNER_ON_DEBUG </font></td>
+		<td><center>false </center></td>
+		<td><center>true<b> | </b>false </center></td>
+		<td><i> Same as above but only when and a page is run in debug mode .</i></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> CLASSPATH_PROPERTY </font></td>
+		<td><center>nil </center></td>
+		<td><center><i>an environment variable</i> </center></td>
+		<td><i> If not nil, loads classpath (as gathered from !path) into the named environment variable.  See <a href="../../FitNesse/UserGuide/WritingAcceptanceTests/CustomizingTestExecution.html">Customizing Test Execution</a>.</i></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> COLLAPSE_SETUP </font></td>
+		<td><center>false </center></td>
+		<td><center>true<b> | </b>false </center></td>
+		<td><i> Collapses all SetUps </i></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> COLLAPSE_TEARDOWN </font></td>
+		<td><center>false </center></td>
+		<td><center>true<b> | </b>false </center></td>
+		<td><i> Collapses all TearDowns </i></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> FILTER_TOC </font></td>
+		<td><center>false </center></td>
+		<td><center>true<b> | </b>false </center></td>
+		<td><i> Append suite fiters to TOC </i></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> HELP_PREFIX_TOC </font></td>
+		<td><center>:&lt;<i>space</i>&gt; </center></td>
+		<td><center><i>any string</i> </center></td>
+		<td><i> Define prefix for help text suffix </i></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> HELP_TOC </font></td>
+		<td><center>false </center></td>
+		<td><center>true<b> | </b>false </center></td>
+		<td><i> Append help text to TOC </i></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> MORE_SUFFIX_TOC </font></td>
+		<td><center>&lt;<i>space</i>&gt;... </center></td>
+		<td><center><i>any string</i> </center></td>
+		<td><i> Define sequence to show more TOC levels </i></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> PROPERTY_CHARACTERS </font></td>
+		<td><center> *+@>-  </center></td>
+		<td><center><i>any characters</i> </center></td>
+		<td><i> Define property icons for TOC </i></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> PROPERTY_TOC </font></td>
+		<td><center>false </center></td>
+		<td><center>true<b> | </b>false </center></td>
+		<td><i> Append property icons to TOC </i></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> REGRACE_LINK </font></td>
+		<td><center>false </center></td>
+		<td><center>true<b> | </b>false </center></td>
+		<td><i> Makes links graceful </i></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> REGRACE_TOC </font></td>
+		<td><center>false </center></td>
+		<td><center>true<b> | </b>false </center></td>
+		<td><i> Makes !contents list graceful </i></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> RSS_PREFIX </font></td>
+		<td><center></center></td>
+		<td><center></center></td>
+		<td><i> Link prefix for <a href="../../FitNesse/UserGuide/AdministeringFitNesse/RestfulServices/RssFeed.html">RSS Feeds</a> </i></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> INCLUDE_SCENARIO_LIBRARIES </font></td>
+		<td><center>false* </center></td>
+		<td><center>true<b> | </b>false </center></td>
+		<td><i>Test pages should include <a href="../../FitNesse/UserGuide/WritingAcceptanceTests/SpecialPages.html">ScenarioLibrary</a> pages</i>
+ * defaults to true if the SLiM test system is defined.</td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> FORMAT_LOCALE </font></td>
+		<td><center>nil </center></td>
+		<td><center>IETF language tag </center></td>
+		<td><i> IETF language tag for the locale used for formatting evaluated expressions </i></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <i>PAGE_NAME</i> </font></td>
+		<td><center></center></td>
+		<td><center>Read Only </center></td>
+		<td><i> Name of current page</i></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <i>PAGE_PATH </i> </font></td>
+		<td><center></center></td>
+		<td><center>Read Only </center></td>
+		<td><i> Fully qualified name of parent. </i></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <i>RUNNING_PAGE_NAME</i> </font></td>
+		<td><center></center></td>
+		<td><center>Read Only </center></td>
+		<td><i> Name of current top level running page</i></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <i>RUNNING_PAGE_PATH </i> </font></td>
+		<td><center></center></td>
+		<td><center>Read Only </center></td>
+		<td><i> Fully qualified name of the current tope level running  page's parent. </i></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <i>FITNESSE_PORT</i> </font></td>
+		<td><center></center></td>
+		<td><center>Read Only </center></td>
+		<td><i> Port number that fitnesse is using. </i></td>
+	</tr>
+</table>
+<br/><p class="note">(See the <a href="""root"""><i>root</i> page</a> for overrides)</p>
+<br/><a id="GlobalPROPERTIES"></a><br/><h2 id="11">Global Properties   <font style="font-family:Arial;font-size:8pt">        <a href="#TopOfPAGE"><b>(</b>to top<b>)</b></a></font></h2>
+<table>
+	<tr>
+		<td><font style="font-family:Courier New"> path.separator         </font></td>
+		<td><i>(system-dependent)</i></td>
+	</tr>
+</table>
+<br/><p class="note">(See the <a href="""root"""><i>root</i> page</a> for overrides)</p>
+<br/><a id="TestTABLES"></a><br/><h2 id="12">Testable Tables <font style="font-family:Arial;font-size:8pt">        <a href="#TopOfPAGE"><b>(</b>to top<b>)</b></a></font></h2>
+<table>
+	<tr>
+		<td>Classpath include</td>
+		<td><font style="font-family:Courier New"> <b>!</b><b>path</b> <i>java.path.spec</i> </font></td>
+	</tr>
+	<tr>
+		<td>"Insert Fixture Table"<br/>Edit List Include</td>
+		<td><font style="font-family:Courier New"> <b>!</b><b>fixture</b> <i>path.fixture</i> </font></td>
+	</tr>
+	<tr>
+		<td>Prevent Wikification</td>
+		<td><font style="font-family:Courier New"> <b>!</b><b> | </b> <i>"as is" or escaped content</i> <b> | </b> </font></td>
+	</tr>
+	<tr>
+		<td>Smallest Table</td>
+		<td><font style="font-family:Courier New"> <b> | </b> <i>text</i> <b> | </b> </font></td>
+	</tr>
+	<tr>
+		<td>Fixture Table</td>
+		<td><font style="font-family:Courier New"> <b>!</b><b> | </b> <i>fixture specification</i> <b> | </b><br/><i>[</i><b> | </b> <i>optional table row</i> <b> | </b><i>[</i> <i>optional 2nd column</i> <b> | </b><i>]</i><b>...</b><i>]</i> <i>[</i><b> | </b> <i>optional table row</i> <b> | </b><i>[</i> <i>optional 2nd column</i> <b> | </b><i>]</i><b>...</b><i>]</i>        <b>:</b>  </font></td>
+	</tr>
+	<tr>
+		<td>Graceful Naming</td>
+		<td><table>
+	<tr>
+		<td colspan="2"><p class="note">The cells below are on one line regardless of word-wrapping </p></td>
+	</tr>
+	<tr>
+		<td><b>table spec</b></td>
+		<td><b>Searches for:</b></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>!</b><b> | </b> Grace Full Name <b> | </b> </font></td>
+		<td>GraceFullName<br/><b>fit.</b>GraceFullName<br/>GraceFullName<b>Fixture</b><br/><b>fit.</b>GraceFullName<b>Fixture</b></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>!</b><b> | </b> grace full method <b> | </b> </font></td>
+		<td>graceFullMethod<b>(</b><b>)</b><br/><b>get</b>GraceFullMethod<b>(</b><b>)</b><br/><b>set</b>GraceFullMethod<b>(</b><b>)</b> <b>(</b>if setter context<b>)</b></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>!</b><b> | </b> method name <b> | </b><i>p1</i><b> | </b> </font></td>
+		<td>methodName<b>(</b><i>p1</i><b>)</b><br/><b>get</b>MethodName(<i>p1</i><b>)</b><br/> <b>set</b>MethodName(<i>p1</i><b>)</b></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>!</b><b> | </b> method name <b> | </b><i>p1</i><b> | </b> too <b> | </b> </font></td>
+		<td>methodNameToo<b>(</b><i>p1</i><b>)</b><br/><b>get</b>MethodNameToo<b>(</b><i>p1</i><b>)</b><br/><b>set</b>MethodNameToo<b>(</b><i>p1</i><b>)</b></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>!</b><b> | </b> method name <b> | </b><i>p1</i><b> | </b> also <b> | </b><i>p2</i><b> | </b> </font></td>
+		<td>methodName<b>(</b><i>p1</i>,<i>p2</i><b>)</b><br/><b>get</b>MethodName<b>(</b><i>p1</i>,<i>p2</i><b>)</b><br/><b>set</b>MethodName<b>(</b><i>p1</i>,<i>p2</i><b>)</b></td>
+	</tr>
+	<tr>
+		<td><font style="font-family:Courier New"> <b>!</b><b> | </b> method name <b> | </b><i>p1</i><b> | </b><b> also <b> | </b><i>p2</i><b> | </b> too <b> | </b> </font></b></td>
+		<td>methodNameToo<b>(</b><i>p1</i>,<i>p2</i><b>)</b><br/><b>get</b>MethodNameToo<b>(</b><i>p1</i>,<i>p2</i><b>)</b><br/><b>set</b>MethodNameToo<b>(</b><i>p1</i>,<i>p2</i><b>)</b></td>
+	</tr>
+</table>
+<br/></td>
+	</tr>
+</table>
+
+    </article>
+    <footer>
+      <center>User Guide Contents</center><center><a href="../../FitNesse/UserGuide.html#introduction">Introduction</a> - <a href="../../FitNesse/UserGuide/FitNesseWiki.html">Working with the Wiki</a> - <a href="../../FitNesse/UserGuide/WritingAcceptanceTests.html">Writing Acceptance Tests</a> - <a href="../../FitNesse/UserGuide/AdministeringFitNesse.html">Administration</a> - <a href="../../FitNesse/UserGuide/QuickReferenceGuide.html">Quick Reference Guide</a> - <a href="../../FitNesse/FullReferenceGuide.html">Full Reference Guide</a></center>
+    </footer>
+  </body>
+</html>
