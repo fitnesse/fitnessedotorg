@@ -38,7 +38,7 @@
     <header>
     </header>
     <article>
-      <h2 id="0">Latest Release v20221117</h2>
+      <h2 id="0">Latest Release v20221120</h2>
 <h2 id="1">Pending Changes</h2>
 <ul>
 	<li>Add a new optional command line parameter to specify the maximum number of workers to use for handling incoming requests. </li>
@@ -110,7 +110,7 @@
 </ul>
 <br/><h2 id="13">20200404</h2>
 <ul>
-	<li>Ensure FitNesseRunner<a title="create page" href="FitNesse.FitNesseRunner?edit&amp;nonExistent=true">[?]</a> takes suite partitioning into account when determining children (<a href="https://github.com/unclebob/fitnesse/issues/1275">1275</a>).</li>
+	<li>Ensure FitNesseRunner takes suite partitioning into account when determining children (<a href="https://github.com/unclebob/fitnesse/issues/1275">1275</a>).</li>
 </ul>
 <br/><h2 id="14">20200307</h2>
 <ul>
@@ -193,7 +193,7 @@
 <br/><h2 id="29">20190418</h2>
 <ul>
 	<li>Issues fixed:<ul>
-	<li>Prevent NullPointerException<a title="create page" href="FitNesse.NullPointerException?edit&amp;nonExistent=true">[?]</a> when fixture method returns 'null' Long (<a href="https://github.com/unclebob/fitnesse/issues/1211">1211</a>)</li>
+	<li>Prevent NullPointerException when fixture method returns 'null' Long (<a href="https://github.com/unclebob/fitnesse/issues/1211">1211</a>)</li>
 </ul>
 </li>
 </ul>
@@ -278,7 +278,7 @@
 </ul>
 <br/><h2 id="42">20181223</h2>
 <ul>
-	<li>"StopTestException" is SuiteSetUp<a title="create page" href="FitNesse.SuiteSetUp?edit&amp;nonExistent=true">[?]</a> is handled as SuiteStopException<a title="create page" href="FitNesse.SuiteStopException?edit&amp;nonExistent=true">[?]</a> (<a href="https://github.com/unclebob/fitnesse/pull/1128">1128</a>)</li>
+	<li>"StopTestException" is SuiteSetUp is handled as SuiteStopException (<a href="https://github.com/unclebob/fitnesse/pull/1128">1128</a>)</li>
 	<li>Improve finding of methods in Java classes (first letter may be a capital) (<a href="https://github.com/unclebob/fitnesse/pull/992">992</a>)</li>
 	<li>Allow today's date and expressions to be evaluated inside preformatted blocks (<a href="https://github.com/unclebob/fitnesse/pull/1017">1017</a>)</li>
 	<li>Allow tests which expect an exception (<a href="https://github.com/unclebob/fitnesse/pull/1131">1131</a>)</li>
@@ -305,7 +305,7 @@
 	<li>New wiki element: <a href="../FitNesse/UserGuide/FitNesseWiki/MarkupLanguageReference/MarkupHeadings.html"><i>!headings</i></a> (<a href="https://github.com/unclebob/fitnesse/pull/1025">1025</a>)</li>
 	<li>Define table type now work for Script table (<a href="https://github.com/unclebob/fitnesse/pull/1029">1029</a>, <a href="https://github.com/unclebob/fitnesse/pull/1099">1099</a>)</li>
 	<li>JUnit runner supports system property based <i>excludeSuiteFilter</i> annotation (<a href="https://github.com/unclebob/fitnesse/pull/1033">1033</a>)</li>
-	<li>A SuiteQuery<a title="create page" href="FitNesse.SuiteQuery?edit&amp;nonExistent=true">[?]</a> no longer runs test pages that are excluded (<a href="https://github.com/unclebob/fitnesse/pull/1079">1079</a>)</li>
+	<li>A SuiteQuery no longer runs test pages that are excluded (<a href="https://github.com/unclebob/fitnesse/pull/1079">1079</a>)</li>
 	<li>Root file pages are now included in the default wiki content by default (<a href="https://github.com/unclebob/fitnesse/pull/1084">1084</a>)</li>
 	<li>Table:Table now resizes when the last line contains more results than expected (<a href="https://github.com/unclebob/fitnesse/pull/1055">1055</a>)</li>
 	<li>Various documentation updates</li>
@@ -347,7 +347,7 @@
 	<li>Properly handle symbol assignment in first column of a query table (<a href="https://github.com/unclebob/fitnesse/issues/914">914</a>)</li>
 	<li>Issues fixed:<ul>
 	<li>CompareVersions responder is not escaping output properly (<a href="https://github.com/unclebob/fitnesse/issues/861">861</a>, <a href="https://github.com/unclebob/fitnesse/issues/869">869</a>)</li>
-	<li>Improve code by honoring <i>InterruptedException<a title="create page" href="FitNesse.InterruptedException?edit&amp;nonExistent=true">[?]</a></i> (<a href="https://github.com/unclebob/fitnesse/issues/874">874</a>)</li>
+	<li>Improve code by honoring <i>InterruptedException</i> (<a href="https://github.com/unclebob/fitnesse/issues/874">874</a>)</li>
 	<li><span class="fitnesse">FitNesse</span> stops again when calling /?shutdown (<a href="https://github.com/unclebob/fitnesse/issues/875">875</a>)</li>
 	<li>Fixed: Running suites does not show the tests summaries (<a href="https://github.com/unclebob/fitnesse/issues/876">876</a>)</li>
 	<li>Fix escaping of HTML in Slim hash tables (<a href="https://github.com/unclebob/fitnesse/issues/878">878</a>)</li>
@@ -469,7 +469,7 @@
 <ul>
 	<li>Code cleanup for <span class="fitnesse">FitNesse</span> JUnit runner (<a href="https://github.com/unclebob/fitnesse/pull/487">487</a>).</li>
 	<li>Improved error message when included page does not exist ((<a href="https://github.com/unclebob/fitnesse/pull/496">496</a>).</li>
-	<li>Slim script tables can now really be addressed with <i>script:MyClass<a title="create page" href="FitNesse.MyClass?edit&amp;nonExistent=true">[?]</a></i> (<a href="https://github.com/unclebob/fitnesse/pull/500">500</a>).</li>
+	<li>Slim script tables can now really be addressed with <i>script:MyClass</i> (<a href="https://github.com/unclebob/fitnesse/pull/500">500</a>).</li>
 	<li>Slim can deal with arbitrary length messages (<a href="https://github.com/unclebob/fitnesse/pull/504">504</a>)</li>
 	<li>Plugin classes can support more elements (sub)types (<a href="https://github.com/unclebob/fitnesse/pull/506">506</a>)</li>
 	<li>Make Scenario tables play nice with custom script table (sub)types (<a href="https://github.com/unclebob/fitnesse/pull/507">507</a>)</li>
@@ -548,7 +548,7 @@
 	<li>Support for more content types (in particular image types).</li>
 	<li>Cleanup: removed packages fitnesse.runner, fitnesse.schedule.</li>
 	<li>Refactoring: the code is a more modular than before. This makes it easier to integrate FitNesse components in other applications.</li>
-	<li>MakeFittestrunnerno<a title="create page" href="FitNesse.MakeFittestrunnerno?edit&amp;nonExistent=true">[?]</a> longer dependent on the wiki running: now theFit testsystem starts it's own "socket catcher".</li>
+	<li>MakeFittestrunnerno longer dependent on the wiki running: now theFit testsystem starts it's own "socket catcher".</li>
 	<li>The jUnit test running is starting a test runner by itself. It's no longer using FitNesseMain.</li>
 	<li>Slim server can be kept running after test execution (-d option).</li>
 	<li>Issues fixed:<ul>
@@ -615,7 +615,7 @@
 	<li>New style - The layout and style in theWIkitext is changed as well, keep this in mind when comparing test output</li>
 	<li>Wysiwyg editor</li>
 	<li>Parser fixes</li>
-	<li>Theming system<a title="create page" href="FitNesse.UserGuide.WikiTheming?edit&amp;nonExistent=true">[?]</a></li>
+	<li>Theming system</li>
 </ul>
 <br/><h2 id="62">2011-10-25</h2>
 <ul>
@@ -632,14 +632,14 @@ maven pom.xml cleanups:<br/><br/><ul>
 </ul>
 <br/><h2 id="64">20081128 (UB)</h2>
 <ul>
-	<li>Added &amp;debug flag to TestResponderurl<a title="create page" href="FitNesse.TestResponderurl?edit&amp;nonExistent=true">[?]</a>. This forces the test to run <i>inside</i> the fitnesse process. If you are running fitnesse in a debugger, you can breakpoint your fixtures.</li>
+	<li>Added &amp;debug flag to TestResponderurl. This forces the test to run <i>inside</i> the fitnesse process. If you are running fitnesse in a debugger, you can breakpoint your fixtures.</li>
 	<li>Symbols can be java properties or environment variables. Symbols first, env variables second, java properties third.</li>
 	<li>If the first cell of a script table is a symbol assignment ($V=) then the rest must be a function call. The symbol is assigned the return value of the function.</li>
 </ul>
 
     </article>
     <footer>
-      <center>FitNesse v20221117</center><center><a href="../FrontPage.html">Front Page</a> - <a href="../FitNesse/UserGuide.html">User Guide</a> - <a href="../FitNesseFeatures.html">Features</a> - <a href="../FitNesseDownload.html">Download</a> - <a href="../PlugIns.html">Plugins</a> - <a href="../PlugIns.html#slimfixtures">Fixtures</a> - <a href="https://gitter.im/fitnesse-org/fitnesse">Gitter Community</a></center>
+      <center>FitNesse v20221102</center><center><a href="../FrontPage.html">Front Page</a> - <a href="../FitNesse/UserGuide.html">User Guide</a> - <a href="../FitNesseFeatures.html">Features</a> - <a href="../FitNesseDownload.html">Download</a> - <a href="../PlugIns.html">Plugins</a> - <a href="../PlugIns.html#slimfixtures">Fixtures</a> - <a href="https://gitter.im/fitnesse-org/fitnesse">Gitter Community</a></center>
     </footer>
   </body>
 </html>

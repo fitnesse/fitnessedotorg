@@ -107,11 +107,11 @@ The Java and C# Fit versions are designed using reflection.  Reflection allows t
 		<td>duplicate name</td>
 	</tr>
 </table>
-<br/>HomeGuardFixtures<a title="create page" href="PlugIns.FitServers.CppFit.CppTestTools.HomeGuardFixtures?edit&amp;nonExistent=true">[?]</a> is the library containing the fixtures<br/><ul>
+<br/>HomeGuardFixtures is the library containing the fixtures<br/><ul>
 	<li>for MS, in a DLL</li>
 	<li>for gcc, static linking is only supported right now, so this is ignored</li>
 </ul>
-DefineSensors<a title="create page" href="PlugIns.FitServers.CppFit.CppTestTools.DefineSensors?edit&amp;nonExistent=true">[?]</a> is the name of a ColumnFixture<a title="create page" href="PlugIns.FitServers.CppFit.CppTestTools.ColumnFixture?edit&amp;nonExistent=true">[?]</a><br/>Fields<br/><ul>
+DefineSensors is the name of a ColumnFixture<br/>Fields<br/><ul>
 	<li>port, name, type</li>
 	<li>all names start with a lower case letter</li>
 	<li>multiple word names have the spaces squeezed out, letter following the space is made upper case</li>
@@ -262,7 +262,7 @@ public:
       EventLogOutput(const EventLogOutput&amp;);
       EventLogOutput&amp; operator=(const EventLogOutput&amp;);
 };
-</pre><br/><br/>*!!*&gt; !3 ActionFixture<br/>An ActionFixture<a title="create page" href="PlugIns.FitServers.CppFit.CppTestTools.ActionFixture?edit&amp;nonExistent=true">[?]</a> is used for simulating user interactions.  The top row identifies this as an action fixture.  Action fixture have keywords<br/><ul>
+</pre><br/><br/>*!!*&gt; !3 ActionFixture<br/>An ActionFixture is used for simulating user interactions.  The top row identifies this as an action fixture.  Action fixture have keywords<br/><ul>
 	<li>start - initialize a specific action fixture</li>
 	<li>check - check that the field specified in cell two has the value specified in cell three</li>
 	<li>press - call the function in cell two</li>
@@ -348,7 +348,7 @@ public:
     void digits(std::string d) { display = d; }
 	
 };
-</pre><br/><br/>*!!*&gt; !3 Fixture<br/>The base class of all the fixture classes.  You use Fixture as a base for fixtures that initialize things, or clean things up, like the SetUp and TesrDown examples.<br/>*!!*&gt; !3 AppFixtureMaker<br/>You will have noticed the PUBLISH macros that inform Cpp Fit of the fields of the fixtures.  How does <a href="../../../../PlugIns/FitServers/CppFit/CppTestTools/CppFit.html">CppFit</a> know about the fixtures themselves?  You need to provide an AFM.  The code that needs a fixture will consult with your AFM to get the needed fixture.<br/><br/>In this case you create the CPP that goes with AppFixtureMaker<a title="create page" href="PlugIns.FitServers.CppFit.CppTestTools.AppFixtureMaker?edit&amp;nonExistent=true">[?]</a>.h<br/><pre>
+</pre><br/><br/>*!!*&gt; !3 Fixture<br/>The base class of all the fixture classes.  You use Fixture as a base for fixtures that initialize things, or clean things up, like the SetUp and TesrDown examples.<br/>*!!*&gt; !3 AppFixtureMaker<br/>You will have noticed the PUBLISH macros that inform Cpp Fit of the fields of the fixtures.  How does <a href="../../../../PlugIns/FitServers/CppFit/CppTestTools/CppFit.html">CppFit</a> know about the fixtures themselves?  You need to provide an AFM.  The code that needs a fixture will consult with your AFM to get the needed fixture.<br/><br/>In this case you create the CPP that goes with AppFixtureMaker.h<br/><pre>
 #include "Platform.h"
 #include "Fit/AppFixtureMaker.h"
 #include "Fit/Fixture.h"
@@ -379,7 +379,7 @@ Fixture* AppFixtureMaker::Make(const char* name)
 </pre><br/>*!!*&gt; !3 How Does FitNesse Find Your Fixtures<br/><b>Dynamic Loading</b> - NO CURRENTLY SUPPORTED<br/><a href="../../../../PlugIns/FitServers/CppFit/CppTestTools/CppFit/FormerDynamicLoadingInstructions.html">^FormerDynamicLoadingInstructions</a><br/><br/><b>Static Loading</b> <br/>When using gcc et. al. fixtures are compiled into a static library, and the library is linked into a fitnesse server main.  AppFixtureMaker creates fixtures.  Your application has to provide a FitNesse server.  See HomeGuardFitnesseServer as an example.  The COMMAND_PATTERN in your FitNesse tests must invoke your application specific fitnesse server.  The main page of the HomeGuard fitnesse pages has an example of the needed COMMAND_PATTERN-<br/>*!
     </article>
     <footer>
-      <center>FitNesse v20221117</center><center><a href="../../../../FrontPage.html">Front Page</a> - <a href="../../../../FitNesse/UserGuide.html">User Guide</a> - <a href="../../../../FitNesseFeatures.html">Features</a> - <a href="../../../../FitNesseDownload.html">Download</a> - <a href="../../../../PlugIns.html">Plugins</a> - <a href="../../../../PlugIns.html#slimfixtures">Fixtures</a> - <a href="https://gitter.im/fitnesse-org/fitnesse">Gitter Community</a></center>
+      <center>FitNesse v20221102</center><center><a href="../../../../FrontPage.html">Front Page</a> - <a href="../../../../FitNesse/UserGuide.html">User Guide</a> - <a href="../../../../FitNesseFeatures.html">Features</a> - <a href="../../../../FitNesseDownload.html">Download</a> - <a href="../../../../PlugIns.html">Plugins</a> - <a href="../../../../PlugIns.html#slimfixtures">Fixtures</a> - <a href="https://gitter.im/fitnesse-org/fitnesse">Gitter Community</a></center>
     </footer>
   </body>
 </html>

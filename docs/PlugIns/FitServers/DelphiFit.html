@@ -43,7 +43,7 @@
 </center><br/>Written by Salim Nair: <a href="mailto:Salim@chaaya.com">Salim@chaaya.com</a><br/>Updated to FIT20070619 and extended by Michal Wojcik: <a href="mailto:mgwojcik@gmail.com">mgwojcik@gmail.com</a><br/><br/><h3 id="1">Downloads:</h3>
 Project moved to <a href="http://code.google.com/p/fit4delphi/">http://code.google.com/p/fit4delphi/</a><br/><br/><h3 id="2">News group:</h3>
 <a href="http://tech.groups.yahoo.com/group/fitnesse/">http://tech.groups.yahoo.com/group/fitnesse/</a><br/><br/><h3 id="3">Comments:</h3>
-This is almost complete implementation of FIT for Delphi. It supports Fixture, ColumnFixture<a title="create page" href="PlugIns.FitServers.ColumnFixture?edit&amp;nonExistent=true">[?]</a>, RowFixture<a title="create page" href="PlugIns.FitServers.RowFixture?edit&amp;nonExistent=true">[?]</a> and ActionFixture<a title="create page" href="PlugIns.FitServers.ActionFixture?edit&amp;nonExistent=true">[?]</a>. Only decorators are not implemented.  <br/><br/><h3 id="4">Usage:</h3>
+This is almost complete implementation of FIT for Delphi. It supports Fixture, ColumnFixture, RowFixture and ActionFixture. Only decorators are not implemented.  <br/><br/><h3 id="4">Usage:</h3>
 Set your COMMAND_PATTERN variable to point to <a href="../../PlugIns/FitServers/FitServer.html">FitServer</a>.exe something like this:<br/>!define COMMAND_PATTERN {c:\Source\fit4delphi\bin\FitServer.exe -v %p}<br/>The %p represents a search path.  <a href="../../FitNesse.html">.FitNesse</a> will generate the search path for you.  However you will need to use the !path widget identify necessary path elements.  Path elements should be directory paths where .bpl files are contained.  The .bpl files are dynamically loaded by <a href="../../PlugIns/FitServers/FitServer.html">FitServer</a> to find the your Fixtures and execute them.<br/><br/>When creating test tables for use by the Delphi <a href="../../PlugIns/FitServers/FitServer.html">FitServer</a>, identify Fixtures by supplying the name of the .bpl file followed by a dot, followed by the name of your Fixture class.  In the example below, the Fixture is identified by <b>FixtureLib.ExampleFixture</b>.  <a href="../../PlugIns/FitServers/FitServer.html">FitServer</a> will search through the supplied path elements looking for the file <b>FixtureLib.bpl</b>.  When found it will be loaded and searched for a Fixture named <b>ExampleFixture</b> or <b>TExampleFixture</b> (to easier use in Delphi world).  <b>ExampleFixture</b> be loaded and an instance will be created to handle the rest of the table.<br/><br/><table>
 	<tr>
 		<td>FixtureLib.ExampleFixture</td>
@@ -57,7 +57,7 @@ Set your COMMAND_PATTERN variable to point to <a href="../../PlugIns/FitServers/
 </table>
 <br/>Also note that reflection in this implementation of FIT is done through properties and dynamic call to methods.  Therefore every column in your ColumnFixtures tables should have a corresponding published property and methods in the Fixture code.<br/><br/><br/><hr/>
 <br/><br/><h3 id="5">Working Example</h3>
-<br/>Updated By .AndrewMcDonagh<a title="create page" href="AndrewMcDonagh?edit&amp;nonExistent=true">[?]</a><br/><br/>The necessary Fixture code for the example included within the <a href="../../PlugIns/FitServers/DelphiFit.html">DelphiFit</a> Server.<br/><br/>NOTE: The paths being used expect the Delphi fitserver to be installed within the <span class="fitnesse">FitNesse</span> directory.<br/><br/>For example, C:\FitNesse\DelphiFit\<br/><br/>If that is not the case, then the exact paths will need to be used.<br/><br/>Copy &amp; paste the following into your own test page<br/><br/><pre>
+<br/>Updated By .AndrewMcDonagh<br/><br/>The necessary Fixture code for the example included within the <a href="../../PlugIns/FitServers/DelphiFit.html">DelphiFit</a> Server.<br/><br/>NOTE: The paths being used expect the Delphi fitserver to be installed within the <span class="fitnesse">FitNesse</span> directory.<br/><br/>For example, C:\FitNesse\DelphiFit\<br/><br/>If that is not the case, then the exact paths will need to be used.<br/><br/>Copy &amp; paste the following into your own test page<br/><br/><pre>
 
 !path c:\Source\fit4delphi\bin\*.bpl
 !define COMMAND_PATTERN {c:\Source\fit4delphi\bin\FitServer.exe -v %p}
@@ -77,7 +77,7 @@ Set your COMMAND_PATTERN variable to point to <a href="../../PlugIns/FitServers/
 <br/><br/><br/><br/>
     </article>
     <footer>
-      <center>FitNesse v20221117</center><center><a href="../../FrontPage.html">Front Page</a> - <a href="../../FitNesse/UserGuide.html">User Guide</a> - <a href="../../FitNesseFeatures.html">Features</a> - <a href="../../FitNesseDownload.html">Download</a> - <a href="../../PlugIns.html">Plugins</a> - <a href="../../PlugIns.html#slimfixtures">Fixtures</a> - <a href="https://gitter.im/fitnesse-org/fitnesse">Gitter Community</a></center>
+      <center>FitNesse v20221102</center><center><a href="../../FrontPage.html">Front Page</a> - <a href="../../FitNesse/UserGuide.html">User Guide</a> - <a href="../../FitNesseFeatures.html">Features</a> - <a href="../../FitNesseDownload.html">Download</a> - <a href="../../PlugIns.html">Plugins</a> - <a href="../../PlugIns.html#slimfixtures">Fixtures</a> - <a href="https://gitter.im/fitnesse-org/fitnesse">Gitter Community</a></center>
     </footer>
   </body>
 </html>

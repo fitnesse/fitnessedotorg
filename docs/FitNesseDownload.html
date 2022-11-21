@@ -69,7 +69,7 @@ It really takes very little time and effort to get <a href="FitNesse.html">FitNe
 	<li>The main <a href="FitNesse.html">FitNesse</a> screen should come up. That's it. You're ready to start using <a href="FitNesse.html">FitNesse</a>.</li>
 </ol>
 <br/><h3 id="3">It didn't work!</h3>
-Most likely you have another web server running. Web servers default to port 80, so if another one is running on your machine you'll have to specify another port via a CommandLineOption<a title="create page" href="CommandLineOption?edit&amp;nonExistent=true">[?]</a>.  Try this command: <span class="code">java -jar fitnesse-standalone.jar -p 8080</span><br/><br/>Then point your browser to <span class="code"><a href="http://localhost:8080">http://localhost:8080</a></span><br/><br/><div class="collapsible closed"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+Most likely you have another web server running. Web servers default to port 80, so if another one is running on your machine you'll have to specify another port via a CommandLineOption.  Try this command: <span class="code">java -jar fitnesse-standalone.jar -p 8080</span><br/><br/>Then point your browser to <span class="code"><a href="http://localhost:8080">http://localhost:8080</a></span><br/><br/><div class="collapsible closed"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
 	<p class="title">Still no?  Open me up.</p>
 	<div><h3 id="4">What to Do If You Have the Wrong Java Runtime Environment</h3>
 <ul>
@@ -111,12 +111,12 @@ Exception in thread "main" java.lang.NoClassDefFoundError: org/apache/velocity/c
 </pre><br/>You probably want the latter.<br/></div>
 </div>
 <br/><h2 id="6">Learning More</h2>
-If you have not yet done so, check out the <a href="FitNesse/UserGuide/TwoMinuteExample.html">Two Minute Example</a>. To learn more about what <a href="FitNesse.html">FitNesse</a> acceptance testing is all about, see <a href="FitNesse/UserGuide/AcceptanceTests.html">AcceptanceTests</a>.  If you are ready to start creating <a href="FitNesse.html">FitNesse</a> pages and test tables, check out EditingFitNessePages<a title="create page" href="FitNesse.UserGuide.EditingFitNessePages?edit&amp;nonExistent=true">[?]</a> and CreatingTestTables<a title="create page" href="FitNesse.UserGuide.CreatingTestTables?edit&amp;nonExistent=true">[?]</a>.<br/><br/><h2 id="7">Memory Issues.</h2>
+If you have not yet done so, check out the <a href="FitNesse/UserGuide/TwoMinuteExample.html">Two Minute Example</a>. To learn more about what <a href="FitNesse.html">FitNesse</a> acceptance testing is all about, see <a href="FitNesse/UserGuide/AcceptanceTests.html">AcceptanceTests</a>.  If you are ready to start creating <a href="FitNesse.html">FitNesse</a> pages and test tables, check out EditingFitNessePages and CreatingTestTables.<br/><br/><h2 id="7">Memory Issues.</h2>
 When you use FitNesse extensively, some operations take more than the default memory allocated to the JVM.  This can cause tests to fail for <i>out of heap space</i> reasons.  You can fix this by adding the <span class="code">-Xmx100M</span> JVM argument to the java command line when you start FitNesse.  <span class="code">java -Xmx100M -jar fitnesse.jar</span>.<br/><br/><h3 id="8">Memory issues and the build.</h3>
 If you build FitNesse from source, the ant script may fail for <i>out of heap space</i> reasons.  You can fix this by setting the <span class="code">ANT_OPTS</span> environment variable to <span class="code">-Xmx100M</span>.<br/>
     </article>
     <footer>
-      <center>FitNesse v20221117</center><center><a href="FrontPage.html">Front Page</a> - <a href="FitNesse/UserGuide.html">User Guide</a> - <a href="FitNesseFeatures.html">Features</a> - <a href="FitNesseDownload.html">Download</a> - <a href="PlugIns.html">Plugins</a> - <a href="PlugIns.html#slimfixtures">Fixtures</a> - <a href="https://gitter.im/fitnesse-org/fitnesse">Gitter Community</a></center>
+      <center>FitNesse v20221102</center><center><a href="FrontPage.html">Front Page</a> - <a href="FitNesse/UserGuide.html">User Guide</a> - <a href="FitNesseFeatures.html">Features</a> - <a href="FitNesseDownload.html">Download</a> - <a href="PlugIns.html">Plugins</a> - <a href="PlugIns.html#slimfixtures">Fixtures</a> - <a href="https://gitter.im/fitnesse-org/fitnesse">Gitter Community</a></center>
     </footer>
   </body>
 </html>

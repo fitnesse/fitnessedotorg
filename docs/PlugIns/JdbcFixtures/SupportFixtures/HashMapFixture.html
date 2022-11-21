@@ -40,7 +40,7 @@
     <header>
     </header>
     <article>
-      A <b>RowFixture</b> uses a TargetClass to define the columns in a table. <b>HashMapFixture</b> assumes the columns will be determined at runtime. <br/><br/><b>HashMapFixture</b> does not provide a working query() (<i>well ... it just barely works</i> :)). It should be overridden and return an array of HashMap. <br/>The keys of the HashMap should correspond to the names of a column. <br/><br/>super class: RowFixture<a title="create page" href="FitNesse.RowFixture?edit&amp;nonExistent=true">[?]</a> <b>RowFixture</b> provides the validation for each row for a fixed number of columns.<br/>sub class: Select<a title="create page" href="JdbcFixtures.JdbcSamples.SelectSample?edit&amp;nonExistent=true">[?]</a> <b>Select</b> provides the validation of a database table on the DefaultConnection<a title="create page" href="JdbcFixtures.JdbcSamples.DefaultConnection?edit&amp;nonExistent=true">[?]</a><br/><br/><pre>
+      A <b>RowFixture</b> uses a TargetClass to define the columns in a table. <b>HashMapFixture</b> assumes the columns will be determined at runtime. <br/><br/><b>HashMapFixture</b> does not provide a working query() (<i>well ... it just barely works</i> :)). It should be overridden and return an array of HashMap. <br/>The keys of the HashMap should correspond to the names of a column. <br/><br/>super class: RowFixture <b>RowFixture</b> provides the validation for each row for a fixed number of columns.<br/>sub class: Select <b>Select</b> provides the validation of a database table on the DefaultConnection<br/><br/><pre>
     public Object[] query() throws Exception {
         Vector rows = new Vector();
         HashMap row1 = new HashMap();
@@ -119,7 +119,7 @@ class MyProperties extends HashMapFixture{
 <br/><br/><br/>
     </article>
     <footer>
-      <center>FitNesse v20221117</center><center><a href="../../../FrontPage.html">Front Page</a> - <a href="../../../FitNesse/UserGuide.html">User Guide</a> - <a href="../../../FitNesseFeatures.html">Features</a> - <a href="../../../FitNesseDownload.html">Download</a> - <a href="../../../PlugIns.html">Plugins</a> - <a href="../../../PlugIns.html#slimfixtures">Fixtures</a> - <a href="https://gitter.im/fitnesse-org/fitnesse">Gitter Community</a></center>
+      <center>FitNesse v20221102</center><center><a href="../../../FrontPage.html">Front Page</a> - <a href="../../../FitNesse/UserGuide.html">User Guide</a> - <a href="../../../FitNesseFeatures.html">Features</a> - <a href="../../../FitNesseDownload.html">Download</a> - <a href="../../../PlugIns.html">Plugins</a> - <a href="../../../PlugIns.html#slimfixtures">Fixtures</a> - <a href="https://gitter.im/fitnesse-org/fitnesse">Gitter Community</a></center>
     </footer>
   </body>
 </html>

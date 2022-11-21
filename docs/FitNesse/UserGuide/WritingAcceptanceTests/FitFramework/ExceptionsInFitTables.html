@@ -41,7 +41,7 @@
     <header>
     </header>
     <article>
-      If something goes wrong when you push the <i>test</i> button, the most likely cause is that you haven't specified the classpath.  Edit the test page and add a !path directive for every classpath that you want included.  See BuildingClassPaths<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.FitFramework.BuildingClassPaths?edit&amp;nonExistent=true">[?]</a> for more information.<br/><br/>Another common problem is a mispelling of the test fixture, or one of the column names.  The symptom is an exception appearing in the table cell that contains the mispelling.<br/><br/>Hit the <i>Test</i> button to see what these errors look like.<br/><br/><table>
+      If something goes wrong when you push the <i>test</i> button, the most likely cause is that you haven't specified the classpath.  Edit the test page and add a !path directive for every classpath that you want included.  See BuildingClassPaths for more information.<br/><br/>Another common problem is a mispelling of the test fixture, or one of the column names.  The symptom is an exception appearing in the table cell that contains the mispelling.<br/><br/>Hit the <i>Test</i> button to see what these errors look like.<br/><br/><table>
 	<tr>
 		<td>eg.thisTestFixtureDoesNotExist</td>
 	</tr>
@@ -64,7 +64,7 @@
 		<td>5</td>
 	</tr>
 </table>
-<br/>Another odd problem can occurr if the name of the fixture is a WikiWord<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.FitFramework.WikiWord?edit&amp;nonExistent=true">[?]</a>.  If the corresponding wiki page does not exist, then a ? is appended to it.  Fit sees this ? and thinks it's part of the classname.  Hit the <i>Test</i> button and then look at the table below.  You should see a ? in the table at the end of the fixture name.  You should also see that ? in the exception report that follows it.  Look closely.<br/><br/><table>
+<br/>Another odd problem can occurr if the name of the fixture is a WikiWord.  If the corresponding wiki page does not exist, then a ? is appended to it.  Fit sees this ? and thinks it's part of the classname.  Hit the <i>Test</i> button and then look at the table below.  You should see a ? in the table at the end of the fixture name.  You should also see that ? in the exception report that follows it.  Look closely.<br/><br/><table>
 	<tr>
 		<td colspan="3">somePackage.ClassThatLooksLikeWikiWordButIsntOne</td>
 	</tr>
@@ -74,7 +74,7 @@
 		<td>c</td>
 	</tr>
 </table>
-<br/>If you have a problem like this, then what you need to do is surround the name of the fixture in !-  and  -! (see MarkupLiteralText<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.FitFramework.MarkupLiteralText?edit&amp;nonExistent=true">[?]</a>).<br/><pre>|! -somePackage.ClassThatLooksLikeWikiWordButIsntOne- !|
+<br/>If you have a problem like this, then what you need to do is surround the name of the fixture in !-  and  -! (see MarkupLiteralText).<br/><pre>|! -somePackage.ClassThatLooksLikeWikiWordButIsntOne- !|
 |a|b|c|</pre><br/>Or you can also use the literal tables like this:<br/><pre>!|somePackage.ClassThatLooksLikeWikiWordButIsntOne|
 |a|b|c|</pre><br/><b>Tip for viewing exceptions in small font</b><br/>If you have a scroll-wheel mouse, hold the ctrl key and scroll the wheel. It increases/decreases the font size quickly in most browsers.<br/><br/><br/>
     </article>

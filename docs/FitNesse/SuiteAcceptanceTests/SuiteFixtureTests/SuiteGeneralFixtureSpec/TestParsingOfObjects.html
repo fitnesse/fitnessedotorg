@@ -41,7 +41,7 @@
     <header>
     </header>
     <article>
-      Table cells contain strings.  Fixtures deal with objects.  In order to convert the strings into the objects FIT needs to know how to parse the strings.  One way we accomplish this is to allow the objects to have the following method:<pre>Object parse(String s);</pre>The following table shows the result of adding two vectors.  Each vector is represented by an ordered pair which represents it's X and Y dimensions.  The class CartesianVector<a title="create page" href="FitNesse.SuiteAcceptanceTests.SuiteFixtureTests.SuiteGeneralFixtureSpec.CartesianVector?edit&amp;nonExistent=true">[?]</a> is used to parse, display, and sum the vectors.<br/><br/><table>
+      Table cells contain strings.  Fixtures deal with objects.  In order to convert the strings into the objects FIT needs to know how to parse the strings.  One way we accomplish this is to allow the objects to have the following method:<pre>Object parse(String s);</pre>The following table shows the result of adding two vectors.  Each vector is represented by an ordered pair which represents it's X and Y dimensions.  The class CartesianVector is used to parse, display, and sum the vectors.<br/><br/><table>
 	<tr>
 		<td colspan="3">fitnesse.testutil.VectorSum</td>
 	</tr>
@@ -91,7 +91,7 @@
 		<td>(2,2)</td>
 	</tr>
 </table>
-<br/>In the ObjectTranslatePoint<a title="create page" href="FitNesse.SuiteAcceptanceTests.SuiteFixtureTests.SuiteGeneralFixtureSpec.ObjectTranslatePoint?edit&amp;nonExistent=true">[?]</a> fixture, we have a static block which registers the parse delegate object for a give Class type.<br/><br/>Ex:<br/><pre>static
+<br/>In the ObjectTranslatePoint fixture, we have a static block which registers the parse delegate object for a give Class type.<br/><br/>Ex:<br/><pre>static
 {
         TypeAdapter.registerParseDelegate(java.awt.Point.class, new ObjectDelegatePointParser());
 }
@@ -120,7 +120,7 @@
 		<td>(2,2)</td>
 	</tr>
 </table>
-<br/>In the ClassTranslatePoint<a title="create page" href="FitNesse.SuiteAcceptanceTests.SuiteFixtureTests.SuiteGeneralFixtureSpec.ClassTranslatePoint?edit&amp;nonExistent=true">[?]</a> fixture, we have a static block which registers the parse delegate class for a give Class type.<br/><br/>Ex:<br/><pre>static
+<br/>In the ClassTranslatePoint fixture, we have a static block which registers the parse delegate class for a give Class type.<br/><br/>Ex:<br/><pre>static
 {
         TypeAdapter.registerParseDelegate(java.awt.Point.class, ClassDelegatePointParser.class);
 }

@@ -76,10 +76,10 @@
 <ul>
 	<li>The -c command line argument allows you to run tests or suites (or any other Restful command) from the command line without starting the server.  This is perfect for ant tasks!  Check the User Guide for examples.</li>
 	<li>Suites XML reports are much more compact (and don't blow memory!).  Instead of containing all the test results, the XML is now a summary of the results that contains links to the test history.</li>
-	<li>New Widget: !{name:bob, addr:here} creates a special table called a "hash" (for lack of a better term).  If a hash is contained in a test table cell, the HTML will be sent to the Test System.  The Java slim implementation has an automatic converter that will convert this HTML to a HashMap<a title="create page" href="FrontPage.FitNesseDevelopment.HashMap?edit&amp;nonExistent=true">[?]</a>.</li>
+	<li>New Widget: !{name:bob, addr:here} creates a special table called a "hash" (for lack of a better term).  If a hash is contained in a test table cell, the HTML will be sent to the Test System.  The Java slim implementation has an automatic converter that will convert this HTML to a HashMap.</li>
 	<li>-i command line argument for 'install only'.  This will cause the initial installation stuff to run, copying files etc, and fitnesse will quit instead of starting up.</li>
 	<li>New variable:  FITNESSE_ROOTPATH.  (See User Guide).</li>
-	<li>New Slim Table: SubsetQueryTable<a title="create page" href="FrontPage.FitNesseDevelopment.SubsetQueryTable?edit&amp;nonExistent=true">[?]</a> (See User Guide).</li>
+	<li>New Slim Table: SubsetQueryTable (See User Guide).</li>
 	<li>New Plugin for Maven classpath generation.  See Downloads Page.</li>
 	<li>Plugins will automatically be found if placed in the <i>plugins</i> folder.  No need for -cp arguments anymore.  java -jar fitnesse.jar works for all situations.</li>
 	<li>Tables can start with a hidden row by using #|some row|.  This allows you to get rid of the ugly first rows in Script tables.</li>
