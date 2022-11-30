@@ -1,7 +1,0 @@
-This is the FIT component require to integrate with FitNesse.
-
-The protocol used is described at .FitNesse.FitServerProtocol.
-
-Read an interesting account of .PortingFitServer to .NET.
-
-'''Java Code: ''' The Java implementation can be seen at http://files/Examples/FitServer.java

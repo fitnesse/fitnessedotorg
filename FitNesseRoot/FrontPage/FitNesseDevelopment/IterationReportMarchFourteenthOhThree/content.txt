@@ -1,9 +1,0 @@
-I don't think I've had so much fun in a decade or more!  The virtual wiki story was just delectable!  
-
-The concept was simple, and we thought we'd get through the story in about 10 hours.  In reality it probably took us close to thirty.  I should have known!  I've done this kind of master/slave networking before; but I thought it was going to be simple this time.  Ha!
-
-By the end of the first day we realized that we had some major refactoring to do.  Indeed, we wound up doing two major refactorings -- and there is still some left to do.  
-
-We also learned (again) how important it is to do a major refactoring in little tiny steps that you can run the tests in between.  
-
-Anyway, it all works now, and we're pretty proud of it.  
