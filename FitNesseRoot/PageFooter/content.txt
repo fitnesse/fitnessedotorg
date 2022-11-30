@@ -1,2 +1,1 @@
-!c !-FitNesse-! ${FITNESSE_VERSION}
 !c [[Front Page][.FrontPage]] - [[User Guide][.FitNesse.UserGuide]] - [[Features][FitNesseFeatures]] - [[Download][FitNesseDownload]] - [[Plugins][PlugIns]] - [[Fixtures][PlugIns#slimfixtures]] - [[Gitter Community][https://gitter.im/fitnesse-org/fitnesse]]
