@@ -1,1 +1,0 @@
-Each word within a name begins with a capital letter, followed by all lowercase letters, except for the first word, which begins with a lowercase letter. For example: thisIsInCamelCase.

@@ -1,4 +1,0 @@
-|'''Date: '''|!-4:29:04 PM (CDT) on Thursday, April 8, 2004-!|
-|'''Command: '''|!-java -cp "fit.jar ";"fitnesse.jar ";"Example " fit.FitServer-!|
-|'''Exit code: '''|!-1-!|
-|'''Time elapsed: '''|!-2.664 seconds-!|

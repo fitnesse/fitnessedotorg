@@ -1,4 +1,0 @@
-Whoa, this iteration got blown to peices when my wife decided to go into labor.  Thats ok, my new son is well worth the trouble.  In the end, quite a bit of stuff got done anyway.
-
-We've established a standard way to incorporate Fitnesse tests in other languages.  It's all described on .FitNesse.MultiLanguageFitNesse.
-

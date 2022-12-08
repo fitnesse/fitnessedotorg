@@ -1,4 +1,0 @@
-'''Command: '''!-java -cp defaultPath fitnesse.FitFilter-!
-'''Exited with code: '''1----'''Standard Error Output:'''
-{{{ java.lang.NoClassDefFoundError: fitnesse/FitFilter
-Exception in thread "main" }}}

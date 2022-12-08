@@ -1,8 +1,0 @@
-The !-FitNesse-! source code is now available for your viewing pleasure.  
-
-There was just one developer working on this iteration so things moved a bit slower than usual.  It was important to us to open the source, so we put the iteration on hold until that was done.  I also looked into starting a project on sourceforge.net.  It's at http://sourceforge.net/projects/fitnesse but right now it is not all that interesting.  I plan to spend the remaining hours of this iteration playing around with it.
-
-The big story of this iteration is the page versioning.  Any change made to a page is saved as a version.  You can view versions by clicking the version button on a page and you rollback to previous versions.  Each page is a directory with a couple files in it.  So our original plan was to copy the directory and save it inside of itself with a version number as its name.  Although this plan was simple I was concerned about disk space.  If large pages are saved several times over, it'll add up to megabytes and gigabytes sooner or later.  Bob on the other hand was not concerned at all about this.  I took advantage of the fact that I was coding solo this week and now the directories are zipped up before they are saved.
-
-We may need a feature that will collect old versions and free the disk space.
-   

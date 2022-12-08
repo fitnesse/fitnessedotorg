@@ -26,6 +26,7 @@
 <div id="quote">Be-monster not thy feature, wer't my fitnesse<br/>
 -- Shakespeare, King Lear</div>
 <div id="calltoaction"><a href="FitNesseDownload" class="btn btn-lg btn-success">Download FitNesse</a></div>
+<h5 id="slogan">-!v${PUBLISH_VERSION}!-</h5>
 </div>-!
 #!-<div style="text-align: center; margin: -40px -40px 0; background-color: #09293B ; padding: 120px 20px 80px">
 
