@@ -38,21 +38,20 @@
     <header>
     </header>
     <article>
-      <h2 id="0">Latest Release v20221203</h2>
-<h2 id="1">Pending Changes</h2>
+      <h2 id="0">Pending Changes</h2>
 <ul>
 	<li>Add a new optional command line parameter to specify the maximum number of workers to use for handling incoming requests. </li>
 	<li>Ability to ignore the rest of a script table or test page by throwing an exception. (<a href="https://github.com/unclebob/fitnesse/pull/1350">1350</a>)</li>
-	<li>Change the publish responder to use Apache Velocity (<a href="https://github.com/unclebob/fitnesse/issues/1387">1387</a>)</li>
+	<li>Change the publish responder to use Apache Velocity, and create index page (<a href="https://github.com/unclebob/fitnesse/issues/1387">1387</a>)</li>
 </ul>
-<br/><h2 id="2">20221102</h2>
+<br/><h2 id="1">20221102</h2>
 <ul>
 	<li>Ability to create plugins for new markup syntax. (<a href="https://github.com/unclebob/fitnesse/pull/1382">1382</a>)</li>
 	<li>Bugfix: Unescaping HTML is done in the correct order. (<a href="https://github.com/unclebob/fitnesse/issues/1384">1384</a>)</li>
 	<li>Bugfix: Slim decision table shows input cells correctly in test results (<a href="https://github.com/unclebob/fitnesse/issues/1388">1388</a>)</li>
 	<li>Add new responder to publish a site as static HTML pages (<a href="https://github.com/unclebob/fitnesse/issues/1387">1387</a>)</li>
 </ul>
-<br/><h2 id="3">20220815</h2>
+<br/><h2 id="2">20220815</h2>
 <ul>
 	<li>Add support for inline <a href="../FitNesse/UserGuide/FitNesseWiki/MarkupLanguageReference/MarkupPicture.html"><i>!img</i></a> using base64 data url (<a href="https://github.com/unclebob/fitnesse/pull/1367">1367</a>)</li>
 	<li>Bugfix: render <a href="../FitNesse/UserGuide/FitNesseWiki/MarkupLanguageReference/LinksWithinPages.html"><i>!anchor</i></a> as valid (non empty) element (<a href="https://github.com/unclebob/fitnesse/pull/1366">1366</a>)</li>
@@ -62,42 +61,42 @@
 	<li>Bugfix: issues with !include and variables in page name (<a href="https://github.com/unclebob/fitnesse/pull/1359">1359</a>)</li>
 	<li>Performance: improve parser performance for some incomplete wiki syntax (<a href="https://github.com/unclebob/fitnesse/pull/1371">1371</a>)</li>
 </ul>
-<br/><h2 id="4">20220319</h2>
+<br/><h2 id="3">20220319</h2>
 <ul>
 	<li>Add new responder to list the Slim instructions suite to aid analysis/debugging (<a href="https://github.com/unclebob/fitnesse/pull/1356">1356</a>)</li>
 	<li>Allow usage of variables inside include statement (<a href="https://github.com/unclebob/fitnesse/pull/1353">1353</a>)</li>
 	<li>Improved template for new suites (<a href="https://github.com/unclebob/fitnesse/pull/1344">1343</a>)</li>
 	<li>Allow more control over how a test suite is partitioned (<a href="https://github.com/unclebob/fitnesse/pull/1343">1343</a>)</li>
 </ul>
-<br/><h2 id="5">20211030</h2>
+<br/><h2 id="4">20211030</h2>
 <ul>
 	<li>Switch community pages from Slack to Gitter. (<a href="https://github.com/unclebob/fitnesse/pull/1339">1339</a>)</li>
 </ul>
-<br/><h2 id="6">20211006</h2>
+<br/><h2 id="5">20211006</h2>
 <ul>
 	<li>Values of Slim symbols prefixed by 'SECRET_' are not shown in test report. (<a href="https://github.com/unclebob/fitnesse/pull/1333">1333</a>)</li>
 	<li>The jUnit test reporter now reports tests that are shown as ignored in the wiki (blue bar in html result, e.g. a stop test exception was thrown in a SuiteSetUp) as 'ignored'. (<a href="https://github.com/unclebob/fitnesse/pull/1327">1327</a>)</li>
 </ul>
-<br/><h2 id="7">20210606</h2>
+<br/><h2 id="6">20210606</h2>
 <ul>
 	<li>2nd attempt to fix non-backwards compatible change in fitnesse.testsystems.TestSystemListener (<a href="https://github.com/unclebob/fitnesse/issues/1325">1325</a>)</li>
 </ul>
-<br/><h2 id="8">20210605</h2>
+<br/><h2 id="7">20210605</h2>
 <ul>
 	<li>Fix non-backwards compatible change in fitnesse.testsystems.TestSystemListener (<a href="https://github.com/unclebob/fitnesse/issues/1325">1325</a>)</li>
 </ul>
-<br/><h2 id="9">20210516</h2>
+<br/><h2 id="8">20210516</h2>
 <ul>
 	<li>Release process updated to no longer use Bintray.</li>
 	<li>Improve handling of Slim symbols embedded in strings (<a href="https://github.com/unclebob/fitnesse/issues/1324">1324</a>)</li>
 </ul>
-<br/><h2 id="10">20210410</h2>
+<br/><h2 id="9">20210410</h2>
 <ul>
 	<li>Ability to show number of test pages in table of context of suite. (<a href="https://github.com/unclebob/fitnesse/pull/1318">1318</a>)</li>
 	<li>Create distinct rerun failed page per suite, to allow concurent suites to run. (<a href="https://github.com/unclebob/fitnesse/pull/1316">1316</a>)</li>
 	<li>Small change of classpath ordering. (<a href="https://github.com/unclebob/fitnesse/pull/1317">1317</a>)</li>
 </ul>
-<br/><h2 id="11">20201213</h2>
+<br/><h2 id="10">20201213</h2>
 <ul>
 	<li>New table type: 'No links table' to create tables where wiki-words, email addresses and URLs are not automatically converted to hyperlinks (<a href="https://github.com/unclebob/fitnesse/pull/1310">1310</a>)</li>
 	<li>Facilitate running a suite in partitions by adding a JUnit RunListener and Gradle TestListener that generate XML result files per page, instead of per suite. (<a href="https://github.com/unclebob/fitnesse/pull/1297">1297</a>)</li>
@@ -105,71 +104,71 @@
 	<li>Bugfix: rendering of maps inside lists (<a href="https://github.com/unclebob/fitnesse/pull/1311">1311</a>)</li>
 	<li>Bugfix: Move Page does not change alias references (<a href="https://github.com/unclebob/fitnesse/issues/1293">1293</a>)</li>
 </ul>
-<br/><h2 id="12">20200501</h2>
+<br/><h2 id="11">20200501</h2>
 <ul>
 	<li>Bugfix: very slow rendering of pages having multiple tables defined via symbols (<a href="https://github.com/unclebob/fitnesse/issues/1280">1280</a>).</li>
 </ul>
-<br/><h2 id="13">20200404</h2>
+<br/><h2 id="12">20200404</h2>
 <ul>
 	<li>Ensure FitNesseRunner takes suite partitioning into account when determining children (<a href="https://github.com/unclebob/fitnesse/issues/1275">1275</a>).</li>
 </ul>
-<br/><h2 id="14">20200307</h2>
+<br/><h2 id="13">20200307</h2>
 <ul>
 	<li>Bugfixes in splitting suite in partitions.</li>
 </ul>
-<br/><h2 id="15">20200307</h2>
+<br/><h2 id="14">20200307</h2>
 <ul>
 	<li>Fix bug in page rendering when using custom (not '/') content root (<a href="https://github.com/unclebob/fitnesse/pull/1272">1272</a>).</li>
 	<li>Simplify (and improve) Slim's table colouring (<a href="https://github.com/unclebob/fitnesse/pull/1271">1271</a>).</li>
 	<li>Minor performance enhancements.</li>
 </ul>
-<br/><h2 id="16">20200304</h2>
+<br/><h2 id="15">20200304</h2>
 <ul>
 	<li>New feature to split a suite of tests in partitions, which could be used to split test execution across multiple workers, without having the change the content or structure of the test pages (<a href="https://github.com/unclebob/fitnesse/pull/1268">1268</a>).</li>
 	<li>Exclude page names from test history which start with same substring (<a href="https://github.com/unclebob/fitnesse/pull/1263">1263</a>).</li>
 	<li>Minor: Speed-up test startup by using less Java reflection generating pages.</li>
 </ul>
-<br/><h2 id="17">20200205</h2>
+<br/><h2 id="16">20200205</h2>
 <ul>
 	<li>Added ability to customize HTML generated for Slim tables, using 'symbol decorators' (<a href="https://github.com/unclebob/fitnesse/pull/1255">1255</a>).</li>
 	<li>Ensured proper validation messages when user forgets to specify a target page for a symbolic link (<a href="https://github.com/unclebob/fitnesse/pull/1260">1260</a>).</li>
 	<li>Updated Slack channel invite to point to <a href="https://fitnesse-community-inviter.herokuapp.com">https://fitnesse-community-inviter.herokuapp.com</a> (<a href="https://github.com/unclebob/fitnesse/pull/1261">1261</a>).</li>
 </ul>
-<br/><h2 id="18">20200128</h2>
+<br/><h2 id="17">20200128</h2>
 <ul>
 	<li>Update documentation replace references to Yahoo Group with Slack channel (<a href="https://github.com/unclebob/fitnesse/pull/1259">1259</a>).</li>
 </ul>
-<br/><h2 id="19">20200108</h2>
+<br/><h2 id="18">20200108</h2>
 <ul>
 	<li>Bugfix for pretty printed exceptions ending with '&lt;' (<a href="https://github.com/unclebob/fitnesse/issues/1252">1252</a>).</li>
 </ul>
-<br/><h2 id="20">20191229</h2>
+<br/><h2 id="19">20191229</h2>
 <ul>
 	<li>Add support calling static methods from Slim script tables (<a href="https://github.com/unclebob/fitnesse/pull/1245">1245</a>).</li>
 </ul>
-<br/><h2 id="21">20191217</h2>
+<br/><h2 id="20">20191217</h2>
 <ul>
 	<li>Support importing remote wiki pages over https (not just http) (<a href="https://github.com/unclebob/fitnesse/issues/1086">1086</a>)</li>
 </ul>
-<br/><h2 id="22">20191110</h2>
+<br/><h2 id="21">20191110</h2>
 <ul>
 	<li>Improved failure navigator at top-right after running tests: some tests were missed, others were counted twice. #1246</li>
 </ul>
-<br/><h2 id="23">20190716</h2>
+<br/><h2 id="22">20190716</h2>
 <ul>
 	<li>Fixed issue allowing multiple symbolic links to point from a single page the same target page (<a href="https://github.com/unclebob/fitnesse/issues/1234">1234</a>)</li>
 	<li>Allow 'Where Used' to also find pages having a symbolic link to the current page. (<a href="https://github.com/unclebob/fitnesse/pull/1237">1237</a>)</li>
 	<li>Make page 'Rename' and 'Move' also update symbolic links affected by the change. (<a href="https://github.com/unclebob/fitnesse/pull/1238">1238</a>)</li>
 </ul>
-<br/><h2 id="24">20190628</h2>
+<br/><h2 id="23">20190628</h2>
 <ul>
 	<li>Allow all uncle SuiteSetUp and SuiteTearDown pages to be run, instead of only the nearest one, by setting ALL_UNCLE_SUITE_SETUPS (<a href="https://github.com/unclebob/fitnesse/pull/1233">1233</a>). This also ensures that all tests are executed in order, fixing (<a href="https://github.com/unclebob/fitnesse/issues/1229">1229</a>).</li>
 </ul>
-<br/><h2 id="25">20190620</h2>
+<br/><h2 id="24">20190620</h2>
 <ul>
 	<li>Allow plugins to override the default wiki theme (i.e. bootstrap) (<a href="https://github.com/unclebob/fitnesse/pull/1227">1227</a>)</li>
 </ul>
-<br/><h2 id="26">20190508</h2>
+<br/><h2 id="25">20190508</h2>
 <ul>
 	<li>Optimized performance of Slim (javascript) expressions (<a href="https://github.com/unclebob/fitnesse/pull/1220">1220</a>)</li>
 	<li>Issues fixed:<ul>
@@ -177,46 +176,46 @@
 </ul>
 </li>
 </ul>
-<br/><h2 id="27">20190428</h2>
+<br/><h2 id="26">20190428</h2>
 <ul>
 	<li>Issues fixed:<ul>
 	<li>Improved error message when Slim 'script' table has row with too few columns (<a href="https://github.com/unclebob/fitnesse/issues/1221">1221</a>)</li>
 </ul>
 </li>
 </ul>
-<br/><h2 id="28">20190421</h2>
+<br/><h2 id="27">20190421</h2>
 <ul>
 	<li>Issues fixed:<ul>
 	<li>Fix table of contents for suites containing symbolic links to multiple external roots (<a href="https://github.com/unclebob/fitnesse/pull/1218">1218</a>)</li>
 </ul>
 </li>
 </ul>
-<br/><h2 id="29">20190418</h2>
+<br/><h2 id="28">20190418</h2>
 <ul>
 	<li>Issues fixed:<ul>
 	<li>Prevent NullPointerException when fixture method returns 'null' Long (<a href="https://github.com/unclebob/fitnesse/issues/1211">1211</a>)</li>
 </ul>
 </li>
 </ul>
-<br/><h2 id="30">20190417</h2>
+<br/><h2 id="29">20190417</h2>
 <ul>
 	<li>Allow rerun of failed tests (only) from suite results page (<a href="https://github.com/unclebob/fitnesse/pull/1209">1209</a>)</li>
 </ul>
-<br/><h2 id="31">20190416</h2>
+<br/><h2 id="30">20190416</h2>
 <ul>
 	<li>Issues fixed:<ul>
 	<li>Fix search page (<a href="https://github.com/unclebob/fitnesse/issues/1207">1207</a>)</li>
 </ul>
 </li>
 </ul>
-<br/><h2 id="32">20190409</h2>
+<br/><h2 id="31">20190409</h2>
 <ul>
 	<li>Issues fixed:<ul>
 	<li>Ensure version information is available inside .jar (<a href="https://github.com/unclebob/fitnesse/issues/1206">1206</a>)</li>
 </ul>
 </li>
 </ul>
-<br/><h2 id="33">20190406</h2>
+<br/><h2 id="32">20190406</h2>
 <ul>
 	<li>Issues fixed:<ul>
 	<li>Allow running tests from the wiki using Internet Explorer 11 (<a href="https://github.com/unclebob/fitnesse/issues/1196">1196</a>)</li>
@@ -225,7 +224,7 @@
 </ul>
 </li>
 </ul>
-<br/><h2 id="34">20190224</h2>
+<br/><h2 id="33">20190224</h2>
 <ul>
 	<li>Issues fixed:<ul>
 	<li>Don't display 'Broken pipe' exception when running tests on Debian with Firefox (<a href="https://github.com/unclebob/fitnesse/issues/1187">1187</a>)</li>
@@ -233,15 +232,15 @@
 </ul>
 </li>
 </ul>
-<br/><h2 id="35">20190216</h2>
+<br/><h2 id="34">20190216</h2>
 <ul>
 	<li>New argument '-lh': just bind to the local loopback interface. Effectively preventing wiki-access from other machines in the network (<a href="https://github.com/unclebob/fitnesse/pull/1183">1183</a>)</li>
 </ul>
-<br/><h2 id="36">20190202</h2>
+<br/><h2 id="35">20190202</h2>
 <ul>
 	<li>Bugfix: Allow Git version plugin to work when running via standalone.jar (<a href="https://github.com/unclebob/fitnesse/pull/1179">1179</a>)</li>
 </ul>
-<br/><h2 id="37">20190127</h2>
+<br/><h2 id="36">20190127</h2>
 <ul>
 	<li>Add support to evaluate expression in/on Slim symbols (Java-only) (<a href="https://github.com/unclebob/fitnesse/pull/1123">1123</a>)</li>
 	<li>Improve message on exception when test is run via jUnit (<a href="https://github.com/unclebob/fitnesse/issues/1134">1134</a>)</li>
@@ -250,7 +249,7 @@
 </ul>
 </li>
 </ul>
-<br/><h2 id="38">20190119</h2>
+<br/><h2 id="37">20190119</h2>
 <ul>
 	<li>Under the hood:<ul>
 	<li>Now targetting Java 8</li>
@@ -259,7 +258,7 @@
 </ul>
 </li>
 </ul>
-<br/><h2 id="39">20190118</h2>
+<br/><h2 id="38">20190118</h2>
 <ul>
 	<li>Issues fixed:<ul>
 	<li>Raise error if decisions table (based on scenario) has output column which is not an output of the scenario (<a href="https://github.com/unclebob/fitnesse/pull/1178">1178</a>)</li>
@@ -268,16 +267,16 @@
 </ul>
 </li>
 </ul>
-<br/><h2 id="40">20190110</h2>
+<br/><h2 id="39">20190110</h2>
 <ul>
 	<li>Add support for Android Slim client (<a href="https://github.com/unclebob/fitnesse/pull/602">602</a>)</li>
 	<li>Allow templates to access the current request (<a href="https://github.com/unclebob/fitnesse/pull/1174">1174</a>)</li>
 </ul>
-<br/><h2 id="41">20181224</h2>
+<br/><h2 id="40">20181224</h2>
 <ul>
 	<li>Fixed issue where accessing wiki using Firefox caused very high CPU usage (<a href="https://github.com/unclebob/fitnesse/issues/1173">1173</a>)</li>
 </ul>
-<br/><h2 id="42">20181223</h2>
+<br/><h2 id="41">20181223</h2>
 <ul>
 	<li>"StopTestException" is SuiteSetUp is handled as SuiteStopException (<a href="https://github.com/unclebob/fitnesse/pull/1128">1128</a>)</li>
 	<li>Improve finding of methods in Java classes (first letter may be a capital) (<a href="https://github.com/unclebob/fitnesse/pull/992">992</a>)</li>
@@ -291,14 +290,14 @@
 </ul>
 </li>
 </ul>
-<br/><h2 id="43">20181221</h2>
+<br/><h2 id="42">20181221</h2>
 <ul>
 	<li>Issues fixed:<ul>
 	<li>Allow plugins to contain Velocity templates (used when rendering pages) (<a href="https://github.com/unclebob/fitnesse/pull/1127">1127</a>)</li>
 </ul>
 </li>
 </ul>
-<br/><h2 id="44">20180127</h2>
+<br/><h2 id="43">20180127</h2>
 <ul>
 	<li>Improve stability for non pipe based SUT connection (<a href="https://github.com/unclebob/fitnesse/pull/997">197</a>)</li>
 	<li>Fix new style wiki pages for Windows (line ending) (<a href="https://github.com/unclebob/fitnesse/pull/1058">1058</a>)</li>
@@ -312,7 +311,7 @@
 	<li>Various documentation updates</li>
 	<li>Various small improvements</li>
 </ul>
-<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=16&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=16&amp;state=closed.</a><br/><br/><h2 id="45">20161130</h2>
+<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=16&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=16&amp;state=closed.</a><br/><br/><h2 id="44">20161130</h2>
 <ul>
 	<li>Add ability to specify the locale used to format evaluated expressions (<a href="https://github.com/unclebob/fitnesse/pull/929">929</a>)</li>
 	<li>New Slim table type: <a href="../FitNesse/SuiteAcceptanceTests/SuiteSlimTests/BaseLineDecisionTable.html">Baseline decision table</a> (<a href="https://github.com/unclebob/fitnesse/pull/965">965</a>)</li>
@@ -333,7 +332,7 @@
 </ul>
 </li>
 </ul>
-<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=15&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=15&amp;state=closed.</a><br/><br/><h2 id="46">20160515</h2>
+<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=15&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=15&amp;state=closed.</a><br/><br/><h2 id="45">20160515</h2>
 <ul>
 	<li><span class="fitnesse">FitNesse</span> requires Java 7 now (<a href="https://github.com/unclebob/fitnesse/issues/872">872</a>, <a href="https://github.com/unclebob/fitnesse/issues/877">877</a>)</li>
 	<li>New autocomplete feature for the "move page" page (<a href="https://github.com/unclebob/fitnesse/issues/867">867</a>)</li>
@@ -358,7 +357,7 @@
 </ul>
 </li>
 </ul>
-<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=14&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=14&amp;state=closed.</a><br/><br/><h2 id="47">20151230</h2>
+<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=14&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=14&amp;state=closed.</a><br/><br/><h2 id="46">20151230</h2>
 <ul>
 	<li>Documentation updates (<a href="https://github.com/unclebob/fitnesse/pull/843">843</a>, <a href="https://github.com/unclebob/fitnesse/pull/833">833</a>, <a href="https://github.com/unclebob/fitnesse/pull/825">825</a>, <a href="https://github.com/unclebob/fitnesse/pull/815">815</a>)</li>
 	<li>Slim runs completely in process in when run in debug mode (<a href="https://github.com/unclebob/fitnesse/pull/837">837</a>)</li>
@@ -380,7 +379,7 @@
 </ul>
 </li>
 </ul>
-<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=13&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=13&amp;state=closed.</a><br/><br/><h1 id="48">20150814</h1>
+<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=13&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=13&amp;state=closed.</a><br/><br/><h1 id="47">20150814</h1>
 <ul>
 	<li>Syntax highlighting in plain text editor (<a href="https://github.com/unclebob/fitnesse/pull/631">631</a>)</li>
 	<li>Support generic behavior in Slim (Java) fixture via when fixtures implement <a href="../FitNesse/UserGuide/WritingAcceptanceTests/SliM/InteractionAwareFixture.html">InteractionAwareFixture</a> (<a href="https://github.com/unclebob/fitnesse/pull/724">724</a>)</li>
@@ -397,7 +396,7 @@
 </ul>
 </li>
 </ul>
-<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=12&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=12&amp;state=closed.</a><br/><br/><h2 id="49">20150428</h2>
+<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=12&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=12&amp;state=closed.</a><br/><br/><h2 id="48">20150428</h2>
 <ul>
 	<li>!contents has a new <a href="../FitNesse/UserGuide/FitNesseWiki/MarkupLanguageReference/MarkupContents.html">-H option</a> (<a href="https://github.com/unclebob/fitnesse/pull/718">718</a>)</li>
 	<li>The JUnit runner is notified of system exceptions (<a href="https://github.com/unclebob/fitnesse/pull/716">716</a>)</li>
@@ -419,7 +418,7 @@
 </ul>
 </li>
 </ul>
-<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=11&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=11&amp;state=closed.</a><br/><br/><h2 id="50">v20150226</h2>
+<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=11&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=11&amp;state=closed.</a><br/><br/><h2 id="49">v20150226</h2>
 <ul>
 	<li>Fixed lot's of code style issues (<a href="https://github.com/unclebob/fitnesse/pull/588">588</a>, <a href="https://github.com/unclebob/fitnesse/pull/618">618</a>, <a href="https://github.com/unclebob/fitnesse/pull/619">619</a><a href="https://github.com/unclebob/fitnesse/pull/628">628</a>, <a href="https://github.com/unclebob/fitnesse/pull/632">632</a>, <a href="https://github.com/unclebob/fitnesse/pull/634">634</a>, <a href="https://github.com/unclebob/fitnesse/pull/645">645</a>)</li>
 	<li>Table coloring for Slim tables (<a href="https://github.com/unclebob/fitnesse/pull/569">569</a>)</li>
@@ -442,7 +441,7 @@
 </ul>
 </li>
 </ul>
-<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=10&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=10&amp;state=closed.</a><br/><br/><h2 id="51">20150114</h2>
+<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=10&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=10&amp;state=closed.</a><br/><br/><h2 id="50">20150114</h2>
 <ul>
 	<li>Big cleanup. Removed classes:<ul>
 	<li>util.StringUtil, use org.apache.commons.lang.StringUtils instead.</li>
@@ -466,7 +465,7 @@
 </ul>
 </li>
 </ul>
-<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=9&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=9&amp;state=closed.</a><br/><br/><h2 id="52">20140901</h2>
+<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=9&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=9&amp;state=closed.</a><br/><br/><h2 id="51">20140901</h2>
 <ul>
 	<li>Code cleanup for <span class="fitnesse">FitNesse</span> JUnit runner (<a href="https://github.com/unclebob/fitnesse/pull/487">487</a>).</li>
 	<li>Improved error message when included page does not exist ((<a href="https://github.com/unclebob/fitnesse/pull/496">496</a>).</li>
@@ -485,7 +484,7 @@
 </ul>
 </li>
 </ul>
-<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=8&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=8&amp;state=closed.</a><br/><br/><h2 id="53">20140630</h2>
+<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=8&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=8&amp;state=closed.</a><br/><br/><h2 id="52">20140630</h2>
 <ul>
 	<li>Add page wide Expand/Collapse All buttons (bootstrap theme).</li>
 	<li>Performance improvements: cache big factory classes and page data.</li>
@@ -498,7 +497,7 @@
 </ul>
 </li>
 </ul>
-<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=7&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=7&amp;state=closed.</a><br/><br/><h2 id="54">2014-06-23</h2>
+<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=7&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=7&amp;state=closed.</a><br/><br/><h2 id="53">2014-06-23</h2>
 <ul>
 	<li>Author information for GitVersionController.</li>
 	<li><i>?suite</i> and <i>?test</i> are now the same responder.</li>
@@ -516,7 +515,7 @@
 </ul>
 </li>
 </ul>
-<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=6&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=6&amp;state=closed.</a><br/><br/><h2 id="55">2014-04-18</h2>
+<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=6&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=6&amp;state=closed.</a><br/><br/><h2 id="54">2014-04-18</h2>
 <ul>
 	<li>Introduced new logo.</li>
 	<li>New table type for Slim: <a href="../FitNesse/UserGuide/WritingAcceptanceTests/SliM/DynamicDecisionTable.html">Dynamic Decision table</a>.</li>
@@ -539,7 +538,7 @@
 </ul>
 </li>
 </ul>
-<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=6&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=6&amp;state=closed.</a><br/><br/><h2 id="56">2014-02-01</h2>
+<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?milestone=6&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?milestone=6&amp;state=closed.</a><br/><br/><h2 id="55">2014-02-01</h2>
 <ul>
 	<li><b>Files outside the <a href="http://files">http://files</a> section can no longer be accessed!</b></li>
 	<li>Updated bootstrap theme to bootstrap 3.</li>
@@ -562,7 +561,7 @@
 </ul>
 </li>
 </ul>
-<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?direction=desc&amp;milestone=4&amp;page=1&amp;sort=updated&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?direction=desc&amp;milestone=4&amp;page=1&amp;sort=updated&amp;state=closed.</a><br/><br/><h2 id="57">2013-11-10</h2>
+<br/>For a complete list of closed issues and merged pull requests see <a href="https://github.com/unclebob/fitnesse/issues?direction=desc&amp;milestone=4&amp;page=1&amp;sort=updated&amp;state=closed.">https://github.com/unclebob/fitnesse/issues?direction=desc&amp;milestone=4&amp;page=1&amp;sort=updated&amp;state=closed.</a><br/><br/><h2 id="56">2013-11-10</h2>
 <ul>
 	<li>CMSystem functionality is removed. Now only the VersionsController interface can be used.</li>
 	<li>Git version control andrecent-changessupport</li>
@@ -585,7 +584,7 @@
 </ul>
 </li>
 </ul>
-<br/><h2 id="58">2013-05-30</h2>
+<br/><h2 id="57">2013-05-30</h2>
 <ul>
 	<li>Many improvements in the JUnit test runner</li>
 	<li>New: version comparator</li>
@@ -600,15 +599,15 @@
 </ul>
 </li>
 </ul>
-<br/><h2 id="59">2012-11-16</h2>
+<br/><h2 id="58">2012-11-16</h2>
 <ul>
 	<li>Added new Failure Navigator. Now possible to jump quickly to cells containing failures or exceptions. Works on Tests and Suites. Finds failures in collapsed sections or in scenario tables.</li>
 </ul>
-<br/><h2 id="60">2012-09-18</h2>
+<br/><h2 id="59">2012-09-18</h2>
 <ul>
 	<li>Added the concept of a TemplateLibrary and the ability to insert existing templates into the plain text editor.</li>
 </ul>
-<br/><h2 id="61">2012-03-20</h2>
+<br/><h2 id="60">2012-03-20</h2>
 <ul>
 	<li><b>Note:</b> This page has a layoutthat's not conformprevious releases of FitNesse</li>
 	<li>Introduced ReleaseNotes page</li>
@@ -618,11 +617,11 @@
 	<li>Parser fixes</li>
 	<li>Theming system</li>
 </ul>
-<br/><h2 id="62">2011-10-25</h2>
+<br/><h2 id="61">2011-10-25</h2>
 <ul>
 	<li>New parser</li>
 </ul>
-<br/><h2 id="63">20110923 (Dan Rollo)</h2>
+<br/><h2 id="62">20110923 (Dan Rollo)</h2>
 maven pom.xml cleanups:<br/><br/><ul>
 	<li>Remove unneeded default &lt;groupId&gt; tags.</li>
 	<li>Add plugin &lt;version&gt; tags.</li>
@@ -631,7 +630,7 @@ maven pom.xml cleanups:<br/><br/><ul>
 	<li>Replace &lt;system&gt; dependency on json with the latest published json artifact.</li>
 	<li>Remove unneeded <span class="meta">undefined variable: basedir</span> from &lt;sourceDirectory&gt; tag value.</li>
 </ul>
-<br/><h2 id="64">20081128 (UB)</h2>
+<br/><h2 id="63">20081128 (UB)</h2>
 <ul>
 	<li>Added &amp;debug flag to TestResponderurl. This forces the test to run <i>inside</i> the fitnesse process. If you are running fitnesse in a debugger, you can breakpoint your fixtures.</li>
 	<li>Symbols can be java properties or environment variables. Symbols first, env variables second, java properties third.</li>
