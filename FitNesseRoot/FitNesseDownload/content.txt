@@ -1,8 +1,8 @@
-!2 Official release: ${PUBLISH_VERSION}
+!2 Official release: !-<span id="span000">version</span>-!
 
-Download [[fitnesse-standalone.jar][https://github.com/fitnesse/fitnessedotorg/raw/master/releases/${PUBLISH_VERSION}/fitnesse-standalone.jar]] for this release from !-GitHub-!. 
+Download !-<span id="span001">-![[fitnesse-standalone.jar][https://github.com/fitnesse/fitnessedotorg/raw/master/releases/version/fitnesse-standalone.jar]]!-</span>-! for this release from !-GitHub-!. 
 
-The changes are described in the [[Release Notes][FitNesse.ReleaseNotes]]. The contributions to this release are listed the [[!-GitHub-! release][https://github.com/unclebob/fitnesse/releases/tag/${PUBLISH_VERSION}]].
+The changes are described in the [[Release Notes][FitNesse.ReleaseNotes]]. The contributions to this release are listed the !-<span id="span002">-![[!-GitHub-! release][https://github.com/unclebob/fitnesse/releases/tag/version]]!-</span>-!.
 
 You can also download [[older releases][https://github.com/fitnesse/fitnessedotorg/tree/master/releases]].
 
@@ -101,3 +101,11 @@ When you use !-FitNesse-! extensively, some operations take more than the defaul
 
 !3 Memory issues and the build.
 If you build !-FitNesse-! from source, the ant script may fail for ''out of heap space'' reasons.  You can fix this by setting the !style_code(ANT_OPTS) environment variable to !style_code(!--Xmx100M-!).
+!-<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var myVersion = "-!${FITNESSE_VERSION}!-".substring(1);
+  document.getElementById("span000").innerHTML = document.getElementById("span000").innerHTML.replace("version", myVersion);
+  document.getElementById("span001").innerHTML = document.getElementById("span001").innerHTML.replace("version", myVersion);
+  document.getElementById("span002").innerHTML = document.getElementById("span002").innerHTML.replace("version", myVersion);
+});
+</script>-!
