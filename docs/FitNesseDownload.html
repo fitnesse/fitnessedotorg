@@ -38,8 +38,8 @@
       <p class="lead">Download FitNesse here</p>
     </header>
     <article>
-      <h2 id="0">Official release: 20221219</h2>
-<br/>Download <a href="https://github.com/fitnesse/fitnessedotorg/raw/master/releases/20221219/fitnesse-standalone.jar">fitnesse-standalone.jar</a> for this release from GitHub. <br/><br/>The changes are described in the <a href="FitNesse/ReleaseNotes.html">Release Notes</a>. The contributions to this release are listed the <a href="https://github.com/unclebob/fitnesse/releases/tag/20221219">GitHub release</a>.<br/><br/>You can also download <a href="https://github.com/fitnesse/fitnessedotorg/tree/master/releases">older releases</a>.<br/><br/>FitNesse requires the Java Runtime Environment (JRE) version 8 or 11.<br/><br/><b>Note</b>: As of release 20121220, <a href="FitNesse.html">FitNesse</a> comes in 2 flavours:<br/><br/><ul>
+      <h2 id="0">Official release: <span id="span000">version</span></h2>
+<br/>Download <span id="span001"><a href="https://github.com/fitnesse/fitnessedotorg/raw/master/releases/version/fitnesse-standalone.jar">fitnesse-standalone.jar</a></span> for this release from GitHub. <br/><br/>The changes are described in the <a href="FitNesse/ReleaseNotes.html">Release Notes</a>. The contributions to this release are listed the <span id="span002"><a href="https://github.com/unclebob/fitnesse/releases/tag/version">GitHub release</a></span>.<br/><br/>You can also download <a href="https://github.com/fitnesse/fitnessedotorg/tree/master/releases">older releases</a>.<br/><br/>FitNesse requires the Java Runtime Environment (JRE) version 8 or 11.<br/><br/><b>Note</b>: As of release 20121220, <a href="FitNesse.html">FitNesse</a> comes in 2 flavours:<br/><br/><ul>
 	<li><i>Fitnesse.jar</i> is for use in Maven or Ivy.</li>
 	<li>Users who just want to run FitNesse by itself should download <i>fitnesse-standalone.jar</i> which comes with all dependencies (support libraries) included.</li>
 </ul>
@@ -113,7 +113,14 @@ Exception in thread "main" java.lang.NoClassDefFoundError: org/apache/velocity/c
 <br/><h2 id="6">Learning More</h2>
 If you have not yet done so, check out the <a href="FitNesse/UserGuide/TwoMinuteExample.html">Two Minute Example</a>. To learn more about what <a href="FitNesse.html">FitNesse</a> acceptance testing is all about, see <a href="FitNesse/UserGuide/AcceptanceTests.html">AcceptanceTests</a>.  If you are ready to start creating <a href="FitNesse.html">FitNesse</a> pages and test tables, check out EditingFitNessePages and CreatingTestTables.<br/><br/><h2 id="7">Memory Issues.</h2>
 When you use FitNesse extensively, some operations take more than the default memory allocated to the JVM.  This can cause tests to fail for <i>out of heap space</i> reasons.  You can fix this by adding the <span class="code">-Xmx100M</span> JVM argument to the java command line when you start FitNesse.  <span class="code">java -Xmx100M -jar fitnesse.jar</span>.<br/><br/><h3 id="8">Memory issues and the build.</h3>
-If you build FitNesse from source, the ant script may fail for <i>out of heap space</i> reasons.  You can fix this by setting the <span class="code">ANT_OPTS</span> environment variable to <span class="code">-Xmx100M</span>.<br/>
+If you build FitNesse from source, the ant script may fail for <i>out of heap space</i> reasons.  You can fix this by setting the <span class="code">ANT_OPTS</span> environment variable to <span class="code">-Xmx100M</span>.<br/><script>
+document.addEventListener("DOMContentLoaded", function() {
+  var myVersion = "v20221219".substring(1);
+  document.getElementById("span000").innerHTML = document.getElementById("span000").innerHTML.replace("version", myVersion);
+  document.getElementById("span001").innerHTML = document.getElementById("span001").innerHTML.replace("version", myVersion);
+  document.getElementById("span002").innerHTML = document.getElementById("span002").innerHTML.replace("version", myVersion);
+});
+</script><br/>
     </article>
     <footer>
       <center><a href="FrontPage.html">Front Page</a> - <a href="FitNesse/UserGuide.html">User Guide</a> - <a href="FitNesseFeatures.html">Features</a> - <a href="FitNesseDownload.html">Download</a> - <a href="PlugIns.html">Plugins</a> - <a href="PlugIns.html#slimfixtures">Fixtures</a> - <a href="https://gitter.im/fitnesse-org/fitnesse">Gitter Community</a></center>
