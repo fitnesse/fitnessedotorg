@@ -7,7 +7,7 @@
 
 !4 Major Changes since [[20181223][FitNesseRelease20181223]]:
 
-!2 ${FITNESSE_VERSION}
+!2 20181224
  * Fixed issue where accessing wiki using Firefox caused very high CPU usage ([[1173][https://github.com/unclebob/fitnesse/issues/1173]])
 
 !2 20181223
@@ -344,7 +344,7 @@ maven pom.xml cleanups:
 
 !4 Github ids of Contributors to this release:
 
- * Bing Fan 
+ * Bing Fan
 
 !meta Thanks to all of you!
 
