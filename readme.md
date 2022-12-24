@@ -9,6 +9,9 @@ Recently we decided to put the site under source control as a way to ensure bett
 
 The FitNesse site is served here as a GitHub Pages static site from the "docs" directory.
 
-To update the "docs" directory, use the following command in the fitnessedotorg directory:
-`java -jar releases/yyyymmdd/fitnesse-standalone.jar -c "?publish&destination=docs" -p 8080`
+To update the "docs" directory, use the following commands in the `fitnessedotorg` directory:
+```
+rm -rf docs FitNesseRoot/FitNesse FitNesseRoot/TemplateLibrary FitNesseRoot/properties
+java -jar releases/yyyymmdd/fitnesse-standalone.jar -c "?publish&destination=docs" -p 8080
+```
 
