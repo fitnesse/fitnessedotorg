@@ -1,6 +1,6 @@
 Over the years a number of excellent individuals have contributed tutorials that help folks understand how to use FitNesse in its various incarnations.  The list below is just a few of them.  
 
-''If you have a tutorial and want it listed here, please post to the Gitter Community or mention @fitnesse on Twitter.''
+''If you have a tutorial and want it listed here, please mention @fitnesse on Twitter.''
 
 |'''[[Slim][.FitNesse.UserGuide.SliM]]'''                                      |
 |Brett Schuchert            |http://schuchert.wikispaces.com/FitNesse.Tutorials|
