@@ -1,12 +1,12 @@
 !2 Official release: !-<span id="span000">version</span>-!
 
-Download !-<span id="span001">-![[fitnesse-standalone.jar][https://github.com/fitnesse/fitnessedotorg/raw/master/releases/version/fitnesse-standalone.jar]]!-</span>-! for this release from !-GitHub-!. 
+Download !-<span id="span001">-![[fitnesse-standalone.jar][https://github.com/fitnesse/fitnessedotorg/raw/master/releases/version/fitnesse-standalone.jar]]!-</span>-! for this release from !-GitHub-!.
 
 The changes are described in the [[Release Notes][FitNesse.ReleaseNotes]]. The contributions to this release are listed the !-<span id="span002">-![[!-GitHub-! release][https://github.com/unclebob/fitnesse/releases/tag/version]]!-</span>-!.
 
 You can also download [[older releases][https://github.com/fitnesse/fitnessedotorg/tree/master/releases]].
 
-!-FitNesse-! requires the Java Runtime Environment (JRE) version 8 or 11.
+!-FitNesse-! requires the Java Runtime Environment (JRE) version 11.
 
 '''Note''': As of release 20121220, FitNesse comes in 2 flavours:
 
@@ -22,7 +22,7 @@ The source Code can be found on !-GitHub-!: http://github.com/unclebob/fitnesse
 !2 What's next
 It really takes very little time and effort to get FitNesse running on your machine.
 
- 0 Ensure you have a supported Java version installed (either version 8 or 11, '''versions >= 15 are not supported''').
+ 0 Ensure you have a supported Java version installed (version 11, '''versions >= 15 are not supported''').
  1 Click on the most recent !style_code(fitnesse-standalone.jar) file.
    * If this is a brand new installation, just put it in some convenient empty directory.
    * If this is an update, then copy it on top of the old fitnesse(-standalone).jar in your current installation.
