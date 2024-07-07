@@ -106,6 +106,8 @@ CustomComparators = json:com.acme.JSONAssertComparator
 	<li><b>VersionsController.days</b> - number of days to keep old page versions around when using the Zip file based versions controller.</li>
 	<li><b>test.history.days</b> - The number of days to keep test results around. Cleaned up after a new test run.</li>
 	<li><b>test.history.path</b> - Location to store the test results. The default location is <i>FitNesseRoot/files/testResults</i>.</li>
+	<li><b>TestHistory.purgeOptions</b> - A comma separated list of the age, in number of days, to offer as purge options on the <i>Test History</i> page.</li>
+	<li><b>TestHistory.maxCount</b> - The number of histories to keep around per page. Cleaned up after a new test run.</li>
 	<li>Any variable that can be defined on a wiki page.</li>
 </ul>
 <br/>The Slim test system has a set of <a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM.html">custom properties</a> that can either be set on a page or in the configuration file.

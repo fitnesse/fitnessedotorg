@@ -41,25 +41,39 @@
     <header>
     </header>
     <article>
-      The names of fixtures, methods, inputs, and outputs can be expressed in two forms.  They can match their corresponding names in the fixture classes, or they can be <i>graceful</i>.<br/><br/>A <i>graceful name</i> looks like it is written in human language rather than computer language.  It has spaces that separate the words and may have a period at the end.  Slim will convert <i>graceful names</i> into the names of the classes and methods they refer to.  So for example:<br/><br/><table>
+      The names of fixtures, methods, inputs, and outputs can be expressed in two forms.  <br/>They can match their corresponding names in the fixture classes, or they can be <i>graceful</i>.<br/><br/>A <i>graceful name</i> looks like it is written in human language rather than computer language.  It has spaces that separate the words and may have a period at the end.This is a strategy and the exact implementation depends on the type of table being executed.  It is better when you define output methods with 'graceful names' to put a ? in the end of the name in order to be specified that it is an output method and not  input (set method). <br/>For example, in the case of a <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM/QueryTable.html">Query Table</a>, column names in the front end must exactly match those in the corresponding Fixture. So, it is always helpful to take a closer look at a specific <a href="../../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM.html">table documentation</a>. <br/><br/>  Slim will convert <i>graceful names</i> into the names of the classes and methods they refer to.  So for example:<br/><br/><table>
 	<tr>
 		<td>Graceful Name</td>
 		<td>Fixture Name</td>
-		<td>Method Name</td>
 	</tr>
 	<tr>
 		<td>slim test</td>
 		<td>SlimTest</td>
-		<td>slimTest</td>
 	</tr>
 	<tr>
 		<td>login user.</td>
 		<td>LoginUser</td>
-		<td>loginUser</td>
 	</tr>
 	<tr>
 		<td>Open connection and add user.</td>
 		<td>OpenConnectionAndAddUser</td>
+	</tr>
+</table>
+<br/><table>
+	<tr>
+		<td>Graceful Name</td>
+		<td>Method Name</td>
+	</tr>
+	<tr>
+		<td>slim test?</td>
+		<td>slimTest</td>
+	</tr>
+	<tr>
+		<td>login user ?</td>
+		<td>loginUser</td>
+	</tr>
+	<tr>
+		<td>Open connection and add user?</td>
 		<td>openConnectionAndAddUser</td>
 	</tr>
 </table>
@@ -67,21 +81,35 @@
 	<tr>
 		<td>Graceful Name</td>
 		<td>Fixture Name</td>
-		<td>Method Name</td>
 	</tr>
 	<tr>
 		<td>slim test</td>
 		<td>slimTest</td>
-		<td>SlimTest</td>
 	</tr>
 	<tr>
 		<td>login user.</td>
 		<td>loginUser</td>
-		<td>LoginUser</td>
 	</tr>
 	<tr>
 		<td>Open connection and add user.</td>
 		<td>openConnectionAndAddUser</td>
+	</tr>
+</table>
+<br/><table>
+	<tr>
+		<td>Graceful Name</td>
+		<td>Method Name</td>
+	</tr>
+	<tr>
+		<td>slim test?</td>
+		<td>SlimTest</td>
+	</tr>
+	<tr>
+		<td>login user ?</td>
+		<td>LoginUser</td>
+	</tr>
+	<tr>
+		<td>Open connection and add user?</td>
 		<td>OpenConnectionAndAddUser</td>
 	</tr>
 </table>

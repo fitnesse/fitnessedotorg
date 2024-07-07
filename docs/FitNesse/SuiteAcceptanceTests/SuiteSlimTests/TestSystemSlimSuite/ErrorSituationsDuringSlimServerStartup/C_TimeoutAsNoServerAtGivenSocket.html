@@ -43,7 +43,7 @@
     </header>
     <article>
       <h2 id="0">Trying to connect to a socket where no slim server is running should fail quickly.</h2>
-<br/>To test this we run in debug mode and request to start the slim server ourselfs. But we never start one :)<br/><br/>Use the property slim.timeout to define how long the test system should wait for the slim client. The default is 10 seconds.<br/>In this test we set it to 1 second.<br/><br/><table>
+<br/>To test this we run in debug mode and request to start the slim server ourselfs. But we never start one :)<br/><br/>Use the property slim.timeout to define how long the test system should wait for the slim client. The default is 10 seconds.<br/>In this test we set it to 1 second.<br/><br/><br/><table>
 	<tr>
 		<td colspan="4">script</td>
 	</tr>
@@ -68,7 +68,7 @@
 	<tr>
 		<td>ensure</td>
 		<td>content contains</td>
-		<td colspan="2">Error connecting to SLiM server on localhost:</td>
+		<td colspan="2">Unable to start test system 'SLIM': fitnesse.slim.SlimError: Error connecting to SLiM server on localhost:</td>
 	</tr>
 	<tr>
 		<td>show collapsed</td>

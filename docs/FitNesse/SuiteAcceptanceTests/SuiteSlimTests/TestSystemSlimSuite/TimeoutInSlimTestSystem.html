@@ -41,7 +41,7 @@
     <header>
     </header>
     <article>
-      For this test to perform we reduce the timeout to 2 seconds. If the server is not responding in time, we should raise an error.<br/><br/><br/><table>
+      For this test to perform we reduce the timeout to 1 seconds. If the server is not responding in time, we should raise an error.<br/><br/><br/><table>
 	<tr class="slimRowTitle">
 		<td colspan="4">script</td>
 	</tr>
@@ -53,21 +53,25 @@
 !path lib/*.jar
  
 !define TEST_SYSTEM {slim}
-!define slim.flags {-s 2}
-|fitnesse.fixtures.Sleep|20000|
+!define slim.flags {-s 1}
+#Will pass
+|fitnesse.fixtures.Sleep|20|
+
+#Will fail
+|fitnesse.fixtures.Sleep|90000|
 </td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>test results for page</td>
-		<td>TestPage</td>
-		<td>should contain</td>
-		<td>The instruction timed out after 2 seconds</td>
 	</tr>
 	<tr class="slimRowColor1">
 		<td>test results for page in debug mode</td>
 		<td>TestPage</td>
 		<td>should contain</td>
-		<td>The instruction timed out after 2 seconds</td>
+		<td>The instruction timed out after 1 seconds</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>test results for page in debug mode</td>
+		<td>TestPage</td>
+		<td>should contain</td>
+		<td>span class="pass">fitnesse.fixtures.Sleep</span</td>
 	</tr>
 </table>
 
