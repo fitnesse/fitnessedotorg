@@ -22,7 +22,7 @@ The source Code can be found on !-GitHub-!: http://github.com/unclebob/fitnesse
 !2 What's next
 It really takes very little time and effort to get FitNesse running on your machine.
 
- 0 Ensure you have a supported Java version installed (version 11, '''versions >= 15 are not supported''').
+ 0 Ensure you have a supported Java version installed (version 11, version 17 and 21 are supported).
  1 Click on the most recent !style_code(fitnesse-standalone.jar) file.
    * If this is a brand new installation, just put it in some convenient empty directory.
    * If this is an update, then copy it on top of the old fitnesse(-standalone).jar in your current installation.
