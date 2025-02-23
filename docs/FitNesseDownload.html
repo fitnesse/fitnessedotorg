@@ -46,7 +46,7 @@
 <br/>You can also find <a href="http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.fitnesse%22%20AND%20a%3A%22fitnesse%22">FitNesse in the Maven Central Repository</a>.<br/><p class="note">FitNesse includes <i>slf4j-jdk14</i>, an slf4j implementation, to write its logging. Users who want to use a different logging implementation should exclude <i>slf4j-jdk14</i> so there will be no conflicts.</p>
 <br/><h2 id="1">Source</h2>
 The source Code can be found on GitHub: <a href="http://github.com/unclebob/fitnesse">http://github.com/unclebob/fitnesse</a><br/><br/><h2 id="2">What's next</h2>
-It really takes very little time and effort to get <a href="FitNesse.html">FitNesse</a> running on your machine.<br/><br/> 0 Ensure you have a supported Java version installed (version 11, <b>versions &gt;= 15 are not supported</b>).<br/><ol>
+It really takes very little time and effort to get <a href="FitNesse.html">FitNesse</a> running on your machine.<br/><br/> 0 Ensure you have a supported Java version installed (version 11, version 17 and 21 are supported).<br/><ol>
 	<li>Click on the most recent <span class="code">fitnesse-standalone.jar</span> file.<ul>
 	<li>If this is a brand new installation, just put it in some convenient empty directory.</li>
 	<li>If this is an update, then copy it on top of the old fitnesse(-standalone).jar in your current installation.</li>
@@ -115,7 +115,7 @@ If you have not yet done so, check out the <a href="FitNesse/UserGuide/TwoMinute
 When you use FitNesse extensively, some operations take more than the default memory allocated to the JVM.  This can cause tests to fail for <i>out of heap space</i> reasons.  You can fix this by adding the <span class="code">-Xmx100M</span> JVM argument to the java command line when you start FitNesse.  <span class="code">java -Xmx100M -jar fitnesse.jar</span>.<br/><br/><h3 id="8">Memory issues and the build.</h3>
 If you build FitNesse from source, the ant script may fail for <i>out of heap space</i> reasons.  You can fix this by setting the <span class="code">ANT_OPTS</span> environment variable to <span class="code">-Xmx100M</span>.<br/><script>
 document.addEventListener("DOMContentLoaded", function() {
-  var myVersion = "v20241207".substring(1);
+  var myVersion = "v20250223".substring(1);
   document.getElementById("span000").innerHTML = document.getElementById("span000").innerHTML.replace("version", myVersion);
   document.getElementById("span001").innerHTML = document.getElementById("span001").innerHTML.replace("version", myVersion);
   document.getElementById("span002").innerHTML = document.getElementById("span002").innerHTML.replace("version", myVersion);
