@@ -14,16 +14,16 @@
     <script src="../../../../files/fitnesse/bootstrap/js/respond.js" type="text/javascript"></script>
   </head>
   <body class="wikiPage">
-    <nav class="navbar-fixed-top " role="navigation">
-      <div class="navbar navbar-default">
+    <nav class="navbar-expand-md fixed-top" role="navigation">
+      <div class="navbar justify-content-start bg-light border">
         <div class="navbar-header">
-          <a href="../../../../FrontPage.html" class="navbar-brand" ><span>FitNesse</span></a>
+          <a href="../../../../FrontPage.html" class="navbar-brand" ><span class="d-none">FitNesse</span></a>
         </div>
-        <ul class="nav navbar-nav">
-          <li><a href="../../../../FitNesseFeatures.html">Features</a></li>
-          <li><a href="../../../../FitNesseDownload.html">Download</a></li>
-          <li><a href="../../../../PlugIns.html">Plug-ins</a></li>
-          <li><a href="../../../../FitNesse/UserGuide.html">User Guide</a></li>
+        <ul class="mr-auto navbar-nav">
+          <li><a href="../../../../FitNesseFeatures.html" class="nav-link text-secondary">Features</a></li>
+          <li><a href="../../../../FitNesseDownload.html" class="nav-link text-secondary">Download</a></li>
+          <li><a href="../../../../PlugIns.html" class="nav-link text-secondary">Plug-ins</a></li>
+          <li><a href="../../../../FitNesse/UserGuide.html" class="nav-link text-secondary">User Guide</a></li>
         </ul>
       </div>
       <ol class="page-actions btn-group">
@@ -48,27 +48,27 @@
 	</tr>
 	<tr>
 		<td><span class="code">Today is !today.</span></td>
-		<td>Today is 23 Feb, 2025.</td>
+		<td>Today is 01 Mar, 2025.</td>
 	</tr>
 	<tr>
 		<td><span class="code">XML is !today -xml.</span></td>
-		<td>XML is 2025-02-23T10:19:27.</td>
+		<td>XML is 2025-03-01T16:17:31.</td>
 	</tr>
 	<tr>
 		<td><span class="code">Right now it is !today -t.</span></td>
-		<td>Right now it is 23 Feb, 2025 10:19.</td>
+		<td>Right now it is 01 Mar, 2025 16:17.</td>
 	</tr>
 	<tr>
 		<td><span class="code">Tomorrow is !today +1.</span></td>
-		<td>Tomorrow is 24 Feb, 2025.</td>
+		<td>Tomorrow is 02 Mar, 2025.</td>
 	</tr>
 	<tr>
 		<td><span class="code">Last week was !today -7.</span></td>
-		<td>Last week was 16 Feb, 2025.</td>
+		<td>Last week was 22 Feb, 2025.</td>
 	</tr>
 	<tr>
 		<td><span class="code">The month is !today (MMM).</span></td>
-		<td>The month is Feb.</td>
+		<td>The month is Mar.</td>
 	</tr>
 </table>
 <br/>As you can see, you can add or subtract days.  You can include the time with -t.  And you can use your own format for the time.  (See <span class="code">SimpleDataFormat</span> for the syntax.)<br/><br/>
