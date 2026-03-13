@@ -102,12 +102,13 @@ CustomComparators = json:com.acme.JSONAssertComparator
 </ul>
 <br/><h1 id="16">Other properties</h1>
 <br/>There are more properties which can be used to tweak parts of <span class="fitnesse">FitNesse</span>:<br/><br/><ul>
-	<li><b>newpage.default.content</b> - default page content for an empty page, in case you're not creating a new page based on a template page.</li>
+	<li><b>NewPage.default.content</b> - default page content for an empty page, in case you're not creating a new page based on a template page.</li>
 	<li><b>VersionsController.days</b> - number of days to keep old page versions around when using the Zip file based versions controller.</li>
-	<li><b>test.history.days</b> - The number of days to keep test results around. Cleaned up after a new test run.</li>
-	<li><b>test.history.path</b> - Location to store the test results. The default location is <i>FitNesseRoot/files/testResults</i>.</li>
+	<li><b>TestHistory.days</b> - The number of days to keep test results around. Cleaned up after a new test run.</li>
+	<li><b>TestHistory.path</b> - Location to store the test results. The default location is <i>FitNesseRoot/files/testResults</i>.</li>
 	<li><b>TestHistory.purgeOptions</b> - A comma separated list of the age, in number of days, to offer as purge options on the <i>Test History</i> page.</li>
 	<li><b>TestHistory.maxCount</b> - The number of histories to keep around per page. Cleaned up after a new test run.</li>
+	<li><b>TestHistory.historyOptions</b> - A comma separated list of options to offer on the <i>Test History</i> page, to change the displayed numbers of Histories. This value is limited by the maxCount configuration.</li>
 	<li>Any variable that can be defined on a wiki page.</li>
 </ul>
 <br/>The Slim test system has a set of <a href="../../../FitNesse/UserGuide/WritingAcceptanceTests/SliM.html">custom properties</a> that can either be set on a page or in the configuration file.
